@@ -1,0 +1,177 @@
+---
+title: ""
+format: html
+---
+
+# ![](figs/carbon-storage.svg){width="8%" height="8%" color="red"} Carbon storage
+
+**This goal captures the ability of coastal habitats to buffer against climate change by sequestering and storing atmospheric carbon.**
+
+## Overview
+
+Carbon dioxide (CO₂) is the primary heat trapping gas in Earth’s atmosphere and is a key driver of global climate change. The ocean plays a major role in slowing the pace of global climate change by absorbing CO₂ from the atmosphere and storing it as carbon.
+
+
+## Scores
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+source("../_data/functions/start_script.R")
+source("../_data/functions/score_display_functions.R")
+score <- score(x="CS", ohi_scores)
+
+```
+
+::: columns
+::: {.column width="50%"}
+
+**The Carbon Storage score for the Red Sea and Gulf of Aden region was `r score`.**
+
+<span style="color: gray;">These scores suggest that key habitats are sequestering and storing atmospheric carbon, however, this process has been somewhat compromised due to habitat loss.</span>
+:::
+
+::: {.column width="50%"}
+```{r, fig.width=10, fig.height=3}
+#| echo: false
+#| warning: false
+#| message: false
+
+dial(score,colors)
+
+```
+:::
+:::
+
+The interactive map below shows the scores for the different countries.
+
+```{r, fig.width=3, fig.height=1.5}
+#| echo: false
+#| warning: false
+#| message: false
+map_figure(ohi_scores=ohi_scores, goal="CS")
+
+```
+
+<br>
+
+## Model description
+
+This goal focuses on three coastal ecosystems — mangroves, tidal marshes and seagrasses — that have remarkable ability to store and sequester carbon in their living parts and buried detritus. When destroyed or degraded, these ecosystems not only stop sequestering carbon but can start to release it, becoming new sources of carbon dioxide that can accelerate global warming for decades or longer. Though these coastal ecosystems form less than 2% of the ocean’s surface, they contribute more to long-term carbon storage and sequestration in sediments than any other ocean ecosystem.
+
+The Carbon Storage score is based on the current extent and condition of CO₂-storing coastal habitats (mangrove forests, seagrass meadows, and salt marshes) relative to their recent historical condition. The status of each habitat is calculated (see [biodiversity/habitat goal](https://mazu.nceas.ucsb.edu/rstudio/p/7dda0cdc/chapters/bd.html#habitat)) and their contribution to the total goal score is the average of the habitats weighted by their average carbon storing capacity.
+
+*Carbon sequestration data* Weighting factors based on carbon sequestration rates for habitats used in the carbon storage goal (Chen & Lee 2022).
+
+Habitat | carbon storage
+---------- | -------------
+Mangrove	| 230.9
+Saltmarsh	| 244.7
+Seagrass	| 138
+Tidal flat | 129.8
+
+A score of 100 would indicate that these habitats are all still intact or have been restored to the same condition as in the past. A low score indicates that these habitats have declined significantly and that more protection and restoration must occur in order for them to store the maximum amount of carbon.
+
+## A closer look at the data
+The biggest factor driving scores, by far, is the current status component. Here, we take a closer look at the data underlying the status scores for each country with EEZ territory in the Red Sea and Gulf of Aden.
+
+:::{callout-note collapse=TRUE}
+
+## Other components of an OHI score: Pressures, resilience, and trend
+
+OHI scores are primarily driven by the *current status* dimension of the score, but *pressures*, *resilience*, and *past trends* are also important components of the goal score. In most cases, these variables will nudge the score a bit higher or lower than the *current status* score.  
+
+There are over 20 pressure variables (e.g., ocean warming, ocean acidification) and about 15 resilience variables (e.g., good governance and high gdp) used in the global assessment. 
+
+Each country gets a score for each pressure and resilience variable. For example, for each country we estimated the intensity of increase in ocean temperature, and rescaled these data to range from 0 to 1 (no pressure vs. highest pressure). 
+
+Each goal is affected by a subset of the pressure and resilience variables.    
+We provide a brief description of all the [pressure](https://ohi-rsga.github.io/OHI_RSGA/chapters/pressures.html) and [resilience](https://ohi-rsga.github.io/OHI_RSGA/chapters/resilience.html) variables along with how they affect each goal. A brief description of how these variables are incorporated into the final score is [here](https://mazu.nceas.ucsb.edu/rstudio/p/56fe4d6c/chapters/OHI.html#how-are-ohi-scores-calculated). 
+::: 
+
+
+### Current status
+#### Habitat condition
+The status of this goal is based on the condition, area, and carbon storage ability of saltmarsh, seagrass, mangrove, and tidal flats.
+
+Habitat health is evaluated on a scale from 0 to 1, with 1 indicating the current condition is at, or better, than the reference point; trend is the average yearly change in health during the most recent 5 years; and extent is the estimated area of the habitat in each region in km2.  
+
+::: {.callout-note collapse=true}
+
+## Habitats: Country data (click to expand)
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+goal <- "hab"
+rsga_rgns <- read_csv(here("_data/output/rsga_ohi_rgns.csv"))
+
+# list of OHI datafiles:
+datafiles <- read_csv("https://raw.githubusercontent.com/OHI-Science/ohi-global/draft/metadata_documentation/layers_eez_base.csv") %>%
+  filter(str_detect(layer, goal)) %>%
+  filter(str_detect(layer, "hab_")) %>%
+  filter(layer != "element_wts_hab_pres_abs") %>%
+  filter(layer != "hab_rockyreef_extent")
+
+all_habs <- data.frame()
+for(i in 1:24){
+#i=1
+hab <- datafiles[i,] 
+hab_df  <- read_csv(file.path("https://raw.githubusercontent.com/OHI-Science/ohiprep_v2023/gh-pages/",
+gsub("ohiprep:", "", hab$dir), hab$fn)) %>%
+  select(rgn_id, year, habitat, everything()) %>%
+  mutate(layer = hab$layer) 
+
+hab_df <- hab_df %>%
+  mutate(units = names(hab_df)[4])
+
+names(hab_df)[4] <- "score"
+all_habs <- rbind(all_habs, hab_df)
+all_habs
+  }
+
+hab_df <- left_join(rsga_rgns, all_habs, by="rgn_id") %>%
+  group_by(iso3c, habitat, units) %>%
+  filter(year==max(year)) %>%
+  ungroup()
+
+hab_df1 <- hab_df %>%
+  select(iso3c, country=region_name, habitat, layer, score) %>%
+  mutate(score = round(score, 1)) %>%
+  mutate(layer = gsub("tidal_flat", "tidal-flat", layer)) %>%
+  separate(layer, into = c("first", "second", "third"), sep = "_") %>%
+  select(-first, -second) %>%
+  pivot_wider(names_from = third, values_from = score) %>%
+  mutate(extent = ifelse(is.na(extent), 0, extent)) %>%
+  mutate(health = ifelse(extent == 0 , NA, health)) %>%
+  mutate(trend = ifelse(extent == 0, NA, trend)) %>%
+  rename(extent_km2 = extent)
+
+hab_df2 <- hab_df1 %>%
+  filter(habitat %in% c("mangrove", "saltmarsh", "seagrass", "tidal flat"))
+  
+
+  datatable(hab_df2,
+          options = list(pageLength = 10, autoWidth = TRUE),
+          filter = 'top')
+
+
+```
+:::
+
+
+## Implications
+
+Based on the current model, this goal would be most improved by:
+
+- improving mangrove condition, particularly in Somalia, Saudi Arabia, and Egypt
+- improving condition of saltmarsh and seagrass in all regions
+
+Future assessments should carefully assess the underlying data for improvements because typically better habitat data is available within each country, this allows for improved estimates of extent, condition, and trend.
+
+Furthermore, future assessments should consider whether all relevant habitats are included in the model.
+
