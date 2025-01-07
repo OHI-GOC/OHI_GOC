@@ -112,7 +112,7 @@ goal <- "hab"
 rsga_rgns <- read_csv(here("_data/output/rsga_ohi_rgns.csv"))
 
 # list of OHI datafiles:
-datafiles <- read_csv("https://raw.githubusercontent.com/OHI-Science/ohi-global/draft/metadata_documentation/layers_eez_base.csv") %>%
+datafiles <- read_csv("https://raw.githubusercontent.com/OHI-Science/ohi-global/c6e3408366c2d6e3b2cd42b0c80e1c39e2ffe43b/metadata_documentation/layers_eez_base.csv") %>%
   filter(str_detect(layer, goal)) %>%
   filter(str_detect(layer, "hab_")) %>%
   filter(layer != "element_wts_hab_pres_abs") %>%
@@ -120,7 +120,7 @@ datafiles <- read_csv("https://raw.githubusercontent.com/OHI-Science/ohi-global/
 
 all_habs <- data.frame()
 for(i in 1:24){
-#i=1
+#i=16
 hab <- datafiles[i,] 
 hab_df  <- read_csv(file.path("https://raw.githubusercontent.com/OHI-Science/ohiprep_v2023/gh-pages/",
 gsub("ohiprep:", "", hab$dir), hab$fn)) %>%

@@ -68,7 +68,7 @@ Each pressure category may include several stressors (see below for full list of
 #| warning: false
 #| message: false
 
-full_lyr_names <- read_csv("https://raw.githubusercontent.com/OHI-Science/ohi-global/draft/metadata_documentation/layers_eez_base.csv") %>% 
+full_lyr_names <- read_csv("https://raw.githubusercontent.com/OHI-Science/ohi-global/c6e3408366c2d6e3b2cd42b0c80e1c39e2ffe43b/metadata_documentation/layers_eez_base.csv") %>% 
   select(layer, name, description)
 
 pressure_pre <-  read.csv("https://raw.githubusercontent.com/OHI-Science/ohi-global/draft/eez/conf/pressure_categories.csv") %>% 

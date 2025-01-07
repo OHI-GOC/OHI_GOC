@@ -181,7 +181,7 @@ goal <- "tr_"
 rsga_rgns <- read_csv(here("_data/output/rsga_ohi_rgns.csv"))
 
 # list of OHI datafiles:
-datafiles <- read_csv("https://raw.githubusercontent.com/OHI-Science/ohi-global/draft/metadata_documentation/layers_eez_base.csv") %>%
+datafiles <- read_csv("https://raw.githubusercontent.com/OHI-Science/ohi-global/c6e3408366c2d6e3b2cd42b0c80e1c39e2ffe43b/metadata_documentation/layers_eez_base.csv") %>%
   filter(str_detect(layer, goal)) 
 
 

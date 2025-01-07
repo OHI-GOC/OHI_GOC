@@ -3,7 +3,7 @@ title: "Spatial Prep"
 output: html_document
 date: "2023-11-14"
 ---
-
+Data is from: 
 Download: https://www.marineregions.org/downloads.php
 Marine and land zones: the union of world country boundaries and EEZ's
 Version 3 - 2020-03-17 (19 MB) [Known issues] (created from EEZ version 11)
@@ -21,7 +21,7 @@ library(sf)
 library(tidyverse)
 library(here)
 
-mazu_spatial <- "/home/shares/ohi/OHI_RSGA/_spatial"
+mazu_spatial <- "/home/shares/ohi/OHI_GOC/spatial"
 ```
 extreme sea level: https://www.nature.com/articles/s41598-020-67736-6
 
@@ -54,6 +54,9 @@ Cutting the persian gulf portion of Saudi Arabia's EEZ.
 
 
 ```{r}
+
+list.files("/Users/melaniefrazier/Downloads/ne_10m_coastline/")
+coastline <- st_read("/Users/melaniefrazier/Downloads/ne_10m_coastline/ne_10m_coastline.shp")
 
 eez_land <- st_read(file.path(mazu_spatial, "data/EEZ_land_union_v3_202003/EEZ_Land_v3_202030.shp"))
 test <- filter(eez_land, UNION=="United States")
