@@ -5,12 +5,12 @@ project:
 website: 
   page-navigation: true
   title: "OHI: Red Sea & Gulf of Aden" 
-  site-url: "https://ohi-rsga.github.io/OHI_RSGA/" 
-  repo-url: https://github.com/ohi-rsga/OHI_RSGA 
+  site-url: "https://ohi-goc.github.io/OHI_GOC/" 
+  repo-url: https://github.com/ohi-goc/OHI_GOC 
   repo-actions: [edit, issue]
   
   page-footer:
-    right: "Source repository: https://github.com/OHI-RSGA"
+    right: "Source repository: https://github.com/OHI-GOC"
     left: "An Ocean Health Index collaboration"
     
   sidebar:
