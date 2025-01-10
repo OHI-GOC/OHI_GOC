@@ -67,5 +67,8 @@
   },
   "chapters/pressures.qmd": {
     "pressures.html": "8140fe60"
+  },
+  "chapters/data/protected.qmd": {
+    "protected.html": "9713ba67"
   }
 }
