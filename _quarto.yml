@@ -4,7 +4,7 @@ project:
   
 website: 
   page-navigation: true
-  title: "OHI: Red Sea & Gulf of Aden" 
+  title: "OHI: Gulf of California" 
   site-url: "https://ohi-goc.github.io/OHI_GOC/" 
   repo-url: https://github.com/ohi-goc/OHI_GOC 
   repo-actions: [edit, issue]
@@ -14,7 +14,7 @@ website:
     left: "An Ocean Health Index collaboration"
     
   sidebar:
-    logo: "chapters/figs/redsea_globalmap.png"
+    logo: "chapters/figs/gulf-of-california-map.jpg"
     pinned: true
     align: center
     style: "docked"
@@ -24,7 +24,7 @@ website:
       - href: index.qmd
         text: Welcome
       - href: chapters/OHI.qmd
-        text: "Overview of OHI"
+        text: "Starting an OHI assessment"
       - href: chapters/region.qmd
         text: "Region"
       - section: "Goals"
@@ -49,6 +49,10 @@ website:
             text: "Sense of place"
           - href: chapters/tr.qmd
             text: "Tourism and recreation"
+      - section: "Data"
+        contents:
+          - href: chapters/data/protected.qmd
+            text: "Protected regions"
       - href: chapters/pressures.qmd
         text: "Pressures"
       - href: chapters/resilience.qmd

@@ -6,11 +6,11 @@ library(here)
 library(leaflet)
 library(rnaturalearth)
 library(DT)
+library(mapview)
 
-ohi_scores <- st_read(here("_data/output/scores.shp"), quiet=TRUE)
 
-land <- ne_countries(scale = "medium", returnclass = "sf") %>%
-  filter(sov_a3 %in% c("DJI", "EGY", "ERI", "SOM", "SOL", "ISR", "JOR" , "SAU", "SDN", "YEM"))
+
+goc_region <- st_read(here("_spatial/data/GoC_polygon_ecoregion_latlon.shp"), quiet=TRUE) 
 
 
 reds   <- colorRampPalette(c("#A50026", "#D73027", "#F46D43", "#FDAE61", "#FEE090"), space = "Lab")(66)
@@ -19,3 +19,9 @@ colors <- c(reds, blues)
 
 ### Color Breaks
 col.brks     <- seq(0,100, by = 1)
+
+### to cut
+ohi_scores <- st_read(here("_data/output/scores.shp"), quiet=TRUE)
+land <- ne_countries(scale = "medium", returnclass = "sf") %>%
+  filter(sov_a3 %in% c("DJI", "EGY", "ERI", "SOM", "SOL", "ISR", "JOR" , "SAU", "SDN", "YEM"))
+

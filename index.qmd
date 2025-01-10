@@ -1,6 +1,6 @@
 ---
-title: "Ocean Health Index"
-subtitle: "Red Sea and Gulf of Aden"
+title: "Gulf of California"
+subtitle: "Introducing the Gulf of California Ocean Health Index"
 ---
 
 ```{r}
@@ -9,98 +9,67 @@ subtitle: "Red Sea and Gulf of Aden"
 #| message: false
 
 source("_data/functions/start_script.R")
-source("_data/functions/score_display_functions.R")
-score <- score(x="Index", ohi_scores)
-
-# Code to make flower plots
-
-#if (!require(devtools)){install.packages("devtools")}
-#if (!require(ohicore)){devtools::install_github('ohi-science/ohicore')}
-#library(ohicore)
-#source(here::here('_data/functions/flowerPlot.R'))
-#flower_data <- read_csv(here("_data/output/flowerplot_scores.csv"))
-
-#PlotFlower(
-#  region_plot = NA,
-#  dir_fig_save = here::here("chapters/figs/FlowerPlots"),
-#  scores_file = here("_data/output/flowerplot_scores.csv"),
-#)
-
 
 ```
 
-**The Ocean Health Index measures ocean health so humans may continue to benefit from healthy marine environments.**
+We are excited to announce that we are working with a team of experts to develop an [Ocean Health Index](https://oceanhealthindex.org/) (OHI) assessment tailored to the unique concerns and priorities of the Gulf of California.
 
-Here we report Ocean Health Index scores for the [Red Sea and Gulf of Aden region](https://ohi-rsga.github.io/OHI_RSGA/chapters/region.html) using data extracted from the [2023 global assessment](https://oceanhealthindex.org). A quick overview of OHI can be found [here](https://ohi-rsga.github.io/OHI_RSGA/chapters/OHI.html). 
-
-## Index score
-
+<br>
 
 :::: {.columns} 
 
 ::: {.column width="50%"}
 
+The Gulf of California OHI assessment will help achieve several important goals, including:
 
-**The overall Index score for the Red Sea and Gulf of Aden region was `r score`.**
-<br>
 
-<span style="color: gray;">This score is the average of the 2023 OHI global scores for all countries with EEZ territories in the Red Sea and Gulf of Aden. The average is weighted using the size of each country's EEZ.</span>
+- establish a baseline measure of current ocean health and provide a framework to monitor and communicate the region's condition over time.
+
+- gather and nurture a community of engaged stakeholders from diverse backgrounds. 
+
+- establish an accessible library of key data and scientific findings.
 
 :::
 
 ::: {.column width="50%"}
 
-```{r, fig.width=10, fig.height=3}
-#| echo: false
-#| warning: false
-#| message: false
-
-dial(score,colors)
-
-```
-
+![](chapters/figs/LandsEnd.jpg)
 :::
 
 ::::
 
-The interactive map below shows the scores for the different countries.
-
-```{r, fig.width=3, fig.height=1.5}
-#| echo: false
-#| warning: false
-#| message: false
-map_figure(ohi_scores=ohi_scores, goal="Index")
-
-```
+This website will serve as a hub to communicate the status of this project. Researchers and stakeholders can come here to observe the process of creating the Gulf of California OHI, learn more about the OHI Gulf and California framework as it develops, and explore underlying data used to calculate the Index.      
 
 <br>
 <br>
 
-## Goal Scores
+## A short introduction to the Ocean Health Index
+<img src="chapters/figs/ocean_health_index2.jpg" style="width: 100%;">
 
-The Index score is the average of 10 goals that describe how humans value and rely on marine systems. 
 
 :::: {.columns} 
 
-::: {.column width="25%"}
+::: {.column width="30%"}
+The Ocean Health Index is a framework for assessing and communicating ocean health, which we define as how well we are managing ocean resources to sustainably deliver benefits to people now and in the future.
 
-<br>
-<br>
 
-The Flower plot provides the goal scores for the Red Sea and Gulf of Aden region. The center value is the overall Index score, and the petals describe the score for each goal.
+Since it’s inception in 2012, we have conducted 12 global assessments and over 30 regional assessments (either independently, or in partnership us).
+
+The original global OHI assesses 10 goals, each of which is based on a marine service or function that humans directly care about, such as jobs and food. 
 
 :::
 
-::: {.column width="75%"}
+::: {.column width="70%"}
 
-![](chapters/figs/FlowerPlots/flower_Global_average.png)
+![](chapters/figs/goals.jpg)
+
 :::
 
 ::::
 
 ::: {.callout-note collapse=true}
 
-## More about goals (click to expand)
+## More about the global goals (click to expand)
 
 Clicking on the goal will link to the goal pages which provide more information about goals.
 ```{r}
@@ -117,19 +86,27 @@ goals_df$subgoal <- sapply(goals_df$subgoal, function(x)
 
 :::
 
-To learn more: Navigate the menu at the left for more information about each goal and to view the underlying data used to calculate the goal scores. 
+Although 10 goals are measured for the global OHI, many regional assessments modify the number and composition of the goals based on their specific needs. The goals that are ultimately included in the Gulf of California assessment will likely differ from the global assessment, because some goals may not be relevant to the region. Alternatively, new goals, not included in the global assessment, may be developed given a region's natural resources or priorities. 
 
-A description of how goal scores are calculated is [located here](https://ohi-rsga.github.io/OHI_RSGA/chapters/OHI.html).
-
-:::{.callout-tip}
-## Regional models will produce more relevant OHI scores!
-
-A regional assessment can be better for several reasons: 
-
-- Higher quality local data is often available!
+In addition to changes in the goal infrastructure, the model and data used to calculate the goals will  change because: 
+ 
+ - Higher quality local data is usually available!
 
 - Goal models, and reference points, can be adapted to better capture the values and concerns of the region.  
 
 - Goals can be weighted differently based on regional priorities.
+
+
+### Goal calculations
+Goal scores are mainly determined by how well the goal is performing relative to an established target, we refer to this as the goal status score.
+
+In addition to the status score, goal scores incorporate three additional metrics: pressures, resilience, and trend. The pressures acting on a goal will reduce its score, and can include climate change or human disturbance. However, the pressures acting on a goal can be reduced by metrics that provide system resilience, such as good governance and protected areas. We also incorporate the recent trajectory of a goal's status into the final score, such that goals with improving status will have a better score, and goals with decreasing status will worsen the score.
+
+
+:::{.callout-tip}
+## To learn more...
+
+Navigate the menu at the left for more information about each goal. Overtime, these descriptions will be updated with information specific to the Gulf of California assessment.  
+
 
 :::
