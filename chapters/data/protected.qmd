@@ -1,9 +1,37 @@
 ---
-title: "Protected regions"
+title: " "
 format: html
+toc: true
 ---
 
-# Some protected area data from Sophia!
+## Protected regions in the Gulf of California
+
+Protected areas are a key component of the OHI assessment. They are a measure of the extent to which the Gulf of California is protected from human activities. The data used in this analysis is from the World Database on Protected Areas (WDPA) and includes all protected areas in the Gulf of California Ecoregion boundary. The WDPA is a comprehensive global database of protected areas that is updated on a regular basis. The data includes information on the name, location, and management of protected areas, as well as the level of protection provided to the area.
+
+The protected areas in the Gulf of California include a variety of designations, including national parks, biosphere reserves, and marine protected areas. These areas are managed by a variety of organizations, including government agencies, non-governmental organizations, and local communities. The protected areas are an important tool for conserving the biodiversity of the Gulf of California and for promoting sustainable use of natural resources.
+
+The International Union for Conservation of Nature (IUCN) has established a classification system for protected areas based on their management objectives. The IUCN categories range from strict nature reserves to areas with sustainable use of natural resources. The categories are used to assess the level of protection provided to an area and to guide the management of the area.
+
+### IUCN Category Definitions
+
+The IUCN category definitions range from most natural to least natural conditions is Ia = Ib > II = III > IV = VI > V ([Dudley, 2008](https://portals.iucn.org/library/sites/library/files/documents/pag-021.pdf)).
+
+- **Category Ia:** Strict Nature Reserve - protected area managed mainly for science.
+- **Category Ib:** Wilderness Area - protected area managed mainly for wilderness protection.
+- **Category II:** National Park - protected area managed mainly for ecosystem protection and recreation.
+- **Category III:** Natural Monument - protected area managed mainly for conservation of specific natural features.
+- **Category IV:** Habitat/Species Management Area - protected area managed mainly for conservation through management intervention.
+- **Category V:** Protected Landscape/Seascape - protected area managed mainly for landscape/seascape conservation and recreation.
+- **Category VI:** Protected Area with Sustainable Use of Natural Resources - protected area managed mainly for sustainable use of natural resources.
+
+### No Take Zones
+
+Some protected areas in the Gulf of California have been designated as no-take zones, where all extractive activities are prohibited.
+
+
+### Interactive Map 
+
+The map below shows the designations of the protected areas in the Gulf of California. The searchable table provides additional information on the protected areas, including the name, designation, IUCN category, and status of the area. 
 
 ```{r setup, include=FALSE, warning=FALSE, message=FALSE}
 
@@ -93,12 +121,12 @@ goc_mapview_fancy
 library(DT)
 
 wdpa_table <- wdpa_poly_all %>%
-  select(name, desig, desig_eng, no_take, status, status_yr, sub_loc) %>%
-  st_drop_geometry(.)
+  select(name, desig, desig_eng, iucn_cat, no_take, status, status_yr, sub_loc) %>% # select only necessary attributes for the table
+  st_drop_geometry(.) # to make the table clean
 
 DT::datatable(wdpa_table, 
-          class = 'cell-border stripe',
-          colnames = c('Protected Area Name', 'Designation', 'Designation (EN)', 'No Take Zone', 'Status', 'Year Est.', 'Location'),
-          rownames = FALSE)
+          class = 'cell-border stripe', # for aesthetics
+          colnames = c('Protected Area Name', 'Designation', 'Designation (EN)', 'IUCN Category', 'No Take Zone', 'Status', 'Year Est.', 'Location'), # to rename the columns, removing snakecase
+          rownames = FALSE) # remove column numbering 1 - 74
 ```
 
