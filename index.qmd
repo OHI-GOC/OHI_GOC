@@ -12,7 +12,7 @@ source("_data/functions/start_script.R")
 
 ```
 
-We are excited to announce that we are working with a team of experts to develop an [Ocean Health Index](https://oceanhealthindex.org/) (OHI) assessment tailored to the unique concerns and priorities of the Gulf of California.
+We are excited to announce that we are working with a team of experts to develop an [Ocean Health Index](https://oceanhealthindex.org/) (OHI) assessment tailored to the unique concerns and priorities of the Gulf of California, Mexico.
 
 <br>
 
@@ -27,7 +27,7 @@ The Gulf of California OHI assessment will help achieve several important goals,
 
 - gather and nurture a community of engaged stakeholders from diverse backgrounds. 
 
-- establish an accessible library of key data and scientific findings.
+- create an accessible inventory of marine resources for the Gulf of California.
 
 :::
 
@@ -49,17 +49,16 @@ This website will serve as a hub to communicate the status of this project. Rese
 
 :::: {.columns} 
 
-::: {.column width="30%"}
-The Ocean Health Index is a framework for assessing and communicating ocean health, which we define as how well we are managing ocean resources to sustainably deliver benefits to people now and in the future.
+::: {.column width="35%"}
+The Ocean Health Index is a framework for assessing and communicating ocean health, or, how well we are managing ocean resources to sustainably deliver benefits to people now and in the future.
 
-
-Since it’s inception in 2012, we have conducted 12 global assessments and over 30 regional assessments (either independently, or in partnership us).
+Since it’s inception in 2012, we have conducted 12 global assessments and over [30 regional assessments](https://oceanhealthindex.org/ohi+/assessment/) have been conducted independently, or in partnership us.
 
 The original global OHI assesses 10 goals, each of which is based on a marine service or function that humans directly care about, such as jobs and food. 
 
 :::
 
-::: {.column width="70%"}
+::: {.column width="65%"}
 
 ![](chapters/figs/goals.jpg)
 
@@ -71,7 +70,7 @@ The original global OHI assesses 10 goals, each of which is based on a marine se
 
 ## More about the global goals (click to expand)
 
-Clicking on the goal will link to the goal pages which provide more information about goals.
+Clicking on the goal will link to the goal pages which provide more information about the **global** goals.
 ```{r}
 #| echo: false
 #| warning: false
@@ -86,7 +85,7 @@ goals_df$subgoal <- sapply(goals_df$subgoal, function(x)
 
 :::
 
-Although 10 goals are measured for the global OHI, many regional assessments modify the number and composition of the goals based on their specific needs. The goals that are ultimately included in the Gulf of California assessment will likely differ from the global assessment, because some goals may not be relevant to the region. Alternatively, new goals, not included in the global assessment, may be developed given a region's natural resources or priorities. 
+The ten goals included in global assessments have been identified as widely-shared across different geographies, but they are not universal, and assessments using the OHI framework should only include goals that are appropriate for the context. Most regional assessments modify the number and composition of the goals based on their specific needs. The goals that are ultimately included in the Gulf of California assessment will likely differ from the global assessment, because some goals may not be relevant to the region. Alternatively, new goals, not included in the global assessment, may be developed given a region's natural resources or priorities. 
 
 In addition to changes in the goal infrastructure, the model and data used to calculate the goals will  change because: 
  
@@ -100,7 +99,7 @@ In addition to changes in the goal infrastructure, the model and data used to ca
 ### Goal calculations
 Goal scores are mainly determined by how well the goal is performing relative to an established target, we refer to this as the goal status score.
 
-In addition to the status score, goal scores incorporate three additional metrics: pressures, resilience, and trend. The pressures acting on a goal will reduce its score, and can include climate change or human disturbance. However, the pressures acting on a goal can be reduced by metrics that provide system resilience, such as good governance and protected areas. We also incorporate the recent trajectory of a goal's status into the final score, such that goals with improving status will have a better score, and goals with decreasing status will worsen the score.
+In addition to the status score, goal scores incorporate three additional metrics: pressures, resilience, and trend. The pressures acting on a goal will reduce its score, and can include climate change or human disturbance. The pressures acting on a goal can be mitigated by elements that contribute to the resilience of the system, such as good governance and protected areas. We also incorporate the recent trajectory of a goal's status into the final score, such that goals with improving status will have a better score, and goals with decreasing status will worsen the score.
 
 
 :::{.callout-tip}
