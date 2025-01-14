@@ -1,6 +1,104 @@
 ---
-title: ""
+title: "Protected regions"
 format: html
 ---
 
 # Some protected area data from Sophia!
+
+```{r setup, include=FALSE, warning=FALSE, message=FALSE}
+
+# refer to ohi_goc_prep/LSP/v2025/lsp_wdpa_data_prep.qmd for full data prep
+
+library(raster)
+library(terra)
+library(readr)
+library(magrittr)
+library(mapview)
+library(sf)
+library(tidyverse)
+library(lwgeom)
+library(here)
+library(leaflet.extras2)
+library(fasterize)
+library(tictoc)
+library(kableExtra)
+
+# ---- sources! ----
+# source(here("workflow", "R", "common.R")) # file creates objects to process data
+## set the mazu and neptune data_edit share based on operating system
+# dir_M             <- c('Windows' = '//mazu.nceas.ucsb.edu/ohi',
+#                        'Darwin'  = '/Volumes/ohi',    ### connect (cmd-K) to smb://mazu/ohi
+#                        'Linux'   = '/home/shares/ohi')[[ Sys.info()[['sysname']] ]]
+
+# ---- set year and file path info ----
+current_year <- 2025 # Update this in the future!!
+version_year <- paste0("v",current_year)
+data_dir_version_year <- paste0("d", current_year)
+
+# ---- data directories ----
+
+# WDPA clipped polygons in ohi_goc_prep/LSP/v2025/lsp_wdpa_data_prep.qmd
+lsp_prep_dir <- "/Users/sophialec/Documents/OHI_GOC_projects/ohi_goc_prep/LSP/v2025/output"
+
+# general ohi_goc_prep directory
+ohi_goc_prep_dir <- "/Users/sophialec/Documents/OHI_GOC_projects/ohi_goc_prep"
+
+# spatial data for GoC
+goc_spatial <- here(ohi_goc_prep_dir, "spatial")
+
+# set colors
+# cols = rev(colorRampPalette(brewer.pal(9, 'Spectral'))(255)) # rainbow color scheme
+
+# this CRS might be better for visualization, explore.
+gulf_crs <- "+proj=aea +lat_1=23 +lat_2=30 +lat_0=25 +lon_0=-110 +datum=WGS84 +units=m +no_defs"
+
+# other CRS options (but they are Mercator):
+# UTM Zone 12N (Northern Gulf)
+utm_12N <- "+proj=utm +zone=12 +datum=WGS84 +units=m +no_defs"
+
+# UTM Zone 13N (Southern Gulf)
+utm_13N <- "+proj=utm +zone=13 +datum=WGS84 +units=m +no_defs"
+```
+
+```{r wdpa_poly_all, echo=FALSE, warning=FALSE, message=FALSE}
+# read in wdpa polygons in gulf_crs
+wdpa_poly_all <- st_read(dsn = lsp_prep_dir, layer = "WDPA_Jan2025_shp_clipped_all")
+
+# read in GoC border
+goc_border <- st_read(dsn = goc_spatial, layer = "GoC_polygon_ecoregion_eqarea")
+goc_border_albers <- st_transform(goc_border, st_crs(wdpa_poly_all)) 
+goc_border_albers$border_name <- "Ecoregion Boundary"
+
+# make mapview interactive map
+library(leafpop)
+goc_mapview_fancy <- mapview(wdpa_poly_all,
+                             zcol = "desig_eng",  # color by IUCN category
+                             layer.name = "Protected Areas",
+                             map.types = c("OpenStreetMap", "Esri.WorldShadedRelief", "Esri.WorldImagery"),
+                             alpha.regions = 0.8,
+                             label = "name",
+                             popup = popupTable(wdpa_poly_all, zcol = c("name", "desig_eng"))) +
+  mapview(goc_border_albers, 
+          fill = NA, 
+          zcol = "border_name",
+          col.regions = "black", 
+          alpha.regions = 0.5,
+          layer.name = "Gulf of California Ecoregion",
+          homebutton = TRUE)
+goc_mapview_fancy
+```
+
+
+```{r wdpa_poly_all_table_DT, echo=FALSE, warning=FALSE, message=FALSE}
+library(DT)
+
+wdpa_table <- wdpa_poly_all %>%
+  select(name, desig, desig_eng, no_take, status, status_yr, sub_loc) %>%
+  st_drop_geometry(.)
+
+DT::datatable(wdpa_table, 
+          class = 'cell-border stripe',
+          colnames = c('Protected Area Name', 'Designation', 'Designation (EN)', 'No Take Zone', 'Status', 'Year Est.', 'Location'),
+          rownames = FALSE)
+```
+
