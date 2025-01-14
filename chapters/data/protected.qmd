@@ -62,10 +62,10 @@ utm_13N <- "+proj=utm +zone=13 +datum=WGS84 +units=m +no_defs"
 
 ```{r wdpa_poly_all, echo=FALSE, warning=FALSE, message=FALSE}
 # read in wdpa polygons in gulf_crs
-wdpa_poly_all <- st_read(dsn = lsp_prep_dir, layer = "WDPA_Jan2025_shp_clipped_all")
+wdpa_poly_all <- st_read(dsn = lsp_prep_dir, layer = "WDPA_Jan2025_shp_clipped_all", quiet = TRUE)
 
 # read in GoC border
-goc_border <- st_read(dsn = goc_spatial, layer = "GoC_polygon_ecoregion_eqarea")
+goc_border <- st_read(dsn = goc_spatial, layer = "GoC_polygon_ecoregion_eqarea", quiet = TRUE)
 goc_border_albers <- st_transform(goc_border, st_crs(wdpa_poly_all)) 
 goc_border_albers$border_name <- "Ecoregion Boundary"
 
@@ -82,7 +82,7 @@ goc_mapview_fancy <- mapview(wdpa_poly_all,
           fill = NA, 
           zcol = "border_name",
           col.regions = "black", 
-          alpha.regions = 0.5,
+          alpha.regions = 0.8,
           layer.name = "Gulf of California Ecoregion",
           homebutton = TRUE)
 goc_mapview_fancy
