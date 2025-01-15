@@ -39,6 +39,9 @@ data_dir_version_year <- paste0("d", current_year)
 # mazu WDPA polygon directory
 wdpa_dir <- here::here(dir_M, "OHI_GOC","_raw_data","wdpa_mpa","d2025", "WDPA_Jan2025_Public_shp", "shps")
 
+# ecoregion border dir
+goc_border_dir <- here(wdpa_dir, "goc_border_gulf_crs")
+
 # spatial data for GoC
 # goc_spatial <- here(ohi_goc_prep_dir, "spatial")
 
@@ -63,7 +66,7 @@ The International Union for Conservation of Nature (IUCN) has established a clas
 
 ```{r protected_area_stats, echo=FALSE, warning=FALSE, message=FALSE}
 # read in percent_protected_goc written in ohi_goc_prep/LSP/v2025/lsp_wdpa_data_prep.qmd
-percent_protected_goc <- read_csv(here(ohi_goc_prep_dir, "LSP", version_year, "output", "percent_protected_goc.csv"))
+percent_protected_goc <- read_csv(here("chapters","data", "percent_protected_goc.csv"))
 
 # create a pretty table :)
 library(gt)
@@ -109,7 +112,7 @@ wdpa_poly_area <- st_read(dsn = wdpa_poly_area_dir, layer = basename(wdpa_poly_a
   mutate(area_km2 = round(area_km2, digits = 2))
 
 # read in GoC border
-goc_border <- st_read(dsn = goc_spatial, layer = "GoC_polygon_ecoregion_eqarea", quiet = TRUE)
+goc_border <- st_read(dsn = goc_border_dir, layer = "goc_border_gulf_crs", quiet = TRUE)
 goc_border_albers <- st_transform(goc_border, st_crs(wdpa_poly_area)) 
 goc_border_albers$border_name <- "Ecoregion Boundary"
 

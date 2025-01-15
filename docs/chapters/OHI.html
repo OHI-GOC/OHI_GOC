@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -48,7 +48,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -57,12 +63,12 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
 }</script>
-
 <link href="../site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
 <script src="../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
 <link href="../site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
@@ -83,12 +89,12 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/OHI.html">Starting an OHI assessment</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/OHI.html">Starting an OHI assessment</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -98,7 +104,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
       <img src="../chapters/figs/gulf-of-california-map.jpg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
@@ -235,7 +241,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -244,22 +250,24 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#starting-an-ohi-assessment" id="toc-starting-an-ohi-assessment" class="nav-link active" data-scroll-target="#starting-an-ohi-assessment">Starting an OHI assessment!</a>
   <ul class="collapse">
-  <li><a href="#phase-1-planning-the-launch" id="toc-phase-1-planning-the-launch" class="nav-link" data-scroll-target="#phase-1-planning-the-launch">Phase 1: Planning the launch</a></li>
-  <li><a href="#phase-2-developing-the-framework" id="toc-phase-2-developing-the-framework" class="nav-link" data-scroll-target="#phase-2-developing-the-framework">Phase 2: Developing the framework</a></li>
-  <li><a href="#phase-3-score-calculation" id="toc-phase-3-score-calculation" class="nav-link" data-scroll-target="#phase-3-score-calculation">Phase 3: Score calculation</a></li>
+  <li><a href="#phase-1-getting-started" id="toc-phase-1-getting-started" class="nav-link" data-scroll-target="#phase-1-getting-started">Phase 1: Getting started</a></li>
+  <li><a href="#phase-2-planning-and-developing-the-framework" id="toc-phase-2-planning-and-developing-the-framework" class="nav-link" data-scroll-target="#phase-2-planning-and-developing-the-framework">Phase 2: Planning and developing the framework</a></li>
+  <li><a href="#phase-3-conduct" id="toc-phase-3-conduct" class="nav-link" data-scroll-target="#phase-3-conduct">Phase 3: Conduct</a></li>
+  <li><a href="#phase-4-inform" id="toc-phase-4-inform" class="nav-link" data-scroll-target="#phase-4-inform">Phase 4: Inform</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/ohi-goc/OHI_GOC/edit/main/chapters/OHI.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/ohi-goc/OHI_GOC/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/ohi-goc/OHI_GOC/edit/main/chapters/OHI.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ohi-goc/OHI_GOC/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
 
+
 <p><img src="figs/shoreline.jpg" style="width: 100%;"></p>
 <section id="starting-an-ohi-assessment" class="level2">
 <h2 class="anchored" data-anchor-id="starting-an-ohi-assessment">Starting an OHI assessment!</h2>
-<p>Welcome! This page will help us begin planning and preparing for the OHI Gulf of California assessment!</p>
+<p>Welcome! This page will help start the planning and preparation for the OHI Gulf of California assessment!</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -274,55 +282,62 @@ A tentative timeline (click to expand)
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div class="cell-output-display">
-
-<div class="datatables html-widget html-fill-item" id="htmlwidget-855ebb629175ceaa1483" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-855ebb629175ceaa1483">{"x":{"filter":"none","vertical":false,"data":[["Jan-April 2025","May/June 2025","May- August 2025","Sept-Dec 2025","Jan-Feb 2026","Mar-June 2026","June- Sept 2026","Sept-Oct 2026","Oct 2026-May 2027","June 2027","Nov 2027"],["<ul>Launch Project/Build Team\n<li>Build project management system\n<li>Communicate OHI methods and philosophy\n<li>Prepare for working group meetings\n<li>Begin finding and preparing data<\/ul>","<ul>First working group meeting\n<li>Develop goal structure\n<li>Identify pressures/resilience\n<li>Identify goalie teams\n<li>Finalize spatial boundaries<\/ul>","<ul><li>Finalize goal structure\n<li>Gather/prepare data\n<li>Prep/support goalie meetings<\/ul>","<ul><li>Provide support\n<li>Gather/prep data<\/ul>","<ul>Second working group meeting\n<li>Review/refine goal models<\/ul>","<ul><li>Continue data gathering/processing\n<li>Prep draft goal results for goalie meetings<\/ul>","<ul><li>Produce draft results<\/ul>","<ul>Third working group meeting\n<li>Review/revise draft results\n<li>Prepare initial publication/s\n<li>Prep materials for stakeholder meetings<\/ul>","<ul><li>Finalize results\n<li>Submit initial publication/s<\/ul>","<ul>Final working group meeting\n<li>Review feedback from stakeholder meetings\n<li>Revise Index as needed\n<li>Prep materials for OHI launch\n<li>Prep publications<\/ul>","<ul>Roll out OHI scores, data, code\n<li>finalize and submit publications\n<li>archive data and code\n<li>launch website (scores and interactive materials)\n<li>Engage and support communication of results<\/ul>"],["<ul><li>Identify parrtnerships and working group members<\/ul>","<ul>NA<\/ul>","<ul>NA<\/ul>","<ul><li>First round of goalie meetings\n<li>Hold regional workshops<\/ul>","<ul>NA<\/ul>","<ul><li>Second round of goalie meetings\n<li>Hold regional workshops<\/ul>","<ul>NA<\/ul>","<ul>NA<\/ul>","<ul>Stakeholder engagement meetings\n<li>Present full results at regional meetings\n<li>Gather feedback<\/ul>","<ul>NA<\/ul>","<ul>NA<\/ul>"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Estimated date<\/th>\n      <th>NCEAS<\/th>\n      <th>Mexico Partners<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"name":"Estimated date","targets":0},{"name":"NCEAS","targets":1},{"name":"Mexico Partners","targets":2}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-e8b2da1b5d19686f1274" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-e8b2da1b5d19686f1274">{"x":{"filter":"none","vertical":false,"data":[["Jan-April 2025","May/June 2025","May- August 2025","Sept-Dec 2025","Jan-Feb 2026","Mar-June 2026","June- Sept 2026","Sept-Oct 2026","Oct 2026-May 2027","June 2027","Nov 2027"],["<ul>Launch Project/Build Team\n<li>Build project management system\n<li>Communicate OHI methods and philosophy\n<li>Prepare for working group meetings\n<li>Begin finding and preparing data<\/ul>","<ul>First working group meeting\n<li>Develop goal structure\n<li>Identify pressures/resilience\n<li>Identify goalie teams\n<li>Finalize spatial boundaries<\/ul>","<ul><li>Finalize goal structure\n<li>Gather/prepare data\n<li>Prep/support goalie meetings<\/ul>","<ul><li>Provide support\n<li>Gather/prep data<\/ul>","<ul>Second working group meeting\n<li>Review/refine goal models<\/ul>","<ul><li>Continue data gathering/processing\n<li>Prep draft goal results for goalie meetings<\/ul>","<ul><li>Produce draft results<\/ul>","<ul>Third working group meeting\n<li>Review/revise draft results\n<li>Prepare initial publication/s\n<li>Prep materials for stakeholder meetings<\/ul>","<ul><li>Finalize results\n<li>Submit initial publication/s<\/ul>","<ul>Final working group meeting\n<li>Review feedback from stakeholder meetings\n<li>Revise Index as needed\n<li>Prep materials for OHI launch\n<li>Prep publications<\/ul>","<ul>Roll out OHI scores, data, code\n<li>finalize and submit publications\n<li>archive data and code\n<li>launch website (scores and interactive materials)\n<li>Engage and support communication of results<\/ul>"],["<ul><li>Identify parrtnerships and working group members<\/ul>","<ul>NA<\/ul>","<ul>NA<\/ul>","<ul><li>First round of goalie meetings\n<li>Hold regional workshops<\/ul>","<ul>NA<\/ul>","<ul><li>Second round of goalie meetings\n<li>Hold regional workshops<\/ul>","<ul>NA<\/ul>","<ul>NA<\/ul>","<ul>Stakeholder engagement meetings\n<li>Present full results at regional meetings\n<li>Gather feedback<\/ul>","<ul>NA<\/ul>","<ul>NA<\/ul>"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Estimated date<\/th>\n      <th>NCEAS<\/th>\n      <th>Mexico Partners<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"name":"Estimated date","targets":0},{"name":"NCEAS","targets":1},{"name":"Mexico Partners","targets":2}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
 </div>
 </div>
-<section id="phase-1-planning-the-launch" class="level3">
-<h3 class="anchored" data-anchor-id="phase-1-planning-the-launch">Phase 1: Planning the launch</h3>
+<section id="phase-1-getting-started" class="level3">
+<h3 class="anchored" data-anchor-id="phase-1-getting-started">Phase 1: Getting started</h3>
 <p>This phase of the project involves:</p>
 <ul>
+<li>assembling a working group and technical team</li>
 <li>building awareness and support through informational webinars and meetings</li>
-<li>developing a consortium of people within Mexico to co-lead and network connections</li>
+<li>developing a consortium of people within Mexico to co-lead and develop network connections</li>
 <li>acquisition and disbursement of funding</li>
 <li>developing a strategic plan and timeline for the project</li>
 </ul>
-<p>One of the most important steps of Phase 1 is <strong>Establishing an expert working group!</strong></p>
+<p>An important task during Phase 1 is <strong>Assembling an expert working group!</strong></p>
 <p>Along with regional experts, this group will include OHI experts and analysts from the National Center for Ecological Analysis and Synthesis, University of California, Santa Barbara.</p>
-<p><a href="https://docs.google.com/spreadsheets/d/1381QCMyFirxWT6vkxxmUi_o_fW5VZtGL_KsVIagMl7o/edit?gid=0#gid=0">Working group participants</a>. For access to this Google spreadsheet, contact Melanie Frazier at frazier@nceas.ucsb.edu</p>
+<p><a href="https://docs.google.com/spreadsheets/d/1381QCMyFirxWT6vkxxmUi_o_fW5VZtGL_KsVIagMl7o/edit?gid=0#gid=0">Working group participants</a>. For access to this Google spreadsheet, contact Melanie Frazier at frazier@nceas.ucsb.edu,</p>
 </section>
-<section id="phase-2-developing-the-framework" class="level3">
-<h3 class="anchored" data-anchor-id="phase-2-developing-the-framework">Phase 2: Developing the framework</h3>
-<p>The expert working group will have several responsibilities, including (more information provided below):</p>
+<section id="phase-2-planning-and-developing-the-framework" class="level3">
+<h3 class="anchored" data-anchor-id="phase-2-planning-and-developing-the-framework">Phase 2: Planning and developing the framework</h3>
+<p>The expert working group will have several responsibilities, including:</p>
 <ul>
-<li>Learning more about the OHI framework and work flow, and exploring the philosophy underlying the <a href="https://oceanhealthindex.org/goals/">OHI goals</a>.</li>
-<li>Establishing timeline</li>
+<li>Learning more about the OHI framework and work flow, and exploring the philosophy underlying the original global goals.</li>
+<li>Establishing a timeline</li>
 <li>Defining spatial boundaries</li>
 <li>Determining which goals/subgoals will be included in the assessment based on local characteristics and regional priorities</li>
 <li>Identifying pressure and resilience variables that are relevant to the region</li>
 <li>Identifying Goal Keepers who will develop models for each goal, identify data, and help establish reference points for each goal</li>
 <li>Developing relationships with key stakeholders</li>
-<li>Providing support during Phase 3 (score calculations), including: identifying possible data, reviewing goal methods and scores, collaborating on reference points, preparing and supporting meetings, etc.</li>
+<li>Providing support during Phase 3 (Conducting the assessment), including: identifying possible data, reviewing goal methods and scores, collaborating on reference points, preparing and supporting meetings, etc.</li>
+<li>Providing support during Phase 4 (Informing) including: editing and developing materials (e.g., website, reports, papers, meetings) to inform policy and future assessments by by sharing scores and what was learned during the process.</li>
 </ul>
 <p><strong>Learning more</strong> This website will be an important information hub for the OHI Gulf of California!</p>
-<p>There are many general resources for learning about the Ocean Health Index, but the best place to start is the <a href="https://oceanhealthindex.org/">OHI website</a>. In particular, it will be useful to become familiar with each of the 10 <a href="https://oceanhealthindex.org/goals/">goals</a>. The website also includes useful information about embarking on a <a href="https://oceanhealthindex.org/ohi+/conduct/">regional OHI assessment</a>.</p>
-<p><strong>Nail down timeline</strong> Identify key deadlines and meeting times. A tentative timeline is provided above, and the corresponding Google spreadsheet can be edited <a href="https://docs.google.com/spreadsheets/d/1sVkjg_hJ6f-SXedLJ-gqXmPpEVWXcPvnY83pIH9HRCo/edit?gid=0#gid=0">here</a> (contact Melanie at frazier@nceas.ucsb.edu for access).</p>
-<p><strong>Defining spatial boundaries</strong> Several decisions will need to be made concerning the boundaries of the assessment. This <a href="https://ohi-goc.github.io/ohi_goc_prep/spatial/ohi_goc_spatial_prep.html">document</a> explains some of the issues.</p>
-<p><strong>Framework: Goals</strong> The goal framework will need to be established. This will involve determining whether goals should cut or added. Goal models should also be evaluated to determine how they can be improved to meet the needs of the region. It will also be necessary to consider reference points!</p>
-<p>The best way to approach this is to explore the philosophy underlying each goal. The <a href="https://oceanhealthindex.org/goals/">OHI global website</a> provides a brief description of each goal and each goal page includes a link to <strong>PRACTICAL GUIDANCE</strong> which provides specific advice and a description of how other regional indices have adapted the goal to fit their needs.</p>
-<p>It is also worth navigating the menu bar to your left to learn about the goals. These will be updated over time to be more specific to the Gulf of California.</p>
-<p><strong>Framework: Pressures and Resilience</strong> The pressures and resilience metrics will also need to be established. We will provide more guidance on that later, but in the meantime, you can learn more about <a href="https://oceanhealthindex.org/methodology/pressure/">pressure</a> and <a href="https://oceanhealthindex.org/methodology/resilience/">resilience</a> metrics.</p>
-<p><strong>Identify Goal Keepers</strong> After the goals are established, it will be necessary to identify 3-5 subject matter experts to work on each goal. These “Goalies” will help develop goal models, identify potential data, and establish reference points.</p>
-<p>They will work closely with the Expert Working Group to develop and test the goals.</p>
+<p>There are many general resources for learning about the Ocean Health Index, but the best place to start is the <a href="https://oceanhealthindex.org/">OHI website</a>. The website also includes useful information about embarking on a <a href="https://oceanhealthindex.org/ohi+/conduct/">regional OHI assessment</a>.</p>
+<p><strong>Nail down the timeline</strong> Identify key deadlines and meeting times. A tentative timeline is provided above, and the corresponding Google spreadsheet may be edited <a href="https://docs.google.com/spreadsheets/d/1sVkjg_hJ6f-SXedLJ-gqXmPpEVWXcPvnY83pIH9HRCo/edit?gid=0#gid=0">here</a> (contact Melanie at frazier@nceas.ucsb.edu for access).</p>
+<p><strong>Defining spatial boundaries</strong> The boundaries of the assessment area must be determined. This <a href="https://ohi-goc.github.io/ohi_goc_prep/spatial/ohi_goc_spatial_prep.html">document</a> explains some of the issues.</p>
+<p>The Gulf of California could be considered one region for this assessment, or it could be divided into smaller subregions to allow for comparisons among political or ecological regions. The boundaries are important to develop early on because data will be collected at this spatial scale.</p>
+<p><strong>Framework: Goals</strong> The goal framework will need to be established. The 10 goals originally selected for the global assessment can help guide the goals chosen for the Gulf of California assessment.</p>
+<p><img src="figs/conceptual_framework.jpg" class="img-fluid"></p>
+<p>When tailoring the OHI framework it is important to understand the rationale behind previously-developed approaches and to reflect whether any goals that should be added, removed or redefined. The best way to begin is by exploring the philosophy underlying each of the original goals, and then working from there. The menu to the left provides a brief description of each of the goals used in the global model as well as a description of how other regional indices have adapted the goal to fit their needs.</p>
+<p>These goal pages will be updated over time to reflect the specific needs of the Gulf of California.</p>
+<p><strong>Framework: Pressures and Resilience</strong> Along with the goals, it is equally important to define and categorize how local pressures and resilience properties affect the goals. We will provide more guidance on that later, but in the meantime, you can learn more about <a href="https://oceanhealthindex.org/methodology/pressure/">pressures</a> and <a href="https://oceanhealthindex.org/methodology/resilience/">resilience</a>.</p>
+<p><strong>Identify Goal Keepers</strong> After the goals are established, it will be necessary to identify 3-5 people who will serve as subject matter experts for each goal. These “Goalies” will help develop goal models, identify potential data, and establish reference points.</p>
+<p>They will work closely with the Expert Working Group and OHI analysts to develop and test the goals.</p>
 <p>Google spreadsheet for <a href="https://docs.google.com/spreadsheets/d/1CkYMNljpDPmBoQuPOP9fkW2gKXPsiJJyw9Li09Xl8xM/edit?gid=0#gid=0">Goalies</a> (contact Melanie, frazier@nceas.ucsb.edu for access).</p>
 </section>
-<section id="phase-3-score-calculation" class="level3">
-<h3 class="anchored" data-anchor-id="phase-3-score-calculation">Phase 3: Score calculation</h3>
-<p>More to come!!!</p>
+<section id="phase-3-conduct" class="level3">
+<h3 class="anchored" data-anchor-id="phase-3-conduct">Phase 3: Conduct</h3>
+<p>Tailor the OHI framework to meet the needs of the Gulf of California and calculate scores. Goal specific experts, analysts, and advisors will work closely to establish the OHI framework, identify data, and calculate and review scores. This is an iterative process!</p>
+</section>
+<section id="phase-4-inform" class="level3">
+<h3 class="anchored" data-anchor-id="phase-4-inform">Phase 4: Inform</h3>
+<p>Develop approaches to using the OHI assessment to inform policy. OHI+ assessments can be used to inform government policies to improve ocean health. This is most efective if there is interest and engagement from policy makers and ongoing communication during the OHI process to best inform management actions that could have measurable impacts. Repeated assessments as new data become available enable tracking ocean health through time and evaluating management priorities.</p>
 
 
 </section>
@@ -370,6 +385,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       } else {
         el.classList.add('notransition');
       }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
     }
   }
   const toggleColorMode = (alternate) => {
@@ -438,13 +480,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -523,10 +567,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/ohi-goc\.github\.io\/OHI_GOC\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -536,8 +597,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -549,7 +619,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -593,6 +786,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -618,6 +812,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -679,12 +899,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../index.html" class="pagination-link">
+      <a href="../index.html" class="pagination-link" aria-label="Welcome">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Welcome</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapters/region.html" class="pagination-link">
+      <a href="../chapters/region.html" class="pagination-link" aria-label="Region">
         <span class="nav-page-text">Region</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
@@ -692,13 +912,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">An Ocean Health Index collaboration</div>   
+    <div class="nav-footer-left">
+<p>An Ocean Health Index collaboration</p>
+</div>   
     <div class="nav-footer-center">
       &nbsp;
-    </div>
-    <div class="nav-footer-right">Source repository: https://github.com/OHI-GOC</div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ohi-goc/OHI_GOC/edit/main/chapters/OHI.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ohi-goc/OHI_GOC/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>Source repository: https://github.com/OHI-GOC</p>
+</div>
   </div>
 </footer>
+
 
 
 
