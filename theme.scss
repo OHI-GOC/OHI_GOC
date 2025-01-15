@@ -1,8 +1,47 @@
 /*-- scss:defaults --*/
+	
+@import 'assets/scss/_fonts';
 
-@import 'https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap';
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400; /* Regular weight */
+}
 
-$font-family: "Atkinson Hyperlegible", sans-serif;
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700; /* Bold weight */
+}
 
-/*-- scss:rules --*/
+.custom-box {
+  border: 2px solid #007bff;
+  background-color: #e9f7fe;
+  padding: 15px;
+  border-radius: 5px;
+  color: #004085;
+}
+
+.custom-button {
+  display: inline-block;
+  padding: 10px 20px;
+  color: white;
+  background-color: #007bff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  margin-right: 30px; /* Add space to the right of each button */
+}
+
+.custom-button:hover {
+  background-color: #0056b3;
+}
+
+.custom-button i {
+  margin-right: 8px;
+}
+.custom-button:last-child {
+  margin-right: 0; /* Remove margin from the last button */
+}
+
 

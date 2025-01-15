@@ -12,7 +12,8 @@ source("_data/functions/start_script.R")
 
 ```
 
-We are excited to announce that we are working with a team of experts to develop an [Ocean Health Index](https://oceanhealthindex.org/) (OHI) assessment tailored to the unique concerns and priorities of the Gulf of California, Mexico.
+
+We are excited to announce the start of an [Ocean Health Index](https://oceanhealthindex.org/) (OHI) assessment tailored to the unique concerns and priorities of the Gulf of California, Mexico.
 
 <br>
 
@@ -52,7 +53,7 @@ This website will serve as a hub to communicate the status of this project. Rese
 ::: {.column width="35%"}
 The Ocean Health Index is a framework for assessing and communicating ocean health, or, how well we are managing ocean resources to sustainably deliver benefits to people now and in the future.
 
-Since it’s inception in 2012, we have conducted 12 global assessments and over [30 regional assessments](https://oceanhealthindex.org/ohi+/assessment/) have been conducted independently, or in partnership us.
+Since it’s inception in 2012, we have conducted 12 global assessments, and over [30 regional assessments](https://oceanhealthindex.org/ohi+/assessment/) have been conducted independently, or in partnership us.
 
 The original global OHI assesses 10 goals, each of which is based on a marine service or function that humans directly care about, such as jobs and food. 
 
@@ -85,7 +86,7 @@ goals_df$subgoal <- sapply(goals_df$subgoal, function(x)
 
 :::
 
-The ten goals included in global assessments have been identified as widely-shared across different geographies, but they are not universal, and assessments using the OHI framework should only include goals that are appropriate for the context. Most regional assessments modify the number and composition of the goals based on their specific needs. The goals that are ultimately included in the Gulf of California assessment will likely differ from the global assessment, because some goals may not be relevant to the region. Alternatively, new goals, not included in the global assessment, may be developed given a region's natural resources or priorities. 
+The ten goals included in global assessments have been identified as widely-shared across different geographies, but they are not universal, and assessments using the OHI framework should only include goals that are relevant to their region. Most regional assessments modify the number and composition of the goals based on their specific needs. The goals that are ultimately included in the Gulf of California assessment will likely differ from the global assessment, because some goals may not be relevant to the region. Alternatively, new goals, not included in the global assessment, may be developed given a region's natural resources or priorities. 
 
 In addition to changes in the goal infrastructure, the model and data used to calculate the goals will  change because: 
  
@@ -105,7 +106,10 @@ In addition to the status score, goal scores incorporate three additional metric
 :::{.callout-tip}
 ## To learn more...
 
-Navigate the menu at the left for more information about each goal. Overtime, these descriptions will be updated with information specific to the Gulf of California assessment.  
+- Navigate the menu at the left for more information about each goal. Overtime, these descriptions will be updated with information specific to the Gulf of California assessment.
 
+- The [oceanhealthindex.org](https://oceanhealthindex.org/) website is a good place to learn more about the OHI framework.
+
+- This [resource](https://oceanhealthindex.org/ohi+/conduct/learn/) provides a nice readable summary of the OHI.
 
 :::

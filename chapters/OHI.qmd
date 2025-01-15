@@ -59,28 +59,39 @@ An important task during Phase 1 is **Assembling an expert working group!**
 
 Along with regional experts, this group will include OHI experts and analysts from the National Center for Ecological Analysis and Synthesis, University of California, Santa Barbara.
 
-[Working group participants](https://docs.google.com/spreadsheets/d/1381QCMyFirxWT6vkxxmUi_o_fW5VZtGL_KsVIagMl7o/edit?gid=0#gid=0).
+We have created a Google worksheet to help identify [expert working group participants](https://docs.google.com/spreadsheets/d/1381QCMyFirxWT6vkxxmUi_o_fW5VZtGL_KsVIagMl7o/edit?gid=0#gid=0).
  For access to this Google spreadsheet, contact Melanie Frazier at frazier@nceas.ucsb.edu,
 
 
-### Phase 2: Planning and developing the framework
+### Phase 2: Planning
 
 The expert working group will have several responsibilities, including:
 
 - Learning more about the OHI framework and work flow, and exploring the philosophy underlying the original global goals.
 - Establishing a timeline
-- Defining spatial boundaries
-- Determining which goals/subgoals will be included in the assessment based on local characteristics and regional priorities
-- Identifying pressure and resilience variables that are relevant to the region
+- Developing the OHI framework for the Gulf of California, including:
+    - Defining spatial boundaries
+    - Determining which goals/subgoals will be included in the assessment based on local characteristics and regional priorities
+    - Identifying pressure and resilience variables that are relevant to the region
+    - Beginning to consider relevant data sources and reference points
 - Identifying Goal Keepers who will develop models for each goal, identify data, and help establish reference points for each goal
 - Developing relationships with key stakeholders
 - Providing support during Phase 3 (Conducting the assessment), including: identifying possible data, reviewing goal methods and scores, collaborating on reference points, preparing and supporting meetings, etc. 
 - Providing support during Phase 4 (Informing) including: editing and developing materials (e.g., website, reports, papers, meetings) to inform policy and future assessments by by sharing scores and what was learned during the process.  
 
-**Learning more**
-This website will be an important information hub for the OHI Gulf of California! 
 
-There are many general resources for learning about the Ocean Health Index, but the best place to start is the [OHI website](https://oceanhealthindex.org/). The website also includes useful information about embarking on a [regional OHI assessment](https://oceanhealthindex.org/ohi+/conduct/).
+#### More information about planning
+
+:::{.callout-tip}
+## Learning more...
+
+Along with this site and the [Ocean Health Index website](https://oceanhealthindex.org/), explore these resource to find:
+
+- A short [introduction](https://oceanhealthindex.org/ohi+/conduct/learn/) to the OHI framework
+- Guidance for [planning](https://oceanhealthindex.org/ohi+/conduct/plan/) an OHI assessment and a description of responsibilities of the expert working group
+
+:::
+
 
 
 **Nail down the timeline**
@@ -91,16 +102,16 @@ The boundaries of the assessment area must be determined. This [document](https:
 
 The Gulf of California could be considered one region for this assessment, or it could be divided into smaller subregions to allow for comparisons among political or ecological regions. The boundaries are important to develop early on because data will be collected at this spatial scale.
 
-**Framework: Goals**
+**Establish Goals**
 The goal framework will need to be established. The 10 goals originally selected for the global assessment can help guide the goals chosen for the Gulf of California assessment. 
 
 ![](figs/conceptual_framework.jpg)
 
-When tailoring the OHI framework it is important to understand the rationale behind previously-developed approaches and to reflect whether any goals that should be added, removed or redefined. The best way to begin is by exploring the philosophy underlying each of the original goals, and then working from there. The menu to the left provides a brief description of each of the goals used in the global model as  well as  a description of how other regional indices have adapted the goal to fit their needs. 
+When tailoring the OHI framework it is important to understand the rationale behind previously-developed approaches and to reflect whether any goals should be added, removed, or redefined. The best way to begin is by exploring the philosophy underlying each of the original goals, and then working from there. The menu to the left provides a brief description of each of the goals used in the global model as  well as  a description of how other regional indices have adapted the goal to fit their needs. 
 
 These goal pages will be updated over time to reflect the specific needs of the Gulf of California.
 
-**Framework: Pressures and Resilience**
+**Identify Pressures and Resilience**
 Along with the goals, it is equally important to define and categorize how local pressures and resilience properties affect the goals. We will provide more guidance on that later, but in the meantime, you can learn more about [pressures](https://oceanhealthindex.org/methodology/pressure/) and [resilience](https://oceanhealthindex.org/methodology/resilience/). 
 
 **Identify Goal Keepers**
@@ -111,7 +122,7 @@ They will work closely with the Expert Working Group and OHI analysts to develop
 Google spreadsheet for [Goalies](https://docs.google.com/spreadsheets/d/1CkYMNljpDPmBoQuPOP9fkW2gKXPsiJJyw9Li09Xl8xM/edit?gid=0#gid=0) (contact Melanie, frazier@nceas.ucsb.edu for access).
 
 ### Phase 3: Conduct
-Tailor the OHI framework to meet the needs of the Gulf of California and calculate scores. Goal specific experts, analysts, and advisors will work closely to establish the OHI framework, identify data, and calculate and review scores. This is an iterative process!   
+During this stage, the expert working group, goal specific experts, and analysts will work closely to further refine the OHI framework, identify data, and calculate and review scores. This is an iterative process and this [resource](https://ohi-science.org/toolbox-training/) includes detailed methods for conducting an OHI assessment.   
 
 ### Phase 4: Inform
-Develop approaches to using the OHI assessment to inform policy. OHI+ assessments can be used to inform government policies to improve ocean health. This is most efective if there is interest and engagement from policy makers and ongoing communication during the OHI process to best inform management actions that could have measurable impacts. Repeated assessments as new data become available enable tracking ocean health through time and evaluating management priorities.
+This phase involves developing and implementing a strategy for using the OHI assessment to improve the marine health of the Gulf of California.  This is most effective if there is interest and engagement from policy makers and ongoing communication during the OHI process to best inform management actions that could have measurable impacts. Repeated assessments as new data become available enable tracking ocean health through time and evaluating management priorities. This [resource](https://oceanhealthindex.org/ohi+/conduct/inform/) describes this phase of an OHI assessment.
