@@ -74,7 +74,7 @@ percent_protected_goc %>%
          "Total protected area (km^2)" = sum_protected_area,
          "Ecoregion area (km^2)" = border_area_km2) %>%
   gt() %>% 
-  tab_header(title = md("As of January 2025, the Gulf of California has a total of 74 protected areas, covering a total area of 39,136.66 square kilometers. This comes out to 14.94% of the entire ecoregion.")) %>% 
+  tab_header(title = md("As of January 2025, the Gulf of California has a total of 74 protected areas, covering a total area of 39,136.66 square kilometers. This is 14.94% of the entire ecoregion.")) %>% 
   cols_align(
     align = "center",
     columns = everything()
@@ -159,7 +159,11 @@ Directions to download data:
 
 ------------------------------------------------------------------------
 **Reference**: UNEP-WCMC and IUCN (2025), Protected Planet: The World Database on Protected Areas (WDPA) \[Online\], January 2025, Cambridge, UK: UNEP-WCMC and IUCN. Available at: www.protectedplanet.net.
+
 **Downloaded**: January 10, 2025
+
 **Description**: Shapefile of World Database on Protected Areas
+
 **Time range**: 1800 - 2024; some protected areas do not have an associated "status year" and are reported as year 0.
+
 **Format**: Shapefile
