@@ -25,9 +25,9 @@ library(kableExtra)
 # ---- sources! ----
 # source(here("workflow", "R", "common.R")) # file creates objects to process data
 ## set the mazu and neptune data_edit share based on operating system
-# dir_M             <- c('Windows' = '//mazu.nceas.ucsb.edu/ohi',
-#                        'Darwin'  = '/Volumes/ohi',    ### connect (cmd-K) to smb://mazu/ohi
-#                        'Linux'   = '/home/shares/ohi')[[ Sys.info()[['sysname']] ]]
+dir_M             <- c('Windows' = '//mazu.nceas.ucsb.edu/ohi',
+                       'Darwin'  = '/Volumes/ohi',    ### connect (cmd-K) to smb://mazu/ohi
+                       'Linux'   = '/home/shares/ohi')[[ Sys.info()[['sysname']] ]]
 
 # ---- set year and file path info ----
 current_year <- 2025 # Update this in the future!!
@@ -36,14 +36,11 @@ data_dir_version_year <- paste0("d", current_year)
 
 # ---- data directories ----
 
-# WDPA clipped polygons in ohi_goc_prep/LSP/v2025/lsp_wdpa_data_prep.qmd
-lsp_prep_dir <- "/Users/sophialec/Documents/OHI_GOC_projects/ohi_goc_prep/LSP/v2025/output"
-
-# general ohi_goc_prep directory
-ohi_goc_prep_dir <- "/Users/sophialec/Documents/OHI_GOC_projects/ohi_goc_prep"
+# mazu WDPA polygon directory
+wdpa_dir <- here::here(dir_M, "OHI_GOC","_raw_data","wdpa_mpa","d2025", "WDPA_Jan2025_Public_shp", "shps")
 
 # spatial data for GoC
-goc_spatial <- here(ohi_goc_prep_dir, "spatial")
+# goc_spatial <- here(ohi_goc_prep_dir, "spatial")
 
 # set colors
 # cols = rev(colorRampPalette(brewer.pal(9, 'Spectral'))(255)) # rainbow color scheme
@@ -67,6 +64,7 @@ The International Union for Conservation of Nature (IUCN) has established a clas
 ```{r protected_area_stats, echo=FALSE, warning=FALSE, message=FALSE}
 # read in percent_protected_goc written in ohi_goc_prep/LSP/v2025/lsp_wdpa_data_prep.qmd
 percent_protected_goc <- read_csv(here(ohi_goc_prep_dir, "LSP", version_year, "output", "percent_protected_goc.csv"))
+
 # create a pretty table :)
 library(gt)
 percent_protected_goc %>%
@@ -105,7 +103,9 @@ The map below shows the designations of the protected areas in the Gulf of Calif
 options(scipen = 999)
 
 # read in wdpa polygons in gulf_crs
-wdpa_poly_area <- st_read(dsn = lsp_prep_dir, layer = "WDPA_Jan2025_shp_clipped_area", quiet = TRUE) %>% 
+wdpa_poly_area_dir <- here(wdpa_dir, "WDPA_Jan2025_shp_clipped_area")
+
+wdpa_poly_area <- st_read(dsn = wdpa_poly_area_dir, layer = basename(wdpa_poly_area_dir), quiet = TRUE) %>% 
   mutate(area_km2 = round(area_km2, digits = 2))
 
 # read in GoC border
