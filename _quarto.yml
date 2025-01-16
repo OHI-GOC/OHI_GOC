@@ -27,7 +27,7 @@ website:
         text: "Starting an OHI assessment"
       - href: chapters/region.qmd
         text: "Region"
-      - section: "Goals"
+      - section: "Potential Goals"
         contents:
           - href: chapters/ao.qmd
             text: "Artisanal opportunities"

@@ -52,7 +52,6 @@ This phase of the project involves:
 - assembling a working group and technical team
 - building awareness and support through informational webinars and meetings
 - developing a consortium of people within Mexico to co-lead and develop network connections
-- acquisition and disbursement of funding
 - developing a strategic plan and timeline for the project
 
 An important task during Phase 1 is **Assembling an expert working group!**
@@ -68,13 +67,11 @@ We have created a Google worksheet to help identify [expert working group partic
 The expert working group will have several responsibilities, including:
 
 - Learning more about the OHI framework and work flow, and exploring the philosophy underlying the original global goals.
-- Establishing a timeline
 - Developing the OHI framework for the Gulf of California, including:
     - Defining spatial boundaries
     - Determining which goals/subgoals will be included in the assessment based on local characteristics and regional priorities
     - Identifying pressure and resilience variables that are relevant to the region
     - Beginning to consider relevant data sources and reference points
-- Identifying Goal Keepers who will develop models for each goal, identify data, and help establish reference points for each goal
 - Developing relationships with key stakeholders
 - Providing support during Phase 3 (Conducting the assessment), including: identifying possible data, reviewing goal methods and scores, collaborating on reference points, preparing and supporting meetings, etc. 
 - Providing support during Phase 4 (Informing) including: editing and developing materials (e.g., website, reports, papers, meetings) to inform policy and future assessments by by sharing scores and what was learned during the process.  
@@ -93,10 +90,6 @@ Along with this site and the [Ocean Health Index website](https://oceanhealthind
 :::
 
 
-
-**Nail down the timeline**
-Identify key deadlines and meeting times. A tentative timeline is provided above, and the corresponding Google spreadsheet may be edited [here](https://docs.google.com/spreadsheets/d/1sVkjg_hJ6f-SXedLJ-gqXmPpEVWXcPvnY83pIH9HRCo/edit?gid=0#gid=0) (contact Melanie at frazier@nceas.ucsb.edu for access).
-
 **Defining spatial boundaries**
 The boundaries of the assessment area must be determined. This [document](https://ohi-goc.github.io/ohi_goc_prep/spatial/ohi_goc_spatial_prep.html) explains some of the issues.
 
@@ -113,13 +106,6 @@ These goal pages will be updated over time to reflect the specific needs of the 
 
 **Identify Pressures and Resilience**
 Along with the goals, it is equally important to define and categorize how local pressures and resilience properties affect the goals. We will provide more guidance on that later, but in the meantime, you can learn more about [pressures](https://oceanhealthindex.org/methodology/pressure/) and [resilience](https://oceanhealthindex.org/methodology/resilience/). 
-
-**Identify Goal Keepers**
-After the goals are established, it will be necessary to identify 3-5 people who will serve as subject matter experts for each goal. These "Goalies" will help develop goal models, identify potential data, and establish reference points. 
-
-They will work closely with the Expert Working Group and OHI analysts to develop and test the goals.
-
-Google spreadsheet for [Goalies](https://docs.google.com/spreadsheets/d/1CkYMNljpDPmBoQuPOP9fkW2gKXPsiJJyw9Li09Xl8xM/edit?gid=0#gid=0) (contact Melanie, frazier@nceas.ucsb.edu for access).
 
 ### Phase 3: Conduct
 During this stage, the expert working group, goal specific experts, and analysts will work closely to further refine the OHI framework, identify data, and calculate and review scores. This is an iterative process and this [resource](https://ohi-science.org/toolbox-training/) includes detailed methods for conducting an OHI assessment.   

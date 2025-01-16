@@ -53,7 +53,7 @@ This website will serve as a hub to communicate the status of this project. Rese
 ::: {.column width="35%"}
 The Ocean Health Index is a framework for assessing and communicating ocean health, or, how well we are managing ocean resources to sustainably deliver benefits to people now and in the future.
 
-Since it’s inception in 2012, we have conducted 12 global assessments, and over [30 regional assessments](https://oceanhealthindex.org/ohi+/assessment/) have been conducted independently, or in partnership us.
+Since it’s inception in 2012, we have conducted 13 global assessments, and over [30 regional assessments](https://oceanhealthindex.org/ohi+/assessment/) have been conducted independently, or in partnership us.
 
 The original global OHI assesses 10 goals, each of which is based on a marine service or function that humans directly care about, such as jobs and food. 
 
