@@ -7,161 +7,32 @@ format: html
 
 **This goal captures the degree to which local waters are unpolluted by human-made causes.**
 
-## Overview
 
-Chemicals, excess nutrients, pathogens, and trash that enter the marine environment can harm human health, livelihoods, and recreation, as well as the health of marine life and habitats.
+---
 
-## Scores
+<div class="custom-box">
+{{< fa lightbulb >}} **This information is meant to help guide the process of developing the Gulf of California OHI!**
 
-```{r}
-#| echo: false
-#| warning: false
-#| message: false
-
-source("../_data/functions/start_script.R")
-source("../_data/functions/score_display_functions.R")
-score <- score(x="CW", ohi_scores)
-
-```
-
-::: columns
-::: {.column width="50%"}
-
-**The Clean Waters score for the Red Sea and Gulf of Aden region was `r score`.**
-
-<span style="color: gray;">The Clean Water score of 55 is low, suggesting significant water pollution. For comparison, the average global OHI score was 70.</span>
-:::
-
-::: {.column width="50%"}
-```{r, fig.width=10, fig.height=3}
-#| echo: false
-#| warning: false
-#| message: false
-
-dial(score,colors)
-
-```
-:::
-:::
-
-The interactive map below shows the scores for the different countries.
-
-```{r, fig.width=3, fig.height=1.5}
-#| echo: false
-#| warning: false
-#| message: false
-map_figure(ohi_scores=ohi_scores, goal="CW")
-
-```
-
-<br>
-
-## Model description
-
-This goal includes 4 types of pollution inputs into marine environments:
-
-Pollutant | Sources  | OHI data
----------- | -------------------- | ---------------
-nutrient  | municipal sewage, agricultural fertilizers, livestock manure, aquaculture | fertilizers and manure ([Halpern et al. 2022](https://www.nature.com/articles/s41893-022-00965-x))
-chemicals | oil spills, sewage, agricultural runoff, aquaculture, industrial sources, runoff from impermeable surfaces, shipping |  agricultural pesticide use ([FAO](https://www.fao.org/faostat/en/#data and [Halpern et al. 2015](https://www.nature.com/articles/ncomms8615.)), shipping and ports and harbors ([Halpern et al. 2015](https://www.nature.com/articles/ncomms8615.)), impervious surface runoff([Halpern et al. 2015](https://www.nature.com/articles/ncomms8615.))  
-pathogens | human waste (land and ships), livestock and aquaculture waste | human waste in terms of access to sanitation ([World Health Organization and United Nations Children's Fund](https://data.unicef.org)) and coastal human population 
-trash | sources on land, ocean vessels, fishing, aquaculture | marine plastic pollution (Eriksen et al. 2014)
-
-::: {.callout-note collapse=true}
-## Clean waters calculation details (click to expand)
-
-The status of this goal, $x_{cw}$, was calculated as the geometric mean of the four components, such that:
-
-$$
-x_{cw} = \sqrt [ 4 ]{ a\ast u\ast l\ast d },  (Eq. 6.8)
-$$
-
-where $a$ = 1 - the number of people without access to sanitation, rescaled to the global maximum; $u$ = 1 – (nutrient input), rescaled at the raster level by the 99th quantile value; $l$ = 1 – (chemical input), rescaled at the raster level by the 99.99th quantile value; and $d$ = 1 – (marine debris), rescaled at the raster level by the 99.99th quantile value. 
-
-We used a geometric mean, as is commonly done for water quality indices [@liou2004generalized], because a very bad score for any one subcomponent would pollute the waters sufficiently to make people feel the waters were ‘too dirty’ to enjoy for recreational or aesthetic purposes (e.g., a large oil spill trumps any other measure of pollution).  However, in cases where a subcomponent was zero, we added a value of 0.01 (on a scale of 0 to 1) to prevent the overall score from going to zero.  Given that there is uncertainty around our pollution estimates, a zero score resulting from one subcomponent seemed too extreme.
-
-Although clean waters are relevant and important anywhere in the ocean, coastal waters drive this goal both because the problems of pollution are concentrated there and because people predominantly access and care about clean waters in coastal areas. The nearshore area is what people can see and where beach-going, shoreline fishing, and other activities occur. Furthermore, the data for high seas areas is limited and there is little meaningful regulation or governance over the input of pollution into these areas. We therefore calculate this goal only for the first 3 nm of ocean for each country’s EEZ. We chose 3 nm for several reasons, but found the status results to be relatively insensitive to different distances. 
-:::
-
-## A closer look at the data
-
-The biggest factor driving scores, by far, is the current status component. Here, we take a closer look at the data underlying the status scores for each country with EEZ territory in the Red Sea and Gulf of Aden.
-
-:::{callout-note collapse=TRUE}
-
-## Other components of an OHI score: Pressures, resilience, and trend
-
-OHI scores are primarily driven by the *current status* dimension of the score, but *pressures*, *resilience*, and *past trends* are also important components of the goal score. In most cases, these variables will nudge the score a bit higher or lower than the *current status* score.  
-
-There are over 20 pressure variables (e.g., ocean warming, ocean acidification) and about 15 resilience variables (e.g., good governance and high gdp) used in the global assessment. 
-
-Each country gets a score for each pressure and resilience variable. For example, for each country we estimated the intensity of increase in ocean temperature, and rescaled these data to range from 0 to 1 (no pressure vs. highest pressure). 
-
-Each goal is affected by a subset of the pressure and resilience variables.    
-We provide a brief description of all the [pressure](https://ohi-rsga.github.io/OHI_RSGA/chapters/pressures.html) and [resilience](https://ohi-rsga.github.io/OHI_RSGA/chapters/resilience.html) variables along with how they affect each goal. A brief description of how these variables are incorporated into the final score is [here](https://mazu.nceas.ucsb.edu/rstudio/p/56fe4d6c/chapters/OHI.html#how-are-ohi-scores-calculated). 
-::: 
+This goal is included in the global OHI, but other regional assessments have cut or modified this goal to better meet their objectives for ocean health...
+</div>
 
 
-### Current status
+#### Overview
 
-#### Sources of pollution
-The status of this goal is based on 4 types of pollution: nutrient, chemical, pathogen, and plastic trash. Each source was estimated and rescaled to a value between 0 and 1, with high scores indicating low pollution.
-
-::: {.callout-note collapse=true}
-
-## Pollution sources: Country data (click to expand)
-
-```{r}
-#| echo: false
-#| warning: false
-#| message: false
-
-goal <- "cw"
-rsga_rgns <- read_csv(here("_data/output/rsga_ohi_rgns.csv"))
-
-# list of OHI datafiles:
-datafiles <- read_csv("https://raw.githubusercontent.com/OHI-Science/ohi-global/c6e3408366c2d6e3b2cd42b0c80e1c39e2ffe43b/metadata_documentation/layers_eez_base.csv") %>%
-  filter(layer %in% c("po_chemicals_3nm", "po_nutrients_3nm", "po_pathogens", "po_trash")) 
-
-all_cw <- data.frame()
-for(i in 1:4){
-#i=1
-cw <- datafiles[i,] 
-cw_df  <- read_csv(file.path("https://raw.githubusercontent.com/OHI-Science/ohiprep_v2023/gh-pages/",
-gsub("ohiprep:", "", cw$dir), cw$fn)) %>%
-  select(rgn_id, year, score=pressure_score) %>%
-  mutate(score = round((1-score)*100, 0)) %>%
-  mutate(category = cw$layer)
-
-all_cw <- rbind(all_cw, cw_df)
-all_cw
-  }
-
-cw_df <- left_join(rsga_rgns, all_cw, by="rgn_id") %>%
-  group_by(iso3c, category) %>%
-  filter(year==max(year)) %>%
-  ungroup()
-
-cw_df <- cw_df %>%
-  select(iso3c, country=region_name, category, score) %>%
-  pivot_wider(names_from = category, values_from = score) %>%
-  rename(chemical = po_chemicals_3nm, nutrient = po_nutrients_3nm, pathogens = po_pathogens, plastic = po_trash)
-
-  datatable(cw_df,
-          options = list(pageLength = 10, autoWidth = TRUE),
-          filter = 'top')
+#### Practical Guidance
 
 
-```
-:::
+#### LEARN MORE
+Explore the full description of the data and model used in the GLOBAL MODEL. Or, take a look at REGIONAL APPROACHES to learn how other OHI+ assessments have modified this goal to address differences in data availability or priorities.
 
 
-## Implications
-
-Based on these data, the largest source of pollution is from human pathogens entering the water from untreated human waste. This indicates many people lack access to high quality sanitation. This goal would be most readily improved by improving access to sanitation.
-
-There also appears to be a fair amount of plastic pollution in the Red Sea and Gulf of Aden. This might be improved by improvements to trash disposal on land.
-
-For future assessments, the quality of data should be assessed. This is particularly the case for the plastic pollution data set which is a global dataset derived from point source samples. We should evaluate the quality of the data in the Red Sea region.
+<div class="button-container">
+  <a href="https://ohi-science.org/ohi-methods/goals/goal-models-data.html#clean-waters" class="custom-button">
+    <i class="fas fa-globe"></i> GLOBAL MODEL
+  </a>
+  <a href="https://oceanhealthindex.org/guidance/clean-waters/" class="custom-button secondary">
+    <i class="fas fa-location-dot"></i> REGIONAL APPROACHES
+  </a>
+</div>
 
 

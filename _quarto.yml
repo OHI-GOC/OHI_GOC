@@ -26,29 +26,9 @@ website:
       - href: chapters/OHI.qmd
         text: "Starting an OHI assessment"
       - href: chapters/region.qmd
-        text: "Region"
-      - section: "Potential Goals"
-        contents:
-          - href: chapters/ao.qmd
-            text: "Artisanal opportunities"
-          - href: chapters/bd.qmd
-            text: "Biodiversity"
-          - href: chapters/cs.qmd
-            text: "Carbon storage"
-          - href: chapters/cw.qmd
-            text: "Clean waters"
-          - href: chapters/cp.qmd
-            text: "Coastal protection"
-          - href: chapters/fp.qmd
-            text: "Food provision"
-          - href: chapters/le.qmd
-            text: "Livelihoods and economies"
-          - href: chapters/np.qmd
-            text: "Natural products"
-          - href: chapters/sp.qmd
-            text: "Sense of place"
-          - href: chapters/tr.qmd
-            text: "Tourism and recreation"
+        text: "Identify regions"
+      - href: chapters/goals.qmd
+        text: "Identify goals"  
       - section: "Data"
         contents:
           - href: chapters/data/protected.qmd

@@ -67,24 +67,6 @@ The original global OHI assesses 10 goals, each of which is based on a marine se
 
 ::::
 
-::: {.callout-note collapse=true}
-
-## More about the global goals (click to expand)
-
-Clicking on the goal will link to the goal pages which provide more information about the **global** goals.
-```{r}
-#| echo: false
-#| warning: false
-#| message: false
-
-goals_df  <- read_csv(here("_data/output/goals.csv")) 
-goals_df$subgoal <- sapply(goals_df$subgoal, function(x) 
-  if (!is.na(x)) paste0(strrep('&nbsp;', 4), x) else x)
-
-  datatable(goals_df, escape=FALSE, rownames=FALSE)
-```
-
-:::
 
 The ten goals included in global assessments have been identified as widely-shared across different geographies, but they are not universal, and assessments using the OHI framework should only include goals that are relevant to their region. Most regional assessments modify the number and composition of the goals based on their specific needs. The goals that are ultimately included in the Gulf of California assessment will likely differ from the global assessment, because some goals may not be relevant to the region. Alternatively, new goals, not included in the global assessment, may be developed given a region's natural resources or priorities. 
 

@@ -6,222 +6,31 @@ format: html
 
 **This goal captures the quantity and quality of experiences that people have when visiting coastal and marine areas.**
 
-## Overview
+---
 
-Tourism and recreation in coastal areas is a major component of thriving coastal communities and a measure of how much people value ocean systems. Tourism and recreation provide opportunities for the enjoyment of marine and coastal environments. The ability to visit culturally or aesthetically pleasing places with healthy coastal ecosystems, diverse wildlife, and opportunities for exploration and recreation contributes to the well-being of many people.
+<div class="custom-box">
+{{< fa lightbulb >}} **This information is meant to help guide the process of developing the Gulf of California OHI!**
 
+This goal is included in the global OHI, but other regional assessments have cut or modified this goal to better meet their objectives for ocean health...
+</div>
 
-## Scores
-```{r}
-#| echo: false
-#| warning: false
-#| message: false
 
-source("../_data/functions/start_script.R")
-source("../_data/functions/score_display_functions.R")
-score <- score(x="TR", ohi_scores)
+#### Overview
 
-```
+#### Practical Guidance
 
-:::: {.columns} 
 
-::: {.column width="50%"}
+#### LEARN MORE
+Explore the full description of the data and model used in the GLOBAL MODEL. Or, take a look at REGIONAL APPROACHES to learn how other OHI+ assessments have modified this goal to address differences in data availability or priorities.
 
-**The overall Tourism and Recreation score for the Red Sea and Gulf of Aden region was `r score`.**
 
-<span style="color: gray;">The scores are high for most regions, particularly Saudi Arabia, Sudan, Egypt, Israel, Djibouti, and Jordan. They are low in Eritrea (score = 52) and we have no data for Somalia, and Eritrea.</span>
-:::
+<div class="button-container">
+  <a href="https://ohi-science.org/ohi-methods/goals/goal-models-data.html#natural-products" class="custom-button">
+    <i class="fas fa-globe"></i> GLOBAL MODEL
+  </a>
+  <a href="https://ohi-science.org/ohi-methods/goals/goal-models-data.html#tourism-and-recreation" class="custom-button secondary">
+    <i class="fas fa-location-dot"></i> REGIONAL APPROACHES
+  </a>
+</div>
 
-::: {.column width="50%"}
 
-```{r, fig.width=10, fig.height=3}
-#| echo: false
-#| warning: false
-#| message: false
-
-dial(score,colors)
-
-```
-
-:::
-
-::::
-
-The interactive map below shows the scores for the different countries.
-
-```{r, fig.width=3, fig.height=1.5}
-#| echo: false
-#| warning: false
-#| message: false
-map_figure(ohi_scores=ohi_scores, goal="TR")
-
-```
-
-<br>
-
-
-## Model description
-
-The Tourism and Recreation goal measures how successfully a region’s marine and coastal areas maintain their attractiveness as destinations for people to experience and enjoy priced activities, such as paid boat excursions, visits to coastal parks with entrance fees and ocean-view hotels, as well as unpriced activities such as free days at the beach and hikes on public trails.
-
-Although coastal tourism industries can be important contributors to coastal economies, the tourism and recreation goal is assessed separately from its economic benefits, which are reported in the coastal livelihoods and economies goal. 
-
-At the global scale we used international tourist arrivals as a reasonable proxy measure for the total number of people engaged in coastal tourism and recreation activities. We have not been able to incorporate domestic tourism, but we operate under the assumption that international arrivals capture the relative participation in tourist activities well enough. 
-
-This goal also incorporates a measure of sustainability from the World Economic Forum's Travel & Tourism Development Index (TTDI). 
-
-The reference point is relative to other countries, such that to get a score of 100, a country has to have rates of tourism that are better than (or equal to), 90% of countries.
-
-
-::: {.callout-note collapse=true}
-## More details (click to expand)
-
-The model for the status of the tourism & recreation goal, $x_{tr}$, is:
-
-$$
-x_{tr} = \frac{ T_r }{ T_{90th}}, (Eq. 6.20)
-$$
-
-where, $T_{90th}$ is the $T_r$ value of the region value that corresponds to the 90th quantile, and:  
-
-$$
-T_{r} = { A }\times { S }, (Eq. 6.21)
-$$
-
-where, $A$ is the proportion of overnight tourist arrivals divided by the total international arrivals, and $S$ is sustainability. 
-
-Ideally there would be data available specifically for arrivals, $A$, related to coastal tourism; however, the best data available at a global scale reports the total international arrivals, which does not solely reflect coastal tourism.
-
-Unfortunately it was not possible to determine the proportion of international arrivals affiliated with strictly leisure tourism. However, some (unknown) proportion of business travelers also enjoy the coast for leisure during their visit to coastal areas, such that we assumed all tourist arrivals were related to tourism and recreation values. Regional applications of the Index can make use of better-resolved data and more direct measures of tourism, as has been done within the US West Coast, where data for participation in coastal recreational activities across 19 different sectors were available.
-
-Measures of sustainability are data from the World Economic Forum's Travel & Tourism Development Index (TTDI). This index measures “the set of factors and policies that enable the sustainable and resilient development of the Travel and Tourism (T&T) sector, which in turn contributes to the development of a country.” The index is comprised of five subindexes 17 pillars and 112 individual indicators, distributed among the different pillars. We use scores for the Travel and Tourism Sustainability Subindex which encompasses three pillars:
-
-    
-Pillar 15: **Environmental Sustainability**
-
-  * Greenhouse gas (GHG) emissions per capita
-  * Renewable energy
-  * Global Climate Risk Index
-  * Investment in green energy and infrastructure
-  * Particulate matter (2.5) concentration
-  * Baseline water stress
-  * Red List Index
-  * Forest cover loss
-  * Wastewater treatment
-  * Clean ocean water
-  * Number of environmental treaty ratifications
-  * Adequate protection for nature
-  * Oversight of production impact on the environment and nature
-  * Total protected areas coverage
-  * Average proportion of key bio
-    
-Pillar 16: **Socioeconomic Resilience and Conditions**
-
-  * Poverty rate
-  * Social protection basic coverage
-  * Social protection spending
-  * Not in education, employment or training (NEET) ratio
-  * Equal workforce opportunities
-  * Workers’ rights
-  * Gender Inequality Index
-
-Pillar 17: **Travel and Tourism Demand Pressure and Impact**
-
-  * T&T GDP multiplier
-  * Inbound length of stay
-  * Seasonality of international tourist arrivals
-  * Concentration of interest in cultural attractions
-  * Concentration of interest in nature attractions
-  * Geographically dispersed tourism
-  * Quality of town and city centre
-    
-The sustainability factor, $S$, is the Travel and Tourism Sustainability Subindex score, which is the unweighted average of its three component pillars. 
-:::
-
-
-## A closer look at the data
-
-The biggest factor driving scores, by far, is the current status component. Here, we take a closer look at the data underlying the status scores for each country with EEZ territory in the Red Sea and Gulf of Aden.
-
-:::{callout-note collapse=TRUE}
-
-## Other components of an OHI score: Pressures, resilience, and trend
-
-OHI scores are primarily driven by the *current status* dimension of the score, but *pressures*, *resilience*, and *past trends* are also important components of the goal score. In most cases, these variables will nudge the score a bit higher or lower than the *current status* score.  
-
-There are over 20 pressure variables (e.g., ocean warming, ocean acidification) and about 15 resilience variables (e.g., good governance and high gdp) used in the global assessment. 
-
-Each country gets a score for each pressure and resilience variable. For example, for each country we estimated the intensity of increase in ocean temperature, and rescaled these data to range from 0 to 1 (no pressure vs. highest pressure). 
-
-Each goal is affected by a subset of the pressure and resilience variables.    
-We provide a brief description of all the [pressure](https://ohi-rsga.github.io/OHI_RSGA/chapters/pressures.html) and [resilience](https://ohi-rsga.github.io/OHI_RSGA/chapters/resilience.html) variables along with how they affect each goal. A brief description of how these variables are incorporated into the final score is [here](https://mazu.nceas.ucsb.edu/rstudio/p/56fe4d6c/chapters/OHI.html#how-are-ohi-scores-calculated). 
-::: 
-
-
-### Current status
-
-#### Tourism rates and sustainability
-
-This score is based on the number of people visiting and area and the sustainability of tourism within the country. 
-
-We use arrivals data to estimate the number of tourists, which we calculate as the proportion of overnight tourist arrivals divided by the total international arrivals. A score of 1 indicates that the vast majority of the people entering the country are remaining in the country as tourists. 
-
-The sustainability scores range from 1-7, but in reality, the observed county scores range from 3.1 to 5.3, with a mean of 4.2. The sustainability scores for the Red Sea and Gulf of Aden seem in line with the rest of the world.
-
-::: {.callout-note collapse=true}
-
-## Tourism data (click to expand)
-
-```{r}
-#| echo: false
-#| warning: false
-#| message: false
-
-goal <- "tr_"
-rsga_rgns <- read_csv(here("_data/output/rsga_ohi_rgns.csv"))
-
-# list of OHI datafiles:
-datafiles <- read_csv("https://raw.githubusercontent.com/OHI-Science/ohi-global/c6e3408366c2d6e3b2cd42b0c80e1c39e2ffe43b/metadata_documentation/layers_eez_base.csv") %>%
-  filter(str_detect(layer, goal)) 
-
-
-
-arrivals <- filter(datafiles, layer=="tr_arrivals_props_tourism") 
-
-arrivals_df  <- read_csv(file.path("https://raw.githubusercontent.com/OHI-Science/ohiprep_v2023/gh-pages/",
-gsub("ohiprep:", "", arrivals$dir), arrivals$fn)) 
-
-arrivals_df <- left_join(rsga_rgns, arrivals_df, by="rgn_id") %>%
-  filter(year==2021) %>%
-  select(iso3c, region_name, rgn_id, arrivals = Ap)
-
-# sustainability component
-sustain <- filter(datafiles, layer=="tr_sustainability") 
-
-sustain_df  <- read_csv(file.path("https://raw.githubusercontent.com/OHI-Science/ohiprep_v2023/gh-pages/",
-gsub("ohiprep:", "", sustain$dir), sustain$fn)) 
-
-sustain_df <- sustain_df %>%
-  filter(year==2021) 
-#min(sustain_df$S_score,na.rm=TRUE)
-#max(sustain_df$S_score,na.rm=TRUE)
-#mean(sustain_df$S_score,na.rm=TRUE)
-# combine
-tr <- left_join(arrivals_df, sustain_df, by="rgn_id") %>%
-  select(iso3c, country=region_name, arrivals, )
-
-  datatable(tr,
-          options = list(pageLength = 10, autoWidth = TRUE),
-          filter = 'top')
-```
-
-:::
-
-
-## Implications
-
-This goal is in a bit of flux. The dataset we have used to estimate tourism rates was discontinued this year, and we have been working to establish the best way forward. Given this, local data would be preferable to use. 
-
-Furthermore, the model underlying this goal should be adapted to the tourism goals of the region. For example, the reference point for the global assessment is based on how well a country is doing relative to all the other coastal countries in the world. This is reasonable for a global assessment, but probably isn't relevant to a specific country. 
-
-[Other OHI+ analyses](https://oceanhealthindex.org/guidance/tourism-and-recreation/) have revised this goal to better reflect local concerns.  
