@@ -25,7 +25,7 @@ Explore the full description of the data and model used in the GLOBAL MODEL. Or,
 
 
 <div class="button-container">
-  <a href="https://ohi-science.org/ohi-methods/goals/goal-models-data.html#natural-products" class="custom-button">
+  <a href="https://ohi-science.org/ohi-methods/goals/goal-models-data.html#tourism-and-recreation" class="custom-button">
     <i class="fas fa-globe"></i> GLOBAL MODEL
   </a>
   <a href="https://ohi-science.org/ohi-methods/goals/goal-models-data.html#tourism-and-recreation" class="custom-button secondary">
