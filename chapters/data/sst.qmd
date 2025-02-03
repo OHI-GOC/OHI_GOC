@@ -1,0 +1,71 @@
+---
+title: " "
+format: html
+toc: true
+---
+
+## Sea surface temperature for the Gulf of California
+
+```{r setup, include=FALSE, warning=FALSE, message=FALSE}
+# refer to ohi_goc_prep/_pressures/prs_sst/v2025/sst_layer_prep.qmd for full data prep
+library(raster)
+library(terra)
+library(readr)
+library(magrittr)
+library(mapview)
+library(sf)
+library(tidyverse)
+library(lwgeom)
+library(here)
+library(leaflet.extras2)
+library(fasterize)
+library(tictoc)
+library(kableExtra)
+
+# ---- sources! ----
+# source(here("workflow", "R", "common.R")) # file creates objects to process data
+## set the mazu and neptune data_edit share based on operating system
+dir_M             <- c('Windows' = '//mazu.nceas.ucsb.edu/ohi',
+                       'Darwin'  = '/Volumes/ohi',    ### connect (cmd-K) to smb://mazu/ohi
+                       'Linux'   = '/home/shares/ohi')[[ Sys.info()[['sysname']] ]]
+
+# ---- set year and file path info ----
+current_year <- 2025 # Update this in the future!!
+version_year <- paste0("v",current_year)
+data_dir_version_year <- paste0("d", current_year)
+
+# ---- data directories ----
+
+# mazu WDPA polygon directory
+wdpa_dir <- here::here(dir_M, "OHI_GOC","_raw_data","wdpa_mpa","d2025", "WDPA_Jan2025_Public_shp", "shps")
+
+# ecoregion border dir
+goc_border_dir <- here(wdpa_dir, "goc_border_gulf_crs")
+
+# spatial data for GoC
+# goc_spatial <- here(ohi_goc_prep_dir, "spatial")
+
+# set colors
+# cols = rev(colorRampPalette(brewer.pal(9, 'Spectral'))(255)) # rainbow color scheme
+
+# this CRS might be better for visualization, explore.
+gulf_crs <- "+proj=aea +lat_1=23 +lat_2=30 +lat_0=25 +lon_0=-110 +datum=WGS84 +units=m +no_defs"
+
+# other CRS options (but they are Mercator):
+# UTM Zone 12N (Northern Gulf)
+utm_12N <- "+proj=utm +zone=12 +datum=WGS84 +units=m +no_defs"
+# UTM Zone 13N (Southern Gulf)
+utm_13N <- "+proj=utm +zone=13 +datum=WGS84 +units=m +no_defs"
+```
+
+Sea surface temperature (SST) is a critical indicator of ocean health, influencing marine ecosystems, biodiversity, and climate patterns. Changes in SST can affect species distributions, disrupt food webs, and contribute to coral bleaching events. By analyzing historical SST data (1980–2000) alongside recent trends (2014–2023), we can identify long-term patterns, assess the impacts of climate change, and inform strategies for sustainable ocean management.
+
+Our interactive tool lets you explore how sea surface temperatures have changed in the Gulf of California by comparing historical patterns (1980-2000) with recent conditions (2014-2023). This visualization helps identify areas that may need special attention for conservation and management efforts.  As we progress, this data will be used to shape future goals and pressures.
+
+```{r}
+# add shiny app
+
+```
+
+
+
