@@ -73,5 +73,8 @@
   },
   "chapters/goals.qmd": {
     "goals.html": "7d7be816"
+  },
+  "chapters/data/sst.qmd": {
+    "sst.html": "2219069c"
   }
 }

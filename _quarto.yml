@@ -34,7 +34,7 @@ website:
           - href: chapters/data/protected.qmd
             text: "Protected regions"
           - href: chapters/data/sst.qmd
-            text: "Sea surfact temperature (SST)"
+            text: "Sea surface temperature"
       - href: chapters/pressures.qmd
         text: "Pressures"
       - href: chapters/resilience.qmd
