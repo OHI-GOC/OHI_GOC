@@ -180,6 +180,9 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#sea-surface-temperature-for-the-gulf-of-california" id="toc-sea-surface-temperature-for-the-gulf-of-california" class="nav-link active" data-scroll-target="#sea-surface-temperature-for-the-gulf-of-california">Sea surface temperature for the Gulf of California</a></li>
+  <li><a href="#average-sea-surface-temperature-19802023" id="toc-average-sea-surface-temperature-19802023" class="nav-link" data-scroll-target="#average-sea-surface-temperature-19802023">Average Sea Surface Temperature (1980–2023)</a></li>
+  <li><a href="#comparing-recent-sst-trends-to-a-historical-baseline" id="toc-comparing-recent-sst-trends-to-a-historical-baseline" class="nav-link" data-scroll-target="#comparing-recent-sst-trends-to-a-historical-baseline">Comparing Recent SST Trends to a Historical Baseline</a></li>
+  <li><a href="#data-source" id="toc-data-source" class="nav-link" data-scroll-target="#data-source">Data Source</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/ohi-goc/OHI_GOC/edit/main/chapters/data/sst.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ohi-goc/OHI_GOC/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -191,10 +194,30 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="sea-surface-temperature-for-the-gulf-of-california" class="level2">
 <h2 class="anchored" data-anchor-id="sea-surface-temperature-for-the-gulf-of-california">Sea surface temperature for the Gulf of California</h2>
-<p>Sea surface temperature (SST) is a critical indicator of ocean health, influencing marine ecosystems, biodiversity, and climate patterns. Changes in SST can affect species distributions, disrupt food webs, and contribute to coral bleaching events. By analyzing historical SST data (1980–2000) alongside recent trends (2014–2023), we can identify long-term patterns, assess the impacts of climate change, and inform strategies for sustainable ocean management.</p>
-<p>The interactive tool below lets you explore how sea surface temperatures have changed in the Gulf of California by comparing historical patterns (1980-2000) with recent conditions (2014-2023). This visualization helps identify areas that may need special attention for conservation and management efforts. As we progress, the data will be used to shape future goals and pressures.</p>
+<p>Sea surface temperature (SST) is a critical indicator of ocean health, influencing marine ecosystems, biodiversity, and climate patterns. Anomalies in SST can disrupt food webs, alter species distributions, and serve as climate change indicators based on their frequency and severity.</p>
+<p>This page provides access to yearly SST data for the Gulf of California, from 1980 to 2023. Eventually this data could be used in creating a pressure layer for the OHI GoC project, identifying long-term patterns and assessing climate change impacts on foundation species in the Gulf.</p>
+</section>
+<section id="average-sea-surface-temperature-19802023" class="level2">
+<h2 class="anchored" data-anchor-id="average-sea-surface-temperature-19802023">Average Sea Surface Temperature (1980–2023)</h2>
+<p>This tool displays the average sea surface temperature for each year from 1980 to 2023 in the Gulf of California. Use this visualization to explore temporal trends in SST across decades by selecting specific years of interest, or pressing “play” for an animation throughout the years.</p>
+<iframe src="https://qcz3wo-sophia-lecuona.shinyapps.io/sst_all_years_shiny_app/" width="100%" height="600">
+</iframe>
+</section>
+<section id="comparing-recent-sst-trends-to-a-historical-baseline" class="level2">
+<h2 class="anchored" data-anchor-id="comparing-recent-sst-trends-to-a-historical-baseline">Comparing Recent SST Trends to a Historical Baseline</h2>
+<p>This interactive tool compares historical SST patterns (1980–2000) with recent conditions (2001–2023). Each year’s average SST values were subtracted from the historical baseline (1980–2000) to highlight areas experiencing significant warming or cooling trends. Use this tool to identify regions that may require targeted conservation efforts by selecting specific years.</p>
 <iframe src="https://qcz3wo-sophia-lecuona.shinyapps.io/sst_yearly_comparison_shiny_app/" width="100%" height="600">
 </iframe>
+</section>
+<section id="data-source" class="level2">
+<h2 class="anchored" data-anchor-id="data-source">Data Source</h2>
+<p>This dataset was downloaded from CEDA on January 16, 2025, as part of an ongoing effort to provide a pressure layer of Sea Surface Temperature (SST) for the Gulf of California. It provides daily-mean sea surface temperatures (SST), presented on a global grid spanning from 1980 to present. It is a Level 4 product with gaps between daily observations filled using statistical methods.</p>
+<p><strong>Reference</strong>: Good, S.A.; Embury, O. (2024): ESA Sea Surface Temperature Climate Change Initiative (SST_cci): Level 4 Analysis product, version 3.0. NERC EDS Centre for Environmental Data Analysis, 09 April 2024. doi:10.5285/4a9654136a7148e39b7feb56f8bb02d2. https://dx.doi.org/10.5285/4a9654136a7148e39b7feb56f8bb02d2</p>
+<p><strong>Downloaded</strong>: January 16, 2025</p>
+<p><strong>Description</strong>: ESA Sea Surface Temperature Climate Change Initiative (SST_cci): Level 4 Analysis product, version 3.0</p>
+<p><strong>Time range</strong>: 1980 - ongoing, updated daily at one month behind present</p>
+<p><strong>Format</strong>: NetCDF</p>
+<p><strong>Resolution</strong>: Global 0.05° latitude-longitude grid (5,600 meters at the equator)</p>
 
 
 </section>
