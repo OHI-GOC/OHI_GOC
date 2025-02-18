@@ -35,6 +35,8 @@ website:
             text: "Protected regions"
           - href: chapters/data/sst.qmd
             text: "Sea surface temperature"
+          - href: chapters/data/fishery_production.qmd
+            text: "Fishery production"
       - href: chapters/pressures.qmd
         text: "Pressures"
       - href: chapters/resilience.qmd

@@ -1,0 +1,76 @@
+---
+title: " "
+format: html
+toc: true
+---
+
+
+## Fishery Production by Fishery Offices
+
+Comision Nacional de Acuacultura y Pesca (CONAPESCA) is a "decentralized body of SADER committed to legality, quality and transparency, responsible for promoting and developing coordination mechanisms with different entities to implement policies, programs and regulations that lead to and facilitate the competitive and sustainable development of the country's fishing and aquaculture sector, to increase the well-being of Mexicans.”  SADER is the Secretaría de Agricultura y Desarrollo Rural, or the Secretariat of Agriculture and Rural Development, and is Mexico's agriculture ministry.
+
+All commercial fishing fleets need a license that requires them to state their place of boarding, species caught, what is their mode of transport, volume of product, and if they found any of the closed species (en veda).  
+
+There are two data sources we are interested in exploring: 
+
+-  the annual fishing production per fishing office and 
+-  the annual statistics of fish and aquaculture.  
+
+We decided to start with the production of fish by fishing office.  Though these data do not represent the spatial area where the fish were caught, we can assume that fishers bring their catch to the nearest fishing office out of simplicity and ease. This allows us to consider only fishing offices located within the Gulf of California's ecoregion boundary, reflecting the types of fish caught, how much of each was caught per year, and the landings. 
+
+
+```{r}
+library(tidyverse)
+library(magrittr)
+library(here)
+library(tictoc)
+library(kableExtra)
+library(plotly)
+library(viridis)
+library(readr)
+library(purrr)
+
+# ---- sources! ----
+# source(here("workflow", "R", "common.R")) # file creates objects to process data
+## set the mazu and neptune data_edit share based on operating system
+dir_M             <- c('Windows' = '//mazu.nceas.ucsb.edu/ohi',
+                       'Darwin'  = '/Volumes/ohi',    ### connect (cmd-K) to smb://mazu/ohi
+                       'Linux'   = '/home/shares/ohi')[[ Sys.info()[['sysname']] ]]
+
+# ---- set year and file path info ----
+current_year <- 2025 # Update this in the future!!
+version_year <- paste0("v",current_year)
+data_dir_version_year <- paste0("d", current_year)
+
+# ---- data directories ----
+
+# raw data directory (on Mazu)
+raw_data_dir <- here::here(dir_M, "OHI_GOC", "_raw_data")
+
+# fishery production per office raw data directory
+fish_office_dir <- here(raw_data_dir, "CONAPESCA", data_dir_version_year, "fishery_offices")
+
+# annual statistics raw data directory
+stat_dir <- here(raw_data_dir, "CONAPESCA", data_dir_version_year, "statistical_yearbook_fishery_aquaculture")
+
+# final output dir
+output_dir <- here("FIS", version_year, "output")
+```
+
+
+
+
+## Data Source
+
+**Reference**: https://datos.gob.mx/busca/dataset/produccion-pesquera 
+
+**Downloaded**: February 11, 2025
+
+**Description**: Fisheries Production
+
+**Time range**: 2006 - 2022
+
+**Format**: .csv
+
+**File location**: `Mazu:/home/shares/ohi/OHI_GOC/_raw_data/CONAPESCA/d2025/fishery_offices`
+
