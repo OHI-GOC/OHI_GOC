@@ -76,5 +76,8 @@
   },
   "chapters/data/sst.qmd": {
     "sst.html": "2219069c"
+  },
+  "chapters/data/fishery_production.qmd": {
+    "fishery_production.html": "e52e6710"
   }
 }
