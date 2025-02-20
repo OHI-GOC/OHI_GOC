@@ -23,7 +23,7 @@ All commercial fishing operations in Mexico must obtain licenses that require re
 
 Live weight (also called "round weight" or "whole weight") refers to the total mass of fish when they're first caught, before any processing (e.g. gutting, heading, filleting). It represents the fish in their complete, original form right out of the water. Measuring in live weight helps standardize catch reporting across different fishing operations, track the total biomass removed from marine ecosystems, monitor fishing quotas and stock assessments, and compare catches across different species and regions.
 
-Below, you can select one species for both the live weight and revenue over time within the Gulf of California. When comparing the two, consider:
+Below, you can select one species for both the live weight and revenue over time within the Gulf of California (2006 - 2022). When comparing the two, consider:
 
 -  Different species are associated with different prices per kilogram
 -  Market conditions and supply chains influence value over time
@@ -77,7 +77,7 @@ output_dir <- here("FIS", version_year, "output")
 # read in habitat_marine_species_summary.csv
 habitat_marine_species_summary <- read_csv(here::here(fish_office_dir, "int","habitat_marine_species_summary.csv"))
 ```
-### Total Catch in Gulf of California (2006-2022)
+### Total Annual Marine Catch
 
 ```{r total_catch, echo=FALSE, warning=FALSE, message=FALSE}
 # summarize the kg and revenue across all fishery offices in the GoC for each year for ONLY marine species
@@ -98,12 +98,9 @@ total_live_weight_plotly <- total_fish_wild_goc_summary %>%
 total_live_weight_plotly
 ```
 
-### Total Revenue in in Gulf of California (2006-2022)
+### Total Revenue from Marine Catch
 
 ```{r total_rev, echo=FALSE, warning=FALSE, message=FALSE}
-# save plot
-# htmlwidgets::saveWidget(total_live_weight_plotly, file = "output/total_live_weight_2006_2022_plot.html")
-
 # plot revenue interactively using plot_ly
 total_revenue_plotly <- total_fish_wild_goc_summary %>%
   plot_ly(x = ~ejercicio_fiscal, y = ~agg_revenue, 
@@ -112,12 +109,9 @@ total_revenue_plotly <- total_fish_wild_goc_summary %>%
          xaxis = list(title = "Year"),
          yaxis = list(title = "Revenue (pesos)"))
 total_revenue_plotly
-
-# save plot
-# htmlwidgets::saveWidget(total_revenue_plotly, file = "output/total_revenue_2006_2022_plot.html")
 ```
 
-### Annual Live Weight of Marine Species Caught in Gulf of California (2006-2022)
+### Annual Live Weight by Marine Species
 
 ```{r live_weight, echo=FALSE, warning=FALSE, message=FALSE}
 # plot live weight interactively using plot_ly
@@ -175,7 +169,7 @@ marine_live_weight_plotly <- habitat_marine_species_summary %>%
 marine_live_weight_plotly
 ```
 
-### Annual Revenue from Marine Species in Gulf of California (2006-2022)
+### Annual Revenue by Marine Species
 
 ```{r revenue, echo=FALSE, warning=FALSE, message=FALSE}
 # plot revenue interactively using plot_ly
@@ -232,6 +226,20 @@ marine_revenue_plotly <- habitat_marine_species_summary %>%
 
 marine_revenue_plotly
 ```
+
+### Searchable CONAPESCA Stock Data
+
+```{r stock_DT, echo=FALSE, warning=FALSE, message=FALSE}
+library(DT)
+stock_table <- habitat_marine_species_summary %>% 
+  select(-marine) # ID not needed for table
+
+DT::datatable(stock_table, 
+          class = 'cell-border stripe', # for aesthetics
+          colnames = c('Stock Group Name', 'Fiscal Year', 'Live Weight (kg)', 'Revenue (pesos)','Habitat'), # to rename the columns, removing snakecase
+          rownames = FALSE) 
+```
+
 
 
 ## Data Source
