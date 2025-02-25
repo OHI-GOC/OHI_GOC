@@ -23,16 +23,6 @@ All commercial fishing operations in Mexico must obtain licenses that require re
 
 Live weight (also called "round weight" or "whole weight") refers to the total mass of fish when they're first caught, before any processing (e.g. gutting, heading, filleting). It represents the fish in their complete, original form right out of the water. Measuring in live weight helps standardize catch reporting across different fishing operations, track the total biomass removed from marine ecosystems, monitor fishing quotas and stock assessments, and compare catches across different species and regions.
 
-Below, you can select one species for both the live weight and revenue over time within the Gulf of California (2006 - 2022). When comparing the two, consider:
-
--  Different species are associated with different prices per kilogram
--  Market conditions and supply chains influence value over time
--  Quality and freshness impact price, which could be impaired in years where the stock population's health is at risk
--  Processing costs affect final revenue
--  These are only marine, wild-caught stocks
-
-Together, these metrics help explore both the ecological and economic sustainability of fishing operations.
-
 
 ```{r setup, echo=FALSE, warning=FALSE, message=FALSE}
 library(tidyverse)
@@ -110,6 +100,18 @@ total_revenue_plotly <- total_fish_wild_goc_summary %>%
          yaxis = list(title = "Revenue (pesos)"))
 total_revenue_plotly
 ```
+
+
+Below, you can select one species for both the live weight and revenue over time within the Gulf of California (2006 - 2022). When comparing the two, consider:
+
+-  Different species are associated with different prices per kilogram
+-  Market conditions and supply chains influence value over time
+-  Quality and freshness impact price, which could be impaired in years where the stock population's health is at risk
+-  Processing costs affect final revenue
+-  These are only marine, wild-caught stocks
+
+Together, these metrics help explore both the ecological and economic sustainability of fishing operations.
+
 
 ### Annual Live Weight by Marine Species
 
