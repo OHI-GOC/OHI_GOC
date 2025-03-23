@@ -4,7 +4,6 @@ format: html
 toc: true
 ---
 
-
 ## Fishery Production Data in the Gulf of California
 
 Mexico's commercial fishing industry is regulated by CONAPESCA (Comision Nacional de Acuacultura y Pesca), a specialized agency operating under SADER (Secretaría de Agricultura y Desarrollo Rural), Mexico's agriculture ministry. CONAPESCA oversees the development of sustainable fishing practices and implements policies to enhance the competitiveness of Mexico's fishing sector.

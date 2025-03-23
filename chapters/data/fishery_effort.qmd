@@ -1,0 +1,21 @@
+---
+title: " "
+format: html
+toc: true
+---
+
+## Fishing Effort Data in the Gulf of California
+
+To better understand fishing activities in this region, we've utilized data from Global Fishing Watch (GFW), which provides insights into fishing effort and vessel presence using AIS (Automatic Identification System) technology.
+
+AIS is a tracking system that helps monitor vessel movements. GFW uses this data to identify fishing vessels and detect fishing activities based on changes in speed and direction.  The data is aggregated into grid cells, measuring 0.01 or 0.1 degrees per side, and expressed in hours of fishing effort. This allows for detailed analysis of where and how much fishing is occurring.  Fishing activities are then categorized by gear types, such as drifting longlines, purse seines, trawlers, and fixed gear (e.g., pots and traps). This helps in understanding the specific methods used in different areas.
+
+
+### Exploratory Interactive Map
+
+By exploring the map below, you can determine where fishing is most concentrated (indicated by the size of the points) and how different gear types are distributed across the Gulf.  By changing the year on the slider, the map changes in fishing activity over time, which can help identify seasonal patterns or impacts from external factors like climate change or policy changes.  Areas of high fishing pressure and potential impacts on marine ecosystems can also be identified, which can inform conservation efforts and sustainable management strategies.
+
+Note that Global Fishing Watch was expanding the number of vessels using the AIS system from 2012 - 2016.  Increases in points on the map do not directly indicate a higher fishing pressure over the years.
+
+
+<iframe src="https://sophiamanos713.shinyapps.io/fishing_effort_yearly_shiny/" width="100%" height="600"></iframe>

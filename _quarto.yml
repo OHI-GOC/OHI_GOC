@@ -37,6 +37,8 @@ website:
             text: "Sea surface temperature"
           - href: chapters/data/fishery_production.qmd
             text: "Fishery production"
+          - href: chapters/data/fishery_effort.qmd
+            text: "Fishing Effort"
       - href: chapters/pressures.qmd
         text: "Pressures"
       - href: chapters/resilience.qmd

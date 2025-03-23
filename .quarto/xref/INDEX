@@ -79,5 +79,8 @@
   },
   "chapters/data/fishery_production.qmd": {
     "fishery_production.html": "e52e6710"
+  },
+  "chapters/data/fishery_effort.qmd": {
+    "fishery_effort.html": "3a8de12a"
   }
 }
