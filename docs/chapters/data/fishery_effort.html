@@ -69,6 +69,18 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="../../site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<link href="../../site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+<script src="../../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<link href="../../site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="../../site_libs/datatables-binding-0.33/datatables.js"></script>
+<script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="../../site_libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="../../site_libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
+<script src="../../site_libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
+<link href="../../site_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
+<script src="../../site_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
 
 
 </head>
@@ -82,7 +94,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/data/protected.html">Data</a></li><li class="breadcrumb-item"><a href="../../chapters/data/fishery_effort.html">Fishing Effort</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/data/protected.html">Data</a></li><li class="breadcrumb-item"><a href="../../chapters/data/fishery_effort.html">Fishing effort</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -164,7 +176,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/data/fishery_effort.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Fishing Effort</span></a>
+ <span class="menu-text">Fishing effort</span></a>
   </div>
 </li>
       </ul>
@@ -193,8 +205,13 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#fishing-effort-data-in-the-gulf-of-california" id="toc-fishing-effort-data-in-the-gulf-of-california" class="nav-link active" data-scroll-target="#fishing-effort-data-in-the-gulf-of-california">Fishing Effort Data in the Gulf of California</a>
   <ul class="collapse">
+  <li><a href="#important-limitations-for-gulf-of-california-data" id="toc-important-limitations-for-gulf-of-california-data" class="nav-link" data-scroll-target="#important-limitations-for-gulf-of-california-data">Important Limitations for Gulf of California Data</a></li>
   <li><a href="#exploratory-interactive-map" id="toc-exploratory-interactive-map" class="nav-link" data-scroll-target="#exploratory-interactive-map">Exploratory Interactive Map</a></li>
   </ul></li>
+  <li><a href="#yearly-fishing-effort-by-all-gear-types-hours" id="toc-yearly-fishing-effort-by-all-gear-types-hours" class="nav-link" data-scroll-target="#yearly-fishing-effort-by-all-gear-types-hours">Yearly Fishing Effort by All Gear Types (Hours)</a></li>
+  <li><a href="#total-fishing-effort-by-gear-type-2012-2020" id="toc-total-fishing-effort-by-gear-type-2012-2020" class="nav-link" data-scroll-target="#total-fishing-effort-by-gear-type-2012-2020">Total Fishing Effort by Gear Type (2012-2020)</a></li>
+  <li><a href="#most-used-fishing-gear-type-by-year" id="toc-most-used-fishing-gear-type-by-year" class="nav-link" data-scroll-target="#most-used-fishing-gear-type-by-year">Most Used Fishing Gear Type by Year</a></li>
+  <li><a href="#data-source" id="toc-data-source" class="nav-link" data-scroll-target="#data-source">Data Source</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/ohi-goc/OHI_GOC/edit/main/chapters/data/fishery_effort.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ohi-goc/OHI_GOC/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -206,17 +223,284 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="fishing-effort-data-in-the-gulf-of-california" class="level2">
 <h2 class="anchored" data-anchor-id="fishing-effort-data-in-the-gulf-of-california">Fishing Effort Data in the Gulf of California</h2>
-<p>To better understand fishing activities in this region, we’ve utilized data from Global Fishing Watch (GFW), which provides insights into fishing effort and vessel presence using AIS (Automatic Identification System) technology.</p>
-<p>AIS is a tracking system that helps monitor vessel movements. GFW uses this data to identify fishing vessels and detect fishing activities based on changes in speed and direction. The data is aggregated into grid cells, measuring 0.01 or 0.1 degrees per side, and expressed in hours of fishing effort. This allows for detailed analysis of where and how much fishing is occurring. Fishing activities are then categorized by gear types, such as drifting longlines, purse seines, trawlers, and fixed gear (e.g., pots and traps). This helps in understanding the specific methods used in different areas.</p>
+<p>To better understand fishing activities in this region, we’ve utilized data from Global Fishing Watch (GFW), which provides insights into fishing effort and vessel presence using AIS (Automatic Identification System) technology. AIS is a tracking system that helps monitor vessel movements. GFW uses this data, received from their partners at ORBCOMM and Spire, to identify fishing vessels and detect fishing activities based on changes in speed and direction.</p>
+<p>The data is aggregated into grid cells, measuring 0.01 or 0.1 degrees per side, and expressed in hours of fishing effort. This allows for detailed analysis of where and how much fishing is occurring.</p>
+<p>Fishing activities are then categorized by gear types, shown below in the table below. This helps in understanding the specific methods used in different areas.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<table class="table table-striped table-condensed table-sm small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Gear Type</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">fishing</td>
+<td style="text-align: left;">A combination of vessels of unknown fishing gear</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">drifting_longlines</td>
+<td style="text-align: left;">Drifting longlines</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">seiners</td>
+<td style="text-align: left;">Vessels using seine nets, including potential purse seine vessels targeting tuna and other species, as well as danish and other seines</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp;&nbsp;purse_seines</td>
+<td style="text-align: left;">Purse seines, both pelagic and demersal</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tuna_purse_seines</td>
+<td style="text-align: left;">Large purse seines primarily fishing for tuna</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;other_purse_seines</td>
+<td style="text-align: left;">Purse seiners fishing for mackerel, anchovies, etc, often smaller and operating nearer the coast than tuna purse seines</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp;&nbsp;other_seines</td>
+<td style="text-align: left;">Danish seines and other seiners not using purse seines</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">trawlers</td>
+<td style="text-align: left;">Trawlers, all types</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">pole_and_line</td>
+<td style="text-align: left;">Vessel from which people fish with pole and line</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">trollers</td>
+<td style="text-align: left;">Vessel that tows multiple fishing lines</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">fixed_gear</td>
+<td style="text-align: left;">A category that includes potential set longlines, set gillnets, and pots and traps</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp;&nbsp;pots_and_traps</td>
+<td style="text-align: left;">Vessel that deploys pots (small, portable traps) or traps to catch fish</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp;&nbsp;set_longlines</td>
+<td style="text-align: left;">Vessel that fishes by setting longlines anchored to the seafloor. These lines have shorter hooked, typically baited, lines hanging from them</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp;&nbsp;set_gillnets</td>
+<td style="text-align: left;">Vessel that fishes by setting gillnets anchored to the seafloor</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dredge_fishing</td>
+<td style="text-align: left;">Vessel that tows a dredge that scrapes up edible bottom dwellers such as scallops or oysters</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">squid_jigger</td>
+<td style="text-align: left;">Squid jiggers, mostly large industrial pelagic operating vessels</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</div>
+<section id="important-limitations-for-gulf-of-california-data" class="level3">
+<h3 class="anchored" data-anchor-id="important-limitations-for-gulf-of-california-data">Important Limitations for Gulf of California Data</h3>
+<p>When interpreting this data for the Gulf of California, several important limitations should be considered:</p>
+<ul>
+<li><p><strong>Limited Coverage of Small Vessels</strong>: AIS data includes only approximately 70,000 of the world’s estimated 2.8 million fishing vessels. This is particularly significant for the Gulf of California, where about 90% of fishing is conducted by small-scale fishers operating vessels under 12 meters, of which less than 1% are represented in AIS data globally <a href="https://www.sciencedirect.com/science/article/abs/pii/S096456912100394X#:~:text=Geographic%20areas%20covered,%2C%20they%20have%20many%20dissimilarities.">Cánovas-Molina et al.&nbsp;2021</a>.</p></li>
+<li><p><strong>Size Bias in Data Collection</strong>: Coverage increases with vessel size (14-19% for vessels 12-24 meters and 52-85% for vessels larger than 24 meters). The International Maritime Organization only mandates AIS for vessels larger than 36 meters, which excludes many vessels operating in the Gulf.</p></li>
+<li><p><strong>Incomplete Signal Reception</strong>: Not all AIS messages are recorded due to satellite coverage limitations, terrestrial receiver placement, signal interference, and variation in broadcast strength. This affects data quality in certain areas of the Gulf.</p></li>
+<li><p><strong>Increasing Data Collection Over Time</strong>: The apparent increase in fishing activity from 2012-2016 should be interpreted cautiously, as it partly reflects the growing adoption of AIS technology and expansion of receivers rather than necessarily indicating increased fishing pressure.</p></li>
+</ul>
+<p>That being said, <a href="https://www.sciencedirect.com/science/article/abs/pii/S096456912100394X#:~:text=Geographic%20areas%20covered">Cánovas-Molina et al.&nbsp;2021</a> concluded in their study on “Assessing the contribution to overfishing of small- and large-scale fisheries in two marine regions as determined by the weight of evidence approach” that “overfishing could not be exclusively attributed to either LSF or SSF (Mansfield, 2011), but instead both fishing sectors shared responsibilities.” Small-scale fishing requires a deep dive into possible data sources to address their fishing pressure.</p>
+<p>To read more about Global Fishing Watch’s AIS-based apparent fishing effort dataset, click <a href="https://globalfishingwatch.org/dataset-and-code-fishing-effort/">here</a>.</p>
+</section>
 <section id="exploratory-interactive-map" class="level3">
 <h3 class="anchored" data-anchor-id="exploratory-interactive-map">Exploratory Interactive Map</h3>
-<p>By exploring the map below, you can determine where fishing is most concentrated (indicated by the size of the points) and how different gear types are distributed across the Gulf. By changing the year on the slider, the map changes in fishing activity over time, which can help identify seasonal patterns or impacts from external factors like climate change or policy changes. Areas of high fishing pressure and potential impacts on marine ecosystems can also be identified, which can inform conservation efforts and sustainable management strategies.</p>
-<p>Note that Global Fishing Watch was expanding the number of vessels using the AIS system from 2012 - 2016. Increases in points on the map do not directly indicate a higher fishing pressure over the years.</p>
-<iframe src="https://sophiamanos713.shinyapps.io/fishing_effort_yearly_shiny/" width="100%" height="600">
+<p>By exploring the map below, you can determine where fishing was most concentrated for that year (indicated by the size of the circles) and how different gear types are distributed across the Gulf.</p>
+<p>By changing the year on the slider, the map shows changes in fishing activity over time, which could ideally identify spatial patterns by gear type or impacts from external factors like climate change or policy changes.</p>
+<p>Therefore, while areas of high fishing pressure can be identified to inform conservation efforts and management strategies, it’s important to recognize that this data predominantly represents larger, commercial vessels. The substantial small-scale fishing fleet operating in the Gulf of California is largely absent from this dataset, which could lead to an underestimation of fishing pressure in certain areas.</p>
+<iframe src="https://sophiamanos713.shinyapps.io/fishing_effort_yearly_shiny/" width="100%" height="800">
 </iframe>
-
-
 </section>
+</section>
+<section id="yearly-fishing-effort-by-all-gear-types-hours" class="level2">
+<h2 class="anchored" data-anchor-id="yearly-fishing-effort-by-all-gear-types-hours">Yearly Fishing Effort by All Gear Types (Hours)</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div class="datatables html-widget html-fill-item" id="htmlwidget-31b6dc0f6bc410c6a821" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-31b6dc0f6bc410c6a821">{"x":{"filter":"none","vertical":false,"caption":"<caption> <\/caption>","data":[["trawlers","drifting_longlines","fishing","set_longlines","set_gillnets","fixed_gear","other_purse_seines","squid_jigger","tuna_purse_seines","pole_and_line","dredge_fishing","pots_and_traps","other_seines","purse_seines","trollers","seiners"],["4,428,233","1,785,565","574,434","732,725","162,458","153,238","121,048","246,796","85,808","30,416","39,791","65,200","25,778","9,153","1,727","10,695"],["12,392,796","2,898,499","2,064,929","1,716,061","959,895","639,388","434,578","374,771","97,498","138,791","152,113","153,666","58,892","20,872","11,228","17,222"],["15,687,299","3,505,842","2,756,526","1,875,235","1,276,442","772,232","691,403","500,778","199,630","211,347","199,561","202,216","65,046","30,007","19,967","24,542"],["17,000,050","4,977,444","3,144,443","1,875,542","1,618,166","902,633","782,483","627,325","377,590","262,897","245,786","263,014","64,424","32,656","24,832","31,150"],["19,914,183","6,972,091","4,084,962","2,269,955","2,050,341","1,108,733","854,409","644,044","519,627","298,157","316,055","296,845","72,500","36,453","37,707","35,337"],["22,044,588","8,285,865","4,514,227","2,647,979","2,734,012","1,397,616","920,114","750,926","589,509","411,940","370,033","280,774","77,885","50,588","43,852","43,621"],["6,932,927","2,535,397","1,233,234","758,412","873,596","422,460","213,810","387,502","165,028","105,679","105,550","86,291","27,070","14,719","7,206","14,246"],["25,537,468","9,826,329","5,087,393","3,345,262","3,364,224","1,550,761","995,334","1,032,154","554,413","563,061","498,913","382,340","97,440","61,436","67,636","42,682"],["23,797,728","9,320,650","4,953,645","3,124,514","3,095,342","1,344,077","983,993","1,363,294","576,470","524,964","441,958","367,574","89,189","169,060","64,996","54,314"],["147,735,272","50,107,681","28,413,794","18,345,686","16,134,477","8,291,138","5,997,172","5,927,592","3,165,572","2,547,253","2,369,759","2,097,921","578,224","424,946","279,151","273,808"]],"container":"<table class=\"cell-border stripe\">\n  <thead>\n    <tr>\n      <th>Gear Type<\/th>\n      <th>2012<\/th>\n      <th>2013<\/th>\n      <th>2014<\/th>\n      <th>2015<\/th>\n      <th>2016<\/th>\n      <th>2017<\/th>\n      <th>2018<\/th>\n      <th>2019<\/th>\n      <th>2020<\/th>\n      <th>Total<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":25,"autoWidth":true,"dom":"frtip","columnDefs":[{"name":"Gear Type","targets":0},{"name":"2012","targets":1},{"name":"2013","targets":2},{"name":"2014","targets":3},{"name":"2015","targets":4},{"name":"2016","targets":5},{"name":"2017","targets":6},{"name":"2018","targets":7},{"name":"2019","targets":8},{"name":"2020","targets":9},{"name":"Total","targets":10}],"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="total-fishing-effort-by-gear-type-2012-2020" class="level2">
+<h2 class="anchored" data-anchor-id="total-fishing-effort-by-gear-type-2012-2020">Total Fishing Effort by Gear Type (2012-2020)</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<table class="table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Gear Type</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Total Fishing Hours (2012-2020)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">trawlers</td>
+<td style="text-align: left;">147,735,272</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">drifting_longlines</td>
+<td style="text-align: left;">50,107,681</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">fishing</td>
+<td style="text-align: left;">28,413,794</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">set_longlines</td>
+<td style="text-align: left;">18,345,686</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">set_gillnets</td>
+<td style="text-align: left;">16,134,477</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">fixed_gear</td>
+<td style="text-align: left;">8,291,138</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">other_purse_seines</td>
+<td style="text-align: left;">5,997,172</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">squid_jigger</td>
+<td style="text-align: left;">5,927,592</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">tuna_purse_seines</td>
+<td style="text-align: left;">3,165,572</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">pole_and_line</td>
+<td style="text-align: left;">2,547,253</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dredge_fishing</td>
+<td style="text-align: left;">2,369,759</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">pots_and_traps</td>
+<td style="text-align: left;">2,097,921</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">other_seines</td>
+<td style="text-align: left;">578,224</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">purse_seines</td>
+<td style="text-align: left;">424,946</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">trollers</td>
+<td style="text-align: left;">279,151</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">seiners</td>
+<td style="text-align: left;">273,808</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</div>
+</section>
+<section id="most-used-fishing-gear-type-by-year" class="level2">
+<h2 class="anchored" data-anchor-id="most-used-fishing-gear-type-by-year">Most Used Fishing Gear Type by Year</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<table class="table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: right;" data-quarto-table-cell-role="th">Year</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Dominant Gear Type</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Fishing Hours</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">2012</td>
+<td style="text-align: left;">trawlers</td>
+<td style="text-align: left;">4,428,233</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2013</td>
+<td style="text-align: left;">trawlers</td>
+<td style="text-align: left;">12,392,796</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2014</td>
+<td style="text-align: left;">trawlers</td>
+<td style="text-align: left;">15,687,299</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2015</td>
+<td style="text-align: left;">trawlers</td>
+<td style="text-align: left;">17,000,050</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2016</td>
+<td style="text-align: left;">trawlers</td>
+<td style="text-align: left;">19,914,183</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2017</td>
+<td style="text-align: left;">trawlers</td>
+<td style="text-align: left;">22,044,588</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2018</td>
+<td style="text-align: left;">trawlers</td>
+<td style="text-align: left;">6,932,927</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2019</td>
+<td style="text-align: left;">trawlers</td>
+<td style="text-align: left;">25,537,468</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2020</td>
+<td style="text-align: left;">trawlers</td>
+<td style="text-align: left;">23,797,728</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</div>
+</section>
+<section id="data-source" class="level2">
+<h2 class="anchored" data-anchor-id="data-source">Data Source</h2>
+<p><strong>Reference</strong>: <a href="https://globalfishingwatch.org/data-download/datasets/public-fishing-effort" class="uri">https://globalfishingwatch.org/data-download/datasets/public-fishing-effort</a></p>
+<p><strong>Downloaded</strong>: March 4, 2025</p>
+<p><strong>Description</strong>: Fleet daily v2</p>
+<p><strong>Time range</strong>: 2012 - 2020</p>
+<p><strong>Resolution</strong>: daily, 100th degree</p>
+<p><strong>Format</strong>: .csv</p>
+<p><strong>File location</strong>: <code>Mazu:/home/shares/ohi/OHI_GOC/_raw_data/global_fishing_watch/d2025/global_fishing_watch_manual_data_fleet_v2</code></p>
+
+
 </section>
 
 </main> <!-- /main -->
