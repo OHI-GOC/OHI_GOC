@@ -39,6 +39,8 @@ website:
             text: "Fishery production"
           - href: chapters/data/fishery_effort.qmd
             text: "Fishing effort"
+          - href: chapters/data/habitats.qmd
+            text: "Habitats"
       - href: chapters/pressures.qmd
         text: "Pressures"
       - href: chapters/resilience.qmd

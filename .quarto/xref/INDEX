@@ -82,5 +82,8 @@
   },
   "chapters/data/fishery_effort.qmd": {
     "fishery_effort.html": "3a8de12a"
+  },
+  "chapters/data/habitats.qmd": {
+    "habitats.html": "5a2bd344"
   }
 }
