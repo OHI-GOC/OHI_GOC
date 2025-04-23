@@ -85,5 +85,8 @@
   },
   "chapters/data/habitats.qmd": {
     "habitats.html": "5a2bd344"
+  },
+  "chapters/data/tourism_lodging.qmd": {
+    "tourism_lodging.html": "bf6c655c"
   }
 }
