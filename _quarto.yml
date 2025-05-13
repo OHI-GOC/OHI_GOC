@@ -43,6 +43,8 @@ website:
             text: "Habitats"
           - href: chapters/data/tourism_lodging.qmd
             text: "Tourism lodging"
+          - href: chapters/data/species.qmd
+            text: "Species"
       - href: chapters/pressures.qmd
         text: "Pressures"
       - href: chapters/resilience.qmd

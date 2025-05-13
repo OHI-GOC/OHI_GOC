@@ -20,58 +20,51 @@
     ]
   },
   {
-    "objectID": "chapters/goals.html",
-    "href": "chapters/goals.html",
-    "title": "Building the conceptual framework",
+    "objectID": "chapters/bd.html",
+    "href": "chapters/bd.html",
+    "title": " Biodiversity",
     "section": "",
-    "text": "One of the first steps to building the conceptual OHI framework is determining which goals to include.\nThe global OHI assessment includes 10 goals. But some of these goals may not be relevant to the Gulf of California. Conversely, there may be goals that are important to the region that were not included in the global assessment.\nAnd, even when goals are the same, the models and data underlying the goal will very likely be different.\nThere is no reason to follow the global model, but understanding the theory behind the global goals and how they were measured is a helpful way to begin thinking about what to include in the Gulf of California assessment.\n\n\n\n\n\n\n\nLearn more about the global goals (click to expand)\n\n\n\n\n\nClicking on the goal will link to the goal pages which provide more information about the global goals.\n\n\n\n\n\n\n\n\n\nHere is a resource to help you develop the goals for the Gulf of California.",
-    "crumbs": [
-      "Identify goals"
-    ]
+    "text": "Biodiversity\nThis goal describes how successfully we are preserving the richness and variety of marine life.\n\n\n This information is meant to help guide the process of developing the Gulf of California OHI!\nThis goal is included in the global OHI, but other regional assessments have cut or modified this goal to better meet their objectives for ocean health…\n\n\nOverview\n\n\nPractical Guidance\n\n\nLEARN MORE\nExplore the full description of the data and model used in the GLOBAL MODEL. Or, take a look at REGIONAL APPROACHES to learn how other OHI+ assessments have modified this goal to address differences in data availability or priorities.\nHABITAT\n\n  GLOBAL MODEL    REGIONAL APPROACHES \n\nSPECIES\n\n  GLOBAL MODEL    REGIONAL APPROACHES"
   },
   {
-    "objectID": "chapters/resilience.html",
-    "href": "chapters/resilience.html",
+    "objectID": "chapters/ao.html",
+    "href": "chapters/ao.html",
+    "title": " Artisanal fishing opportunities",
+    "section": "",
+    "text": "Artisanal fishing opportunities\nThis goal measures whether people who need to fish on a small, local scale have the opportunity to do so.\n\n\n This information is meant to help guide the process of developing the Gulf of California OHI!\nThis goal is included in the global OHI, but other regional assessments have cut or modified this goal to better meet their objectives for ocean health. For example, in a Canadian OHI assessment, the perspective of Aboriginal communities, which has been absent from assessments at the global scale due to lack of information, was represented by redefining the artisanal fishing opportunities goal as the Aboriginal opportunity goal. The model will almost certainly be modified for the Gulf of California assessment. For example, need is a component of the global analysis, but may not be relevant in a regional assessment.\n\n\nOverview\nArtisanal fishing, often also called small-scale fishing, provides a critical source of food, nutrition, poverty alleviation and livelihood opportunities for many people around the world, especially in developing nations. Small-scale fishing is an important component of cultural identity and heritage.\n\nHalf the world’s fish harvest is captured by artisanal fishing families.\n\nThis goal measures how easy or hard it is for fishers to access ocean resources when they need them and the sustainability of harvest of stocks used by artisanal fishers. The need for artisanal fishing is most directly tied to the percent of population below the poverty line. Access, or ability to meet this need, are institutional permits or encouragements for small fisheries. Sustainability of artisanal fisheries refers to the sustainability of fishing methods and/or the health of targeted species. Sustainable gears are traditional hook and line, as opposed to unsustainable practices such as dynamite and gill net fishing.\nA high score indicates that the demand for artisanal fishing is being met using lawful and sustainable methods, or alternatively, there is little economic need for artisanal fishing. A low score indicates that regions are not achieving or allowing sustainable artisanal fishing opportunities to be realized.\nWhile small-scale fishing provides benefits and opportunities for local communities, limited or ineffective regulation and enforcement can signficantly impact the ability to pursue it.\nComparison of large scale and small scale fisheries\n\n\n\nInfographic from Jacquet et al. 2008\n\n\n\n\nPractical Guidance\nIdeally, this goal will include a measure of of how easy or hard it is for residents to access ocean resources when they need them. Measures of access include institutional and/or government regulations that provide people with access to marine waters through open coastlines and docks, readily available permitting for fish harvest, and programs that foster artisanal fishing opportunities. Another measure of access is that fish are actually available, which can be estimated by assessing the health of targeted species (see Fisheries subgoal) or the general sustainability of fishing practices. Sustainable gears are traditional hook and line, as opposed to unsustainable practices such as dynamite and gill net fishing.\nIn the global analysis, the need for artisanal fishing is most directly tied to the percent of population below the poverty line.\n\nNOTE: The benefits of Artisanal Fishing can be difficult to parse from other goals. For example, tonnage of artisanally-caught fish will typically be included in the Food Provision goal. Another example is that in the Baltic Sea region, Artisanal Opportunities is very closely connected to Tourism and Recreation since there are a lot of locals and tourists using the shared sea for enjoyment. It will be necessary to determine how to apportion the data.\n\nThe reference point will depend on the data and model. In most cases, the availability of better local data will allow for improvements to the Global OHI assessment model (see table below).\n\n\nLEARN MORE\nExplore the full description of the data and model used in the GLOBAL MODEL. Or, take a look at REGIONAL APPROACHES to learn how other OHI+ assessments have modified this goal to address differences in data availability or priorities.\n\n  GLOBAL MODEL    REGIONAL APPROACHES"
+  },
+  {
+    "objectID": "chapters/data/sst.html",
+    "href": "chapters/data/sst.html",
     "title": "OHI: Gulf of California",
     "section": "",
-    "text": "Good governance and ecological integrity generally allow systems to absorb disturbance to maintain critical function, which will mitigate the impact of pressures on systems. We determine how resilience will help protect marine services from pressures to better predict what goal scores will look like in the near future.\n\n\n\n\nResilient systems are ecologically healthy and have robust social systems to deal with perturbations. The global OHI model includes three general indices of resilence: ecoystem condition, regulatory efforts to address specific pressures, and the general effectiveness of social systems.\n\n\nFor the global OHI assessment, we assess three general categories of resilience: ecological health, regulatory effort, and social effectiveness.\n\nEcological Health\n\nHealthy ecosystems have the ability to absorb disturbance to maintain critical functions (Chambers et al. 2019). For the global OHI assessment, ecosystem health is measured as the relative condition of assessed species in a given location. For some goals, there is little evidence that this index of ecosystem integrity directly affects the value of the goal (or subgoal). In these instances, ecological integrity falls out of the resilience model.\n\nRegulatory effort\n\nInstitutional measures (e.g., rules, regulations, and laws) can address the specific pressures acting on systems. For the global OHI assessment, regulatory effort is comprised of five categories that address the 5 pressure categories: fishing pressure, habitat destruction, climate change, water pollution, and species introductions. There is also an additional category for goal-specific regulations that apply to a goal or goals, but do not address a specific pressure category.\n\nSocial integrity\n\nWell functioning societies have the capacity and resources to mitigate a wide array of challenges.This indicator is intended to describe the effectiveness of social institutions that exist to meet human needs such as government, economy, education, heathcare, and religion.\n\n\nEach resilience category may be composed of several datasets. For each dataset, values will range from 0 to 1, reflecting the magnitude of resilience for each country (with 1 indicating high resilience).\n\n\n\n\n\n\nDescription of global resilience data (click to expand)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWe then link the resilience variables to specific goals (Figure 2). Resilience estimates are intended to directly address, as much as possible, the specific pressures acting on a goal. Consequently, resilience scores should not exceed pressure scores, otherwise likely future status scores will be inflated.\nFigure 2. The relationship between the resilience layers and goals. Points with the same color are the same goal, but some goals have different components that are affected differently.\n\n\n\n\n\n\n\n\n\nThe resilience estimate for each goal and country is then combined with the trend and pressure estimates to estimate goal scores.",
+    "text": "Sea surface temperature (SST) is a critical indicator of ocean health, influencing marine ecosystems, biodiversity, and climate patterns. Anomalies in SST can disrupt food webs, alter species distributions, and serve as climate change indicators based on their frequency and severity.\nThis page provides access to yearly SST data for the Gulf of California, from 1980 to 2023. Eventually this data could be used in creating a pressure layer for the OHI GoC project, identifying long-term patterns and assessing climate change impacts on foundation species in the Gulf.\n\n\nThis tool displays the average sea surface temperature for each year from 1980 to 2023 in the Gulf of California. Use this visualization to explore temporal trends in SST across decades by selecting specific years of interest, or pressing “play” for an animation throughout the years.\n\n\n\n\n\nThis interactive tool compares historical SST patterns (1980–2000) with recent conditions (2001–2023). Each year’s average SST values were subtracted from the historical baseline (1980–2000) to highlight areas experiencing significant warming or cooling trends. Use this tool to identify regions that may require targeted conservation efforts by selecting specific years.",
     "crumbs": [
-      "Resilience"
+      "Data",
+      "Sea surface temperature"
     ]
   },
   {
-    "objectID": "chapters/resilience.html#resilience-overview",
-    "href": "chapters/resilience.html#resilience-overview",
+    "objectID": "chapters/data/sst.html#sea-surface-temperature-for-the-gulf-of-california",
+    "href": "chapters/data/sst.html#sea-surface-temperature-for-the-gulf-of-california",
     "title": "OHI: Gulf of California",
     "section": "",
-    "text": "Good governance and ecological integrity generally allow systems to absorb disturbance to maintain critical function, which will mitigate the impact of pressures on systems. We determine how resilience will help protect marine services from pressures to better predict what goal scores will look like in the near future.\n\n\n\n\nResilient systems are ecologically healthy and have robust social systems to deal with perturbations. The global OHI model includes three general indices of resilence: ecoystem condition, regulatory efforts to address specific pressures, and the general effectiveness of social systems.\n\n\nFor the global OHI assessment, we assess three general categories of resilience: ecological health, regulatory effort, and social effectiveness.\n\nEcological Health\n\nHealthy ecosystems have the ability to absorb disturbance to maintain critical functions (Chambers et al. 2019). For the global OHI assessment, ecosystem health is measured as the relative condition of assessed species in a given location. For some goals, there is little evidence that this index of ecosystem integrity directly affects the value of the goal (or subgoal). In these instances, ecological integrity falls out of the resilience model.\n\nRegulatory effort\n\nInstitutional measures (e.g., rules, regulations, and laws) can address the specific pressures acting on systems. For the global OHI assessment, regulatory effort is comprised of five categories that address the 5 pressure categories: fishing pressure, habitat destruction, climate change, water pollution, and species introductions. There is also an additional category for goal-specific regulations that apply to a goal or goals, but do not address a specific pressure category.\n\nSocial integrity\n\nWell functioning societies have the capacity and resources to mitigate a wide array of challenges.This indicator is intended to describe the effectiveness of social institutions that exist to meet human needs such as government, economy, education, heathcare, and religion.\n\n\nEach resilience category may be composed of several datasets. For each dataset, values will range from 0 to 1, reflecting the magnitude of resilience for each country (with 1 indicating high resilience).\n\n\n\n\n\n\nDescription of global resilience data (click to expand)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWe then link the resilience variables to specific goals (Figure 2). Resilience estimates are intended to directly address, as much as possible, the specific pressures acting on a goal. Consequently, resilience scores should not exceed pressure scores, otherwise likely future status scores will be inflated.\nFigure 2. The relationship between the resilience layers and goals. Points with the same color are the same goal, but some goals have different components that are affected differently.\n\n\n\n\n\n\n\n\n\nThe resilience estimate for each goal and country is then combined with the trend and pressure estimates to estimate goal scores.",
+    "text": "Sea surface temperature (SST) is a critical indicator of ocean health, influencing marine ecosystems, biodiversity, and climate patterns. Anomalies in SST can disrupt food webs, alter species distributions, and serve as climate change indicators based on their frequency and severity.\nThis page provides access to yearly SST data for the Gulf of California, from 1980 to 2023. Eventually this data could be used in creating a pressure layer for the OHI GoC project, identifying long-term patterns and assessing climate change impacts on foundation species in the Gulf.\n\n\nThis tool displays the average sea surface temperature for each year from 1980 to 2023 in the Gulf of California. Use this visualization to explore temporal trends in SST across decades by selecting specific years of interest, or pressing “play” for an animation throughout the years.\n\n\n\n\n\nThis interactive tool compares historical SST patterns (1980–2000) with recent conditions (2001–2023). Each year’s average SST values were subtracted from the historical baseline (1980–2000) to highlight areas experiencing significant warming or cooling trends. Use this tool to identify regions that may require targeted conservation efforts by selecting specific years.",
     "crumbs": [
-      "Resilience"
+      "Data",
+      "Sea surface temperature"
     ]
   },
   {
-    "objectID": "chapters/OHI.html#starting-an-ohi-assessment",
-    "href": "chapters/OHI.html#starting-an-ohi-assessment",
+    "objectID": "chapters/data/sst.html#data-source",
+    "href": "chapters/data/sst.html#data-source",
     "title": "OHI: Gulf of California",
-    "section": "Starting an OHI assessment!",
-    "text": "Starting an OHI assessment!\nWelcome! This page will help start the planning and preparation for the OHI Gulf of California assessment!\n\n\n\n\n\n\nA tentative timeline (click to expand)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPhase 1: Getting started\nThis phase of the project involves:\n\nassembling a working group and technical team\nbuilding awareness and support through informational webinars and meetings\ndeveloping a consortium of people within Mexico to co-lead and develop network connections\ndeveloping a strategic plan and timeline for the project\n\nAn important task during Phase 1 is Assembling an expert working group!\nAlong with regional experts, this group will include OHI experts and analysts from the National Center for Ecological Analysis and Synthesis, University of California, Santa Barbara.\nWe have created a Google worksheet to help identify expert working group participants. For access to this Google spreadsheet, contact Melanie Frazier at frazier@nceas.ucsb.edu,\n\n\nPhase 2: Planning\nThe expert working group will have several responsibilities, including:\n\nLearning more about the OHI framework and work flow, and exploring the philosophy underlying the original global goals.\nDeveloping the OHI framework for the Gulf of California, including:\n\nDefining spatial boundaries\nDetermining which goals/subgoals will be included in the assessment based on local characteristics and regional priorities\nIdentifying pressure and resilience variables that are relevant to the region\nBeginning to consider relevant data sources and reference points\n\nDeveloping relationships with key stakeholders\nProviding support during Phase 3 (Conducting the assessment), including: identifying possible data, reviewing goal methods and scores, collaborating on reference points, preparing and supporting meetings, etc.\nProviding support during Phase 4 (Informing) including: editing and developing materials (e.g., website, reports, papers, meetings) to inform policy and future assessments by by sharing scores and what was learned during the process.\n\n\nMore information about planning\n\n\n\n\n\n\nLearning more…\n\n\n\nAlong with this site and the Ocean Health Index website, explore these resource to find:\n\nA short introduction to the OHI framework\nGuidance for planning an OHI assessment and a description of responsibilities of the expert working group\n\n\n\nDefining spatial boundaries The boundaries of the assessment area must be determined. This document explains some of the issues.\nThe Gulf of California could be considered one region for this assessment, or it could be divided into smaller subregions to allow for comparisons among political or ecological regions. The boundaries are important to develop early on because data will be collected at this spatial scale.\nEstablish Goals The goal framework will need to be established. The 10 goals originally selected for the global assessment can help guide the goals chosen for the Gulf of California assessment.\n\nWhen tailoring the OHI framework it is important to understand the rationale behind previously-developed approaches and to reflect whether any goals should be added, removed, or redefined. The best way to begin is by exploring the philosophy underlying each of the original goals, and then working from there. The menu to the left provides a brief description of each of the goals used in the global model as well as a description of how other regional indices have adapted the goal to fit their needs.\nThese goal pages will be updated over time to reflect the specific needs of the Gulf of California.\nIdentify Pressures and Resilience Along with the goals, it is equally important to define and categorize how local pressures and resilience properties affect the goals. We will provide more guidance on that later, but in the meantime, you can learn more about pressures and resilience.\n\n\n\nPhase 3: Conduct\nDuring this stage, the expert working group, goal specific experts, and analysts will work closely to further refine the OHI framework, identify data, and calculate and review scores. This is an iterative process and this resource includes detailed methods for conducting an OHI assessment.\n\n\nPhase 4: Inform\nThis phase involves developing and implementing a strategy for using the OHI assessment to improve the marine health of the Gulf of California. This is most effective if there is interest and engagement from policy makers and ongoing communication during the OHI process to best inform management actions that could have measurable impacts. Repeated assessments as new data become available enable tracking ocean health through time and evaluating management priorities. This resource describes this phase of an OHI assessment.",
+    "section": "Data Source",
+    "text": "Data Source\nThis dataset was downloaded from CEDA on January 16, 2025, as part of an ongoing effort to provide a pressure layer of Sea Surface Temperature (SST) for the Gulf of California. It provides daily-mean sea surface temperatures (SST), presented on a global grid spanning from 1980 to present. It is a Level 4 product with gaps between daily observations filled using statistical methods.\nReference: Good, S.A.; Embury, O. (2024): ESA Sea Surface Temperature Climate Change Initiative (SST_cci): Level 4 Analysis product, version 3.0. NERC EDS Centre for Environmental Data Analysis, 09 April 2024. doi:10.5285/4a9654136a7148e39b7feb56f8bb02d2. https://dx.doi.org/10.5285/4a9654136a7148e39b7feb56f8bb02d2\nDownloaded: January 16, 2025\nDescription: ESA Sea Surface Temperature Climate Change Initiative (SST_cci): Level 4 Analysis product, version 3.0\nTime range: 1980 - ongoing, updated daily at one month behind present\nFormat: NetCDF\nResolution: Global 0.05° latitude-longitude grid (5,600 meters at the equator)",
     "crumbs": [
-      "Starting an OHI assessment"
+      "Data",
+      "Sea surface temperature"
     ]
-  },
-  {
-    "objectID": "chapters/fp.html",
-    "href": "chapters/fp.html",
-    "title": " Food provision",
-    "section": "",
-    "text": "Food provision\nThis goal assesses our ability to sustainably maximize wild-caught or farmed marine foods.\n\n\n This information is meant to help guide the process of developing the Gulf of California OHI!\nThis goal is included in the global OHI, but other regional assessments have cut or modified this goal to better meet their objectives for ocean health…\n\n\nOverview\n\n\nPractical Guidance\n\n\nLEARN MORE\nExplore the full description of the data and model used in the GLOBAL MODEL. Or, take a look at REGIONAL APPROACHES to learn how other OHI+ assessments have modified this goal to address differences in data availability or priorities.\nWILDCAUGHT FISHERIES\n\n  GLOBAL MODEL    REGIONAL APPROACHES \n\nMARICULTURE\n\n  GLOBAL MODEL    REGIONAL APPROACHES"
-  },
-  {
-    "objectID": "chapters/np.html",
-    "href": "chapters/np.html",
-    "title": " Natural products",
-    "section": "",
-    "text": "Natural products\nThis goal assesses whether countries are maximizing the sustainable harvest of non-food marine resources.\n\n\n This information is meant to help guide the process of developing the Gulf of California OHI!\nThis goal is included in the global OHI, but other regional assessments have cut or modified this goal to better meet their objectives for ocean health…\n\n\nOverview\n\n\nPractical Guidance\n\n\nLEARN MORE\nExplore the full description of the data and model used in the GLOBAL MODEL. Or, take a look at REGIONAL APPROACHES to learn how other OHI+ assessments have modified this goal to address differences in data availability or priorities.\n\n  GLOBAL MODEL    REGIONAL APPROACHES"
   },
   {
     "objectID": "chapters/data/protected.html",
@@ -104,6 +97,199 @@
     "crumbs": [
       "Data",
       "Protected regions"
+    ]
+  },
+  {
+    "objectID": "chapters/data/species.html",
+    "href": "chapters/data/species.html",
+    "title": "Species Distribution for the Gulf of California",
+    "section": "",
+    "text": "The species that inhabit the ocean have a vital role in shaping the existing marine environment. They are valued for their beauty and inherent right to exist, as well as their role in supporting productive habitats that provide many benefits for people.\nFrom the largest predators to microscopic plankton, these species depend upon each other for survival. The interaction of species that have naturally evolved in a given location is essential for ecosystem structure and stability. In addition, the maintenance of large numbers of species provides diverse genetic resource that makes it possible to avoid functional collapse, should conditions change in the future. This sub-goal would potentially assesses the health of all marine species present in the Gulf of California, including endangered species and species in relatively good conditions. The presence of species that are not at risk leads to a higher score.\nThis page explores the species within the GoC, their spatial distribution determined by the IUCN, and their corresponding species status category.\nBelow are the number of species within the Gulf of California that have been designated as a specific IUCN Category, in which they could be:\n\nData Deficient (DD)\nLeast Concern (LC)\nNear Threatened (NT)\nVulnerable (VU)\nEndangered (EN)\nCritically Endangered (CR)\nExtinct in the Wild (EW), or\nExtinct (EX)\n\nTo see the percentage of the total species assessed within the Gulf of California, hover over the pie chart.\n\n\n\n\n\n\nAdditionally, if you would like to see which species have been designated as a certain IUCN Status Category, feel free to search or explore below:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading layer `seagrasses_dist_goc_wgs84' from data source \n  `/home/shares/ohi/OHI_GOC/_raw_data/IUCN_spatial/d2025/int/seagrasses_dist_goc_wgs84.shp' \n  using driver `ESRI Shapefile'\nSimple feature collection with 5 features and 29 fields\nGeometry type: MULTIPOLYGON\nDimension:     XY\nBounding box:  xmin: -114.8879 ymin: 20.41118 xmax: -105.1953 ymax: 31.82199\nGeodetic CRS:  WGS 84\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTo download a list of the species evaluated within a country, use the IUCN API website (https://api.iucnredlist.org/), click the “Generate a token” link at the top of the web page, and fill out the form to apply for a token. You should then receive a token after completing the form. After receiving a token, open the .Renviron file on your computer (e.g., using usethis::edit_r_environ()).\nThen, within your code, type:\n\n# usethis::edit_r_environ() # and add the token as \"IUCN_REDLIST_KEY\"\n\nThen, to verify access to IUCN Red List API:\n\n# rredlist::rl_use_iucn() # make sure you did the above ^!\n\nTo obtain the species distribution data from IUCN, manual polygon downloads are available at https://www.iucnredlist.org/resources/spatial-data-download. The API will give the list of the status and name of all species in Mexico, but it does not have any spatial data associated with it (such as locations/coordinates seen). After downloading all marine groups manually and cropping it to the GoC, you will be able to match it with listed species and their status from mex_species. It is possible there are more taxonomic group distribution data than are listed, which is okay and still good to explore.\nNote: there are 19 groups (separate downloads) for spatial data. Mazu location is /home/shares/ohi/OHI_GOC/_raw_data/IUCN_spatial/d2025. After requesting each group, go to your account page under “saved downloads”. There, all requested downloads will be present. Download each group and unzip, then bring into Mazu for the appropriate year.",
+    "crumbs": [
+      "Data",
+      "Species"
+    ]
+  },
+  {
+    "objectID": "chapters/data/species.html#exploring-iucn-redlist-and-species-distribution",
+    "href": "chapters/data/species.html#exploring-iucn-redlist-and-species-distribution",
+    "title": "Species Distribution for the Gulf of California",
+    "section": "",
+    "text": "The species that inhabit the ocean have a vital role in shaping the existing marine environment. They are valued for their beauty and inherent right to exist, as well as their role in supporting productive habitats that provide many benefits for people.\nFrom the largest predators to microscopic plankton, these species depend upon each other for survival. The interaction of species that have naturally evolved in a given location is essential for ecosystem structure and stability. In addition, the maintenance of large numbers of species provides diverse genetic resource that makes it possible to avoid functional collapse, should conditions change in the future. This sub-goal would potentially assesses the health of all marine species present in the Gulf of California, including endangered species and species in relatively good conditions. The presence of species that are not at risk leads to a higher score.\nThis page explores the species within the GoC, their spatial distribution determined by the IUCN, and their corresponding species status category.\nBelow are the number of species within the Gulf of California that have been designated as a specific IUCN Category, in which they could be:\n\nData Deficient (DD)\nLeast Concern (LC)\nNear Threatened (NT)\nVulnerable (VU)\nEndangered (EN)\nCritically Endangered (CR)\nExtinct in the Wild (EW), or\nExtinct (EX)\n\nTo see the percentage of the total species assessed within the Gulf of California, hover over the pie chart.\n\n\n\n\n\n\nAdditionally, if you would like to see which species have been designated as a certain IUCN Status Category, feel free to search or explore below:",
+    "crumbs": [
+      "Data",
+      "Species"
+    ]
+  },
+  {
+    "objectID": "chapters/data/species.html#group-distributions",
+    "href": "chapters/data/species.html#group-distributions",
+    "title": "Species Distribution for the Gulf of California",
+    "section": "",
+    "text": "Reading layer `seagrasses_dist_goc_wgs84' from data source \n  `/home/shares/ohi/OHI_GOC/_raw_data/IUCN_spatial/d2025/int/seagrasses_dist_goc_wgs84.shp' \n  using driver `ESRI Shapefile'\nSimple feature collection with 5 features and 29 fields\nGeometry type: MULTIPOLYGON\nDimension:     XY\nBounding box:  xmin: -114.8879 ymin: 20.41118 xmax: -105.1953 ymax: 31.82199\nGeodetic CRS:  WGS 84",
+    "crumbs": [
+      "Data",
+      "Species"
+    ]
+  },
+  {
+    "objectID": "chapters/data/species.html#how-to-use-the-iucn-redlist",
+    "href": "chapters/data/species.html#how-to-use-the-iucn-redlist",
+    "title": "Species Distribution for the Gulf of California",
+    "section": "",
+    "text": "To download a list of the species evaluated within a country, use the IUCN API website (https://api.iucnredlist.org/), click the “Generate a token” link at the top of the web page, and fill out the form to apply for a token. You should then receive a token after completing the form. After receiving a token, open the .Renviron file on your computer (e.g., using usethis::edit_r_environ()).\nThen, within your code, type:\n\n# usethis::edit_r_environ() # and add the token as \"IUCN_REDLIST_KEY\"\n\nThen, to verify access to IUCN Red List API:\n\n# rredlist::rl_use_iucn() # make sure you did the above ^!\n\nTo obtain the species distribution data from IUCN, manual polygon downloads are available at https://www.iucnredlist.org/resources/spatial-data-download. The API will give the list of the status and name of all species in Mexico, but it does not have any spatial data associated with it (such as locations/coordinates seen). After downloading all marine groups manually and cropping it to the GoC, you will be able to match it with listed species and their status from mex_species. It is possible there are more taxonomic group distribution data than are listed, which is okay and still good to explore.\nNote: there are 19 groups (separate downloads) for spatial data. Mazu location is /home/shares/ohi/OHI_GOC/_raw_data/IUCN_spatial/d2025. After requesting each group, go to your account page under “saved downloads”. There, all requested downloads will be present. Download each group and unzip, then bring into Mazu for the appropriate year.",
+    "crumbs": [
+      "Data",
+      "Species"
+    ]
+  },
+  {
+    "objectID": "chapters/cw.html",
+    "href": "chapters/cw.html",
+    "title": " Clean waters",
+    "section": "",
+    "text": "Clean waters\nThis goal captures the degree to which local waters are unpolluted by human-made causes.\n\n\n This information is meant to help guide the process of developing the Gulf of California OHI!\nThis goal is included in the global OHI, but other regional assessments have cut or modified this goal to better meet their objectives for ocean health…\n\n\nOverview\n\n\nPractical Guidance\n\n\nLEARN MORE\nExplore the full description of the data and model used in the GLOBAL MODEL. Or, take a look at REGIONAL APPROACHES to learn how other OHI+ assessments have modified this goal to address differences in data availability or priorities.\n\n  GLOBAL MODEL    REGIONAL APPROACHES"
+  },
+  {
+    "objectID": "chapters/fp.html",
+    "href": "chapters/fp.html",
+    "title": " Food provision",
+    "section": "",
+    "text": "Food provision\nThis goal assesses our ability to sustainably maximize wild-caught or farmed marine foods.\n\n\n This information is meant to help guide the process of developing the Gulf of California OHI!\nThis goal is included in the global OHI, but other regional assessments have cut or modified this goal to better meet their objectives for ocean health…\n\n\nOverview\n\n\nPractical Guidance\n\n\nLEARN MORE\nExplore the full description of the data and model used in the GLOBAL MODEL. Or, take a look at REGIONAL APPROACHES to learn how other OHI+ assessments have modified this goal to address differences in data availability or priorities.\nWILDCAUGHT FISHERIES\n\n  GLOBAL MODEL    REGIONAL APPROACHES \n\nMARICULTURE\n\n  GLOBAL MODEL    REGIONAL APPROACHES"
+  },
+  {
+    "objectID": "chapters/OHI.html#starting-an-ohi-assessment",
+    "href": "chapters/OHI.html#starting-an-ohi-assessment",
+    "title": "OHI: Gulf of California",
+    "section": "Starting an OHI assessment!",
+    "text": "Starting an OHI assessment!\nWelcome! This page will help start the planning and preparation for the OHI Gulf of California assessment!\n\n\n\n\n\n\nA tentative timeline (click to expand)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPhase 1: Getting started\nThis phase of the project involves:\n\nassembling a working group and technical team\nbuilding awareness and support through informational webinars and meetings\ndeveloping a consortium of people within Mexico to co-lead and develop network connections\ndeveloping a strategic plan and timeline for the project\n\nAn important task during Phase 1 is Assembling an expert working group!\nAlong with regional experts, this group will include OHI experts and analysts from the National Center for Ecological Analysis and Synthesis, University of California, Santa Barbara.\nWe have created a Google worksheet to help identify expert working group participants. For access to this Google spreadsheet, contact Melanie Frazier at frazier@nceas.ucsb.edu,\n\n\nPhase 2: Planning\nThe expert working group will have several responsibilities, including:\n\nLearning more about the OHI framework and work flow, and exploring the philosophy underlying the original global goals.\nDeveloping the OHI framework for the Gulf of California, including:\n\nDefining spatial boundaries\nDetermining which goals/subgoals will be included in the assessment based on local characteristics and regional priorities\nIdentifying pressure and resilience variables that are relevant to the region\nBeginning to consider relevant data sources and reference points\n\nDeveloping relationships with key stakeholders\nProviding support during Phase 3 (Conducting the assessment), including: identifying possible data, reviewing goal methods and scores, collaborating on reference points, preparing and supporting meetings, etc.\nProviding support during Phase 4 (Informing) including: editing and developing materials (e.g., website, reports, papers, meetings) to inform policy and future assessments by by sharing scores and what was learned during the process.\n\n\nMore information about planning\n\n\n\n\n\n\nLearning more…\n\n\n\nAlong with this site and the Ocean Health Index website, explore these resource to find:\n\nA short introduction to the OHI framework\nGuidance for planning an OHI assessment and a description of responsibilities of the expert working group\n\n\n\nDefining spatial boundaries The boundaries of the assessment area must be determined. This document explains some of the issues.\nThe Gulf of California could be considered one region for this assessment, or it could be divided into smaller subregions to allow for comparisons among political or ecological regions. The boundaries are important to develop early on because data will be collected at this spatial scale.\nEstablish Goals The goal framework will need to be established. The 10 goals originally selected for the global assessment can help guide the goals chosen for the Gulf of California assessment.\n\nWhen tailoring the OHI framework it is important to understand the rationale behind previously-developed approaches and to reflect whether any goals should be added, removed, or redefined. The best way to begin is by exploring the philosophy underlying each of the original goals, and then working from there. The menu to the left provides a brief description of each of the goals used in the global model as well as a description of how other regional indices have adapted the goal to fit their needs.\nThese goal pages will be updated over time to reflect the specific needs of the Gulf of California.\nIdentify Pressures and Resilience Along with the goals, it is equally important to define and categorize how local pressures and resilience properties affect the goals. We will provide more guidance on that later, but in the meantime, you can learn more about pressures and resilience.\n\n\n\nPhase 3: Conduct\nDuring this stage, the expert working group, goal specific experts, and analysts will work closely to further refine the OHI framework, identify data, and calculate and review scores. This is an iterative process and this resource includes detailed methods for conducting an OHI assessment.\n\n\nPhase 4: Inform\nThis phase involves developing and implementing a strategy for using the OHI assessment to improve the marine health of the Gulf of California. This is most effective if there is interest and engagement from policy makers and ongoing communication during the OHI process to best inform management actions that could have measurable impacts. Repeated assessments as new data become available enable tracking ocean health through time and evaluating management priorities. This resource describes this phase of an OHI assessment.",
+    "crumbs": [
+      "Starting an OHI assessment"
+    ]
+  },
+  {
+    "objectID": "chapters/resilience.html",
+    "href": "chapters/resilience.html",
+    "title": "OHI: Gulf of California",
+    "section": "",
+    "text": "Good governance and ecological integrity generally allow systems to absorb disturbance to maintain critical function, which will mitigate the impact of pressures on systems. We determine how resilience will help protect marine services from pressures to better predict what goal scores will look like in the near future.\n\n\n\n\nResilient systems are ecologically healthy and have robust social systems to deal with perturbations. The global OHI model includes three general indices of resilence: ecoystem condition, regulatory efforts to address specific pressures, and the general effectiveness of social systems.\n\n\nFor the global OHI assessment, we assess three general categories of resilience: ecological health, regulatory effort, and social effectiveness.\n\nEcological Health\n\nHealthy ecosystems have the ability to absorb disturbance to maintain critical functions (Chambers et al. 2019). For the global OHI assessment, ecosystem health is measured as the relative condition of assessed species in a given location. For some goals, there is little evidence that this index of ecosystem integrity directly affects the value of the goal (or subgoal). In these instances, ecological integrity falls out of the resilience model.\n\nRegulatory effort\n\nInstitutional measures (e.g., rules, regulations, and laws) can address the specific pressures acting on systems. For the global OHI assessment, regulatory effort is comprised of five categories that address the 5 pressure categories: fishing pressure, habitat destruction, climate change, water pollution, and species introductions. There is also an additional category for goal-specific regulations that apply to a goal or goals, but do not address a specific pressure category.\n\nSocial integrity\n\nWell functioning societies have the capacity and resources to mitigate a wide array of challenges.This indicator is intended to describe the effectiveness of social institutions that exist to meet human needs such as government, economy, education, heathcare, and religion.\n\n\nEach resilience category may be composed of several datasets. For each dataset, values will range from 0 to 1, reflecting the magnitude of resilience for each country (with 1 indicating high resilience).\n\n\n\n\n\n\nDescription of global resilience data (click to expand)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWe then link the resilience variables to specific goals (Figure 2). Resilience estimates are intended to directly address, as much as possible, the specific pressures acting on a goal. Consequently, resilience scores should not exceed pressure scores, otherwise likely future status scores will be inflated.\nFigure 2. The relationship between the resilience layers and goals. Points with the same color are the same goal, but some goals have different components that are affected differently.\n\n\n\n\n\n\n\n\n\nThe resilience estimate for each goal and country is then combined with the trend and pressure estimates to estimate goal scores.",
+    "crumbs": [
+      "Resilience"
+    ]
+  },
+  {
+    "objectID": "chapters/resilience.html#resilience-overview",
+    "href": "chapters/resilience.html#resilience-overview",
+    "title": "OHI: Gulf of California",
+    "section": "",
+    "text": "Good governance and ecological integrity generally allow systems to absorb disturbance to maintain critical function, which will mitigate the impact of pressures on systems. We determine how resilience will help protect marine services from pressures to better predict what goal scores will look like in the near future.\n\n\n\n\nResilient systems are ecologically healthy and have robust social systems to deal with perturbations. The global OHI model includes three general indices of resilence: ecoystem condition, regulatory efforts to address specific pressures, and the general effectiveness of social systems.\n\n\nFor the global OHI assessment, we assess three general categories of resilience: ecological health, regulatory effort, and social effectiveness.\n\nEcological Health\n\nHealthy ecosystems have the ability to absorb disturbance to maintain critical functions (Chambers et al. 2019). For the global OHI assessment, ecosystem health is measured as the relative condition of assessed species in a given location. For some goals, there is little evidence that this index of ecosystem integrity directly affects the value of the goal (or subgoal). In these instances, ecological integrity falls out of the resilience model.\n\nRegulatory effort\n\nInstitutional measures (e.g., rules, regulations, and laws) can address the specific pressures acting on systems. For the global OHI assessment, regulatory effort is comprised of five categories that address the 5 pressure categories: fishing pressure, habitat destruction, climate change, water pollution, and species introductions. There is also an additional category for goal-specific regulations that apply to a goal or goals, but do not address a specific pressure category.\n\nSocial integrity\n\nWell functioning societies have the capacity and resources to mitigate a wide array of challenges.This indicator is intended to describe the effectiveness of social institutions that exist to meet human needs such as government, economy, education, heathcare, and religion.\n\n\nEach resilience category may be composed of several datasets. For each dataset, values will range from 0 to 1, reflecting the magnitude of resilience for each country (with 1 indicating high resilience).\n\n\n\n\n\n\nDescription of global resilience data (click to expand)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWe then link the resilience variables to specific goals (Figure 2). Resilience estimates are intended to directly address, as much as possible, the specific pressures acting on a goal. Consequently, resilience scores should not exceed pressure scores, otherwise likely future status scores will be inflated.\nFigure 2. The relationship between the resilience layers and goals. Points with the same color are the same goal, but some goals have different components that are affected differently.\n\n\n\n\n\n\n\n\n\nThe resilience estimate for each goal and country is then combined with the trend and pressure estimates to estimate goal scores.",
+    "crumbs": [
+      "Resilience"
+    ]
+  },
+  {
+    "objectID": "chapters/le.html",
+    "href": "chapters/le.html",
+    "title": " Livelihoods and economies",
+    "section": "",
+    "text": "Livelihoods and economies\nThis goal measures jobs and revenue from sustainable marine-related industries.\n\n\n This information is meant to help guide the process of developing the Gulf of California OHI!\nThis goal is included in the global OHI, but other regional assessments have cut or modified this goal to better meet their objectives for ocean health…\n\n\nOverview\n\n\nPractical Guidance\n\n\nLEARN MORE\nExplore the full description of the data and model used in the GLOBAL MODEL. Or, take a look at REGIONAL APPROACHES to learn how other OHI+ assessments have modified this goal to address differences in data availability or priorities.\nLIVELIHOODS\n\n  GLOBAL MODEL    REGIONAL APPROACHES \n\nECONOMIES\n\n  GLOBAL MODEL    REGIONAL APPROACHES"
+  },
+  {
+    "objectID": "chapters/region.html",
+    "href": "chapters/region.html",
+    "title": "Building the conceptual framework",
+    "section": "",
+    "text": "The Gulf of California, often called the “Aquarium of the World,” is a jewel of biodiversity and a lifeline for the communities that border its shores. This UNESCO World Heritage Site is home to over 900 species of fish, as well as iconic marine mammals like whales, dolphins, and sea lions. Its rich habitats, including mangroves and seagrass meadows, serve as critical nurseries for fish and other marine life.\nThis biologically rich region is equally vital to human life. The Gulf sustains vibrant coastal communities through fishing, tourism, and cultural traditions that have flourished for generations. Small-scale fisheries provide livelihoods for thousands, while ecotourism attracts visitors from around the globe, drawn by the promise of whale watching, diving, and pristine natural beauty.\nHowever, the Gulf of California faces mounting pressures, including overfishing, habitat degradation, and climate change. The Ocean Health Index for this region is a critical tool for evaluating the balance between human use and ecological health. By providing clear, actionable insights, the Index helps ensure that this exceptional marine ecosystem continues to thrive for the benefit of both nature and people.",
+    "crumbs": [
+      "Identify regions"
+    ]
+  },
+  {
+    "objectID": "chapters/region.html#to-discuss",
+    "href": "chapters/region.html#to-discuss",
+    "title": "Building the conceptual framework",
+    "section": "To Discuss",
+    "text": "To Discuss\nSeveral decisions will need to be made concerning the boundaries of the assessment. This document explains some of the issues.",
+    "crumbs": [
+      "Identify regions"
+    ]
+  },
+  {
+    "objectID": "chapters/cs.html",
+    "href": "chapters/cs.html",
+    "title": " Carbon storage",
+    "section": "",
+    "text": "Carbon storage\nThis goal captures the ability of coastal habitats to buffer against climate change by sequestering and storing atmospheric carbon.\n\n\n This information is meant to help guide the process of developing the Gulf of California OHI!\nThis goal is included in the global OHI, but other regional assessments have cut or modified this goal to better meet their objectives for ocean health…\n\n\nOverview\n\n\nPractical Guidance\n\n\nLEARN MORE\nExplore the full description of the data and model used in the GLOBAL MODEL. Or, take a look at REGIONAL APPROACHES to learn how other OHI+ assessments have modified this goal to address differences in data availability or priorities.\n\n  GLOBAL MODEL    REGIONAL APPROACHES"
+  },
+  {
+    "objectID": "chapters/goals.html",
+    "href": "chapters/goals.html",
+    "title": "Building the conceptual framework",
+    "section": "",
+    "text": "One of the first steps to building the conceptual OHI framework is determining which goals to include.\nThe global OHI assessment includes 10 goals. But some of these goals may not be relevant to the Gulf of California. Conversely, there may be goals that are important to the region that were not included in the global assessment.\nAnd, even when goals are the same, the models and data underlying the goal will very likely be different.\nThere is no reason to follow the global model, but understanding the theory behind the global goals and how they were measured is a helpful way to begin thinking about what to include in the Gulf of California assessment.\n\n\n\n\n\n\n\nLearn more about the global goals (click to expand)\n\n\n\n\n\nClicking on the goal will link to the goal pages which provide more information about the global goals.\n\n\n\n\n\n\n\n\n\nHere is a resource to help you develop the goals for the Gulf of California.",
+    "crumbs": [
+      "Identify goals"
+    ]
+  },
+  {
+    "objectID": "chapters/sp.html",
+    "href": "chapters/sp.html",
+    "title": " Sense of place",
+    "section": "",
+    "text": "Sense of place\nThis goal describes how well we are preserving current and future access to coastal and marine systems that people value as part of their cultural identity.\n\n\n This information is meant to help guide the process of developing the Gulf of California OHI!\nThis goal is included in the global OHI, but other regional assessments have cut or modified this goal to better meet their objectives for ocean health…\n\n\nOverview\n\n\nPractical Guidance\n\n\nLEARN MORE\nExplore the full description of the data and model used in the GLOBAL MODEL. Or, take a look at REGIONAL APPROACHES to learn how other OHI+ assessments have modified this goal to address differences in data availability or priorities.\nICONIC SPECIES\n\n  GLOBAL MODEL    REGIONAL APPROACHES \n\nLASTING SPECIAL PLACES\n\n  GLOBAL MODEL    REGIONAL APPROACHES"
+  },
+  {
+    "objectID": "chapters/np.html",
+    "href": "chapters/np.html",
+    "title": " Natural products",
+    "section": "",
+    "text": "Natural products\nThis goal assesses whether countries are maximizing the sustainable harvest of non-food marine resources.\n\n\n This information is meant to help guide the process of developing the Gulf of California OHI!\nThis goal is included in the global OHI, but other regional assessments have cut or modified this goal to better meet their objectives for ocean health…\n\n\nOverview\n\n\nPractical Guidance\n\n\nLEARN MORE\nExplore the full description of the data and model used in the GLOBAL MODEL. Or, take a look at REGIONAL APPROACHES to learn how other OHI+ assessments have modified this goal to address differences in data availability or priorities.\n\n  GLOBAL MODEL    REGIONAL APPROACHES"
+  },
+  {
+    "objectID": "chapters/tr.html",
+    "href": "chapters/tr.html",
+    "title": " Tourism and recreation",
+    "section": "",
+    "text": "Tourism and recreation\nThis goal captures the quantity and quality of experiences that people have when visiting coastal and marine areas.\n\n\n This information is meant to help guide the process of developing the Gulf of California OHI!\nThis goal is included in the global OHI, but other regional assessments have cut or modified this goal to better meet their objectives for ocean health…\n\n\nOverview\n\n\nPractical Guidance\n\n\nLEARN MORE\nExplore the full description of the data and model used in the GLOBAL MODEL. Or, take a look at REGIONAL APPROACHES to learn how other OHI+ assessments have modified this goal to address differences in data availability or priorities.\n\n  GLOBAL MODEL    REGIONAL APPROACHES"
+  },
+  {
+    "objectID": "chapters/cp.html",
+    "href": "chapters/cp.html",
+    "title": " Coastal protection",
+    "section": "",
+    "text": "Coastal protection\nThis goal determines the protection, relative to the past, provided by marine habitats against flooding and erosion to coastal areas.\n\n\n This information is meant to help guide the process of developing the Gulf of California OHI!\nThis goal is included in the global OHI, but other regional assessments have cut or modified this goal to better meet their objectives for ocean health…\n\n\nOverview\n\n\nPractical Guidance\n\n\nLEARN MORE\nExplore the full description of the data and model used in the GLOBAL MODEL. Or, take a look at REGIONAL APPROACHES to learn how other OHI+ assessments have modified this goal to address differences in data availability or priorities.\n\n  GLOBAL MODEL    REGIONAL APPROACHES"
+  },
+  {
+    "objectID": "chapters/data/fishery_production.html",
+    "href": "chapters/data/fishery_production.html",
+    "title": "OHI: Gulf of California",
+    "section": "",
+    "text": "Mexico’s commercial fishing industry is regulated by CONAPESCA (Comision Nacional de Acuacultura y Pesca), a specialized agency operating under SADER (Secretaría de Agricultura y Desarrollo Rural), Mexico’s agriculture ministry. CONAPESCA oversees the development of sustainable fishing practices and implements policies to enhance the competitiveness of Mexico’s fishing sector.\n\n\nAll commercial fishing operations in Mexico must obtain licenses that require reporting:\n\nLanding location\nSpecies caught\nTransportation method\nCatch volume\nPresence of any protected species (en veda)\n\n\n\n\nLive weight (also called “round weight” or “whole weight”) refers to the total mass of fish when they’re first caught, before any processing (e.g. gutting, heading, filleting). It represents the fish in their complete, original form right out of the water. Measuring in live weight helps standardize catch reporting across different fishing operations, track the total biomass removed from marine ecosystems, monitor fishing quotas and stock assessments, and compare catches across different species and regions.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBelow, you can select one species for both the live weight and revenue over time within the Gulf of California (2006 - 2022). When comparing the two, consider:\n\nDifferent species are associated with different prices per kilogram\nMarket conditions and supply chains influence value over time\nQuality and freshness impact price, which could be impaired in years where the stock population’s health is at risk\nProcessing costs affect final revenue\nThese are only marine, wild-caught stocks\n\nTogether, these metrics help explore both the ecological and economic sustainability of fishing operations.",
+    "crumbs": [
+      "Data",
+      "Fishery production"
+    ]
+  },
+  {
+    "objectID": "chapters/data/fishery_production.html#fishery-production-data-in-the-gulf-of-california",
+    "href": "chapters/data/fishery_production.html#fishery-production-data-in-the-gulf-of-california",
+    "title": "OHI: Gulf of California",
+    "section": "",
+    "text": "Mexico’s commercial fishing industry is regulated by CONAPESCA (Comision Nacional de Acuacultura y Pesca), a specialized agency operating under SADER (Secretaría de Agricultura y Desarrollo Rural), Mexico’s agriculture ministry. CONAPESCA oversees the development of sustainable fishing practices and implements policies to enhance the competitiveness of Mexico’s fishing sector.\n\n\nAll commercial fishing operations in Mexico must obtain licenses that require reporting:\n\nLanding location\nSpecies caught\nTransportation method\nCatch volume\nPresence of any protected species (en veda)\n\n\n\n\nLive weight (also called “round weight” or “whole weight”) refers to the total mass of fish when they’re first caught, before any processing (e.g. gutting, heading, filleting). It represents the fish in their complete, original form right out of the water. Measuring in live weight helps standardize catch reporting across different fishing operations, track the total biomass removed from marine ecosystems, monitor fishing quotas and stock assessments, and compare catches across different species and regions.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBelow, you can select one species for both the live weight and revenue over time within the Gulf of California (2006 - 2022). When comparing the two, consider:\n\nDifferent species are associated with different prices per kilogram\nMarket conditions and supply chains influence value over time\nQuality and freshness impact price, which could be impaired in years where the stock population’s health is at risk\nProcessing costs affect final revenue\nThese are only marine, wild-caught stocks\n\nTogether, these metrics help explore both the ecological and economic sustainability of fishing operations.",
+    "crumbs": [
+      "Data",
+      "Fishery production"
+    ]
+  },
+  {
+    "objectID": "chapters/data/fishery_production.html#data-source",
+    "href": "chapters/data/fishery_production.html#data-source",
+    "title": "OHI: Gulf of California",
+    "section": "Data Source",
+    "text": "Data Source\nReference: https://datos.gob.mx/busca/dataset/produccion-pesquera\nDownloaded: February 11, 2025\nDescription: Fisheries Production\nTime range: 2006 - 2022\nFormat: .csv\nFile location: Mazu:/home/shares/ohi/OHI_GOC/_raw_data/CONAPESCA/d2025/fishery_offices",
+    "crumbs": [
+      "Data",
+      "Fishery production"
     ]
   },
   {
@@ -195,41 +381,6 @@
     ]
   },
   {
-    "objectID": "chapters/bd.html",
-    "href": "chapters/bd.html",
-    "title": " Biodiversity",
-    "section": "",
-    "text": "Biodiversity\nThis goal describes how successfully we are preserving the richness and variety of marine life.\n\n\n This information is meant to help guide the process of developing the Gulf of California OHI!\nThis goal is included in the global OHI, but other regional assessments have cut or modified this goal to better meet their objectives for ocean health…\n\n\nOverview\n\n\nPractical Guidance\n\n\nLEARN MORE\nExplore the full description of the data and model used in the GLOBAL MODEL. Or, take a look at REGIONAL APPROACHES to learn how other OHI+ assessments have modified this goal to address differences in data availability or priorities.\nHABITAT\n\n  GLOBAL MODEL    REGIONAL APPROACHES \n\nSPECIES\n\n  GLOBAL MODEL    REGIONAL APPROACHES"
-  },
-  {
-    "objectID": "chapters/cw.html",
-    "href": "chapters/cw.html",
-    "title": " Clean waters",
-    "section": "",
-    "text": "Clean waters\nThis goal captures the degree to which local waters are unpolluted by human-made causes.\n\n\n This information is meant to help guide the process of developing the Gulf of California OHI!\nThis goal is included in the global OHI, but other regional assessments have cut or modified this goal to better meet their objectives for ocean health…\n\n\nOverview\n\n\nPractical Guidance\n\n\nLEARN MORE\nExplore the full description of the data and model used in the GLOBAL MODEL. Or, take a look at REGIONAL APPROACHES to learn how other OHI+ assessments have modified this goal to address differences in data availability or priorities.\n\n  GLOBAL MODEL    REGIONAL APPROACHES"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site"
-  },
-  {
-    "objectID": "chapters/cp.html",
-    "href": "chapters/cp.html",
-    "title": " Coastal protection",
-    "section": "",
-    "text": "Coastal protection\nThis goal determines the protection, relative to the past, provided by marine habitats against flooding and erosion to coastal areas.\n\n\n This information is meant to help guide the process of developing the Gulf of California OHI!\nThis goal is included in the global OHI, but other regional assessments have cut or modified this goal to better meet their objectives for ocean health…\n\n\nOverview\n\n\nPractical Guidance\n\n\nLEARN MORE\nExplore the full description of the data and model used in the GLOBAL MODEL. Or, take a look at REGIONAL APPROACHES to learn how other OHI+ assessments have modified this goal to address differences in data availability or priorities.\n\n  GLOBAL MODEL    REGIONAL APPROACHES"
-  },
-  {
-    "objectID": "chapters/ao.html",
-    "href": "chapters/ao.html",
-    "title": " Artisanal fishing opportunities",
-    "section": "",
-    "text": "Artisanal fishing opportunities\nThis goal measures whether people who need to fish on a small, local scale have the opportunity to do so.\n\n\n This information is meant to help guide the process of developing the Gulf of California OHI!\nThis goal is included in the global OHI, but other regional assessments have cut or modified this goal to better meet their objectives for ocean health. For example, in a Canadian OHI assessment, the perspective of Aboriginal communities, which has been absent from assessments at the global scale due to lack of information, was represented by redefining the artisanal fishing opportunities goal as the Aboriginal opportunity goal. The model will almost certainly be modified for the Gulf of California assessment. For example, need is a component of the global analysis, but may not be relevant in a regional assessment.\n\n\nOverview\nArtisanal fishing, often also called small-scale fishing, provides a critical source of food, nutrition, poverty alleviation and livelihood opportunities for many people around the world, especially in developing nations. Small-scale fishing is an important component of cultural identity and heritage.\n\nHalf the world’s fish harvest is captured by artisanal fishing families.\n\nThis goal measures how easy or hard it is for fishers to access ocean resources when they need them and the sustainability of harvest of stocks used by artisanal fishers. The need for artisanal fishing is most directly tied to the percent of population below the poverty line. Access, or ability to meet this need, are institutional permits or encouragements for small fisheries. Sustainability of artisanal fisheries refers to the sustainability of fishing methods and/or the health of targeted species. Sustainable gears are traditional hook and line, as opposed to unsustainable practices such as dynamite and gill net fishing.\nA high score indicates that the demand for artisanal fishing is being met using lawful and sustainable methods, or alternatively, there is little economic need for artisanal fishing. A low score indicates that regions are not achieving or allowing sustainable artisanal fishing opportunities to be realized.\nWhile small-scale fishing provides benefits and opportunities for local communities, limited or ineffective regulation and enforcement can signficantly impact the ability to pursue it.\nComparison of large scale and small scale fisheries\n\n\n\nInfographic from Jacquet et al. 2008\n\n\n\n\nPractical Guidance\nIdeally, this goal will include a measure of of how easy or hard it is for residents to access ocean resources when they need them. Measures of access include institutional and/or government regulations that provide people with access to marine waters through open coastlines and docks, readily available permitting for fish harvest, and programs that foster artisanal fishing opportunities. Another measure of access is that fish are actually available, which can be estimated by assessing the health of targeted species (see Fisheries subgoal) or the general sustainability of fishing practices. Sustainable gears are traditional hook and line, as opposed to unsustainable practices such as dynamite and gill net fishing.\nIn the global analysis, the need for artisanal fishing is most directly tied to the percent of population below the poverty line.\n\nNOTE: The benefits of Artisanal Fishing can be difficult to parse from other goals. For example, tonnage of artisanally-caught fish will typically be included in the Food Provision goal. Another example is that in the Baltic Sea region, Artisanal Opportunities is very closely connected to Tourism and Recreation since there are a lot of locals and tourists using the shared sea for enjoyment. It will be necessary to determine how to apportion the data.\n\nThe reference point will depend on the data and model. In most cases, the availability of better local data will allow for improvements to the Global OHI assessment model (see table below).\n\n\nLEARN MORE\nExplore the full description of the data and model used in the GLOBAL MODEL. Or, take a look at REGIONAL APPROACHES to learn how other OHI+ assessments have modified this goal to address differences in data availability or priorities.\n\n  GLOBAL MODEL    REGIONAL APPROACHES"
-  },
-  {
     "objectID": "chapters/data/tourism_lodging.html",
     "href": "chapters/data/tourism_lodging.html",
     "title": "OHI: Gulf of California",
@@ -263,113 +414,6 @@
     ]
   },
   {
-    "objectID": "chapters/data/sst.html",
-    "href": "chapters/data/sst.html",
-    "title": "OHI: Gulf of California",
-    "section": "",
-    "text": "Sea surface temperature (SST) is a critical indicator of ocean health, influencing marine ecosystems, biodiversity, and climate patterns. Anomalies in SST can disrupt food webs, alter species distributions, and serve as climate change indicators based on their frequency and severity.\nThis page provides access to yearly SST data for the Gulf of California, from 1980 to 2023. Eventually this data could be used in creating a pressure layer for the OHI GoC project, identifying long-term patterns and assessing climate change impacts on foundation species in the Gulf.\n\n\nThis tool displays the average sea surface temperature for each year from 1980 to 2023 in the Gulf of California. Use this visualization to explore temporal trends in SST across decades by selecting specific years of interest, or pressing “play” for an animation throughout the years.\n\n\n\n\n\nThis interactive tool compares historical SST patterns (1980–2000) with recent conditions (2001–2023). Each year’s average SST values were subtracted from the historical baseline (1980–2000) to highlight areas experiencing significant warming or cooling trends. Use this tool to identify regions that may require targeted conservation efforts by selecting specific years.",
-    "crumbs": [
-      "Data",
-      "Sea surface temperature"
-    ]
-  },
-  {
-    "objectID": "chapters/data/sst.html#sea-surface-temperature-for-the-gulf-of-california",
-    "href": "chapters/data/sst.html#sea-surface-temperature-for-the-gulf-of-california",
-    "title": "OHI: Gulf of California",
-    "section": "",
-    "text": "Sea surface temperature (SST) is a critical indicator of ocean health, influencing marine ecosystems, biodiversity, and climate patterns. Anomalies in SST can disrupt food webs, alter species distributions, and serve as climate change indicators based on their frequency and severity.\nThis page provides access to yearly SST data for the Gulf of California, from 1980 to 2023. Eventually this data could be used in creating a pressure layer for the OHI GoC project, identifying long-term patterns and assessing climate change impacts on foundation species in the Gulf.\n\n\nThis tool displays the average sea surface temperature for each year from 1980 to 2023 in the Gulf of California. Use this visualization to explore temporal trends in SST across decades by selecting specific years of interest, or pressing “play” for an animation throughout the years.\n\n\n\n\n\nThis interactive tool compares historical SST patterns (1980–2000) with recent conditions (2001–2023). Each year’s average SST values were subtracted from the historical baseline (1980–2000) to highlight areas experiencing significant warming or cooling trends. Use this tool to identify regions that may require targeted conservation efforts by selecting specific years.",
-    "crumbs": [
-      "Data",
-      "Sea surface temperature"
-    ]
-  },
-  {
-    "objectID": "chapters/data/sst.html#data-source",
-    "href": "chapters/data/sst.html#data-source",
-    "title": "OHI: Gulf of California",
-    "section": "Data Source",
-    "text": "Data Source\nThis dataset was downloaded from CEDA on January 16, 2025, as part of an ongoing effort to provide a pressure layer of Sea Surface Temperature (SST) for the Gulf of California. It provides daily-mean sea surface temperatures (SST), presented on a global grid spanning from 1980 to present. It is a Level 4 product with gaps between daily observations filled using statistical methods.\nReference: Good, S.A.; Embury, O. (2024): ESA Sea Surface Temperature Climate Change Initiative (SST_cci): Level 4 Analysis product, version 3.0. NERC EDS Centre for Environmental Data Analysis, 09 April 2024. doi:10.5285/4a9654136a7148e39b7feb56f8bb02d2. https://dx.doi.org/10.5285/4a9654136a7148e39b7feb56f8bb02d2\nDownloaded: January 16, 2025\nDescription: ESA Sea Surface Temperature Climate Change Initiative (SST_cci): Level 4 Analysis product, version 3.0\nTime range: 1980 - ongoing, updated daily at one month behind present\nFormat: NetCDF\nResolution: Global 0.05° latitude-longitude grid (5,600 meters at the equator)",
-    "crumbs": [
-      "Data",
-      "Sea surface temperature"
-    ]
-  },
-  {
-    "objectID": "chapters/data/fishery_production.html",
-    "href": "chapters/data/fishery_production.html",
-    "title": "OHI: Gulf of California",
-    "section": "",
-    "text": "Mexico’s commercial fishing industry is regulated by CONAPESCA (Comision Nacional de Acuacultura y Pesca), a specialized agency operating under SADER (Secretaría de Agricultura y Desarrollo Rural), Mexico’s agriculture ministry. CONAPESCA oversees the development of sustainable fishing practices and implements policies to enhance the competitiveness of Mexico’s fishing sector.\n\n\nAll commercial fishing operations in Mexico must obtain licenses that require reporting:\n\nLanding location\nSpecies caught\nTransportation method\nCatch volume\nPresence of any protected species (en veda)\n\n\n\n\nLive weight (also called “round weight” or “whole weight”) refers to the total mass of fish when they’re first caught, before any processing (e.g. gutting, heading, filleting). It represents the fish in their complete, original form right out of the water. Measuring in live weight helps standardize catch reporting across different fishing operations, track the total biomass removed from marine ecosystems, monitor fishing quotas and stock assessments, and compare catches across different species and regions.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBelow, you can select one species for both the live weight and revenue over time within the Gulf of California (2006 - 2022). When comparing the two, consider:\n\nDifferent species are associated with different prices per kilogram\nMarket conditions and supply chains influence value over time\nQuality and freshness impact price, which could be impaired in years where the stock population’s health is at risk\nProcessing costs affect final revenue\nThese are only marine, wild-caught stocks\n\nTogether, these metrics help explore both the ecological and economic sustainability of fishing operations.",
-    "crumbs": [
-      "Data",
-      "Fishery production"
-    ]
-  },
-  {
-    "objectID": "chapters/data/fishery_production.html#fishery-production-data-in-the-gulf-of-california",
-    "href": "chapters/data/fishery_production.html#fishery-production-data-in-the-gulf-of-california",
-    "title": "OHI: Gulf of California",
-    "section": "",
-    "text": "Mexico’s commercial fishing industry is regulated by CONAPESCA (Comision Nacional de Acuacultura y Pesca), a specialized agency operating under SADER (Secretaría de Agricultura y Desarrollo Rural), Mexico’s agriculture ministry. CONAPESCA oversees the development of sustainable fishing practices and implements policies to enhance the competitiveness of Mexico’s fishing sector.\n\n\nAll commercial fishing operations in Mexico must obtain licenses that require reporting:\n\nLanding location\nSpecies caught\nTransportation method\nCatch volume\nPresence of any protected species (en veda)\n\n\n\n\nLive weight (also called “round weight” or “whole weight”) refers to the total mass of fish when they’re first caught, before any processing (e.g. gutting, heading, filleting). It represents the fish in their complete, original form right out of the water. Measuring in live weight helps standardize catch reporting across different fishing operations, track the total biomass removed from marine ecosystems, monitor fishing quotas and stock assessments, and compare catches across different species and regions.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBelow, you can select one species for both the live weight and revenue over time within the Gulf of California (2006 - 2022). When comparing the two, consider:\n\nDifferent species are associated with different prices per kilogram\nMarket conditions and supply chains influence value over time\nQuality and freshness impact price, which could be impaired in years where the stock population’s health is at risk\nProcessing costs affect final revenue\nThese are only marine, wild-caught stocks\n\nTogether, these metrics help explore both the ecological and economic sustainability of fishing operations.",
-    "crumbs": [
-      "Data",
-      "Fishery production"
-    ]
-  },
-  {
-    "objectID": "chapters/data/fishery_production.html#data-source",
-    "href": "chapters/data/fishery_production.html#data-source",
-    "title": "OHI: Gulf of California",
-    "section": "Data Source",
-    "text": "Data Source\nReference: https://datos.gob.mx/busca/dataset/produccion-pesquera\nDownloaded: February 11, 2025\nDescription: Fisheries Production\nTime range: 2006 - 2022\nFormat: .csv\nFile location: Mazu:/home/shares/ohi/OHI_GOC/_raw_data/CONAPESCA/d2025/fishery_offices",
-    "crumbs": [
-      "Data",
-      "Fishery production"
-    ]
-  },
-  {
-    "objectID": "chapters/tr.html",
-    "href": "chapters/tr.html",
-    "title": " Tourism and recreation",
-    "section": "",
-    "text": "Tourism and recreation\nThis goal captures the quantity and quality of experiences that people have when visiting coastal and marine areas.\n\n\n This information is meant to help guide the process of developing the Gulf of California OHI!\nThis goal is included in the global OHI, but other regional assessments have cut or modified this goal to better meet their objectives for ocean health…\n\n\nOverview\n\n\nPractical Guidance\n\n\nLEARN MORE\nExplore the full description of the data and model used in the GLOBAL MODEL. Or, take a look at REGIONAL APPROACHES to learn how other OHI+ assessments have modified this goal to address differences in data availability or priorities.\n\n  GLOBAL MODEL    REGIONAL APPROACHES"
-  },
-  {
-    "objectID": "chapters/sp.html",
-    "href": "chapters/sp.html",
-    "title": " Sense of place",
-    "section": "",
-    "text": "Sense of place\nThis goal describes how well we are preserving current and future access to coastal and marine systems that people value as part of their cultural identity.\n\n\n This information is meant to help guide the process of developing the Gulf of California OHI!\nThis goal is included in the global OHI, but other regional assessments have cut or modified this goal to better meet their objectives for ocean health…\n\n\nOverview\n\n\nPractical Guidance\n\n\nLEARN MORE\nExplore the full description of the data and model used in the GLOBAL MODEL. Or, take a look at REGIONAL APPROACHES to learn how other OHI+ assessments have modified this goal to address differences in data availability or priorities.\nICONIC SPECIES\n\n  GLOBAL MODEL    REGIONAL APPROACHES \n\nLASTING SPECIAL PLACES\n\n  GLOBAL MODEL    REGIONAL APPROACHES"
-  },
-  {
-    "objectID": "chapters/le.html",
-    "href": "chapters/le.html",
-    "title": " Livelihoods and economies",
-    "section": "",
-    "text": "Livelihoods and economies\nThis goal measures jobs and revenue from sustainable marine-related industries.\n\n\n This information is meant to help guide the process of developing the Gulf of California OHI!\nThis goal is included in the global OHI, but other regional assessments have cut or modified this goal to better meet their objectives for ocean health…\n\n\nOverview\n\n\nPractical Guidance\n\n\nLEARN MORE\nExplore the full description of the data and model used in the GLOBAL MODEL. Or, take a look at REGIONAL APPROACHES to learn how other OHI+ assessments have modified this goal to address differences in data availability or priorities.\nLIVELIHOODS\n\n  GLOBAL MODEL    REGIONAL APPROACHES \n\nECONOMIES\n\n  GLOBAL MODEL    REGIONAL APPROACHES"
-  },
-  {
-    "objectID": "chapters/region.html",
-    "href": "chapters/region.html",
-    "title": "Building the conceptual framework",
-    "section": "",
-    "text": "The Gulf of California, often called the “Aquarium of the World,” is a jewel of biodiversity and a lifeline for the communities that border its shores. This UNESCO World Heritage Site is home to over 900 species of fish, as well as iconic marine mammals like whales, dolphins, and sea lions. Its rich habitats, including mangroves and seagrass meadows, serve as critical nurseries for fish and other marine life.\nThis biologically rich region is equally vital to human life. The Gulf sustains vibrant coastal communities through fishing, tourism, and cultural traditions that have flourished for generations. Small-scale fisheries provide livelihoods for thousands, while ecotourism attracts visitors from around the globe, drawn by the promise of whale watching, diving, and pristine natural beauty.\nHowever, the Gulf of California faces mounting pressures, including overfishing, habitat degradation, and climate change. The Ocean Health Index for this region is a critical tool for evaluating the balance between human use and ecological health. By providing clear, actionable insights, the Index helps ensure that this exceptional marine ecosystem continues to thrive for the benefit of both nature and people.",
-    "crumbs": [
-      "Identify regions"
-    ]
-  },
-  {
-    "objectID": "chapters/region.html#to-discuss",
-    "href": "chapters/region.html#to-discuss",
-    "title": "Building the conceptual framework",
-    "section": "To Discuss",
-    "text": "To Discuss\nSeveral decisions will need to be made concerning the boundaries of the assessment. This document explains some of the issues.",
-    "crumbs": [
-      "Identify regions"
-    ]
-  },
-  {
     "objectID": "chapters/pressures.html",
     "href": "chapters/pressures.html",
     "title": "OHI: Gulf of California",
@@ -390,38 +434,10 @@
     ]
   },
   {
-    "objectID": "chapters/cs.html",
-    "href": "chapters/cs.html",
-    "title": " Carbon storage",
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
     "section": "",
-    "text": "Carbon storage\nThis goal captures the ability of coastal habitats to buffer against climate change by sequestering and storing atmospheric carbon.\n\n\n This information is meant to help guide the process of developing the Gulf of California OHI!\nThis goal is included in the global OHI, but other regional assessments have cut or modified this goal to better meet their objectives for ocean health…\n\n\nOverview\n\n\nPractical Guidance\n\n\nLEARN MORE\nExplore the full description of the data and model used in the GLOBAL MODEL. Or, take a look at REGIONAL APPROACHES to learn how other OHI+ assessments have modified this goal to address differences in data availability or priorities.\n\n  GLOBAL MODEL    REGIONAL APPROACHES"
-  },
-  {
-    "objectID": "chapters/data/species.html",
-    "href": "chapters/data/species.html",
-    "title": "Species Distribution for the Gulf of California",
-    "section": "",
-    "text": "The species that inhabit the ocean have a vital role in shaping the existing marine environment. They are valued for their beauty and inherent right to exist, as well as their role in supporting productive habitats that provide many benefits for people.\nFrom the largest predators to microscopic plankton, these species depend upon each other for survival. The interaction of species that have naturally evolved in a given location is essential for ecosystem structure and stability. In addition, the maintenance of large numbers of species provides diverse genetic resource that makes it possible to avoid functional collapse, should conditions change in the future. This sub-goal would potentially assesses the health of all marine species present in the Gulf of California, including endangered species and species in relatively good conditions. The presence of species that are not at risk leads to a higher score.\nThis page explores the species within the GoC, their spatial distribution determined by the IUCN, and their corresponding species status category.\nBelow are the number of species within the Gulf of California that have been designated as a specific IUCN Category, in which they could be:\n\nData Deficient (DD)\nLeast Concern (LC)\nNear Threatened (NT)\nVulnerable (VU)\nEndangered (EN)\nCritically Endangered (CR)\nExtinct in the Wild (EW), or\nExtinct (EX)\n\nTo see the percentage of the total species assessed within the Gulf of California, hover over the pie chart.\n\n\n\n\n\n\nAdditionally, if you would like to see which species have been designated as a certain IUCN Status Category, feel free to search or explore below:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading layer `seagrasses_dist_goc_wgs84' from data source \n  `/home/shares/ohi/OHI_GOC/_raw_data/IUCN_spatial/d2025/int/seagrasses_dist_goc_wgs84.shp' \n  using driver `ESRI Shapefile'\nSimple feature collection with 5 features and 29 fields\nGeometry type: MULTIPOLYGON\nDimension:     XY\nBounding box:  xmin: -114.8879 ymin: 20.41118 xmax: -105.1953 ymax: 31.82199\nGeodetic CRS:  WGS 84\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTo download a list of the species evaluated within a country, use the IUCN API website (https://api.iucnredlist.org/), click the “Generate a token” link at the top of the web page, and fill out the form to apply for a token. You should then receive a token after completing the form. After receiving a token, open the .Renviron file on your computer (e.g., using usethis::edit_r_environ()).\nThen, within your code, type:\n\n# usethis::edit_r_environ() # and add the token as \"IUCN_REDLIST_KEY\"\n\nThen, to verify access to IUCN Red List API:\n\n# rredlist::rl_use_iucn() # make sure you did the above ^!\n\nTo obtain the species distribution data from IUCN, manual polygon downloads are available at https://www.iucnredlist.org/resources/spatial-data-download. The API will give the list of the status and name of all species in Mexico, but it does not have any spatial data associated with it (such as locations/coordinates seen). After downloading all marine groups manually and cropping it to the GoC, you will be able to match it with listed species and their status from mex_species. It is possible there are more taxonomic group distribution data than are listed, which is okay and still good to explore.\nNote: there are 19 groups (separate downloads) for spatial data. Mazu location is /home/shares/ohi/OHI_GOC/_raw_data/IUCN_spatial/d2025. After requesting each group, go to your account page under “saved downloads”. There, all requested downloads will be present. Download each group and unzip, then bring into Mazu for the appropriate year."
-  },
-  {
-    "objectID": "chapters/data/species.html#exploring-iucn-redlist-and-species-distribution",
-    "href": "chapters/data/species.html#exploring-iucn-redlist-and-species-distribution",
-    "title": "Species Distribution for the Gulf of California",
-    "section": "",
-    "text": "The species that inhabit the ocean have a vital role in shaping the existing marine environment. They are valued for their beauty and inherent right to exist, as well as their role in supporting productive habitats that provide many benefits for people.\nFrom the largest predators to microscopic plankton, these species depend upon each other for survival. The interaction of species that have naturally evolved in a given location is essential for ecosystem structure and stability. In addition, the maintenance of large numbers of species provides diverse genetic resource that makes it possible to avoid functional collapse, should conditions change in the future. This sub-goal would potentially assesses the health of all marine species present in the Gulf of California, including endangered species and species in relatively good conditions. The presence of species that are not at risk leads to a higher score.\nThis page explores the species within the GoC, their spatial distribution determined by the IUCN, and their corresponding species status category.\nBelow are the number of species within the Gulf of California that have been designated as a specific IUCN Category, in which they could be:\n\nData Deficient (DD)\nLeast Concern (LC)\nNear Threatened (NT)\nVulnerable (VU)\nEndangered (EN)\nCritically Endangered (CR)\nExtinct in the Wild (EW), or\nExtinct (EX)\n\nTo see the percentage of the total species assessed within the Gulf of California, hover over the pie chart.\n\n\n\n\n\n\nAdditionally, if you would like to see which species have been designated as a certain IUCN Status Category, feel free to search or explore below:"
-  },
-  {
-    "objectID": "chapters/data/species.html#group-distributions",
-    "href": "chapters/data/species.html#group-distributions",
-    "title": "Species Distribution for the Gulf of California",
-    "section": "",
-    "text": "Reading layer `seagrasses_dist_goc_wgs84' from data source \n  `/home/shares/ohi/OHI_GOC/_raw_data/IUCN_spatial/d2025/int/seagrasses_dist_goc_wgs84.shp' \n  using driver `ESRI Shapefile'\nSimple feature collection with 5 features and 29 fields\nGeometry type: MULTIPOLYGON\nDimension:     XY\nBounding box:  xmin: -114.8879 ymin: 20.41118 xmax: -105.1953 ymax: 31.82199\nGeodetic CRS:  WGS 84"
-  },
-  {
-    "objectID": "chapters/data/species.html#how-to-use-the-iucn-redlist",
-    "href": "chapters/data/species.html#how-to-use-the-iucn-redlist",
-    "title": "Species Distribution for the Gulf of California",
-    "section": "",
-    "text": "To download a list of the species evaluated within a country, use the IUCN API website (https://api.iucnredlist.org/), click the “Generate a token” link at the top of the web page, and fill out the form to apply for a token. You should then receive a token after completing the form. After receiving a token, open the .Renviron file on your computer (e.g., using usethis::edit_r_environ()).\nThen, within your code, type:\n\n# usethis::edit_r_environ() # and add the token as \"IUCN_REDLIST_KEY\"\n\nThen, to verify access to IUCN Red List API:\n\n# rredlist::rl_use_iucn() # make sure you did the above ^!\n\nTo obtain the species distribution data from IUCN, manual polygon downloads are available at https://www.iucnredlist.org/resources/spatial-data-download. The API will give the list of the status and name of all species in Mexico, but it does not have any spatial data associated with it (such as locations/coordinates seen). After downloading all marine groups manually and cropping it to the GoC, you will be able to match it with listed species and their status from mex_species. It is possible there are more taxonomic group distribution data than are listed, which is okay and still good to explore.\nNote: there are 19 groups (separate downloads) for spatial data. Mazu location is /home/shares/ohi/OHI_GOC/_raw_data/IUCN_spatial/d2025. After requesting each group, go to your account page under “saved downloads”. There, all requested downloads will be present. Download each group and unzip, then bring into Mazu for the appropriate year."
+    "text": "About this site"
   }
 ]
