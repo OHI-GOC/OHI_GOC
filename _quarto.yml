@@ -41,6 +41,8 @@ website:
             text: "Fishing effort"
           - href: chapters/data/habitats.qmd
             text: "Habitats"
+          - href: chapters/data/species.qmd
+            text: "Species"
       - href: chapters/pressures.qmd
         text: "Pressures"
       - href: chapters/resilience.qmd

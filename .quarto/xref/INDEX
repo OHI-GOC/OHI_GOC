@@ -85,5 +85,8 @@
   },
   "chapters/data/habitats.qmd": {
     "habitats.html": "5a2bd344"
+  },
+  "chapters/data/species.qmd": {
+    "species.html": "c12ca4a9"
   }
 }

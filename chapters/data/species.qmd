@@ -1,0 +1,321 @@
+---
+title: " "
+format: html
+toc: true
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+# Species Distribution for the Gulf of California
+
+## Exploring IUCN RedList and Species Distribution
+
+The species that inhabit the ocean have a vital role in shaping the
+existing marine environment. They are valued for their beauty and
+inherent right to exist, as well as their role in supporting productive
+habitats that provide many benefits for people.
+
+From the largest predators to microscopic plankton, these species depend
+upon each other for survival. The interaction of species that have
+naturally evolved in a given location is essential for ecosystem
+structure and stability. In addition, the maintenance of large numbers
+of species provides diverse genetic resource that makes it possible to
+avoid functional collapse, should conditions change in the future. This
+sub-goal would potentially assesses the health of all marine species
+present in the Gulf of California, including endangered species and
+species in relatively good conditions. The presence of species that are
+not at risk leads to a higher score.
+
+This page explores the species within the GoC, their spatial
+distribution determined by the IUCN, and their corresponding species
+status category.
+
+```{r}
+#| warning: false
+#| message: false
+#| echo: false
+
+library(rredlist)
+
+# use the IUCN API website (https://api.iucnredlist.org/), click the “Generate a token” link at the top of the web page, and fill out the form to apply for a token. You should then receive a token after completing the form. After receiving a token, open the .Renviron file on your computer (e.g., using usethis::edit_r_environ())
+# usethis::edit_r_environ() # and add the token as "IUCN_REDLIST_KEY"
+
+# verify access to IUCN Red List API
+# rredlist::rl_use_iucn() # make sure you did the above ^!
+
+# --------------------------------------
+library(DT)
+library(mapview)
+library(ohicore)
+library(tidyverse)
+library(stringr)
+library(here)
+library(janitor)
+library(plotly)
+library(tictoc)
+library(ggplot2)
+library(leaflet)
+library(sf)
+library(viridis)
+library(dplyr)
+
+
+# ---- sources! ----
+# source(here("workflow", "R", "common.R")) # file creates objects to process data
+## set the mazu and neptune data_edit share based on operating system
+dir_M             <- c('Windows' = '//mazu.nceas.ucsb.edu/ohi',
+                       'Darwin'  = '/Volumes/ohi',    ### connect (cmd-K) to smb://mazu/ohi
+                       'Linux'   = '/home/shares/ohi')[[ Sys.info()[['sysname']] ]]
+
+# ---- set year and file path info ----
+current_year <- 2025 # Update this in the future!!
+version_year <- paste0("v",current_year)
+data_dir_version_year <- paste0("d", current_year)
+
+# ---- data directories ----
+
+# raw data directory (on Mazu)
+raw_data_dir <- here::here(dir_M, "OHI_GOC", "_raw_data")
+
+# for IUCN raw data dir
+iucn_raw_dir <- here::here(dir_M, "OHI_GOC", "_raw_data", "IUCN_spatial", data_dir_version_year)
+
+# for coastline characteristics intermediates
+int_dir <- here::here("SPP_ICO", "spp", version_year, "int")
+
+# final output dir
+output_dir <- here("SPP_ICO", "spp", version_year, "output")
+
+# spatial data for GoC
+goc_spatial <- here("spatial")
+
+# this CRS might be better for visualization, explore.
+gulf_crs <- st_crs("+proj=aea +lat_1=23 +lat_2=30 +lat_0=25 +lon_0=-110 +datum=WGS84 +units=m +no_defs")
+```
+
+```{r}
+#| warning: false
+#| message: false
+#| echo: false
+
+# read in usable processed data from `spp_exploration.qmd` in ohi_goc_prep/SPP_ICO/spp/v2025
+
+goc_species_assessments_xref_viz <- read_csv(here("/home/shares/ohi/OHI_GOC/goal_prep/spp/iucn_redlist/v2025", "goc_species_assessments_xref_viz.csv"))
+```
+
+Below are the number of species within the Gulf of California that have
+been designated as a specific IUCN Category, in which they could be:
+
+-   Data Deficient (DD)
+
+-   Least Concern (LC)
+
+-   Near Threatened (NT)
+
+-   Vulnerable (VU)
+
+-   Endangered (EN)
+
+-   Critically Endangered (CR)
+
+-   Extinct in the Wild (EW), or
+
+-   Extinct (EX)
+
+To see the percentage of the total species assessed within the Gulf of
+California, hover over the pie chart.
+
+```{r}
+#| warning: false
+#| message: false
+#| echo: false
+
+
+library(plotly)
+
+# sum the counts for each category_mex
+pie_data <- goc_species_assessments_xref_viz %>%
+  count(category_mex)
+
+# Data Deficient (DD) ...
+# Least Concern (LC) ...
+# Near Threatened (NT) ...
+# Vulnerable (VU) ...
+# Endangered (EN) ...
+# Critically Endangered (CR) ...
+# Extinct in the Wild (EW) ...
+# Extinct (EX)
+
+# cat_order <- c("DD", "LC", "NT", "VU", "EN", "CR", "EW", "EX") # set the order for better understanding
+# pie_data$category_mex <- factor(pie_data$category_mex, levels = cat_order)
+# 
+custom_colors <- c(
+  "DD" = "darkgrey",
+  "LC" = "darkgreen",
+  "NT" = "#FFCc00",
+  "VU" = "darkorange",
+  "EN" = "black",
+  "CR" = "darkred",
+  "EW" = "black",
+  "EX" = "purple"
+)
+
+# colors_in_data <- custom_colors[as.character(pie_data$category_mex)] # filter colors only for those in the data to preserve the order
+
+
+# make the interactive pie chart for the categories!!
+pie_cat_fig <- plot_ly(
+  data = pie_data,
+  labels = ~category_mex,
+  values = ~n,
+  type = "pie",
+  textinfo = "label+percent",
+  insidetextorientation = "radial",
+  marker = list(colors = custom_colors[pie_data$category_mex],
+                line = list(color = 'white', width = 1))  # white borders between slices
+) %>%
+  layout(
+    showlegend = TRUE,
+    legend = list(title = list(text = '<b>Red List Categories</b>'))
+)
+
+pie_cat_fig
+```
+
+Additionally, if you would like to see which species have been
+designated as a certain IUCN Status Category, feel free to search or
+explore below:
+
+```{r}
+#| warning: false
+#| message: false
+#| echo: false
+
+goc_species_assessments_xref_viz_nocodetype <- goc_species_assessments_xref_viz %>% 
+  select(-code_type)
+
+library(reactable)
+
+reactable(
+  goc_species_assessments_xref_viz_nocodetype,
+  groupBy = "category_mex",
+  searchable = TRUE,
+  filterable = TRUE,
+  striped = TRUE,
+  highlight = TRUE,
+  columns = list(
+    id_no = colDef(name = "ID Number"),
+    sci_name = colDef(name = "Scientific Name"),
+    category_mex = colDef(name = "Red List Category (Mexico)"),
+    category_goc = colDef(name = "Red List Category (GOC)"),
+    category_maintained = colDef(name = "Category Maintained"),
+    year_published = colDef(name = "Year Published"),
+    latest = colDef(name = "Latest Assessment"),
+    possibly_extinct = colDef(name = "Possibly Extinct"),
+    possibly_extinct_in_the_wild = colDef(name = "Possibly Extinct in the Wild"),
+    url = colDef(name = "URL"),
+    assessment_id = colDef(name = "Assessment ID"),
+    code = colDef(name = "Country")
+  )
+)
+```
+
+## Group Distributions
+
+#### Seabreams, snappers, and grunts
+
+```{r}
+#| warning: false
+#| message: false
+#| echo: false
+
+# seabreams_snappers_grunts <- st_read(here("/home/shares/ohi/OHI_GOC/_raw_data/IUCN_spatial/d2025/int/seabreams_snappers_grunts_dist_goc_wgs84.shp"))
+
+# mapview(seabreams_snappers_grunts, label = seabreams_snappers_grunts$sci_name, layer.name = "Seabreams, snappers, and grunts")
+# 
+# leaflet(seabreams_snappers_grunts) %>%
+#   addProviderTiles("OpenStreetMap") %>%
+#   addPolygons(
+#     label = ~sci_name,
+#     popup = ~sci_name,
+#     color = "darkblue",
+#     weight = 1,
+#     fillOpacity = 0.5
+#   )
+
+# datatable(seabreams_snappers_grunts)
+```
+
+#### Salmonids
+
+```{r}
+#| warning: false
+#| message: false
+#| echo: false
+
+# salmonids <- st_read(here::here("/home/shares/ohi/OHI_GOC/_raw_data/IUCN_spatial/d2025/int", "salmonids_dist_goc_wgs84.shp"))
+# mapview(salmonids,label = salmonids$sci_name, layer.name = "Salmonids")
+# 
+# datatable(salmonids)
+```
+
+
+#### Seagrasses
+
+```{r}
+#| warning: false
+#| message: false
+#| echo: false
+
+seagrasses <- st_read(here::here("/home/shares/ohi/OHI_GOC/_raw_data/IUCN_spatial/d2025/int", "seagrasses_dist_goc_wgs84.shp"))
+mapview(seagrasses,  label = seagrasses$sci_name, layer.name = "Seagrasses")
+
+datatable(seagrasses)
+```
+
+```{r}
+#| warning: false
+#| message: false
+#| echo: false
+
+# sturgeons_paddlefish <- st_read(here::here("/home/shares/ohi/OHI_GOC/_raw_data/IUCN_spatial/d2025/int", "sturgeons_paddlefish_dist_goc_wgs84.shp"))
+# mapview(sturgeons_paddlefish,  label = sturgeons_paddlefish$sci_name, layer.name = "Sturgeons and paddlefish")
+# 
+# datatable(sturgeons_paddlefish)
+```
+
+```{r}
+#| warning: false
+#| message: false
+#| echo: false
+
+# tunas_billfishes_swordfish <- st_read(here::here("/home/shares/ohi/OHI_GOC/_raw_data/IUCN_spatial/d2025/int", "tunas_billfishes_swordfish_dist_goc_wgs84.shp"))
+# mapview(tunas_billfishes_swordfish,  label = tunas_billfishes_swordfish$sci_name, layer.name = "Tunas, Billfishes, and Swordfish")
+# 
+# datatable(tunas_billfishes_swordfish)
+```
+
+
+
+## How to use the IUCN RedList
+
+To download a list of the species evaluated within a country, use the IUCN API website (https://api.iucnredlist.org/), click the “Generate a token” link at the top of the web page, and fill out the form to apply for a token. You should then receive a token after completing the form. After receiving a token, open the .Renviron file on your computer (e.g., using usethis::edit_r_environ()).
+
+Then, within your code, type:
+
+```{r}
+# usethis::edit_r_environ() # and add the token as "IUCN_REDLIST_KEY"
+```
+
+Then, to verify access to IUCN Red List API:
+
+```{r}
+# rredlist::rl_use_iucn() # make sure you did the above ^!
+```
+
+
+To obtain the species distribution data from IUCN, manual polygon downloads are available at <https://www.iucnredlist.org/resources/spatial-data-download>.  The API will give the list of the status and name of all species in Mexico, but it does not have any spatial data associated with it (such as locations/coordinates seen).  After downloading all marine groups manually and cropping it to the GoC, you will be able to match it with listed species and their status from `mex_species`.  It is possible there are more taxonomic group distribution data than are listed, which is okay and still good to explore.  
+
+Note: there are 19 groups (separate downloads) for spatial data.  Mazu location is /home/shares/ohi/OHI_GOC/_raw_data/IUCN_spatial/d2025.  After requesting each group, go to your account page under "saved downloads".  There, all requested downloads will be present.  Download each group and unzip, then bring into Mazu for the appropriate year. 
+
