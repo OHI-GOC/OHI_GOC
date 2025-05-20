@@ -221,18 +221,64 @@ reactable(
 )
 ```
 
-## Group Distributions
+### IUCN Group Spatial Distributions
 
-#### Seabreams, snappers, and grunts
+Within IUCN Species Distribution maps, there are 19 groups that have
+vector (polygon) data available for downloading. These groups are as
+follows:
 
 ```{r}
 #| warning: false
 #| message: false
 #| echo: false
 
-# seabreams_snappers_grunts <- st_read(here("/home/shares/ohi/OHI_GOC/_raw_data/IUCN_spatial/d2025/int/seabreams_snappers_grunts_dist_goc_wgs84.shp"))
 
-# mapview(seabreams_snappers_grunts, label = seabreams_snappers_grunts$sci_name, layer.name = "Seabreams, snappers, and grunts")
+library(knitr)
+library(kableExtra)
+
+groups <- c(
+  "Abalone",
+  "Cone Snails",
+  "Croakers & Drums",
+  "Eels",
+  "Groupers",
+  "Hagfish",
+  "Lobsters",
+  "Mammals (Marine Only)",
+  "Mangroves",
+  "Marinefish",
+  "Reef Forming Corals",
+  "Salmonids",
+  "Seabreams, Snappers, Grunts",
+  "Seagrasses",
+  "Sharks, Rays, Chimaeras",
+  "Sturgeons & Paddlefishes",
+  "Syngnathiform Fishes",
+  "Tunas, Billfishes, Swordfish",
+  "Wrassess & Parrotfish"
+)
+
+df <- data.frame("Groups available for download" = groups, check.names = FALSE)
+
+kable(df, "html") %>%
+  kable_styling(full_width = FALSE, position = "center")
+
+```
+
+#### Polygon distribution example: Seabreams, Snappers, and Grunts
+
+To show an example of what the polygons available for download look like
+within the GoC, here is a map of seabreams, snappers, and grunts, along
+with what the data itself looks like:
+
+```{r}
+#| warning: false
+#| message: false
+#| echo: false
+
+seabreams_snappers_grunts <- st_read(here("/home/shares/ohi/OHI_GOC/_raw_data/IUCN_spatial/d2025/int/seabreams_snappers_grunts_dist_goc_wgs84.shp"), quiet = TRUE)
+
+mapview(seabreams_snappers_grunts, label = seabreams_snappers_grunts$sci_name, layer.name = "Seabreams, snappers, and grunts")
 # 
 # leaflet(seabreams_snappers_grunts) %>%
 #   addProviderTiles("OpenStreetMap") %>%
@@ -244,63 +290,17 @@ reactable(
 #     fillOpacity = 0.5
 #   )
 
-# datatable(seabreams_snappers_grunts)
+datatable(head(st_drop_geometry(seabreams_snappers_grunts), 10))
 ```
 
-#### Salmonids
+### How to use the IUCN RedList
 
-```{r}
-#| warning: false
-#| message: false
-#| echo: false
-
-# salmonids <- st_read(here::here("/home/shares/ohi/OHI_GOC/_raw_data/IUCN_spatial/d2025/int", "salmonids_dist_goc_wgs84.shp"))
-# mapview(salmonids,label = salmonids$sci_name, layer.name = "Salmonids")
-# 
-# datatable(salmonids)
-```
-
-
-#### Seagrasses
-
-```{r}
-#| warning: false
-#| message: false
-#| echo: false
-
-seagrasses <- st_read(here::here("/home/shares/ohi/OHI_GOC/_raw_data/IUCN_spatial/d2025/int", "seagrasses_dist_goc_wgs84.shp"))
-mapview(seagrasses,  label = seagrasses$sci_name, layer.name = "Seagrasses")
-
-datatable(seagrasses)
-```
-
-```{r}
-#| warning: false
-#| message: false
-#| echo: false
-
-# sturgeons_paddlefish <- st_read(here::here("/home/shares/ohi/OHI_GOC/_raw_data/IUCN_spatial/d2025/int", "sturgeons_paddlefish_dist_goc_wgs84.shp"))
-# mapview(sturgeons_paddlefish,  label = sturgeons_paddlefish$sci_name, layer.name = "Sturgeons and paddlefish")
-# 
-# datatable(sturgeons_paddlefish)
-```
-
-```{r}
-#| warning: false
-#| message: false
-#| echo: false
-
-# tunas_billfishes_swordfish <- st_read(here::here("/home/shares/ohi/OHI_GOC/_raw_data/IUCN_spatial/d2025/int", "tunas_billfishes_swordfish_dist_goc_wgs84.shp"))
-# mapview(tunas_billfishes_swordfish,  label = tunas_billfishes_swordfish$sci_name, layer.name = "Tunas, Billfishes, and Swordfish")
-# 
-# datatable(tunas_billfishes_swordfish)
-```
-
-
-
-## How to use the IUCN RedList
-
-To download a list of the species evaluated within a country, use the IUCN API website (https://api.iucnredlist.org/), click the “Generate a token” link at the top of the web page, and fill out the form to apply for a token. You should then receive a token after completing the form. After receiving a token, open the .Renviron file on your computer (e.g., using usethis::edit_r_environ()).
+To download a list of the species evaluated within a country, use the
+IUCN API website (https://api.iucnredlist.org/), click the “Generate a
+token” link at the top of the web page, and fill out the form to apply
+for a token. You should then receive a token after completing the form.
+After receiving a token, open the .Renviron file on your computer (e.g.,
+using usethis::edit_r_environ()).
 
 Then, within your code, type:
 
@@ -314,8 +314,178 @@ Then, to verify access to IUCN Red List API:
 # rredlist::rl_use_iucn() # make sure you did the above ^!
 ```
 
+To obtain the species distribution data from IUCN, manual polygon
+downloads are available at
+<https://www.iucnredlist.org/resources/spatial-data-download>. The API
+will give the list of the status and name of all species in Mexico, but
+it does not have any spatial data associated with it (such as
+locations/coordinates seen). After downloading all marine groups
+manually and cropping it to the GoC, you will be able to match it with
+listed species and their status from `mex_species`. It is possible there
+are more taxonomic group distribution data than are listed, which is
+okay and still good to explore.
 
-To obtain the species distribution data from IUCN, manual polygon downloads are available at <https://www.iucnredlist.org/resources/spatial-data-download>.  The API will give the list of the status and name of all species in Mexico, but it does not have any spatial data associated with it (such as locations/coordinates seen).  After downloading all marine groups manually and cropping it to the GoC, you will be able to match it with listed species and their status from `mex_species`.  It is possible there are more taxonomic group distribution data than are listed, which is okay and still good to explore.  
+Note: there are 19 groups (separate downloads) for spatial data. Mazu
+location is /home/shares/ohi/OHI_GOC/\_raw_data/IUCN_spatial/d2025.
+After requesting each group, go to your account page under "saved
+downloads". There, all requested downloads will be present. Download
+each group and unzip, then bring into Mazu for the appropriate year.
 
-Note: there are 19 groups (separate downloads) for spatial data.  Mazu location is /home/shares/ohi/OHI_GOC/_raw_data/IUCN_spatial/d2025.  After requesting each group, go to your account page under "saved downloads".  There, all requested downloads will be present.  Download each group and unzip, then bring into Mazu for the appropriate year. 
+## Comparing with AquaMaps, FishBase, and SeaLifeBase
 
+AquaMaps, FishBase, and SeaLifeBase are great resources with different
+strengths.
+
+-   **AquaMaps** visualizes and predicts *species distributions* using
+    data from FishBase and SeaLifeBase.
+
+-   **FishBase** is the authoritative database for *fish species*.
+
+-   **SeaLifeBase** is the authoritative database for all other aquatic
+    life *except* fish.
+
+### AquaMaps
+
+AquaMaps is a tool that generates model based, large-scale predictions
+of where aquatic species are likely to occur. It uses environmental
+data, such as temperature, depth, and salinity, along with species
+occurrence records to create global, color-coded maps showing the
+relative probability of finding a species in different areas. These maps
+are routinely verified using information from FishBase and SeaLifeBase,
+and can also be reviewed by species experts for accuracy. AquaMaps is
+especially useful for visualizing and predicting marine and freshwater
+species distributions worldwide.
+
+![](images/clipboard-1181158712.png)
+
+To find this data on their website, go to "Checklists by Large Marine
+Ecosystem" and select within the drop-down menu "Gulf of California".
+The NetCDF distributions of each species can be downloaded using either
+the [`aquamapsdata`
+package](https://raquamaps.github.io/aquamapsdata/articles/intro.html)
+or the THREDDS server at
+<http://thredds.d4science.org/thredds/catalog/public/netcdf/AquamapsNative/catalog.html>.
+
+**AquaMaps data description**: This list is based on AquaMaps
+predictions which gives the probability of occurrence of a species
+within its known native range. It only includes species with a
+probability of occurrence of \> 0.5 which is used as a threshold to
+define a species' core range. It should be considered incomplete and may
+include species not reported in the literature. For species checklists
+based on published literature see: FishBase and SeaLifeBase. Should more
+precise AquaMaps checklists (i.e. stricter predictions for scientific
+analyses, specific groups) be needed, please contact us directly.
+
+**Disclaimer**: *AquaMaps generates standardized computer-generated and
+fairly reliable large scale predictions of marine and freshwater
+species. Although the AquaMaps team and their collaborators have
+obtained data from sources believed to be reliable and have made every
+reasonable effort to ensure its accuracy, many maps have not yet been
+verified by experts and we strongly suggest you verify species
+occurrences with independent sources before usage. We will not be held
+responsible for any consequence from the use or misuse of these data
+and/or maps by any organization or individual.*
+
+**Citation**: Kaschner, K., Kesner-Reyes, K., Garilao, C., Segschneider,
+J., Rius-Barile, J. Rees, T., & Froese, R. (2019, October). AquaMaps:
+Predicted range maps for aquatic species. Retrieved from
+<https://www.aquamaps.org>.
+
+### FishBase
+
+FishBase is the world’s largest online database of information about
+fish species. It covers a wide range of data, including taxonomy,
+distribution, biology, ecology, and conservation status (using the IUCN
+Red List assessment) for nearly all known fish species. FishBase is a
+key resource for researchers, educators, and policymakers, and it also
+provides common names in many languages. Data from FishBase is used to
+inform and verify the species maps generated by AquaMaps.
+
+![](images/clipboard-2411617183.png)
+
+[Click here to see the FishBase website with images for the Gulf of
+California.](https://fishbase.se/identification/RegionSpeciesList.php?e_code=165)
+
+**Disclaimer:** *FishBase present information on fishes as correctly as
+possible. However, we can not exclude errors, and neither we nor our
+partners can be held responsible for any damage that may arise from
+these.*
+
+**Citation:** Froese, R. and D. Pauly. Editors. 2025.FishBase. World
+Wide Web electronic publication. www.fishbase.org, ( 04/2025 )
+
+### SeaLifeBase
+
+SeaLifeBase is a comprehensive database similar to FishBase, but it
+focuses on all other aquatic life **except for finfish**, such as
+invertebrates (e.g., mollusks, crustaceans, corals) and marine mammals.
+It contains detailed information on the taxonomy, distribution, and
+ecology of thousands of non-fish marine species. Like FishBase,
+SeaLifeBase contributes essential data to AquaMaps for generating
+accurate species distribution models.
+
+![](images/clipboard-1558933610.png)
+
+However, [for the Gulf of
+California](https://sealifebase.se/trophiceco/FishEcoList.php?ve_code=165),
+SeaLifeBase disclaims that *"the list below is incomplete. You can
+assess the extent of its coverage by examining the references we used to
+assign species to this ecosystem. Note, however, that there are too many
+species of invertebrates for SeaLifeBase to provide you with complete
+species lists."*
+
+Therefore, let's explore better invertebrate databases, such as the Gulf
+of California Invertebrate Database from the Desert Museum.
+
+**Citation:** Palomares, M.L.D. and D. Pauly. Editors. 2025.
+SeaLifeBase. World Wide Web electronic publication. www.sealifebase.org,
+version (04/2025).
+
+## The Gulf of California Invertebrate Database
+
+**The Invertebrate Portion of the Macrofauna Golfo Database**
+
+The Gulf of California Invertebrate Database is a comprehensive,
+regularly updated resource that catalogs all known invertebrate species
+from the Gulf of California (also known as the Sea of Cortez). Hosted by
+the Arizona-Sonora Desert Museum, this database is part of the larger
+Macrofauna Golfo Project, which aims to document the region’s remarkable
+marine biodiversity.
+
+Curated by experts from the Arizona-Sonora Desert Museum and the
+Universidad Nacional Autónoma de México, the database includes detailed
+records for nearly every invertebrate group found in the Gulf, excluding
+copepods and ostracods, which are still being added. Users can search
+and explore species information, making it an invaluable tool for
+researchers, educators, and anyone interested in the marine life of the
+Gulf of California.
+
+![](images/clipboard-1199306151.png)
+
+The database is updated **weekly**, and contributions of new information
+are welcomed from the scientific community and the public.
+
+The total number of invertebrate species documented in the database is
+**2340 species.** Each species, when clicked on, contains:
+
+-   Taxonomic information
+
+-   Distribution and habitat information
+
+-   Range and end-points within the Gulf of California, and
+
+-   Comments
+
+![](images/clipboard-2824548440.png)
+
+This information is very helpful and useful for understanding
+invertebrate species richness and distribution across the Gulf of
+California.
+
+To explore the database, [click
+here](https://www.desertmuseum.org/center/seaofcortez/database.php)!
+
+**Citation:** Brusca, R. C. and M. E. Hendrickx. 2008 and onward. The
+Gulf of California Invertebrate Database: The Invertebrate Portion of
+the *Macrofauna Golfo* Database.
+http://www.desertmuseum.org/center/seaofcortez/database.php.
