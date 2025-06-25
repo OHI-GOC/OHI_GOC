@@ -91,5 +91,8 @@
   },
   "chapters/data/species.qmd": {
     "species.html": "5c950297"
+  },
+  "chapters/welcome_public_facing.qmd": {
+    "welcome_public_facing.html": "4f7bd92a"
   }
 }

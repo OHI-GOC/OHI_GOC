@@ -18,37 +18,37 @@ website:
     pinned: true
     align: center
     style: "docked"
-    search: true
+    search: false # true
     collapse-level: 1
     contents:
       - href: index.qmd
-        text: Welcome
-      - href: chapters/OHI.qmd
-        text: "Starting an OHI assessment"
-      - href: chapters/region.qmd
-        text: "Identify regions"
-      - href: chapters/goals.qmd
-        text: "Identify goals"  
-      - section: "Data"
-        contents:
-          - href: chapters/data/protected.qmd
-            text: "Protected regions"
-          - href: chapters/data/sst.qmd
-            text: "Sea surface temperature"
-          - href: chapters/data/fishery_production.qmd
-            text: "Fishery production"
-          - href: chapters/data/fishery_effort.qmd
-            text: "Fishing effort"
-          - href: chapters/data/habitats.qmd
-            text: "Habitats"
-          - href: chapters/data/tourism_lodging.qmd
-            text: "Tourism lodging"
-          - href: chapters/data/species.qmd
-            text: "Species"
-      - href: chapters/pressures.qmd
-        text: "Pressures"
-      - href: chapters/resilience.qmd
-        text: "Resilience"
+        text: "Subregion Draft #1 Evaluation" # Welcome
+      # - href: chapters/OHI.qmd
+      #   text: "Starting an OHI assessment"
+      # - href: chapters/region.qmd
+      #   text: "Identify regions"
+      # - href: chapters/goals.qmd
+      #   text: "Identify goals"  
+      # - section: "Data"
+      #   contents:
+      #     - href: chapters/data/protected.qmd
+      #       text: "Protected regions"
+      #     - href: chapters/data/sst.qmd
+      #       text: "Sea surface temperature"
+      #     - href: chapters/data/fishery_production.qmd
+      #       text: "Fishery production"
+      #     - href: chapters/data/fishery_effort.qmd
+      #       text: "Fishing effort"
+      #     - href: chapters/data/habitats.qmd
+      #       text: "Habitats"
+      #     - href: chapters/data/tourism_lodging.qmd
+      #       text: "Tourism lodging"
+      #     - href: chapters/data/species.qmd
+      #       text: "Species"
+      # - href: chapters/pressures.qmd
+      #   text: "Pressures"
+      # - href: chapters/resilience.qmd
+      #   text: "Resilience"
 format:
   html:
     theme:

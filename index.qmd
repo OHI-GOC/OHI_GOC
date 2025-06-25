@@ -1,97 +1,226 @@
 ---
-title: "Gulf of California"
-subtitle: "Introducing the Gulf of California Ocean Health Index"
+title: "Ocean Health Index Gulf of California"
+subtitle: "Subregion Draft #1 for feedback"
+toc: false
+editor_options: 
+  chunk_output_type: console
 ---
+
+Hola a todos, ¡esperamos que todos estén bien!
+
+## Contents {.unlisted}
+- [View the Interactive Map](#interactive-map)
+- [Key Questions for Review](#key-questions)
+
+::: {.callout-note collapse=true}
+## Abra esta pestaña para español :)
+
+Hola a todos, ¡esperamos que todos estén bien!
+
+Esta página interactiva puede ser utilizada para ver, en detalle, el primer borrador bruto de la segmentación de la subregión. El mapa fue creado a partir de esta versión dibujada que todos acordaron durante la reunión de EWG #1 de junio. Se identificaron 11 regiones del Golfo de California, y se reflejan en el mapa interactivo.
+
+## Por favor considere el mapa actualizado a continuación, nuestras preguntas, y envíe una respuesta de email o asista a una hora de oficina abierta con Melanie, Erica y Sophia. ¡Esto nos ayuda a avanzar hacia los próximos pasos!
+
+Si desea conocer sobre Zoom en lugar de escribir un correo electrónico, tendremos horas de oficina abierta en:
+
+-  **Jueves (25 de junio) de 9 a 10 am PST y 1 pm - 14 pm PST**
+-  **Viernes (26 de junio) de 9 a 10 horas PST y 13 a 14 horas PST**
+-  **Lunes (30 de junio) de 9 a 10 am PST y 1 pm - 2 pm - 2 pm PST**
+
+Le pedimos a cada uno de ustedes que mire las zonas fronterizas clave y regiones, y donde se encuentran la línea vertical en el centro del Golfo. Como se hace en la versión dibujada, la versión interactiva garantiza que las fronteras de cada región se reúnan desde el Este hasta el Oeste. Por ejemplo, cada línea horizontal a través de todo el Golfo es relativamente plana, ya que en el dibujo estaban justo enfrente de uno del otro (como Topolobampo y Bahía La Paz, las fronteras sureñas de Región_9 y Región_4). Sin embargo, en realidad, la escala es un poco diferente, por lo que Bahía La Paz está mucho más al norte que Topolobampo. De todas formas, aún me aseguré de que las líneas se encontraran a través. 
+
+### Hay algunos puntos clave a considerar: 
+
+1. En un recurso compartido con nosotros, las áreas [DOF 2006 Federal Ecological Management areas]( https://drive.google.com/file/d/1fVTsftrsihm8CStPktcz4uIfyHiHJ5A6/view ? usp=sharing) (página 80), vemos que la frontera sur que hicieron llegó a Cabo San Lucas. ¿Crees que la frontera sur de la Región_5 debería estar en Cabo del Este tal como decidimos en la reunión, o en Cabo San Lucas o San José del Cabo? 
+
+2. La frontera sur de la Región_11 fue atraída para seguir la plataforma continental debajo de las Islas Marias, pero aún incluye toda la zona de la Reserva de la Biosfera Islas Marias. Termina en Punta El Campamento en Jalisco. Por favor confirme que esta es la frontera correcta. ¿O es mejor terminar en Boca de Tomates en Puerto Vallarta, donde termina la frontera estatal de Nayarit? 
+
+3. ¿Debería situarse la frontera entre Región_5 y Región_4 debajo de Bahía de La Ventana, en Cueva de Leon? ¿O debería ser fuera de Bahía La Paz, como está en el mapa interactivo? (El dibujo tiene una discrepancia entre el lugar donde estaba la línea y el nombre del lugar fronterizo.) 
+
+4. Debido a la escala, la frontera sur de la Región_8 y la Región_3 es más diagonal en el mapa interactivo que en el dibujado. ¿La línea sigue siendo correcta? 
+
+5. Si es posible, por favor, mire todas las demás fronteras entre regiones. Todos siguen de cerca la visión dibujada, pero no se sientan libres de hacernos saber si tiene alguna pregunta o recomendaciones. 
+
+### ¡Por favor, dinos qué piensas! Gracias.
+:::
+
+This interactive page can be used to see, in detail, the first rough draft of subregion segmentation. The map was created based on this drawn version everyone agreed to during the EWG Meeting #1 in June. 11 regions within the Gulf of California were identified, and are reflected in the interactive map.
+
+## ***Please consider the updated map below, our questions, and send an email response or attend an open office hour with Melanie, Erica, and Sophia. This helps us move forward to the next steps!***
+
+If you would like to meet over Zoom instead of writing an email, we will have open office hours on:
+
+-   **Thursday (June 25th) from 9am - 10am PST and 1pm - 2pm PST**
+-   **Friday (June 26th) from 9am - 10am PST and 1pm - 2pm PST**
+-   **Monday (June 30th) from 9am - 10am PST and 1pm - 2pm PST**
+
+::: {.callout-tip collapse=true}
+## Open this tab for the Zoom invitation (Abra esta pestaña para la invitación de Zoom)
+
+Sophia Lecuona Manos's Personal Meeting Room
+Join Zoom Meeting
+
+<https://ucsb.zoom.us/j/4645991986?pwd=YVZPRzVJTUdtT3VCbWVNZkZYSFQ3Zz09>
+
+**Meeting ID:** 464 599 1986
+
+**Passcode:** seahorse
+
+:::
+
+We ask that each of you please look at key border areas and regions, and where they meet the vertical line down the middle of the Gulf. As done within the drawn version, the interactive version ensures that each region's borders meet from the East to the West. For example, each horizontal line across the entire Gulf is relatively flat, since in the drawing they were right across from each other (such as Topolobampo and Bahia La Paz, the southern borders of Region_9 and Region_4). However, in reality, the scale is a bit different, so Bahia La Paz is much further North than Topolobampo. Regardless, I still ensured that the lines met across.
+
+### There are some key points to consider: {#key-questions}
+
+1.  In a resource shared with us, the [DOF 2006 Federal Ecological Management areas](https://drive.google.com/file/d/1fVTsftrsihm8CStPktcz4uIfyHiHJ5A6/view?usp=sharing) (page 80), we see that the southern border they made reached Cabo San Lucas. Do you think the south border of Region_5 should be at Cabo del Este as we decided in the meeting, or at Cabo San Lucas or San Jose del Cabo?
+
+2.  The southern border of Region_11 was drawn to follow the continental shelf below the Islas Marias, but still include the entire Reserva de la Biosfera Islas Marias area. It ends at Punta El Campamento in Jalisco. Please confirm this is the correct border. Or is it best to end at Boca de Tomates in Puerto Vallarta, where Nayarit's state border ends?
+
+3.  Should the border between Region_5 and Region_4 be located below Bahia de La Ventana, at Cueva de Leon? Or should it be outside Bahia La Paz, as it is in the interactive map? (The drawing has a discrepancy between where the line was and the name of the border location.)
+
+4.  Due to scale, the southern border of Region_8 and Region_3 is more diagonal in the interactive map than in the drawn one. Does the line still look correct?
+
+5.  If possible, please look at all the other borders between regions. They all closely follow the drawn visual, but feel free to let us know if you have any questions or recommendations.
+
+### Please let us know what you think! Thank you.
+
+# Drawn Version:
+
+![](chapters/figs/regions_subregions_drawn_ewg1.png)
+
+# Interactive Rough Draft: {#interactive-map}
+
+```{r interactive}
+#| echo: false
+#| warning: false
+#| message: false
+#| output: false
+#| results: hide
+
+library(magrittr)
+library(mregions2)
+library(mapview)
+library(sf)
+library(tidyverse)
+library(lwgeom)
+library(here)
+library(leaflet.extras2)
+library(terra)
+
+# subregions_draft_1 <- st_read(here("/home/shares/ohi/OHI_GOC/spatial/subregions_drafts/june_24"))
+# mapview(subregions_draft_1)
+# 
+# library(mapedit)
+# 
+# subregions_draft_2 <- editFeatures(subregions_draft_1)
+# mapview(subregions_draft_2)
+# 
+# ## now merge polylines and split the original polygon with the new lines made
+# 
+# # original single GoC polygon
+# original_goc <- subregions_draft_1
+# 
+# # Load the polygon with lines you just created
+# drawn_features <- subregions_draft_2
+# 
+# # first extract only the lines (not the filled polygons) to see them and confirm
+# lines_only <- drawn_features[st_geometry_type(drawn_features) == "LINESTRING", ]
+# 
+# if(nrow(lines_only) == 0) {
+#   # Convert polygon boundaries to lines
+#   polygon_boundaries <- st_cast(drawn_features, "MULTILINESTRING")
+#   lines_only <- st_cast(polygon_boundaries, "LINESTRING")
+# }
+# 
+# mapview(lines_only)
+# 
+# # now use st_split to divide the original polygon into multiple polygons using the drawn lines
+# split_goc_with_lines <- function(original_polygon, dividing_lines) {
+# 
+#   # combine all lines into a single multilinestring
+#   all_lines <- st_union(st_geometry(dividing_lines))
+# 
+#   # split the original polygon
+#   tryCatch({
+#     split_result <- st_split(original_polygon, all_lines)
+# 
+#     # extract individual polygons from the result
+#     individual_polygons <- st_collection_extract(split_result, "POLYGON")
+# 
+#     # add region identifiers
+#     individual_polygons$region_id <- 1:nrow(individual_polygons)
+#     individual_polygons$region_name <- paste0("Region_", individual_polygons$region_id)
+# 
+#     return(individual_polygons)
+# 
+#   }, error = function(e) {
+#     cat("Error in splitting:", e$message, "\n")
+#     cat("Trying alternative approach...\n")
+#     return(NULL) # for error catching!!
+#   })
+# }
+# 
+# # apply the splitting
+# subregions_draft_3 <- split_goc_with_lines(original_goc, lines_only)
+# mapview(subregions_draft_3)
+# 
+# # drop the polygons for the southern border that are unnecessary and merge region 14 and 15. Also merge region 9 with region 8
+# merge_unneeded <- subregions_draft_3 %>% 
+#   mutate(region_id = ifelse(region_id == "11", "12", region_id)) %>%  # give it the same ID to merge 
+#   mutate(region_id = ifelse(region_id == "3", "4", region_id)) %>%
+#   mutate(region_id = ifelse(region_id == "14", "13", region_id)) %>%
+#   mutate(region_id = ifelse(region_id == "1", "2", region_id)) %>%
+#   group_by(region_id) %>%
+#   summarise(geometry = st_union(geometry), .groups = "drop") # merge the geometries
+# mapview(merge_unneeded)
+# 
+# subregions_draft_4 <- merge_unneeded %>%
+#   arrange(as.numeric(region_id)) %>%
+#   mutate(
+#     new_id = row_number(),
+#     region_id = as.character(new_id),
+#     region_name = paste0("Region_", new_id)
+#   ) %>%
+#   mutate(region_name_same_as_drawn = case_when(
+#     region_name == "Region_1" ~ "Region_5",
+#     region_name == "Region_2" ~ "Region_4",
+#     region_name == "Region_3" ~ "Region_3",
+#     region_name == "Region_4" ~ "Region_2",
+#     region_name == "Region_5" ~ "Region_1",
+#     TRUE ~ region_name
+#   )) %>%
+#   mutate(region_id = case_when(
+#     region_id == "1" ~ "5",
+#     region_id == "2" ~ "4",
+#     region_id == "3" ~ "3",
+#     region_id == "4" ~ "2",
+#     region_id == "5" ~ "1",
+#     TRUE ~ region_id
+#   )) %>%
+#   mutate(region_name_same_as_drawn = factor(
+#     region_name_same_as_drawn,
+#     levels = paste0("Region_", sort(as.numeric(gsub("Region_", "", unique(region_name_same_as_drawn)))))
+#   )) %>% 
+#   rename(region_nm_2 = region_name_same_as_drawn)
+# st_write(subregions_draft_4, here("/home/shares/ohi/OHI_GOC/spatial/subregions_drafts/june_24","subregions_draft_2.shp"), append = FALSE)
+
+subregions_draft_4 <- suppressMessages(st_read(here("/home/shares/ohi/OHI_GOC/spatial/subregions_drafts/june_24", "subregions_draft_2.shp"))) %>% 
+  mutate(rgn_n_2 = factor(
+    rgn_n_2,
+    levels = paste0("Region_", sort(as.numeric(gsub("Region_", "", unique(rgn_n_2)))))
+  ))
+
+```
 
 ```{r}
 #| echo: false
 #| warning: false
 #| message: false
 
-source("_data/functions/start_script.R")
 
+mapview(subregions_draft_4, zcol = "rgn_n_2", layer.name = "Subregions")
 ```
 
+## Thank you all for your time! 
 
-We are excited to announce the start of an [Ocean Health Index](https://oceanhealthindex.org/) (OHI) assessment tailored to the unique concerns and priorities of the Gulf of California, Mexico.
-
-<br>
-
-:::: {.columns} 
-
-::: {.column width="50%"}
-
-The Gulf of California OHI assessment will help achieve several important goals, including:
-
-
-- establish a baseline measure of current ocean health and provide a framework to monitor and communicate the region's condition over time.
-
-- gather and nurture a community of engaged stakeholders from diverse backgrounds. 
-
-- create an accessible inventory of marine resources for the Gulf of California.
-
-:::
-
-::: {.column width="50%"}
-
-![](chapters/figs/LandsEnd.jpg)
-:::
-
-::::
-
-This website will serve as a hub to communicate the status of this project. Researchers and stakeholders can come here to observe the process of creating the Gulf of California OHI, learn more about the OHI Gulf and California framework as it develops, and explore underlying data used to calculate the Index.      
-
-<br>
-<br>
-
-## A short introduction to the Ocean Health Index
-<img src="chapters/figs/ocean_health_index2.jpg" style="width: 100%;">
-
-
-:::: {.columns} 
-
-::: {.column width="35%"}
-The Ocean Health Index is a framework for assessing and communicating ocean health, or, how well we are managing ocean resources to sustainably deliver benefits to people now and in the future.
-
-Since it’s inception in 2012, we have conducted 13 global assessments, and over [30 regional assessments](https://oceanhealthindex.org/ohi+/assessment/) have been conducted independently, or in partnership us.
-
-The original global OHI assesses 10 goals, each of which is based on a marine service or function that humans directly care about, such as jobs and food. 
-
-:::
-
-::: {.column width="65%"}
-
-![](chapters/figs/goals.jpg)
-
-:::
-
-::::
-
-
-The ten goals included in global assessments have been identified as widely-shared across different geographies, but they are not universal, and assessments using the OHI framework should only include goals that are relevant to their region. Most regional assessments modify the number and composition of the goals based on their specific needs. The goals that are ultimately included in the Gulf of California assessment will likely differ from the global assessment, because some goals may not be relevant to the region. Alternatively, new goals, not included in the global assessment, may be developed given a region's natural resources or priorities. 
-
-In addition to changes in the goal infrastructure, the model and data used to calculate the goals will  change because: 
- 
- - Higher quality local data is usually available!
-
-- Goal models, and reference points, can be adapted to better capture the values and concerns of the region.  
-
-- Goals can be weighted differently based on regional priorities.
-
-
-### Goal calculations
-Goal scores are mainly determined by how well the goal is performing relative to an established target, we refer to this as the goal status score.
-
-In addition to the status score, goal scores incorporate three additional metrics: pressures, resilience, and trend. The pressures acting on a goal will reduce its score, and can include climate change or human disturbance. The pressures acting on a goal can be mitigated by elements that contribute to the resilience of the system, such as good governance and protected areas. We also incorporate the recent trajectory of a goal's status into the final score, such that goals with improving status will have a better score, and goals with decreasing status will worsen the score.
-
-
-:::{.callout-tip}
-## To learn more...
-
-- Navigate the menu at the left for more information about each goal. Overtime, these descriptions will be updated with information specific to the Gulf of California assessment.
-
-- The [oceanhealthindex.org](https://oceanhealthindex.org/) website is a good place to learn more about the OHI framework.
-
-- This [resource](https://oceanhealthindex.org/ohi+/conduct/learn/) provides a nice readable summary of the OHI.
-
-:::
+## ¡Gracias a todos por su tiempo!
