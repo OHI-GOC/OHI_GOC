@@ -19,13 +19,13 @@ Hola a todos, ¡esperamos que todos estén bien!
 
 Esta página interactiva puede ser utilizada para ver, en detalle, el primer borrador bruto de la segmentación de la subregión. El mapa fue creado a partir de esta versión dibujada que todos acordaron durante la reunión de EWG #1 de junio. Se identificaron 11 regiones del Golfo de California, y se reflejan en el mapa interactivo.
 
-## Por favor considere el mapa actualizado a continuación, nuestras preguntas, y envíe una respuesta de email o asista a una hora de oficina abierta con Melanie, Erica y Sophia. ¡Esto nos ayuda a avanzar hacia los próximos pasos!
+## ***Si, después de revisar el mapa y nuestras preguntas, tiene alguna inquietud o comentario sobre la delimitación de estas regiones, envíenos un correo electrónico o comuníquese con nosotros a través de Zoom durante nuestro horario de atención al público. ¡Esto nos ayudará a avanzar hacia los siguientes pasos!***
 
 Si desea conocer sobre Zoom en lugar de escribir un correo electrónico, tendremos horas de oficina abierta en:
 
--  **Jueves (25 de junio) de 9 a 10 am PST y 1 pm - 14 pm PST**
--  **Viernes (26 de junio) de 9 a 10 horas PST y 13 a 14 horas PST**
--  **Lunes (30 de junio) de 9 a 10 am PST y 1 pm - 2 pm - 2 pm PST**
+-  **Jueves (26 de junio) de 1 pm - 2 pm PST**
+-  **Viernes (27 de junio) de 9 a 10 am PST y 1 pm - 2 pm PST**
+-  **Lunes (30 de junio) de 9 a 10 am PST y 1 pm - 2 pm PST**
 
 Le pedimos a cada uno de ustedes que mire las zonas fronterizas clave y regiones, y donde se encuentran la línea vertical en el centro del Golfo. Como se hace en la versión dibujada, la versión interactiva garantiza que las fronteras de cada región se reúnan desde el Este hasta el Oeste. Por ejemplo, cada línea horizontal a través de todo el Golfo es relativamente plana, ya que en el dibujo estaban justo enfrente de uno del otro (como Topolobampo y Bahía La Paz, las fronteras sureñas de Región_9 y Región_4). Sin embargo, en realidad, la escala es un poco diferente, por lo que Bahía La Paz está mucho más al norte que Topolobampo. De todas formas, aún me aseguré de que las líneas se encontraran a través. 
 
@@ -39,19 +39,21 @@ Le pedimos a cada uno de ustedes que mire las zonas fronterizas clave y regiones
 
 4. Debido a la escala, la frontera sur de la Región_8 y la Región_3 es más diagonal en el mapa interactivo que en el dibujado. ¿La línea sigue siendo correcta? 
 
-5. Si es posible, por favor, mire todas las demás fronteras entre regiones. Todos siguen de cerca la visión dibujada, pero no se sientan libres de hacernos saber si tiene alguna pregunta o recomendaciones. 
+5. ¿Le parece razonable el número de regiones, o sería útil tener más subregiones más pequeñas (véase: Áreas de gestión ecológica federal de 2006  <https://drive.google.com/drive/u/1/folders/1o54iDZLU8BmRjjmzLQJdED5ssJJ9Niit>)?
+
+6. Si es posible, por favor, mire todas las demás fronteras entre regiones. Todos siguen de cerca la visión dibujada, pero no se sientan libres de hacernos saber si tiene alguna pregunta o recomendaciones. 
 
 ### ¡Por favor, dinos qué piensas! Gracias.
 :::
 
 This interactive page can be used to see, in detail, the first rough draft of subregion segmentation. The map was created based on this drawn version everyone agreed to during the EWG Meeting #1 in June. 11 regions within the Gulf of California were identified, and are reflected in the interactive map.
 
-## ***Please consider the updated map below, our questions, and send an email response or attend an open office hour with Melanie, Erica, and Sophia. This helps us move forward to the next steps!***
+## ***If, after reviewing the map and our questions, you have any concerns or comments about these region delineations please email us or connect with us on Zoom at one of our open office hours. This helps us move forward to the next steps!***
 
 If you would like to meet over Zoom instead of writing an email, we will have open office hours on:
 
--   **Thursday (June 25th) from 9am - 10am PST and 1pm - 2pm PST**
--   **Friday (June 26th) from 9am - 10am PST and 1pm - 2pm PST**
+-   **Thursday (June 26th) from 1pm - 2pm PST**
+-   **Friday (June 27th) from 9am - 10am PST and 1pm - 2pm PST**
 -   **Monday (June 30th) from 9am - 10am PST and 1pm - 2pm PST**
 
 ::: {.callout-tip collapse=true}
@@ -80,7 +82,9 @@ We ask that each of you please look at key border areas and regions, and where t
 
 4.  Due to scale, the southern border of Region_8 and Region_3 is more diagonal in the interactive map than in the drawn one. Does the line still look correct?
 
-5.  If possible, please look at all the other borders between regions. They all closely follow the drawn visual, but feel free to let us know if you have any questions or recommendations.
+5.  Do the number of regions seem reasonable, or would it be useful to have more, smaller, subregions (see: 2006 Federal Ecological Management areas  <https://drive.google.com/drive/u/1/folders/1o54iDZLU8BmRjjmzLQJdED5ssJJ9Niit>)? 
+
+6.  If possible, please look at all the other borders between regions. They all closely follow the drawn visual, but feel free to let us know if you have any questions or recommendations.
 
 ### Please let us know what you think! Thank you.
 
