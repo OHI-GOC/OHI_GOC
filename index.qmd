@@ -26,6 +26,7 @@ Si desea conocer sobre Zoom en lugar de escribir un correo electrónico, tendrem
 -  **Jueves (26 de junio) de 1 pm - 2 pm PST**
 -  **Viernes (27 de junio) de 9 a 10 am PST y 1 pm - 2 pm PST**
 -  **Lunes (30 de junio) de 9 a 10 am PST y 1 pm - 2 pm PST**
+-  **Martes (1 de julio) de 2 pm - 3 pm PST**
 
 Le pedimos a cada uno de ustedes que mire las zonas fronterizas clave y regiones, y donde se encuentran la línea vertical en el centro del Golfo. Como se hace en la versión dibujada, la versión interactiva garantiza que las fronteras de cada región se reúnan desde el Este hasta el Oeste. Por ejemplo, cada línea horizontal a través de todo el Golfo es relativamente plana, ya que en el dibujo estaban justo enfrente de uno del otro (como Topolobampo y Bahía La Paz, las fronteras sureñas de Región_9 y Región_4). Sin embargo, en realidad, la escala es un poco diferente, por lo que Bahía La Paz está mucho más al norte que Topolobampo. De todas formas, aún me aseguré de que las líneas se encontraran a través. 
 
@@ -55,6 +56,7 @@ If you would like to meet over Zoom instead of writing an email, we will have op
 -   **Thursday (June 26th) from 1pm - 2pm PST**
 -   **Friday (June 27th) from 9am - 10am PST and 1pm - 2pm PST**
 -   **Monday (June 30th) from 9am - 10am PST and 1pm - 2pm PST**
+-   **Tuesday (July 1st) from 2pm - 3pm PST**
 
 ::: {.callout-tip collapse=true}
 ## Open this tab for the Zoom invitation (Abra esta pestaña para la invitación de Zoom)
