@@ -22,7 +22,7 @@ website:
     collapse-level: 1
     contents:
       - href: index.qmd
-        text: "Subregion Draft #1 Evaluation" # Welcome
+        text: "Subregion Draft #2 Evaluation" # Welcome
       # - href: chapters/OHI.qmd
       #   text: "Starting an OHI assessment"
       # - href: chapters/region.qmd
