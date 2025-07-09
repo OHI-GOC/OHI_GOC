@@ -142,7 +142,7 @@ Para crear el mapa actual del OHI del Golfo de California, asignamos cada una de
 | **Región 1** Alto Golfo, Baja | Comienza al sur del lado este de la Isla Montague hasta (e incluyendo) San Felipe. |
 | **Región 2** Islas Midriff, Baja | Islas Midriff, Baja. Comienza al sur de San Felipe hasta la línea estatal entre BC y BCS (incluye Islas Mejía, Ángel de la Guarda, Estanque, Partida Norte, Rasa, Salsipuedes, San Lorenzo y San Lorenzo Norte). |
 | **Región 3** Golfo Central, Baja Sur | La línea estatal BC/BCS al sur de San Basilio. La frontera sur seguirá la región POEM existente, que incluye toda la zona hidrológica de San Basilio (página 22 de [referencia](https://nextgensd.com/wp-content/uploads/2020/07/San-Basilio-Master-DIGITAL-10-08-20.pdf)). |
-| **Región 4** Sur del Golfo, Baja Sur | Desde el norte de San Basilio hasta Cabo San Lucas. |
+| **Región 4** Sur del Golfo, Baja Sur | Desde el sur de San Basilio hasta Cabo San Lucas. |
 
 #### Lado Este del Golfo
 
@@ -170,7 +170,7 @@ _**The boundaries are as follows:**_
 | **Region 1** Upper Gulf, Baja | Starts south of the east side of Montague Island to (and including) San Felipe. |
 | **Region 2** Midriff Islands, Baja | Midriff Islands, Baja. Starts south of San Felipe to BC/BCS state line (includes Islas Mejia, Ángel de la Guarda, Estanque, Partida Norte, Rasa, Salsipuedes, San Lorenzo, and San Lorenzo Norte). |
 | **Region 3** Central Gulf, Baja Sur | The BC/BCS state line to south of San Basilio. The southern border will follow the existing POEM region, which includes the entire San Basilio Hydrological Zone (page 22 of [reference](https://nextgensd.com/wp-content/uploads/2020/07/San-Basilio-Master-DIGITAL-10-08-20.pdf)). |
-| **Region 4** Southern Gulf, Baja Sur | North of San Basilio to Cabo San Lucas. |
+| **Region 4** Southern Gulf, Baja Sur | South of San Basilio to Cabo San Lucas. |
 
 #### East side of Gulf
 
