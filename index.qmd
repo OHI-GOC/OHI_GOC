@@ -91,10 +91,19 @@ subregions_draft_4 <- suppressMessages(st_read(here("/home/shares/ohi/OHI_GOC/sp
 #| output: false
 #| results: hide
 
-# for draft #2
-poem_subrgns_ecorgn_9rgns <- st_read(here("/home/shares/ohi/OHI_GOC/spatial/subregions_drafts/poem_w_ohi_draft","poem_subrgns_ohi_9rgns_final.shp")) # WGS 84
+# for draft #2 AND poem areas, if needed (also has FID_1)
+draft_2_ohi_rgns_raw <- st_read(here("/home/shares/ohi/OHI_GOC/spatial/subregions_drafts/poem_w_ohi_draft2","poem_ohi_draft2_070825_final.shp")) # WGS 84
 
-# for poem areas to refer to
+draft_2_ohi_rgns <- draft_2_ohi_rgns_raw %>% 
+  mutate(estado = factor(
+    estado,
+    levels = (c("Baja_California", "Baja_California_Sur", "Sonora", "Sinaloa", "Nayarit"))
+  )) %>% 
+  mutate(ecorgn = factor(
+    ecorgn,
+    levels = (c("Upper_Gulf", "Midriff_Region", "Central_Gulf", "Southern_Gulf"))
+  )) # to arrange in an intuitive way
+
 poem_valid <- st_read(here("/home/shares/ohi/OHI_GOC/spatial/subregions_drafts/poem","poem_valid.shp"))
 ```
 
@@ -107,7 +116,7 @@ poem_valid <- st_read(here("/home/shares/ohi/OHI_GOC/spatial/subregions_drafts/p
 #| message: false
 
 
-# check OHI rgns
+# check POEM rgns
 mapview(poem_valid, zcol = "FID_1",layer.name = "POEM regions") 
 ```
 :::
@@ -122,7 +131,7 @@ To create the current OHI Gulf of California map we assigned each of the >120 PO
 #| message: false
 
 # check OHI rgns
-mapview(poem_subrgns_ecorgn_9rgns, zcol = "ohi_rgn",layer.name = "OHI Subregions") # YAY looks great!!!
+mapview(draft_2_ohi_rgns, zcol = "rgn_id",layer.name = "OHI Subregions Draft #2") # YAY looks great!!!
 ```
 
 <br>
@@ -165,23 +174,23 @@ También podemos mostrar cómo las regiones se alinean con los límites estatale
 
 :::
 
-*The boundaries are as follows:*
+_**The boundaries are as follows:**_
 
-## West/Baja side of Gulf
+#### West/Baja side of Gulf
 
 | Region | Description |
 |--------|-------------|
 | **Region 1** Upper Gulf, Baja | Starts at the southeast tip of Montague Island and continues to (and includes) San Felipe. |
 | **Region 2** Midriff Islands, Baja | Midriff Islands, Baja. Starts south of San Felipe to BC/BCS state line (includes Islas Mejia, Ángel de la Guarda, Estanque, Partida Norte, Rasa, Salsipuedes, San Lorenzo, and San Lorenzo Norte). |
-| **Region 3** Central Gulf, Baja Sur | BC/BCS state line to just south of San Basilio ([reference](https://nextgensd.com/wp-content/uploads/2020/07/San-Basilio-Master-DIGITAL-10-08-20.pdf)). |
+| **Region 3** Central Gulf, Baja Sur | The BC/BCS state line to south of San Basilio. The southern border currently follows the existing POEM region, which includes the entire San Basilio Hydrological Zone (page 22 of [reference](https://nextgensd.com/wp-content/uploads/2020/07/San-Basilio-Master-DIGITAL-10-08-20.pdf)). |
 | **Region 4** Southern Gulf, Baja Sur | South of San Basilio to Cabo San Lucas. |
 
-## East side of Gulf
+#### East side of Gulf
 
 | Region | Description |
 |--------|-------------|
 | **Region 5** Upper Gulf, Sonora | All waters below Montague Island to (and including) Puerto Peñasco. |
-| **Region 6** Midriff Islands, Sonora | Begins south of Puerto Peñasco to just above Tastiota/El Choyudo, before the flora area of the Guaymas–Yaqui region ([The Desert Edge, pg. 44](https://www.desertfoodplants.org/_files/ugd/d133c2_7bdc031c4f9c4dbf9907de20f1944079.pdf)), includes Islas San Pedro Mártir, San Esteban, Tiburón, Patos, Turner/Datil, Cholludo, and Alcatraz. |
+| **Region 6** Midriff Islands, Sonora | Begins south of Puerto Peñasco to just above El Choyudo, before the flora area of the Guaymas–Yaqui region ([The Desert Edge, pg. 44](https://www.desertfoodplants.org/_files/ugd/d133c2_7bdc031c4f9c4dbf9907de20f1944079.pdf)), includes Islas San Pedro Mártir, San Esteban, Tiburón, Patos, Turner/Datil, Cholludo, and Alcatraz. |
 | **Region 7** Central Gulf, Sonora | El Choyudo to Sonora–Sinaloa state line. |
 | **Region 8** Southern Gulf, Sinaloa | Starts and ends at the Sinaloa state borders. |
 | **Region 9** Southern Gulf, Nayarit/Jalisco | Starts at the Nayarit state border and extends into the state of Jalisco (ending at Cabo Corrientes) to include the Bahía de Banderas Bay. |
@@ -214,7 +223,7 @@ Primary changes from original map:
 #| message: false
 
 
-mapview(subregions_draft_4, zcol = "rgn_n_2", layer.name = "Subregions")
+mapview(subregions_draft_4, zcol = "rgn_n_2", layer.name = "OHI Subregions Draft #1")
 ```
 :::
 
@@ -229,8 +238,8 @@ We can also show how the regions align with state and ecoregion boundaries.
 #| warning: false
 #| message: false
 
-# show state reclassification (new_FID_state was abbreviated to nw_FID_s)
-mapview(poem_subrgns_ecorgn_9rgns, zcol = "nw_FID_s", layer.name = "Estados") # looks good!
+# show state reclassification
+mapview(draft_2_ohi_rgns, zcol = "estado", layer.name = "Estados Draft #2") # looks good! ordered well
 ```
 
 #### Ecoregion boundaries (Límites de ecorregiones)
@@ -240,8 +249,8 @@ mapview(poem_subrgns_ecorgn_9rgns, zcol = "nw_FID_s", layer.name = "Estados") # 
 #| warning: false
 #| message: false
 
-# show ecoregion reclassification (new_FID_ecorgn was abbreviated to nw_FID_c)
-mapview(poem_subrgns_ecorgn_9rgns, zcol = "nw_FID_c", layer.name = "Ecoregions") # great!!
+# show ecoregion reclassification
+mapview(draft_2_ohi_rgns, zcol = "ecorgn", layer.name = "Ecoregions Draft #2") # great!!
 ```
 
 ## Questions {#key-questions}
