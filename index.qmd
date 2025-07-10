@@ -92,7 +92,7 @@ subregions_draft_4 <- suppressMessages(st_read(here("/home/shares/ohi/OHI_GOC/sp
 #| results: hide
 
 # for draft #2 AND poem areas, if needed (also has FID_1)
-draft_2_ohi_rgns_raw <- st_read(here("/home/shares/ohi/OHI_GOC/spatial/subregions_drafts/poem_w_ohi_draft2","poem_ohi_draft2_070825_final.shp")) # WGS 84
+draft_2_ohi_rgns_raw <- st_read(here("/home/shares/ohi/OHI_GOC/spatial/subregions_drafts/poem_w_ohi_draft2","poem_ohi_draft2_071025_final.shp")) # WGS 84
 
 draft_2_ohi_rgns <- draft_2_ohi_rgns_raw %>% 
   mutate(estado = factor(
@@ -104,7 +104,32 @@ draft_2_ohi_rgns <- draft_2_ohi_rgns_raw %>%
     levels = (c("Upper_Gulf", "Midriff_Region", "Central_Gulf", "Southern_Gulf"))
   )) # to arrange in an intuitive way
 
+# for raw POEM
 poem_valid <- st_read(here("/home/shares/ohi/OHI_GOC/spatial/subregions_drafts/poem","poem_valid.shp"))
+
+# for merged OHI rgns
+ohi_rgns_raw <- st_read(here("/home/shares/ohi/OHI_GOC/spatial/subregions_drafts/poem_w_ohi_draft2","ohi_goc_final_071025.shp")) # WGS 84
+
+ohi_rgns <- ohi_rgns_raw %>% 
+  mutate(estado = case_when( # by state
+      rgn_id %in% c("Region_1", "Region_2") ~ "Baja_California",
+      rgn_id %in% c("Region_3", "Region_4") ~ "Baja_California_Sur",
+      rgn_id %in% c("Region_5", "Region_6", "Region_7") ~ "Sonora",
+      rgn_id %in% c("Region_8") ~ "Sinaloa",
+      rgn_id %in% c("Region_9") ~ "Nayarit"
+      )) %>% 
+  relocate(estado, .after = "rgn_id") %>% 
+  mutate(ecorgn = case_when( # by ecoregion
+      rgn_id %in% c("Region_1", "Region_5") ~ "Upper_Gulf",
+      rgn_id %in% c("Region_2", "Region_6") ~ "Midriff_Region",
+      rgn_id %in% c("Region_3", "Region_7") ~ "Central_Gulf",
+      rgn_id %in% c("Region_4", "Region_8", "Region_9") ~ "Southern_Gulf"
+      )) %>% 
+  relocate(ecorgn, .after = "estado") %>% 
+  mutate(ecorgn = factor(
+    ecorgn,
+    levels = (c("Upper_Gulf", "Midriff_Region", "Central_Gulf", "Southern_Gulf"))
+  )) # to arrange in an intuitive way
 ```
 
 ::: {.callout-tip collapse="true"}
@@ -125,6 +150,40 @@ To create the current OHI Gulf of California map we assigned each of the >120 PO
 
 ### OHI 9 subregions (Draft #2) {#interactive-map}
 
+#### Most recent changes: 
+
+Three main boundary changes were made to reorganize regional divisions according to Rick’s suggestions. In all three cases, we took existing POEM boundary lines and subdivided them into smaller polygons to better reflect the correct border locations between OHI regions.  Please let us know what you think! 
+
+**1. Montague Island Adjustment**
+
+The boundary between Region 1 and Region 5 was moved westward to ensure Montague Island falls completely within the Sonora region.
+
+**2. San Basilio Bay Modification**
+
+The POEM boundary was altered to end Region_3 at Pta. Mercenarios at the southern end of San Basilio Bay.
+
+**3. El Choyudo Border Shift**
+
+The boundary between Region 6 and Region 7 is being moved from north of El Choyudo to south of El Choyudo.
+
+::: {.callout-tip collapse="true"}
+### Cambios más recientes: 
+
+Se realizaron tres cambios principales en los límites para reorganizar las divisiones regionales según las sugerencias de Rick. En los tres casos, tomemos las líneas fronterizas existentes de POEM y las subdividí en polígonos más pequeños para reflejar mejor las ubicaciones correctas de las fronteras entre las regiones de OHI.  ¡Háganos saber su opinión! 
+
+**1. Ajuste de la isla Montague**
+
+La frontera entre la Región 1 y la Región 5 se desplazó hacia el oeste para garantizar que la isla Montague quedara completamente dentro de la región de Sonora.
+
+**2. Modificación de la bahía de San Basilio**
+
+Se modificó el límite del POEM para que la Región 3 terminara en Pta. Mercenarios, en el extremo sur de la bahía de San Basilio.
+
+**3. Cambio de la frontera de El Choyudo**
+
+El límite entre la Región 6 y la Región 7 se está desplazando del norte de El Choyudo al sur de El Choyudo.
+:::
+
 ```{r}
 #| echo: false
 #| warning: false
@@ -132,6 +191,18 @@ To create the current OHI Gulf of California map we assigned each of the >120 PO
 
 # check OHI rgns
 mapview(draft_2_ohi_rgns, zcol = "rgn_id",layer.name = "OHI Subregions Draft #2") # YAY looks great!!!
+```
+
+#### Merged at the OHI Region Level (Fusionado a nivel regional de OHI)
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+
+# ohi regions merged
+mapview(ohi_rgns, zcol = "rgn_id",layer.name = "Merged at the OHI Region Level")
 ```
 
 <br>
@@ -147,7 +218,7 @@ Para crear el mapa actual del OHI del Golfo de California, asignamos cada una de
 
 ### 
 
-*Los límites son los siguientes:*
+*Los límites son los siguientes (antes de los cambios más recientes, véase más arriba):*
 
 ## Lado oeste/Baja del Golfo
 
@@ -174,7 +245,7 @@ También podemos mostrar cómo las regiones se alinean con los límites estatale
 
 :::
 
-_**The boundaries are as follows:**_
+_**The boundaries are as follows (these are before the most recent changes, see above):**_
 
 #### West/Baja side of Gulf
 
