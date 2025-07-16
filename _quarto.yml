@@ -1,72 +1,55 @@
 project: 
   type: website
   output-dir: docs
-  render:
-    - "!chapters/archive/**"
-  
+ 
 website: 
-  page-navigation: true
-  title: "OHI: Gulf of California" 
-  site-url: "https://ohi-goc.github.io/OHI_GOC/" 
-  repo-url: https://github.com/ohi-goc/OHI_GOC 
+  title: "OHI: Gulf of California"
+  site-url: "https://ohi-goc.github.io/OHI_GOC/"
+  repo-url: https://github.com/ohi-goc/OHI_GOC
   repo-actions: [edit, issue]
-  
+  page-navigation: true
+
   page-footer:
-    right: "Source repository: https://github.com/OHI-GOC"
     left: "An Ocean Health Index collaboration"
-    
+    right: "Source repository: [GitHub](https://github.com/OHI-GOC)"
+
   sidebar:
-    logo: "chapters/figs/gulf-of-california-map.jpg"
+    logo: chapters/figs/gulf-of-california-map.jpg
     pinned: true
     align: center
-    style: "docked"
-    search: false # true
+    style: docked
+    search: false
     collapse-level: 1
     contents:
-       - href: index.qmd
-         text: "Gulf of California Ocean Health Index" # Welcome
-       - href: chapters/OHIregions.qmd
-         text: "OHI regions"
-       - href: chapters/ao.qmd
-         text: "Artisanal opportunities"
-       - href: chapters/bd.qmd
-         text: "Biodiversity"
-       - href: chapters/cp.qmd
-         text: "Coastal protection"
-       - href: chapters/cs.qmd
-         text: "Carbon storage"
-       - href: chapters/cw.qmd
-         text: "Clean waters"
-       - href: chapters/fp.qmd
-         text: "Food provisioning"
-       - href: chapters/le.qmd
-         text: "Livelihoods and economies"
-       - href: chapters/np.qmd
-         text: "Natural products"
-       - href: chapters/sp.qmd
-         text: "Sense of place"
-       - href: chapters/tr.qmd
-         text: "Tourism and recreation"
-       - href: chapters/ss.qmd
-         text: "Safety and security"
-       - href: chapters/ol.qmd
-         text: "Research and ocean literacy"
-      # - section: "Data"
-      #   contents:
-      #     - href: chapters/data/protected.qmd
-      #       text: "Protected regions"
-      #     - href: chapters/data/sst.qmd
-      #       text: "Sea surface temperature"
-      #     - href: chapters/data/fishery_production.qmd
-      #       text: "Fishery production"
-      #     - href: chapters/data/fishery_effort.qmd
-      #       text: "Fishing effort"
-      #     - href: chapters/data/habitats.qmd
-      #       text: "Habitats"
-      #     - href: chapters/data/tourism_lodging.qmd
-      #       text: "Tourism lodging"
-      #     - href: chapters/data/species.qmd
-      #       text: "Species"
+      - href: index.qmd
+        text: Gulf of California Ocean Health Index
+      - href: chapters/OHIregions.qmd
+        text: OHI regions
+      - href: chapters/ao.qmd
+        text: Artisanal opportunities
+      - href: chapters/bd.qmd
+        text: Biodiversity
+      - href: chapters/cp.qmd
+        text: Coastal protection
+      - href: chapters/cs.qmd
+        text: Carbon storage
+      - href: chapters/cw.qmd
+        text: Clean waters
+      - href: chapters/fp.qmd
+        text: Food provisioning
+      - href: chapters/le.qmd
+        text: Livelihoods and economies
+      - href: chapters/np.qmd
+        text: Natural products
+      - href: chapters/sp.qmd
+        text: Sense of place
+      - href: chapters/tr.qmd
+        text: Tourism and recreation
+      - href: chapters/ss.qmd
+        text: Safety and security
+      - href: chapters/ol.qmd
+        text: Research and ocean literacy
+
 format:
   html:
     theme:
@@ -77,8 +60,4 @@ format:
     toc: true
     includes:
       in-header:
-        - assets/css/all.css    
-filters:
-  - quarto
-
-
+        - assets/css/all.css
