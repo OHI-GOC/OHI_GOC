@@ -8,6 +8,8 @@ subtitle: "Introducing the Gulf of California Ocean Health Index"
 #| warning: false
 #| message: false
 
+invisible(NULL)
+
 # source("_data/functions/start_script.R")
 
 ```
