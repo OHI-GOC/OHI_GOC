@@ -1,0 +1,36 @@
+---
+title: ""
+format: html
+---
+# ![](figs/tourism-and-recreation.svg){width=8% height=8% color="red"} Tourism and recreation 
+
+**This goal captures the quantity and quality of experiences that people have when visiting coastal and marine areas.**
+
+---
+
+<div class="custom-box">
+{{< fa lightbulb >}} **This information is meant to help guide the process of developing the Gulf of California OHI!**
+
+This goal is included in the global OHI, but other regional assessments have cut or modified this goal to better meet their objectives for ocean health...
+</div>
+
+
+#### Overview
+
+#### Practical Guidance
+
+
+#### LEARN MORE
+Explore the full description of the data and model used in the GLOBAL MODEL. Or, take a look at REGIONAL APPROACHES to learn how other OHI+ assessments have modified this goal to address differences in data availability or priorities.
+
+
+<div class="button-container">
+  <a href="https://ohi-science.org/ohi-methods/goals/goal-models-data.html#tourism-and-recreation" class="custom-button">
+    <i class="fas fa-globe"></i> GLOBAL MODEL
+  </a>
+  <a href="https://ohi-science.org/ohi-methods/goals/goal-models-data.html#tourism-and-recreation" class="custom-button secondary">
+    <i class="fas fa-location-dot"></i> REGIONAL APPROACHES
+  </a>
+</div>
+
+

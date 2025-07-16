@@ -1,0 +1,64 @@
+---
+title: "Building the conceptual framework"
+subtitle: "Identify the regions and subregions"
+---
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+library(sf)
+library(tidyverse)
+library(here)
+library(leaflet)
+library(rnaturalearth)
+```
+
+The Gulf of California, often called the "Aquarium of the World," is a jewel of biodiversity and a lifeline for the communities that border its shores. This UNESCO World Heritage Site is home to over 900 species of fish, as well as iconic marine mammals like whales, dolphins, and sea lions. Its rich habitats, including mangroves and seagrass meadows, serve as critical nurseries for fish and other marine life.
+
+This biologically rich region is equally vital to human life. The Gulf sustains vibrant coastal communities through fishing, tourism, and cultural traditions that have flourished for generations. Small-scale fisheries provide livelihoods for thousands, while ecotourism attracts visitors from around the globe, drawn by the promise of whale watching, diving, and pristine natural beauty.
+
+However, the Gulf of California faces mounting pressures, including overfishing, habitat degradation, and climate change. The Ocean Health Index for this region is a critical tool for evaluating the balance between human use and ecological health. By providing clear, actionable insights, the Index helps ensure that this exceptional marine ecosystem continues to thrive for the benefit of both nature and people.
+
+:::: {.columns} 
+
+::: {.column width="50%"}
+
+The coastline is from Open Street Maps. The southern boundary is the Cortezian ecoregion boundary. 
+:::
+
+::: {.column width="50%"}
+
+```{r, fig.width=3, fig.height=1.5}
+#| echo: false
+#| warning: false
+#| message: false
+
+goc <- st_read(here("_spatial/data/GoC_polygon_ecoregion_latlon.shp"), quiet=TRUE)
+goc$color <- c("#5ABCD6")
+
+
+# leaf maps: https://leaflet-extras.github.io/leaflet-providers/preview/index.html
+#st_bbox(eez)
+
+map <-  leaflet() %>%
+  addProviderTiles("CartoDB.Positron") %>%
+  addPolygons(data = goc,
+              fillColor = ~color,
+              weight = 0, 
+              fillOpacity = 0.5, 
+              color=NA)  
+#%>%
+#  setView(lng=41, lat=20, zoom = 4)
+
+map
+
+
+```
+:::
+
+::::
+## To Discuss
+
+Several decisions will need to be made concerning the boundaries of the assessment. This [document](https://ohi-goc.github.io/ohi_goc_prep/spatial/ohi_goc_spatial_prep.html) explains some of the issues. 
+
+

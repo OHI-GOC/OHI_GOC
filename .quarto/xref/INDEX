@@ -94,5 +94,20 @@
   },
   "chapters/welcome_public_facing.qmd": {
     "welcome_public_facing.html": "4f7bd92a"
+  },
+  "chapters/OHIregions.qmd": {
+    "OHIregions.html": "bfbc27ef"
+  },
+  "chapters/ol.qmd": {
+    "ol.html": "060484b5"
+  },
+  "chapters/archive/resilience.qmd": {
+    "resilience.html": "f7863913"
+  },
+  "chapters/archive/region_notused.qmd": {
+    "region_notused.html": "815f2386"
+  },
+  "chapters/archive/OHI_notused.qmd": {
+    "OHI_notused.html": "d82811b9"
   }
 }

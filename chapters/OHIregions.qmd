@@ -1,0 +1,351 @@
+---
+title: "Ocean Health Index Gulf of California"
+subtitle: "Subregion Draft #2 for feedback"
+toc: false
+editor_options: 
+  chunk_output_type: console
+---
+
+Hola a todos, ¡esperamos que todos estén bien!
+
+::: {.callout-note collapse="true"}
+## Abra esta pestaña para español :)
+
+Hola a todos, ¡esperamos que todos estén bien!
+
+Teniendo en cuenta los comentarios de todos, presentamos el borrador número 2 de las regiones del Golfo de California de la OHI. Ahora definimos nueve subregiones (frente a las once anteriores) y algunos de los límites han cambiado con respecto a los propuestos durante la primera reunión del Grupo de Trabajo de Expertos. Ahora incorporamos la información de las regiónes POEM. Sin embargo, las subregiones siguen estando definidas por los límites de los estados y las principales ecorregiones, y los límites siguen siendo jerárquicos, de modo que cada subregión está contenida en un solo estado y una sola ecorregión.
+
+## Preguntas recientes de Rick:
+
+- ¿Deberíamos mover el límite sur de la Región 3 hasta Punta Mercenarios (la delimitación sur del final de la bahía)? Esto quedaría un poco más al norte de donde está actualmente.
+- ¿Deberíamos mover el límite de la Región 6 a justo al sur de El Choyudo (para que la Región 6 incluya El Choyudo)? Actualmente, el límite está justo al norte de El Choyudo (y El Choyudo está en la Región 7).
+
+> Después de revisar el mapa y nuestras preguntas, envíenos por correo electrónico cualquier inquietud o comentario sobre estas delimitaciones regionales, o concierte una reunión por Zoom con nosotros.
+>
+> ¡Esto nos ayudará a avanzar hacia los siguientes pasos!
+
+Si prefiere reunirse por Zoom en lugar de escribir un correo electrónico, envíe un correo electrónico a Sophia ([sophiamireille\@ucsb.edu](mailto:sophiamireille@ucsb.edu){.email}) o Melanie ([frazier\@nceas.ucsb.edu](mailto:frazier@nceas.ucsb.edu){.email}). ¡Gracias!
+
+## Contenido {.unlisted}
+
+-   [Ver el nuevo borrador de subregiones (con 9 subregiones)](#interactive-map)
+-   [Preguntas](#key-questions)
+:::
+
+## Contents {.unlisted}
+
+-   [View the New Subregion Draft (with 9 Subregions)](#interactive-map)
+-   [Questions](#key-questions)
+
+Based on everyone's feedback, we present draft #2 of the OHI Gulf of California regions. We now define 9 subregions (vs. 11), and some of the boundaries have shifted from those proposed during the 1st Expert Working Group meeting. We now incorporate the POEM region information. However, the subregions are still defined by state and major ecoregion boundaries; and the boundaries are still hierarchical such that each subregion is contained with a single state and ecoregion.
+
+> Recent Rick Questions: 
+
+> 1. Should we move the Southern boundary of Region 3 to Punta Mercenarios (the south delineation of the end of the bay), this will be a little north of where it is now.
+
+> 2. Should we move the Region 6 boundary to just south of el Choyudo (so region 6 will include el Choyudo), currently it is just north of el Choyudo (and el Choyudo is in Region 7).   
+
+
+> ***After reviewing the map and our questions, please email us any concerns or comments about these region delineations, or set up a Zoom meeting with us.***
+>
+> ***This helps us move forward to the next steps!***
+
+
+
+If you would like to meet over Zoom instead of writing an email, please email Sophia ([sophiamireille\@ucsb.edu](mailto:sophiamireille@ucsb.edu){.email}) or Melanie ([frazier\@nceas.ucsb.edu](mailto:frazier@nceas.ucsb.edu){.email}). Thank you!
+
+## Gulf of California subregions (draft #2)
+
+In addition to state and ecoregion boundaries, we now incorporate the boundaries developed for the Marine Ecological Zoning Program of the Gulf of California [(POEM)](https://drive.google.com/drive/u/1/folders/1o54iDZLU8BmRjjmzLQJdED5ssJJ9Niit) into the OHI Gulf of California map. The POEM regions have served as a regional framework for collecting and reporting data (see: [website](https://www.gob.mx/semarnat/acciones-y-programas/bitacora-ambiental-golfo-de-california#:~:text=A%20finales%20de%202006%20se,Marino%20del%20Golfo%20de%20California.)).
+
+
+
+
+```{r interactive}
+#| echo: false
+#| warning: false
+#| message: false
+#| output: false
+#| results: hide
+
+library(magrittr)
+library(mapview)
+library(sf)
+library(tidyverse)
+library(here)
+
+# Rough Draft #1 (with 11 subregions)
+# for draft #1
+subregions_draft_4 <- suppressMessages(st_read(here("/home/shares/ohi/OHI_GOC/spatial/subregions_drafts/june_24", "subregions_draft_2.shp"))) %>% 
+  mutate(rgn_n_2 = factor(
+    rgn_n_2,
+    levels = paste0("Region_", sort(as.numeric(gsub("Region_", "", unique(rgn_n_2)))))
+  ))
+
+```
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| output: false
+#| results: hide
+
+# for draft #2 AND poem areas, if needed (also has FID_1)
+draft_2_ohi_rgns_raw <- st_read(here("/home/shares/ohi/OHI_GOC/spatial/subregions_drafts/poem_w_ohi_draft2","poem_ohi_draft2_071025_final.shp")) # WGS 84
+
+draft_2_ohi_rgns <- draft_2_ohi_rgns_raw %>% 
+  mutate(estado = factor(
+    estado,
+    levels = (c("Baja_California", "Baja_California_Sur", "Sonora", "Sinaloa", "Nayarit"))
+  )) %>% 
+  mutate(ecorgn = factor(
+    ecorgn,
+    levels = (c("Upper_Gulf", "Midriff_Region", "Central_Gulf", "Southern_Gulf"))
+  )) # to arrange in an intuitive way
+
+# for raw POEM
+poem_valid <- st_read(here("/home/shares/ohi/OHI_GOC/spatial/subregions_drafts/poem","poem_valid.shp"))
+
+# for merged OHI rgns
+ohi_rgns_raw <- st_read(here("/home/shares/ohi/OHI_GOC/spatial/subregions_drafts/poem_w_ohi_draft2","ohi_goc_final_071025.shp")) # WGS 84
+
+ohi_rgns <- ohi_rgns_raw %>% 
+  mutate(estado = case_when( # by state
+      rgn_id %in% c("Region_1", "Region_2") ~ "Baja_California",
+      rgn_id %in% c("Region_3", "Region_4") ~ "Baja_California_Sur",
+      rgn_id %in% c("Region_5", "Region_6", "Region_7") ~ "Sonora",
+      rgn_id %in% c("Region_8") ~ "Sinaloa",
+      rgn_id %in% c("Region_9") ~ "Nayarit"
+      )) %>% 
+  relocate(estado, .after = "rgn_id") %>% 
+  mutate(ecorgn = case_when( # by ecoregion
+      rgn_id %in% c("Region_1", "Region_5") ~ "Upper_Gulf",
+      rgn_id %in% c("Region_2", "Region_6") ~ "Midriff_Region",
+      rgn_id %in% c("Region_3", "Region_7") ~ "Central_Gulf",
+      rgn_id %in% c("Region_4", "Region_8", "Region_9") ~ "Southern_Gulf"
+      )) %>% 
+  relocate(ecorgn, .after = "estado") %>% 
+  mutate(ecorgn = factor(
+    ecorgn,
+    levels = (c("Upper_Gulf", "Midriff_Region", "Central_Gulf", "Southern_Gulf"))
+  )) # to arrange in an intuitive way
+```
+
+::: {.callout-tip collapse="true"}
+## Open this tab to explore a map of POEM regions (Abra esta pestaña para explorar un mapa de las regiones POEM)
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+
+# check POEM rgns
+mapview(poem_valid, zcol = "FID_1",layer.name = "POEM regions") 
+```
+:::
+
+To create the current OHI Gulf of California map we assigned each of the >120 POEM regions to the nine general regions identified by the Expert Working Group. We also made some minor adjustments to these polygons described below.
+
+### OHI 9 subregions (Draft #2) {#interactive-map}
+
+#### Most recent changes: 
+
+Three main boundary changes were made to reorganize regional divisions according to Rick’s suggestions. In all three cases, we took existing POEM boundary lines and subdivided them into smaller polygons to better reflect the correct border locations between OHI regions.  Please let us know what you think! 
+
+**1. Montague Island Adjustment**
+
+The boundary between Region 1 and Region 5 was moved westward to ensure Montague Island falls completely within the Sonora region.
+
+**2. San Basilio Bay Modification**
+
+The POEM boundary was altered to end Region_3 at Pta. Mercenarios at the southern end of San Basilio Bay.
+
+**3. El Choyudo Border Shift**
+
+The boundary between Region 6 and Region 7 is being moved from north of El Choyudo to south of El Choyudo.
+
+::: {.callout-tip collapse="true"}
+### Cambios más recientes: 
+
+Se realizaron tres cambios principales en los límites para reorganizar las divisiones regionales según las sugerencias de Rick. En los tres casos, tomemos las líneas fronterizas existentes de POEM y las subdividí en polígonos más pequeños para reflejar mejor las ubicaciones correctas de las fronteras entre las regiones de OHI.  ¡Háganos saber su opinión! 
+
+**1. Ajuste de la isla Montague**
+
+La frontera entre la Región 1 y la Región 5 se desplazó hacia el oeste para garantizar que la isla Montague quedara completamente dentro de la región de Sonora.
+
+**2. Modificación de la bahía de San Basilio**
+
+Se modificó el límite del POEM para que la Región 3 terminara en Pta. Mercenarios, en el extremo sur de la bahía de San Basilio.
+
+**3. Cambio de la frontera de El Choyudo**
+
+El límite entre la Región 6 y la Región 7 se está desplazando del norte de El Choyudo al sur de El Choyudo.
+:::
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+# check OHI rgns
+mapview(draft_2_ohi_rgns, zcol = "rgn_id",layer.name = "OHI Subregions Draft #2") # YAY looks great!!!
+```
+
+#### Merged at the OHI Region Level (Fusionado a nivel regional de OHI)
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+
+# ohi regions merged
+mapview(ohi_rgns, zcol = "rgn_id",layer.name = "Merged at the OHI Region Level")
+```
+
+<br>
+
+::: {.callout-note collapse="true"}
+## Abra esta pestaña para español
+
+## Subregiones del Golfo de California (borrador número 2)
+
+Además de los límites estatales y de las ecorregiones, ahora incorporamos al mapa del Índice de Salud del Océano (OHI) del Golfo de California los límites desarrollados por el Programa de Ordenamiento Ecológico Marino del Golfo de California [(POEM)](https://drive.google.com/drive/u/1/folders/1o54iDZLU8BmRjjmzLQJdED5ssJJ9Niit). Las regiones POEM han servido como un marco regional para la recopilación y el reporte de datos ([ver: sitio web](https://www.gob.mx/semarnat/acciones-y-programas/bitacora-ambiental-golfo-de-california#:~:text=A%20finales%20de%202006%20se,Marino%20del%20Golfo%20de%20California.))).
+
+Para crear el mapa actual del OHI del Golfo de California, asignamos cada una de las más de 120 regiones POEM a las nueve regiones generales identificadas por el Grupo de Trabajo de Expertos. También realizamos algunos ajustes menores a estos polígonos, que se describen a continuación.
+
+### 
+
+*Los límites son los siguientes (antes de los cambios más recientes, véase más arriba):*
+
+## Lado oeste/Baja del Golfo
+
+| Región | Descripción |
+|--------|-------------|
+| **Región 1** Alto Golfo, Baja | Comienza en la punta sureste de la Isla Montague y continúa hasta (e incluye) San Felipe. |
+| **Región 2** Islas Midriff, Baja | Islas Midriff, Baja. Comienza al sur de San Felipe hasta la línea estatal BC/BCS (incluye Islas Mejía, Ángel de la Guarda, Estanque, Partida Norte, Rasa, Salsipuedes, San Lorenzo y San Lorenzo Norte). |
+| **Región 3** Golfo Central, Baja Sur | Desde la línea estatal BC/BCS hasta justo al sur de San Basilio ([referencia](https://nextgensd.com/wp-content/uploads/2020/07/San-Basilio-Master-DIGITAL-10-08-20.pdf)). |
+| **Región 4** Golfo Sur, Baja Sur | Desde el sur de San Basilio hasta Cabo San Lucas. |
+
+## Lado este del Golfo
+
+| Región | Descripción |
+|--------|-------------|
+| **Región 5** Alto Golfo, Sonora | Todas las aguas debajo de la Isla Montague hasta (e incluyendo) Puerto Peñasco. |
+| **Región 6** Islas Midriff, Sonora | Comienza al sur de Puerto Peñasco hasta justo antes de Tastiota/El Choyudo, antes del área de flora de la región Guaymas–Yaqui ([The Desert Edge, pág. 44](https://www.desertfoodplants.org/_files/ugd/d133c2_7bdc031c4f9c4dbf9907de20f1944079.pdf)), incluye las Islas San Pedro Mártir, San Esteban, Tiburón, Patos, Turner/Dátil, Cholludo y Alcatraz. |
+| **Región 7** Golfo Central, Sonora | De El Choyudo hasta la línea estatal Sonora–Sinaloa. |
+| **Región 8** Golfo Sur, Sinaloa | Comienza y termina en las fronteras estatales de Sinaloa. |
+| **Región 9** Golfo Sur, Nayarit/Jalisco | Comienza en la frontera estatal de Nayarit y se extiende hacia el estado de Jalisco (terminando en Cabo Corrientes) para incluir la Bahía de Banderas. |
+
+### Subregiones OHI por estado y ecorregión
+
+También podemos mostrar cómo las regiones se alinean con los límites estatales y de las ecorregiones. Vaya a "OHI Subregions by State and Ecoregion" para ver los mapas interactivos.
+
+:::
+
+_**The boundaries are as follows (these are before the most recent changes, see above):**_
+
+#### West/Baja side of Gulf
+
+| Region | Description |
+|--------|-------------|
+| **Region 1** Upper Gulf, Baja | Starts at the southeast tip of Montague Island and continues to (and includes) San Felipe. |
+| **Region 2** Midriff Islands, Baja | Midriff Islands, Baja. Starts south of San Felipe to BC/BCS state line (includes Islas Mejia, Ángel de la Guarda, Estanque, Partida Norte, Rasa, Salsipuedes, San Lorenzo, and San Lorenzo Norte). |
+| **Region 3** Central Gulf, Baja Sur | The BC/BCS state line to south of San Basilio. The southern border currently follows the existing POEM region, which includes the entire San Basilio Hydrological Zone (page 22 of [reference](https://nextgensd.com/wp-content/uploads/2020/07/San-Basilio-Master-DIGITAL-10-08-20.pdf)). |
+| **Region 4** Southern Gulf, Baja Sur | South of San Basilio to Cabo San Lucas. |
+
+#### East side of Gulf
+
+| Region | Description |
+|--------|-------------|
+| **Region 5** Upper Gulf, Sonora | All waters below Montague Island to (and including) Puerto Peñasco. |
+| **Region 6** Midriff Islands, Sonora | Begins south of Puerto Peñasco to just above El Choyudo, before the flora area of the Guaymas–Yaqui region ([The Desert Edge, pg. 44](https://www.desertfoodplants.org/_files/ugd/d133c2_7bdc031c4f9c4dbf9907de20f1944079.pdf)), includes Islas San Pedro Mártir, San Esteban, Tiburón, Patos, Turner/Datil, Cholludo, and Alcatraz. |
+| **Region 7** Central Gulf, Sonora | El Choyudo to Sonora–Sinaloa state line. |
+| **Region 8** Southern Gulf, Sinaloa | Starts and ends at the Sinaloa state borders. |
+| **Region 9** Southern Gulf, Nayarit/Jalisco | Starts at the Nayarit state border and extends into the state of Jalisco (ending at Cabo Corrientes) to include the Bahía de Banderas Bay. |
+
+::: {.callout-tip collapse="true"}
+## Open this tab to review the original map and explanation of changes (para revisar el mapa original y la explicación de los cambios)
+
+![](chapters/figs/regions_subregions_drawn_ewg1.png)
+
+Primary changes from original map:
+
+
+-   For region 7 the boundary goes further south (moved from Kino to el Choyudo).
+
+-   Regions 4 and 5 of Southern Baja Sur combined.
+
+-   Regions 9 and 10 within Sinaloa combined (the coast of the Sinaloa state is very similar, mainly mangroves and sand/mud flats, with few rocky areas).
+
+> *Cambios principales con respecto al mapa original:*
+>
+> -   *Para la región 7, el límite se desplaza más al sur (de Kino a El Choyudo).*
+>
+> -   *Las regiones 4 y 5 del sur de Baja Sur se han combinado.*
+>
+> -   *Las regiones 9 y 10 dentro de Sinaloa se han combinado (la costa del estado de Sinaloa es muy similar, principalmente manglares y marismas de arena/lodo, con pocas zonas rocosas).*
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+
+mapview(subregions_draft_4, zcol = "rgn_n_2", layer.name = "OHI Subregions Draft #1")
+```
+:::
+
+### OHI Subregions by State and Ecoregion
+
+We can also show how the regions align with state and ecoregion boundaries.
+
+#### State boundaries (Límites estatales)
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+# show state reclassification
+mapview(draft_2_ohi_rgns, zcol = "estado", layer.name = "Estados Draft #2") # looks good! ordered well
+```
+
+#### Ecoregion boundaries (Límites de ecorregiones)
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+# show ecoregion reclassification
+mapview(draft_2_ohi_rgns, zcol = "ecorgn", layer.name = "Ecoregions Draft #2") # great!!
+```
+
+## Questions {#key-questions}
+
+::: {.callout-note collapse="true"}
+# Preguntas
+
+1.  ¿Le parecen razonables las 9 subregiones? Si no es así, ¿qué cambios se deberían hacer?
+
+2.  Para la región del Golfo Sur, nuestro límite en el lado de Baja Sur está más al norte que el límite original del mapa de ecorregiones (que llega hasta Punta Coyote). Si esto supone un problema, podríamos añadir una región adicional.
+
+3.  Para la región del Golfo Sur, nuestro límite en el lado de Sonora/Sinaloa se encuentra más al sur (en la frontera entre Sonora y Sinaloa) que el límite original basado en el mapa de ecorregiones (en el mapa que aparece en la parte inferior del sitio web, el límite sur comienza en Guaymas, en Sonora). Podemos ajustar esto si resulta problemático.
+
+4.  ¿Le parecen razonables los límites de la línea media?
+
+5.  ¿Estos límites regionales siguen reflejando con precisión las "comunidades socioecológicas" separadas mencionadas durante la reunión número 1 del EWG?
+:::
+
+1.  Do the 9 subregions seem reasonable? If not, what changes should be made?
+2.  For the Southern Gulf region, our boundary on the Baja Sur side is farther north than the original boundary of the ecoregions map (which goes to Punta Coyote). If this is an issue, we could add an additional region.
+3.  For the Southern Gulf region, our boundary on the Sonora/Sinaloa side is located more South (at the Sonora/Sinaloa border) than the original boundary based on the ecoregions map (in the map below, the southern boundary starts at Guaymas in Sonora). We can adjust this if it is problematic.
+4.  Do the midline boundaries seem reasonable?
+5.  Do these regional boundaries still accurately reflect the separate "socioecological communities" mentioned during the EWG Meeting #1?
+
+![Ecoregion Boundaries for the Gulf of California.](chapters/figs/ecoregion_boundaries.png){fig-align="center"}
+
+## Thank you all for your time! ¡Gracias a todos por su tiempo!

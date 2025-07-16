@@ -1,6 +1,8 @@
 project: 
   type: website
   output-dir: docs
+  render:
+    - "!chapters/archive/**"
   
 website: 
   page-navigation: true
@@ -21,14 +23,36 @@ website:
     search: false # true
     collapse-level: 1
     contents:
-      - href: index.qmd
-        text: "Subregion Draft #2 Evaluation" # Welcome
-      # - href: chapters/OHI.qmd
-      #   text: "Starting an OHI assessment"
-      # - href: chapters/region.qmd
-      #   text: "Identify regions"
-      # - href: chapters/goals.qmd
-      #   text: "Identify goals"  
+       - href: index.qmd
+         text: "Gulf of California Ocean Health Index" # Welcome
+       - href: chapters/ao.qmd
+         text: "Artisanal opportunities"
+       - href: chapters/bd.qmd
+         text: "Biodiversity"
+       - href: chapters/cp.qmd
+         text: "Coastal protection"
+       - href: chapters/cs.qmd
+         text: "Carbon storage"
+       - href: chapters/cw.qmd
+         text: "Clean waters"
+       - href: chapters/fp.qmd
+         text: "Food provisioning"
+       - href: chapters/le.qmd
+         text: "Livelihoods and economies"
+       - href: chapters/np.qmd
+         text: "Natural products"
+       - href: chapters/sp.qmd
+         text: "Sense of place"
+       - href: chapters/tr.qmd
+         text: "Tourism and recreation"
+       - href: chapters/tr.qmd
+         text: "Safety and security"
+       - href: chapters/ss.qmd
+         text: "Tourism and recreation"
+       - href: chapters/ss.qmd
+         text: "Security and safety"
+       - href: chapters/ol.qmd
+         text: "Research and ocean literacy"
       # - section: "Data"
       #   contents:
       #     - href: chapters/data/protected.qmd
@@ -45,10 +69,6 @@ website:
       #       text: "Tourism lodging"
       #     - href: chapters/data/species.qmd
       #       text: "Species"
-      # - href: chapters/pressures.qmd
-      #   text: "Pressures"
-      # - href: chapters/resilience.qmd
-      #   text: "Resilience"
 format:
   html:
     theme:
