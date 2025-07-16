@@ -54,6 +54,8 @@ The Ocean Health Index is a framework for assessing and communicating ocean heal
 
 <img src="chapters/figs/ocean_health_index2.jpg" style="width: 100%;">
 
+<br>
+<br>
 
 During an Expert Working Group meeting held on June 2-4, we identified 9 subregions within the Gulf of California that will be assessed for the following OHI goals:
 
@@ -72,11 +74,14 @@ Clean waters | Coastal waters are free of contaminants
 Research and ocean literacy | Opportunities to learn about the marine environment of the Gulf of California (this may ultimately be included in the Sense of place and identity goal or resilience)
 Safety and security | The sense that marine resources are not limited by safety concerns (this may ultimately be a pressure)
 
-Now, the goal groups will take the next steps to develop these goals, by:
+<br>
+<br>
+
+Now, the goal groups will take these next steps to develop these goals:
  
-- Identifying local data!
-- Developing the goal models and reference points
-- Evaluating outcomes!
+- Identify local data!
+- Develop the goal models and reference points
+- Evaluate outcomes!
 
 The menu at the left provides more information about each goal. Overtime, these descriptions will be updated with information specific to the Gulf of California assessment.
 

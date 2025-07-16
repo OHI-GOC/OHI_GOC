@@ -25,6 +25,8 @@ website:
     contents:
        - href: index.qmd
          text: "Gulf of California Ocean Health Index" # Welcome
+       - href: chapters/OHIregions.qmd
+         text: "OHI regions"
        - href: chapters/ao.qmd
          text: "Artisanal opportunities"
        - href: chapters/bd.qmd
@@ -45,12 +47,8 @@ website:
          text: "Sense of place"
        - href: chapters/tr.qmd
          text: "Tourism and recreation"
-       - href: chapters/tr.qmd
+       - href: chapters/ss.qmd
          text: "Safety and security"
-       - href: chapters/ss.qmd
-         text: "Tourism and recreation"
-       - href: chapters/ss.qmd
-         text: "Security and safety"
        - href: chapters/ol.qmd
          text: "Research and ocean literacy"
       # - section: "Data"
