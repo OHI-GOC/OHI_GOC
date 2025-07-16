@@ -59,7 +59,11 @@ The Ocean Health Index is a framework for assessing and communicating ocean heal
 <br>
 <br>
 
-During an Expert Working Group meeting held on June 2-4, we identified 9 subregions within the Gulf of California that will be assessed for the following OHI goals:
+During an Expert Working Group meeting held on June 2-4, 9 regions were identified within the Gulf of California that will be assessed for 12 Ocean Health Index goals:
+
+<br>
+<br>
+
 
 Goal | Definition, a healthy ocean provides
 ---------------- | ---------------------------------------
@@ -79,7 +83,7 @@ Safety and security | The sense that marine resources are not limited by safety 
 <br>
 <br>
 
-Now, the goal groups will take these next steps to develop these goals:
+Now, the goal groups will take these next steps to assess these goals:
  
 - Identify local data!
 - Develop the goal models and reference points
