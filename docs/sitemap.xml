@@ -5,63 +5,23 @@
     <lastmod>2025-07-16T21:42:27.178Z</lastmod>
   </url>
   <url>
-    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/ss.html</loc>
-    <lastmod>2025-07-16T17:55:10.105Z</lastmod>
+    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/tr_spanish.html</loc>
+    <lastmod>2025-07-17T15:33:27.761Z</lastmod>
   </url>
   <url>
-    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/fp.html</loc>
-    <lastmod>2025-01-31T20:38:49.020Z</lastmod>
+    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/le.html</loc>
+    <lastmod>2025-01-31T20:29:10.347Z</lastmod>
   </url>
   <url>
-    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/np.html</loc>
-    <lastmod>2025-01-31T20:30:36.627Z</lastmod>
+    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/sp.html</loc>
+    <lastmod>2025-01-31T20:41:48.545Z</lastmod>
   </url>
   <url>
-    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/data/protected.html</loc>
-    <lastmod>2025-01-15T15:15:51.741Z</lastmod>
+    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/tr.html</loc>
+    <lastmod>2025-07-17T15:44:08.797Z</lastmod>
   </url>
   <url>
-    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/data/species.html</loc>
-    <lastmod>2025-07-07T19:06:14.962Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/data/sst.html</loc>
-    <lastmod>2025-04-23T16:31:27.014Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/data/tourism_lodging.html</loc>
-    <lastmod>2025-04-23T20:12:41.769Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/bd.html</loc>
-    <lastmod>2025-01-31T15:41:46.917Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/cw.html</loc>
-    <lastmod>2025-01-31T20:22:11.869Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/OHIregions.html</loc>
-    <lastmod>2025-07-16T17:14:10.070Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ohi-goc.github.io/OHI_GOC/about.html</loc>
-    <lastmod>2023-11-20T15:30:22.393Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/cp.html</loc>
-    <lastmod>2025-01-31T20:12:50.616Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/ao.html</loc>
-    <lastmod>2025-01-31T15:41:49.513Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/ol.html</loc>
-    <lastmod>2025-07-16T17:56:42.814Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/data/habitats.html</loc>
+    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/data/fishery_production.html</loc>
     <lastmod>2025-04-23T16:31:27.014Z</lastmod>
   </url>
   <url>
@@ -69,20 +29,64 @@
     <lastmod>2025-04-23T16:31:27.014Z</lastmod>
   </url>
   <url>
-    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/data/fishery_production.html</loc>
+    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/data/habitats.html</loc>
     <lastmod>2025-04-23T16:31:27.014Z</lastmod>
   </url>
   <url>
-    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/tr.html</loc>
-    <lastmod>2025-01-31T21:31:29.867Z</lastmod>
+    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/ol.html</loc>
+    <lastmod>2025-07-16T17:56:42.814Z</lastmod>
   </url>
   <url>
-    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/sp.html</loc>
-    <lastmod>2025-01-31T20:41:48.545Z</lastmod>
+    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/ao.html</loc>
+    <lastmod>2025-01-31T15:41:49.513Z</lastmod>
   </url>
   <url>
-    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/le.html</loc>
-    <lastmod>2025-01-31T20:29:10.347Z</lastmod>
+    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/cp.html</loc>
+    <lastmod>2025-01-31T20:12:50.616Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ohi-goc.github.io/OHI_GOC/about.html</loc>
+    <lastmod>2023-11-20T15:30:22.393Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/OHIregions.html</loc>
+    <lastmod>2025-07-16T17:14:10.070Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/cw.html</loc>
+    <lastmod>2025-01-31T20:22:11.869Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/bd.html</loc>
+    <lastmod>2025-01-31T15:41:46.917Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/data/tourism_lodging.html</loc>
+    <lastmod>2025-04-23T20:12:41.769Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/data/sst.html</loc>
+    <lastmod>2025-04-23T16:31:27.014Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/data/species.html</loc>
+    <lastmod>2025-07-07T19:06:14.962Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/data/protected.html</loc>
+    <lastmod>2025-01-15T15:15:51.741Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/np.html</loc>
+    <lastmod>2025-01-31T20:30:36.627Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/fp.html</loc>
+    <lastmod>2025-01-31T20:38:49.020Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/ss.html</loc>
+    <lastmod>2025-07-16T17:55:10.105Z</lastmod>
   </url>
   <url>
     <loc>https://ohi-goc.github.io/OHI_GOC/chapters/cs.html</loc>

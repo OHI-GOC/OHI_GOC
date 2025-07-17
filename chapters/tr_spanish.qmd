@@ -1,0 +1,81 @@
+---
+title: ""
+format: html
+---
+
+# ![](figs/tourism-and-recreation.svg){width=8% height=8%} Tourism and Recreation
+
+**Este objetivo captura la cantidad y la calidad de las experiencias que las personas tienen al visitar áreas costeras y marinas.**
+
+---
+
+::: {.custom-box}
+
+{{< fa lightbulb >}} **DEFINICIÓN CENTRAL**
+
+- *Enfoque:* El valor que las personas obtienen al experimentar y disfrutar las áreas costeras  
+- *No se trata de:* Ingresos o medios de vida generados por el turismo (esto se aborda en el objetivo de Medios de Vida y Economías)  
+- *Énfasis:* Valor personal y cultural de las experiencias recreativas costeras
+
+:::
+
+## Preguntas Clave
+
+- ¿Cómo (*idealmente*) medimos la **cantidad y calidad de la experiencia** de las personas al visitar zonas costeras?
+- ¿Cómo definimos el **punto de referencia**?
+- ¿Cómo incorporamos la **sostenibilidad** en la evaluación?
+
+<br>
+<br>
+**Ejemplos de puntos de referencia utilizados en otras evaluaciones OHI:**
+
+<div style="font-size: 0.85em;">
+
+| Tipo de Punto de Referencia      | Ejemplo |
+|----------------------------------|---------|
+| Objetivos definidos por el gobierno | Aumentar el turismo en un 20% para 2050 |
+| Preferencias locales +             | Preferencia por playas tranquilas vs. concurridas |
+| Capacidad de carga                 | Maximizar el turismo en relación con la [capacidad de carga](https://www.mdpi.com/2071-1050/16/10/3938) |
+| Niveles estables de turismo       | Sin pérdidas ni aumentos en el turismo a lo largo del tiempo |
+| Comparaciones de densidad turística | Comparar turistas/km² con otras regiones |
+
+<small>+ A menudo existe una tensión entre las políticas gubernamentales que promueven el turismo como fuente de empleo y las comunidades locales que experimentan impactos sociales y ambientales negativos.</small>
+
+</div>
+
+<br>
+
+## Consideraciones Regionales
+
+Estos son algunos de los puntos discutidos por el Grupo de Trabajo de Expertos.
+
+**Tipos de Turismo Mencionados:**
+
+- **Turismo Masivo:**  
+  Desarrollos a gran escala promovidos por el gobierno  
+- **Turismo Comunitario:**  
+  Incluye iniciativas como:
+  - AMP de resiliencia con comunidades isleñas  
+  - Colaboración con CONAP  
+  - Iniciativas comunitarias en Guaymas  
+- **Ecoturismo:**  
+  Incluso las iniciativas lideradas por ONGs pueden causar daños no intencionados  
+
+**Problemas Clave Identificados:**
+
+- **Promoción Gubernamental:** Fuerte impulso al turismo a gran escala en todo el Golfo  
+- **Regulación Ambiental:** Regulación débil, especialmente en la modificación de playas  
+- **Impacto en la Comunidad:**  
+  - Necesidad de equilibrar los beneficios económicos (por ejemplo, empleos) con los costos sociales y ambientales  
+  - Mostrar alternativas al turismo masivo  
+
+**Consideraciones Adicionales:**
+
+- **Creación de Empleo vs. Costos Sociales**  
+- **Beneficios Locales vs. Externos**  
+- **Impacto Cultural**  
+- **Crimen Organizado**  
+- **Estabilidad Social** (por ejemplo, problemas relacionados con las drogas, colapso institucional)
+
+---
+:::
