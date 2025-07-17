@@ -29,14 +29,17 @@ format: html
 
 ## Key Questions
 
-- How (*ideally*) do we measure the **quantity and quality of people’s experience** from visiting coastal areas?
+What is the ideal sustainable state of the **tourism and recreation** goal? 
+
+- How (*ideally*) do we measure the **quantity and quality of people’s experience** from visiting coastal areas? Should certain experiences be prioritized?
 - How do we define the **reference point**?
 - How do we incorporate **sustainability** into the assessment?
 
 
 <br>
 <br>
-**Examples of reference points from other OHI assessments:**
+::: {.callout-note collapse="true"}
+## Examples of reference points from other OHI assessments
 
 <div style="font-size: 0.85em;">
 
@@ -51,6 +54,7 @@ format: html
 <small>+ Often a policy tension: governments promote tourism for jobs, while communities experience social and environmental impacts</small>
 
 </div>
+:::
 
 <br>
 

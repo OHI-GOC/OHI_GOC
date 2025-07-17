@@ -9,39 +9,44 @@ format: html
 
 ---
 
-<div class="custom-box">
-{{< fa lightbulb >}} **This information is meant to help guide the process of developing the Gulf of California OHI!**
+::: {.custom-box}
 
-This goal is included in the global OHI, but other regional assessments have cut or modified this goal to better meet their objectives for ocean health...
-</div>
+{{< fa lightbulb >}} **CORE DEFINITION**
 
+- Measures the amount of seafood sustainably harvested within the GoC for human consumption or export.
+- Typically split into two subgoals: wild-caught fisheries (includes artisanal, commercial, and recreational fisheries) and mariculture. But this can be altered.
+- Aims to maximize sustainable seafood production.
 
-#### Overview
+:::
 
-#### Practical Guidance
+What is the ideal sustainable state of the **food provisioning** goal? 
 
+## Key Questions
+**Fisheries subgoal** 
+- The reference point is (typically) that all stocks in the region are sustainably managed, but how can we determine whether stocks are being sustainably managed? For the global assessment we use formal stock assessments (i.e., B/Bmsy).
+- How do we weight the stocks (i.e., do all stocks count the same, should we weight by abundance)
+- Should there be any penalties for underharvesting?
 
-#### LEARN MORE
-Explore the full description of the data and model used in the GLOBAL MODEL. Or, take a look at REGIONAL APPROACHES to learn how other OHI+ assessments have modified this goal to address differences in data availability or priorities.
+**Mariculture subgoal**
 
-WILDCAUGHT FISHERIES
-<div class="button-container">
-  <a href="https://ohi-science.org/ohi-methods/goals/goal-models-data.html#fisheries-subgoal-of-food-provision" class="custom-button">
-    <i class="fas fa-globe"></i> GLOBAL MODEL
-  </a>
-  <a href="https://oceanhealthindex.org/guidance/wild-caught-fisheries/" class="custom-button secondary">
-    <i class="fas fa-location-dot"></i> REGIONAL APPROACHES
-  </a>
-</div>
-
-MARICULTURE
-<div class="button-container">
-  <a href="https://ohi-science.org/ohi-methods/goals/goal-models-data.html#mariculture-subgoal-of-food-provision" class="custom-button">
-    <i class="fas fa-globe"></i> GLOBAL MODEL
-  </a>
-  <a href="https://oceanhealthindex.org/guidance/mariculture/" class="custom-button secondary">
-    <i class="fas fa-location-dot"></i> REGIONAL APPROACHES
-  </a>
-</div>
+- How can we determine the sustainability of mariculture practices?
+- What reference point should be used?
 
 
+## Regional Considerations
+
+These are some of the points discussed by the Expert Working Group.
+
+### Contaminant pressures (mercury and selenium):
+
+- Mercury (Hg) accumulation in fish is a significant pressure affecting seafood sustainability and human health (although Selenium may also be relevant as a counteracting element).
+- Human health data related to mercury exposure could serve as a useful proxy indicator of seafood safety and environmental pressure. - JG
+
+### Local Community Access and Benefits:
+
+- May want to consider where fish are caught geographically and what percentage of the catch benefits local communities versus export or external markets.
+- This helps assess food security and equitable distribution of seafood resources.
+
+### Environmental Impacts:
+
+- Fish waste discharged back into the ocean is a notable environmental concern, potentially impacting ecosystem health.
