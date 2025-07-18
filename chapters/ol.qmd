@@ -2,35 +2,51 @@
 title: ""
 format: html
 ---
-# ![](figs/tourism-and-recreation.svg){width=8% height=8% color="red"} Tourism and recreation 
+# <i class="fa-solid fa-book-open-reader"></i> Research and Ocean Literacy 
 
-**This goal captures the quantity and quality of experiences that people have when visiting coastal and marine areas.**
+**This goal may possibly demonstrate how much is known and how many educational programs take place in the Gulf, to highlight how research and education directly feeds into better management and therefore a healthier GoCA.**
 
 ---
 
 <div class="custom-box">
 {{< fa lightbulb >}} **This information is meant to help guide the process of developing the Gulf of California OHI!**
 
-This goal is included in the global OHI, but other regional assessments have cut or modified this goal to better meet their objectives for ocean health...
+- This goal might incorporate support for research by providing opportunities (i.e., research permits) and funding opportunities.
+ - It could also identify major knowledge gaps that would be useful for monitoring ocean health and implementing strategies and solutions for change.
+- The Expert Working Group also identified the promotion of local education on coastal resources as an important aspect of ocean literacy.
+- The Goalkeepers will be tasked with determining whether this should be a goal that is added to the OHI, or whether it should be incorporated as a resilience metric that will affect multiple goals. Or, alternatively, it could be incorporated into the Sense of Place goal.
+
 </div>
 
-
-#### Overview
-
-#### Practical Guidance
+## Notes from the Expert Working Group
 
 
-#### LEARN MORE
-Explore the full description of the data and model used in the GLOBAL MODEL. Or, take a look at REGIONAL APPROACHES to learn how other OHI+ assessments have modified this goal to address differences in data availability or priorities.
+"Research" could be its name (some individuals do not agree, could it be a resilience?)
 
+- Quality and quantity of research in the area
+
+  - Could be a separate goal or resilience
+  
+- Knowledge gaps (sub-goal)
+
+  - Ecosystem benefits (as a metric)
+
+## Key considerations
+
+- Will it look pretentious or reduce our ethos if it feels like researchers are saying that research is important?
+
+- If this goal were not to be implemented, how can we keep it highlighted as a resilience?
+
+---
+
+##### Contact via email:
 
 <div class="button-container">
-  <a href="https://ohi-science.org/ohi-methods/goals/goal-models-data.html#tourism-and-recreation" class="custom-button">
-    <i class="fas fa-globe"></i> GLOBAL MODEL
+  <a href="mailto:core-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button">
+    <i class="fa-solid fa-square-poll-vertical"></i> OHI Core Analytical Team
   </a>
-  <a href="https://ohi-science.org/ohi-methods/goals/goal-models-data.html#tourism-and-recreation" class="custom-button secondary">
-    <i class="fas fa-location-dot"></i> REGIONAL APPROACHES
+  <a href="mailto:rol-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button secondary">
+    <i class="fa-solid fa-people-group"></i> Research and Ocean Literacy Goalkeeper Group
   </a>
 </div>
-
 

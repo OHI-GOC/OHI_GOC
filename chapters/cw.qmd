@@ -10,28 +10,109 @@ format: html
 
 ---
 
-<div class="custom-box">
-{{< fa lightbulb >}} **This information is meant to help guide the process of developing the Gulf of California OHI!**
+::: {.custom-box}
 
-This goal is included in the global OHI, but other regional assessments have cut or modified this goal to better meet their objectives for ocean health...
-</div>
+{{< fa lightbulb >}} **CORE DEFINITION**
 
+People *value* marine waters that are **free of pollution and debris** for aesthetic and health reasons. 
 
-#### Overview
+Contamination of waters comes from oil spills, chemicals, eutrophication, algal blooms, disease pathogens (e.g., fecal coliform, viruses, and parasites from sewage outflow), floating trash, and mass kills of organisms due to pollution. 
 
-#### Practical Guidance
+People are sensitive to these phenomena occurring in areas they access for recreation or other purposes as well as for simply knowing that clean waters exist. 
 
+In the global assessment, four measures of pollution are included in the *clean waters* goal: eutrophication (nutrients), chemicals, pathogens and marine debris. **This could change based on the Goalkeeper's assessment of what would be best tailored to the Gulf.**
 
-#### LEARN MORE
-Explore the full description of the data and model used in the GLOBAL MODEL. Or, take a look at REGIONAL APPROACHES to learn how other OHI+ assessments have modified this goal to address differences in data availability or priorities.
+The status of these components is the inverse of their intensity.  This means that the high input results in low status score, *where this goal scores highest when the contamination level is zero.*
 
+:::
+
+## Regional Considerations
+
+### Contamination Sources and Assessment Challenges
+
+##### Multiple Non-Point Sources
+
+- Sardine/canning industry
+- Shipping traffic
+- Agricultural and aquaculture operations
+- Urban discharges
+- Fish waste
+
+##### Monitoring Data Gaps
+
+- More comprehensive data available for Sinaloa and Sonora coasts
+- Limited information for La Paz and Baja California regions
+- Sediment analysis often overlooked despite significant ecosystem impacts
+
+##### Weather and Climate Impacts
+
+- Rainfall increases trash accumulation and degrades water quality
+- Hurricanes and storms create additional ecosystem pressure
+- Intermittent river systems cause sudden freshwater inputs that marine ecosystems cannot handle
+
+## Ecosystem and Community Impacts
+
+##### Invasive Species Effects
+
+- Cattails provide natural filtration but face threats from invasive Placostomos
+- Non-native species have fundamentally altered community structures
+- Root system damage impacts native fish populations like tilapia
+
+##### Aquaculture Concerns
+
+- Shrimp farms generate nutrient runoff affecting other fisheries
+- Eutrophication problems documented by local fishermen
+- Pathogen issues primarily affect swimming areas
+
+##### Unique Regional Challenges
+
+- Dependence on ocean-derived freshwater for drinking water
+- Questions about integrating water quality standards into ocean health goals
+
+## Monitoring and Assessment Approaches
+
+##### Community-Based Efforts
+
+- Organized trash pickups throughout the Gulf
+- Volunteer diving cleanup programs
+- Local community engagement in monitoring efforts
+
+##### Scientific Assessment Tools
+
+- TRIX Index: Combines chlorophyll-a and nutrient data to classify water as eutrophic or oligotrophic
+- Satellite monitoring: Provides temporal analysis capabilities
+- Biological indicators: Cannonball jellyfish appearance signals hypoxic conditions and dead zones
+
+###### Case Study: Santa Maria Lagoon
+
+- 10-year TRIX analysis revealed dramatic ecosystem shift
+- System changed from nutrient sink to nutrient exporter
+- Demonstrates rapid ecological changes in regional waters
+
+## Emerging Pollution Concerns
+
+##### Noise and Light Pollution
+
+- Ship noise impacts whale communication and behavior
+- Industrial development pressures highlighted by "Whales or Gas?" campaign
+- Questions about classifying noise/light as water quality threats
+
+##### Synergistic Effects
+
+- Nutrients and chemicals interact to create algal blooms
+- Need for multiplier effects in assessment methodologies
+- Complex interactions require integrated pollution assessment approaches
+
+---
+
+##### Contact via email:
 
 <div class="button-container">
-  <a href="https://ohi-science.org/ohi-methods/goals/goal-models-data.html#clean-waters" class="custom-button">
-    <i class="fas fa-globe"></i> GLOBAL MODEL
+  <a href="mailto:core-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button">
+    <i class="fa-solid fa-square-poll-vertical"></i> OHI Core Analytical Team
   </a>
-  <a href="https://oceanhealthindex.org/guidance/clean-waters/" class="custom-button secondary">
-    <i class="fas fa-location-dot"></i> REGIONAL APPROACHES
+  <a href="mailto:cw-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button secondary">
+    <i class="fa-solid fa-people-group"></i> Clean Waters Goalkeeper Group
   </a>
 </div>
 

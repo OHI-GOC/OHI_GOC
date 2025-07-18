@@ -19,15 +19,19 @@ format: html
 
 :::
 
+## Key Questions
+
 What is the ideal sustainable state of the **food provisioning** goal? 
 
-## Key Questions
-**Fisheries subgoal** 
+
+#### **Fisheries subgoal**
+
 - The reference point is (typically) that all stocks in the region are sustainably managed, but how can we determine whether stocks are being sustainably managed? For the global assessment we use formal stock assessments (i.e., B/Bmsy).
 - How do we weight the stocks (i.e., do all stocks count the same, should we weight by abundance)
 - Should there be any penalties for underharvesting?
 
-**Mariculture subgoal**
+
+#### **Mariculture subgoal**
 
 - How can we determine the sustainability of mariculture practices?
 - What reference point should be used?
@@ -37,16 +41,29 @@ What is the ideal sustainable state of the **food provisioning** goal?
 
 These are some of the points discussed by the Expert Working Group.
 
-### Contaminant pressures (mercury and selenium):
+#### **Contaminant pressures (mercury and selenium):**
 
 - Mercury (Hg) accumulation in fish is a significant pressure affecting seafood sustainability and human health (although Selenium may also be relevant as a counteracting element).
-- Human health data related to mercury exposure could serve as a useful proxy indicator of seafood safety and environmental pressure. - JG
+- Human health data related to mercury exposure could serve as a useful proxy indicator of seafood safety and environmental pressure.
 
-### Local Community Access and Benefits:
+#### **Local Community Access and Benefits:**
 
 - May want to consider where fish are caught geographically and what percentage of the catch benefits local communities versus export or external markets.
-- This helps assess food security and equitable distribution of seafood resources.
+  - This helps assess food security and equitable distribution of seafood resources.
 
-### Environmental Impacts:
+#### **Environmental Impacts:**
 
 - Fish waste discharged back into the ocean is a notable environmental concern, potentially impacting ecosystem health.
+
+---
+
+##### Contact via email:
+
+<div class="button-container">
+  <a href="mailto:core-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button">
+    <i class="fa-solid fa-square-poll-vertical"></i> OHI Core Analytical Team
+  </a>
+  <a href="mailto:fp-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button secondary">
+    <i class="fa-solid fa-people-group"></i> Food Provision Goalkeeper Group
+  </a>
+</div>

@@ -2,35 +2,53 @@
 title: ""
 format: html
 ---
-# ![](figs/tourism-and-recreation.svg){width=8% height=8% color="red"} Tourism and recreation 
+# <i class="fa-solid fa-shield"></i> Safety and Security
 
-**This goal captures the quantity and quality of experiences that people have when visiting coastal and marine areas.**
+**This goal captures the sense that marine resources are not limited by safety concerns.**
 
 ---
 
 <div class="custom-box">
 {{< fa lightbulb >}} **This information is meant to help guide the process of developing the Gulf of California OHI!**
 
-This goal is included in the global OHI, but other regional assessments have cut or modified this goal to better meet their objectives for ocean health...
+This goal is not currently included in the global OHI, but the Expert Working Group felt that safety and security has a large impact on the Gulf of California system's ability to sustainably provide people with the benefits and services they both need and desire from marine systems.
+
 </div>
 
+## Key Questions
 
-#### Overview
+Could organized crime be considered a *pressure* for the **safety and security** goal?
 
-#### Practical Guidance
+Or does the safety and security goal seem to be more of **a pressure on many other goals**, and should therefore not be a goal itself?
+
+Are there other ways to highlight the importance of this concept without having it as a separate goal?
 
 
-#### LEARN MORE
-Explore the full description of the data and model used in the GLOBAL MODEL. Or, take a look at REGIONAL APPROACHES to learn how other OHI+ assessments have modified this goal to address differences in data availability or priorities.
+## Considerations
 
+- Could separate organized crime from other pressures in the framework
+- Explore "Hugs not Drugs" approach (referencing social programs as alternatives)
+- Account for perceived differences among the five states (e.g., Sinaloa vs. Sonora)
+
+### Social Justice and Green Resilience
+
+- Could think about social justice as a resilience metric in the global context, emphasizing equality of opportunities.
+- Could consider green areas as a form of resilience, possibly using a UN data index.
+
+::: {.callout-warning}
+
+## This goal will require sensitivity in language and verbage used.
+:::
+
+---
+
+##### Contact via email:
 
 <div class="button-container">
-  <a href="https://ohi-science.org/ohi-methods/goals/goal-models-data.html#tourism-and-recreation" class="custom-button">
-    <i class="fas fa-globe"></i> GLOBAL MODEL
+  <a href="mailto:core-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button">
+    <i class="fa-solid fa-square-poll-vertical"></i> OHI Core Analytical Team
   </a>
-  <a href="https://ohi-science.org/ohi-methods/goals/goal-models-data.html#tourism-and-recreation" class="custom-button secondary">
-    <i class="fas fa-location-dot"></i> REGIONAL APPROACHES
+  <a href="mailto:ss-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button secondary">
+    <i class="fa-solid fa-people-group"></i> Safety & Security Goalkeeper Group
   </a>
 </div>
-
-
