@@ -5,13 +5,67 @@ format: html
 
 # ![](figs/artisanal-fishing-opportunities.svg){width=8% height=8% color="red"} Artisanal fishing opportunities 
 
+<div class="button-container">
+  <a href="https://ohi-goc.github.io/OHI_GOC/chapters/ao_spanish.html" class="custom-button">
+    <i class="fas fa-globe"></i> en español
+  </a>
+</div>
+
 **This goal measures whether people who need to fish on a small, local scale have the opportunity to do so.**
 
 Artisanal fishing, often also called small-scale fishing, provides a critical source of food, nutrition, poverty alleviation and livelihood opportunities for many people around the world, especially in developing nations. Small-scale fishing is an important component of cultural identity and heritage.
 
 > _Half the world’s fish harvest is captured by artisanal fishing families._
 
+::: {.callout-note collapse="true"}
 
+## AO Goalkeeper Group Information
+
+##### **Meeting Access**
+
+**Zoom Link:** <https://us06web.zoom.us/j/3255055973>
+---
+
+##### **Key Team Members**
+- Victor Ricardez
+- Jorge Torre
+- Ana Luisa Figueroa
+- Michelle María Early Capistrán
+- Hem Nalini Morzaria-Luna
+- Amy Hudson Weaver
+- Francisco Fernandez
+- Mar Mancha-Cisneros
+- Octavio Aburto
+- Maria Jose Espinosa
+
+---
+
+##### **Meeting Schedule _(Tuesday 1:00 PM - 2:00 PM PDT)_**
+
+| Meeting | Date | Specific Date | Focus |
+|---------|------|---------------|-------|
+| 1 | July/August | July 22, 2025 | Group introductions, OHI platform overview, goal calculations |
+| 2 | August/September | August 19, 2025 | Model and reference point discussion |
+| 3 | September/October | September 23, 2025 | Model, reference point, and data sources |
+| 4 | October/November | October 21, 2025 | Preliminary results and pressure/resilience |
+| 5 | November/December | November 18, 2025 | Final analysis plan review |
+| 6 | December | December 9, 2025 *(tentative)* | *Tentative* |
+
+---
+
+##### **Co-authorship Information**
+
+This project provides opportunities to collaborate with regional experts and contribute to Gulf of California OHI assessment. Participation will be acknowledged on the website and other products. Additional co-authorship opportunities may be available with extra commitment as outlined [here](https://docs.google.com/document/d/16jwVGjbQpF_6B6sbkhb4xO00WAXdDiESBXu-n2a7D1k/edit?tab=t.0).
+
+---
+
+##### **Google Calendar**
+
+Add the shared calendar to your Google Calendar account using the [provided link](https://calendar.google.com/calendar/u/0?cid=Y184ZmIyNzhjNmQwM2E5MGFjZDJjYWE0MDdhOTcyY2ZlMjcxYTQwNzA3Mjc0MDFiNzM0NzRkNjdjNGM0NDE0ZjQyQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20). It will appear under "Other calendars" and provide access to all scheduled meetings with updated Zoom links.
+
+**Please let us know if you have any questions. We look forward to working on this initiative with you!**
+
+:::
 
 ---
 
@@ -92,7 +146,7 @@ Obtaining permits is **bureaucratically complex, expensive, and limited** — ne
 
 ---
 
-##### Contact via email:
+## Contact via email:
 
 <div class="button-container">
   <a href="mailto:core-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button">

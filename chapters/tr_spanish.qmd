@@ -3,9 +3,60 @@ title: ""
 format: html
 ---
 
-# ![](figs/tourism-and-recreation.svg){width=8% height=8%} Tourism and Recreation
+# ![](figs/tourism-and-recreation.svg){width=8% height=8%} Turismo y Recreación
 
-**Este objetivo captura la cantidad y la calidad de las experiencias que las personas tienen al visitar áreas costeras y marinas.**
+
+<div class="button-container">
+  <a href="https://ohi-goc.github.io/OHI_GOC/chapters/tr.html" class="custom-button">
+    <i class="fas fa-globe"></i> English Translation
+  </a>
+</div>
+
+
+**Este objetivo captura la cantidad y calidad de las experiencias que tienen las personas al visitar áreas costeras y marinas.**
+
+::: {.callout-note collapse="true"}
+
+## Información del Grupo de Guardianes del Objetivo TR
+
+##### **Acceso a Reuniones**
+
+**Enlace de Zoom:** <https://us06web.zoom.us/j/3255055973>
+---
+
+##### **Miembros Clave del Equipo**
+- Ana Luisa Figueroa
+- Andrés Cisneros Montemayor
+- Juan Carlos Villaseñor-Derbez
+
+---
+
+##### **Calendario de Reuniones _(Lunes 9:00 AM - 10:00 AM PDT)_**
+
+| Reunión | Mes | Fecha Específica | Enfoque |
+|---------|------|---------------|-------|
+| 1 | Julio/Agosto | 21 de julio de 2025 | Presentación del grupo, descripción de la plataforma OHI, cálculos del objetivo |
+| 2 | Agosto/Septiembre | 18 de agosto de 2025 | Discusión sobre el modelo y punto de referencia |
+| 3 | Septiembre/Octubre | 22 de septiembre de 2025 | Modelo, punto de referencia y fuentes de datos |
+| 4 | Octubre/Noviembre | 20 de octubre de 2025 | Resultados preliminares y presión/resiliencia |
+| 5 | Noviembre/Diciembre | 17 de noviembre de 2025 | Revisión del plan de análisis final |
+| 6 | Diciembre | 15 de diciembre de 2025 *(tentativa)* | *Tentativa* |
+
+---
+
+##### **Información sobre Coautoría**
+
+Este proyecto ofrece oportunidades para colaborar con expertos regionales y contribuir a la evaluación OHI del Golfo de California. La participación será reconocida en el sitio web y otros productos. Pueden existir oportunidades adicionales de coautoría con compromiso extra, según lo indicado [aquí](https://docs.google.com/document/d/16jwVGjbQpF_6B6sbkhb4xO00WAXdDiESBXu-n2a7D1k/edit?tab=t.0).
+
+---
+
+##### **Google Calendar**
+
+Agrega el calendario compartido a tu cuenta de Google Calendar usando el [enlace proporcionado](https://calendar.google.com/calendar/u/0?cid=Y184ZmIyNzhjNmQwM2E5MGFjZDJjYWE0MDdhOTcyY2ZlMjcxYTQwNzA3Mjc0MDFiNzM0NzRkNjdjNGM0NDE0ZjQyQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20). Aparecerá bajo "Otros calendarios" y proporcionará acceso a todas las reuniones programadas con enlaces de Zoom actualizados.
+
+**Por favor, avísanos si tienes alguna pregunta. ¡Esperamos trabajar en esta iniciativa contigo!**
+
+:::
 
 ---
 
@@ -13,61 +64,46 @@ format: html
 
 {{< fa lightbulb >}} **DEFINICIÓN CENTRAL**
 
-- *Enfoque:* El valor que las personas obtienen al experimentar y disfrutar las áreas costeras  
-- *No se trata de:* Ingresos o medios de vida generados por el turismo (esto se aborda en el objetivo de Medios de Vida y Economías)  
-- *Énfasis:* Valor personal y cultural de las experiencias recreativas costeras
+- **_Enfoque:_** Valor que las personas obtienen al experimentar y disfrutar de las áreas costeras  
+- **_No se trata de:_** Ingresos o medios de vida generados por el turismo (cubierto en Medios de Vida y Economías)  
+- **_Énfasis:_** Valor personal y cultural de las experiencias recreativas costeras
 
 :::
 
 ## Preguntas Clave
 
-- ¿Cómo (*idealmente*) medimos la **cantidad y calidad de la experiencia** de las personas al visitar zonas costeras?
+¿Cuál es el estado sostenible ideal del objetivo de **turismo y recreación**?
+
+- ¿Cómo (*idealmente*) medimos la **cantidad y calidad de la experiencia de las personas** al visitar áreas costeras? ¿Se deben priorizar ciertas experiencias?
 - ¿Cómo definimos el **punto de referencia**?
 - ¿Cómo incorporamos la **sostenibilidad** en la evaluación?
 
-<br>
-<br>
-**Ejemplos de puntos de referencia utilizados en otras evaluaciones OHI:**
-
-<div style="font-size: 0.85em;">
-
-| Tipo de Punto de Referencia      | Ejemplo |
-|----------------------------------|---------|
-| Objetivos definidos por el gobierno | Aumentar el turismo en un 20% para 2050 |
-| Preferencias locales +             | Preferencia por playas tranquilas vs. concurridas |
-| Capacidad de carga                 | Maximizar el turismo en relación con la [capacidad de carga](https://www.mdpi.com/2071-1050/16/10/3938) |
-| Niveles estables de turismo       | Sin pérdidas ni aumentos en el turismo a lo largo del tiempo |
-| Comparaciones de densidad turística | Comparar turistas/km² con otras regiones |
-
-<small>+ A menudo existe una tensión entre las políticas gubernamentales que promueven el turismo como fuente de empleo y las comunidades locales que experimentan impactos sociales y ambientales negativos.</small>
-
-</div>
 
 <br>
 
 ## Consideraciones Regionales
 
-Estos son algunos de los puntos discutidos por el Grupo de Trabajo de Expertos.
+Estos son algunos de los puntos discutidos por el Grupo de Expertos.
 
 **Tipos de Turismo Mencionados:**
 
 - **Turismo Masivo:**  
   Desarrollos a gran escala promovidos por el gobierno  
 - **Turismo Comunitario:**  
-  Incluye iniciativas como:
+  Incluye esfuerzos como:
   - AMP de resiliencia con comunidades isleñas  
   - Colaboración con CONAP  
   - Iniciativas comunitarias en Guaymas  
 - **Ecoturismo:**  
-  Incluso las iniciativas lideradas por ONGs pueden causar daños no intencionados  
+  Incluso los esfuerzos liderados por ONG pueden causar daños no intencionados  
 
 **Problemas Clave Identificados:**
 
-- **Promoción Gubernamental:** Fuerte impulso al turismo a gran escala en todo el Golfo  
-- **Regulación Ambiental:** Regulación débil, especialmente en la modificación de playas  
-- **Impacto en la Comunidad:**  
-  - Necesidad de equilibrar los beneficios económicos (por ejemplo, empleos) con los costos sociales y ambientales  
-  - Mostrar alternativas al turismo masivo  
+- **Promoción Gubernamental:** Fuerte impulso para el turismo a gran escala en todo el Golfo  
+- **Regulación Ambiental:** Regulación débil, especialmente en el desarrollo de playas  
+- **Impacto Comunitario:**  
+  - Necesidad de equilibrar beneficios económicos (por ejemplo, empleos) con costos ambientales y sociales  
+  - Resaltar alternativas al turismo masivo  
 
 **Consideraciones Adicionales:**
 
@@ -75,7 +111,40 @@ Estos son algunos de los puntos discutidos por el Grupo de Trabajo de Expertos.
 - **Beneficios Locales vs. Externos**  
 - **Impacto Cultural**  
 - **Crimen Organizado**  
-- **Estabilidad Social** (por ejemplo, problemas relacionados con las drogas, colapso institucional)
+- **Estabilidad Social** (por ejemplo, problemas relacionados con drogas, colapso institucional)
 
 ---
+
+<br>
+
+::: {.callout-note collapse="true"}
+
+## Ejemplos de puntos de referencia de otras evaluaciones OHI
+
+<div style="font-size: 0.85em;">
+
+| Tipo de Punto de Referencia  | Ejemplo |
+|----------------------------|---------|
+| Objetivos definidos por el gobierno | Aumentar el turismo en un 20% para 2050 |
+| Preferencias locales +         | Preferencia por playas tranquilas vs. concurridas |
+| Capacidad de carga           | Maximizar el turismo en relación con la [capacidad de carga](https://www.mdpi.com/2071-1050/16/10/3938) |
+| Niveles de turismo estables       | Sin pérdidas ni aumentos netos de turismo a lo largo del tiempo |
+| Comparaciones de densidad turística | Comparar turistas/km² con otras regiones |
+
+<small>+ A menudo existe una tensión en las políticas: los gobiernos promueven el turismo por empleos, mientras las comunidades experimentan impactos sociales y ambientales</small>
+
+</div>
 :::
+
+<br>
+
+## Contacto por correo electrónico
+
+<div class="button-container">
+  <a href="mailto:core-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button">
+    <i class="fa-solid fa-square-poll-vertical"></i> Equipo Analítico Central de OHI
+  </a>
+  <a href="mailto:tr-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button secondary">
+    <i class="fa-solid fa-people-group"></i> Grupo Guardián del Objetivo Turismo y Recreación
+  </a>
+</div>

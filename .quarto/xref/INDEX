@@ -115,5 +115,11 @@
   },
   "chapters/tr_spanish.qmd": {
     "tr_spanish.html": "2774c638"
+  },
+  "chapters/fp_spanish.qmd": {
+    "fp_spanish.html": "5de3c1e3"
+  },
+  "chapters/ao_spanish.qmd": {
+    "ao_spanish.html": "4fca7be8"
   }
 }

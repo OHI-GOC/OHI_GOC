@@ -1,0 +1,123 @@
+---
+title: ""
+format: html
+---
+
+# ![](figs/food-provision.svg){width="8%" height="8%" color="red"} Provisión de Alimentos
+
+<div class="button-container">
+  <a href="https://ohi-goc.github.io/OHI_GOC/chapters/fp.html" class="custom-button">
+    <i class="fas fa-globe"></i> English Translation
+  </a>
+</div>
+
+**Este objetivo evalúa nuestra capacidad para maximizar de manera sostenible los alimentos marinos obtenidos mediante captura silvestre o acuicultura.**
+
+::: {.callout-note collapse="true"}
+
+## Información del Grupo Guardián del Objetivo FP
+
+##### **Acceso a Reuniones**
+
+**Enlace de Zoom:** <https://us06web.zoom.us/j/3255055973>
+---
+
+##### **Miembros Clave del Equipo**
+- Jorge Torre
+- Leonardo Vázquez 
+- Andrés Cisneros Montemayor
+- Juan Carlos Villaseñor-Derbez
+- Hem Nalini Morzaria-Luna
+- Mar Mancha-Cisneros
+- Octavio Aburto 
+
+---
+
+##### **Calendario de Reuniones _(Martes 11:00 AM - 12:00 PM PDT)_**
+
+| Reunión | Mes | Fecha Específica | Enfoque |
+|---------|------|---------------|-------|
+| 1 | Julio/Agosto | 22 de julio de 2025 | Presentación del grupo, descripción de la plataforma OHI, cálculos del objetivo |
+| 2 | Agosto/Septiembre | 19 de agosto de 2025 | Discusión sobre el modelo y punto de referencia |
+| 3 | Septiembre/Octubre | 23 de septiembre de 2025 | Modelo, punto de referencia y fuentes de datos |
+| 4 | Octubre/Noviembre | 21 de octubre de 2025 | Resultados preliminares y presión/resiliencia |
+| 5 | Noviembre/Diciembre | 18 de noviembre de 2025 | Revisión del plan de análisis final |
+| 6 | Diciembre | 9 de diciembre de 2025 *(tentativa)* | *Tentativa* |
+
+---
+
+##### **Información sobre Coautoría**
+
+Este proyecto ofrece oportunidades para colaborar con expertos regionales y contribuir a la evaluación OHI del Golfo de California. La participación será reconocida en el sitio web y otros productos. Pueden existir oportunidades adicionales de coautoría con compromiso extra, según lo indicado [aquí](https://docs.google.com/document/d/16jwVGjbQpF_6B6sbkhb4xO00WAXdDiESBXu-n2a7D1k/edit?tab=t.0).
+
+---
+
+##### **Google Calendar**
+
+Agrega el calendario compartido a tu cuenta de Google Calendar usando el [enlace proporcionado](https://calendar.google.com/calendar/u/0?cid=Y184ZmIyNzhjNmQwM2E5MGFjZDJjYWE0MDdhOTcyY2ZlMjcxYTQwNzA3Mjc0MDFiNzM0NzRkNjdjNGM0NDE0ZjQyQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20). Aparecerá bajo "Otros calendarios" y proporcionará acceso a todas las reuniones programadas con enlaces de Zoom actualizados.
+
+**Por favor, avísanos si tienes alguna pregunta. ¡Esperamos trabajar en esta iniciativa contigo!**
+
+:::
+
+---
+
+::: {.custom-box}
+
+{{< fa lightbulb >}} **DEFINICIÓN CENTRAL**
+
+- Mide la cantidad de productos marinos cosechados de manera sostenible dentro del Golfo de California para consumo humano o exportación.  
+- Generalmente se divide en dos subobjetivos: pesquerías de captura silvestre (incluye pesquerías artesanales, comerciales y recreativas) y maricultura. Pero esto puede modificarse.  
+- Su objetivo es maximizar la producción sostenible de productos marinos.  
+
+:::
+
+## Preguntas Clave
+
+¿Cuál es el estado sostenible ideal del objetivo de **provisión de alimentos**? 
+
+
+#### **Subobjetivo Pesquerías**
+
+- El punto de referencia (típicamente) es que todas las poblaciones en la región estén gestionadas de manera sostenible, pero ¿cómo podemos determinar si las poblaciones están siendo gestionadas de manera sostenible? Para la evaluación global utilizamos evaluaciones formales de poblaciones (es decir, B/Bmsy).  
+- ¿Cómo ponderamos las poblaciones (es decir, todas cuentan igual, o debemos ponderar por abundancia)?  
+- ¿Debería haber alguna penalización por subextracción?  
+
+
+#### **Subobjetivo Maricultura**
+
+- ¿Cómo podemos determinar la sostenibilidad de las prácticas de maricultura?  
+- ¿Qué punto de referencia debería usarse?  
+
+
+## Consideraciones Regionales
+
+Estos son algunos de los puntos discutidos por el Grupo de Expertos.
+
+#### **Presiones por Contaminantes (mercurio y selenio):**
+
+- La acumulación de mercurio (Hg) en los peces es una presión significativa que afecta la sostenibilidad de los alimentos marinos y la salud humana (aunque el selenio también puede ser relevante como elemento compensador).  
+- Los datos de salud humana relacionados con la exposición al mercurio podrían servir como un indicador proxy útil para la seguridad alimentaria marina y la presión ambiental.  
+
+#### **Acceso y Beneficios para Comunidades Locales:**
+
+- Podría considerarse dónde se captura el pescado geográficamente y qué porcentaje de la captura beneficia a las comunidades locales versus exportación o mercados externos.  
+  - Esto ayuda a evaluar la seguridad alimentaria y la distribución equitativa de los recursos marinos.  
+
+#### **Impactos Ambientales:**
+
+- La descarga de desechos de pescado al océano es una preocupación ambiental notable, que podría afectar la salud del ecosistema.  
+
+---
+
+## Contacto por correo electrónico:
+
+<div class="button-container">
+  <a href="mailto:core-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button">
+    <i class="fa-solid fa-square-poll-vertical"></i> Equipo Analítico Central de OHI
+  </a>
+  <a href="mailto:fp-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button secondary">
+    <i class="fa-solid fa-people-group"></i> Grupo Guardián del Objetivo Provisión de Alimentos
+  </a>
+</div>
+
