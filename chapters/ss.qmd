@@ -4,6 +4,58 @@ format: html
 ---
 # <i class="fa-solid fa-shield"></i> Safety and Security
 
+<div class="button-container">
+  <a href="https://ohi-goc.github.io/OHI_GOC/chapters/ss_spanish.html" class="custom-button">
+    <i class="fas fa-globe"></i> en español
+  </a>
+</div>
+
+::: {.callout-note collapse="true"}
+
+## SS Goalkeeper Group Information
+
+##### **Meeting Access**
+
+**Zoom Link:** <https://us06web.zoom.us/j/3255055973>
+---
+
+##### **Key Team Members**
+- Francisco Fernandez
+- Amy Hudson Weaver
+- Victor Ricardez
+- Jorge Torre
+
+
+---
+
+##### **Meeting Schedule _(Friday 1:00 PM - 2:00 PM PDT)_**
+
+| Meeting | Date | Specific Date | Focus |
+|---------|------|---------------|-------|
+| 1 | July/August | July 25, 2025 | Group introductions, OHI platform overview, goal calculations |
+| 2 | August/September | August 29, 2025 | Model and reference point discussion |
+| 3 | September/October | September 26, 2025 | Model, reference point, and data sources |
+| 4 | October/November | October 24, 2025 | Preliminary results and pressure/resilience |
+| 5 | November/December | November 21, 2025 | Final analysis plan review |
+| 6 | December | December 5, 2025 *(tentative)* | *Tentative* |
+
+---
+
+##### **Co-authorship Information**
+
+This project provides opportunities to collaborate with regional experts and contribute to Gulf of California OHI assessment. Participation will be acknowledged on the website and other products. Additional co-authorship opportunities may be available with extra commitment as outlined [here](https://docs.google.com/document/d/16jwVGjbQpF_6B6sbkhb4xO00WAXdDiESBXu-n2a7D1k/edit?tab=t.0).
+
+---
+
+##### **Google Calendar**
+
+Add the shared calendar to your Google Calendar account using the [provided link](https://calendar.google.com/calendar/u/0?cid=Y184ZmIyNzhjNmQwM2E5MGFjZDJjYWE0MDdhOTcyY2ZlMjcxYTQwNzA3Mjc0MDFiNzM0NzRkNjdjNGM0NDE0ZjQyQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20). It will appear under "Other calendars" and provide access to all scheduled meetings with updated Zoom links.
+
+**Please let us know if you have any questions. We look forward to working on this initiative with you!**
+
+:::
+
+
 **This goal captures the sense that marine resources are not limited by safety concerns.**
 
 ---

@@ -1,0 +1,103 @@
+---
+title: ""
+format: html
+---
+# <i class="fa-solid fa-shield"></i> Seguridad y Protección
+
+<div class="button-container">
+  <a href="https://ohi-goc.github.io/OHI_GOC/chapters/ss.html" class="custom-button">
+    <i class="fas fa-globe"></i> English Translation
+  </a>
+</div>
+
+::: {.callout-note collapse="true"}
+
+## Información del Grupo de Seguridad y Protección (SS Goalkeeper Group)
+
+##### **Acceso a las Reuniones**
+
+**Enlace de Zoom:** <https://us06web.zoom.us/j/3255055973>
+---
+
+##### **Miembros Clave del Equipo**
+- Francisco Fernandez
+- Amy Hudson Weaver
+- Victor Ricardez
+- Jorge Torre
+
+---
+
+##### **Calendario de Reuniones _(Viernes 1:00 PM - 2:00 PM PDT)_**
+
+| Reunión | Mes | Fecha Específica | Enfoque |
+|---------|------|------------------|---------|
+| 1 | Julio/Agosto | 25 de julio de 2025 | Presentaciones del grupo, visión general de la plataforma OHI, cálculos de objetivos |
+| 2 | Agosto/Septiembre | 29 de agosto de 2025 | Discusión del modelo y puntos de referencia |
+| 3 | Septiembre/Octubre | 26 de septiembre de 2025 | Modelo, puntos de referencia y fuentes de datos |
+| 4 | Octubre/Noviembre | 24 de octubre de 2025 | Resultados preliminares y presión/resiliencia |
+| 5 | Noviembre/Diciembre | 21 de noviembre de 2025 | Revisión del plan de análisis final |
+| 6 | Diciembre | 5 de diciembre de 2025 *(tentativo)* | *Tentativo* |
+
+---
+
+##### **Información sobre Coautoría**
+
+Este proyecto ofrece oportunidades para colaborar con expertos regionales y contribuir a la evaluación del OHI del Golfo de California. La participación será reconocida en el sitio web y otros productos. Oportunidades adicionales de coautoría pueden estar disponibles con mayor compromiso, según lo indicado [aquí](https://docs.google.com/document/d/16jwVGjbQpF_6B6sbkhb4xO00WAXdDiESBXu-n2a7D1k/edit?tab=t.0).
+
+---
+
+##### **Google Calendar**
+
+Agrega el calendario compartido a tu cuenta de Google Calendar usando el [enlace proporcionado](https://calendar.google.com/calendar/u/0?cid=Y184ZmIyNzhjNmQwM2E5MGFjZDJjYWE0MDdhOTcyY2ZlMjcxYTQwNzA3Mjc0MDFiNzM0NzRkNjdjNGM0NDE0ZjQyQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20). Aparecerá en "Otros calendarios" y proporcionará acceso a todas las reuniones programadas con enlaces de Zoom actualizados.
+
+**Por favor, háznos saber si tienes alguna pregunta. ¡Esperamos trabajar contigo en esta iniciativa!**
+
+:::
+
+**Este objetivo refleja la idea de que los recursos marinos no están limitados por preocupaciones de seguridad.**
+
+---
+
+<div class="custom-box">
+{{< fa lightbulb >}} **Esta información está destinada a ayudar a guiar el proceso de desarrollo del OHI del Golfo de California.**
+
+Este objetivo no está incluido actualmente en el OHI global, pero el Grupo de Trabajo de Expertos consideró que la seguridad y protección tienen un gran impacto en la capacidad del sistema del Golfo de California para proporcionar de manera sostenible a las personas los beneficios y servicios que necesitan y desean de los sistemas marinos.
+
+</div>
+
+## Preguntas Clave
+
+¿Podría considerarse el crimen organizado como una *presión* para el objetivo de **seguridad y protección**?
+
+¿O el objetivo de seguridad y protección parece ser más bien **una presión sobre muchos otros objetivos**, y por lo tanto no debería ser un objetivo en sí mismo?
+
+¿Hay otras formas de resaltar la importancia de este concepto sin tenerlo como un objetivo separado?
+
+## Consideraciones
+
+- Podría separar el crimen organizado de otras presiones en el marco.
+- Explorar el enfoque de "Abrazos, no Balazos" (haciendo referencia a programas sociales como alternativas).
+- Tener en cuenta las diferencias percibidas entre los cinco estados (por ejemplo, Sinaloa vs. Sonora).
+
+### Justicia Social y Resiliencia Verde
+
+- Podría pensarse en la justicia social como una métrica de resiliencia en el contexto global, enfatizando la igualdad de oportunidades.
+- Podría considerarse las áreas verdes como una forma de resiliencia, posiblemente utilizando un índice de datos de la ONU.
+
+::: {.callout-warning}
+
+## Este objetivo requerirá sensibilidad en el lenguaje y la redacción utilizada.
+:::
+
+---
+
+##### Contacto por correo electrónico:
+
+<div class="button-container">
+  <a href="mailto:core-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button">
+    <i class="fa-solid fa-square-poll-vertical"></i> Equipo Analítico Central de OHI
+  </a>
+  <a href="mailto:ss-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button secondary">
+    <i class="fa-solid fa-people-group"></i> Grupo de Seguridad y Protección
+  </a>
+</div>
