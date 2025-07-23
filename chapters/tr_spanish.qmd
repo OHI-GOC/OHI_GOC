@@ -6,8 +6,8 @@ format: html
 # ![](figs/tourism-and-recreation.svg){width=8% height=8%} Turismo y Recreación
 
 <div class="button-container">
-  <a href="https://ohi-goc.github.io/OHI_GOC/chapters/tr_spanish.html" class="custom-button">
-    <i class="fas fa-globe"></i> en español
+  <a href="https://ohi-goc.github.io/OHI_GOC/chapters/tr.html" class="custom-button">
+    <i class="fas fa-globe"></i> English Translation
   </a>
 </div>
 

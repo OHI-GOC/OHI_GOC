@@ -1,0 +1,181 @@
+---
+title: ""
+format: html
+---
+
+# ![](figs/clean-waters.svg){width="8%" height="8%" color="red"} Aguas Limpias
+
+<div class="button-container">
+  <a href="https://ohi-goc.github.io/OHI_GOC/chapters/cw.html" class="custom-button">
+    <i class="fas fa-globe"></i> English Translation
+  </a>
+</div>
+
+**Este objetivo captura el grado en que las aguas locales no están contaminadas por causas humanas.**
+
+::: {.callout-note collapse="true"}
+
+## Información del Grupo de Aguas Limpias (CW)
+
+##### **Acceso a reuniones**
+
+**Enlace de Zoom:** <https://us06web.zoom.us/j/3255055973>
+---
+
+##### **Miembros clave del equipo**
+- Alejandra Irasema Campos
+- Geovanni (Geo) Coredero Herrera
+- Jaqueline García-Hernández
+- Jorge Arriaga
+- Miguel Betancourt
+
+---
+
+##### **Horario de reuniones _(martes de 10:00 AM a 11:00 AM PDT)_**
+
+| Reunión | Fecha | Enfoque |
+|---------|---------------|--------|
+| 1 | 29 de julio de 2025 | Presentaciones del grupo, resumen de la plataforma OHI, cálculos del objetivo |
+| 2 | 26 de agosto de 2025 | Discusión sobre el modelo y el punto de referencia |
+| 3 | 30 de septiembre de 2025 | Modelo, punto de referencia y fuentes de datos |
+| 4 | 28 de octubre de 2025 | Resultados preliminares y presión/resiliencia |
+| 5 | 18 de noviembre de 2025 | Revisión del plan de análisis final |
+| 6 | 9 de diciembre de 2025 *(tentativo)* | *Tentativo* |
+
+---
+
+##### **Información sobre coautoría**
+
+Este proyecto brinda oportunidades para colaborar con expertos regionales y contribuir a la evaluación del OHI en el Golfo de California. La participación será reconocida en el sitio web y otros productos. Se pueden ofrecer oportunidades adicionales de coautoría con un compromiso extra, como se describe [aquí](https://docs.google.com/document/d/16jwVGjbQpF_6B6sbkhb4xO00WAXdDiESBXu-n2a7D1k/edit?tab=t.0).
+
+---
+
+##### **Calendario de Google**
+
+Agrega el calendario compartido a tu cuenta de Google Calendar usando [este enlace](https://calendar.google.com/calendar/u/0?cid=Y184ZmIyNzhjNmQwM2E5MGFjZDJjYWE0MDdhOTcyY2ZlMjcxYTQwNzA3Mjc0MDFiNzM0NzRkNjdjNGM0NDE0ZjQyQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20). Aparecerá en "Otros calendarios" y proporcionará acceso a todas las reuniones programadas con enlaces de Zoom actualizados.
+
+**Por favor avísanos si tienes alguna pregunta. ¡Esperamos trabajar contigo en esta iniciativa!**
+
+:::
+
+---
+
+::: {.custom-box}
+
+{{< fa lightbulb >}} **DEFINICIÓN CENTRAL**
+
+Las personas *valoran* las aguas marinas **libres de contaminación y residuos** por razones estéticas y de salud.
+
+La contaminación de las aguas proviene de derrames de petróleo, químicos, eutrofización, floraciones algales, patógenos causantes de enfermedades (por ejemplo, coliformes fecales, virus y parásitos provenientes de descargas de aguas residuales), basura flotante y mortandades masivas de organismos debido a la contaminación.
+
+Las personas son sensibles a estos fenómenos cuando ocurren en áreas que utilizan para la recreación u otros fines, así como por el simple hecho de saber que existen aguas limpias.
+
+En la evaluación global, se incluyen cuatro medidas de contaminación en el objetivo de *aguas limpias*: eutrofización (nutrientes), químicos, patógenos y basura marina. **Este grupo evaluará qué tipos de contaminación aplican al Golfo y definirá el modelo del objetivo en consecuencia.**
+
+El estado de estos componentes es típicamente el inverso de su intensidad. Esto significa que una alta entrada de contaminantes da lugar a una baja puntuación de estado, *y este objetivo obtiene la puntuación más alta cuando el nivel de contaminación es cero.*
+
+:::
+
+## Preguntas Clave
+
+¿Cuál es el estado sostenible ideal del objetivo de **aguas limpias**?
+
+- ¿Cómo medimos *idealmente* la cantidad de **contaminación** (o su ausencia) de las aguas en el Golfo de California?
+
+- ¿Cómo definimos el **punto de referencia**, o la cantidad ideal de contaminación? ¿Es **cero**, como lo es en el marco global?
+  - Esto puede depender de lo que queramos incluir en el estado del objetivo. ¿Incluye químicos, patógenos, basura, nutrientes? ¿Hay otros tipos de contaminación que queremos agregar o eliminar?
+  - El OHI global definió las categorías de contaminación basadas en los tipos comúnmente considerados en evaluaciones de aguas costeras limpias ([Borja et al. 2008](https://doi.org/10.1016/j.marpolbul.2008.07.005)), ¿existen artículos similares para el Golfo de California?
+
+---
+
+## Consideraciones Regionales
+
+Estos son algunos de los puntos discutidos por el Grupo de Expertos.
+
+### Fuentes de Contaminación y Desafíos de Evaluación
+
+##### Múltiples fuentes difusas
+
+- Industria sardinera/enlatadora
+- Tráfico marítimo
+- Actividades agrícolas y de acuacultura
+- Descargas urbanas
+- Desechos de pesca
+
+##### Brechas en los datos de monitoreo
+
+- Datos más completos disponibles para las costas de Sinaloa y Sonora
+- Información limitada para las regiones de La Paz y Baja California
+- El análisis de sedimentos suele ser ignorado a pesar de su impacto significativo en los ecosistemas
+
+##### Impactos del clima y el tiempo
+
+- Las lluvias aumentan la acumulación de basura y degradan la calidad del agua
+- Huracanes y tormentas generan presión adicional sobre los ecosistemas
+- Sistemas fluviales intermitentes provocan entradas súbitas de agua dulce que los ecosistemas marinos no pueden asimilar
+
+### Impactos en Ecosistemas y Comunidades
+
+##### Efectos de especies invasoras
+
+- El tule proporciona filtración natural pero enfrenta amenazas de los Placostomos invasores
+- Especies no nativas han alterado fundamentalmente las estructuras comunitarias
+- Daños a los sistemas de raíces impactan a peces nativos como la tilapia
+
+##### Preocupaciones por acuacultura
+
+- Las granjas camaroneras generan escurrimientos de nutrientes que afectan otras pesquerías
+- Problemas de eutrofización documentados por pescadores locales
+- Problemas de patógenos afectan principalmente a zonas de baño
+
+##### Retos regionales únicos
+
+- Dependencia del agua dulce de origen marino para el consumo humano
+- Preguntas sobre cómo integrar los estándares de calidad del agua en los objetivos de salud oceánica
+
+### Enfoques de Monitoreo y Evaluación
+
+##### Esfuerzos comunitarios
+
+- Jornadas organizadas de recolección de basura en todo el Golfo
+- Programas de limpieza con buzos voluntarios
+- Participación comunitaria local en el monitoreo
+
+##### Herramientas científicas de evaluación
+
+- Índice TRIX: combina datos de clorofila-a y nutrientes para clasificar las aguas como eutróficas u oligotróficas
+- Monitoreo satelital: permite análisis temporales
+- Indicadores biológicos: la aparición de medusas "bola de cañón" indica condiciones hipóxicas y zonas muertas
+
+###### Estudio de caso: Laguna Santa María
+
+- Análisis TRIX de 10 años reveló un cambio drástico en el ecosistema
+- El sistema pasó de ser sumidero de nutrientes a exportador de nutrientes
+- Demuestra cambios ecológicos rápidos en las aguas regionales
+
+### Nuevas Preocupaciones sobre Contaminación
+
+##### Contaminación acústica y lumínica
+
+- El ruido de embarcaciones afecta la comunicación y comportamiento de ballenas
+- Presión del desarrollo industrial evidenciada por la campaña "¿Ballenas o Gas?"
+- Preguntas sobre cómo clasificar el ruido/luz como amenazas a la calidad del agua
+
+##### Efectos sinérgicos
+
+- Nutrientes y químicos interactúan para generar floraciones algales
+- Necesidad de considerar efectos multiplicadores en metodologías de evaluación
+- Interacciones complejas requieren enfoques de evaluación integrados
+
+---
+
+## Contacto por correo electrónico:
+
+<div class="button-container">
+  <a href="mailto:core-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button">
+    <i class="fa-solid fa-square-poll-vertical"></i> Equipo Analítico Central de OHI
+  </a>
+  <a href="mailto:cw-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button secondary">
+    <i class="fa-solid fa-people-group"></i> Grupo de Aguas Limpias
+  </a>
+</div>
