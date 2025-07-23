@@ -12,7 +12,6 @@ format: html
   </a>
 </div>
 
-
 **This goal captures the quantity and quality of experiences that people have when visiting coastal and marine areas.**
 
 ::: {.callout-note collapse="true"}
@@ -70,14 +69,68 @@ Add the shared calendar to your Google Calendar account using the [provided link
 
 :::
 
-## Key Questions
+
+## **Meeting #1 Recap & Next Steps**
+
+**Thank you to everyone who joined our first Tourism & Recreation (TR) Goalkeeper meeting!**  
+It was a great start to our work together in defining what sustainable tourism and recreation means for the **Gulf of California**.  
+
+::: {.callout-tip}
+
+#### {{< fa book >}} **Meeting Recap**
+
+During our discussion, we identified **three main types of tourism** in the region:  
+
+- **Massive Tourism** – Often centered around “sun and beach” resorts, leisure activities, and nightlife.  
+- **Ecotourism** – Structured under formal government categories, this includes nature and conservation-focused tourism.  
+- **Local Tourism & Recreation** – Activities led by or for the local community and residents.  
+
+We also highlighted **Nautical Tourism** — water-based experiences like sailing and marine tours, often taking place entirely at sea. This type could either be its **own category** or be considered a **subset** of the three main types above. This remains an open question we're still exploring.
+
+In addition, we discussed **tourism origins**:
+
+- **International**
+- **Domestic**
+- **Local**
+
+And brainstormed potential measures for:  
+
+- **Quantity**: such as number of hotels, flights, sailboats, and visits
+- **Quality**: such as user sentiment from TripAdvisor reviews or surveys (e.g., QR surveys at beach entrances — although these are beyond our current project scope).
+
+##### 🌱 What Does “Sustainability” Mean for TR?
+
+We agreed that **sustainability** in tourism should reflect:
+
+- **Positive social impact** – like preserving local culture and community benefits  
+- **Positive environmental impact** – including proper management of protected areas and potential use of mechanisms like conservation bracelets or differentiated tariffs for locals vs. nationals  
+:::
+
+::: {.callout-important}
+#### <i class="fa fa-step-forward" aria-hidden="true"></i> **Next Steps**
+
+- Review the [TR introduction slides](https://docs.google.com/presentation/d/14jGvm4OQk5iQ8YPZknfYBqDwHC0SU6ElYwz0OoRrvlo/edit?usp=sharing) to revisit the main ideas.  
+- Review the [Key Questions](#key-questions) and start brainstorming.  
+- Add your thoughts, ideas, and potential data sources to the ongoing [collaborative document](https://docs.google.com/document/d/1ZtgUCeaz3Rx2r93bPzRdEeiBQDZv8U6cH1i12CnIcAI/edit?tab=t.0).  
+
+In our **next meeting**, we’ll continue discussing how to evaluate:
+
+1. **Quantity**
+2. **Quality**
+3. **Sustainability** of tourism and recreation in the Gulf of California.
+
+We'll also start to define the **reference point** for this goal — our vision of what an ideal, fully sustainable tourism and recreation landscape looks like. In assessment terms, this is the **"100" score** — our A+ target!
+:::
+
+<br>
+
+## Key Questions {#key-questions}
 
 What is the ideal sustainable state of the **tourism and recreation** goal? 
 
 - How (*ideally*) do we measure the **quantity and quality of people’s experience** from visiting coastal areas? Should certain experiences be prioritized?
 - How do we define the **reference point**?
 - How do we incorporate **sustainability** into the assessment?
-
 
 <br>
 
