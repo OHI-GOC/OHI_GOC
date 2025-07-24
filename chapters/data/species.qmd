@@ -195,29 +195,73 @@ explore below:
 goc_species_assessments_xref_viz_nocodetype <- goc_species_assessments_xref_viz %>% 
   select(-code_type)
 
-library(reactable)
+# library(reactable)
+# 
+# reactable(
+#   goc_species_assessments_xref_viz_nocodetype,
+#   groupBy = "category_mex",
+#   searchable = TRUE,
+#   filterable = TRUE,
+#   striped = TRUE,
+#   highlight = TRUE,
+#   columns = list(
+#     id_no = colDef(name = "ID Number"),
+#     sci_name = colDef(name = "Scientific Name"),
+#     category_mex = colDef(name = "Red List Category (Mexico)"),
+#     category_goc = colDef(name = "Red List Category (GOC)"),
+#     category_maintained = colDef(name = "Category Maintained"),
+#     year_published = colDef(name = "Year Published"),
+#     latest = colDef(name = "Latest Assessment"),
+#     possibly_extinct = colDef(name = "Possibly Extinct"),
+#     possibly_extinct_in_the_wild = colDef(name = "Possibly Extinct in the Wild"),
+#     url = colDef(name = "URL"),
+#     assessment_id = colDef(name = "Assessment ID"),
+#     code = colDef(name = "Country")
+#   )
+# )
 
-reactable(
-  goc_species_assessments_xref_viz_nocodetype,
-  groupBy = "category_mex",
-  searchable = TRUE,
-  filterable = TRUE,
-  striped = TRUE,
-  highlight = TRUE,
-  columns = list(
-    id_no = colDef(name = "ID Number"),
-    sci_name = colDef(name = "Scientific Name"),
-    category_mex = colDef(name = "Red List Category (Mexico)"),
-    category_goc = colDef(name = "Red List Category (GOC)"),
-    category_maintained = colDef(name = "Category Maintained"),
-    year_published = colDef(name = "Year Published"),
-    latest = colDef(name = "Latest Assessment"),
-    possibly_extinct = colDef(name = "Possibly Extinct"),
-    possibly_extinct_in_the_wild = colDef(name = "Possibly Extinct in the Wild"),
-    url = colDef(name = "URL"),
-    assessment_id = colDef(name = "Assessment ID"),
-    code = colDef(name = "Country")
+library(DT)
+library(dplyr)
+
+# prep the data
+goc_species_assessments_dt <- goc_species_assessments_xref_viz_nocodetype %>%
+  rename(
+    "ID Number" = id_no,
+    "Scientific Name" = sci_name,
+    "Red List Category (Mexico)" = category_mex,
+    "Red List Category (GOC)" = category_goc,
+    "Category Maintained" = category_maintained,
+    "Year Published" = year_published,
+    "Latest Assessment" = latest,
+    "Possibly Extinct" = possibly_extinct,
+    "Possibly Extinct in the Wild" = possibly_extinct_in_the_wild,
+    "URL" = url,
+    "Assessment ID" = assessment_id,
+    "Country" = code
   )
+
+# render interactive datatable
+datatable(
+  goc_species_assessments_dt,
+  filter = "top",        # Enables column-wise filtering
+  options = list(
+    pageLength = 10,     # Number of rows per page
+    autoWidth = TRUE,
+    searchHighlight = TRUE,
+    lengthMenu = c(5, 10, 25, 50),
+    columnDefs = list(
+      list(
+        targets = which(names(goc_species_assessments_dt) == "URL") - 1,
+        render = JS(
+          "function(data, type, row, meta) {",
+          "return type === 'display' && data != null ?",
+          "'<a href=\"' + data + '\" target=\"_blank\">' + data + '</a>' : data;",
+          "}"
+        )
+      )
+    )
+  ),
+  escape = FALSE  # To allow rendering HTML links
 )
 ```
 
