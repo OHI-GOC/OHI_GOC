@@ -69,16 +69,56 @@ This goal is not currently included in the global OHI, but the Expert Working Gr
 
 ## Key Questions
 
-Could organized crime be considered a *pressure* for the **safety and security** goal?
+As we explore the idea of incorporating **Safety & Security** into the OHI for the Gulf of California, it is important to clarify the *objective, the core definitions, potential structure, and measurement considerations* for this potential goal. Below are key discussion points and considerations to review.
 
-Or does the safety and security goal seem to be more of **a pressure on many other goals**, and should therefore not be a goal itself?
+### 1. Objective
 
-Are there other ways to highlight the importance of this concept without having it as a separate goal?
+Does the safety and security goal seem to be more of **a pressure on many other goals**, or a goal by itself?
 
+**_To clarify intent:_**
 
-## Considerations
+- What do we want to achieve by adding Safety & Security to the OHI GoCA?
+  - Increase visibility of safety issues in coastal/marine areas?
+  - Drive new initiatives to reduce crime and promote safer environments?
+    - Does a *safer* Gulf mean a *healthier* Gulf?
+  
+**_To clarify definitions:_**
 
-- Could separate organized crime from other pressures in the framework
+- Does a *"healthy gulf"* mean people are objectively safe, feel safe, or both?
+- Should the goal focus on actual crime rates, perceived safety, or a combination? Or something else entirely?
+
+| Term      | Possible Definition                                               |
+|-----------|-------------------------------------------------------------------|
+| Safety    | Objective condition with low crime/incidence of threats           |
+| Security  | Subjective perception; trust in law enforcement, institutions     |
+
+### 2. Scope 
+
+- Should "Safety" include only organized crime, or also theft, assault, kidnapping, etc.?
+- Is the ideal scenario truly zero crime, or a "tolerable" minimum?
+- How do we address the diversity of crimes and their impacts on coastal communities?
+
+### 3. Measuring
+
+#### Safety (Objective)
+
+- Should it could potentially include:
+  - Official crime statistics (coastal, marine, port-related crime)?
+  - Both organized crime and general crime? Or just organized crime?
+
+#### Security (Subjective)
+
+- Should it could potentially include:
+  - Surveys on people’s feelings of safety in specific coastal regions?
+  - Trust in law enforcement, visible presence of authorities, community initiatives?
+
+---
+
+## Regional Considerations
+
+These are some of the points discussed by the Expert Working Group.
+
+- Could separate organized crime from other pressures in the framework, making it a goal
 - Explore "Hugs not Drugs" approach (referencing social programs as alternatives)
 - Account for perceived differences among the five states (e.g., Sinaloa vs. Sonora)
 

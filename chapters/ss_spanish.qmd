@@ -12,28 +12,28 @@ format: html
 
 ::: {.callout-note collapse="true"}
 
-## Información del Grupo de Seguridad y Protección (SS Goalkeeper Group)
+## Información del Grupo de Guardianes de SS
 
-##### **Acceso a las Reuniones**
+##### **Acceso a la Reunión**
 
 **Enlace de Zoom:** <https://us06web.zoom.us/j/3255055973>
 ---
 
 ##### **Miembros Clave del Equipo**
-- Francisco Fernandez
-- Amy Hudson Weaver
-- Victor Ricardez
-- Jorge Torre
+- Francisco Fernández  
+- Amy Hudson Weaver  
+- Víctor Ricardez  
+- Jorge Torre  
 
 ---
 
-##### **Calendario de Reuniones _(Viernes 1:00 PM - 2:00 PM PDT)_**
+##### **Calendario de Reuniones _(Viernes de 1:00 PM a 2:00 PM PDT)_**
 
 | Reunión | Mes | Fecha Específica | Enfoque |
 |---------|------|------------------|---------|
-| 1 | Julio/Agosto | 25 de julio de 2025 | Presentaciones del grupo, visión general de la plataforma OHI, cálculos de objetivos |
-| 2 | Agosto/Septiembre | 29 de agosto de 2025 | Discusión del modelo y puntos de referencia |
-| 3 | Septiembre/Octubre | 26 de septiembre de 2025 | Modelo, puntos de referencia y fuentes de datos |
+| 1 | Julio/Agosto | 25 de julio de 2025 | Presentaciones del grupo, resumen de la plataforma OHI, cálculos de objetivos |
+| 2 | Agosto/Septiembre | 29 de agosto de 2025 | Discusión sobre modelo y punto de referencia |
+| 3 | Septiembre/Octubre | 26 de septiembre de 2025 | Modelo, punto de referencia y fuentes de datos |
 | 4 | Octubre/Noviembre | 24 de octubre de 2025 | Resultados preliminares y presión/resiliencia |
 | 5 | Noviembre/Diciembre | 21 de noviembre de 2025 | Revisión del plan de análisis final |
 | 6 | Diciembre | 5 de diciembre de 2025 *(tentativo)* | *Tentativo* |
@@ -42,51 +42,93 @@ format: html
 
 ##### **Información sobre Coautoría**
 
-Este proyecto ofrece oportunidades para colaborar con expertos regionales y contribuir a la evaluación del OHI del Golfo de California. La participación será reconocida en el sitio web y otros productos. Oportunidades adicionales de coautoría pueden estar disponibles con mayor compromiso, según lo indicado [aquí](https://docs.google.com/document/d/16jwVGjbQpF_6B6sbkhb4xO00WAXdDiESBXu-n2a7D1k/edit?tab=t.0).
+Este proyecto brinda oportunidades para colaborar con expertos regionales y contribuir a la evaluación OHI del Golfo de California. La participación será reconocida en el sitio web y otros productos. Pueden existir oportunidades adicionales de coautoría con mayor compromiso, como se describe [aquí](https://docs.google.com/document/d/16jwVGjbQpF_6B6sbkhb4xO00WAXdDiESBXu-n2a7D1k/edit?tab=t.0).
 
 ---
 
-##### **Google Calendar**
+##### **Calendario de Google**
 
-Agrega el calendario compartido a tu cuenta de Google Calendar usando el [enlace proporcionado](https://calendar.google.com/calendar/u/0?cid=Y184ZmIyNzhjNmQwM2E5MGFjZDJjYWE0MDdhOTcyY2ZlMjcxYTQwNzA3Mjc0MDFiNzM0NzRkNjdjNGM0NDE0ZjQyQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20). Aparecerá en "Otros calendarios" y proporcionará acceso a todas las reuniones programadas con enlaces de Zoom actualizados.
+Agrega el calendario compartido a tu cuenta de Google Calendar utilizando este [enlace](https://calendar.google.com/calendar/u/0?cid=Y184ZmIyNzhjNmQwM2E5MGFjZDJjYWE0MDdhOTcyY2ZlMjcxYTQwNzA3Mjc0MDFiNzM0NzRkNjdjNGM0NDE0ZjQyQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20). Aparecerá bajo "Otros calendarios" y dará acceso a todas las reuniones programadas con enlaces actualizados de Zoom.
 
-**Por favor, háznos saber si tienes alguna pregunta. ¡Esperamos trabajar contigo en esta iniciativa!**
+**Por favor háznos saber si tienes alguna pregunta. ¡Esperamos trabajar contigo en esta iniciativa!**
 
 :::
 
-**Este objetivo refleja la idea de que los recursos marinos no están limitados por preocupaciones de seguridad.**
+
+**Este objetivo refleja la percepción de que los recursos marinos no están limitados por preocupaciones de seguridad.**
 
 ---
 
 <div class="custom-box">
-{{< fa lightbulb >}} **Esta información está destinada a ayudar a guiar el proceso de desarrollo del OHI del Golfo de California.**
+{{< fa lightbulb >}} **¡Esta información está destinada a guiar el proceso de desarrollo del OHI para el Golfo de California!**
 
-Este objetivo no está incluido actualmente en el OHI global, pero el Grupo de Trabajo de Expertos consideró que la seguridad y protección tienen un gran impacto en la capacidad del sistema del Golfo de California para proporcionar de manera sostenible a las personas los beneficios y servicios que necesitan y desean de los sistemas marinos.
+Este objetivo no está actualmente incluido en el OHI global, pero el Grupo de Expertos consideró que la seguridad tiene un gran impacto en la capacidad del sistema del Golfo de California para proporcionar de forma sostenible los beneficios y servicios que las personas necesitan y desean de los sistemas marinos.
 
 </div>
 
 ## Preguntas Clave
 
-¿Podría considerarse el crimen organizado como una *presión* para el objetivo de **seguridad y protección**?
+Al explorar la incorporación de **Seguridad y Protección** en el OHI para el Golfo de California, es importante aclarar el *objetivo, definiciones clave, posible estructura y consideraciones de medición* para este objetivo potencial. A continuación, se presentan puntos clave de discusión y consideraciones.
 
-¿O el objetivo de seguridad y protección parece ser más bien **una presión sobre muchos otros objetivos**, y por lo tanto no debería ser un objetivo en sí mismo?
+### 1. Objetivo
 
-¿Hay otras formas de resaltar la importancia de este concepto sin tenerlo como un objetivo separado?
+¿Parece que el objetivo de seguridad es más bien **una presión sobre muchos otros objetivos**, o un objetivo por sí mismo?
 
-## Consideraciones
+**_Para aclarar la intención:_**
 
-- Podría separar el crimen organizado de otras presiones en el marco.
-- Explorar el enfoque de "Abrazos, no Balazos" (haciendo referencia a programas sociales como alternativas).
-- Tener en cuenta las diferencias percibidas entre los cinco estados (por ejemplo, Sinaloa vs. Sonora).
+- ¿Qué queremos lograr al agregar Seguridad y Protección al OHI GoCA?
+  - ¿Aumentar la visibilidad de los problemas de seguridad en áreas costeras/marinas?
+  - ¿Impulsar nuevas iniciativas para reducir el crimen y promover entornos más seguros?
+    - ¿Un Golfo *más seguro* significa un Golfo *más saludable*?
+
+**_Para aclarar definiciones:_**
+
+- ¿Un *"Golfo saludable"* significa que las personas están objetivamente seguras, que *se sienten* seguras, o ambas?
+- ¿Debe el objetivo centrarse en tasas de criminalidad reales, percepción de seguridad o una combinación? ¿O en algo completamente distinto?
+
+| Término   | Posible Definición                                                |
+|-----------|-------------------------------------------------------------------|
+| Seguridad | Condición objetiva con baja criminalidad/incidencia de amenazas   |
+| Protección | Percepción subjetiva; confianza en la ley, instituciones         |
+
+### 2. Alcance
+
+- ¿Debe "Seguridad" incluir solo crimen organizado, o también robo, asalto, secuestro, etc.?
+- ¿El escenario ideal es realmente cero crimen, o un mínimo "tolerable"?
+- ¿Cómo abordamos la diversidad de delitos y su impacto en las comunidades costeras?
+
+### 3. Medición
+
+#### Seguridad (Objetiva)
+
+- ¿Debería incluir potencialmente:
+  - Estadísticas oficiales de criminalidad (crimen costero, marino, en puertos)?
+  - ¿Tanto crimen organizado como crimen general? ¿O solo crimen organizado?
+
+#### Protección (Subjetiva)
+
+- ¿Debería incluir potencialmente:
+  - Encuestas sobre la percepción de seguridad en regiones costeras específicas?
+  - Confianza en las fuerzas del orden, presencia visible de autoridades, iniciativas comunitarias?
+
+---
+
+## Consideraciones Regionales
+
+Estos son algunos de los puntos discutidos por el Grupo de Expertos.
+
+- Podría separarse el crimen organizado de otras presiones en el marco, convirtiéndolo en un objetivo
+- Explorar el enfoque de "Abrazos, no balazos" (haciendo referencia a programas sociales como alternativas)
+- Tener en cuenta las diferencias percibidas entre los cinco estados (por ejemplo, Sinaloa vs. Sonora)
 
 ### Justicia Social y Resiliencia Verde
 
-- Podría pensarse en la justicia social como una métrica de resiliencia en el contexto global, enfatizando la igualdad de oportunidades.
-- Podría considerarse las áreas verdes como una forma de resiliencia, posiblemente utilizando un índice de datos de la ONU.
+- Se podría considerar la justicia social como una métrica de resiliencia en el contexto global, enfatizando la igualdad de oportunidades.
+- Se podrían considerar las áreas verdes como una forma de resiliencia, posiblemente utilizando un índice de datos de la ONU.
 
 ::: {.callout-warning}
 
-## Este objetivo requerirá sensibilidad en el lenguaje y la redacción utilizada.
+## Este objetivo requerirá sensibilidad en el lenguaje y la terminología utilizada.
 :::
 
 ---
@@ -95,9 +137,10 @@ Este objetivo no está incluido actualmente en el OHI global, pero el Grupo de T
 
 <div class="button-container">
   <a href="mailto:core-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button">
-    <i class="fa-solid fa-square-poll-vertical"></i> Equipo Analítico Central de OHI
+    <i class="fa-solid fa-square-poll-vertical"></i> Equipo Central de Análisis OHI
   </a>
   <a href="mailto:ss-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button secondary">
-    <i class="fa-solid fa-people-group"></i> Grupo de Seguridad y Protección
+    <i class="fa-solid fa-people-group"></i> Grupo de Guardianes de Seguridad y Protección
   </a>
 </div>
+
