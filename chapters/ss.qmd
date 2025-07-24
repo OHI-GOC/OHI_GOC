@@ -102,13 +102,13 @@ Does the safety and security goal seem to be more of **a pressure on many other 
 
 #### Safety (Objective)
 
-- Should it could potentially include:
+- Should it potentially include:
   - Official crime statistics (coastal, marine, port-related crime)?
   - Both organized crime and general crime? Or just organized crime?
 
 #### Security (Subjective)
 
-- Should it could potentially include:
+- Should it potentially include:
   - Surveys on people’s feelings of safety in specific coastal regions?
   - Trust in law enforcement, visible presence of authorities, community initiatives?
 
