@@ -22,7 +22,7 @@ format: html
 ##### **Key Team Members**
 - Francisco Fernandez
 - Amy Hudson Weaver
-- Victor Ricardez
+- Víctor Ricardez
 - Jorge Torre
 
 
@@ -30,14 +30,14 @@ format: html
 
 ##### **Meeting Schedule _(Friday 1:00 PM - 2:00 PM PDT)_**
 
-| Meeting | Date | Specific Date | Focus |
-|---------|------|---------------|-------|
-| 1 | July/August | July 25, 2025 | Group introductions, OHI platform overview, goal calculations |
-| 2 | August/September | August 29, 2025 | Model and reference point discussion |
-| 3 | September/October | September 26, 2025 | Model, reference point, and data sources |
-| 4 | October/November | October 24, 2025 | Preliminary results and pressure/resilience |
-| 5 | November/December | November 21, 2025 | Final analysis plan review |
-| 6 | December | December 5, 2025 *(tentative)* | *Tentative* |
+| Meeting |  Specific Date | Focus |
+|---------|---------------|-------|
+| 1 | July 25, 2025 | Group introductions, OHI platform overview, goal calculations |
+| 2 | August 29, 2025 | Model and reference point discussion |
+| 3 | September 26, 2025 | Model, reference point, and data sources |
+| 4 | October 24, 2025 | Preliminary results and pressure/resilience |
+| 5 | November 21, 2025 | Final analysis plan review |
+| 6 | December 5, 2025 *(tentative)* | *Tentative* |
 
 ---
 
@@ -60,14 +60,90 @@ Add the shared calendar to your Google Calendar account using the [provided link
 
 ---
 
-<div class="custom-box">
-{{< fa lightbulb >}} **This information is meant to help guide the process of developing the Gulf of California OHI!**
+## **Meeting #1 Recap & Next Steps**
 
-This goal is not currently included in the global OHI, but the Expert Working Group felt that safety and security has a large impact on the Gulf of California system's ability to sustainably provide people with the benefits and services they both need and desire from marine systems.
+**Thank you for joining our first Safety & Security (SS) Goalkeeper meeting!**  
+It was a great start to our work together in defining what safety & security means for the **Gulf of California**, and how it should be integrated into this assessment.  
 
-</div>
+::: {.callout-tip}
 
-## Key Questions
+### {{< fa book >}} **Meeting Recap**
+
+The group agreed that **Safety & Security (SS)** is better conceptualized as a **type of pressure** rather than a standalone goal. This is because the Gulf of California does not inherently provide safety or security — but SS influences the condition of many other goals.
+
+However, unlike typical pressures, SS also affects the **current status** of several goals. The group proposed modeling SS as a **unique pressure** that impacts both the **current status** and the **likely future status**, with varying influence depending on the goal. For example, in **Natural Products**, SS could affect each product differently, with variable weights.
+
+Jorge and Víctor **identified goals most impacted** by crime and insecurity:
+
+  - **Livelihoods & Economies** (individuals are limited in the jobs they can have)
+  - **Tourism & Recreation** (locals and tourists may not want to visit certain places and may avoid certain coastal areas due to organized crime presence)
+  - **Food Provision** (sector control, job insecurity, and threats of violence)
+  - **Artisanal Opportunities** (physical access to the coast in certain areas are limited, and therefore access to marine resources for communities are limited)
+  - **Sense of Place** (where communities do not feel that “sense of belonging” to the Gulf because of safety perceptions or area avoidance)
+  - **Clean Waters** (e.g., pollution from narco operations)
+  - **Biodiversity** (e.g., crime-occupied habitats restrict conservation access)
+  - **Research/Ocean Literacy** (e.g., limited scientific access or enforcement)
+  - **Natural Products** (depending on the product)
+  
+But it would **not** affect the Carbon Storage/Coastal Protection goal. And, for the **Tourism & Recreation** goal, SS likely **does not affect the current status**, because current indicators already capture the effect of safety on travel behavior. SS would instead only influence the **likely future status** for this goal.
+
+The group debated how to define "crime" in this context:
+
+  - **Víctor**: Include **all crime**, as it all has tangible effects.
+  - **Jorge**: Emphasize **organized crime**, which has a particularly strong impact in the Gulf.
+  - **Proposal**: Stay flexible in defining SS, as organized crime might be hard to isolate from general crime in available data.
+  
+The SS Goalkeeper Group also agreed on the need to avoid getting stuck in philosophical debates, keep the work **practical, grounded, and data-informed**, and consider broader socio-political factors like **state presence**, **poverty**, **education**, and **health services** in the analysis.
+
+**Amy** emphasized incorporating both:
+
+  - **Objective crime rates** (quantitative data), and
+  - **Subjective perceptions of safety** (qualitative insight)
+    - She noted that over time, communities may normalize insecurity, underestimating real risks. A possible resource: a **Packard-funded report**, possibly titled *"People Protecting Places (PPP)"*.
+  
+*This would support:*
+
+| Term      | Possible definition based on our meeting                          |
+|-----------|-------------------------------------------------------------------|
+| Safety    | Objective condition of crime/incidence of threats           |
+| Security  | Subjective perception; feelings of safety, trust in law enforcement, institutions |
+
+---
+
+#### 📊 **Data Sources Mentioned**
+
+- **INEGI – Incidencia delictiva** 
+- **Community welfare data**, possibly linked to CONANP/Carnival surveys *(Víctor will share these resources in our interactive google document)*
+- **ENVIPE** – national perception of public safety survey 
+- **SEMAFORO** – municipal-level crime statistics
+- **Celia Gastello** (spelling uncertain) may have access to government databases *(Jorge will share her contact info)*
+- **PPP report** (People Protecting Places) *(Check in with Amy to find this)*
+
+:::
+
+::: {.callout-important}
+### <i class="fa fa-step-forward" aria-hidden="true"></i> Next steps 
+
+- [ ] Review the [SS introduction slides](https://docs.google.com/presentation/d/1GCZWVmivMn4AGB6LoaqxCzxCEH_qYy87rUmY3Z-fryw/edit?usp=sharing) to revisit the main ideas.  
+- [ ] Review the [Key Questions](#key-questions) and keep brainstorming.  
+- [ ] Add your thoughts, ideas, and potential data sources to the ongoing [collaborative document](https://docs.google.com/document/d/1djLJpt2VB8fZLe518mnSzd6l7GaU1IQLpPlLuiK6flU/edit?tab=t.kyrkgpt50url).  
+
+More topics to think about before our **next meeting**:
+
+- Determine how to quantify and measure safety/security for both **current** and **future** status  
+  - *for the OHI core team to consider:* for SS's integration into likely future status, should SS's trend from the last 3-5 years be used? While the current status each goal is impacted by the current status of SS?
+- Identify which **OHI GoCA goals** are most affected by SS, and assign appropriate weights  
+- Establish a **reference point** for an ideal SS state (e.g., no crime? government targets for crime reduction or safety perception?)
+- Identify and review **relevant data sources** for crime/safety across sectors  
+  - Explore government databases and municipal sites for existing indices  
+- Share Celia Gastello’s contact info and invite her to collaborate *(Jorge)*  
+- Explore metrics for organized crime’s impact on **conservation and governance capacity**  
+  - Consider how to include both **general and organized crime** in the analysis  
+- Investigate **pluralismo jurídico** and **co-management** structures as possible frameworks  
+
+:::
+
+## Key Questions {#key-questions}
 
 As we explore the idea of incorporating **Safety & Security** into the OHI for the Gulf of California, it is important to clarify the *objective, the core definitions, potential structure, and measurement considerations* for this potential goal. Below are key discussion points and considerations to review.
 

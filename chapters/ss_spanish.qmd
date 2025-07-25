@@ -12,7 +12,7 @@ format: html
 
 ::: {.callout-note collapse="true"}
 
-## Información del Grupo de Guardianes de SS
+## Información del Grupo de Portavoces de SS
 
 ##### **Acceso a la Reunión**
 
@@ -20,115 +20,190 @@ format: html
 ---
 
 ##### **Miembros Clave del Equipo**
-- Francisco Fernández  
-- Amy Hudson Weaver  
-- Víctor Ricardez  
-- Jorge Torre  
+- Francisco Fernández
+- Amy Hudson Weaver
+- Víctor Ricardez
+- Jorge Torre
 
 ---
 
-##### **Calendario de Reuniones _(Viernes de 1:00 PM a 2:00 PM PDT)_**
+##### **Calendario de Reuniones _(Viernes 1:00 PM - 2:00 PM PDT)_**
 
-| Reunión | Mes | Fecha Específica | Enfoque |
-|---------|------|------------------|---------|
-| 1 | Julio/Agosto | 25 de julio de 2025 | Presentaciones del grupo, resumen de la plataforma OHI, cálculos de objetivos |
-| 2 | Agosto/Septiembre | 29 de agosto de 2025 | Discusión sobre modelo y punto de referencia |
-| 3 | Septiembre/Octubre | 26 de septiembre de 2025 | Modelo, punto de referencia y fuentes de datos |
-| 4 | Octubre/Noviembre | 24 de octubre de 2025 | Resultados preliminares y presión/resiliencia |
-| 5 | Noviembre/Diciembre | 21 de noviembre de 2025 | Revisión del plan de análisis final |
-| 6 | Diciembre | 5 de diciembre de 2025 *(tentativo)* | *Tentativo* |
+| Reunión | Fecha específica | Enfoque |
+|--------|------------------|---------|
+| 1 | 25 de julio de 2025 | Presentación del grupo, panorama general de la plataforma OHI, cálculo de metas |
+| 2 | 29 de agosto de 2025 | Discusión del modelo y punto de referencia |
+| 3 | 26 de septiembre de 2025 | Modelo, punto de referencia y fuentes de datos |
+| 4 | 24 de octubre de 2025 | Resultados preliminares y presión/resiliencia |
+| 5 | 21 de noviembre de 2025 | Revisión del plan de análisis final |
+| 6 | 5 de diciembre de 2025 *(tentativa)* | *Tentativa* |
 
 ---
 
 ##### **Información sobre Coautoría**
 
-Este proyecto brinda oportunidades para colaborar con expertos regionales y contribuir a la evaluación OHI del Golfo de California. La participación será reconocida en el sitio web y otros productos. Pueden existir oportunidades adicionales de coautoría con mayor compromiso, como se describe [aquí](https://docs.google.com/document/d/16jwVGjbQpF_6B6sbkhb4xO00WAXdDiESBXu-n2a7D1k/edit?tab=t.0).
+Este proyecto brinda oportunidades para colaborar con expertos regionales y contribuir a la evaluación del OHI para el Golfo de California. La participación será reconocida en el sitio web y otros productos. Podrían existir oportunidades adicionales de coautoría con compromiso adicional según se detalla [aquí](https://docs.google.com/document/d/16jwVGjbQpF_6B6sbkhb4xO00WAXdDiESBXu-n2a7D1k/edit?tab=t.0).
 
 ---
 
 ##### **Calendario de Google**
 
-Agrega el calendario compartido a tu cuenta de Google Calendar utilizando este [enlace](https://calendar.google.com/calendar/u/0?cid=Y184ZmIyNzhjNmQwM2E5MGFjZDJjYWE0MDdhOTcyY2ZlMjcxYTQwNzA3Mjc0MDFiNzM0NzRkNjdjNGM0NDE0ZjQyQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20). Aparecerá bajo "Otros calendarios" y dará acceso a todas las reuniones programadas con enlaces actualizados de Zoom.
+Agrega el calendario compartido a tu cuenta de Google Calendar usando el [enlace proporcionado](https://calendar.google.com/calendar/u/0?cid=Y184ZmIyNzhjNmQwM2E5MGFjZDJjYWE0MDdhOTcyY2ZlMjcxYTQwNzA3Mjc0MDFiNzM0NzRkNjdjNGM0NDE0ZjQyQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20). Aparecerá en la sección de "Otros calendarios" y brindará acceso a todas las reuniones programadas con enlaces de Zoom actualizados.
 
-**Por favor háznos saber si tienes alguna pregunta. ¡Esperamos trabajar contigo en esta iniciativa!**
+**Por favor avísanos si tienes alguna pregunta. ¡Esperamos trabajar contigo en esta iniciativa!**
 
 :::
 
-
-**Este objetivo refleja la percepción de que los recursos marinos no están limitados por preocupaciones de seguridad.**
+**Esta meta captura la percepción de que los recursos marinos no están limitados por preocupaciones de seguridad.**
 
 ---
 
-<div class="custom-box">
-{{< fa lightbulb >}} **¡Esta información está destinada a guiar el proceso de desarrollo del OHI para el Golfo de California!**
+## **Resumen de la Reunión #1 y Próximos Pasos**
 
-Este objetivo no está actualmente incluido en el OHI global, pero el Grupo de Expertos consideró que la seguridad tiene un gran impacto en la capacidad del sistema del Golfo de California para proporcionar de forma sostenible los beneficios y servicios que las personas necesitan y desean de los sistemas marinos.
+**¡Gracias por asistir a nuestra primera reunión del grupo de portavoces de Seguridad y Protección (SS)!**  
+Fue un gran comienzo para nuestro trabajo conjunto en definir qué significa la seguridad para el **Golfo de California**, y cómo debería integrarse en esta evaluación.  
 
-</div>
+::: {.callout-tip}
 
-## Preguntas Clave
+### {{< fa book >}} **Resumen de la Reunión**
 
-Al explorar la incorporación de **Seguridad y Protección** en el OHI para el Golfo de California, es importante aclarar el *objetivo, definiciones clave, posible estructura y consideraciones de medición* para este objetivo potencial. A continuación, se presentan puntos clave de discusión y consideraciones.
+El grupo acordó que **Seguridad y Protección (SS)** se conceptualiza mejor como un **tipo de presión** en lugar de una meta independiente. Esto se debe a que el Golfo de California no brinda seguridad o protección por sí mismo — pero SS influye en la condición de muchas otras metas.
+
+Sin embargo, a diferencia de las presiones típicas, SS también afecta el **estado actual** de varias metas. El grupo propuso modelar SS como una **presión única** que impacta tanto el **estado actual** como el **estado futuro probable**, con influencia variable según la meta. Por ejemplo, en **Productos Naturales**, SS podría afectar cada producto de manera distinta, con pesos variables.
+
+Jorge y Víctor **identificaron las metas más impactadas** por el crimen e inseguridad:
+
+- **Medios de Vida y Economías** (las personas están limitadas en los trabajos que pueden tener)
+- **Turismo y Recreación** (locales y turistas podrían evitar ciertas zonas por la presencia del crimen organizado)
+- **Provisión de Alimentos** (control sectorial, inseguridad laboral, amenazas de violencia)
+- **Oportunidades Artesanales** (acceso físico limitado a la costa en ciertas áreas, y por tanto al recurso marino para las comunidades)
+- **Sentido de Pertenencia** (las comunidades no sienten ese “sentido de pertenencia” al Golfo debido a la percepción de inseguridad o la evitación del área)
+- **Aguas Limpias** (por ejemplo, contaminación de operaciones del narco)
+- **Biodiversidad** (por ejemplo, hábitats ocupados por crimen limitan el acceso a la conservación)
+- **Investigación/Alfabetización Oceánica** (por ejemplo, acceso científico limitado o falta de vigilancia)
+- **Productos Naturales** (dependiendo del producto)
+
+Pero **no** afectaría la meta de Almacenamiento de Carbono/Protección Costera. Y, para la meta de **Turismo y Recreación**, probablemente **no afecta el estado actual**, porque los indicadores actuales ya capturan el efecto de la seguridad en el comportamiento turístico. En cambio, SS solo influiría en el **estado futuro probable** para esta meta.
+
+El grupo debatió cómo definir "crimen" en este contexto:
+
+- **Víctor**: Incluir **todo tipo de crimen**, ya que todos tienen efectos tangibles.
+- **Jorge**: Enfatizar el **crimen organizado**, que tiene un impacto especialmente fuerte en el Golfo.
+- **Propuesta**: Mantener flexibilidad en la definición de SS, ya que el crimen organizado puede ser difícil de aislar del crimen general en los datos disponibles.
+
+El grupo también coincidió en evitar estancarse en debates filosóficos, mantener el trabajo **práctico, aterrizado y basado en datos**, y considerar factores sociopolíticos más amplios como la **presencia del Estado**, **pobreza**, **educación**, y **servicios de salud** en el análisis.
+
+**Amy** enfatizó la incorporación tanto de:
+
+- **Tasas de crimen objetivas** (datos cuantitativos), y
+- **Percepciones subjetivas de seguridad** (conocimiento cualitativo)
+  - Ella señaló que con el tiempo, las comunidades pueden normalizar la inseguridad, subestimando los riesgos reales. Un posible recurso: un **informe financiado por Packard**, posiblemente titulado *"People Protecting Places (PPP)"*.
+
+*Esto apoyaría:*
+
+| Término   | Posible definición basada en nuestra reunión                    |
+|-----------|-----------------------------------------------------------------|
+| Seguridad | Condición objetiva del crimen/incidencia de amenazas           |
+| Protección| Percepción subjetiva; sensación de seguridad, confianza en la autoridad |
+
+---
+
+#### 📊 **Fuentes de Datos Mencionadas**
+
+- **INEGI – Incidencia delictiva**  
+- **Datos de bienestar comunitario**, posiblemente vinculados a encuestas de CONANP/Carnival *(Víctor compartirá estos recursos en nuestro documento colaborativo)*  
+- **ENVIPE** – encuesta nacional de percepción sobre seguridad pública  
+- **SEMAFORO** – estadísticas delictivas a nivel municipal  
+- **Celia Gastello** (ortografía incierta) puede tener acceso a bases de datos gubernamentales *(Jorge compartirá su contacto)*  
+- **Informe PPP** (People Protecting Places) *(Consultar con Amy para obtenerlo)*  
+
+:::
+
+::: {.callout-important}
+### <i class="fa fa-step-forward" aria-hidden="true"></i> Próximos pasos
+
+- [ ] Revisar las [diapositivas de introducción a SS](https://docs.google.com/presentation/d/1GCZWVmivMn4AGB6LoaqxCzxCEH_qYy87rUmY3Z-fryw/edit?usp=sharing) para repasar las ideas principales.  
+- [ ] Revisar las [Preguntas Clave](#key-questions) y seguir reflexionando.  
+- [ ] Agregar tus ideas, pensamientos y posibles fuentes de datos en el [documento colaborativo](https://docs.google.com/document/d/1djLJpt2VB8fZLe518mnSzd6l7GaU1IQLpPlLuiK6flU/edit?tab=t.kyrkgpt50url).  
+
+Temas adicionales a considerar antes de la **próxima reunión**:
+
+- Determinar cómo cuantificar y medir la seguridad para el **estado actual** y el **estado futuro probable**  
+  - *para que el equipo central de OHI lo considere:* para integrar SS en el estado futuro probable, ¿se debe usar la tendencia de SS de los últimos 3-5 años? Mientras que el estado actual de cada meta se ve afectado por el estado actual de SS
+- Identificar cuáles metas del **OHI GoCA** son más afectadas por SS y asignar pesos apropiados  
+- Establecer un **punto de referencia** para un estado ideal de SS (¿por ejemplo, cero crimen? ¿metas gubernamentales de reducción del crimen o percepción de seguridad?)  
+- Identificar y revisar **fuentes de datos relevantes** sobre crimen/seguridad en los distintos sectores  
+  - Explorar bases de datos gubernamentales y sitios municipales con índices existentes  
+- Compartir el contacto de Celia Gastello e invitarla a colaborar *(Jorge)*  
+- Explorar métricas sobre el impacto del crimen organizado en la **conservación y capacidad de gobernanza**  
+  - Considerar cómo incluir tanto **crimen general como crimen organizado** en el análisis  
+- Investigar **pluralismo jurídico** y estructuras de **manejo compartido** como marcos posibles  
+
+:::
+
+## Preguntas Clave {#key-questions}
+
+Mientras exploramos la idea de incorporar **Seguridad y Protección** en el OHI para el Golfo de California, es importante clarificar el *objetivo, definiciones clave, estructura potencial y consideraciones de medición* para esta posible meta. A continuación, algunos puntos de discusión clave.
 
 ### 1. Objetivo
 
-¿Parece que el objetivo de seguridad es más bien **una presión sobre muchos otros objetivos**, o un objetivo por sí mismo?
+¿La meta de seguridad parece ser más bien **una presión sobre otras metas**, o una meta por sí misma?
 
 **_Para aclarar la intención:_**
 
 - ¿Qué queremos lograr al agregar Seguridad y Protección al OHI GoCA?
   - ¿Aumentar la visibilidad de los problemas de seguridad en áreas costeras/marinas?
-  - ¿Impulsar nuevas iniciativas para reducir el crimen y promover entornos más seguros?
-    - ¿Un Golfo *más seguro* significa un Golfo *más saludable*?
+  - ¿Impulsar nuevas iniciativas para reducir el crimen y promover ambientes más seguros?
+    - ¿Un Golfo más *seguro* significa un Golfo más *saludable*?
 
 **_Para aclarar definiciones:_**
 
-- ¿Un *"Golfo saludable"* significa que las personas están objetivamente seguras, que *se sienten* seguras, o ambas?
-- ¿Debe el objetivo centrarse en tasas de criminalidad reales, percepción de seguridad o una combinación? ¿O en algo completamente distinto?
+- ¿Un *"Golfo saludable"* significa que las personas están objetivamente seguras, se sienten seguras, o ambas?
+- ¿La meta debería enfocarse en tasas de crimen reales, percepciones de seguridad, o una combinación? ¿O algo completamente distinto?
 
-| Término   | Posible Definición                                                |
+| Término   | Posible Definición                                               |
 |-----------|-------------------------------------------------------------------|
-| Seguridad | Condición objetiva con baja criminalidad/incidencia de amenazas   |
-| Protección | Percepción subjetiva; confianza en la ley, instituciones         |
+| Seguridad | Condición objetiva con bajo crimen/incidencia de amenazas        |
+| Protección| Percepción subjetiva; confianza en la ley, instituciones          |
 
 ### 2. Alcance
 
-- ¿Debe "Seguridad" incluir solo crimen organizado, o también robo, asalto, secuestro, etc.?
+- ¿"Seguridad" debe incluir solo crimen organizado, o también robo, asalto, secuestro, etc.?
 - ¿El escenario ideal es realmente cero crimen, o un mínimo "tolerable"?
-- ¿Cómo abordamos la diversidad de delitos y su impacto en las comunidades costeras?
+- ¿Cómo abordamos la diversidad de crímenes y sus impactos en comunidades costeras?
 
 ### 3. Medición
 
 #### Seguridad (Objetiva)
 
 - ¿Debería incluir potencialmente:
-  - Estadísticas oficiales de criminalidad (crimen costero, marino, en puertos)?
-  - ¿Tanto crimen organizado como crimen general? ¿O solo crimen organizado?
+  - Estadísticas oficiales de crimen (costero, marino, portuario)?
+  - ¿Crimen general y crimen organizado? ¿O solo crimen organizado?
 
 #### Protección (Subjetiva)
 
 - ¿Debería incluir potencialmente:
-  - Encuestas sobre la percepción de seguridad en regiones costeras específicas?
-  - Confianza en las fuerzas del orden, presencia visible de autoridades, iniciativas comunitarias?
+  - Encuestas sobre cómo se sienten las personas respecto a la seguridad en regiones costeras específicas?
+  - Confianza en la autoridad, presencia visible de autoridades, iniciativas comunitarias?
 
 ---
 
 ## Consideraciones Regionales
 
-Estos son algunos de los puntos discutidos por el Grupo de Expertos.
+Algunos de los puntos discutidos por el Grupo de Expertos:
 
-- Podría separarse el crimen organizado de otras presiones en el marco, convirtiéndolo en un objetivo
-- Explorar el enfoque de "Abrazos, no balazos" (haciendo referencia a programas sociales como alternativas)
-- Tener en cuenta las diferencias percibidas entre los cinco estados (por ejemplo, Sinaloa vs. Sonora)
+- Separar el crimen organizado de otras presiones en el marco, haciéndolo una meta  
+- Explorar el enfoque "Abrazos no Balazos" (referente a programas sociales como alternativa)  
+- Tener en cuenta diferencias percibidas entre los cinco estados (por ejemplo, Sinaloa vs. Sonora)  
 
 ### Justicia Social y Resiliencia Verde
 
-- Se podría considerar la justicia social como una métrica de resiliencia en el contexto global, enfatizando la igualdad de oportunidades.
-- Se podrían considerar las áreas verdes como una forma de resiliencia, posiblemente utilizando un índice de datos de la ONU.
+- Considerar la justicia social como una métrica de resiliencia en el contexto global, enfatizando la igualdad de oportunidades.  
+- Considerar las áreas verdes como una forma de resiliencia, posiblemente usando un índice de datos de la ONU.  
 
 ::: {.callout-warning}
 
-## Este objetivo requerirá sensibilidad en el lenguaje y la terminología utilizada.
+## Esta meta requerirá sensibilidad en el lenguaje y la redacción utilizada.
 :::
 
 ---
@@ -137,10 +212,10 @@ Estos son algunos de los puntos discutidos por el Grupo de Expertos.
 
 <div class="button-container">
   <a href="mailto:core-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button">
-    <i class="fa-solid fa-square-poll-vertical"></i> Equipo Central de Análisis OHI
+    <i class="fa-solid fa-square-poll-vertical"></i> Equipo Analítico Central de OHI
   </a>
   <a href="mailto:ss-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button secondary">
-    <i class="fa-solid fa-people-group"></i> Grupo de Guardianes de Seguridad y Protección
+    <i class="fa-solid fa-people-group"></i> Grupo de Portavoces de Seguridad y Protección
   </a>
 </div>
 
