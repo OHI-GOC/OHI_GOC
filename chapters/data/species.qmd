@@ -47,7 +47,7 @@ library(rredlist)
 # --------------------------------------
 library(DT)
 library(mapview)
-library(ohicore)
+# library(ohicore)
 library(tidyverse)
 library(stringr)
 library(here)

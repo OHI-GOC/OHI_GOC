@@ -15,6 +15,8 @@ format: html
 
 Artisanal fishing, often also called small-scale fishing, provides a critical source of food, nutrition, poverty alleviation and livelihood opportunities for many people around the world, especially in developing nations. Small-scale fishing is an important component of cultural identity and heritage.
 
+TESTING ON WEBSITE JULY 28 - Erica
+
 > _Half the world’s fish harvest is captured by artisanal fishing families._
 
 ::: {.callout-note collapse="true"}
