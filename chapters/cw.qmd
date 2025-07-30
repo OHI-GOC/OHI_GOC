@@ -76,6 +76,69 @@ The status of these components is typically the inverse of their intensity.  Thi
 
 :::
 
+## **Meeting #1 Recap & Next Steps**
+
+**Thank you to everyone who joined our first Clean Waters (CW) Goalkeeper meeting!**  
+
+This initial session introduced the OHI Gulf of California assessment and set the stage for how future meetings will unfold. It was a great start to our work together in defining what **_clean waters_** mean for the **Gulf of California**.   
+
+::: {.callout-tip}
+
+#### {{< fa book >}} **Meeting Recap**
+
+While this meeting mostly served as an introduction, we had a great discussion about possible **components of the Clean Waters goal** for the **Gulf of California**.  
+
+- Ideally, we aim to **identify the sources** of contamination, though this may not always be feasible with available data.
+- Some **contaminants** dissolve in freshwater but **condensate upon entering seawater**, causing them to adhere to **marine sediments**.
+- José Antonio shared insights from a paper he’s working on with Ben, which could help us quantify **nitrogen (N)** and **phosphorus (P)** in coastal regions around the Gulf.
+- Miguel noted the existence of a **seafood alert system**: when harmful algal blooms or poor water quality are detected, advisories are issued against eating **shellfish** farmed in affected areas. [From COFEPRIS?]
+
+##### <i class="fa-solid fa-vial-virus"></i> Key Contaminant Categories Discussed:
+
+- **Nutrients**  
+  - Turbidity (suspended sediments)  
+  - Nitrogen  
+  - Phosphorus  
+  - Organic matter (BOD/COD)  
+
+- **Chemicals**  
+  - Hydrocarbons from ships (oil/diesel)  
+  - Heavy metals  
+  - Pesticides / Persistent Organic Pollutants (POPs)  
+  - Microplastics  
+  - Human-caused accidents (e.g., acid spills, harmful algal blooms)  
+  - Pharmaceuticals  
+
+- **Pathogens**  
+  - Bacterial: fecal coliforms, *E. coli*  
+  - *Vibrio* species  
+  - Viral pathogens  
+
+- **Marine Debris**  
+  - Plastic pollution  
+  - Abandoned fishing gear (nets, lines)  
+  - Microplastics (also listed under Chemicals)  
+
+> ⚠️ **Note:** Some contaminants, like microplastics, fall into **multiple categories**, such as both **Chemicals** and **Marine Debris**. If you think it should be in one category versus another, please note this on the CW Model Notes document.
+
+:::
+
+::: {.callout-important}
+
+#### <i class="fa fa-step-forward" aria-hidden="true"></i> **Next Steps**
+
+- [ ] Review and contribute to the [CW Model Notes](https://docs.google.com/document/d/1JhF0Wf9g4VH-iDHVK07Qk2FdLBZNtWXTxdxrRecbF-Q/edit?tab=t.kyrkgpt50url) document.  
+  - Add any **additional contaminants**, **sources**, or **relevant datasets**.
+- [ ] Review the [Key Questions](#key-questions) and continue brainstorming how we might assess:  
+  - **Presence**, **frequency**, and **sources** of these contaminants  
+  - Potential **reference points** or thresholds  
+- [ ] Review the [CW introduction slides](https://docs.google.com/presentation/d/1MhTPHz6HSe0NVeA3UcxgCPXBzhQ9l6VAMkSiQkBCeNk/edit?usp=sharing) to revisit the main ideas. 
+
+In our **next meeting**, we’ll continue our discussion of contaminants that should be considered in this goal.  
+
+We'll also start to define the **reference point** for this goal — our vision of what ideal, clean waters look like. In assessment terms, this is the **"100" score** — our A+ target!
+:::
+
 ## Key Questions
 
 What is the ideal sustainable state of the **clean waters** goal? 

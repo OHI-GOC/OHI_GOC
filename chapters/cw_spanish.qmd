@@ -76,6 +76,71 @@ El estado de estos componentes es típicamente el inverso de su intensidad. Esto
 
 :::
 
+## **Resumen de la Reunión #1 y Próximos Pasos**
+
+**¡Gracias a todas las personas que participaron en nuestra primera reunión del grupo de guardianes de Aguas Limpias (CW)!**  
+
+Esta primera sesión sirvió para introducir la evaluación OHI del Golfo de California y establecer la base para el desarrollo de nuestras futuras reuniones. Fue un excelente comienzo para definir qué significa **_aguas limpias_** para el **Golfo de California**.  
+
+::: {.callout-tip}
+
+#### {{< fa book >}} **Resumen de la reunión**
+
+Aunque esta reunión fue principalmente introductoria, tuvimos una discusión muy productiva sobre los posibles **componentes del objetivo de Aguas Limpias** para el **Golfo de California**.  
+
+- Idealmente, buscamos **identificar las fuentes** de contaminación, aunque esto no siempre es posible debido a limitaciones en los datos disponibles.  
+- Algunos **contaminantes** se disuelven en agua dulce pero **se condensan al entrar al agua salada**, lo que provoca su adhesión a los **sedimentos marinos**.  
+- José Antonio compartió detalles de un artículo en el que está trabajando con Ben, que podría ayudarnos a cuantificar **nitrógeno (N)** y **fósforo (P)** en regiones costeras del Golfo.  
+- Miguel mencionó que existe un **sistema de alertas sanitarias**: cuando se detectan floraciones algales nocivas o mala calidad del agua, se emiten advertencias contra el consumo de **mariscos** cultivados en zonas afectadas. [¿COFEPRIS?]
+
+##### <i class="fa-solid fa-vial-virus"></i> Categorías clave de contaminantes discutidas:
+
+- **Nutrientes**  
+  - Turbidez (sedimentos en suspensión)  
+  - Nitrógeno  
+  - Fósforo  
+  - Materia orgánica (DBO/DQO)  
+
+- **Químicos**  
+  - Hidrocarburos de barcos (aceite/diésel)  
+  - Metales pesados  
+  - Plaguicidas / Contaminantes Orgánicos Persistentes (COPs)  
+  - Microplásticos  
+  - Accidentes causados por humanos (p. ej. derrames de ácido, floraciones algales nocivas)  
+  - Fármacos  
+
+- **Patógenos**  
+  - Bacterianos: coliformes fecales, *E. coli*  
+  - Especies de *Vibrio*  
+  - Patógenos virales  
+
+- **Residuos Marinos**  
+  - Contaminación por plásticos  
+  - Artes de pesca abandonadas (redes, líneas)  
+  - Microplásticos (también listados en Químicos)  
+
+> ⚠️ **Nota:** Algunos contaminantes, como los microplásticos, se clasifican en **múltiples categorías**, como **Químicos** y **Residuos Marinos**. Si crees que uno debe pertenecer a una categoría u otra, por favor anótalo en el documento de notas del modelo CW.
+
+:::
+
+::: {.callout-important}
+
+#### <i class="fa fa-step-forward" aria-hidden="true"></i> **Próximos pasos**
+
+- [ ] Revisar y contribuir al documento de [Notas del Modelo CW](https://docs.google.com/document/d/1JhF0Wf9g4VH-iDHVK07Qk2FdLBZNtWXTxdxrRecbF-Q/edit?tab=t.kyrkgpt50url).  
+  - Agrega **contaminantes adicionales**, **fuentes**, o **conjuntos de datos relevantes**.  
+- [ ] Revisa las [Preguntas clave](#key-questions) y sigue reflexionando sobre cómo podríamos evaluar:  
+  - **Presencia**, **frecuencia** y **fuentes** de estos contaminantes  
+  - Posibles **puntos de referencia** o umbrales  
+- [ ] Revisa las [diapositivas introductorias de CW](https://docs.google.com/presentation/d/1MhTPHz6HSe0NVeA3UcxgCPXBzhQ9l6VAMkSiQkBCeNk/edit?usp=sharing) para repasar las ideas principales.  
+
+En nuestra **próxima reunión**, continuaremos la discusión sobre los contaminantes que deberían considerarse en este objetivo.  
+
+También comenzaremos a definir el **punto de referencia** del objetivo: nuestra visión de cómo se ven las aguas limpias ideales. En términos de evaluación, esto es el puntaje **"100"** — ¡nuestro objetivo A+!
+
+:::
+
+
 ## Preguntas Clave
 
 ¿Cuál es el estado sostenible ideal del objetivo de **aguas limpias**?
