@@ -3,7 +3,7 @@ title: ""
 format: html
 ---
 
-# ![](figs/artisanal-fishing-opportunities.svg){width=8% height=8% color="red"} Oportunidades de Pesca Artesanal
+# ![](figs/artisanal-fishing-opportunities.svg){width=8% height=8% color="red"} **Oportunidades Artesanales**
 
 <div class="button-container">
   <a href="https://ohi-goc.github.io/OHI_GOC/chapters/ao.html" class="custom-button">
@@ -11,15 +11,43 @@ format: html
   </a>
 </div>
 
-**Este objetivo mide si las personas que necesitan pescar a pequeña escala y de manera local tienen la oportunidad de hacerlo.**
+# **Empezando**
 
-La pesca artesanal, también conocida como pesca a pequeña escala, provee una fuente crítica de alimento, nutrición, alivio de la pobreza y oportunidades de sustento para muchas personas alrededor del mundo, especialmente en países en desarrollo. La pesca a pequeña escala es un componente importante de la identidad cultural y el patrimonio.
+**Normalmente, este objetivo mide si las personas que necesitan pescar a pequeña escala local tienen la oportunidad de hacerlo. En el GoC, este objetivo podría redefinirse para incluir las oportunidades artesanales de forma más amplia.**
 
-> _La mitad de la captura mundial de pescado proviene de familias que practican la pesca artesanal._
+La pesca artesanal, también conocida como pesca a pequeña escala, provee una fuente crítica de alimento, nutrición, alivio de la pobreza y oportunidades de sustento para muchas personas alrededor del mundo, especialmente en países en desarrollo. La pesca a pequeña escala es un componente importante de la identidad cultural y el patrimonio.La mitad de la captura mundial de pescado proviene de familias que practican la pesca artesanal.
+
+::: {.custom-box}
+
+{{< fa lightbulb >}} **DEFINICIÓN CENTRAL**
+
+- **_Enfoque:_** Mide el acceso a la pesca artesanal (a pequeña escala) para las comunidades locales que dependen de ella para alimentación, sustento e identidad cultural.  
+- **_No se trata de:_** No mide la cantidad de alimentos o dinero/medios de vida generados por las pesquerías artesanales (estos se cubren bajo los objetivos Provisión de Alimentos y Medios de Vida y Economías). La pesca recreativa (por deporte) puede incluirse aquí o en el objetivo de Turismo y Recreación. Este objetivo no incluye pesquerías comerciales.   
+
+:::
+
+## Preguntas Clave
+
+¿Cuál es el estado sostenible ideal del objetivo de **oportunidades artesanales**?  
+
+¿Quién debería tener **acceso** a los recursos marinos?  
+
+¿Cómo puede **limitarse** el acceso de las personas a los recursos marinos?
+
+  - ¿Las líneas costeras son accesibles para los locales?  
+  - ¿Es adecuada la infraestructura de muelles y carreteras?  
+  - ¿Está disponible fácilmente el permiso para la pesca?  
+  - ¿Existen programas que fomenten las oportunidades de pesca artesanal?  
+  - ¿Las poblaciones de especies artesanales están gestionadas de manera sostenible para que estén realmente disponibles para la captura?  
+  - ¿Las personas tienen la capacidad económica para acceder a estos recursos?  
+
+------------------------------------------------------------------------
+
+# **Notas de Reuniones Anteriores**
 
 ::: {.callout-note collapse="true"}
 
-## Información del Grupo Guardián del Objetivo AO
+## Información y detalles de reunión para Miembros del AO Goalkeeper Group
 
 ##### **Acceso a Reuniones**
 
@@ -42,7 +70,7 @@ La pesca artesanal, también conocida como pesca a pequeña escala, provee una f
 
 ##### **Calendario de Reuniones _(Martes 1:00 PM - 2:00 PM PDT)_**
 
-| Reunión | Mes | Fecha Específica | Enfoque |
+| Reunión | Cronograma | Fecha | Enfoque Enfoque de la reunión|
 |---------|------|---------------|-------|
 | 1 | Julio/Agosto | 22 de julio de 2025 | Presentación del grupo, descripción de la plataforma OHI, cálculos del objetivo |
 | 2 | Agosto/Septiembre | 19 de agosto de 2025 | Discusión sobre el modelo y punto de referencia |
@@ -67,34 +95,15 @@ Agrega el calendario compartido a tu cuenta de Google Calendar usando el [enlace
 
 :::
 
----
+## Reunión de Metas n.° 1: Resumen
+**Reunión #1** presentó a los participantes y sus antecedentes de investigación relacionados con el Golfo de California, con Erica facilitando y ofreciendo una descripción general del Ocean Health Index. El grupo discutió la metodología del índice y su aplicación en la región del Golfo de California, incluyendo su evaluación de diversos objetivos de salud oceánica y la necesidad del equipo de definir las "oportunidades artesanales". La conversación concluyó con el acuerdo de los participantes de profundizar en conceptos como el acceso a los recursos y los medios de vida sostenibles. 
 
-::: {.custom-box}
-
-{{< fa lightbulb >}} **DEFINICIÓN CENTRAL**
-
-- **_Enfoque:_** Mide el acceso a la pesca artesanal (a pequeña escala) para las comunidades locales que dependen de ella para alimentación, sustento e identidad cultural.  
-- **_No se trata de:_** No mide la cantidad de alimentos o dinero/medios de vida generados por las pesquerías artesanales (estos se cubren bajo los objetivos Provisión de Alimentos y Medios de Vida y Economías). La pesca recreativa (por deporte) puede incluirse aquí o en el objetivo de Turismo y Recreación. Este objetivo no incluye pesquerías comerciales.   
-
-:::
+**En la Reunión #2**, discutiremos cómo podríamos medir el acceso a las oportunidades artesanales en el Golfo y los posibles puntos de referencia de la AO, así que les pedimos que vengan preparados para debatir estos puntos. Un punto de referencia se define como el estado ideal de las oportunidades artesanales en el Golfo de California.
 
 
-## Preguntas Clave
+Las diapositivas y notas de la presentación de la reunión están disponibles en el Google Drive del grupo: https://drive.google.com/drive/u/1/folders/1VUuocKEk9TqgssSgzeFb6y5LGtEoKQ2a
 
-¿Cuál es el estado sostenible ideal del objetivo de **oportunidades artesanales**?  
-
-¿Quién debería tener **acceso** a los recursos marinos?  
-
-¿Cómo puede **limitarse** el acceso de las personas a los recursos marinos?
-
-  - ¿Las líneas costeras son accesibles para los locales?  
-  - ¿Es adecuada la infraestructura de muelles y carreteras?  
-  - ¿Está disponible fácilmente el permiso para la pesca?  
-  - ¿Existen programas que fomenten las oportunidades de pesca artesanal?  
-  - ¿Las poblaciones de especies artesanales están gestionadas de manera sostenible para que estén realmente disponibles para la captura?  
-  - ¿Las personas tienen la capacidad económica para acceder a estos recursos?  
-
-## Consideraciones Regionales
+## Reunión del Grupo de Trabajo de Expertos n.º 1: Consideraciones Regionales
 
 Estos son algunos de los puntos discutidos por el Grupo de Expertos.
 
@@ -140,9 +149,9 @@ Obtener permisos es **burocráticamente complejo, costoso y limitado** — los n
 
 :::
 
----
+------------------------------------------------------------------------
 
-## Contacto por correo electrónico:
+# **Contacta con Nosotros:**
 
 <div class="button-container">
   <a href="mailto:core-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button">
