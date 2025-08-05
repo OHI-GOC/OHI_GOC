@@ -5,44 +5,134 @@ format: html
 
 # ![](figs/livelihoods-and-economies.svg){width="8%" height="8%" color="red"} Livelihoods and economies
 
+<div class="button-container">
+  <a href="https://ohi-goc.github.io/OHI_GOC/chapters/le_spanish.html" class="custom-button">
+    <i class="fas fa-globe"></i> en español
+  </a>
+</div>
+
+::: {.callout-note collapse="true"}
+## LE Goalkeeper Group: Who, what, when, where, why!
+
+##### **Meeting Access**
+
+**Zoom Link:** <https://us06web.zoom.us/j/3255055973>
+
+##### **Key Team Members**
+
+- Adrian Munguia
+- Amy Hudson Weaver
+- Carmina Valiente
+- Fernando Aranceta
+- Francisco Fernandez
+- Geovanni Coredero Herrera
+- Hem Nalini Morzaria-Luna
+- Juan Carlos Villaseñor-Derbez
+- Mar Mancha-Cisneros
+- Marlu Robledo
+- Micheline Cariño Olvera
+- Michelle María Early Capistrán
+- Miguel Betancourt
+
+
+##### **Meeting Schedule *(Friday 10:00 AM - 11:00 AM PDT)***
+
+| Meeting | Specific Date     | Focus                                                         |
+|---------------------|----------------------------------|------------------|
+| 1       | August 8, 2025    | Group introductions, OHI platform overview, goal calculations |
+| 2       | September 5, 2025 | Model and reference point discussion                          |
+| 3       | October 3, 2025   | Model, reference point, and data sources                      |
+| 4       | November 7, 2025 | Preliminary results and pressure/resilience                   |
+| 5       | December 5, 2025  | Final analysis plan review                                    |
+
+
+##### **Co-authorship Information**
+
+This project provides opportunities to collaborate with regional experts and contribute to Gulf of California OHI assessment. Participation will be acknowledged on the website and other products. Additional co-authorship opportunities may be available with extra commitment as outlined [here](https://docs.google.com/document/d/16jwVGjbQpF_6B6sbkhb4xO00WAXdDiESBXu-n2a7D1k/edit?tab=t.0).
+
+
+##### **Google Calendar**
+
+Add the shared calendar to your Google Calendar account using the [provided link](https://calendar.google.com/calendar/u/0?cid=Y184ZmIyNzhjNmQwM2E5MGFjZDJjYWE0MDdhOTcyY2ZlMjcxYTQwNzA3Mjc0MDFiNzM0NzRkNjdjNGM0NDE0ZjQyQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20). It will appear under "Other calendars" and provide access to all scheduled meetings with updated Zoom links.
+
+**Please let us know if you have any questions. We look forward to working on this initiative with you!**
+:::
+
+
 **This goal measures jobs and revenue from sustainable marine-related industries.**
 
 
 ---
 
-<div class="custom-box">
-{{< fa lightbulb >}} **This information is meant to help guide the process of developing the Gulf of California OHI!**
+::: custom-box
+{{< fa lightbulb >}} **CORE DEFINITIONS**
 
-This goal is included in the global OHI, but other regional assessments have cut or modified this goal to better meet their objectives for ocean health...
-</div>
+- **Overall Goal**: Measures jobs and revenue from sustainable marine-related industries
+- **Two Subgoals**: 
+  - **Livelihoods**: Quality and quantity of jobs
+    - **Focus**: Marine-related jobs
+    - **Example Industries**: Commercial fishing, mariculture, tourism and recreation, whale watching, etc
+  - **Economies**: Amount of revenue produced
+    - **Focus**: Revenue for all coastal regions from marine-related sectors
+    - **Coverage**: Both direct and indirect marine industry connections
+
+:::
+
+## Key Questions
+
+Should the OHI Gulf of California **maintain** the two subgoals: Livelihoods and Economies?
+
+#### **Livelihoods**
+
+There is a quantity and quality aspect to this goal, typically.  **Is there anything important to analyze apart from the quantity and quality of marine jobs?**
+
+- How (*ideally*) do we measure the **quantity and quality** of people’s marine-related jobs? 
+  - How do we define the **reference point**?
+  - How do we incorporate **sustainability** into the assessment?
+  
+#### **Economies**
+
+What are some important marine-sector industries within the Gulf that come to mind?
+
+- How (*ideally*) do we measure the **revenue** of these sectors? 
+  - How do we define the **reference point**?
+  - How do we incorporate **sustainability** into the assessment?
 
 
-#### Overview
+##### Other OHI + assessments:
 
-#### Practical Guidance
+Nearly all assessments include one or both of these subgoals. Typically, a high score is obtained when livelihoods and economies remain constant or improve (a temporal reference point). For livelihoods, there have been several approaches to measuring job quality.  Some assessments include industries that do not require a healthy ocean (e.g., wind energy, shipping, etc.), others have excluded these. A constant challenge is determining how to count jobs that are indirectly supported by marine industries (e.g., manufacture of fishing gear, etc.)
 
 
-#### LEARN MORE
-Explore the full description of the data and model used in the GLOBAL MODEL. Or, take a look at REGIONAL APPROACHES to learn how other OHI+ assessments have modified this goal to address differences in data availability or priorities.
+---
+## Regional Considerations
 
-LIVELIHOODS
+**These are some of the points discussed by the Expert Working Group (EWG).**
+
+- The group discussed how to measure jobs and revenue from sustainable, marine-related industries, focusing on both the number/quality of jobs (Livelihoods) and economic output (Economies).
+- Main livelihoods sectors identified: fishing, mariculture, tourism/ecotourism, recreation, and more.
+- Major challenges flagged:
+  - **Organized crime** in fisheries is a significant threat, affecting security, job numbers, and potentially forcing diversification.
+  - **Job security** issues: Workers face risks like bribes, possible forced relocation, and lack of long-term benefits, pushing some out of fishing for more secure jobs elsewhere.
+  - Debate over job quantity vs. quality: rise in fisher numbers may be positive for livelihoods but may not address poverty or job sustainability.
+  - **Government subsidies** play a big role; all fishers receive payments, with notable political dynamics (e.g., vote buying).
+  - Interest in adding **gender equality** as a key indicator.
+  - Need to make **sustainability** an explicit sub-goal.
+- For the Economies subgoal:
+  - Emphasis on capturing both direct and indirect revenue from marine sectors.
+  - Identified a need to map and include research institutes, universities, and NGOs operating in the region.
+  - Proposed using improved data sources (e.g., business registries, household surveys) for more accurate measurement.
+  - **Marine infrastructure projects** (e.g., underwater gas lines) are seen as added pressures.
+- Mexico’s broader economic context was noted: there is a current recession phase, yet it has a high ranking in the World Happiness Report.
+
+
+## Contact via email:
+
 <div class="button-container">
-  <a href="https://ohi-science.org/ohi-methods/goals/goal-models-data.html#livelihoods-subgoal-of-livelihoods-and-economies" class="custom-button">
-    <i class="fas fa-globe"></i> GLOBAL MODEL
+  <a href="mailto:core-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button">
+    <i class="fa-solid fa-square-poll-vertical"></i> OHI Core Analytical Team
   </a>
-  <a href="https://oceanhealthindex.org/guidance/livelihoods/" class="custom-button secondary">
-    <i class="fas fa-location-dot"></i> REGIONAL APPROACHES
-  </a>
-</div>
-
-ECONOMIES
-<div class="button-container">
-  <a href="https://ohi-science.org/ohi-methods/goals/goal-models-data.html#economies-subgoal-of-livelihoods-and-economies" class="custom-button">
-    <i class="fas fa-globe"></i> GLOBAL MODEL
-  </a>
-  <a href="https://oceanhealthindex.org/guidance/economies/" class="custom-button secondary">
-    <i class="fas fa-location-dot"></i> REGIONAL APPROACHES
+  <a href="mailto:le-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button secondary">
+    <i class="fa-solid fa-people-group"></i> Livelihoods & Economies Goalkeeper Group
   </a>
 </div>
-
-
