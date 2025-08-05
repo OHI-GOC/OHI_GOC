@@ -5,43 +5,172 @@ format: html
 
 # ![](figs/sense-of-place.svg){width="8%" height="8%" color="red"} Sense of place
 
-**This goal describes how well we are preserving current and future access to coastal and marine systems that people value as part of their cultural identity.**
+<div class="button-container">
+  <a href="https://ohi-goc.github.io/OHI_GOC/chapters/sp_spanish.html" class="custom-button">
+    <i class="fas fa-globe"></i> en español
+  </a>
+</div>
 
+::: {.callout-note collapse="true"}
+## SP Goalkeeper Group Information
+
+##### **Meeting Access**
+
+**Zoom Link:** <https://us06web.zoom.us/j/3255055973>
+
+##### **Key Team Members**
+
+-   Amy Hudson Weaver
+-   Ana Luisa Figueroa
+-   Carmina Valiente
+-   Geovanni Coredero Herrera
+-   Jorge Torre
+-   Lorayne Meltzer
+-   Marlu Robledo
+-   Micheline Cariño Olvera
+-   Michelle María Early Capistrán
+-   Rick Brusca
+-   Victor Ricardez
+
+##### **Meeting Schedule *(Tuesday 10:00 AM - 11:00 AM PDT)***
+
+| Meeting | Specific Date     | Focus                                                         |
+|---------------------|----------------------------------|------------------|
+| 1       | August 5, 2025    | Group introductions, OHI platform overview, goal calculations |
+| 2       | September 9, 2025 | Model and reference point discussion                          |
+| 3       | October 7, 2025   | Model, reference point, and data sources                      |
+| 4       | November 11, 2025 | Preliminary results and pressure/resilience                   |
+| 5       | December 2, 2025  | Final analysis plan review                                    |
+
+
+##### **Co-authorship Information**
+
+This project provides opportunities to collaborate with regional experts and contribute to Gulf of California OHI assessment. Participation will be acknowledged on the website and other products. Additional co-authorship opportunities may be available with extra commitment as outlined [here](https://docs.google.com/document/d/16jwVGjbQpF_6B6sbkhb4xO00WAXdDiESBXu-n2a7D1k/edit?tab=t.0).
+
+
+##### **Google Calendar**
+
+Add the shared calendar to your Google Calendar account using the [provided link](https://calendar.google.com/calendar/u/0?cid=Y184ZmIyNzhjNmQwM2E5MGFjZDJjYWE0MDdhOTcyY2ZlMjcxYTQwNzA3Mjc0MDFiNzM0NzRkNjdjNGM0NDE0ZjQyQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20). It will appear under "Other calendars" and provide access to all scheduled meetings with updated Zoom links.
+
+**Please let us know if you have any questions. We look forward to working on this initiative with you!**
+:::
+
+**This goal measures human connections to the marine environment that provide a deep sense of identity and belonging.**
+
+Feelings of identity and belonging stem from – for example:
+
+-   Sense of identity within a community
+-   Connection(s) to place(s)
+-   Connections to plants and animals
 ---
 
-<div class="custom-box">
-{{< fa lightbulb >}} **This information is meant to help guide the process of developing the Gulf of California OHI!**
+::: custom-box
+{{< fa lightbulb >}} **CORE DEFINITIONS**
 
-This goal is included in the global OHI, but other regional assessments have cut or modified this goal to better meet their objectives for ocean health...
-</div>
+In the global framework, these are the definitions of the goal and subgoals (Iconic Species, and Lasting Special Places):
+
+**Sense of Place (Goal)**
+
+*Definition*: Captures aspects of coastal and marine systems that people value as part of their cultural identity.  There was a proposed alternative name: "Sense of belonging" *(suggested by Marlu)*
+
+**Iconic Species (Subgoal)**
+
+*Definition*: Species relevant to local cultural identity through traditional activities (fishing, hunting, commerce), local ethnic or religious practices, existence value, and locally-recognized aesthetic value (tourism, art subjects).
+
+**Lasting Special Places (Subgoal)**
+
+*Definition*: Geographic locations with particular value for aesthetic, spiritual, cultural, recreational, or existence reasons.  These areas are then assessed by their protection levels/status for these valued locations.
+:::
+
+## Key Questions
+
+What does **sense of place, or belonging,** mean to all of you? Does the global definition of the goal, and its subgoals, make sense for the Gulf of California? 
+
+If so, here are some questions for each subgoal:
+
+#### **Iconic Species subgoal**
+
+How can we identify **species** that are relevant to **local cultural identity** through:
+
+1. Traditional activities (fishing, hunting, commerce)
+2. Local ethnic or religious practices
+3. Existence value
+4. Locally-recognized aesthetic value (tourism, art subjects)
+  
+Are there publications about these types of species, or would all of you like to work together to **create a list** of the species that are iconic to the Gulf?
+
+#### **Lasting Special Places subgoal**
+
+How can we identify places or areas that are relevant to local cultural identity through:
+
+1. Aesthetic, 
+2. Spiritual,
+3. Cultural,
+4. Recreational,
+5. Existence reasons, 
+6. and more?
+
+And, how do we define their **condition**? How will we quantify when this subgoal is doing really well (100/100)? Could it be:
+
+* How well *protected* all of these special places are?
+* How well they are *preserved*?
+* How much funding is going towards them?
+* How many people care about these places?
+
+---
+## Regional Considerations
+
+**These are some of the points discussed by the Expert Working Group (EWG).**
+
+### Proposed iconic species 
+
+Some species mentioned within the meeting:
+
+- Almejas chocolata
+- Yellowtail
+- Swordfish
+- Dorado (Mahi-Mahi)
+- Roosterfish
+- Totoaba
+- Shrimp
+- Pajaritos fish
+- Whale sharks
+- Sea lions
+- Vaquita
+- Saguaro cactus
+- La Tijereta (Magnificent Frigatebird)
+
+### Proposed proxies for LSP
+
+Some proxies mentioned included actions that indicate community involvement:
+
+-   Activism and campaigns: *Territory defense movements, environmental campaigns*
+-   Environmental defenders: *Documentation of people killed defending areas*
+-   Legal documentation: *Human rights activism records*
+-   Territorial rights: *Indigenous territorial rights, cooperative concessions*
+
+As well as physical places that are associated with cultural connections:
+
+-   Protection status: *Local/state/federal protection levels (positive or negative impact)*
+-   Public spaces: *Malecones (waterfront promenades), miradores (viewpoints)*
+-   Traditional activities: *Cooperative fishing, diving areas*
+-   Educational programs: *Environmental education initiatives*
+-   Cultural heritage: *Islands with cultural significance*
+
+**The EWG noted that a bottom-up approach is needed!** This is because:
+
+-   Sense of belonging varies between communities
+-   Gulf of California differs significantly from US contexts
+-   Local definitions of "enjoyment" and "special places" should not be prescribed
 
 
-#### Overview
+## Contact via email:
 
-#### Practical Guidance
-
-
-#### LEARN MORE
-Explore the full description of the data and model used in the GLOBAL MODEL. Or, take a look at REGIONAL APPROACHES to learn how other OHI+ assessments have modified this goal to address differences in data availability or priorities.
-
-ICONIC SPECIES
 <div class="button-container">
-  <a href="https://ohi-science.org/ohi-methods/goals/goal-models-data.html#iconic-species-subgoal-of-sense-of-place" class="custom-button">
-    <i class="fas fa-globe"></i> GLOBAL MODEL
+  <a href="mailto:core-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button">
+    <i class="fa-solid fa-square-poll-vertical"></i> OHI Core Analytical Team
   </a>
-  <a href="https://oceanhealthindex.org/guidance/iconic-species/" class="custom-button secondary">
-    <i class="fas fa-location-dot"></i> REGIONAL APPROACHES
-  </a>
-</div>
-
-LASTING SPECIAL PLACES
-<div class="button-container">
-  <a href="https://ohi-science.org/ohi-methods/goals/goal-models-data.html#lasting-special-places-subgoal-of-sense-of-place" class="custom-button">
-    <i class="fas fa-globe"></i> GLOBAL MODEL
-  </a>
-  <a href="https://oceanhealthindex.org/guidance/lasting-special-places/" class="custom-button secondary">
-    <i class="fas fa-location-dot"></i> REGIONAL APPROACHES
+  <a href="mailto:sp-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button secondary">
+    <i class="fa-solid fa-people-group"></i> Sense of Place Goalkeeper Group
   </a>
 </div>
-
-
