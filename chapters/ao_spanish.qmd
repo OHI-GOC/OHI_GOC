@@ -1,5 +1,5 @@
 ---
-title: ""
+title: "AO spanish"
 format: html
 ---
 
@@ -19,7 +19,7 @@ La pesca artesanal, también conocida como pesca a pequeña escala, provee una f
 
 ::: {.custom-box}
 
-{{< fa lightbulb >}} **DEFINICIÓN CENTRAL**
+{{< fa lightbulb >}} **ENFOQUE DEL GOAL**
 
 - **_Enfoque:_** Mide el acceso a la pesca artesanal (a pequeña escala) para las comunidades locales que dependen de ella para alimentación, sustento e identidad cultural.  
 - **_No se trata de:_** No mide la cantidad de alimentos o dinero/medios de vida generados por las pesquerías artesanales (estos se cubren bajo los objetivos Provisión de Alimentos y Medios de Vida y Economías). La pesca recreativa (por deporte) puede incluirse aquí o en el objetivo de Turismo y Recreación. Este objetivo no incluye pesquerías comerciales.   
@@ -38,15 +38,16 @@ La pesca artesanal, también conocida como pesca a pequeña escala, provee una f
   - ¿Es adecuada la infraestructura de muelles y carreteras?  
   - ¿Está disponible fácilmente el permiso para la pesca?  
   - ¿Existen programas que fomenten las oportunidades de pesca artesanal?  
-  - ¿Las poblaciones de especies artesanales están gestionadas de manera sostenible para que estén realmente disponibles para la captura?  
+  - ¿Se gestionan de forma sostenible las poblaciones de peces artesanales y están realmente disponibles para su pesca?
   - ¿Las personas tienen la capacidad económica para acceder a estos recursos?  
 
 ------------------------------------------------------------------------
 
-# **Notas de Reuniones Anteriores**
+# Notas de Reuniones Previas
+
+# **Reuniones del Goalkeeper**
 
 ::: {.callout-note collapse="true"}
-
 ## Información y detalles de reunión para Miembros del AO Goalkeeper Group
 
 ##### **Acceso a Reuniones**
@@ -95,15 +96,18 @@ Agrega el calendario compartido a tu cuenta de Google Calendar usando el [enlace
 
 :::
 
-## Reunión de Metas n.° 1: Resumen
+## Reunión de AO Goalkeeper n.° 1: Resumen
 **Reunión #1** presentó a los participantes y sus antecedentes de investigación relacionados con el Golfo de California, con Erica facilitando y ofreciendo una descripción general del Ocean Health Index. El grupo discutió la metodología del índice y su aplicación en la región del Golfo de California, incluyendo su evaluación de diversos objetivos de salud oceánica y la necesidad del equipo de definir las "oportunidades artesanales". La conversación concluyó con el acuerdo de los participantes de profundizar en conceptos como el acceso a los recursos y los medios de vida sostenibles. 
 
 **En la Reunión #2**, discutiremos cómo podríamos medir el acceso a las oportunidades artesanales en el Golfo y los posibles puntos de referencia de la AO, así que les pedimos que vengan preparados para debatir estos puntos. Un punto de referencia se define como el estado ideal de las oportunidades artesanales en el Golfo de California.
 
+Las diapositivas y notas de la presentación de reunión #1 están disponibles en el Google Drive del grupo [aquí](https://drive.google.com/drive/u/1/folders/1VUuocKEk9TqgssSgzeFb6y5LGtEoKQ2a).
 
-Las diapositivas y notas de la presentación de la reunión están disponibles en el Google Drive del grupo: https://drive.google.com/drive/u/1/folders/1VUuocKEk9TqgssSgzeFb6y5LGtEoKQ2a
+------------------------------------------------------------------------
 
-## Reunión del Grupo de Trabajo de Expertos n.º 1: Consideraciones Regionales
+# **Reuniones del Grupo de Expertos (EWG)**
+
+## Reunión EWG #1: Consideraciones Regionales
 
 Estos son algunos de los puntos discutidos por el Grupo de Expertos.
 
@@ -111,8 +115,6 @@ Estos son algunos de los puntos discutidos por el Grupo de Expertos.
 
 En México, los pescadores artesanales generalmente necesitan permisos, a menos que pesquen desde la costa.  
 Obtener permisos es **burocráticamente complejo, costoso y limitado** — los nuevos permisos son difíciles de conseguir. Existe un **mercado negro de permisos** debido a la dificultad de acceso legal. Las pesquerías comerciales dominan el Golfo de California, con pocos permisos verdaderamente artesanales.
-
----
 
 ### Acceso Costero y Gentrificación
 
@@ -124,8 +126,6 @@ Obtener permisos es **burocráticamente complejo, costoso y limitado** — los n
 - **El aumento de precios turísticos** (por ejemplo, buceo en Cabo Pulmo) **excluye económicamente a los locales**.  
 - **Movimientos sociales** en lugares como Sinaloa están resistiendo activamente la pérdida de acceso.  
 - En general, **los puntos de acceso costero están disminuyendo** debido al cercado y desarrollo — incluso cuando los esfuerzos políticos afirman apoyar los derechos de acceso.  
-
----
 
 ### Problemas Específicos de Pesquerías
 
@@ -151,7 +151,7 @@ Obtener permisos es **burocráticamente complejo, costoso y limitado** — los n
 
 ------------------------------------------------------------------------
 
-# **Contacta con Nosotros:**
+# **Contáctanos**
 
 <div class="button-container">
   <a href="mailto:core-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button">
