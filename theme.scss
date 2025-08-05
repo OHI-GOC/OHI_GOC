@@ -1,6 +1,7 @@
 /*-- scss:defaults --*/
 	
 @import 'assets/scss/_fonts';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
 body {
   font-family: 'Montserrat', sans-serif;
@@ -44,4 +45,11 @@ h1, h2, h3, h4, h5, h6 {
   margin-right: 0; /* Remove margin from the last button */
 }
 
+/* custom_fonts.scss: change font for callout-note - Added my Erica August 5 2025*/
 
+.callout.callout-note {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.6rem;
+  color: #222222;
+  border-radius: 10px;
+}

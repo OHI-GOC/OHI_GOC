@@ -1,6 +1,7 @@
 ---
-title: "FP english"
+title: ""
 format: html
+css: style.css
 ---
 
 # ![](figs/food-provision.svg){width="8%" height="8%" color="red"} **Food Provisioning**
@@ -10,7 +11,9 @@ format: html
 <i class="fas fa-globe"></i> En Español </a>
 :::
 
-# **Getting Started**
+::: {.callout-note collapse="true"}
+
+# About the FP Goal
 
 **Typically, this goal assesses our ability to sustainably maximize wild-caught or farmed marine foods.**
 
@@ -33,20 +36,18 @@ goal?
 - How do we weight the stocks (i.e., do all stocks count the same, should we weight by abundance)
 - Should there be any penalties for underharvesting?
 
-
 ### Mariculture Subgoal
 - How can we determine the sustainability of mariculture practices?
 - What reference point should be used?
 
+:::
+
 ------------------------------------------------------------------------
 
-# Notes from Previous Meetings
-
-# **Goalkeeper Meetings**
+# Goalkeeper Meetings
 
 ::: {.callout-note collapse="true"}
-
-## Information & Meeting Details for FP Group Members
+## **Meeting Logistics**  Who, What, When, Where
 
 ##### **Meeting Access**
 
@@ -90,18 +91,26 @@ Add the shared calendar to your Google Calendar account using the [provided link
 **Please let us know if you have any questions. We look forward to working on this initiative with you!**
 :::
 
-## FP Goalkeeper Meeting #1: Summary
+::: {.callout-note collapse="true"}
+## **Meeting #1: Summary**  Notes, Resources, & Next Steps
 **Meeting #1** introduced participants and their research backgrounds related to the Gulf of California, with Erica facilitating and providing an overview of the Ocean Health Index. The group discussed the index's methodology and application to the Gulf of California region, including its assessment of various ocean health goals. The conversation ended with a discussion on the food provisioning goal, including how to define and measure sustainable food production from fisheries and mariculture in the Gulf of California. Participants were encouraged to prepare specific ideas for the next meeting.
 
 **In Meeting #2**, we will discuss how we might measure access to 'food provisioning' in the Gulf, and possible FP reference points, so please come prepared for this discussion. A reference point is defined as the ideal state of artisanal opportunities in the GoC.
 
 The presentation slides and notes from meeting #1 can be accessed in the group's google drive [here](https://drive.google.com/drive/u/0/folders/1W0_ki39XNR1zHN4tBo_tQ-wnVia4grP8). 
+:::
+
+::: {.callout-note collapse="true"}
+## **Meeting #2: Summary**  *UPCOMING*
+**In Meeting #2**, we will discuss how we might measure access to 'food provisioning' in the Gulf, and possible FP reference points, so please come prepared for this discussion. A reference point is defined as the ideal state of artisanal opportunities in the GoC.
+:::
 
 ------------------------------------------------------------------------
 
-# **Expert Working Group (EWG) Meetings**
+# Expert Working Group (EWG) Meetings
 
-## EWG Meeting #1: Regional Considerations
+::: {.callout-note collapse="true"}
+## EWG Meeting #1: Regional Considerations for FP
 
 These are some of the points discussed by the Expert Working Group.
 
@@ -118,16 +127,17 @@ These are some of the points discussed by the Expert Working Group.
 ### Environmental Impacts:
 
 - Fish waste discharged back into the ocean is a notable environmental concern, potentially impacting ecosystem health.
+:::
 
 ------------------------------------------------------------------------
 
-# **Contact Us:**
+# Contact Us:
 
 <div class="button-container">
   <a href="mailto:core-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button">
     <i class="fa-solid fa-square-poll-vertical"></i> OHI Core Analytical Team
   </a>
   <a href="mailto:fp-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button secondary">
-    <i class="fa-solid fa-people-group"></i> Food Provision Goalkeeper Group
+    <i class="fa-solid fa-people-group"></i> Food Provisioning Goalkeeper Group
   </a>
 </div>
