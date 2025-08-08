@@ -25,6 +25,7 @@ format: html
 ##### **Miembros clave del equipo**
 - Ana Luisa Figueroa
 - Andrés Cisneros Montemayor
+- Carmina Valiente
 - Juan Carlos Villaseñor-Derbez
 
 ---

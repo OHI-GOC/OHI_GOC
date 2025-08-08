@@ -26,6 +26,7 @@ format: html
 ##### **Key Team Members**
 - Ana Luisa Figueroa
 - Andrés Cisneros Montemayor
+- Carmina Valiente
 - Juan Carlos Villaseñor-Derbez
 
 ---

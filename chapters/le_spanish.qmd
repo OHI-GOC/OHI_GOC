@@ -13,17 +13,16 @@ format: html
 
 
 ::: {.callout-note collapse="true"}
-## Grupo de Guardianes de la Meta LE: ¡Quién, qué, cuándo, dónde y por qué!
+## Grupo de Guardianes LE: ¡Quién, qué, cuándo, dónde, por qué!
 
-##### **Acceso a la Reunión**
+##### **Acceso a la reunión**
 
 **Enlace de Zoom:** <https://us06web.zoom.us/j/3255055973>
 
-##### **Miembros Clave del Equipo**
+##### **Miembros clave del equipo**
 
 - Adrian Munguia
 - Amy Hudson Weaver
-- Carmina Valiente
 - Fernando Aranceta
 - Francisco Fernandez
 - Geovanni Coredero Herrera
@@ -35,90 +34,161 @@ format: html
 - Michelle María Early Capistrán
 - Miguel Betancourt
 
-##### **Calendario de Reuniones *(Viernes de 10:00 AM a 11:00 AM PDT)***
+##### **Calendario de reuniones *(Viernes 10:00 AM - 11:00 AM PDT)***
 
-| Reunión | Fecha Específica     | Enfoque                                                        |
-|---------|----------------------|----------------------------------------------------------------|
-| 1       | 8 de agosto de 2025  | Presentaciones del grupo, introducción a la plataforma OHI, cálculos de la meta |
-| 2       | 5 de septiembre de 2025 | Discusión sobre el modelo y punto de referencia              |
-| 3       | 3 de octubre de 2025 | Modelo, punto de referencia y fuentes de datos                |
-| 4       | 7 de noviembre de 2025 | Resultados preliminares y presión/resiliencia               |
-| 5       | 5 de diciembre de 2025 | Revisión del plan de análisis final                         |
+| Reunión | Fecha específica    | Enfoque                                                        |
+|---------|---------------------|----------------------------------------------------------------|
+| 1       | 8 de agosto de 2025 | Presentaciones del grupo, panorama de la plataforma OHI, cálculos de la meta |
+| 2       | 5 de septiembre de 2025 | Discusión sobre modelo y punto de referencia                  |
+| 3       | 3 de octubre de 2025 | Modelo, punto de referencia y fuentes de datos                 |
+| 4       | 7 de noviembre de 2025 | Resultados preliminares y presión/resiliencia                  |
+| 5       | 5 de diciembre de 2025 | Revisión del plan final de análisis                            |
 
-##### **Información sobre Coautoría**
+##### **Información sobre coautoría**
 
-Este proyecto brinda oportunidades para colaborar con expertos regionales y contribuir a la evaluación del OHI para el Golfo de California. La participación será reconocida en el sitio web y otros productos. Podría haber oportunidades adicionales de coautoría con un compromiso extra, según lo descrito [aquí](https://docs.google.com/document/d/16jwVGjbQpF_6B6sbkhb4xO00WAXdDiESBXu-n2a7D1k/edit?tab=t.0).
+Este proyecto ofrece oportunidades para colaborar con expertos regionales y contribuir a la evaluación OHI del Golfo de California. La participación será reconocida en el sitio web y otros productos. Podrían existir oportunidades adicionales de coautoría con compromiso extra, como se describe [aquí](https://docs.google.com/document/d/16jwVGjbQpF_6B6sbkhb4xO00WAXdDiESBXu-n2a7D1k/edit?tab=t.0).
 
-##### **Calendario de Google**
+##### **Google Calendar**
 
-Agrega el calendario compartido a tu cuenta de Google Calendar usando el [enlace proporcionado](https://calendar.google.com/calendar/u/0?cid=Y184ZmIyNzhjNmQwM2E5MGFjZDJjYWE0MDdhOTcyY2ZlMjcxYTQwNzA3Mjc0MDFiNzM0NzRkNjdjNGM0NDE0ZjQyQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20). Aparecerá bajo "Otros calendarios" y te dará acceso a todas las reuniones programadas con enlaces de Zoom actualizados.
+Agrega el calendario compartido a tu cuenta de Google Calendar usando el [enlace proporcionado](https://calendar.google.com/calendar/u/0?cid=Y184ZmIyNzhjNmQwM2E5MGFjZDJjYWE0MDdhOTcyY2ZlMjcxYTQwNzA3Mjc0MDFiNzM0NzRkNjdjNGM0NDE0ZjQyQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20). Aparecerá en “Otros calendarios” y dará acceso a todas las reuniones programadas con enlaces de Zoom actualizados.
 
 **Por favor avísanos si tienes alguna pregunta. ¡Esperamos trabajar contigo en esta iniciativa!**
 :::
 
-
-**Esta meta mide los empleos e ingresos generados por industrias marinas sostenibles.**
+**Esta meta mide empleos e ingresos derivados de industrias marinas sostenibles.**
 
 ---
 
 ::: custom-box
 {{< fa lightbulb >}} **DEFINICIONES CLAVE**
 
-- **Meta General**: Mide los empleos e ingresos de industrias marinas sostenibles
-- **Dos Submetas**: 
-  - **Medios de Vida**: Calidad y cantidad de empleos
-    - **Enfoque**: Empleos relacionados con el mar
-    - **Sectores Ejemplares**: Pesca comercial, maricultura, turismo y recreación, avistamiento de ballenas, etc.
-  - **Economías**: Monto de ingresos generados
-    - **Enfoque**: Ingresos de todas las regiones costeras provenientes de sectores marinos
-    - **Cobertura**: Conexiones tanto directas como indirectas con la industria marina
+- **Meta general**: Mide empleos e ingresos de industrias marinas sostenibles
+- **Dos sub-metas**:  
+  - **Medios de vida**: Calidad y cantidad de empleos  
+    - **Enfoque**: Empleos relacionados con el mar  
+    - **Ejemplos de industrias**: Pesca comercial, maricultura, turismo y recreación, avistamiento de ballenas, etc.  
+  - **Economías**: Cantidad de ingresos producidos  
+    - **Enfoque**: Ingresos para todas las regiones costeras de sectores relacionados con el mar  
+    - **Cobertura**: Tanto conexiones directas como indirectas con la industria marina
 
 :::
 
-## Preguntas Clave
+## **Resumen de la Reunión #1 y Próximos Pasos**
 
-¿Debe el OHI del Golfo de California **mantener** las dos submetas: Medios de Vida y Economías?
+**¡Gracias por unirse a nuestra primera reunión del Grupo de Guardianes de Medios de Vida y Economías!**  
+Fue un gran inicio para trabajar juntos en definir medios de vida y economías costeras para el **Golfo de California**, y cómo integrarlos en esta evaluación.
 
-#### **Medios de Vida**
+::: {.callout-tip}
 
-Esta meta típicamente incluye un aspecto de cantidad y calidad. **¿Hay algo importante que analizar además de la cantidad y calidad de los empleos marinos?**
+### {{< fa book >}} **Resumen de la reunión**
 
-- ¿Cómo (*idealmente*) medimos la **cantidad y calidad** de los empleos relacionados con el mar?
-  - ¿Cómo definimos el **punto de referencia**?
+Durante nuestra discusión, el grupo llegó a la conclusión de que incorporar tanto **Medios de Vida** como **Economías** como sub-metas es muy importante para el Golfo de California. Este acuerdo nos permitió avanzar en definir sectores costeros y marinos **directos** e **indirectos** en el Golfo, así como comenzar a considerar cómo medirlos, categorizarlos y evaluarlos.
+
+El grupo discutió experiencias de trabajos previos en México, incluyendo el uso de **encuestas** y **datos a nivel de hogar** (por ejemplo, de INEGI y otras organizaciones) para cuantificar medios de vida y empleo. Se señaló que la diversidad de empleos en el Golfo requiere considerar los diferentes contextos en los estados que componen la región.
+
+##### **_Sectores mencionados:_**
+
+- **Pesca comercial**  
+  - Pesca artesanal  
+  - Pesca de subsistencia (la parte que también se vende, proporcionando un medio de vida)  
+  - Pesca industrial (ej., camarón, atún)  
+  - Pesca recreativa (pesca deportiva, como operadores turísticos para visitantes que pescan; en algunos lugares puede ser económicamente más importante que el buceo)  
+
+- **Turismo/Recreación**  
+  - Empleos que proveen actividades y experiencias en el Golfo  
+  - Empleos e ingresos generados por visitantes al Golfo  
+  - Debate sobre si ciertos empleos, como trabajo en hoteles, deben considerarse dentro del turismo marino, especialmente cuando generan ingresos pero podrían afectar el acceso local a recursos  
+
+- **Ecoturismo**  
+  - Ej., tours, avistamiento de ballenas, buceo, etc.
+
+- **Acuacultura/Maricultura**
+
+- **Otros posibles sectores**  
+  - Energía renovable/maremotriz  
+  - Extracción de sal (aunque los datos pueden ser difíciles de encontrar, especialmente en operaciones pequeñas)  
+  - Crimen organizado (considerando su papel complejo en algunas comunidades costeras — empleando personas y generando ingresos, pero también desalentando actividades pesqueras)  
+
+##### **_Sectores para discutir:_**
+
+- Transporte marítimo y/o embarcaciones  
+- Puertos  
+
+##### **_Consideraciones sobre datos y medición:_**
+
+Los participantes acordaron enfocarse en identificar sectores laborales relevantes, encontrar datos sobre el **número de empleos**, su **calidad** y los **ingresos** asociados. Esto incluye considerar:
+
+- Métricas de sostenibilidad — ¿De dónde provienen los ingresos y a quién/dónde van?  
+- Inversión local versus externa  
+- Escala de operaciones (pequeña, artesanal vs. industrial)  
+- Cambios adaptativos en el comportamiento de pescadores conforme cambian las oportunidades laborales por el cambio climático  
+- Definir **calidad laboral** — ¿Es el número de trabajadores con prestaciones? En pesca, ¿cuántos tienen permisos legales? ¿Cuántos dependientes hay en cada hogar?  
+
+El grupo reconoció los retos para cuantificar **operaciones a pequeña escala** y la falta de datos contextualizados para ciertos sectores, y enfatizó la importancia de identificar estas brechas para integrarlas en el modelo ideal de la meta.
+
+:::
+
+::: {.callout-important}
+### <i class="fa fa-step-forward" aria-hidden="true"></i> Próximos pasos
+
+- [ ] Revisar las [diapositivas de introducción LE](https://docs.google.com/presentation/d/1X9Yd-SqRzeTsktJ3qqSJelGoPGWp7dH9kbmvPSaI1V0/edit?slide=id.g2a86c82ea32_0_0#slide=id.g2a86c82ea32_0_0) para retomar las ideas principales.  
+- [ ] Revisar las [Preguntas Clave](#key-questions) y seguir generando ideas.  
+- [ ] Agregar tus pensamientos, ideas y posibles fuentes de datos al [documento colaborativo de Notas del Modelo LE](https://docs.google.com/document/d/1Ixhixn-pC6BPo4fwVi4sTkPXQbd7R-iKG3MF5XV4l_g/edit?tab=t.0#heading=h.8562cdkt8tdh).  
+  - [ ] Añadir **recursos, ideas, sectores a considerar y más** a este documento compartido.
+
+Más temas para reflexionar antes de la **próxima reunión**:
+
+- ¿Cuál es el **estado ideal de medios de vida y economías** para el Golfo de California?  
+- ¿Cuáles podrían ser **indicadores** para medir número de empleos, calidad e ingresos?  
+- ¿Debería un posible **punto de referencia** ser una línea base temporal?
+
+¡Gracias a todos y nos vemos en la próxima reunión! (Consulta la pestaña [Información del Grupo de Guardianes LE: quién, qué, cuándo, dónde, por qué!](#admin-info) en la parte superior para más información).
+
+:::
+
+## Preguntas Clave {#key-questions}
+
+#### **Medios de vida**
+
+Generalmente esta meta incluye aspectos de cantidad y calidad. ¿**Hay algo importante que analizar aparte de la cantidad y calidad de empleos marinos?**
+
+- ¿Cómo (*idealmente*) medimos la **cantidad y calidad** de empleos relacionados con el mar?  
+  - ¿Cómo definimos el **punto de referencia**?  
   - ¿Cómo incorporamos la **sostenibilidad** en la evaluación?
 
 #### **Economías**
 
-¿Cuáles son algunas industrias clave del sector marino en el Golfo que se te vienen a la mente?
+¿Qué industrias marinas importantes dentro del Golfo vienen a la mente?
 
-- ¿Cómo (*idealmente*) medimos los **ingresos** de estos sectores?
-  - ¿Cómo definimos el **punto de referencia**?
+- ¿Cómo (*idealmente*) medimos los **ingresos** de estos sectores?  
+  - ¿Cómo definimos el **punto de referencia**?  
   - ¿Cómo incorporamos la **sostenibilidad** en la evaluación?
 
-##### Otras evaluaciones OHI+:
+##### Otros análisis OHI +:
 
-Casi todas las evaluaciones incluyen una o ambas submetas. Típicamente, se obtiene una alta puntuación cuando los medios de vida y las economías se mantienen o mejoran (un punto de referencia temporal). Para medios de vida, ha habido varios enfoques para medir la calidad del empleo. Algunas evaluaciones incluyen industrias que no requieren un océano saludable (por ejemplo, energía eólica, transporte marítimo, etc.), mientras que otras las han excluido. Un desafío constante es determinar cómo contar los empleos que son apoyados indirectamente por las industrias marinas (por ejemplo, la fabricación de artes de pesca, etc.)
+Casi todas las evaluaciones incluyen una o ambas sub-metas. Típicamente, se obtiene un puntaje alto cuando los medios de vida y economías permanecen constantes o mejoran (un punto de referencia temporal). Para medios de vida, hay varios enfoques para medir la calidad laboral. Algunas evaluaciones incluyen industrias que no requieren un océano saludable (ej., energía eólica, transporte marítimo), otras las excluyen. Un reto constante es determinar cómo contar empleos indirectamente apoyados por industrias marinas (ej., fabricación de equipo de pesca).
 
 ---
+
 ## Consideraciones Regionales
 
-**Estos son algunos de los puntos discutidos por el Grupo de Trabajo de Expertos (EWG).**
+**Estos son algunos puntos discutidos por el Grupo de Trabajo de Expertos (EWG).**
 
-- El grupo discutió cómo medir los empleos e ingresos provenientes de industrias sostenibles relacionadas con el mar, enfocándose tanto en el número/calidad de empleos (Medios de Vida) como en la producción económica (Economías).
-- Sectores principales de medios de vida identificados: pesca, maricultura, turismo/ecoturismo, recreación, y más.
-- Principales desafíos señalados:
-  - El **crimen organizado** en la pesca es una amenaza significativa, afecta la seguridad, el número de empleos y puede forzar la diversificación.
-  - Problemas de **seguridad laboral**: Los trabajadores enfrentan riesgos como sobornos, posible reubicación forzada y falta de beneficios a largo plazo, lo que lleva a algunos a dejar la pesca por empleos más seguros.
-  - Debate sobre cantidad vs. calidad de los empleos: el aumento en el número de pescadores puede ser positivo para los medios de vida pero no necesariamente aborda la pobreza o sostenibilidad del empleo.
-  - Los **subsidios gubernamentales** juegan un papel importante; todos los pescadores reciben pagos, con dinámicas políticas notables (por ejemplo, compra de votos).
-  - Interés en incluir la **igualdad de género** como un indicador clave.
-  - Necesidad de hacer de la **sostenibilidad** una submeta explícita.
-- Para la submeta de Economías:
-  - Énfasis en capturar tanto ingresos directos como indirectos de los sectores marinos.
-  - Se identificó la necesidad de mapear e incluir institutos de investigación, universidades y ONGs que operan en la región.
-  - Se propuso el uso de fuentes de datos mejoradas (por ejemplo, registros empresariales, encuestas a hogares) para una medición más precisa.
-  - Los **proyectos de infraestructura marina** (por ejemplo, gasoductos submarinos) se ven como presiones adicionales.
-- Se mencionó el contexto económico más amplio de México: actualmente hay una fase de recesión, aunque México tiene un alto rango en el Informe Mundial de la Felicidad.
+- El grupo discutió cómo medir empleos e ingresos de industrias marinas sostenibles, enfocándose en número/calidad de empleos (Medios de Vida) y producción económica (Economías).  
+- Sectores principales de medios de vida identificados: pesca, maricultura, turismo/ecoturismo, recreación y más.  
+- Retos principales señalados:  
+  - El **crimen organizado** en pesquerías es una amenaza significativa, afectando seguridad, número de empleos y forzando diversificación.  
+  - Problemas de **seguridad laboral**: trabajadores enfrentan riesgos como sobornos, posible reubicación forzada y falta de prestaciones a largo plazo, lo que empuja a algunos a dejar la pesca por trabajos más seguros.  
+  - Debate sobre cantidad vs. calidad de empleos: aumento de pescadores puede ser positivo para medios de vida pero no necesariamente para pobreza o sostenibilidad laboral.  
+  - Los **subsidios gubernamentales** tienen un rol importante; todos los pescadores reciben pagos, con dinámicas políticas notables (ej., compra de votos).  
+  - Interés en agregar la **igualdad de género** como indicador clave.  
+  - Necesidad de hacer la **sostenibilidad** una sub-meta explícita.  
+- Para la sub-meta de Economías:  
+  - Enfatizar capturar ingresos directos e indirectos de sectores marinos.  
+  - Identificación y mapeo de institutos de investigación, universidades y ONG que operan en la región.  
+  - Propuesta de usar mejores fuentes de datos (ej., registros comerciales, encuestas a hogares) para medición más precisa.  
+  - Proyectos de infraestructura marina (ej., gasoductos submarinos) vistos como presiones añadidas.  
+- Se mencionó el contexto económico amplio de México: en fase de recesión, pero con alto ranking en el Informe Mundial de Felicidad.
 
 ## Contacto por correo electrónico:
 
@@ -127,6 +197,7 @@ Casi todas las evaluaciones incluyen una o ambas submetas. Típicamente, se obti
     <i class="fa-solid fa-square-poll-vertical"></i> Equipo Analítico Central de OHI
   </a>
   <a href="mailto:le-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button secondary">
-    <i class="fa-solid fa-people-group"></i> Grupo de Guardianes de la Meta de Medios de Vida y Economías
+    <i class="fa-solid fa-people-group"></i> Grupo de Guardianes de Medios de Vida y Economías
   </a>
 </div>
+

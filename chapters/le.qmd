@@ -3,7 +3,7 @@ title: ""
 format: html
 ---
 
-# ![](figs/livelihoods-and-economies.svg){width="8%" height="8%" color="red"} Livelihoods and economies
+# ![](figs/livelihoods-and-economies.svg){width="8%" height="8%" color="red"} Livelihoods and economies {#admin-info}
 
 <div class="button-container">
   <a href="https://ohi-goc.github.io/OHI_GOC/chapters/le_spanish.html" class="custom-button">
@@ -22,7 +22,6 @@ format: html
 
 - Adrian Munguia
 - Amy Hudson Weaver
-- Carmina Valiente
 - Fernando Aranceta
 - Francisco Fernandez
 - Geovanni Coredero Herrera
@@ -78,9 +77,80 @@ Add the shared calendar to your Google Calendar account using the [provided link
 
 :::
 
-## Key Questions
+## **Meeting #1 Recap & Next Steps**
 
-Should the OHI Gulf of California **maintain** the two subgoals: Livelihoods and Economies?
+**Thank you for joining our first Livelihoods & Economies Goalkeeper meeting!**  
+It was a great start to our work together in defining coastal livelihoods and economies for the **Gulf of California**, and how it should be integrated into this assessment.  
+
+::: {.callout-tip}
+
+### {{< fa book >}} **Meeting Recap**
+
+During our discussion, the group came to the conclusion that incorporating both **Livelihoods** and **Economies** as subgoals is very important for the Gulf of California. This agreement allowed us to move into defining important **direct** and **indirect** coastal and marine-related sectors in the Gulf, as well as beginning to consider how to measure, categorize, and assess them.
+
+The group discussed experiences from previous work in Mexico, including the use of **surveys** and **household-level data** (e.g., from INEGI and other organizations) to quantify livelihoods and employment. It was noted that the diversity of jobs in the Gulf requires considering the different contexts across the states that compose the region.
+
+##### **_Sectors mentioned included:_**
+
+- **Commercial fishing**
+  - Artisanal fishing  
+  - Subsistence fishing (the portion that is also sold, providing a livelihood)  
+  - Industrial fishing (e.g., shrimp, tuna)  
+  - Recreational fishing (sport fishing, such as tour operators for visitors who fish; in some locations this may be more economically important than scuba diving)  
+
+- **Tourism/Recreation**
+  - Jobs that provide activities and experiences in the Gulf  
+  - Jobs and revenue produced due to people visiting the Gulf  
+  - Debate on whether certain jobs, such as hotel work, should be considered under marine-related tourism, particularly when they may generate revenue but could also have negative effects on local access to resources  
+
+- **Ecotourism**
+  - e.g., tours, whale watching, scuba diving, etc.  
+
+- **Aquaculture/Mariculture**
+
+- **Other possible sectors**
+  - Renewable/tidal energy  
+  - Salt extraction (though data may be challenging to find, particularly for small-scale operations)  
+  - Organized crime (noting its complex role in some coastal communities — employing individuals and generating revenue, but also deterring fishing activities)  
+
+##### **_Sectors to discuss:_**
+
+- Shipping and/or ships  
+- Ports  
+
+##### **_Data and measurement considerations:_**
+
+Participants agreed to focus on identifying relevant job sectors, finding data on the **number of jobs**, their **quality**, and **revenue** associated with them. This includes considering:
+
+- Sustainability metrics — Where is the revenue coming from, and to whom/where is it going?  
+- Local vs. external investment  
+- Scale of business operations (small-scale, artisanal vs. industrial)  
+- Adaptive behavioral changes of fishermen as job availabilities shift due to climate change  
+- Defining **job quality** — Is it the number of workers with benefits? In fisheries, how many have legal permits to fish? How many dependents are in each household?  
+
+The group acknowledged the challenges of quantifying **small-scale operations** and the lack of contextualized data for certain sectors, and emphasized the importance of identifying these data gaps to integrate them into the ideal goal model.
+
+:::
+
+::: {.callout-important}
+### <i class="fa fa-step-forward" aria-hidden="true"></i> Next steps 
+
+- [ ] Review the [LE introduction slides](https://docs.google.com/presentation/d/1X9Yd-SqRzeTsktJ3qqSJelGoPGWp7dH9kbmvPSaI1V0/edit?slide=id.g2a86c82ea32_0_0#slide=id.g2a86c82ea32_0_0) to revisit the main ideas.  
+- [ ] Review the [Key Questions](#key-questions) and keep brainstorming.  
+- [ ] Add your thoughts, ideas, and potential data sources to the ongoing [collaborative LE Model Notes document](https://docs.google.com/document/d/1Ixhixn-pC6BPo4fwVi4sTkPXQbd7R-iKG3MF5XV4l_g/edit?tab=t.0#heading=h.8562cdkt8tdh).
+  - [ ] Add **resources, ideas, sectors to consider, and more** to this shared Google document.  
+
+More topics to think about before our **next meeting**:
+
+- What is the **ideal state of livelihoods and economies** for the Gulf of California?
+- What could be potential **indicators** for measuring job number, quality, and revenue?
+- Should a potential **reference point** be a temporal baseline?
+
+Thank you all, and see you next meeting (see the [LE Goalkeeper Group Information: who, what, when, where, why!](#admin-info) tab at the top of the page for more information)!
+
+:::
+
+## Key Questions {#key-questions}
 
 #### **Livelihoods**
 

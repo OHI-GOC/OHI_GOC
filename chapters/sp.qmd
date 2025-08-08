@@ -3,7 +3,7 @@ title: ""
 format: html
 ---
 
-# ![](figs/sense-of-place.svg){width="8%" height="8%" color="red"} Sense of place
+# ![](figs/sense-of-place.svg){width="8%" height="8%" color="red"} Sense of belonging {#admin-info}
 
 <div class="button-container">
   <a href="https://ohi-goc.github.io/OHI_GOC/chapters/sp_spanish.html" class="custom-button">
@@ -12,7 +12,7 @@ format: html
 </div>
 
 ::: {.callout-note collapse="true"}
-## SP Goalkeeper Group Information
+## SB Goalkeeper Group Information: who, what, when, where, why!
 
 ##### **Meeting Access**
 
@@ -82,7 +82,60 @@ In the global framework, these are the definitions of the goal and subgoals (Ico
 *Definition*: Geographic locations with particular value for aesthetic, spiritual, cultural, recreational, or existence reasons.  These areas are then assessed by their protection levels/status for these valued locations.
 :::
 
-## Key Questions
+
+## **Meeting #1 Recap & Next Steps**
+
+**Thank you for joining our first Sense of Belonging (SB) Goalkeeper meeting!**  
+It was a great start to our work together in defining what sense of belonging and place means for the **Gulf of California**, and how it should be integrated into this assessment.  
+
+::: {.callout-tip}
+
+### {{< fa book >}} **Meeting Recap**
+
+During our discussion, experts of the group emphasized the importance of artisanal fishing communities and their **multi-generational ties to the sea**, and that the sense of belonging has a big connection to both past and future generations. 
+
+- While it was noted that artisanal fishing already has its own goal, it was then discussed whether identity- and community-based aspects should be incorporated separately.  We will likely define that as we move forward and have a more solidified definition of Sense of Belonging as a goal.
+
+The group then described the wide variation in **environmental connection** among Gulf communities — from small rural towns with direct ocean dependence to larger urban areas with weaker ties. A **scale** (e.g., 0 to 10) was proposed to measure connection to place and species, with examples such as Loreto’s link to tourism and blue whales versus communities more focused on fishing and food.  
+
+**Cultural anthropology perspectives** on territory and access were introduced, and the group explored possible indicators, such as:
+
+- **environmental education programs**, 
+- **activism**, and 
+- **access to public spaces** 
+
+to measure the Sense of Belonging in the Gulf of California. 
+
+Concerns were raised about **indigenous access rights,** and the difficulties of using "rights" as a proxy, as there are some groups that do not have territorial rights despite being a significant cultural and community group.
+
+The North American *place-based education* framework was also highlighted as **very different** from the GoCA regional way to define connections between people and nature, and this should be kept in mind as we move forward.
+
+The group agreed that belonging is closely tied to identity and **memories rooted in a territory.** 
+
+* Based on this input, they decided the goal should focus on **defining and measuring belonging** across the Gulf’s diverse communities. To better reflect this focus, the goal’s name was changed from “Sense of Place” to **“Sense of Belonging”.**
+
+:::
+
+::: {.callout-important}
+### <i class="fa fa-step-forward" aria-hidden="true"></i> Next steps 
+
+- [ ] Review the [SB introduction slides](https://docs.google.com/presentation/d/169YPUcF8fLgdq41xPMiUorCxNoTo3be0NIefNLF_Egw/edit?slide=id.g3702978bd0b_0_539#slide=id.g3702978bd0b_0_539) to revisit the main ideas.  
+- [ ] Review the [Key Questions](#key-questions) and keep brainstorming.  
+- [ ] Add your thoughts, ideas, and potential data sources to the ongoing [collaborative SP Model Notes document](https://docs.google.com/document/d/1LWyrU_Ty38a4IMTRpzMMrrSGTjv_pPqvX2ICKJ8Gupo/edit?tab=t.0#heading=h.8562cdkt8tdh).
+  - [ ] Add recommended papers on **territory and access** to this shared google document.  
+
+More topics to think about before our **next meeting**:
+
+- What is the *ideal sense of belonging* for the Gulf of California?
+- What could be potential **indicators** for measuring sense of belonging (e.g., education, activism, access, governance factors)?
+- What are potential **reference points** for the Sense of Belonging goal?
+
+Thank you all and see you next meeting (see the [SB Goalkeeper Group Information: who, what, when, where, why!](#admin-info) tab at the top of the page for more information)!
+
+:::
+
+
+## Key Questions {#key-questions}
 
 What does **sense of place, or belonging,** mean to all of you? Does the global definition of the goal, and its subgoals, make sense for the Gulf of California? 
 
@@ -171,6 +224,6 @@ As well as physical places that are associated with cultural connections:
     <i class="fa-solid fa-square-poll-vertical"></i> OHI Core Analytical Team
   </a>
   <a href="mailto:sp-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button secondary">
-    <i class="fa-solid fa-people-group"></i> Sense of Place Goalkeeper Group
+    <i class="fa-solid fa-people-group"></i> Sense of Belonging Goalkeeper Group
   </a>
 </div>
