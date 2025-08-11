@@ -2,6 +2,9 @@
 title: ""
 format: html
 css: style.css
+editor: 
+  markdown: 
+    wrap: 72
 ---
 
 # ![](figs/food-provision.svg){width="8%" height="8%" color="red"} **Food Provisioning**
@@ -11,11 +14,12 @@ css: style.css
 <i class="fas fa-globe"></i> En Español </a>
 :::
 
-::: {.callout-note collapse="true"}
+------------------------------------------------------------------------
 
+::: {.callout-note collapse="true"}
 # About the FP Goal
 
-**Typically, this goal assesses our ability to sustainably maximize wild-caught or farmed marine foods.**
+Typically, this goal assesses our ability to sustainably maximize wild-caught or farmed marine foods.
 
 ::: {.custom-box}
 {{< fa lightbulb >}} **GOAL FOCUS**
@@ -23,13 +27,11 @@ css: style.css
 -   Measures the amount of seafood that is sustainably harvested within the GoC for human consumption or export.
 -   Aims to maximize sustainable seafood production.
 -   Typically split into two subgoals: wild-caught fisheries (including artisanal, commercial, and recreational fisheries) and mariculture. But this can be altered.
-    
 :::
 
 ## Key Questions
 
-What is the ideal sustainable state of the **artisanal opportunities**
-goal?
+What is the ideal sustainable state of the **Food Provisioning** goal?
 
 ### Fisheries Subgoal
 - The reference point is (typically) that all stocks in the region are sustainably managed, but how can we determine whether stocks are being sustainably managed? For the global assessment we use formal stock assessments (i.e., B/Bmsy).
@@ -47,44 +49,47 @@ goal?
 # Goalkeeper Meetings
 
 ::: {.callout-note collapse="true"}
-## **Meeting Logistics**  Who, What, When, Where
+## **Meeting Logistics**:  Who, What, When, Where
 
-##### **Meeting Access**
+### **Meeting Access**
 
 **Zoom Link:** <https://us06web.zoom.us/j/3255055973>
+
 ---
 
-##### **Key Team Members**
+### **Team Members**
+Names of team members listed in alphabetical order
+
+- Octavio Aburto
+- Mar Mancha-Cisneros
+- Andres Cisneros Montemayor
+- Hem Nalini Morzaria-Luna
 - Jorge Torre
 - Leonardo Vazquez 
-- Andres Cisneros Montemayor
 - Juan Carlos Villaseñor-Derbez
-- Hem Nalini Morzaria-Luna
-- Mar Mancha-Cisneros
-- Octavio Aburto 
 
 ---
 
-##### **Meeting Schedule _(Tuesday 11:00 AM - 12:00 PM PDT)_**
+#### **Meeting Schedule _(Tuesday 11:00 AM - 12:00 PM PDT)_**
 
 | Meeting | Date | Specific Date | Focus |
 |---------|------|---------------|-------|
-| 1 | July/August | July 22, 2025 | Group introductions, OHI platform overview, goal calculations |
-| 2 | August/September | August 19, 2025 | Model and reference point discussion |
-| 3 | September/October | September 23, 2025 | Model, reference point, and data sources |
-| 4 | October/November | October 21, 2025 | Preliminary results and pressure/resilience |
-| 5 | November/December | November 18, 2025 | Final analysis plan review |
+| 1 | July | July 22, 2025 | Group introductions, OHI platform overview, goal calculations |
+| 2 | August | August 19, 2025 | Model and reference point discussion |
+| 3 | September | September 23, 2025 | Model, reference point, and data sources |
+| 4 | October | October 21, 2025 | Preliminary results and pressure/resilience |
+| 5 | November | November 18, 2025 | Final analysis plan review |
 | 6 | December | December 9, 2025 *(tentative)* | *Tentative* |
 
 ---
 
-##### **Co-authorship Information**
+### **Co-authorship Information**
 
 This project provides opportunities to collaborate with regional experts and contribute to Gulf of California OHI assessment. Participation will be acknowledged on the website and other products. Additional co-authorship opportunities may be available with extra commitment as outlined [here](https://docs.google.com/document/d/16jwVGjbQpF_6B6sbkhb4xO00WAXdDiESBXu-n2a7D1k/edit?tab=t.0).
 
 ---
 
-##### **Google Calendar**
+### **Google Calendar**
 
 Add the shared calendar to your Google Calendar account using the [provided link](https://calendar.google.com/calendar/u/0?cid=Y184ZmIyNzhjNmQwM2E5MGFjZDJjYWE0MDdhOTcyY2ZlMjcxYTQwNzA3Mjc0MDFiNzM0NzRkNjdjNGM0NDE0ZjQyQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20). It will appear under "Other calendars" and provide access to all scheduled meetings with updated Zoom links.
 
@@ -92,18 +97,32 @@ Add the shared calendar to your Google Calendar account using the [provided link
 :::
 
 ::: {.callout-note collapse="true"}
-## **Meeting #1: Summary**  Notes, Resources, & Next Steps
+## FP **Meeting #1: Summary**, Resources, & Next Steps
 **Meeting #1** introduced participants and their research backgrounds related to the Gulf of California, with Erica facilitating and providing an overview of the Ocean Health Index. The group discussed the index's methodology and application to the Gulf of California region, including its assessment of various ocean health goals. The conversation ended with a discussion on the food provisioning goal, including how to define and measure sustainable food production from fisheries and mariculture in the Gulf of California. Participants were encouraged to prepare specific ideas for the next meeting.
 
-**In Meeting #2**, we will discuss how we might measure access to 'food provisioning' in the Gulf, and possible FP reference points, so please come prepared for this discussion. A reference point is defined as the ideal state of artisanal opportunities in the GoC.
+**Resources shared during Meeting #1**
 
-The presentation slides and notes from meeting #1 can be accessed in the group's google drive [here](https://drive.google.com/drive/u/0/folders/1W0_ki39XNR1zHN4tBo_tQ-wnVia4grP8). 
+- [Presentation Slides](https://docs.google.com/presentation/d/1TKzHiRU-gqXfhaNUt087sUBVFBIyk0bD7gEz-7J_DyI/edit?usp=share_link)
+: learn more about Ocean Health Index, the goals of this project in the Gulf of California, and objectives for the Goalkeeper Group.
+- [**Meeting #1 Summary & General Notes**](https://docs.google.com/document/d/1l4zVOSt-twGsw9FvBCq1bPtPyuienjRKovf8zbaizvE/edit?usp=share_link)
+: catch up on meetings you missed and review meeting summaries; keep track of resources and data bases shared during our meetings, and write down your quick thoughts offline.
+
+*Resources shared during our meetings can be accessed in the group's shared google drive* [here](https://drive.google.com/drive/u/0/folders/1W0_ki39XNR1zHN4tBo_tQ-wnVia4grP8).
+
+**In Meeting #2**, we will discuss how we might measure access to 'Food Provisioning' in the Gulf, and possible FP reference points, so please come prepared for this discussion. A reference point is defined as the <u>ideal state</u> of 'Food Provisioning' in the GoC.
 :::
 
 ::: {.callout-note collapse="true"}
-## **Meeting #2: Summary**  *UPCOMING*
-**In Meeting #2**, we will discuss how we might measure access to 'food provisioning' in the Gulf, and possible FP reference points, so please come prepared for this discussion. A reference point is defined as the ideal state of artisanal opportunities in the GoC.
+## FP **Meeting #2: Summary**  *UPCOMING August 19*
+**In Meeting #2**, we will discuss how we might measure access to 'Food Provisioning' in the Gulf, and possible FP reference points, so please come prepared for this discussion. A reference point is defined as the ideal state of 'Food Provisioning' in the GoC.
+
+**Stay tuned for Meeting #2 resources.**
 :::
+
+<!-- ::: {.callout-note collapse="true"} -->
+<!-- ## **FP Meeting #3: Summary**  *UPCOMING September 23* -->
+<!-- Stay tuned for Meeting #3 resources. -->
+<!-- ::: -->
 
 ------------------------------------------------------------------------
 

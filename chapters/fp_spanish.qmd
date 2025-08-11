@@ -1,6 +1,10 @@
 ---
 title: ""
 format: html
+css: style.css
+editor: 
+  markdown: 
+    wrap: 72
 ---
 
 # ![](figs/food-provision.svg){width="8%" height="8%" color="red"} **Provisión de Alimentos**
@@ -11,125 +15,147 @@ format: html
   </a>
 </div>
 
-# **Empezando**
+------------------------------------------------------------------------
 
-**Normalmente, este objetivo evalúa nuestra capacidad para maximizar de manera sostenible la producción de alimentos marinos capturados en estado silvestre o cultivados.**
+::: {.callout-note collapse="true"}
+# Sobre la Meta de Provisión de Alimentos (FP)
+
+Típicamente, esta meta evalúa nuestra capacidad para maximizar de manera sostenible los alimentos marinos capturados en vida silvestre o cultivados.
 
 ::: {.custom-box}
-{{< fa lightbulb >}} **ENFOQUE DEL GOAL**
+{{< fa lightbulb >}} **ENFOQUE DE LA META**
 
--   Mide la cantidad de mariscos que se capturan o cultivan de manera sostenible dentro del Golfo de California para consumo humano o exportación.  
--   Busca maximizar la producción sostenible de alimentos marinos.  
--   Generalmente se divide en dos subobjetivos: pesquerías silvestres (incluyendo pesquerías artesanales, comerciales y recreativas) y maricultura. Sin embargo, esto puede modificarse.  
+-   Mide la cantidad de productos del mar que se capturan de forma sostenible dentro del GoC para consumo humano o exportación.
+-   Busca maximizar la producción sostenible de productos marinos.
+-   Generalmente se divide en dos sub-metas: pesquerías de captura silvestre (incluyendo pesquerías artesanales, comerciales y recreativas) y maricultura. Pero esto puede modificarse.
 :::
 
 ## Preguntas Clave
 
-¿Cuál es el estado sostenible ideal del objetivo de **oportunidades artesanales**?
+¿Cuál es el estado sostenible ideal de la **meta de Provisión de Alimentos**?
 
-### **Subobjetivo de Pesquerías**
+### Submeta de Pesquerías
+- El punto de referencia es (típicamente) que todas las poblaciones en la región estén manejadas de forma sostenible, pero ¿cómo podemos determinar si las poblaciones están siendo manejadas sosteniblemente? Para la evaluación global usamos evaluaciones formales de poblaciones (por ejemplo, B/Bmsy).
+- ¿Cómo ponderamos las poblaciones (es decir, todas cuentan igual, o ponderamos por abundancia)?
+- ¿Debe haber penalizaciones por subexplotación?
 
-- El punto de referencia es (normalmente) que todas las poblaciones de peces en la región estén gestionadas de forma sostenible. Pero ¿cómo podemos determinar si lo están? Para la evaluación global usamos evaluaciones formales de stocks (es decir, B/Bmsy).
-- ¿Cómo deberíamos ponderar las especies? (¿Todas cuentan igual o se ponderan por abundancia?)
-- ¿Debería haber penalizaciones por capturas por debajo del nivel sostenible?
-
-### **Subobjetivo de Maricultura**
-
+### Submeta de Maricultura
 - ¿Cómo podemos determinar la sostenibilidad de las prácticas de maricultura?
-- ¿Qué punto de referencia debería utilizarse?
+- ¿Qué punto de referencia deberíamos usar?
+
+:::
 
 ------------------------------------------------------------------------
 
-# Notas de Reuniones Previas
-
-# **Reuniones del Goalkeeper**
+# Reuniones de Guardianes de la Meta
 
 ::: {.callout-note collapse="true"}
-## Información y detalles de reunión para Miembros del FP Goalkeeper Group
+## **Logística de Reuniones**: Quién, Qué, Cuándo, Dónde
 
-##### **Acceso a la Reunión**
+### **Acceso a la Reunión**
 
-**Enlace de Zoom:** <https://us06web.zoom.us/j/3255055973>  
+**Enlace de Zoom:** <https://us06web.zoom.us/j/3255055973>
+
 ---
 
-##### **Miembros Clave del Equipo**
+### **Miembros del Equipo**
+Nombres de los miembros del equipo en orden alfabético
 
+- Octavio Aburto  
+- Mar Mancha-Cisneros  
+- Andrés Cisneros Montemayor  
+- Hem Nalini Morzaria-Luna  
 - Jorge Torre  
 - Leonardo Vázquez  
-- Andrés Cisneros Montemayor  
 - Juan Carlos Villaseñor-Derbez  
-- Hem Nalini Morzaria-Luna  
-- Mar Mancha-Cisneros  
-- Octavio Aburto  
 
 ---
 
-##### **Calendario de Reuniones _(Martes de 11:00 AM a 12:00 PM PDT)_**
+#### **Calendario de Reuniones _(Martes 11:00 AM - 12:00 PM PDT)_**
 
 | Reunión | Mes | Fecha Específica | Enfoque |
 |---------|------|------------------|---------|
-| 1 | Julio/Agosto | 22 de julio de 2025 | Introducciones del grupo, visión general de OHI, cálculos de objetivos |
-| 2 | Agosto/Septiembre | 19 de agosto de 2025 | Discusión del modelo y puntos de referencia |
-| 3 | Septiembre/Octubre | 23 de septiembre de 2025 | Modelo, puntos de referencia y fuentes de datos |
-| 4 | Octubre/Noviembre | 21 de octubre de 2025 | Resultados preliminares y presiones/resiliencia |
-| 5 | Noviembre/Diciembre | 18 de noviembre de 2025 | Revisión del plan de análisis final |
+| 1 | Julio | 22 de julio de 2025 | Presentación del grupo, introducción a la plataforma OHI, cálculo de metas |
+| 2 | Agosto | 19 de agosto de 2025 | Discusión sobre el modelo y punto de referencia |
+| 3 | Septiembre | 23 de septiembre de 2025 | Modelo, punto de referencia y fuentes de datos |
+| 4 | Octubre | 21 de octubre de 2025 | Resultados preliminares y presión/resiliencia |
+| 5 | Noviembre | 18 de noviembre de 2025 | Revisión final del plan de análisis |
 | 6 | Diciembre | 9 de diciembre de 2025 *(tentativa)* | *Tentativa* |
 
 ---
 
-##### **Información sobre Coautoría**
+### **Información sobre Coautoría**
 
-Este proyecto brinda oportunidades para colaborar con expertos regionales y contribuir a la evaluación OHI del Golfo de California. La participación será reconocida en el sitio web y otros productos. Pueden surgir oportunidades adicionales de coautoría con mayor compromiso, como se describe [aquí](https://docs.google.com/document/d/16jwVGjbQpF_6B6sbkhb4xO00WAXdDiESBXu-n2a7D1k/edit?tab=t.0).
+Este proyecto ofrece oportunidades para colaborar con expertos regionales y contribuir a la evaluación del OHI en el Golfo de California. La participación será reconocida en el sitio web y otros productos. Puede haber oportunidades adicionales de coautoría con un mayor compromiso, como se detalla [aquí](https://docs.google.com/document/d/16jwVGjbQpF_6B6sbkhb4xO00WAXdDiESBXu-n2a7D1k/edit?tab=t.0).
 
 ---
 
-##### **Calendario de Google**
+### **Calendario de Google**
 
-Agrega el calendario compartido a tu cuenta de Google Calendar usando este [enlace](https://calendar.google.com/calendar/u/0?cid=Y184ZmIyNzhjNmQwM2E5MGFjZDJjYWE0MDdhOTcyY2ZlMjcxYTQwNzA3Mjc0MDFiNzM0NzRkNjdjNGM0NDE0ZjQyQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20). Aparecerá bajo "Otros calendarios" y proporcionará acceso a todas las reuniones programadas con enlaces actualizados de Zoom.
+Agrega el calendario compartido a tu cuenta de Google Calendar usando el [enlace proporcionado](https://calendar.google.com/calendar/u/0?cid=Y184ZmIyNzhjNmQwM2E5MGFjZDJjYWE0MDdhOTcyY2ZlMjcxYTQwNzA3Mjc0MDFiNzM0NzRkNjdjNGM0NDE0ZjQyQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20). Aparecerá bajo "Otros calendarios" y proporcionará acceso a todas las reuniones programadas con los enlaces de Zoom actualizados.
 
-**¡No dudes en contactarnos si tienes alguna pregunta. Esperamos trabajar contigo en esta iniciativa!**
-
+**Por favor contáctanos si tienes alguna pregunta. ¡Esperamos trabajar contigo en esta iniciativa!**
 :::
 
-## Reunión del Grupo FP #1: Resumen
+::: {.callout-note collapse="true"}
+## FP **Reunión #1: Resumen**, Recursos y Próximos Pasos
+**La Reunión #1** presentó a los participantes y sus antecedentes de investigación relacionados con el Golfo de California, con Erica facilitando y ofreciendo una visión general del Índice de Salud del Océano. El grupo discutió la metodología del índice y su aplicación en la región del Golfo de California, incluyendo la evaluación de diversas metas de salud oceánica. La conversación concluyó con una discusión sobre la meta de provisión de alimentos, incluyendo cómo definir y medir la producción sostenible de alimentos a partir de pesquerías y maricultura en el Golfo de California. Se alentó a los participantes a preparar ideas específicas para la próxima reunión.
 
-**En la Reunión #1**, presentó a los participantes y sus antecedentes de investigación en el Golfo de California. Erica facilitó y ofreció una descripción general del Índice de Salud del Océano. El grupo discutió la metodología del índice y su aplicación en la región del Golfo de California, incluyendo su evaluación de diversos objetivos de salud del océano. La conversación finalizó con un debate sobre el objetivo de abastecimiento de alimentos, incluyendo cómo definir y medir la producción sostenible de alimentos provenientes de la pesca y la maricultura en el Golfo de California. Se animó a los participantes a preparar ideas específicas para la próxima reunión.
+**Recursos compartidos durante la Reunión #1**
 
-**En la Reunión #2**, discutiremos cómo podríamos medir el acceso al abastecimiento de alimentos en el Golfo y posibles puntos de referencia del Índice de Salud del Océano, así que les pedimos que vengan preparados para esta discusión. Un punto de referencia se define como el estado ideal de las oportunidades artesanales en el Golfo de California.
+- [Diapositivas de Presentación](https://docs.google.com/presentation/d/1TKzHiRU-gqXfhaNUt087sUBVFBIyk0bD7gEz-7J_DyI/edit?usp=share_link)  
+: aprende más sobre el Índice de Salud del Océano, los objetivos de este proyecto en el Golfo de California y las metas del Grupo de Guardianes.
 
-Las diapositivas de la presentación y las notas de la reunión #1 están disponibles en el Google Drive del grupo [aquí](https://drive.google.com/drive/u/0/folders/1W0_ki39XNR1zHN4tBo_tQ-wnVia4grP8).  
+- [**Resumen de la Reunión #1 y Notas Generales**](https://docs.google.com/document/d/1l4zVOSt-twGsw9FvBCq1bPtPyuienjRKovf8zbaizvE/edit?usp=share_link)  
+: repasa lo discutido en las reuniones si no pudiste asistir, revisa los resúmenes, recursos y bases de datos compartidas durante las sesiones, y anota tus ideas de manera offline.
+
+*Los recursos compartidos durante nuestras reuniones están disponibles en la carpeta compartida de Google Drive del grupo* [aquí](https://drive.google.com/drive/u/0/folders/1W0_ki39XNR1zHN4tBo_tQ-wnVia4grP8).
+
+**En la Reunión #2**, discutiremos cómo podríamos medir la ‘Provisión de Alimentos’ en el Golfo, y posibles puntos de referencia de FP, así que por favor ven preparado/a para esta discusión. Un punto de referencia se define como el <u>estado ideal</u> de ‘Provisión de Alimentos’ en el GoC.
+:::
+
+::: {.callout-note collapse="true"}
+## FP **Reunión #2: Resumen**  *PRÓXIMAMENTE 19 de Agosto*
+**En la Reunión #2**, discutiremos cómo podríamos medir la ‘Provisión de Alimentos’ en el Golfo, y posibles puntos de referencia de FP, así que por favor ven preparado/a para esta discusión. Un punto de referencia se define como el estado ideal de la ‘Provisión de Alimentos’ en el GoC.
+
+**Próximamente recursos de la Reunión #2.**
+:::
+
+<!-- ::: {.callout-note collapse="true"} -->
+<!-- ## **Reunión FP #3: Resumen**  *PRÓXIMAMENTE 23 de Septiembre* -->
+<!-- Próximamente recursos de la Reunión #3. -->
+<!-- ::: -->
 
 ------------------------------------------------------------------------
 
-# **Reuniones del Grupo de Expertos (EWG)**
+# Reuniones del Grupo de Expertos (EWG)
 
-## Reunión EWG #1: Consideraciones Regionales
+::: {.callout-note collapse="true"}
+## Reunión EWG #1: Consideraciones Regionales para FP
 
-Estos son algunos de los puntos discutidos por el Grupo de Expertos:
+Estos son algunos de los puntos discutidos por el Grupo de Expertos.
 
 ### Presiones por Contaminantes (mercurio y selenio):
 
-- La acumulación de mercurio (Hg) en peces representa una presión significativa que afecta la sostenibilidad de los mariscos y la salud humana (aunque el selenio puede tener un efecto compensatorio).  
-- Los datos de salud humana relacionados con la exposición al mercurio pueden servir como un indicador proxy útil de seguridad alimentaria marina y presión ambiental.
+- La acumulación de mercurio (Hg) en los peces es una presión significativa que afecta la sostenibilidad de los productos del mar y la salud humana (aunque el selenio también puede ser relevante como elemento contrarrestante).
+- Los datos sobre salud humana relacionados con la exposición al mercurio podrían servir como un indicador proxy útil para la seguridad alimentaria y la presión ambiental.
 
 ### Acceso y Beneficios para Comunidades Locales:
 
-- Puede ser relevante considerar dónde se capturan los peces geográficamente y qué porcentaje del total beneficia a las comunidades locales frente a la exportación o mercados externos.  
-  - Esto ayuda a evaluar la seguridad alimentaria y la distribución equitativa de los recursos marinos.
+- Podría considerarse dónde se captura el pescado geográficamente y qué porcentaje de la captura beneficia a las comunidades locales versus exportación o mercados externos.
+  - Esto ayuda a evaluar la seguridad alimentaria y la distribución equitativa de los recursos pesqueros.
 
 ### Impactos Ambientales:
 
-- Los desechos de pescado descargados al océano son una preocupación ambiental notable, que podría afectar la salud del ecosistema.
+- Los desechos de pescado que se devuelven al océano representan una preocupación ambiental importante, con impacto potencial sobre la salud del ecosistema.
+:::
 
 ------------------------------------------------------------------------
 
-# **Contáctanos**
+# Contáctanos:
 
 <div class="button-container">
   <a href="mailto:core-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button">
     <i class="fa-solid fa-square-poll-vertical"></i> Equipo Analítico Central de OHI
   </a>
-  <a href="mailto:fp-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button secondary">
-    <i class="fa-solid fa-people-group"></i> Grupo de Provisión de Alimentos
-  </a>
-</div>
+  <a href="mailto:fp-ohi-gulf-ca

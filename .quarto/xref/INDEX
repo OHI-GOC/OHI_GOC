@@ -133,5 +133,11 @@
   },
   "chapters/le_spanish.qmd": {
     "le_spanish.html": "981cf908"
+  },
+  "chapters/np_spanish.qmd": {
+    "np_spanish.html": "5813f50b"
+  },
+  "chapters/bd_spanish.qmd": {
+    "bd_spanish.html": "44396a0f"
   }
 }

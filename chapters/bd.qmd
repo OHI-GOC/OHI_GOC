@@ -1,25 +1,37 @@
 ---
 title: ""
 format: html
+css: style.css
+editor: 
+  markdown: 
+    wrap: 72
 ---
 
-# ![](figs/biodiversity.svg){width="8%" height="8%" color="red"} Biodiversity
+# ![](figs/biodiversity.svg){width="8%" height="8%" color="red"} **Biodiversity**
 
-**This goal describes how successfully we are preserving the richness and variety of marine life.**
+::: button-container
+<a href="https://ohi-goc.github.io/OHI_GOC/chapters/bd_spanish.html" class="custom-button">
+<i class="fas fa-globe"></i> En Español </a>
+:::
+
+------------------------------------------------------------------------
+
+::: {.callout-note collapse="true"}
+# About the BD Goal
+
+This goal describes how successfully we are preserving the richness and variety of marine life.
 
 ---
 
 <div class="custom-box">
 {{< fa lightbulb >}} **This information is meant to help guide the process of developing the Gulf of California OHI!**
 
-This goal is included in the global OHI, but other regional assessments have cut or modified this goal to better meet their objectives for ocean health...
+This goal is included in the global OHI, but other regional assessments have cut or modified this goal to better meet their objectives for ocean health.
 </div>
-
 
 #### Overview
 
 #### Practical Guidance
-
 
 #### LEARN MORE
 Explore the full description of the data and model used in the GLOBAL MODEL. Or, take a look at REGIONAL APPROACHES to learn how other OHI+ assessments have modified this goal to address differences in data availability or priorities.
@@ -44,4 +56,114 @@ SPECIES
   </a>
 </div>
 
+:::
 
+------------------------------------------------------------------------
+
+# Goalkeeper Meetings
+
+::: {.callout-note collapse="true"}
+## **Meeting Logistics**:  Who, What, When, Where
+
+### **Meeting Access**
+
+**Zoom Link:** <https://us06web.zoom.us/j/3255055973>
+
+---
+
+### **Team Members**
+Names of team members listed in alphabetical order
+
+- Yuliana Bedolla 
+- Miguel Betancourt
+- Rick Brusca 
+- Geovanni (Geo) Coredero Herrera
+- Violeta González Maynez
+- Lorayne Meltzer
+- Hem Nalini Morzaria-Luna
+- Adrian Munguia
+- Hector Reyes
+- Jorge Torre
+- Ben Wilder
+
+---
+
+### **Meeting Schedule _(Thursday 1:00 PM - 2:00 PM PDT)_**
+
+| Meeting | Date | Specific Date | Focus |
+|---------|------|---------------|-------|
+| 1 | July | July 31, 2025 | Group introductions, OHI platform overview, goal calculations |
+| 2 | August | August 28, 2025 | Model and reference point discussion |
+| 3 | September | September 25, 2025 | Model, reference point, and data sources |
+| 4 | October | October 30, 2025 | Preliminary results and pressure/resilience |
+| 5 | November | November 20, 2025 | Final analysis plan review |
+| 6 | December | December 11, 2025 *(tentative)* | *Tentative* |
+
+---
+
+### **Co-authorship Information**
+
+This project provides opportunities to collaborate with regional experts and contribute to Gulf of California OHI assessment. Participation will be acknowledged on the website and other products. Additional co-authorship opportunities may be available with extra commitment as outlined [here](https://docs.google.com/document/d/16jwVGjbQpF_6B6sbkhb4xO00WAXdDiESBXu-n2a7D1k/edit?tab=t.0).
+
+---
+
+### **Google Calendar**
+
+Add the shared calendar to your Google Calendar account using the [provided link](https://calendar.google.com/calendar/u/0?cid=Y184ZmIyNzhjNmQwM2E5MGFjZDJjYWE0MDdhOTcyY2ZlMjcxYTQwNzA3Mjc0MDFiNzM0NzRkNjdjNGM0NDE0ZjQyQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20). It will appear under "Other calendars" and provide access to all scheduled meetings with updated Zoom links.
+
+**Please let us know if you have any questions. We look forward to working on this initiative with you!**
+:::
+
+::: {.callout-note collapse="true"}
+## BD **Meeting #1: Summary**, Resources, & Next Steps
+**Meeting #1** began with a discussion about AI meeting tools, language translation services in Zoom, and group member introductions. This was followed by a presentation and overview of the Ocean Health Index (OHI) and its application to the Gulf of California. Participants explored OHI methodology for assessing biodiversity goals, including the importance of establishing appropriate reference points and quantifying current status of biodiversity in the region. The group discussed challenges for data collection and analysis, with a focus on habitat degradation trends, and the difficulty of defining a 'healthy state' or baseline.
+
+**Resources shared during Meeting #1**
+
+- [Presentation Slides](https://docs.google.com/presentation/d/1c7PHidzwKTyiUAjSRDrsgXOQgQQHZpPUXjqYRD5wOII/edit?usp=sharing)
+: learn more about Ocean Health Index, the goals of this project in the Gulf of California, and objectives for the Goalkeeper Group.
+- [**Meeting #1 Summary & General Notes**](https://docs.google.com/document/d/1IFH2GoHWF_8XMBelkLNQp0xbIPvyZNyFzFERgjGNWrU/edit?usp=share_link)
+: catch up on meetings you missed and review meeting summaries; keep track of resources and data bases shared during our meetings, and write down your quick thoughts offline.
+
+*Resources shared during our meetings can be accessed in the group's shared google drive* [here](https://drive.google.com/drive/u/0/folders/1JyiiyMa41FiYwM-l8rVXM1lPkMiWl6TH).
+
+**In Meeting #2**, we will discuss how we might measure 'Biodiversity' in the Gulf, and possible BD reference points, so please come prepared for this discussion. A reference point is defined as the <u>ideal state</u> of biodiversity in the GoC.
+:::
+
+::: {.callout-note collapse="true"}
+## BD **Meeting #2: Summary**  *UPCOMING August 28*
+**In Meeting #2**, we will discuss how we might measure the state of 'Biodiversity' in the Gulf, and possible BD reference points, so please come prepared for this discussion. A reference point is defined as the ideal state of biodiversity in the GoC.
+
+**Stay tuned for Meeting #2 resources.**
+:::
+
+<!-- ::: {.callout-note collapse="true"} -->
+<!-- ## **BD Meeting #3: Summary**  *UPCOMING September 23* -->
+<!-- Stay tuned for Meeting #3 resources. -->
+<!-- ::: -->
+
+------------------------------------------------------------------------
+
+# Expert Working Group (EWG) Meetings
+
+::: {.callout-note collapse="true"}
+## EWG Meeting #1: Regional Considerations for BD
+
+These are some of the points discussed by the Expert Working Group.
+
+UNDER CONSTRUCTION
+
+:::
+
+------------------------------------------------------------------------
+
+# Contact Us:
+
+<div class="button-container">
+  <a href="mailto:core-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button">
+    <i class="fa-solid fa-square-poll-vertical"></i> OHI Core Analytical Team
+  </a>
+  <a href="mailto:bd-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button secondary">
+    <i class="fa-solid fa-people-group"></i> Biodiversity Goalkeeper Group
+  </a>
+</div>

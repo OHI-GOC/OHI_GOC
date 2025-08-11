@@ -1,0 +1,149 @@
+---
+title: ""
+format: html
+css: style.css
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+# ![](figs/natural-products.svg){width=8% height=8% color="red"} **Productos Naturales** 
+
+<div class="button-container">
+  <a href="https://ohi-goc.github.io/OHI_GOC/chapters/np.html" class="custom-button">
+    <i class="fas fa-globe"></i> English Translation
+  </a>
+</div>
+
+------------------------------------------------------------------------
+
+::: {.callout-note collapse="true"}
+# Sobre la Meta de Productos Naturales (NP)
+
+Esta meta evalúa si los países están maximizando la extracción sostenible de recursos marinos no alimentarios.
+
+---
+
+<div class="custom-box">
+{{< fa lightbulb >}} **Esta información está destinada a guiar el proceso de desarrollo del OHI para el Golfo de California.**
+
+Esta meta está incluida en el OHI global, pero otras evaluaciones regionales la han eliminado o modificado para cumplir mejor con sus propios objetivos de salud oceánica.
+</div>
+
+#### Descripción General
+
+#### Orientación Práctica
+
+#### MÁS INFORMACIÓN
+Explora la descripción completa de los datos y modelos utilizados en el MODELO GLOBAL. O revisa los ENFOQUES REGIONALES para conocer cómo otras evaluaciones OHI+ han adaptado esta meta según la disponibilidad de datos o sus prioridades.
+
+<div class="button-container">
+  <a href="https://ohi-science.org/ohi-methods/goals/goal-models-data.html#natural-products" class="custom-button">
+    <i class="fas fa-globe"></i> MODELO GLOBAL
+  </a>
+  <a href="https://oceanhealthindex.org/guidance/natural-products/" class="custom-button secondary">
+    <i class="fas fa-location-dot"></i> ENFOQUES REGIONALES
+  </a>
+</div>
+:::
+
+------------------------------------------------------------------------
+
+# Reuniones de Guardianes de la Meta
+
+::: {.callout-note collapse="true"}
+## **Logística de Reuniones**: Quién, Qué, Cuándo, Dónde
+
+##### **Acceso a la Reunión**
+
+**Enlace de Zoom:** <https://us06web.zoom.us/j/3255055973>
+
+---
+
+### **Miembros del Equipo**
+Nombres de los miembros del equipo en orden alfabético
+
+- Miguel Betancourt  
+- Francisco Fernández  
+- Jaqueline García-Hernández  
+- Liliana Rojo  
+
+---
+
+### **Calendario de Reuniones _(Jueves 11:00 AM - 12:00 PM PDT)_**
+
+| Reunión | Mes | Fecha específica | Enfoque |
+|--------|------|------------------|---------|
+| 1 | Julio | 31 de julio de 2025 | Presentación del grupo, introducción a la plataforma OHI, cálculos de metas |
+| 2 | Agosto | 28 de agosto de 2025 | Discusión del modelo y punto de referencia |
+| 3 | Septiembre | 25 de septiembre de 2025 | Modelo, punto de referencia y fuentes de datos |
+| 4 | Octubre | 30 de octubre de 2025 | Resultados preliminares y presión/resiliencia |
+| 5 | Noviembre | 20 de noviembre de 2025 | Revisión final del plan de análisis |
+| 6 | Diciembre | 11 de diciembre de 2025 *(tentativa)* | *Tentativa* |
+
+---
+
+### **Información sobre Coautoría**
+
+Este proyecto brinda oportunidades para colaborar con expertos regionales y contribuir a la evaluación del OHI en el Golfo de California. La participación será reconocida en el sitio web y en otros productos. Puede haber oportunidades adicionales de coautoría con un compromiso extra, como se describe [aquí](https://docs.google.com/document/d/16jwVGjbQpF_6B6sbkhb4xO00WAXdDiESBXu-n2a7D1k/edit?tab=t.0).
+
+---
+
+### **Calendario de Google**
+
+Agrega el calendario compartido a tu cuenta de Google Calendar usando el [enlace proporcionado](https://calendar.google.com/calendar/u/0?cid=Y184ZmIyNzhjNmQwM2E5MGFjZDJjYWE0MDdhOTcyY2ZlMjcxYTQwNzA3Mjc0MDFiNzM0NzRkNjdjNGM0NDE0ZjQyQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20). Aparecerá en "Otros calendarios" y te dará acceso a todas las reuniones programadas con los enlaces de Zoom actualizados.
+
+**Por favor, contáctanos si tienes alguna pregunta. ¡Esperamos trabajar contigo en esta iniciativa!**
+:::
+
+::: {.callout-note collapse="true"}
+## NP **Reunión #1: Resumen**, Recursos y Próximos Pasos
+
+**Reunión #1** presentó a los participantes el Índice de Salud del Océano y su aplicación en el Golfo de California. Erica explicó la metodología del índice y el enfoque de evaluación regional. El equipo debatió sobre los productos naturales del Golfo, explorando diversos recursos potenciales y consideraciones de sostenibilidad, incluyendo la captura incidental, el aprovechamiento de los desechos pesqueros, y el cultivo de totoaba. Los participantes acordaron recopilar más información sobre las fuentes de biomasa y los puntos de referencia para los productos naturales, a la vez que exploramos maneras de medir y mejorar el uso sostenible de los recursos en la región. 
+
+**Recursos compartidos durante la Reunión #1**
+
+- [Diapositivas de Presentación](https://docs.google.com/presentation/d/1SzeKI7Tg37KUQbrQ0u9Qw8UZzkOBc90z0fQTiYS-8c8/edit?usp=share_link)  
+: aprende más sobre el Índice de Salud del Océano, los objetivos de este proyecto en el Golfo de California y los propósitos del Grupo de Guardianes de Metas.
+
+- [**Resumen de la Reunión #1 y Notas Generales**](https://docs.google.com/document/d/11LrbOWL7UnQ2SU3u-POucAdKruhMNsFJ6rCkEMtNIqI/edit?tab=t.0#heading=h.8562cdkt8tdh)  
+: consulta las reuniones que no pudiste atender, revisa los resúmenes, recursos y bases de datos compartidas durante las sesiones, y anota tus ideas de manera offline.
+
+*Los recursos compartidos durante nuestras reuniones están disponibles en la carpeta compartida de Google Drive del grupo* [aquí](https://drive.google.com/drive/u/0/folders/11vzy2cgSxRSWaPTaHIKawYgynVozh0yl).
+
+**En la Reunión #2**, discutiremos cómo debemos definir y evaluar los 'Productos Naturales' en el Golfo, y posibles puntos de referencia para NP, así que por favor prepárate para esta conversación. Un punto de referencia se define como el <u>estado ideal</u> de los productos naturales en el GoC.
+:::
+
+::: {.callout-note collapse="true"}
+## NP **Reunión #2: Resumen**  *PRÓXIMAMENTE 28 de Agosto*
+
+**En la Reunión #2**, discutiremos cómo podríamos evaluar 'Productos Naturales' en el Golfo y posibles puntos de referencia para NP, así que por favor prepárate para esta conversación. Un punto de referencia se define como el estado ideal de biodiversidad en el GoC.
+
+**Próximamente se compartirán los recursos de la Reunión #2.**
+:::
+
+------------------------------------------------------------------------
+
+# Reuniones del Grupo de Expertos (EWG)
+
+::: {.callout-note collapse="true"}
+## Reunión EWG #1: Consideraciones Regionales para NP
+
+Estos son algunos de los puntos discutidos por el Grupo de Expertos.
+
+EN CONSTRUCCIÓN
+
+:::
+
+------------------------------------------------------------------------
+
+# **Contáctanos:**
+
+::: button-container
+<a href="mailto:core-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button">
+<i class="fa-solid fa-square-poll-vertical"></i> Equipo Analítico Central de OHI
+</a>
+<a href="mailto:np-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button secondary">
+<i class="fa-solid fa-people-group"></i> Grupo de Guardianes de la Meta de Productos Naturales
+</a>
+:::

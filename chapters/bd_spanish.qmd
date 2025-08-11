@@ -1,0 +1,173 @@
+---
+title: ""
+format: html
+css: style.css
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+# ![](figs/biodiversity.svg){width="8%" height="8%" color="red"} **Biodiversidad**
+
+<div class="button-container">
+  <a href="https://ohi-goc.github.io/OHI_GOC/chapters/bd.html" class="custom-button">
+    <i class="fas fa-globe"></i> English Translation
+  </a>
+</div>
+
+------------------------------------------------------------------------
+
+::: {.callout-note collapse="true"}
+# Sobre la Meta de Biodiversidad (BD)
+
+Esta meta describe qué tan exitosamente estamos preservando la riqueza y variedad de la vida marina.
+
+---
+
+<div class="custom-box">
+{{< fa lightbulb >}} **Esta información está destinada a guiar el proceso de desarrollo del OHI para el Golfo de California.**
+
+Esta meta está incluida en el OHI global, pero otras evaluaciones regionales la han eliminado o modificado para cumplir mejor con sus propios objetivos de salud oceánica.
+</div>
+
+#### Descripción General
+
+#### Orientación Práctica
+
+#### MÁS INFORMACIÓN
+Explora la descripción completa de los datos y modelos utilizados en el MODELO GLOBAL. O bien, revisa ENFOQUES REGIONALES para ver cómo otras evaluaciones OHI+ han modificado esta meta según la disponibilidad de datos o sus prioridades.
+
+HÁBITATS
+<div class="button-container">
+  <a href="https://ohi-science.org/ohi-methods/goals/goal-models-data.html#habitat-subgoal-of-biodiversity" class="custom-button">
+    <i class="fas fa-globe"></i> MODELO GLOBAL
+  </a>
+  <a href="https://oceanhealthindex.org/guidance/habitats/" class="custom-button secondary">
+    <i class="fas fa-location-dot"></i> ENFOQUES REGIONALES
+  </a>
+</div>
+
+ESPECIES
+<div class="button-container">
+  <a href="https://ohi-science.org/ohi-methods/goals/goal-models-data.html#species-condition-subgoal-of-biodiversity" class="custom-button">
+    <i class="fas fa-globe"></i> MODELO GLOBAL
+  </a>
+  <a href="https://oceanhealthindex.org/guidance/species/" class="custom-button secondary">
+    <i class="fas fa-location-dot"></i> ENFOQUES REGIONALES
+  </a>
+</div>
+
+:::
+
+------------------------------------------------------------------------
+
+# Reuniones de Guardianes de la Meta
+
+::: {.callout-note collapse="true"}
+## **Logística de Reuniones**: Quién, Qué, Cuándo, Dónde
+
+### **Acceso a la Reunión**
+
+**Enlace de Zoom:** <https://us06web.zoom.us/j/3255055973>
+
+---
+
+### **Miembros del Equipo**
+Nombres de los miembros del equipo en orden alfabético
+
+- Yuliana Bedolla  
+- Miguel Betancourt  
+- Rick Brusca  
+- Geovanni (Geo) Cordero Herrera  
+- Violeta González Maynez  
+- Lorayne Meltzer  
+- Hem Nalini Morzaria-Luna  
+- Adrián Munguía  
+- Héctor Reyes  
+- Jorge Torre  
+- Ben Wilder  
+
+---
+
+### **Calendario de Reuniones _(Jueves 1:00 PM - 2:00 PM PDT)_**
+
+| Reunión | Mes | Fecha específica | Enfoque |
+|--------|------|------------------|---------|
+| 1 | Julio | 31 de julio de 2025 | Presentación del grupo, introducción a la plataforma OHI, cálculos de metas |
+| 2 | Agosto | 28 de agosto de 2025 | Discusión del modelo y punto de referencia |
+| 3 | Septiembre | 25 de septiembre de 2025 | Modelo, punto de referencia y fuentes de datos |
+| 4 | Octubre | 30 de octubre de 2025 | Resultados preliminares y presión/resiliencia |
+| 5 | Noviembre | 20 de noviembre de 2025 | Revisión final del plan de análisis |
+| 6 | Diciembre | 11 de diciembre de 2025 *(tentativa)* | *Tentativa* |
+
+---
+
+### **Información sobre Coautoría**
+
+Este proyecto brinda oportunidades para colaborar con expertos regionales y contribuir a la evaluación del OHI para el Golfo de California. La participación será reconocida en el sitio web y en otros productos. Puede haber oportunidades adicionales de coautoría con un compromiso extra, como se detalla [aquí](https://docs.google.com/document/d/16jwVGjbQpF_6B6sbkhb4xO00WAXdDiESBXu-n2a7D1k/edit?tab=t.0).
+
+---
+
+### **Calendario de Google**
+
+Agrega el calendario compartido a tu cuenta de Google Calendar usando el [enlace proporcionado](https://calendar.google.com/calendar/u/0?cid=Y184ZmIyNzhjNmQwM2E5MGFjZDJjYWE0MDdhOTcyY2ZlMjcxYTQwNzA3Mjc0MDFiNzM0NzRkNjdjNGM0NDE0ZjQyQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20). Aparecerá en "Otros calendarios" y te dará acceso a todas las reuniones programadas con enlaces de Zoom actualizados.
+
+**Por favor contáctanos si tienes alguna pregunta. ¡Esperamos trabajar contigo en esta iniciativa!**
+:::
+
+::: {.callout-note collapse="true"}
+## BD **Reunión #1: Resumen**, Recursos y Próximos Pasos
+
+**Reunión #1** comenzó con una conversación sobre las herramientas de reuniones de IA, los servicios de traducción de idiomas en Zoom y las presentaciones de los miembros del grupo. A continuación, se realizó una presentación y una descripción general del Ocean Health Index (OHI) y su aplicación en el Golfo de California. Los participantes exploraron la metodología para evaluar los objetivos de biodiversidad, incluyendo la importancia de establecer puntos de referencia adecuados y cuantificar el estado actual de la biodiversidad en la región. El grupo debatió los desafíos para la recopilación y el análisis de datos, con especial atención a las tendencias de degradación del hábitat y la dificultad de definir un "estado saludable" o línea de base.
+
+**Recursos compartidos durante la Reunión #1**
+
+- [Diapositivas de Presentación](https://docs.google.com/presentation/d/1c7PHidzwKTyiUAjSRDrsgXOQgQQHZpPUXjqYRD5wOII/edit?usp=sharing)  
+: aprende más sobre el Índice de Salud del Océano, los objetivos de este proyecto en el Golfo de California y los propósitos del Grupo de Guardianes de Metas.
+
+- [**Resumen de la Reunión #1 y Notas Generales**](https://docs.google.com/document/d/1IFH2GoHWF_8XMBelkLNQp0xbIPvyZNyFzFERgjGNWrU/edit?usp=share_link)  
+: revisa reuniones anteriores que no pudiste atender, consulta los resúmenes, recursos y bases de datos compartidas durante las sesiones, y anota tus ideas de manera offline.
+
+*Los recursos compartidos durante nuestras reuniones están disponibles en la carpeta compartida de Google Drive del grupo* [aquí](https://drive.google.com/drive/u/0/folders/1JyiiyMa41FiYwM-l8rVXM1lPkMiWl6TH).
+
+**En la Reunión #2**, discutiremos cómo podríamos medir la 'Biodiversidad' en el Golfo y posibles puntos de referencia para BD, así que por favor prepárate para esta conversación. Un punto de referencia se define como el <u>estado ideal</u> de biodiversidad en el GoC.
+:::
+
+::: {.callout-note collapse="true"}
+## BD **Reunión #2: Resumen**  *PRÓXIMAMENTE 28 de Agosto*
+
+**En la Reunión #2**, discutiremos cómo podríamos medir el estado de la 'Biodiversidad' en el Golfo y posibles puntos de referencia para BD, así que por favor prepárate para esta conversación. Un punto de referencia se define como el estado ideal de biodiversidad en el GoC.
+
+**Próximamente se compartirán los recursos de la Reunión #2.**
+:::
+
+<!-- ::: {.callout-note collapse="true"} -->
+<!-- ## **Reunión BD #3: Resumen**  *PRÓXIMAMENTE 23 de septiembre* -->
+<!-- Próximamente recursos de la Reunión #3. -->
+<!-- ::: -->
+
+------------------------------------------------------------------------
+
+# Reuniones del Grupo de Expertos (EWG)
+
+::: {.callout-note collapse="true"}
+## Reunión EWG #1: Consideraciones Regionales para BD
+
+Estos son algunos de los puntos discutidos por el Grupo de Expertos.
+
+EN CONSTRUCCIÓN
+
+:::
+
+------------------------------------------------------------------------
+
+# Contáctanos:
+
+<div class="button-container">
+  <a href="mailto:core-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button">
+    <i class="fa-solid fa-square-poll-vertical"></i> Equipo Analítico Central de OHI
+  </a>
+  <a href="mailto:bd-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button secondary">
+    <i class="fa-solid fa-people-group"></i> Grupo de Guardianes de la Meta de Biodiversidad
+  </a>
+</div>

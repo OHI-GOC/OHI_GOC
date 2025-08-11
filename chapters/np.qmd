@@ -1,18 +1,32 @@
 ---
 title: ""
 format: html
+css: style.css
+editor: 
+  markdown: 
+    wrap: 72
 ---
-# ![](figs/natural-products.svg){width=8% height=8% color="red"} Natural products 
 
-**This goal assesses whether countries are maximizing the sustainable harvest of non-food marine resources.**
+# ![](figs/natural-products.svg){width=8% height=8% color="red"} **Natural Products** 
 
+::: button-container
+<a href="https://ohi-goc.github.io/OHI_GOC/chapters/np_spanish.html" class="custom-button">
+<i class="fas fa-globe"></i> En Español </a>
+:::
+
+------------------------------------------------------------------------
+
+::: {.callout-note collapse="true"}
+# About the NP Goal
+
+This goal assesses whether countries are maximizing the sustainable harvest of non-food marine resources.
 
 ---
 
 <div class="custom-box">
 {{< fa lightbulb >}} **This information is meant to help guide the process of developing the Gulf of California OHI!**
 
-This goal is included in the global OHI, but other regional assessments have cut or modified this goal to better meet their objectives for ocean health...
+This goal is included in the global OHI, but other regional assessments have cut or modified this goal to better meet their objectives for ocean health.
 </div>
 
 
@@ -34,4 +48,102 @@ Explore the full description of the data and model used in the GLOBAL MODEL. Or,
   </a>
 </div>
 
+:::
+
+------------------------------------------------------------------------
+
+# Goalkeeper Meetings
+
+::: {.callout-note collapse="true"}
+## **Meeting Logistics**:  Who, What, When, Where
+
+##### **Meeting Access**
+
+**Zoom Link:** <https://us06web.zoom.us/j/3255055973>
+---
+
+### **Team Members**
+Names of team members listed in alphabetical order
+
+- Miguel Betancourt
+- Francisco Fernandez
+- Jaqueline Garcia-Hernandez
+- Liliana Rojo
+
+---
+
+### **Meeting Schedule _(Thursday 11:00 AM - 12:00 PM PDT)_**
+
+| Meeting | Date | Specific Date | Focus |
+|---------|------|---------------|-------|
+| 1 | July | July 31, 2025 | Group introductions, OHI platform overview, goal calculations |
+| 2 | August | August 28, 2025 | Model and reference point discussion |
+| 3 | September | September 25, 2025 | Model, reference point, and data sources |
+| 4 | October | October 30, 2025 | Preliminary results and pressure/resilience |
+| 5 | November | November 20, 2025 | Final analysis plan review |
+| 6 | December | December 11, 2025 *(tentative)* | *Tentative* |
+
+
+---
+
+### **Co-authorship Information**
+
+This project provides opportunities to collaborate with regional experts and contribute to Gulf of California OHI assessment. Participation will be acknowledged on the website and other products. Additional co-authorship opportunities may be available with extra commitment as outlined [here](https://docs.google.com/document/d/16jwVGjbQpF_6B6sbkhb4xO00WAXdDiESBXu-n2a7D1k/edit?tab=t.0).
+
+---
+
+### **Google Calendar**
+
+Add the shared calendar to your Google Calendar account using the [provided link](https://calendar.google.com/calendar/u/0?cid=Y184ZmIyNzhjNmQwM2E5MGFjZDJjYWE0MDdhOTcyY2ZlMjcxYTQwNzA3Mjc0MDFiNzM0NzRkNjdjNGM0NDE0ZjQyQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20). It will appear under "Other calendars" and provide access to all scheduled meetings with updated Zoom links.
+
+**Please let us know if you have any questions. We look forward to working on this initiative with you!**
+:::
+
+::: {.callout-note collapse="true"}
+## NP **Meeting #1: Summary**, Resources, & Next Steps
+**Meeting #1** introduced participants to the Ocean Health Index and its application to the Gulf of California, with Erica explaining the index's methodology and regional assessment approach. The team discussed natural products in the Gulf, exploring various potential resources and sustainability considerations, including fishery bycatch, waste utilization, and Totoaba culture. Participants agreed to gather more information about biomass sources and reference points for natural products, while exploring ways to measure and improve sustainable resource use in the region.
+
+**Resources shared during Meeting #1**
+
+- [Presentation Slides](https://docs.google.com/presentation/d/1SzeKI7Tg37KUQbrQ0u9Qw8UZzkOBc90z0fQTiYS-8c8/edit?usp=share_link)
+: learn more about Ocean Health Index, the goals of this project in the Gulf of California, and objectives for the Goalkeeper Group.
+- [**Meeting #1 Summary & General Notes**](https://docs.google.com/document/d/11LrbOWL7UnQ2SU3u-POucAdKruhMNsFJ6rCkEMtNIqI/edit?tab=t.0#heading=h.8562cdkt8tdh)
+: catch up on meetings you missed and review meeting summaries; keep track of resources and data bases shared during our meetings, and write down your quick thoughts offline.
+
+*Resources shared during our meetings can be accessed in the group's shared google drive* [here](https://drive.google.com/drive/u/0/folders/11vzy2cgSxRSWaPTaHIKawYgynVozh0yl).
+
+**In Meeting #2**, we will discuss how we might measure and assess 'Natural Products' in the Gulf, and possible NP reference points, so please come prepared for this discussion. A reference point is defined as the <u>ideal state</u> of natural products in the GoC.
+:::
+
+::: {.callout-note collapse="true"}
+## NP **Meeting #2: Summary**  *UPCOMING August 28*
+**In Meeting #2**, we will discuss how we should define and assess 'Natural Products' in the Gulf, and possible NP reference points, so please come prepared for this discussion. A reference point is defined as the <u>ideal state<u> of natural products in the GoC.
+
+**Stay tuned for Meeting #2 resources.**
+:::
+
+------------------------------------------------------------------------
+
+# Expert Working Group (EWG) Meetings
+
+::: {.callout-note collapse="true"}
+## EWG Meeting #1: Regional Considerations for NP
+
+These are some of the points discussed by the Expert Working Group.
+
+UNDER CONSTRUCTION
+
+:::
+
+------------------------------------------------------------------------
+
+# **Contact Us:**
+
+::: button-container
+<a href="mailto:core-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button">
+<i class="fa-solid fa-square-poll-vertical"></i> OHI Core Analytical
+Team </a>
+<a href="mailto:np-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button secondary">
+<i class="fa-solid fa-people-group"></i> Natural Products Goalkeeper Group </a>
+:::
 

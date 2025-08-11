@@ -1,6 +1,7 @@
 ---
 title: ""
 format: html
+css: style.css
 editor: 
   markdown: 
     wrap: 72
@@ -13,10 +14,13 @@ editor:
 <i class="fas fa-globe"></i> En Español </a>
 :::
 
-# **Getting Started**
+------------------------------------------------------------------------
 
-**Typically, this goal measures whether people who need to fish on a
-small, local scale have the opportunity to do so. In the GoC, this goal
+::: {.callout-note collapse="true"}
+# About the AO Goal
+
+Typically, this goal measures whether people who need to fish on a
+small, local scale have the opportunity to do so. **In the GoC, this goal
 may be redefined to include artisanal opportunities more broadly.**
 
 Artisanal fishing, often also called small-scale fishing, provides a
@@ -42,12 +46,11 @@ artisanal fishing families.
 
 ## Key Questions
 
-What is the ideal sustainable state of the **artisanal opportunities**
-goal?
+What is the ideal sustainable state of the **artisanal opportunities** goal?
 
 Who should have **access** to marine resources?
 
-How can people's access to marine resources be **limited:**
+How can people's access to marine resources be limited?
 
 -   Are coastlines accessible to locals?
 -   Is dock and road infrastructure adequate?
@@ -57,85 +60,100 @@ How can people's access to marine resources be **limited:**
     actually available for harvest?
 -   Do people have the economic ability to access these resources?
 
-What percentage of fishing activities in the region are **commercial**
-versus **artisanal**?
+What percentage of fishing activities in the region are *commercial*
+versus *artisanal*?
 
-------------------------------------------------------------------------
-
-# Notes from Previous Meetings
-
-# **Goalkeeper Meetings**
-
-::: {.callout-note collapse="true"}
-## Information & Meeting Details for AO Group Members
-
-##### **Meeting Access**
-
-## **Zoom Link:** <https://us06web.zoom.us/j/3255055973>
-
-##### **Key Team Members**
-
--   Victor Ricardez
--   Jorge Torre
--   Ana Luisa Figueroa
--   Michelle María Early Capistrán
--   Hem Nalini Morzaria-Luna
--   Amy Hudson Weaver
--   Francisco Fernandez
--   Mar Mancha-Cisneros
--   Octavio Aburto
--   Maria Jose Espinosa
-
-------------------------------------------------------------------------
-
-##### **Meeting Schedule *(Tuesday 1:00 PM - 2:00 PM PDT)***
-
-| Meeting | Timeline          | Date                           | Meeting Focus                                                 |
-|----------------|----------------|--------------------------|----------------|
-| 1       | July/August       | July 22, 2025                  | Group introductions, OHI platform overview, goal calculations |
-| 2       | August/September  | August 19, 2025                | Model and reference point discussion                          |
-| 3       | September/October | September 23, 2025             | Model, reference point, and data sources                      |
-| 4       | October/November  | October 21, 2025               | Preliminary results and pressure/resilience                   |
-| 5       | November/December | November 18, 2025              | Final analysis plan review                                    |
-| 6       | December          | December 9, 2025 *(tentative)* | *Tentative*                                                   |
-
-------------------------------------------------------------------------
-
-##### **Co-authorship Information**
-
-This project provides opportunities to collaborate with regional experts
-and contribute to Gulf of California OHI assessment. Participation will
-be acknowledged on the website and other products. Additional
-co-authorship opportunities may be available with extra commitment as
-outlined
-[here](https://docs.google.com/document/d/16jwVGjbQpF_6B6sbkhb4xO00WAXdDiESBXu-n2a7D1k/edit?tab=t.0).
-
-------------------------------------------------------------------------
-
-##### **Google Calendar**
-
-Add the shared calendar to your Google Calendar account using the
-[provided
-link](https://calendar.google.com/calendar/u/0?cid=Y184ZmIyNzhjNmQwM2E5MGFjZDJjYWE0MDdhOTcyY2ZlMjcxYTQwNzA3Mjc0MDFiNzM0NzRkNjdjNGM0NDE0ZjQyQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20).
-It will appear under "Other calendars" and provide access to all
-scheduled meetings with updated Zoom links.
-
-**Please let us know if you have any questions. We look forward to
-working on this initiative with you!**
 :::
 
-## AO Goalkeeper Meeting #1: Summary
+------------------------------------------------------------------------
+
+# Goalkeeper Meetings
+
+::: {.callout-note collapse="true"}
+## **Meeting Logistics**:  Who, What, When, Where
+
+### **Meeting Access**
+
+**Zoom Link:** <https://us06web.zoom.us/j/3255055973>
+
+---
+
+### **Team Members**
+Names of team members listed in alphabetical order
+
+-   Octavio Aburto
+-   Michelle María Early Capistrán
+-   Maria Jose Espinosa
+-   Francisco Fernandez
+-   Ana Luisa Figueroa
+-   Mar Mancha-Cisneros
+-   Hem Nalini Morzaria-Luna
+-   Victor Ricardez
+-   Jorge Torre
+-   Amy Hudson Weaver
+
+---
+
+### **Meeting Schedule _(Tuesday 1:00 PM - 2:00 PM PDT)_**
+
+| Meeting | Date | Specific Date | Focus |
+|---------|------|---------------|-------|
+| 1 | July/August | July 22, 2025 | Group introductions, OHI platform overview, goal calculations |
+| 2 | August | August 19, 2025 | Model and reference point discussion |
+| 3 | September | September 23, 2025 | Model, reference point, and data sources |
+| 4 | October | October 21, 2025 | Preliminary results and pressure/resilience |
+| 5 | November | November 18, 2025 | Final analysis plan review |
+| 6 | December | December 9, 2025 *(tentative)* | *Tentative* |
+
+---
+
+### **Co-authorship Information**
+
+This project provides opportunities to collaborate with regional experts and contribute to Gulf of California OHI assessment. Participation will be acknowledged on the website and other products. Additional co-authorship opportunities may be available with extra commitment as outlined [here](https://docs.google.com/document/d/16jwVGjbQpF_6B6sbkhb4xO00WAXdDiESBXu-n2a7D1k/edit?tab=t.0).
+
+---
+
+### **Google Calendar**
+
+Add the shared calendar to your Google Calendar account using the [provided link](https://calendar.google.com/calendar/u/0?cid=Y184ZmIyNzhjNmQwM2E5MGFjZDJjYWE0MDdhOTcyY2ZlMjcxYTQwNzA3Mjc0MDFiNzM0NzRkNjdjNGM0NDE0ZjQyQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20). It will appear under "Other calendars" and provide access to all scheduled meetings with updated Zoom links.
+
+**Please let us know if you have any questions. We look forward to working on this initiative with you!**
+:::
+
+::: {.callout-note collapse="true"}
+## AO **Meeting #1: Summary**, Resources, & Next Steps
 **Meeting #1** introduced participants and their research backgrounds related to the Gulf of California, with Erica facilitating and providing an overview of the Ocean Health Index. The group discussed the index's methodology and application to the Gulf of California region, including its assessment of various ocean health goals and the team’s need to define ‘artisanal opportunities’ beyond fishing. The conversation ended with participants agreeing to further explore concepts like resource access and sustainable livelihoods. 
 
-**In Meeting #2**, we will discuss how we might measure access to 'artisanal opportunities' in the Gulf, and possible AO reference points, so please come prepared for this discussion. A reference point is defined as the ideal state of artisanal opportunities in the GoC.
+**Resources shared during Meeting #1**
 
-The presentation slides and notes from meeting #1 can be accessed in the group's google drive [here](https://drive.google.com/drive/u/1/folders/1VUuocKEk9TqgssSgzeFb6y5LGtEoKQ2a). 
+- [Presentation Slides](https://docs.google.com/presentation/d/1_U1VeWu1582g6zRr3mirp-1e6U78iT3WomTGUKAzdNo/edit?usp=share_link)
+: learn more about Ocean Health Index, the goals of this project in the Gulf of California, and objectives for the Goalkeeper Group.
+- [**Meeting #1 Summary & General Notes**](https://docs.google.com/document/d/1XjBi0qHSjbso1bPnc48mBbsjcm08wJig0kZueTe4PMQ/edit?tab=t.0#heading=h.8562cdkt8tdh)
+: catch up on meetings you missed and review meeting summaries; keep track of resources and data bases shared during our meetings, and write down your quick thoughts offline.
+
+*Resources shared during our meetings can be accessed in the group's shared google drive* [here](https://drive.google.com/drive/u/0/folders/1VUuocKEk9TqgssSgzeFb6y5LGtEoKQ2a).
+
+**In Meeting #2**, we will discuss how we might measure access to 'Artisanal Opportunities' in the Gulf, and possible AO reference points, so please come prepared for this discussion. A reference point is defined as the ideal state of artisanal opportunities in the GoC.
+:::
+
+::: {.callout-note collapse="true"}
+## AO **Meeting #2: Summary**  *UPCOMING August 19*
+**In Meeting #2**, we will discuss how we might measure 'Artisanal Opportunities' in the Gulf, and possible AO reference points, so please come prepared for this discussion. A reference point is defined as the <u>ideal state</u> of artisanal opportunities in the GoC.
+
+**Stay tuned for Meeting #2 resources.**
+:::
+
+<!-- ::: {.callout-note collapse="true"} -->
+<!-- ## **AO Meeting #3: Summary**  *UPCOMING September 23* -->
+<!-- Stay tuned for Meeting #3 resources. -->
+<!-- ::: -->
 
 ------------------------------------------------------------------------
 
-# **Expert Working Group (EWG) Meetings**
+# Expert Working Group (EWG) Meetings
 
-## EWG Meeting #1: Regional Considerations
+::: {.callout-note collapse="true"}
+## EWG Meeting #1: Regional Considerations for AO
 
 These are some of the points discussed by the Expert Working Group.
 
@@ -143,8 +161,8 @@ These are some of the points discussed by the Expert Working Group.
 
 -   In Mexico, artisanal fishers generally need permits unless fishing
     from the shore.\
--   Obtaining permits is **bureaucratically complex, expensive, and
-    limited** — new permits are hard to get.
+-   Obtaining permits is bureaucratically complex, expensive, and
+    limited — new permits are hard to get.
 -   A **black market for permits** exists due to the difficulty of legal
     access.
 
@@ -153,59 +171,56 @@ These are some of the points discussed by the Expert Working Group.
 **Legal Access vs. Physical Reality**
 
 -   The high tide line and 10 meters inland are federally protected
-    maritime zones; hotels and condos **do not legally own** beachfront
-    — **public access is guaranteed**.
--   However, **gentrification, foreign property ownership, and tourism
-    development** restrict physical access to beaches and shorelines.
--   In some regions **crime and safety concerns** restrict coastal
+    maritime zones; hotels and condos do not legally own beachfront. Public access is guaranteed.
+-   However, gentrification, foreign property ownership, and tourism
+    development restrict physical access to beaches and shorelines.
+-   In some regions crime and safety concerns restrict coastal
     access.
--   **Rising tourism prices** (e.g., diving in Cabo Pulmo) **exclude
-    locals economically**.
--   **Social movements** in places like Sinaloa are actively resisting
+-   Rising tourism prices (e.g., diving in Cabo Pulmo) exclude
+    locals economically.
+-   Social movements in places like Sinaloa are actively resisting
     the loss of access.
--   Overall, **coastal access points are decreasing** due to fencing and
+-   Overall, coastal access points are decreasing due to fencing and
     development — even as political efforts claim to support access
     rights.
 
 ### Specific Fisheries Issues
 
--   The **mahi mahi fishery** is essential for local livelihoods but is
-    often illegal unless classified as **sportfishing**, creating a
+-   The mahi mahi fishery is essential for local livelihoods but is
+    often illegal unless classified as sportfishing, creating a
     conflict.
--   **No increase in legal fishing effort is allowed** — permit numbers
+-   No increase in legal fishing effort is allowed. Permit numbers
     are capped.
-
-------------------------------------------------------------------------
 
 ::: {.callout-tip title="Ideas for Incorporation into the Index"}
 -   Represent **legal and physical access restrictions** explicitly\
 -   Track and distinguish impacts of **gentrification vs. tourism
     development**, but consider their interactions\
 -   Consider **security and crime** as key barriers
--   Assess **economic affordability** of fishing and coastal activities,
+-   Assess to **economic affordability of fishing and coastal activities**,
     not just physical access\
--   Evaluate the **complexity of the permit system** and **prevalence of
-    IUU fishing**\
+-   Evaluate the **complexity of the permit system** and prevalence of
+    **IUU fishing**\
 -   Explore ways to measure access in terms of:
-    -   **Kilometers of accessible coastline** (not fenced or
+    -   Kilometers of accessible coastline (not fenced or
         restricted)
-    -   **Socioeconomic demographics** of those with/without access\
+    -   Socioeconomic demographics of those with/without access\
 -   Highlight **resilience and local social movements** defending access
     rights\
--   Consider whether this goal should be expanded to include
-    **Scientific research access** which can be limited by **permit
-    bureaucracy** and **security concerns**.
+-   Consider expanding this goal to include scientific research access\ which can be limited by **permit bureaucracy** and security concerns.
+:::
+
 :::
 
 ------------------------------------------------------------------------
 
-# **Contact Us:**
+# Contact Us:
 
-::: button-container
-<a href="mailto:core-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button">
-<i class="fa-solid fa-square-poll-vertical"></i> OHI Core Analytical
-Team </a>
-<a href="mailto:ao-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button secondary">
-<i class="fa-solid fa-people-group"></i> Artisanal Opportunities
-Goalkeeper Group </a>
-:::
+<div class="button-container">
+  <a href="mailto:core-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button">
+    <i class="fa-solid fa-square-poll-vertical"></i> OHI Core Analytical Team
+  </a>
+  <a href="mailto:ao-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button secondary">
+    <i class="fa-solid fa-people-group"></i> Artisanal Opportunities Goalkeeper Group
+  </a>
+</div>
