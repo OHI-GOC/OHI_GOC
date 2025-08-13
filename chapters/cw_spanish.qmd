@@ -11,228 +11,260 @@ format: html
   </a>
 </div>
 
-**Este objetivo captura el grado en que las aguas locales no están contaminadas por causas humanas.**
+::: {.callout-tip collapse="true"}
+# <i class="fa-regular fa-star"></i>  Acerca de la Meta CW
+
+**Esta meta captura el grado en que las aguas locales están libres de contaminación de origen humano.**
+
+::: {.custom-box}
+
+{{< fa lightbulb >}} **DEFINICIÓN PRINCIPAL**
+
+La gente *valora* las aguas marinas que están **libres de contaminación y desechos** por razones estéticas y de salud.  
+
+La contaminación de las aguas proviene de derrames de petróleo, productos químicos, eutrofización, floraciones algales, patógenos (ej. coliformes fecales, virus y parásitos provenientes de aguas residuales), basura flotante y mortalidades masivas de organismos debido a la contaminación.  
+
+Las personas son sensibles a estos fenómenos tanto en áreas que usan para recreación u otros fines como simplemente al saber que existen aguas limpias.  
+
+En la evaluación global, se incluyen cuatro medidas de contaminación dentro de la meta *aguas limpias*: eutrofización (nutrientes), químicos, patógenos y desechos marinos. **Este grupo evaluará qué contaminación aplica al Golfo y definirá el modelo de la meta en consecuencia.**  
+
+El estado de estos componentes suele ser el inverso de su intensidad. Esto significa que entradas altas generan una puntuación baja, *y esta meta obtiene su puntaje más alto cuando el nivel de contaminación es cero.*
+
+:::
+
+## Preguntas Clave
+
+¿Cuál es el estado sostenible ideal de la meta de **aguas limpias**?  
+
+- ¿Cómo medimos *idealmente* la cantidad de **contaminación** (o su ausencia) en las aguas del Golfo de California?  
+- ¿Cómo definimos el **punto de referencia**, o la cantidad ideal de contaminación? ¿Es **cero**, como en el marco global?  
+  - Esto puede depender de lo que queramos incluir en el estado de la meta. ¿Incluye químicos, patógenos, basura, nutrientes? ¿Hay otros tipos de contaminación que queramos agregar o eliminar?  
+  - La OHI global definió las categorías de contaminación basándose en tipos comúnmente considerados en evaluaciones de aguas costeras limpias ([Borja et al. 2008](https://doi.org/10.1016/j.marpolbul.2008.07.005)). ¿Existen papers similares para el Golfo de California?
+
+:::
+
+---
+
+# Reuniones de los Responsables de Meta
 
 ::: {.callout-note collapse="true"}
+## <i class="fa-regular fa-calendar"></i>  **Logística de Reunión:** Quién, Qué, Cuándo, Dónde
 
-## Información del Grupo de Aguas Limpias (CW)
+##### **Acceso a la Reunión**
 
-##### **Acceso a reuniones**
-
-**Enlace de Zoom:** <https://us06web.zoom.us/j/3255055973>
----
-
-##### **Miembros clave del equipo**
-- Alejandra Irasema Campos
-- Geovanni (Geo) Coredero Herrera
-- Jaqueline García-Hernández
-- Jorge Arriaga
-- Miguel Betancourt
+**Link de Zoom:** <https://us06web.zoom.us/j/3255055973>
 
 ---
 
-##### **Horario de reuniones _(martes de 10:00 AM a 11:00 AM PDT)_**
+##### **Miembros Clave del Equipo**
+- Alejandra Irasema Campos  
+- Geovanni (Geo) Coredero Herrera  
+- Jaqueline Garcia-Hernandez  
+- Jorge Arriaga  
+- Miguel Betancourt  
+
+---
+
+##### **Horario de Reuniones _(martes 10:00 AM - 11:00 AM PDT)_**
 
 | Reunión | Fecha | Enfoque |
-|---------|---------------|--------|
-| 1 | 29 de julio de 2025 | Presentaciones del grupo, resumen de la plataforma OHI, cálculos del objetivo |
-| 2 | 26 de agosto de 2025 | Discusión sobre el modelo y el punto de referencia |
+|---------|-------|---------|
+| 1 | 29 de julio de 2025 | Presentación del grupo, resumen de la plataforma OHI, cálculos de la meta |
+| 2 | 26 de agosto de 2025 | Discusión del modelo y punto de referencia |
 | 3 | 30 de septiembre de 2025 | Modelo, punto de referencia y fuentes de datos |
 | 4 | 28 de octubre de 2025 | Resultados preliminares y presión/resiliencia |
-| 5 | 18 de noviembre de 2025 | Revisión del plan de análisis final |
+| 5 | 18 de noviembre de 2025 | Revisión del plan final de análisis |
 | 6 | 9 de diciembre de 2025 *(tentativo)* | *Tentativo* |
 
 ---
 
-##### **Información sobre coautoría**
+##### **Información sobre Coautoría**
 
-Este proyecto brinda oportunidades para colaborar con expertos regionales y contribuir a la evaluación del OHI en el Golfo de California. La participación será reconocida en el sitio web y otros productos. Se pueden ofrecer oportunidades adicionales de coautoría con un compromiso extra, como se describe [aquí](https://docs.google.com/document/d/16jwVGjbQpF_6B6sbkhb4xO00WAXdDiESBXu-n2a7D1k/edit?tab=t.0).
+Este proyecto ofrece oportunidades para colaborar con expertos regionales y contribuir a la evaluación OHI del Golfo de California. La participación será reconocida en el sitio web y otros productos. También puede haber oportunidades adicionales de coautoría con compromiso extra, como se detalla [aquí](https://docs.google.com/document/d/16jwVGjbQpF_6B6sbkhb4xO00WAXdDiESBXu-n2a7D1k/edit?tab=t.0).
 
 ---
 
 ##### **Calendario de Google**
 
-Agrega el calendario compartido a tu cuenta de Google Calendar usando [este enlace](https://calendar.google.com/calendar/u/0?cid=Y184ZmIyNzhjNmQwM2E5MGFjZDJjYWE0MDdhOTcyY2ZlMjcxYTQwNzA3Mjc0MDFiNzM0NzRkNjdjNGM0NDE0ZjQyQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20). Aparecerá en "Otros calendarios" y proporcionará acceso a todas las reuniones programadas con enlaces de Zoom actualizados.
+Agrega el calendario compartido a tu cuenta de Google Calendar usando el [enlace proporcionado](https://calendar.google.com/calendar/u/0?cid=Y184ZmIyNzhjNmQwM2E5MGFjZDJjYWE0MDdhOTcyY2ZlMjcxYTQwNzA3Mjc0MDFiNzM0NzRkNjdjNGM0NDE0ZjQyQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20). Aparecerá en "Otros calendarios" y dará acceso a todas las reuniones programadas con enlaces de Zoom actualizados.
 
 **Por favor avísanos si tienes alguna pregunta. ¡Esperamos trabajar contigo en esta iniciativa!**
 
 :::
 
----
+::: {.callout-note collapse="true"}
+# <i class="fa-regular fa-circle-down"></i>  **Recursos Clave:** Diapositivas, documentos colaborativos
 
-::: {.custom-box}
-
-{{< fa lightbulb >}} **DEFINICIÓN CENTRAL**
-
-Las personas *valoran* las aguas marinas **libres de contaminación y residuos** por razones estéticas y de salud.
-
-La contaminación de las aguas proviene de derrames de petróleo, químicos, eutrofización, floraciones algales, patógenos causantes de enfermedades (por ejemplo, coliformes fecales, virus y parásitos provenientes de descargas de aguas residuales), basura flotante y mortandades masivas de organismos debido a la contaminación.
-
-Las personas son sensibles a estos fenómenos cuando ocurren en áreas que utilizan para la recreación u otros fines, así como por el simple hecho de saber que existen aguas limpias.
-
-En la evaluación global, se incluyen cuatro medidas de contaminación en el objetivo de *aguas limpias*: eutrofización (nutrientes), químicos, patógenos y basura marina. **Este grupo evaluará qué tipos de contaminación aplican al Golfo y definirá el modelo del objetivo en consecuencia.**
-
-El estado de estos componentes es típicamente el inverso de su intensidad. Esto significa que una alta entrada de contaminantes da lugar a una baja puntuación de estado, *y este objetivo obtiene la puntuación más alta cuando el nivel de contaminación es cero.*
+- [Diapositivas de la Reunión #1](https://docs.google.com/presentation/d/1MhTPHz6HSe0NVeA3UcxgCPXBzhQ9l6VAMkSiQkBCeNk/edit?usp=sharing) para repasar las ideas principales.  
+- [Ideas del Responsable de la Meta CW](https://docs.google.com/document/d/1JhF0Wf9g4VH-iDHVK07Qk2FdLBZNtWXTxdxrRecbF-Q/edit?tab=t.kyrkgpt50url), donde puedes agregar tus comentarios, ideas y posibles fuentes de datos al documento colaborativo en curso.
 
 :::
 
-## **Resumen de la Reunión #1 y Próximos Pasos**
+<br>
 
-**¡Gracias a todas las personas que participaron en nuestra primera reunión del grupo de guardianes de Aguas Limpias (CW)!**  
+### **Resúmenes de Reuniones**
 
-Esta primera sesión sirvió para introducir la evaluación OHI del Golfo de California y establecer la base para el desarrollo de nuestras futuras reuniones. Fue un excelente comienzo para definir qué significa **_aguas limpias_** para el **Golfo de California**.  
+::: {.callout-note collapse="true"}
+# <i class="fa-regular fa-clipboard"></i> **Reunión #1:** Resumen y Próximos Pasos
+
+**¡Gracias a todos los que participaron en nuestra primera reunión de la Meta Aguas Limpias (CW)!**  
+
+Esta sesión inicial presentó la evaluación OHI del Golfo de California y preparó el terreno para cómo se desarrollarán las futuras reuniones. Fue un gran comienzo para definir juntos qué significan **_aguas limpias_** para el **Golfo de California**.  
 
 ::: {.callout-tip}
 
-#### {{< fa book >}} **Resumen de la reunión**
+#### {{< fa book >}} **Resumen de la Reunión**
 
-Aunque esta reunión fue principalmente introductoria, tuvimos una discusión muy productiva sobre los posibles **componentes del objetivo de Aguas Limpias** para el **Golfo de California**.  
+Aunque esta reunión fue principalmente introductoria, tuvimos una excelente discusión sobre posibles **componentes de la meta Aguas Limpias** para el **Golfo de California**.  
 
-- Idealmente, buscamos **identificar las fuentes** de contaminación, aunque esto no siempre es posible debido a limitaciones en los datos disponibles.  
-- Algunos **contaminantes** se disuelven en agua dulce pero **se condensan al entrar al agua salada**, lo que provoca su adhesión a los **sedimentos marinos**.  
-- José Antonio compartió detalles de un artículo en el que está trabajando con Ben, que podría ayudarnos a cuantificar **nitrógeno (N)** y **fósforo (P)** en regiones costeras del Golfo.  
-- Miguel mencionó que existe un **sistema de alertas sanitarias**: cuando se detectan floraciones algales nocivas o mala calidad del agua, se emiten advertencias contra el consumo de **mariscos** cultivados en zonas afectadas. [¿COFEPRIS?]
+- Idealmente, buscamos **identificar las fuentes** de contaminación, aunque esto puede no ser siempre posible con los datos disponibles.  
+- Algunos **contaminantes** se disuelven en agua dulce pero **se condensan al entrar al agua de mar**, adhiriéndose a **sedimentos marinos**.  
+- José Antonio compartió ideas de un artículo que está elaborando con Ben, lo cual podría ayudarnos a cuantificar **nitrógeno (N)** y **fósforo (P)** en regiones costeras del Golfo.  
+- Miguel mencionó la existencia de un **sistema de alerta de mariscos**: cuando se detectan floraciones algales nocivas o mala calidad del agua, se emiten avisos contra el consumo de **mariscos** cultivados en áreas afectadas. [¿De COFEPRIS?]  
 
-##### <i class="fa-solid fa-vial-virus"></i> Categorías clave de contaminantes discutidas:
+##### <i class="fa-solid fa-vial-virus"></i> Categorías Clave de Contaminantes Discutidas:
 
 - **Nutrientes**  
-  - Turbidez (sedimentos en suspensión)  
+  - Turbidez (sedimentos suspendidos)  
   - Nitrógeno  
   - Fósforo  
-  - Materia orgánica (DBO/DQO)  
+  - Materia orgánica (DBO/ DQO)  
 
 - **Químicos**  
-  - Hidrocarburos de barcos (aceite/diésel)  
+  - Hidrocarburos de embarcaciones (petróleo/diésel)  
   - Metales pesados  
   - Plaguicidas / Contaminantes Orgánicos Persistentes (COPs)  
   - Microplásticos  
-  - Accidentes causados por humanos (p. ej. derrames de ácido, floraciones algales nocivas)  
-  - Fármacos  
+  - Accidentes humanos (ej. derrames ácidos, floraciones algales nocivas)  
+  - Productos farmacéuticos  
 
 - **Patógenos**  
   - Bacterianos: coliformes fecales, *E. coli*  
   - Especies de *Vibrio*  
   - Patógenos virales  
 
-- **Residuos Marinos**  
-  - Contaminación por plásticos  
-  - Artes de pesca abandonadas (redes, líneas)  
-  - Microplásticos (también listados en Químicos)  
+- **Desechos Marinos**  
+  - Contaminación plástica  
+  - Equipo de pesca abandonado (redes, líneas)  
+  - Microplásticos (también listados bajo Químicos)  
 
-> ⚠️ **Nota:** Algunos contaminantes, como los microplásticos, se clasifican en **múltiples categorías**, como **Químicos** y **Residuos Marinos**. Si crees que uno debe pertenecer a una categoría u otra, por favor anótalo en el documento de notas del modelo CW.
+> ⚠️ **Nota:** Algunos contaminantes, como los microplásticos, caen en **múltiples categorías**, como **Químicos** y **Desechos Marinos**. Si consideras que debería estar en una categoría en lugar de otra, indícalo en el documento de Notas del Modelo CW.
 
 :::
 
 ::: {.callout-important}
 
-#### <i class="fa fa-step-forward" aria-hidden="true"></i> **Próximos pasos**
+#### <i class="fa fa-step-forward" aria-hidden="true"></i> **Próximos Pasos**
 
 - [ ] Revisar y contribuir al documento de [Notas del Modelo CW](https://docs.google.com/document/d/1JhF0Wf9g4VH-iDHVK07Qk2FdLBZNtWXTxdxrRecbF-Q/edit?tab=t.kyrkgpt50url).  
-  - Agrega **contaminantes adicionales**, **fuentes**, o **conjuntos de datos relevantes**.  
-- [ ] Revisa las [Preguntas clave](#key-questions) y sigue reflexionando sobre cómo podríamos evaluar:  
+  - Agregar **contaminantes adicionales**, **fuentes** o **datasets relevantes**.  
+- [ ] Revisar las [Preguntas Clave](#key-questions) y seguir pensando cómo evaluar:  
   - **Presencia**, **frecuencia** y **fuentes** de estos contaminantes  
   - Posibles **puntos de referencia** o umbrales  
-- [ ] Revisa las [diapositivas introductorias de CW](https://docs.google.com/presentation/d/1MhTPHz6HSe0NVeA3UcxgCPXBzhQ9l6VAMkSiQkBCeNk/edit?usp=sharing) para repasar las ideas principales.  
+- [ ] Revisar las [diapositivas introductorias CW](https://docs.google.com/presentation/d/1MhTPHz6HSe0NVeA3UcxgCPXBzhQ9l6VAMkSiQkBCeNk/edit?usp=sharing) para repasar las ideas principales.  
 
-En nuestra **próxima reunión**, continuaremos la discusión sobre los contaminantes que deberían considerarse en este objetivo.  
+En nuestra **próxima reunión**, continuaremos la discusión sobre los contaminantes que deberían considerarse en esta meta.  
 
-También comenzaremos a definir el **punto de referencia** del objetivo: nuestra visión de cómo se ven las aguas limpias ideales. En términos de evaluación, esto es el puntaje **"100"** — ¡nuestro objetivo A+!
+También comenzaremos a definir el **punto de referencia** de esta meta — nuestra visión de cómo lucen las aguas limpias ideales. En términos de evaluación, este es el puntaje **"100"** — ¡nuestro objetivo A+!
+:::
+:::
+
+::: {.callout-note collapse="true"}
+# <i class="fa-regular fa-clipboard"></i> **Reunión #2:** *Próxima el 26 de agosto*
 
 :::
 
-
-## Preguntas Clave
-
-¿Cuál es el estado sostenible ideal del objetivo de **aguas limpias**?
-
-- ¿Cómo medimos *idealmente* la cantidad de **contaminación** (o su ausencia) de las aguas en el Golfo de California?
-
-- ¿Cómo definimos el **punto de referencia**, o la cantidad ideal de contaminación? ¿Es **cero**, como lo es en el marco global?
-  - Esto puede depender de lo que queramos incluir en el estado del objetivo. ¿Incluye químicos, patógenos, basura, nutrientes? ¿Hay otros tipos de contaminación que queremos agregar o eliminar?
-  - El OHI global definió las categorías de contaminación basadas en los tipos comúnmente considerados en evaluaciones de aguas costeras limpias ([Borja et al. 2008](https://doi.org/10.1016/j.marpolbul.2008.07.005)), ¿existen artículos similares para el Golfo de California?
-
 ---
 
-## Consideraciones Regionales
+<br> 
 
-Estos son algunos de los puntos discutidos por el Grupo de Expertos.
 
-### Fuentes de Contaminación y Desafíos de Evaluación
+### Información Adicional & Ejemplos
 
-##### Múltiples fuentes difusas
+::: {.callout-note collapse="true"}
+# Grupo de Expertos (EWG): Consideraciones Regionales
 
-- Industria sardinera/enlatadora
-- Tráfico marítimo
-- Actividades agrícolas y de acuacultura
-- Descargas urbanas
-- Desechos de pesca
+**Algunos puntos discutidos por el Grupo de Expertos (EWG):**  
 
-##### Brechas en los datos de monitoreo
+### Fuentes de Contaminación y Retos de Evaluación
 
-- Datos más completos disponibles para las costas de Sinaloa y Sonora
-- Información limitada para las regiones de La Paz y Baja California
-- El análisis de sedimentos suele ser ignorado a pesar de su impacto significativo en los ecosistemas
+##### Múltiples Fuentes Difusas
 
-##### Impactos del clima y el tiempo
+- Industria de sardina/conservas  
+- Tráfico marítimo  
+- Operaciones agrícolas y de acuicultura  
+- Descargas urbanas  
+- Residuos de pesca  
 
-- Las lluvias aumentan la acumulación de basura y degradan la calidad del agua
-- Huracanes y tormentas generan presión adicional sobre los ecosistemas
-- Sistemas fluviales intermitentes provocan entradas súbitas de agua dulce que los ecosistemas marinos no pueden asimilar
+##### Falta de Datos de Monitoreo
+
+- Datos más completos disponibles para costas de Sinaloa y Sonora  
+- Información limitada para La Paz y Baja California  
+- Análisis de sedimentos frecuentemente omitido a pesar de impactos significativos en ecosistemas  
+
+##### Impactos del Clima y el Tiempo
+
+- Lluvias aumentan acumulación de basura y degradan calidad del agua  
+- Huracanes y tormentas generan presión adicional sobre el ecosistema  
+- Sistemas fluviales intermitentes provocan entradas repentinas de agua dulce que los ecosistemas marinos no pueden manejar  
 
 ### Impactos en Ecosistemas y Comunidades
 
-##### Efectos de especies invasoras
+##### Efectos de Especies Invasoras
 
-- El tule proporciona filtración natural pero enfrenta amenazas de los Placostomos invasores
-- Especies no nativas han alterado fundamentalmente las estructuras comunitarias
-- Daños a los sistemas de raíces impactan a peces nativos como la tilapia
+- Junquillos filtran naturalmente pero enfrentan amenazas de Placostomos invasores  
+- Especies no nativas han alterado fundamentalmente estructuras comunitarias  
+- Daño a raíces impacta poblaciones nativas de peces como tilapia  
 
-##### Preocupaciones por acuacultura
+##### Preocupaciones de Acuicultura
 
-- Las granjas camaroneras generan escurrimientos de nutrientes que afectan otras pesquerías
-- Problemas de eutrofización documentados por pescadores locales
-- Problemas de patógenos afectan principalmente a zonas de baño
+- Granjas de camarón generan escorrentía de nutrientes que afecta otras pesquerías  
+- Problemas de eutrofización documentados por pescadores locales  
+- Patógenos afectan principalmente zonas de baño  
 
-##### Retos regionales únicos
+##### Retos Regionales Únicos
 
-- Dependencia del agua dulce de origen marino para el consumo humano
-- Preguntas sobre cómo integrar los estándares de calidad del agua en los objetivos de salud oceánica
+- Dependencia de agua dulce proveniente del océano para consumo  
+- Preguntas sobre cómo integrar estándares de calidad de agua en metas de salud oceánica  
 
 ### Enfoques de Monitoreo y Evaluación
 
-##### Esfuerzos comunitarios
+##### Esfuerzos Comunitarios
 
-- Jornadas organizadas de recolección de basura en todo el Golfo
-- Programas de limpieza con buzos voluntarios
-- Participación comunitaria local en el monitoreo
+- Recolección organizada de basura en todo el Golfo  
+- Programas de limpieza voluntaria mediante buceo  
+- Participación de la comunidad local en esfuerzos de monitoreo  
 
-##### Herramientas científicas de evaluación
+##### Herramientas de Evaluación Científica
 
-- Índice TRIX: combina datos de clorofila-a y nutrientes para clasificar las aguas como eutróficas u oligotróficas
-- Monitoreo satelital: permite análisis temporales
-- Indicadores biológicos: la aparición de medusas "bola de cañón" indica condiciones hipóxicas y zonas muertas
+- Índice TRIX: combina clorofila-a y nutrientes para clasificar agua como eutrófica u oligotrófica  
+- Monitoreo satelital: permite análisis temporal  
+- Indicadores biológicos: aparición de medusas “cannonball” indica hipoxia y zonas muertas  
 
-###### Estudio de caso: Laguna Santa María
+###### Caso de Estudio: Laguna Santa María
 
-- Análisis TRIX de 10 años reveló un cambio drástico en el ecosistema
-- El sistema pasó de ser sumidero de nutrientes a exportador de nutrientes
-- Demuestra cambios ecológicos rápidos en las aguas regionales
+- Análisis TRIX de 10 años reveló cambios dramáticos en el ecosistema  
+- El sistema pasó de sumidero de nutrientes a exportador de nutrientes  
+- Demuestra cambios ecológicos rápidos en aguas regionales  
 
-### Nuevas Preocupaciones sobre Contaminación
+### Contaminación Emergente
 
-##### Contaminación acústica y lumínica
+##### Contaminación por Ruido y Luz
 
-- El ruido de embarcaciones afecta la comunicación y comportamiento de ballenas
-- Presión del desarrollo industrial evidenciada por la campaña "¿Ballenas o Gas?"
-- Preguntas sobre cómo clasificar el ruido/luz como amenazas a la calidad del agua
+- Ruido de embarcaciones afecta comunicación y comportamiento de ballenas  
+- Presión del desarrollo industrial destacada por campaña "¿Ballenas o Gas?"  
+- Preguntas sobre si clasificar ruido/luz como amenaza de calidad de agua  
 
-##### Efectos sinérgicos
+##### Efectos Sinérgicos
 
-- Nutrientes y químicos interactúan para generar floraciones algales
-- Necesidad de considerar efectos multiplicadores en metodologías de evaluación
-- Interacciones complejas requieren enfoques de evaluación integrados
+- Nutrientes y químicos interactúan generando floraciones algales  
+- Necesidad de considerar efectos multiplicadores en metodologías de evaluación  
+- Interacciones complejas requieren enfoques integrados para evaluación de contaminación  
 
----
+:::
+
+<br>
+
 
 ## Contacto por correo electrónico:
 

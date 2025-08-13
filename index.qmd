@@ -3,6 +3,9 @@ title: "Information Hub"
 subtitle: "For the Gulf of California Ocean Health Index"
 ---
 
+---
+
+
 ```{r}
 #| echo: false
 #| warning: false
@@ -21,6 +24,8 @@ This website will serve as an **Information Hub** where experts, such as those p
 
 A two-page summary of the project is available [here](https://drive.google.com/file/d/190Xepljkf_QuGyCn7Egzzs-D83R5x2L3/view?usp=sharing).
 
+
+---
 
 <br>
 

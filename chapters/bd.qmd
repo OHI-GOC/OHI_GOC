@@ -149,9 +149,53 @@ Add the shared calendar to your Google Calendar account using the [provided link
 ::: {.callout-note collapse="true"}
 ## EWG Meeting #1: Regional Considerations for BD
 
-These are some of the points discussed by the Expert Working Group.
+**These are some of the points discussed by the Expert Working Group.**
 
-UNDER CONSTRUCTION
+### Data and Monitoring
+
+* The GoC is megadiverse with data available from a database merging Rick's invert Desert Database, CONABIO, GBIF, OBIS, totaling 12,000 species, augmented by eDNA to more than \~25,000 species including polychaetes.
+* The database is georeferenced and includes spatial and depth information.
+* Sampling is every 2-3 years, not continuous; historical data exist.
+* Presence and abundance data cover the last 10 years.
+* Optical character recognition is used to digitize paper data.
+* Occurrence data have dates but are confounded by sampling effort.
+* Bycatch data from Sinaloa documented 30 years ago; shrimping decline may affect diversity.
+* eDNA databases are being used to collapse diversity into trophic levels for comparison through time and space.
+* Naturalist and community-based databases can supplement scientific data.
+
+### Species and habitat condition
+
+* Proxy of status based on management; trend data are hard because repeats are needed and there are many gaps.
+* Experts know from experience how species are doing and where; expert assessment would be beneficial.
+* Presence/absence over time can indicate if the system is healthy or degraded.
+* Need to add a richness measure beyond just status in risk assessment.
+* May want to restrict to certain phyla rather than all of them.
+* Indicator groups of families and species could identify which places in the gulf are faring better, possibly not at species level.
+* Islands such as Islas Marias and Maria Madre are biodiversity hotspots and could serve as reference points.
+* Terrestrial invasive species on islands are a concern; some indicators could link marine and terrestrial ecosystems.
+* Trends for mangroves and salt marshes are available.
+* Habitat and species cacti, including cardone and island plant species, are important.
+* Seabird islands would be valuable to include.
+
+### Ecological and environmental trends
+
+* Changes in species richness in Puerto Peñasco: used to have every animal phylum, now only two or three.
+* Some species impacted by fisheries and disease.
+* Shifting species distributions and limited trend data from 15 years ago require revisiting.
+* Trends in fin whales, sperm whales, orcas, and pinnipeds reflect ecosystem changes.
+* Ospreys are increasing; fin whales and some dolphins are fewer and skinnier, but not necessarily identified as anthropogenic impact.
+* Birds can signal environmental degradation; in South Sinaloa, Gulf of Santa Clara is important for birds but already greatly impacted/degraded.
+* Loss of water depth and warming leads to changes in coastal lagoon ecosystems, e.g., mudflat with no shrimp or fish but birds feeding on invertebrates.
+* The Colorado River basin has lost native biodiversity.
+
+### Conservation and management
+
+* Refugio Pescero Popular in Sinaloa is a protected area free of fishing, supported by fishermen.
+* COBI supports bottom-up protected areas based on fishing groups with a consultant portal.
+* Management is bureaucratically difficult.
+* Artificial reefs are considered a good idea.
+* Management interventions should be included in assessments.
+
 
 :::
 

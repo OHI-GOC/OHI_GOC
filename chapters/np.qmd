@@ -117,21 +117,107 @@ Add the shared calendar to your Google Calendar account using the [provided link
 
 ::: {.callout-note collapse="true"}
 ## NP **Meeting #2: Summary**  *UPCOMING August 28*
-**In Meeting #2**, we will discuss how we should define and assess 'Natural Products' in the Gulf, and possible NP reference points, so please come prepared for this discussion. A reference point is defined as the <u>ideal state<u> of natural products in the GoC.
+**In Meeting #2**, we will discuss how we should define and assess 'Natural Products' in the Gulf, and possible NP reference points, so please come prepared for this discussion. A reference point is defined as the <u>ideal state</u> of natural products in the GoC.
 
 **Stay tuned for Meeting #2 resources.**
 :::
 
 ------------------------------------------------------------------------
 
+
 # Expert Working Group (EWG) Meetings
+
 
 ::: {.callout-note collapse="true"}
 ## EWG Meeting #1: Regional Considerations for NP
 
-These are some of the points discussed by the Expert Working Group.
+**These are some of the points discussed by the Expert Working Group.**
 
-UNDER CONSTRUCTION
+## Current status in Gulf of California
+- **Development Level**: Not super well developed yet in Gulf of California
+- **Potential**: Huge potential for growth despite current limited development
+- **Challenge**: How to demonstrate this potential in assessment framework!
+
+## Sustainable natural products mentioned:
+
+### Salt production
+- Generally non-destructive practice using salt flats
+- **Conservation Benefits**: 
+  - Provides nesting areas for shorebirds
+  - Salina Lobos (medium-size plant) showing good conservation results
+- Human consumption uses and industrial applications (e.g., road salt)
+- *Positive* example of sustainable marine resource extraction
+
+### Marine agriculture/industry
+- **Fishmeal**: Sardines and anchovies used for animal feed production
+- **Biogas**: Potential opportunity, though not always implemented
+- **Composting**: Fish waste composting as potential indicator
+- **Infrastructure**: Seasonal use of facilities for multiple products
+
+### Algae products
+- **Cosmetics**: Marine algae used in beauty products
+- **Medicine**: Traditional and modern medicinal applications
+- **Indigenous use**: Traditional medicinal products documented in research (**Nemer's paper, ask Jaqueline for this**)
+- **Rhodoliths**: Harvested for heart conditions and traditional medicine
+
+### Aquarium trade
+- Limited operations (Loreto operation stopped)
+- Restrictions due to protected area designations
+- Individual operators previously active, but not so much anymore
+
+## Problematic/Illegal Natural Products
+
+### High value illegal trade
+- **Totoaba swim bladders**: 
+  - Used for medicine in China
+  - Massive IUU (Illegal, Unreported, Unregulated) fishing problem
+  - Major conservation pressure
+- **Sea lion products**: Male organs exported to China
+- **Shark fins**: Regulated through permits but enforcement challenges
+- **Sea horses**: Part of traditional medicine trade
+- **Black Coral**: Permit-regulated but potentially problematic (-AM)
+- **Mangrove Timber**: Legally protected but illegally harvested
+  - Creates pressure despite being renewable resource
+  - Corporate restoration requirements (replant more than destroyed)
+
+### Non-renewable extraction
+- **Sand Mining**: 
+  - Used for construction
+  - Not renewable resource
+  - Damages coastline
+  - Location: Primarily in arroyos rather than direct coast
+
+## How we could possibly group these:
+
+1. **Sustainable Products**: Salt, some algae, regulated aquarium trade
+2. **Traditional/Indigenous Products**: Medicinal algae and rhodoliths
+3. **Industrial Products**: Fishmeal, biogas, composting materials
+4. **Illegal/Problematic Products**: Totoaba bladders, sea lion parts, illegal timber
+5. **Non-Renewable Extraction Products**: Sand mining
+
+### However, there are seasonal considerations and regulatory challenges:
+
+- **Protected areas**: Restricting some previously allowed activities
+- **Permit systems**: Shark fins, black coral requiring official permits
+- **Enforcement**: Gap between regulations and actual enforcement
+- **International trade**: China market driving illegal harvesting of sea lions, shark fins, black coral, and swim bladders 
+
+### Possible resilience?
+- **Conservation co-benefits**: Shorebird nesting success in salt operations
+- **Restoration requirements**: Corporate mangrove replanting compliance
+
+### Pressure possibilities
+-  Totoaba, sea lion, and other high value species illegal poaching
+-  Coastline damage assessment of sand mining
+-  Mangrove harvest of timber
+-  International demand driving illegal activities
+
+### Development potential was mentioned a lot!!
+- Seasonal facility utilization,
+- Reuse of fishmeal 
+- Biogas and composting implementation
+- Permit system effectiveness could increase
+- Indigenous knowledge integration
 
 :::
 

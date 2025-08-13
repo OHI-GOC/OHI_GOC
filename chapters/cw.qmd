@@ -11,11 +11,48 @@ format: html
   </a>
 </div>
 
+::: {.callout-tip collapse="true"}
+# <i class="fa-regular fa-star"></i>  About the CW Goal
+
 **This goal captures the degree to which local waters are unpolluted by human-made causes.**
 
-::: {.callout-note collapse="true"}
+::: {.custom-box}
 
-## CW Goalkeeper Group Information
+{{< fa lightbulb >}} **CORE DEFINITION**
+
+People *value* marine waters that are **free of pollution and debris** for aesthetic and health reasons. 
+
+Contamination of waters comes from oil spills, chemicals, eutrophication, algal blooms, disease pathogens (e.g., fecal coliform, viruses, and parasites from sewage outflow), floating trash, and mass kills of organisms due to pollution. 
+
+People are sensitive to these phenomena occurring in areas they access for recreation or other purposes as well as for simply knowing that clean waters exist. 
+
+In the global assessment, four measures of pollution are included in the *clean waters* goal: eutrophication (nutrients), chemicals, pathogens and marine debris. **This group will assess what contamination applies to the Gulf, and will define the goal model accordingly.**
+
+The status of these components is typically the inverse of their intensity.  This means that the high input results in low status score, *and this goal scores highest when the contamination level is zero.*
+
+:::
+
+
+## Key Questions
+
+What is the ideal sustainable state of the **clean waters** goal? 
+
+- How do we *ideally* measure the amount of **contamination** (or lack thereof) of waters in the Gulf of California?
+
+- How do we define the **reference point**, or the ideal amount of contamination?  Is it **zero**, as it is in the global framework? 
+  - This may depend on what we want to include in the status of the goal. Does it include chemicals, pathogens, trash, nutrients?  Are there any other types of contamination we want to add or remove?
+  - The global OHI defined the contamination categories based on commonly considered contamination types in assessments of coastal clean waters ([Borja et al. 2008](https://doi.org/10.1016/j.marpolbul.2008.07.005)), are there papers like this for the Gulf of California?
+
+:::
+
+
+---
+
+
+# Goalkeeper Meetings
+
+::: {.callout-note collapse="true"}
+## <i class="fa-regular fa-calendar"></i>  **Meeting Logistics:** Who, What, When, Where!
 
 ##### **Meeting Access**
 
@@ -58,25 +95,23 @@ Add the shared calendar to your Google Calendar account using the [provided link
 
 :::
 
----
 
-::: {.custom-box}
+::: {.callout-note collapse="true"}
+# <i class="fa-regular fa-circle-down"></i>  **Key Resources:** Slides, collaborative documents
 
-{{< fa lightbulb >}} **CORE DEFINITION**
-
-People *value* marine waters that are **free of pollution and debris** for aesthetic and health reasons. 
-
-Contamination of waters comes from oil spills, chemicals, eutrophication, algal blooms, disease pathogens (e.g., fecal coliform, viruses, and parasites from sewage outflow), floating trash, and mass kills of organisms due to pollution. 
-
-People are sensitive to these phenomena occurring in areas they access for recreation or other purposes as well as for simply knowing that clean waters exist. 
-
-In the global assessment, four measures of pollution are included in the *clean waters* goal: eutrophication (nutrients), chemicals, pathogens and marine debris. **This group will assess what contamination applies to the Gulf, and will define the goal model accordingly.**
-
-The status of these components is typically the inverse of their intensity.  This means that the high input results in low status score, *and this goal scores highest when the contamination level is zero.*
+- [Meeting #1 Slides](https://docs.google.com/presentation/d/1MhTPHz6HSe0NVeA3UcxgCPXBzhQ9l6VAMkSiQkBCeNk/edit?usp=sharing) to revisit the main ideas.  
+- [CW Goalkeeper Ideas](https://docs.google.com/document/d/1JhF0Wf9g4VH-iDHVK07Qk2FdLBZNtWXTxdxrRecbF-Q/edit?tab=t.kyrkgpt50url), where you can add your thoughts, ideas, and potential data sources to the ongoing collaborative document.
 
 :::
 
-## **Meeting #1 Recap & Next Steps**
+<br>
+
+
+### **Meeting Summaries**
+
+
+::: {.callout-note collapse="true"}
+# <i class="fa-regular fa-clipboard"></i> **Meeting #1:** Recap & Next Steps
 
 **Thank you to everyone who joined our first Clean Waters (CW) Goalkeeper meeting!**  
 
@@ -138,23 +173,27 @@ In our **next meeting**, we’ll continue our discussion of contaminants that sh
 
 We'll also start to define the **reference point** for this goal — our vision of what ideal, clean waters look like. In assessment terms, this is the **"100" score** — our A+ target!
 :::
+:::
 
-## Key Questions
+::: {.callout-note collapse="true"}
+# <i class="fa-regular fa-clipboard"></i> **Meeting #2:** *Upcoming on August 26th!*
 
-What is the ideal sustainable state of the **clean waters** goal? 
+:::
 
-- How do we *ideally* measure the amount of **contamination** (or lack thereof) of waters in the Gulf of California?
-
-- How do we define the **reference point**, or the ideal amount of contamination?  Is it **zero**, as it is in the global framework? 
-  - This may depend on what we want to include in the status of the goal. Does it include chemicals, pathogens, trash, nutrients?  Are there any other types of contamination we want to add or remove?
-  - The global OHI defined the contamination categories based on commonly considered contamination types in assessments of coastal clean waters ([Borja et al. 2008](https://doi.org/10.1016/j.marpolbul.2008.07.005)), are there papers like this for the Gulf of California?
 
 
 ---
 
-## Regional Considerations
 
-These are some of the points discussed by the Expert Working Group.
+<br> 
+
+
+### Additional Insights & Examples
+
+::: {.callout-note collapse="true"}
+# Expert Working Group (EWG): Regional Considerations
+
+**These are some of the points discussed by the Expert Working Group (EWG).**
 
 ### Contamination Sources and Assessment Challenges
 
@@ -231,7 +270,10 @@ These are some of the points discussed by the Expert Working Group.
 - Need for multiplier effects in assessment methodologies
 - Complex interactions require integrated pollution assessment approaches
 
----
+:::
+
+<br>
+
 
 ## Contact via email:
 

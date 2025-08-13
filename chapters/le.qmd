@@ -11,8 +11,56 @@ format: html
   </a>
 </div>
 
+::: {.callout-tip collapse="true"}
+# <i class="fa-regular fa-star"></i>  About the LE Goal
+
+**This goal measures jobs and revenue from sustainable marine-related industries.**
+
+
+---
+
+::: custom-box
+{{< fa lightbulb >}} **CORE DEFINITIONS**
+
+- **Overall Goal**: Measures jobs and revenue from sustainable marine-related industries
+- **Two Subgoals**: 
+  - **Livelihoods**: Quality and quantity of jobs
+    - **Focus**: Marine-related jobs
+    - **Example Industries**: Commercial fishing, mariculture, tourism and recreation, whale watching, etc
+  - **Economies**: Amount of revenue produced
+    - **Focus**: Revenue for all coastal regions from marine-related sectors
+    - **Coverage**: Both direct and indirect marine industry connections
+
+:::
+
+
+## Key Questions {#key-questions}
+
+#### **Livelihoods**
+
+There is a quantity and quality aspect to this goal, typically.  **Is there anything important to analyze apart from the quantity and quality of marine jobs?**
+
+- How (*ideally*) do we measure the **quantity and quality** of people’s marine-related jobs? 
+  - How do we define the **reference point**?
+  - How do we incorporate **sustainability** into the assessment?
+  
+#### **Economies**
+
+What are some important marine-sector industries within the Gulf that come to mind?
+
+- How (*ideally*) do we measure the **revenue** of these sectors? 
+  - How do we define the **reference point**?
+  - How do we incorporate **sustainability** into the assessment?
+  
+:::
+
+---
+
+
+# Goalkeeper Meetings
+
 ::: {.callout-note collapse="true"}
-## LE Goalkeeper Group: Who, what, when, where, why!
+## <i class="fa-regular fa-calendar"></i>  **Meeting Logistics:** Who, What, When, Where!
 
 ##### **Meeting Access**
 
@@ -57,27 +105,22 @@ Add the shared calendar to your Google Calendar account using the [provided link
 **Please let us know if you have any questions. We look forward to working on this initiative with you!**
 :::
 
+::: {.callout-note collapse="true"}
+# <i class="fa-regular fa-circle-down"></i>  **Key Resources:** Slides, collaborative documents
 
-**This goal measures jobs and revenue from sustainable marine-related industries.**
-
-
----
-
-::: custom-box
-{{< fa lightbulb >}} **CORE DEFINITIONS**
-
-- **Overall Goal**: Measures jobs and revenue from sustainable marine-related industries
-- **Two Subgoals**: 
-  - **Livelihoods**: Quality and quantity of jobs
-    - **Focus**: Marine-related jobs
-    - **Example Industries**: Commercial fishing, mariculture, tourism and recreation, whale watching, etc
-  - **Economies**: Amount of revenue produced
-    - **Focus**: Revenue for all coastal regions from marine-related sectors
-    - **Coverage**: Both direct and indirect marine industry connections
+- [Meeting #1 Slides](https://docs.google.com/presentation/d/1X9Yd-SqRzeTsktJ3qqSJelGoPGWp7dH9kbmvPSaI1V0/edit?slide=id.g2a86c82ea32_0_0#slide=id.g2a86c82ea32_0_0) to revisit the main ideas.  
+- [LE Goalkeeper Ideas](https://docs.google.com/document/d/1Ixhixn-pC6BPo4fwVi4sTkPXQbd7R-iKG3MF5XV4l_g/edit?tab=t.0#heading=h.8562cdkt8tdh), where you can add your thoughts, ideas, and potential data sources to the ongoing collaborative document.
 
 :::
 
-## **Meeting #1 Recap & Next Steps**
+<br>
+
+
+### **Meeting Summaries**
+
+
+::: {.callout-note collapse="true"}
+# <i class="fa-regular fa-clipboard"></i> **Meeting #1:** Recap & Next Steps
 
 **Thank you for joining our first Livelihoods & Economies Goalkeeper meeting!**  
 It was a great start to our work together in defining coastal livelihoods and economies for the **Gulf of California**, and how it should be integrated into this assessment.  
@@ -149,33 +192,21 @@ More topics to think about before our **next meeting**:
 Thank you all, and see you next meeting (see the [LE Goalkeeper Group Information: who, what, when, where, why!](#admin-info) tab at the top of the page for more information)!
 
 :::
+:::
 
-## Key Questions {#key-questions}
+::: {.callout-note collapse="true"}
+# <i class="fa-regular fa-clipboard"></i> **Meeting #2:** *Upcoming on September 5th!*
 
-#### **Livelihoods**
+:::
 
-There is a quantity and quality aspect to this goal, typically.  **Is there anything important to analyze apart from the quantity and quality of marine jobs?**
-
-- How (*ideally*) do we measure the **quantity and quality** of people’s marine-related jobs? 
-  - How do we define the **reference point**?
-  - How do we incorporate **sustainability** into the assessment?
-  
-#### **Economies**
-
-What are some important marine-sector industries within the Gulf that come to mind?
-
-- How (*ideally*) do we measure the **revenue** of these sectors? 
-  - How do we define the **reference point**?
-  - How do we incorporate **sustainability** into the assessment?
-
-
-##### Other OHI + assessments:
-
-Nearly all assessments include one or both of these subgoals. Typically, a high score is obtained when livelihoods and economies remain constant or improve (a temporal reference point). For livelihoods, there have been several approaches to measuring job quality.  Some assessments include industries that do not require a healthy ocean (e.g., wind energy, shipping, etc.), others have excluded these. A constant challenge is determining how to count jobs that are indirectly supported by marine industries (e.g., manufacture of fishing gear, etc.)
 
 
 ---
-## Regional Considerations
+
+### Additional Insights & Examples
+
+::: {.callout-note collapse="true"}
+# Expert Working Group (EWG): Regional Considerations
 
 **These are some of the points discussed by the Expert Working Group (EWG).**
 
@@ -195,6 +226,22 @@ Nearly all assessments include one or both of these subgoals. Typically, a high 
   - **Marine infrastructure projects** (e.g., underwater gas lines) are seen as added pressures.
 - Mexico’s broader economic context was noted: there is a current recession phase, yet it has a high ranking in the World Happiness Report.
 
+:::
+
+::: {.callout-note collapse="true"}
+# Notes on other OHI + assessments:
+
+Nearly all assessments include one or both of these subgoals. 
+
+Typically, a high score is obtained when livelihoods and economies remain constant or improve (a temporal reference point). 
+
+For livelihoods, there have been several approaches to measuring job quality.  
+
+Some assessments include industries that do not require a healthy ocean (e.g., wind energy, shipping, etc.), others have excluded these. 
+
+A constant challenge is determining how to count jobs that are indirectly supported by marine industries (e.g., manufacture of fishing gear, etc.)
+
+:::
 
 ## Contact via email:
 

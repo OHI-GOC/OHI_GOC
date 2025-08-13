@@ -153,9 +153,52 @@ Agrega el calendario compartido a tu cuenta de Google Calendar usando el [enlace
 ::: {.callout-note collapse="true"}
 ## Reunión EWG #1: Consideraciones Regionales para BD
 
-Estos son algunos de los puntos discutidos por el Grupo de Expertos.
+**Estos son algunos de los puntos discutidos por el Grupo de Expertos.**
 
-EN CONSTRUCCIÓN
+### Datos y Monitoreo
+
+* El GoC es megadiverso, con datos disponibles en una base que fusiona la Invert Desert Database de Rick, CONABIO, GBIF, OBIS, sumando un total de 12,000 especies, aumentadas mediante eDNA a más de ~25,000 especies incluyendo poliquetos.  
+* La base de datos está georreferenciada e incluye información espacial y de profundidad.  
+* Muestreo cada 2-3 años, no continuo; existen datos históricos.  
+* Los datos de presencia y abundancia cubren los últimos 10 años.  
+* Se utiliza reconocimiento óptico de caracteres para digitalizar datos en papel.  
+* Los datos de ocurrencia tienen fechas pero están confusos por el esfuerzo de muestreo.  
+* Datos de captura incidental (bycatch) de Sinaloa documentados hace 30 años; el declive de la pesca de camarón puede afectar la diversidad.  
+* Las bases de datos de eDNA se usan para agrupar la diversidad en niveles tróficos para comparaciones a través del tiempo y el espacio.  
+* Bases de datos de naturalistas y comunitarias pueden complementar los datos científicos.  
+
+### Condición de especies y hábitat
+
+* Proxy de estado basado en manejo; los datos de tendencia son difíciles porque se necesitan repeticiones y hay muchos vacíos.  
+* Los expertos saben por experiencia cómo están las especies y dónde; la evaluación experta sería beneficiosa.  
+* La presencia/ausencia a lo largo del tiempo puede indicar si el sistema está sano o degradado.  
+* Necesidad de añadir una medida de riqueza más allá del estado en evaluaciones de riesgo.  
+* Puede que se quiera restringir a ciertos filos en lugar de todos.  
+* Grupos indicadores de familias y especies podrían identificar qué lugares del golfo están mejor, posiblemente no a nivel de especie.  
+* Islas como Islas Marías y María Madre son hotspots de biodiversidad y podrían servir como puntos de referencia.  
+* Especies invasoras terrestres en islas son una preocupación; algunos indicadores podrían vincular ecosistemas marinos y terrestres.  
+* Se dispone de tendencias para manglares y marismas salinas.  
+* Hábitat y especies de cactáceas, incluyendo cardón y especies vegetales de isla, son importantes.  
+* Islas con aves marinas serían valiosas de incluir.  
+
+### Tendencias ecológicas y ambientales
+
+* Cambios en riqueza de especies en Puerto Peñasco: solía haber todos los filos animales, ahora solo dos o tres.  
+* Algunas especies afectadas por pesquerías y enfermedades.  
+* Cambios en la distribución de especies y datos de tendencia limitados de hace 15 años requieren revisión.  
+* Tendencias de ballenas aleta, cachalotes, orcas y pinnípedos reflejan cambios en el ecosistema.  
+* Los águilas pescadoras (ospreys) están aumentando; ballenas aleta y algunos delfines son menos y más flacos, pero no necesariamente identificados como impacto antropogénico.  
+* Las aves pueden señalar degradación ambiental; en el sur de Sinaloa, el Golfo de Santa Clara es importante para aves pero ya muy impactado/degradado.  
+* Pérdida de profundidad del agua y calentamiento provocan cambios en ecosistemas de lagunas costeras, ej. planicies de lodo sin camarones ni peces pero con aves alimentándose de invertebrados.  
+* La cuenca del Río Colorado ha perdido biodiversidad nativa.  
+
+### Conservación y Manejo
+
+* Refugio Pescero Popular en Sinaloa es un área protegida libre de pesca, apoyada por pescadores.  
+* COBI apoya áreas protegidas desde abajo hacia arriba basadas en grupos de pesca con un portal de consultoría.  
+* El manejo es burocráticamente difícil.  
+* Se consideran los arrecifes artificiales una buena idea.  
+* Las intervenciones de manejo deberían incluirse en las evaluaciones.
 
 :::
 
