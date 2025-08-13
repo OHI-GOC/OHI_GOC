@@ -59,14 +59,15 @@ format: html
 
 ##### **Horario de las Reuniones _(lunes 9:00 AM - 10:00 AM PDT)_**
 
-| Reunión | Mes | Fecha específica | Enfoque |
-|---------|------|------------------|---------|
-| 1 | Julio/Agosto | 21 de julio de 2025 | Presentaciones del grupo, visión general de la plataforma OHI, cálculos de la meta |
-| 2 | Agosto/Septiembre | 18 de agosto de 2025 | Discusión del modelo y punto de referencia |
-| 3 | Septiembre/Octubre | 22 de septiembre de 2025 | Modelo, punto de referencia y fuentes de datos |
-| 4 | Octubre/Noviembre | 20 de octubre de 2025 | Resultados preliminares y presión/resiliencia |
-| 5 | Noviembre/Diciembre | 17 de noviembre de 2025 | Revisión del plan final de análisis |
-| 6 | Diciembre | 15 de diciembre de 2025 *(tentativo)* | *Tentativo* |
+| Reunión | Fecha | Enfoque |
+|---------|-------|---------|
+| 1 | 21 de julio de 2025 | Presentaciones del grupo, visión general de la plataforma OHI, cálculos de la meta, definir la meta |
+| 2 | 18 de agosto de 2025 | Terminar de definir la meta, discutir la forma ideal de medirla y su estado ideal |
+| 3 | 22 de septiembre de 2025 | Revisar cómo medir la meta y comenzar a definir las fuentes de datos de código abierto disponibles |
+| 4 | 20 de octubre de 2025 | Resultados preliminares y, posiblemente, discusiones sobre presión/resiliencia |
+| 5 | 17 de noviembre de 2025 | Revisión del plan de análisis final |
+| 6 | 15 de diciembre de 2025 *(tentativo)* | *Tentativo* |
+
 
 ---
 

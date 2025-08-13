@@ -60,14 +60,14 @@ What is the ideal sustainable state of the **tourism and recreation** goal?
 
 ##### **Meeting Schedule _(Monday 9:00 AM - 10:00 AM PDT)_**
 
-| Meeting | Date | Specific Date | Focus |
-|---------|------|---------------|-------|
-| 1 | July/August | July 21, 2025 | Group introductions, OHI platform overview, goal calculations |
-| 2 | August/September | August 18, 2025 | Model and reference point discussion |
-| 3 | September/October | September 22, 2025 | Model, reference point, and data sources |
-| 4 | October/November | October 20, 2025 | Preliminary results and pressure/resilience |
-| 5 | November/December | November 17, 2025 | Final analysis plan review |
-| 6 | December | December 15, 2025 *(tentative)* | *Tentative* |
+| Meeting | Date | Focus |
+|---------|------|-------|
+| 1 | July 21, 2025 | Group introductions, OHI platform overview, goal calculations, define goal |
+| 2 | August 18, 2025 | Finish defining the goal, discuss the ideal way to measure this goal, and the ideal state of it |
+| 3 | September 22, 2025 | Review how to measure the goal, and begin defining open-source data sources available |
+| 4 | October 20, 2025 | Preliminary results and possibly pressure/resilience discussions |
+| 5 | November 17, 2025 | Final analysis plan review |
+| 6 | December 15, 2025 *(tentative)* | *Tentative* |
 
 ---
 
