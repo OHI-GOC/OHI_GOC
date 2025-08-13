@@ -10,210 +10,253 @@ format: html
   </a>
 </div>
 
-::: {.callout-note collapse="true"}
+::: {.callout-tip collapse="true"}
+# <i class="fa-regular fa-star"></i> Sobre la Meta de SS
 
-## Información del Grupo de Portavoces de SS
+**Esta meta captura la percepción de que los recursos marinos no están limitados por preocupaciones de seguridad.**
+
+::: {.custom-box}
+
+{{< fa lightbulb >}} **DEFINICIÓN CENTRAL**
+
+- **_Enfoque:_** Medidas objetivas y subjetivas de seguridad en áreas costeras y marinas  
+- **_No trata de:_** La seguridad como una meta independiente — más bien, se conceptualiza como una presión que influye en múltiples metas  
+- **_Énfasis:_** Tasas de criminalidad, percepciones de seguridad y sus impactos en otras metas
+
+:::
+
+## Preguntas Clave
+
+Al explorar la idea de incorporar **Seguridad y Protección** en el OHI para el Golfo de California, es importante aclarar el *objetivo, las definiciones centrales, la posible estructura y consideraciones de medición* para esta meta potencial. A continuación, se presentan puntos clave para discusión y revisión.
+
+### 1. Objetivo
+
+¿La meta de seguridad y protección parece ser más **una presión sobre muchas otras metas**, o una meta por sí misma?
+
+**_Para aclarar el propósito:_**
+
+- ¿Qué queremos lograr al agregar Seguridad y Protección al OHI GoCA?  
+  - ¿Aumentar la visibilidad de problemas de seguridad en áreas costeras/marinas?  
+  - ¿Impulsar nuevas iniciativas para reducir la criminalidad y promover ambientes más seguros?  
+    - ¿Un Golfo *más seguro* significa un Golfo *más saludable*?
+
+**_Para aclarar definiciones:_**
+
+- ¿Un *“golfo saludable”* significa que la gente está objetivamente segura, se siente segura, o ambos?  
+- ¿Debería la meta enfocarse en tasas reales de criminalidad, percepción de seguridad, o una combinación? ¿O algo distinto?
+
+| Término    | Posible definición                                               |
+|------------|------------------------------------------------------------------|
+| Seguridad  | Condición objetiva con baja criminalidad/incidencia de amenazas |
+| Protección | Percepción subjetiva; confianza en las autoridades e instituciones |
+
+### 2. Alcance
+
+- ¿Debería “Seguridad” incluir sólo crimen organizado, o también robo, asalto, secuestro, etc.?  
+- ¿El escenario ideal es realmente cero criminalidad, o un mínimo “tolerable”?  
+- ¿Cómo abordamos la diversidad de delitos y sus impactos en las comunidades costeras?
+
+### 3. Medición
+
+#### Seguridad (Objetiva)
+
+- ¿Podría incluir:  
+  - Estadísticas oficiales de criminalidad (delitos costeros, marinos, portuarios)?  
+  - Tanto crimen organizado como delincuencia general? ¿O sólo crimen organizado?
+
+#### Protección (Subjetiva)
+
+- ¿Podría incluir:  
+  - Encuestas sobre la percepción de seguridad en regiones costeras específicas?  
+  - Confianza en las fuerzas del orden, presencia visible de autoridades, iniciativas comunitarias?
+
+:::
+
+---
+
+# Reuniones de los Responsables de Meta
+
+::: {.callout-note collapse="true"}
+## <i class="fa-regular fa-calendar"></i>  **Logística de la Reunión:** Quién, Qué, Cuándo, Dónde
 
 ##### **Acceso a la Reunión**
 
-**Enlace de Zoom:** <https://us06web.zoom.us/j/3255055973>
+**Enlace Zoom:** <https://us06web.zoom.us/j/3255055973>
 ---
 
 ##### **Miembros Clave del Equipo**
-- Francisco Fernández
-- Amy Hudson Weaver
-- Víctor Ricardez
-- Jorge Torre
+- Amy Hudson Weaver 
+- Francisco Fernandez  
+- Jorge Torre  
+- Siria Gastelum
+- Víctor Ricardez  
 
 ---
 
-##### **Calendario de Reuniones _(Viernes 1:00 PM - 2:00 PM PDT)_**
+##### **Horario de Reuniones _(viernes 1:00 PM - 2:00 PM PDT)_**
 
 | Reunión | Fecha específica | Enfoque |
-|--------|------------------|---------|
-| 1 | 25 de julio de 2025 | Presentación del grupo, panorama general de la plataforma OHI, cálculo de metas |
+|---------|------------------|---------|
+| 1 | 25 de julio de 2025 | Presentaciones grupales, visión general plataforma OHI, cálculos de la meta |
 | 2 | 29 de agosto de 2025 | Discusión del modelo y punto de referencia |
 | 3 | 26 de septiembre de 2025 | Modelo, punto de referencia y fuentes de datos |
 | 4 | 24 de octubre de 2025 | Resultados preliminares y presión/resiliencia |
-| 5 | 21 de noviembre de 2025 | Revisión del plan de análisis final |
-| 6 | 5 de diciembre de 2025 *(tentativa)* | *Tentativa* |
+| 5 | 21 de noviembre de 2025 | Revisión del plan final de análisis |
+| 6 | 5 de diciembre de 2025 *(tentativo)* | *Tentativo* |
 
 ---
 
-##### **Información sobre Coautoría**
+##### **Información de Coautoría**
 
-Este proyecto brinda oportunidades para colaborar con expertos regionales y contribuir a la evaluación del OHI para el Golfo de California. La participación será reconocida en el sitio web y otros productos. Podrían existir oportunidades adicionales de coautoría con compromiso adicional según se detalla [aquí](https://docs.google.com/document/d/16jwVGjbQpF_6B6sbkhb4xO00WAXdDiESBXu-n2a7D1k/edit?tab=t.0).
+Este proyecto ofrece oportunidades para colaborar con expertos regionales y contribuir a la evaluación OHI del Golfo de California. La participación será reconocida en la página web y otros productos. Pueden existir oportunidades adicionales de coautoría con compromiso extra, como se detalla [aquí](https://docs.google.com/document/d/16jwVGjbQpF_6B6sbkhb4xO00WAXdDiESBXu-n2a7D1k/edit?tab=t.0).
 
 ---
 
 ##### **Calendario de Google**
 
-Agrega el calendario compartido a tu cuenta de Google Calendar usando el [enlace proporcionado](https://calendar.google.com/calendar/u/0?cid=Y184ZmIyNzhjNmQwM2E5MGFjZDJjYWE0MDdhOTcyY2ZlMjcxYTQwNzA3Mjc0MDFiNzM0NzRkNjdjNGM0NDE0ZjQyQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20). Aparecerá en la sección de "Otros calendarios" y brindará acceso a todas las reuniones programadas con enlaces de Zoom actualizados.
+Agrega el calendario compartido a tu cuenta de Google Calendar usando el [enlace proporcionado](https://calendar.google.com/calendar/u/0?cid=Y184ZmIyNzhjNmQwM2E5MGFjZDJjYWE0MDdhOTcyY2ZlMjcxYTQwNzA3Mjc0MDFiNzM0NzRkNjdjNGM0NDE0ZjQyQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20). Aparecerá bajo "Otros calendarios" y te dará acceso a todas las reuniones programadas con enlaces Zoom actualizados.
 
-**Por favor avísanos si tienes alguna pregunta. ¡Esperamos trabajar contigo en esta iniciativa!**
+**Por favor, avísanos si tienes alguna pregunta. ¡Esperamos trabajar contigo en esta iniciativa!**
 
 :::
 
-**Esta meta captura la percepción de que los recursos marinos no están limitados por preocupaciones de seguridad.**
+::: {.callout-note collapse="true"}
+# <i class="fa-regular fa-circle-down"></i>  **Recursos Clave:** Presentaciones, documentos colaborativos
 
----
+- [Diapositivas de la Reunión #1](https://docs.google.com/presentation/d/1GCZWVmivMn4AGB6LoaqxCzxCEH_qYy87rUmY3Z-fryw/edit?usp=sharing) para repasar las ideas principales.  
+- [Ideas para la Meta SS](https://docs.google.com/document/d/1djLJpt2VB8fZLe518mnSzd6l7GaU1IQLpPlLuiK6flU/edit?tab=t.kyrkgpt50url), donde puedes añadir tus pensamientos, ideas y posibles fuentes de datos en el documento colaborativo en curso.
 
-## **Resumen de la Reunión #1 y Próximos Pasos**
+:::
 
-**¡Gracias por asistir a nuestra primera reunión del grupo de portavoces de Seguridad y Protección (SS)!**  
-Fue un gran comienzo para nuestro trabajo conjunto en definir qué significa la seguridad para el **Golfo de California**, y cómo debería integrarse en esta evaluación.  
+<br>
+
+### **Resumen de Reuniones**
+
+::: {.callout-note collapse="true"}
+# <i class="fa-regular fa-clipboard"></i> **Reunión #1:** Resumen y Próximos Pasos
+
+**¡Gracias por unirte a nuestra primera reunión de la Meta de Seguridad y Protección (SS)!**  
+Fue un excelente inicio para definir juntos qué significa seguridad y protección para el **Golfo de California**, y cómo debe integrarse en esta evaluación.
 
 ::: {.callout-tip}
 
 ### {{< fa book >}} **Resumen de la Reunión**
 
-El grupo acordó que **Seguridad y Protección (SS)** se conceptualiza mejor como un **tipo de presión** en lugar de una meta independiente. Esto se debe a que el Golfo de California no brinda seguridad o protección por sí mismo — pero SS influye en la condición de muchas otras metas.
+El grupo coincidió en que **Seguridad y Protección (SS)** se conceptualiza mejor como un **tipo de presión** en lugar de una meta independiente. Esto es porque el Golfo de California no ofrece seguridad o protección por sí mismo — pero SS influye en la condición de muchas otras metas.
 
-Sin embargo, a diferencia de las presiones típicas, SS también afecta el **estado actual** de varias metas. El grupo propuso modelar SS como una **presión única** que impacta tanto el **estado actual** como el **estado futuro probable**, con influencia variable según la meta. Por ejemplo, en **Productos Naturales**, SS podría afectar cada producto de manera distinta, con pesos variables.
+Sin embargo, a diferencia de otras presiones típicas, SS también afecta el **estatus actual** de varias metas. El grupo propuso modelar SS como una **presión única** que impacta tanto el **estatus actual** como el **estatus probable futuro**, con influencia variable dependiendo de la meta. Por ejemplo, en **Productos Naturales**, SS podría afectar cada producto de manera diferente, con distintos pesos.
 
-Jorge y Víctor **identificaron las metas más impactadas** por el crimen e inseguridad:
+Jorge y Víctor **identificaron las metas más impactadas** por la criminalidad y la inseguridad:
 
-- **Medios de Vida y Economías** (las personas están limitadas en los trabajos que pueden tener)
-- **Turismo y Recreación** (locales y turistas podrían evitar ciertas zonas por la presencia del crimen organizado)
-- **Provisión de Alimentos** (control sectorial, inseguridad laboral, amenazas de violencia)
-- **Oportunidades Artesanales** (acceso físico limitado a la costa en ciertas áreas, y por tanto al recurso marino para las comunidades)
-- **Sentido de Pertenencia** (las comunidades no sienten ese “sentido de pertenencia” al Golfo debido a la percepción de inseguridad o la evitación del área)
-- **Aguas Limpias** (por ejemplo, contaminación de operaciones del narco)
-- **Biodiversidad** (por ejemplo, hábitats ocupados por crimen limitan el acceso a la conservación)
-- **Investigación/Alfabetización Oceánica** (por ejemplo, acceso científico limitado o falta de vigilancia)
-- **Productos Naturales** (dependiendo del producto)
+  - **Medios de Vida y Economías** (las personas tienen limitadas las opciones laborales)  
+  - **Turismo y Recreación** (locales y turistas podrían evitar ciertos lugares costeros debido a la presencia de crimen organizado)  
+  - **Provisión de Alimentos** (control sectorial, inseguridad laboral y amenazas de violencia)  
+  - **Oportunidades Artesanales** (acceso físico limitado a la costa en ciertas áreas, y por tanto acceso limitado a recursos marinos para comunidades)  
+  - **Sentido de Lugar** (comunidades que no sienten pertenencia al Golfo por percepciones de inseguridad o por evitar áreas)  
+  - **Aguas Limpias** (p. ej., contaminación de operaciones de narcotráfico)  
+  - **Biodiversidad** (p. ej., hábitats ocupados por crimen que restringen acceso para conservación)  
+  - **Investigación/Alfabetización Oceánica** (p. ej., acceso científico limitado o cumplimiento)  
+  - **Productos Naturales** (dependiendo del producto)
 
-Pero **no** afectaría la meta de Almacenamiento de Carbono/Protección Costera. Y, para la meta de **Turismo y Recreación**, probablemente **no afecta el estado actual**, porque los indicadores actuales ya capturan el efecto de la seguridad en el comportamiento turístico. En cambio, SS solo influiría en el **estado futuro probable** para esta meta.
+Pero **no** afectaría la meta de Almacenamiento de Carbono/Protección Costera. Y para la meta de **Turismo y Recreación**, SS probablemente **no afecta el estatus actual**, porque los indicadores actuales ya capturan el efecto de la seguridad en el comportamiento de viajes. SS influiría sólo en el **estatus futuro probable** para esta meta.
 
-El grupo debatió cómo definir "crimen" en este contexto:
+El grupo debatió cómo definir “crimen” en este contexto:
 
-- **Víctor**: Incluir **todo tipo de crimen**, ya que todos tienen efectos tangibles.
-- **Jorge**: Enfatizar el **crimen organizado**, que tiene un impacto especialmente fuerte en el Golfo.
-- **Propuesta**: Mantener flexibilidad en la definición de SS, ya que el crimen organizado puede ser difícil de aislar del crimen general en los datos disponibles.
+  - **Víctor:** Incluir **todo tipo de crimen**, pues todos tienen efectos tangibles.  
+  - **Jorge:** Enfatizar el **crimen organizado**, que tiene un impacto particularmente fuerte en el Golfo.  
+  - **Propuesta:** Mantener flexibilidad en la definición de SS, ya que puede ser difícil aislar crimen organizado del crimen general en los datos disponibles.
 
-El grupo también coincidió en evitar estancarse en debates filosóficos, mantener el trabajo **práctico, aterrizado y basado en datos**, y considerar factores sociopolíticos más amplios como la **presencia del Estado**, **pobreza**, **educación**, y **servicios de salud** en el análisis.
+El grupo también acordó la necesidad de evitar debates filosóficos, mantener el trabajo **práctico, basado en datos**, y considerar factores sociopolíticos más amplios como **presencia estatal**, **pobreza**, **educación** y **servicios de salud** en el análisis.
 
-**Amy** enfatizó la incorporación tanto de:
+**Amy** enfatizó incorporar ambos:
 
-- **Tasas de crimen objetivas** (datos cuantitativos), y
-- **Percepciones subjetivas de seguridad** (conocimiento cualitativo)
-  - Ella señaló que con el tiempo, las comunidades pueden normalizar la inseguridad, subestimando los riesgos reales. Un posible recurso: un **informe financiado por Packard**, posiblemente titulado *"People Protecting Places (PPP)"*.
+  - **Tasas objetivas de criminalidad** (datos cuantitativos), y  
+  - **Percepciones subjetivas de seguridad** (insights cualitativos)  
+    - Notó que con el tiempo las comunidades pueden normalizar la inseguridad, subestimando riesgos reales. Un posible recurso: un reporte financiado por Packard, posiblemente titulado *“People Protecting Places (PPP)”*.
 
 *Esto apoyaría:*
 
-| Término   | Posible definición basada en nuestra reunión                    |
-|-----------|-----------------------------------------------------------------|
-| Seguridad | Condición objetiva del crimen/incidencia de amenazas           |
-| Protección| Percepción subjetiva; sensación de seguridad, confianza en la autoridad |
+| Término    | Posible definición basada en nuestra reunión                  |
+|------------|---------------------------------------------------------------|
+| Seguridad  | Condición objetiva de criminalidad/incidencia de amenazas    |
+| Protección | Percepción subjetiva; sensación de seguridad, confianza en autoridades e instituciones |
 
 ---
 
 #### 📊 **Fuentes de Datos Mencionadas**
 
 - **INEGI – Incidencia delictiva**  
-- **Datos de bienestar comunitario**, posiblemente vinculados a encuestas de CONANP/Carnival *(Víctor compartirá estos recursos en nuestro documento colaborativo)*  
-- **ENVIPE** – encuesta nacional de percepción sobre seguridad pública  
-- **SEMAFORO** – estadísticas delictivas a nivel municipal  
-- **Informe PPP** (People Protecting Places) *(Consultar con Amy para obtenerlo)*  
+- **Datos de bienestar comunitario**, posiblemente ligados a encuestas CONANP/Carnaval *(Víctor compartirá estos recursos en nuestro documento interactivo)*  
+- **ENVIPE** – encuesta nacional de percepción de seguridad pública  
+- **SEMAFORO** – estadísticas municipales de criminalidad  
+- **Reporte PPP** (People Protecting Places) *(Consultar con Amy para obtenerlo)*
 
 :::
 
 ::: {.callout-important}
 ### <i class="fa fa-step-forward" aria-hidden="true"></i> Próximos pasos
 
-- [ ] Revisar las [diapositivas de introducción a SS](https://docs.google.com/presentation/d/1GCZWVmivMn4AGB6LoaqxCzxCEH_qYy87rUmY3Z-fryw/edit?usp=sharing) para repasar las ideas principales.  
-- [ ] Revisar las [Preguntas Clave](#key-questions) y seguir reflexionando.  
-- [ ] Agregar tus ideas, pensamientos y posibles fuentes de datos en el [documento colaborativo](https://docs.google.com/document/d/1djLJpt2VB8fZLe518mnSzd6l7GaU1IQLpPlLuiK6flU/edit?tab=t.kyrkgpt50url).  
+- [ ] Revisar las [diapositivas introductorias SS](https://docs.google.com/presentation/d/1GCZWVmivMn4AGB6LoaqxCzxCEH_qYy87rUmY3Z-fryw/edit?usp=sharing) para repasar las ideas principales.  
+- [ ] Revisar las [Preguntas Clave](#preguntas-clave) y seguir generando ideas.  
+- [ ] Añadir tus pensamientos, ideas y posibles fuentes de datos al [documento colaborativo](https://docs.google.com/document/d/1djLJpt2VB8fZLe518mnSzd6l7GaU1IQLpPlLuiK6flU/edit?tab=t.kyrkgpt50url).
 
-Temas adicionales a considerar antes de la **próxima reunión**:
+Más temas para pensar antes de nuestra **próxima reunión**:
 
-- Determinar cómo cuantificar y medir la seguridad para el **estado actual** y el **estado futuro probable**  
-  - *para que el equipo central de OHI lo considere:* para integrar SS en el estado futuro probable, ¿se debe usar la tendencia de SS de los últimos 3-5 años? Mientras que el estado actual de cada meta se ve afectado por el estado actual de SS
-- Identificar cuáles metas del **OHI GoCA** son más afectadas por SS y asignar pesos apropiados  
-- Establecer un **punto de referencia** para un estado ideal de SS (¿por ejemplo, cero crimen? ¿metas gubernamentales de reducción del crimen o percepción de seguridad?)  
-- Identificar y revisar **fuentes de datos relevantes** sobre crimen/seguridad en los distintos sectores  
-  - Explorar bases de datos gubernamentales y sitios municipales con índices existentes  
+- Determinar cómo cuantificar y medir seguridad/protección para el estatus **actual** y **futuro**  
+  - *para que el equipo central de OHI considere:* para integrar SS en el estatus futuro probable, ¿debería usarse la tendencia de SS de los últimos 3-5 años? Mientras que el estatus actual de cada meta es impactado por el estatus actual de SS?  
+- Identificar qué **metas OHI GoCA** son más afectadas por SS y asignar pesos apropiados  
+- Establecer un **punto de referencia** para un estado ideal de SS (ej. cero criminalidad, metas gubernamentales de reducción o percepción de seguridad)  
+- Identificar y revisar **fuentes de datos relevantes** sobre crimen/seguridad en distintos sectores  
+  - Explorar bases de datos gubernamentales y sitios municipales para índices existentes  
 - Explorar métricas sobre el impacto del crimen organizado en la **conservación y capacidad de gobernanza**  
-  - Considerar cómo incluir tanto **crimen general como crimen organizado** en el análisis  
-- Investigar **pluralismo jurídico** y estructuras de **manejo compartido** como marcos posibles  
+  - Considerar cómo incluir tanto **crimen general como organizado** en el análisis  
+- Investigar el **pluralismo jurídico** y las estructuras de **co-manejo** como posibles marcos  
 
 :::
 
-## Preguntas Clave {#key-questions}
+:::
 
-Mientras exploramos la idea de incorporar **Seguridad y Protección** en el OHI para el Golfo de California, es importante clarificar el *objetivo, definiciones clave, estructura potencial y consideraciones de medición* para esta posible meta. A continuación, algunos puntos de discusión clave.
+::: {.callout-note collapse="true"}
+# <i class="fa-regular fa-clipboard"></i> **Reunión #2:** *¡Próxima el 29 de agosto!*
 
-### 1. Objetivo
+:::
 
-¿La meta de seguridad parece ser más bien **una presión sobre otras metas**, o una meta por sí misma?
-
-**_Para aclarar la intención:_**
-
-- ¿Qué queremos lograr al agregar Seguridad y Protección al OHI GoCA?
-  - ¿Aumentar la visibilidad de los problemas de seguridad en áreas costeras/marinas?
-  - ¿Impulsar nuevas iniciativas para reducir el crimen y promover ambientes más seguros?
-    - ¿Un Golfo más *seguro* significa un Golfo más *saludable*?
-
-**_Para aclarar definiciones:_**
-
-- ¿Un *"Golfo saludable"* significa que las personas están objetivamente seguras, se sienten seguras, o ambas?
-- ¿La meta debería enfocarse en tasas de crimen reales, percepciones de seguridad, o una combinación? ¿O algo completamente distinto?
-
-| Término   | Posible Definición                                               |
-|-----------|-------------------------------------------------------------------|
-| Seguridad | Condición objetiva con bajo crimen/incidencia de amenazas        |
-| Protección| Percepción subjetiva; confianza en la ley, instituciones          |
-
-### 2. Alcance
-
-- ¿"Seguridad" debe incluir solo crimen organizado, o también robo, asalto, secuestro, etc.?
-- ¿El escenario ideal es realmente cero crimen, o un mínimo "tolerable"?
-- ¿Cómo abordamos la diversidad de crímenes y sus impactos en comunidades costeras?
-
-### 3. Medición
-
-#### Seguridad (Objetiva)
-
-- ¿Debería incluir potencialmente:
-  - Estadísticas oficiales de crimen (costero, marino, portuario)?
-  - ¿Crimen general y crimen organizado? ¿O solo crimen organizado?
-
-#### Protección (Subjetiva)
-
-- ¿Debería incluir potencialmente:
-  - Encuestas sobre cómo se sienten las personas respecto a la seguridad en regiones costeras específicas?
-  - Confianza en la autoridad, presencia visible de autoridades, iniciativas comunitarias?
+<br>
 
 ---
 
-## Consideraciones Regionales
+### Perspectivas y Ejemplos Adicionales
 
-Algunos de los puntos discutidos por el Grupo de Expertos:
+::: {.callout-note .callout-supplement collapse="true"}
+# Grupo de Trabajo de Expertos (EWG): Consideraciones Regionales
 
-- Separar el crimen organizado de otras presiones en el marco, haciéndolo una meta  
-- Explorar el enfoque "Abrazos no Balazos" (referente a programas sociales como alternativa)  
-- Tener en cuenta diferencias percibidas entre los cinco estados (por ejemplo, Sinaloa vs. Sonora)  
+Estos son algunos puntos discutidos por el Grupo de Trabajo de Expertos.
+
+- Podría separarse el crimen organizado de otras presiones en el marco, convirtiéndolo en una meta  
+- Explorar el enfoque “Abrazos no Drogas” (referencia a programas sociales como alternativas)  
+- Considerar diferencias percibidas entre los cinco estados (ej. Sinaloa vs. Sonora)
 
 ### Justicia Social y Resiliencia Verde
 
-- Considerar la justicia social como una métrica de resiliencia en el contexto global, enfatizando la igualdad de oportunidades.  
-- Considerar las áreas verdes como una forma de resiliencia, posiblemente usando un índice de datos de la ONU.  
+- Se podría pensar en justicia social como una métrica de resiliencia en un contexto global, enfatizando igualdad de oportunidades.  
+- Considerar áreas verdes como forma de resiliencia, posiblemente usando un índice de datos de la ONU.
 
 ::: {.callout-warning}
 
 ## Esta meta requerirá sensibilidad en el lenguaje y la redacción utilizada.
 :::
 
+:::
+
 ---
 
-##### Contacto por correo electrónico:
+##### Contacto vía correo electrónico:
 
 <div class="button-container">
   <a href="mailto:core-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button">
     <i class="fa-solid fa-square-poll-vertical"></i> Equipo Analítico Central de OHI
   </a>
   <a href="mailto:ss-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button secondary">
-    <i class="fa-solid fa-people-group"></i> Grupo de Portavoces de Seguridad y Protección
+    <i class="fa-solid fa-people-group"></i> Grupo de Responsables de la Meta Seguridad y Protección
   </a>
 </div>
-

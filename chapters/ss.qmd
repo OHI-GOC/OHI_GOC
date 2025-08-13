@@ -2,7 +2,7 @@
 title: ""
 format: html
 ---
-# <i class="fa-solid fa-shield"></i> Safety and Security
+# <i class="fa-solid fa-shield"></i> Safety and Security {#key-questions}
 
 <div class="button-container">
   <a href="https://ohi-goc.github.io/OHI_GOC/chapters/ss_spanish.html" class="custom-button">
@@ -10,9 +10,74 @@ format: html
   </a>
 </div>
 
-::: {.callout-note collapse="true"}
+::: {.callout-tip collapse="true"}
+# <i class="fa-regular fa-star"></i> About the SS Goal
 
-## SS Goalkeeper Group Information
+**This goal captures the sense that marine resources are not limited by safety concerns.**
+
+::: {.custom-box}
+
+{{< fa lightbulb >}} **CORE DEFINITION**
+
+- **_Focus:_** The objective and subjective measures of safety and security in coastal and marine areas  
+- **_Not about:_** Safety as a standalone goal — rather, it is conceptualized as a pressure influencing multiple goals  
+- **_Emphasis:_** Crime rates, perceptions of safety, and their impacts on other goals
+
+:::
+
+## Key Questions 
+
+As we explore the idea of incorporating **Safety & Security** into the OHI for the Gulf of California, it is important to clarify the *objective, the core definitions, potential structure, and measurement considerations* for this potential goal. Below are key discussion points and considerations to review.
+
+### 1. Objective
+
+Does the safety and security goal seem to be more of **a pressure on many other goals**, or a goal by itself?
+
+**_To clarify intent:_**
+
+- What do we want to achieve by adding Safety & Security to the OHI GoCA?
+  - Increase visibility of safety issues in coastal/marine areas?
+  - Drive new initiatives to reduce crime and promote safer environments?
+    - Does a *safer* Gulf mean a *healthier* Gulf?
+  
+**_To clarify definitions:_**
+
+- Does a *"healthy gulf"* mean people are objectively safe, feel safe, or both?
+- Should the goal focus on actual crime rates, perceived safety, or a combination? Or something else entirely?
+
+| Term      | Possible Definition                                               |
+|-----------|-------------------------------------------------------------------|
+| Safety    | Objective condition with low crime/incidence of threats           |
+| Security  | Subjective perception; trust in law enforcement, institutions     |
+
+### 2. Scope 
+
+- Should "Safety" include only organized crime, or also theft, assault, kidnapping, etc.?
+- Is the ideal scenario truly zero crime, or a "tolerable" minimum?
+- How do we address the diversity of crimes and their impacts on coastal communities?
+
+### 3. Measuring
+
+#### Safety (Objective)
+
+- Should it potentially include:
+  - Official crime statistics (coastal, marine, port-related crime)?
+  - Both organized crime and general crime? Or just organized crime?
+
+#### Security (Subjective)
+
+- Should it potentially include:
+  - Surveys on people’s feelings of safety in specific coastal regions?
+  - Trust in law enforcement, visible presence of authorities, community initiatives?
+
+:::
+
+---
+
+# Goalkeeper Meetings
+
+::: {.callout-note collapse="true"}
+## <i class="fa-regular fa-calendar"></i>  **Meeting Logistics:** Who, What, When, Where!
 
 ##### **Meeting Access**
 
@@ -20,17 +85,17 @@ format: html
 ---
 
 ##### **Key Team Members**
-- Francisco Fernandez
-- Amy Hudson Weaver
-- Víctor Ricardez
-- Jorge Torre
-
+- Amy Hudson Weaver 
+- Francisco Fernandez  
+- Jorge Torre  
+- Siria Gastelum
+- Víctor Ricardez  
 
 ---
 
 ##### **Meeting Schedule _(Friday 1:00 PM - 2:00 PM PDT)_**
 
-| Meeting |  Specific Date | Focus |
+| Meeting | Specific Date | Focus |
 |---------|---------------|-------|
 | 1 | July 25, 2025 | Group introductions, OHI platform overview, goal calculations |
 | 2 | August 29, 2025 | Model and reference point discussion |
@@ -55,12 +120,21 @@ Add the shared calendar to your Google Calendar account using the [provided link
 
 :::
 
+::: {.callout-note collapse="true"}
+# <i class="fa-regular fa-circle-down"></i>  **Key Resources:** Slides, collaborative documents
 
-**This goal captures the sense that marine resources are not limited by safety concerns.**
+- [Meeting #1 Slides](https://docs.google.com/presentation/d/1GCZWVmivMn4AGB6LoaqxCzxCEH_qYy87rUmY3Z-fryw/edit?usp=sharing) to revisit the main ideas.  
+- [SS Goalkeeper Ideas](https://docs.google.com/document/d/1djLJpt2VB8fZLe518mnSzd6l7GaU1IQLpPlLuiK6flU/edit?tab=t.kyrkgpt50url), where you can add your thoughts, ideas, and potential data sources to the ongoing collaborative document.
 
----
+:::
 
-## **Meeting #1 Recap & Next Steps**
+<br>
+
+### **Meeting Summaries**
+
+
+::: {.callout-note collapse="true"}
+# <i class="fa-regular fa-clipboard"></i> **Meeting #1:** Recap & Next Steps
 
 **Thank you for joining our first Safety & Security (SS) Goalkeeper meeting!**  
 It was a great start to our work together in defining what safety & security means for the **Gulf of California**, and how it should be integrated into this assessment.  
@@ -141,54 +215,21 @@ More topics to think about before our **next meeting**:
 
 :::
 
-## Key Questions {#key-questions}
+:::
 
-As we explore the idea of incorporating **Safety & Security** into the OHI for the Gulf of California, it is important to clarify the *objective, the core definitions, potential structure, and measurement considerations* for this potential goal. Below are key discussion points and considerations to review.
+::: {.callout-note collapse="true"}
+# <i class="fa-regular fa-clipboard"></i> **Meeting #2:** *Upcoming on August 29th!*
 
-### 1. Objective
+:::
 
-Does the safety and security goal seem to be more of **a pressure on many other goals**, or a goal by itself?
-
-**_To clarify intent:_**
-
-- What do we want to achieve by adding Safety & Security to the OHI GoCA?
-  - Increase visibility of safety issues in coastal/marine areas?
-  - Drive new initiatives to reduce crime and promote safer environments?
-    - Does a *safer* Gulf mean a *healthier* Gulf?
-  
-**_To clarify definitions:_**
-
-- Does a *"healthy gulf"* mean people are objectively safe, feel safe, or both?
-- Should the goal focus on actual crime rates, perceived safety, or a combination? Or something else entirely?
-
-| Term      | Possible Definition                                               |
-|-----------|-------------------------------------------------------------------|
-| Safety    | Objective condition with low crime/incidence of threats           |
-| Security  | Subjective perception; trust in law enforcement, institutions     |
-
-### 2. Scope 
-
-- Should "Safety" include only organized crime, or also theft, assault, kidnapping, etc.?
-- Is the ideal scenario truly zero crime, or a "tolerable" minimum?
-- How do we address the diversity of crimes and their impacts on coastal communities?
-
-### 3. Measuring
-
-#### Safety (Objective)
-
-- Should it potentially include:
-  - Official crime statistics (coastal, marine, port-related crime)?
-  - Both organized crime and general crime? Or just organized crime?
-
-#### Security (Subjective)
-
-- Should it potentially include:
-  - Surveys on people’s feelings of safety in specific coastal regions?
-  - Trust in law enforcement, visible presence of authorities, community initiatives?
+<br>
 
 ---
 
-## Regional Considerations
+### Additional Insights & Examples
+
+::: {.callout-note collapse="true"}
+# Expert Working Group (EWG): Regional Considerations
 
 These are some of the points discussed by the Expert Working Group.
 
@@ -204,6 +245,8 @@ These are some of the points discussed by the Expert Working Group.
 ::: {.callout-warning}
 
 ## This goal will require sensitivity in language and verbage used.
+:::
+
 :::
 
 ---

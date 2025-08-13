@@ -3,7 +3,7 @@ project:
   output-dir: docs
  
 website: 
-  title: "OHI: Gulf of California"
+  title: "OHI Gulf of California: Information Hub"
   site-url: "https://ohi-goc.github.io/OHI_GOC/"
   repo-url: https://github.com/ohi-goc/OHI_GOC
   repo-actions: [edit, issue]
@@ -22,7 +22,7 @@ website:
     collapse-level: 1
     contents:
       - href: index.qmd
-        text: Gulf of California Ocean Health Index
+        text: "🏠 Home"
       - href: chapters/OHIregions.qmd
         text: OHI regions
       - href: chapters/ao.qmd

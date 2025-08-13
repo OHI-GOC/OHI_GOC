@@ -1,6 +1,6 @@
 ---
-title: "Gulf of California"
-subtitle: "Introducing the Gulf of California Ocean Health Index"
+title: "Information Hub"
+subtitle: "For the Gulf of California Ocean Health Index"
 ---
 
 ```{r}
@@ -17,7 +17,7 @@ invisible(NULL)
 
 We are excited to announce the start of an [Ocean Health Index](https://oceanhealthindex.org/) (OHI) assessment tailored to the unique concerns and priorities of the Gulf of California, Mexico.
 
-This website will serve as a project hub where researchers and stakeholders can learn more about the OHI Gulf and California project as it develops.
+This website will serve as an **Information Hub** where experts, such as those part of the Goalkeeper Groups and Expert Working Group, can learn more about the OHI Gulf and California project as it develops.
 
 A two-page summary of the project is available [here](https://drive.google.com/file/d/190Xepljkf_QuGyCn7Egzzs-D83R5x2L3/view?usp=sharing).
 

@@ -3,7 +3,7 @@ title: ""
 format: html
 ---
 
-# ![](figs/sense-of-place.svg){width="8%" height="8%" color="red"} Sense of belonging {#admin-info}
+# ![](figs/sense-of-place.svg){width="8%" height="8%" color="red"} Sense of belonging {#key-questions}
 
 <div class="button-container">
   <a href="https://ohi-goc.github.io/OHI_GOC/chapters/sp_spanish.html" class="custom-button">
@@ -11,8 +11,78 @@ format: html
   </a>
 </div>
 
+::: {.callout-tip collapse="true"}
+# <i class="fa-regular fa-star"></i>  About the SB Goal
+
+**This goal measures human connections to the marine environment that provide a deep sense of identity and belonging.**
+
+Feelings of identity and belonging stem from – for example:
+
+-   Sense of identity within a community
+-   Connection(s) to place(s)
+-   Connections to plants and animals
+---
+
+::: custom-box
+{{< fa lightbulb >}} **CORE DEFINITIONS**
+
+In the global framework, these are the definitions of the goal and subgoals (Iconic Species, and Lasting Special Places):
+
+**Sense of Place (Goal)**
+
+*Definition*: Captures aspects of coastal and marine systems that people value as part of their cultural identity.  There was a proposed alternative name: "Sense of belonging" *(suggested by Marlu)*
+
+**Iconic Species (Subgoal)**
+
+*Definition*: Species relevant to local cultural identity through traditional activities (fishing, hunting, commerce), local ethnic or religious practices, existence value, and locally-recognized aesthetic value (tourism, art subjects).
+
+**Lasting Special Places (Subgoal)**
+
+*Definition*: Geographic locations with particular value for aesthetic, spiritual, cultural, recreational, or existence reasons.  These areas are then assessed by their protection levels/status for these valued locations.
+:::
+
+## Key Questions
+
+What does **sense of place, or belonging,** mean to all of you? Does the global definition of the goal, and its subgoals, make sense for the Gulf of California? 
+
+If so, here are some questions for each subgoal:
+
+#### **Iconic Species subgoal**
+
+How can we identify **species** that are relevant to **local cultural identity** through:
+
+1. Traditional activities (fishing, hunting, commerce)
+2. Local ethnic or religious practices
+3. Existence value
+4. Locally-recognized aesthetic value (tourism, art subjects)
+  
+Are there publications about these types of species, or would all of you like to work together to **create a list** of the species that are iconic to the Gulf?
+
+#### **Lasting Special Places subgoal**
+
+How can we identify places or areas that are relevant to local cultural identity through:
+
+1. Aesthetic, 
+2. Spiritual,
+3. Cultural,
+4. Recreational,
+5. Existence reasons, 
+6. and more?
+
+And, how do we define their **condition**? How will we quantify when this subgoal is doing really well (100/100)? Could it be:
+
+* How well *protected* all of these special places are?
+* How well they are *preserved*?
+* How much funding is going towards them?
+* How many people care about these places?
+:::
+
+---
+
+# Goalkeeper Meetings
+
 ::: {.callout-note collapse="true"}
-## SB Goalkeeper Group Information: who, what, when, where, why!
+## <i class="fa-regular fa-calendar"></i>  **Meeting Logistics:** Who, What, When, Where!
 
 ##### **Meeting Access**
 
@@ -55,35 +125,22 @@ Add the shared calendar to your Google Calendar account using the [provided link
 **Please let us know if you have any questions. We look forward to working on this initiative with you!**
 :::
 
-**This goal measures human connections to the marine environment that provide a deep sense of identity and belonging.**
 
-Feelings of identity and belonging stem from – for example:
+::: {.callout-note collapse="true"}
+# <i class="fa-regular fa-circle-down"></i>  **Key Resources:** Slides, collaborative documents
 
--   Sense of identity within a community
--   Connection(s) to place(s)
--   Connections to plants and animals
----
+- [Meeting #1 Slides](https://docs.google.com/presentation/d/169YPUcF8fLgdq41xPMiUorCxNoTo3be0NIefNLF_Egw/edit?slide=id.g3702978bd0b_0_539#slide=id.g3702978bd0b_0_539) to revisit the main ideas.  
+- [SB Goalkeeper Ideas](https://docs.google.com/document/d/1LWyrU_Ty38a4IMTRpzMMrrSGTjv_pPqvX2ICKJ8Gupo/edit?tab=t.0#heading=h.8562cdkt8tdh), where you can add your thoughts, ideas, and potential data sources to the ongoing collaborative document.
 
-::: custom-box
-{{< fa lightbulb >}} **CORE DEFINITIONS**
-
-In the global framework, these are the definitions of the goal and subgoals (Iconic Species, and Lasting Special Places):
-
-**Sense of Place (Goal)**
-
-*Definition*: Captures aspects of coastal and marine systems that people value as part of their cultural identity.  There was a proposed alternative name: "Sense of belonging" *(suggested by Marlu)*
-
-**Iconic Species (Subgoal)**
-
-*Definition*: Species relevant to local cultural identity through traditional activities (fishing, hunting, commerce), local ethnic or religious practices, existence value, and locally-recognized aesthetic value (tourism, art subjects).
-
-**Lasting Special Places (Subgoal)**
-
-*Definition*: Geographic locations with particular value for aesthetic, spiritual, cultural, recreational, or existence reasons.  These areas are then assessed by their protection levels/status for these valued locations.
 :::
 
+<br>
 
-## **Meeting #1 Recap & Next Steps**
+### **Meeting Summaries**
+
+
+::: {.callout-note collapse="true"}
+# <i class="fa-regular fa-clipboard"></i> **Meeting #1:** Recap & Next Steps
 
 **Thank you for joining our first Sense of Belonging (SB) Goalkeeper meeting!**  
 It was a great start to our work together in defining what sense of belonging and place means for the **Gulf of California**, and how it should be integrated into this assessment.  
@@ -134,44 +191,22 @@ Thank you all and see you next meeting (see the [SB Goalkeeper Group Information
 
 :::
 
+:::
 
-## Key Questions {#key-questions}
+::: {.callout-note collapse="true"}
+# <i class="fa-regular fa-clipboard"></i> **Meeting #2:** *Upcoming on September 9th!*
 
-What does **sense of place, or belonging,** mean to all of you? Does the global definition of the goal, and its subgoals, make sense for the Gulf of California? 
+:::
 
-If so, here are some questions for each subgoal:
 
-#### **Iconic Species subgoal**
-
-How can we identify **species** that are relevant to **local cultural identity** through:
-
-1. Traditional activities (fishing, hunting, commerce)
-2. Local ethnic or religious practices
-3. Existence value
-4. Locally-recognized aesthetic value (tourism, art subjects)
-  
-Are there publications about these types of species, or would all of you like to work together to **create a list** of the species that are iconic to the Gulf?
-
-#### **Lasting Special Places subgoal**
-
-How can we identify places or areas that are relevant to local cultural identity through:
-
-1. Aesthetic, 
-2. Spiritual,
-3. Cultural,
-4. Recreational,
-5. Existence reasons, 
-6. and more?
-
-And, how do we define their **condition**? How will we quantify when this subgoal is doing really well (100/100)? Could it be:
-
-* How well *protected* all of these special places are?
-* How well they are *preserved*?
-* How much funding is going towards them?
-* How many people care about these places?
 
 ---
-## Regional Considerations
+
+
+### Additional Insights & Examples
+
+::: {.callout-note collapse="true"}
+# Expert Working Group (EWG): Regional Considerations
 
 **These are some of the points discussed by the Expert Working Group (EWG).**
 
@@ -216,6 +251,9 @@ As well as physical places that are associated with cultural connections:
 -   Gulf of California differs significantly from US contexts
 -   Local definitions of "enjoyment" and "special places" should not be prescribed
 
+:::
+
+---
 
 ## Contact via email:
 
