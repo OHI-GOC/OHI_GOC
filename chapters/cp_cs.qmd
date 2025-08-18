@@ -1,0 +1,184 @@
+---
+title: ""
+format: html
+---
+
+# ![](figs/coastal-protection.svg){width=8% height=8%} Coastal protection & Carbon storage
+
+
+<div class="button-container">
+  <a href="https://ohi-goc.github.io/OHI_GOC/chapters/cp_cs_spanish.html" class="custom-button">
+    <i class="fas fa-globe"></i> en español
+  </a>
+</div>
+
+::: {.callout-tip collapse="true"}
+# <i class="fa-regular fa-star"></i>  About the CS-CP Goal
+
+### Carbon Storage
+**This goal captures the ability of coastal habitats to buffer against climate change by sequestering and storing atmospheric carbon.**
+
+### Coastal Protection
+**This goal determines the protection, relative to the past, provided by marine habitats against flooding and erosion to coastal areas.**
+
+Based on recommendations from the Expert Working Group, these two goals have been consolidated into one for the OHI Gulf of California assessment.
+
+:::
+
+
+---
+
+# Goalkeeper Meetings
+
+::: {.callout-note collapse="true"}
+
+## <i class="fa-regular fa-calendar"></i>  **Meeting Logistics:** Who, What, When, Where!
+
+##### **Meeting Access**
+
+**Zoom Link:** <https://us06web.zoom.us/j/3255055973>
+---
+
+##### **Key Team Members**
+
+- Adrian Munguia
+- Geovanni (Geo) Coredero Herrera
+- Hem Nalini Morzaria-Luna
+- Rick Brusca 
+
+---
+
+##### **Meeting Schedule**
+
+*Tentative!*
+
+---
+
+##### **Co-authorship Information**
+
+This project provides opportunities to collaborate with regional experts and contribute to Gulf of California OHI assessment. Participation will be acknowledged on the website and other products. Additional co-authorship opportunities may be available with extra commitment as outlined [here](https://docs.google.com/document/d/16jwVGjbQpF_6B6sbkhb4xO00WAXdDiESBXu-n2a7D1k/edit?tab=t.0).
+
+---
+
+##### **Google Calendar**
+
+Add the shared calendar to your Google Calendar account using the [provided link](https://calendar.google.com/calendar/u/0?cid=Y184ZmIyNzhjNmQwM2E5MGFjZDJjYWE0MDdhOTcyY2ZlMjcxYTQwNzA3Mjc0MDFiNzM0NzRkNjdjNGM0NDE0ZjQyQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20). It will appear under "Other calendars" and provide access to all scheduled meetings with updated Zoom links.
+
+**Please let us know if you have any questions. We look forward to working on this initiative with you!**
+
+:::
+
+
+<!-- ::: {.callout-note collapse="true"} -->
+<!-- # <i class="fa-regular fa-circle-down"></i>  **Key Resources:** Slides, collaborative documents -->
+
+
+<!-- ::: -->
+
+
+<!-- ### **Meeting Summaries** -->
+
+
+<!-- ::: {.callout-note collapse="true"} -->
+<!-- # <i class="fa-regular fa-clipboard"></i> **Meeting #1:** Upcoming on ____ -->
+
+<!-- ::: -->
+
+
+<!-- ::: {.callout-note collapse="true"} -->
+<!-- # <i class="fa-regular fa-clipboard"></i>  **Meeting #2:** *Upcoming on August 18th!* -->
+
+<!-- ::: -->
+
+<!-- ::: {.callout-note collapse="true"} -->
+<!-- # <i class="fa-regular fa-clipboard"></i>  **Meeting #3:** *Upcoming on ____!* -->
+
+<!-- ::: -->
+
+
+<!-- ::: {.callout-note collapse="true"} -->
+<!-- # <i class="fa-regular fa-clipboard"></i>  **Meeting #4:** *Upcoming on ____!* -->
+
+<!-- ::: -->
+
+
+<!-- ::: {.callout-note collapse="true"} -->
+<!-- # <i class="fa-regular fa-clipboard"></i>  **Meeting #5:** *Upcoming on ____!* -->
+
+<!-- ::: -->
+
+<!-- ::: {.callout-note collapse="true"} -->
+<!-- # <i class="fa-regular fa-clipboard"></i>  **Meeting #6:** *Upcoming on ____!* -->
+
+<!-- ::: -->
+
+---
+
+<br> 
+
+### Additional Insights & Examples
+
+::: {.callout-note .callout-supplement collapse="true"}
+# Expert Working Group (EWG): Regional Considerations
+
+**These are some of the points discussed by the Expert Working Group.**
+
+---
+
+## Carbon Storage and Seasonal Dynamics  
+
+Coastal habitats such as **mangroves and salt marshes** play a critical role in long-term carbon storage, locking carbon in soils for centuries. The group highlighted the importance of distinguishing **active sequestration** (carbon actively captured and moved) from **sediment storage** (carbon retained in place). Participants also noted that the **biological pump** -- using productivity as a proxy for organic material sinking to the deep ocean -- needs further study, and suggested **mercury tracing** as a possible proxy for sinking rates.  
+
+Seasonal cycles strongly influence storage capacity. **Eelgrass meadows** grow from October to May and follow a consistent annual pattern, while **sargassum kelp forests** are seasonal and contribute relatively little to carbon storage. These predictable patterns reinforce the need to consider **temporal variation** when measuring carbon dynamics.  
+
+---
+
+## Research Gaps  
+
+Several areas were identified where scientific understanding remains limited:  
+
+- **Rhodolith beds**, which may play a role in producing marine snow, are not well studied.  
+- The **deep waters of the Gulf of California** contain large amounts of organic material, yet their role in long-term carbon storage is poorly quantified.  
+- The **biological pump** in this region requires further investigation to clarify its potential for carbon sequestration.  
+
+---
+
+## Economic and Community Perspectives  
+
+Currently, there are **no carbon credit systems** operating in the Gulf of California. A previous attempt by **CEDA** to establish one was rejected by the government, though there is still strong market potential for future carbon storage projects.  
+
+Expert group members expressed **skepticism** about carbon storage as an economic strategy, with some dismissing it outright as a scam. Concerns included possible **negative impacts on local communities**, while others emphasized **existing practices** such as reusing fish waste in agriculture (ex, mango fertilization).  
+
+Reading this 2024 study on ["The role of blue carbon in reversing mangrove degradation trends in Mexico"](https://www.sciencedirect.com/science/article/pii/S0006320724003379) seems like a great resource and place to start.
+
+---
+
+## Regional and Measurement Considerations  
+
+In the **northern Gulf**, salt marshes are particularly significant, and kelp forests extend north of Kino Bay. In deeper waters, although whale mortality contributes little, there are large accumulations of organic material and high productivity levels that may drive a strong biological pump.  
+
+A major challenge is how to **measure and monitor** these processes. This includes differentiating sequestration from storage, accounting for **seasonal variability** in habitat capacity, and assessing **deep ocean dynamics**, which remain difficult to quantify.  
+
+:::
+
+
+<!-- ::: {.callout-note collapse="true"} -->
+<!-- # Examples from other OHI assessments -->
+
+<!-- ::: -->
+
+
+---
+
+## Contact via email
+
+<div class="button-container">
+  <a href="mailto:core-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button">
+    <i class="fa-solid fa-square-poll-vertical"></i> OHI Core Analytical Team
+  </a>
+  <a href="mailto:cs-cp-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button secondary">
+    <i class="fa-solid fa-people-group"></i> CS & CP Goalkeeper Group
+  </a>
+</div>
+
+

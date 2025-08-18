@@ -29,10 +29,8 @@ website:
         text: Artisanal opportunities
       - href: chapters/bd.qmd
         text: Biodiversity
-      - href: chapters/cp.qmd
-        text: Coastal protection
-      - href: chapters/cs.qmd
-        text: Carbon storage
+      - href: chapters/cp_cs.qmd
+        text: Coastal protection & Carbon storage
       - href: chapters/cw.qmd
         text: Clean waters
       - href: chapters/fp.qmd

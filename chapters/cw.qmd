@@ -180,7 +180,27 @@ We'll also start to define the **reference point** for this goal — our vision 
 
 :::
 
+<!-- ::: {.callout-note collapse="true"} -->
+<!-- # <i class="fa-regular fa-clipboard"></i>  **Meeting #3:** *Upcoming on ____!* -->
+<!-- Stay tuned for Meeting #3 resources. -->
+<!-- ::: -->
 
+
+<!-- ::: {.callout-note collapse="true"} -->
+<!-- # <i class="fa-regular fa-clipboard"></i>  **Meeting #4:** *Upcoming on ____!* -->
+<!-- Stay tuned for Meeting #4 resources. -->
+<!-- ::: -->
+
+
+<!-- ::: {.callout-note collapse="true"} -->
+<!-- # <i class="fa-regular fa-clipboard"></i>  **Meeting #5:** *Upcoming on ____!* -->
+<!-- Stay tuned for Meeting #5 resources. -->
+<!-- ::: -->
+
+<!-- ::: {.callout-note collapse="true"} -->
+<!-- # <i class="fa-regular fa-clipboard"></i>  **Meeting #6:** *Upcoming on ____!* -->
+<!-- Stay tuned for Meeting #6 resources. -->
+<!-- ::: -->
 
 ---
 

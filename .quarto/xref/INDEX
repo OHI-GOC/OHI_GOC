@@ -139,5 +139,11 @@
   },
   "chapters/bd_spanish.qmd": {
     "bd_spanish.html": "44396a0f"
+  },
+  "chapters/cp_cs.qmd": {
+    "cp_cs.html": "1ee28fa1"
+  },
+  "chapters/cp_cs_spanish.qmd": {
+    "cp_cs_spanish.html": "e4b02911"
   }
 }

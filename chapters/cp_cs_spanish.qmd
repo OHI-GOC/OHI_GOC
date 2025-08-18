@@ -1,0 +1,183 @@
+---
+title: ""
+format: html
+---
+
+# ![](figs/coastal-protection.svg){width=8% height=8%} Protección costera & Almacenamiento de carbono
+
+
+<div class="button-container">
+  <a href="https://ohi-goc.github.io/OHI_GOC/chapters/cp_cs.html" class="custom-button">
+    <i class="fas fa-globe"></i> English Translation
+  </a>
+</div>
+
+::: {.callout-tip collapse="true"}
+# <i class="fa-regular fa-star"></i>  Sobre la meta CS-CP
+
+### Almacenamiento de carbono
+**Esta meta captura la capacidad de los hábitats costeros para amortiguar el cambio climático al secuestrar y almacenar carbono atmosférico.**
+
+### Protección costera
+**Esta meta determina la protección, en relación con el pasado, que proporcionan los hábitats marinos contra inundaciones y erosión en las zonas costeras.**
+
+Con base en recomendaciones del Grupo de Expertos, estas dos metas se han consolidado en una sola para la evaluación OHI Golfo de California.
+
+:::
+
+
+---
+
+# Reuniones de Goalkeepers
+
+::: {.callout-note collapse="true"}
+
+## <i class="fa-regular fa-calendar"></i>  **Logística de la reunión:** ¡Quién, Qué, Cuándo, Dónde!
+
+##### **Acceso a la reunión**
+
+**Enlace de Zoom:** <https://us06web.zoom.us/j/3255055973>
+---
+
+##### **Miembros clave del equipo**
+
+- Adrian Munguia
+- Geovanni (Geo) Coredero Herrera
+- Hem Nalini Morzaria-Luna
+- Rick Brusca 
+
+---
+
+##### **Calendario de reuniones**
+
+*¡Tentativo!*
+
+---
+
+##### **Información sobre coautoría**
+
+Este proyecto brinda oportunidades para colaborar con expertos regionales y contribuir a la evaluación OHI del Golfo de California. La participación será reconocida en la página web y otros productos. Podrían estar disponibles oportunidades adicionales de coautoría con un compromiso extra, como se describe [aquí](https://docs.google.com/document/d/16jwVGjbQpF_6B6sbkhb4xO00WAXdDiESBXu-n2a7D1k/edit?tab=t.0).
+
+---
+
+##### **Google Calendar**
+
+Agrega el calendario compartido a tu cuenta de Google Calendar usando el [enlace proporcionado](https://calendar.google.com/calendar/u/0?cid=Y184ZmIyNzhjNmQwM2E5MGFjZDJjYWE0MDdhOTcyY2ZlMjcxYTQwNzA3Mjc0MDFiNzM0NzRkNjdjNGM0NDE0ZjQyQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20). Aparecerá bajo "Otros calendarios" y dará acceso a todas las reuniones programadas con enlaces actualizados de Zoom.
+
+**Por favor avísanos si tienes alguna pregunta. ¡Esperamos trabajar en esta iniciativa contigo!**
+
+:::
+
+
+<!-- ::: {.callout-note collapse="true"} -->
+<!-- # <i class="fa-regular fa-circle-down"></i>  **Recursos clave:** Presentaciones, documentos colaborativos -->
+
+
+<!-- ::: -->
+
+
+<!-- ### **Resúmenes de reuniones** -->
+
+
+<!-- ::: {.callout-note collapse="true"} -->
+<!-- # <i class="fa-regular fa-clipboard"></i> **Reunión #1:** Próximamente en ____ -->
+
+<!-- ::: -->
+
+
+<!-- ::: {.callout-note collapse="true"} -->
+<!-- # <i class="fa-regular fa-clipboard"></i>  **Reunión #2:** *Próximamente el 18 de agosto!* -->
+
+<!-- ::: -->
+
+<!-- ::: {.callout-note collapse="true"} -->
+<!-- # <i class="fa-regular fa-clipboard"></i>  **Reunión #3:** *Próximamente en ____!* -->
+
+<!-- ::: -->
+
+
+<!-- ::: {.callout-note collapse="true"} -->
+<!-- # <i class="fa-regular fa-clipboard"></i>  **Reunión #4:** *Próximamente en ____!* -->
+
+<!-- ::: -->
+
+
+<!-- ::: {.callout-note collapse="true"} -->
+<!-- # <i class="fa-regular fa-clipboard"></i>  **Reunión #5:** *Próximamente en ____!* -->
+
+<!-- ::: -->
+
+<!-- ::: {.callout-note collapse="true"} -->
+<!-- # <i class="fa-regular fa-clipboard"></i>  **Reunión #6:** *Próximamente en ____!* -->
+
+<!-- ::: -->
+
+---
+
+<br> 
+
+### Perspectivas y ejemplos adicionales
+
+::: {.callout-note .callout-supplement collapse="true"}
+# Grupo de Expertos (EWG): Consideraciones regionales
+
+**Estos son algunos de los puntos discutidos por el Grupo de Expertos.**
+
+---
+
+## Almacenamiento de carbono y dinámicas estacionales  
+
+Los hábitats costeros como **manglares y marismas** desempeñan un papel crítico en el almacenamiento de carbono a largo plazo, reteniéndolo en los suelos durante siglos. El grupo subrayó la importancia de distinguir entre **secuestro activo** (carbono capturado y transportado) y **almacenamiento en sedimentos** (carbono retenido en sitio). También se mencionó que la **bomba biológica** —usar la productividad como indicador de material orgánico que se hunde al océano profundo— requiere más estudio, y se sugirió el **trazado de mercurio** como posible indicador de las tasas de hundimiento.  
+
+Los ciclos estacionales influyen fuertemente en la capacidad de almacenamiento. **Los pastos marinos (eelgrass)** crecen de octubre a mayo y mantienen un patrón anual constante, mientras que **los bosques de sargazo** son estacionales y contribuyen relativamente poco al almacenamiento de carbono. Estos patrones predecibles refuerzan la necesidad de considerar la **variación temporal** al medir la dinámica del carbono.  
+
+---
+
+## Vacíos de investigación  
+
+Se identificaron varias áreas con poco entendimiento científico:  
+
+- **Lechos de rodolitos**, que podrían contribuir a la formación de nieve marina, aún poco estudiados.  
+- **Aguas profundas del Golfo de California**, con grandes cantidades de material orgánico, pero cuyo papel en el almacenamiento de carbono a largo plazo es poco claro.  
+- La **bomba biológica** en esta región necesita más investigación para aclarar su potencial de secuestro de carbono.  
+
+---
+
+## Perspectivas económicas y comunitarias  
+
+Actualmente, **no existen sistemas de créditos de carbono** en operación en el Golfo de California. Un intento previo por parte de **CEDA** fue rechazado por el gobierno, aunque sigue existiendo un fuerte potencial de mercado para proyectos futuros.  
+
+Miembros del grupo expresaron **escepticismo** sobre el almacenamiento de carbono como estrategia económica, algunos incluso lo calificaron como un fraude. Las preocupaciones incluyeron posibles **impactos negativos en comunidades locales**, mientras que otras personas destacaron **prácticas ya existentes**, como el uso de residuos de pescado en la agricultura (por ejemplo, fertilización de mangos).  
+
+Este estudio de 2024 ["The role of blue carbon in reversing mangrove degradation trends in Mexico"](https://www.sciencedirect.com/science/article/pii/S0006320724003379) se considera un gran recurso y un buen punto de partida.  
+
+---
+
+## Consideraciones regionales y de medición  
+
+En el **norte del Golfo**, las marismas son especialmente importantes, y los bosques de kelp se extienden al norte de Bahía Kino. En aguas más profundas, aunque la mortalidad de ballenas contribuye poco, existen grandes acumulaciones de material orgánico y altos niveles de productividad que podrían impulsar una bomba biológica fuerte.  
+
+Un gran desafío es cómo **medir y monitorear** estos procesos. Esto incluye diferenciar secuestro de almacenamiento, considerar la **variabilidad estacional** en la capacidad de los hábitats y evaluar las **dinámicas del océano profundo**, que siguen siendo difíciles de cuantificar.  
+
+:::
+
+
+<!-- ::: {.callout-note collapse="true"} -->
+<!-- # Ejemplos de otras evaluaciones OHI -->
+
+<!-- ::: -->
+
+
+---
+
+## Contacto por correo electrónico
+
+<div class="button-container">
+  <a href="mailto:core-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button">
+    <i class="fa-solid fa-square-poll-vertical"></i> Equipo Analítico Central OHI
+  </a>
+  <a href="mailto:cs-cp-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button secondary">
+    <i class="fa-solid fa-people-group"></i> Grupo Goalkeeper CS & CP
+  </a>
+</div>
+
