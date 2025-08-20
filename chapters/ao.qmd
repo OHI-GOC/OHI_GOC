@@ -149,12 +149,6 @@ The main focus of **Meeting #2** was to solidify the goal definition before sele
 
 ::: {.callout-note collapse="true"}
 ## **AO Meeting #3 Summary** - *UPCOMING September 23*
-
-**Stay tuned for Meeting #3 resources.**
-:::
-
-::: {.callout-note collapse="true"}
-## **FP Meeting #3 Summary** - *UPCOMING September 23*
 **In Meeting #3**, we will finalize the definition of 'Artisanal Opportunities' in the Gulf and discuss model indicators. **Think about what indicators (variables) we should include in our AO model.** Come prepared to discuss indicators and relevant data sources.
 
 **Stay tuned for Meeting #3 resources.**

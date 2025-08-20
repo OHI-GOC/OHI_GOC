@@ -117,7 +117,7 @@ En la **Reunión #2**, Erica, Sophia y Andrés discutieron la meta de Provisión
 **Recursos compartidos durante la Reunión #2**
 
 - [Presentación de la Reunión #2](https://docs.google.com/presentation/d/19rrnWGM-7TNrAqeddFoy-Sp1VpN5xvwRsy2dJcb4WiA/edit?slide=id.g37662c37759_0_1360#slide=id.g37662c37759_0_1360): discutimos el flujo de trabajo de los objetivos, la  definición de 'Provisión de Alimentos' y posibles indicadores.
-- [Resumen y Notas Generales de la Reunión #3](https://docs.google.com/document/d/1l4zVOSt-twGsw9FvBCq1bPtPyuienjRKovf8zbaizvE/edit?tab=t.qiibdzi316p3): revisa reuniones pasadas, mantén un registro de recursos compartidos y escribe tus ideas fuera de línea.
+- [Resumen y Notas Generales de la Reunión #2](https://docs.google.com/document/d/1l4zVOSt-twGsw9FvBCq1bPtPyuienjRKovf8zbaizvE/edit?tab=t.qiibdzi316p3): revisa reuniones pasadas, mantén un registro de recursos compartidos y escribe tus ideas fuera de línea.
 
 **Tarea para la Reunión #3:**  
 Piensa en qué indicadores (variables) deberíamos incluir en nuestro modelo para estimar puntajes regionales de provisión de alimentos. Ven preparado para discutir indicadores y fuentes de datos relevantes más allá de los datos de CONAPESCA. Si usamos datos de CONAPESCA, ¿qué especies crees que serán más problemáticas o difíciles de evaluar?

@@ -117,7 +117,7 @@ In **Meeting #2** Erica, Sophia, and Andrés discussed the Ocean Health Index pr
 
 - [Meeting #2 Presentation Slides](https://docs.google.com/presentation/d/19rrnWGM-7TNrAqeddFoy-Sp1VpN5xvwRsy2dJcb4WiA/edit?slide=id.g37662c37759_0_1360#slide=id.g37662c37759_0_1360)
 : slides to guide our discussion. We discussed goal workflow, the definition for 'Food Provisioning', and possible indicators.
-- [Meeting #3 Summary & General Notes](https://docs.google.com/document/d/1l4zVOSt-twGsw9FvBCq1bPtPyuienjRKovf8zbaizvE/edit?tab=t.qiibdzi316p3)
+- [Meeting #2 Summary & General Notes](https://docs.google.com/document/d/1l4zVOSt-twGsw9FvBCq1bPtPyuienjRKovf8zbaizvE/edit?tab=t.qiibdzi316p3)
 : catch up on meetings you missed and review meeting summaries; keep track of resources and data bases shared during our meetings, and write down your quick thoughts offline.
 
 **Homework for FP Meeting #3:** Think about what indicators (variables) we should include in our model to estimate regional scores for Food Provisioning. Come prepared to discuss indicators and relevant data sources beyond CONAPESCA data. If we use CONAPESCA data, what stocks do you think will be problematic or most difficult to asses?
