@@ -17,7 +17,7 @@ editor:
 ------------------------------------------------------------------------
 
 ::: {.callout-note collapse="true"}
-# About the AO Goal
+# **About** the AO Goal
 
 Typically, this goal measures whether people who need to fish on a
 small, local scale have the opportunity to do so. **In the GoC, this goal
@@ -68,9 +68,10 @@ versus *artisanal*?
 ------------------------------------------------------------------------
 
 # Goalkeeper Meetings
+*Resources shared during our meetings can be accessed in the group's shared google drive [here](https://drive.google.com/drive/u/0/folders/1VUuocKEk9TqgssSgzeFb6y5LGtEoKQ2a).*
 
 ::: {.callout-note collapse="true"}
-## **Meeting Logistics**:  Who, What, When, Where
+## **Meeting Logistics** -  Who, What, When, Where
 
 ### **Meeting Access**
 
@@ -121,32 +122,43 @@ Add the shared calendar to your Google Calendar account using the [provided link
 :::
 
 ::: {.callout-note collapse="true"}
-## AO **Meeting #1: Summary**, Resources, & Next Steps
+## **AO Meeting #1 Summary** - Resources & Next Steps
 **Meeting #1** introduced participants and their research backgrounds related to the Gulf of California, with Erica facilitating and providing an overview of the Ocean Health Index. The group discussed the index's methodology and application to the Gulf of California region, including its assessment of various ocean health goals and the team’s need to define ‘artisanal opportunities’ beyond fishing. The conversation ended with participants agreeing to further explore concepts like resource access and sustainable livelihoods. 
 
-**Resources shared during Meeting #1**
+**Resources shared during AO Meeting #1**
 
-- [Presentation Slides](https://docs.google.com/presentation/d/1_U1VeWu1582g6zRr3mirp-1e6U78iT3WomTGUKAzdNo/edit?usp=share_link)
+- [Meeting #1 Presentation Slides](https://docs.google.com/presentation/d/1_U1VeWu1582g6zRr3mirp-1e6U78iT3WomTGUKAzdNo/edit?slide=id.g36f700a243e_0_9#slide=id.g36f700a243e_0_9)
 : learn more about Ocean Health Index, the goals of this project in the Gulf of California, and objectives for the Goalkeeper Group.
-- [**Meeting #1 Summary & General Notes**](https://docs.google.com/document/d/1XjBi0qHSjbso1bPnc48mBbsjcm08wJig0kZueTe4PMQ/edit?tab=t.0#heading=h.8562cdkt8tdh)
+- [Meeting #1 Summary & General Notes](https://docs.google.com/document/d/1XjBi0qHSjbso1bPnc48mBbsjcm08wJig0kZueTe4PMQ/edit?tab=t.kyrkgpt50url#heading=h.9ic47zdlpdcx)
 : catch up on meetings you missed and review meeting summaries; keep track of resources and data bases shared during our meetings, and write down your quick thoughts offline.
-
-*Resources shared during our meetings can be accessed in the group's shared google drive* [here](https://drive.google.com/drive/u/0/folders/1VUuocKEk9TqgssSgzeFb6y5LGtEoKQ2a).
-
-**In Meeting #2**, we will discuss how we might measure access to 'Artisanal Opportunities' in the Gulf, and possible AO reference points, so please come prepared for this discussion. A reference point is defined as the ideal state of artisanal opportunities in the GoC.
 :::
 
 ::: {.callout-note collapse="true"}
-## AO **Meeting #2: Summary**  *UPCOMING August 19*
-**In Meeting #2**, we will discuss how we might measure 'Artisanal Opportunities' in the Gulf, and possible AO reference points, so please come prepared for this discussion. A reference point is defined as the <u>ideal state</u> of artisanal opportunities in the GoC.
+## **AO Meeting #2 Summary** - Resources & Next Steps
+The main focus of **Meeting #2** was to solidify the goal definition before selecting model indicators. In this context, our ‘model’ will be a series of indicators intended to capture the definition of the goal; it will probably not be very mathematically complicated. Erica outlined the goal workflow – a six-step process from step 1 (defining the goal) to step 6 (verifying model outputs). The team discussed various aspects of AO including social and economic importance of fishing access, access to other resources, and access to important spaces. Victor presented current work related to this topic, including measures of food sovereignty and community well-being. The group came closer to solidifying the definition of AO, which will include some measure of community resource access. Participants agreed to finalize the goal’s definition at the next meeting, where we will also try to select indicators. Please come to the next meeting prepared to settle the AO definition and suggest relevant indicators.
 
-**Stay tuned for Meeting #2 resources.**
+**Resources shared during AO Meeting #2**
+
+- [Meeting #2 Presentation Slides](https://docs.google.com/presentation/d/1qGZib7yG2efbF7vQmwTaKDUzSDSDc6r0Pf37-EHw79g/edit?slide=id.g37b501de360_0_328#slide=id.g37b501de360_0_328)
+: slides to guide our discussion. We discussed workflow, terminology, and the definition of 'Artisanal Opportunities'.
+- [Meeting #2 Summary & General Notes](https://docs.google.com/document/d/1XjBi0qHSjbso1bPnc48mBbsjcm08wJig0kZueTe4PMQ/edit?tab=t.uk3ygqm9i4qc)
+: catch up on meetings you missed and review meeting summaries; keep track of resources and data bases shared during our meetings, and write down your quick thoughts offline.
+
+**Homework for AO Meeting #3:** Think about what indicators (variables) we should include in our model for AO. Come prepared to discuss indicators and possible data sources.
 :::
 
-<!-- ::: {.callout-note collapse="true"} -->
-<!-- ## **AO Meeting #3: Summary**  *UPCOMING September 23* -->
-<!-- Stay tuned for Meeting #3 resources. -->
-<!-- ::: -->
+::: {.callout-note collapse="true"}
+## **AO Meeting #3 Summary** - *UPCOMING September 23*
+
+**Stay tuned for Meeting #3 resources.**
+:::
+
+::: {.callout-note collapse="true"}
+## **FP Meeting #3 Summary** - *UPCOMING September 23*
+**In Meeting #3**, we will finalize the definition of 'Artisanal Opportunities' in the Gulf and discuss model indicators. **Think about what indicators (variables) we should include in our AO model.** Come prepared to discuss indicators and relevant data sources.
+
+**Stay tuned for Meeting #3 resources.**
+:::
 
 
 <!-- ::: {.callout-note collapse="true"} -->
@@ -171,7 +183,7 @@ Add the shared calendar to your Google Calendar account using the [provided link
 # Expert Working Group (EWG) Meetings
 
 ::: {.callout-note collapse="true"}
-## EWG Meeting #1: Regional Considerations for AO
+## **EWG Meeting #1** - Regional Considerations for AO
 
 These are some of the points discussed by the Expert Working Group.
 

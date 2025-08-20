@@ -18,7 +18,7 @@ editor:
 ------------------------------------------------------------------------
 
 ::: {.callout-note collapse="true"}
-# Sobre la Meta de Provisión de Alimentos (FP)
+# **Sobre** la Meta de Provisión de Alimentos (FP)
 
 Típicamente, esta meta evalúa nuestra capacidad para maximizar de manera sostenible los alimentos marinos capturados en vida silvestre o cultivados.
 
@@ -47,10 +47,11 @@ Típicamente, esta meta evalúa nuestra capacidad para maximizar de manera soste
 
 ------------------------------------------------------------------------
 
-# Reuniones de Guardianes de la Meta
+# Reuniones de Porteros
+*Todos los recursos compartidos durante nuestras reuniones se pueden acceder en el Google Drive compartido del grupo [aquí](https://drive.google.com/drive/u/0/folders/1W0_ki39XNR1zHN4tBo_tQ-wnVia4grP8).*
 
 ::: {.callout-note collapse="true"}
-## **Logística de Reuniones**: Quién, Qué, Cuándo, Dónde
+## **Logística de Reuniones** - Quién, Qué, Cuándo, Dónde
 
 ### **Acceso a la Reunión**
 
@@ -98,32 +99,54 @@ Agrega el calendario compartido a tu cuenta de Google Calendar usando el [enlace
 :::
 
 ::: {.callout-note collapse="true"}
-## FP **Reunión #1: Resumen**, Recursos y Próximos Pasos
-**La Reunión #1** presentó a los participantes y sus antecedentes de investigación relacionados con el Golfo de California, con Erica facilitando y ofreciendo una visión general del Índice de Salud del Océano. El grupo discutió la metodología del índice y su aplicación en la región del Golfo de California, incluyendo la evaluación de diversas metas de salud oceánica. La conversación concluyó con una discusión sobre la meta de provisión de alimentos, incluyendo cómo definir y medir la producción sostenible de alimentos a partir de pesquerías y maricultura en el Golfo de California. Se alentó a los participantes a preparar ideas específicas para la próxima reunión.
+## **FP Reunión #1 Resumen** - Recursos y Próximos Pasos
+
+**La Reunión #1** presentó a los participantes y sus antecedentes de investigación relacionados con el Golfo de California, con Erica facilitando y brindando una visión general del Índice de Salud del Océano. El grupo discutió la metodología del índice y su aplicación en la región del Golfo de California, incluyendo la evaluación de diversas metas de salud oceánica. La conversación finalizó con una discusión sobre la meta de provisión de alimentos, incluyendo cómo definir y medir la producción sostenible de alimentos provenientes de la pesca y la maricultura en el Golfo de California. Se alentó a los participantes a preparar ideas específicas para la próxima reunión.
 
 **Recursos compartidos durante la Reunión #1**
 
-- [Diapositivas de Presentación](https://docs.google.com/presentation/d/1TKzHiRU-gqXfhaNUt087sUBVFBIyk0bD7gEz-7J_DyI/edit?usp=share_link)  
-: aprende más sobre el Índice de Salud del Océano, los objetivos de este proyecto en el Golfo de California y las metas del Grupo de Guardianes.
-
-- [**Resumen de la Reunión #1 y Notas Generales**](https://docs.google.com/document/d/1l4zVOSt-twGsw9FvBCq1bPtPyuienjRKovf8zbaizvE/edit?usp=share_link)  
-: repasa lo discutido en las reuniones si no pudiste asistir, revisa los resúmenes, recursos y bases de datos compartidas durante las sesiones, y anota tus ideas de manera offline.
-
-*Los recursos compartidos durante nuestras reuniones están disponibles en la carpeta compartida de Google Drive del grupo* [aquí](https://drive.google.com/drive/u/0/folders/1W0_ki39XNR1zHN4tBo_tQ-wnVia4grP8).
-
-**En la Reunión #2**, discutiremos cómo podríamos medir la ‘Provisión de Alimentos’ en el Golfo, y posibles puntos de referencia de FP, así que por favor ven preparado/a para esta discusión. Un punto de referencia se define como el <u>estado ideal</u> de ‘Provisión de Alimentos’ en el GoC.
+- [Presentación de la Reunión #1](https://docs.google.com/presentation/d/1TKzHiRU-gqXfhaNUt087sUBVFBIyk0bD7gEz-7J_DyI/edit?usp=share_link): aprende más sobre el Índice de Salud del Océano, los objetivos de este proyecto en el Golfo de California, y los objetivos del Grupo Goalkeeper.
+- [Resumen y Notas Generales de la Reunión #1](https://docs.google.com/document/d/1l4zVOSt-twGsw9FvBCq1bPtPyuienjRKovf8zbaizvE/edit?usp=share_link): revisa reuniones que te hayas perdido y mantén un registro de los recursos y bases de datos compartidos, además de anotar tus ideas fuera de línea.
 :::
 
 ::: {.callout-note collapse="true"}
-## FP **Reunión #2: Resumen**  *PRÓXIMAMENTE 19 de Agosto*
-**En la Reunión #2**, discutiremos cómo podríamos medir la ‘Provisión de Alimentos’ en el Golfo, y posibles puntos de referencia de FP, así que por favor ven preparado/a para esta discusión. Un punto de referencia se define como el estado ideal de la ‘Provisión de Alimentos’ en el GoC.
+## **FP Reunión #2 Resumen** - Recursos y Próximos Pasos
 
-**Próximamente recursos de la Reunión #2.**
+En la **Reunión #2**, Erica, Sophia y Andrés discutieron la meta de Provisión de Alimentos del proyecto OHI, explorando definiciones que incorporan sostenibilidad, seguridad nutricional y consideraciones de soberanía alimentaria. Debatieron si medir la soberanía alimentaria como parte de la provisión de alimentos o como una métrica separada. Finalmente, decidieron que lo mejor sería enfocar la meta de provisión de alimentos en productos del mar capturados o cultivados de manera sostenible que apoyen las necesidades nutricionales locales (por ejemplo, la demanda de proteína), mientras se aborda el valor cultural de la soberanía alimentaria como una sub-meta bajo la meta de “Sentido de Pertenencia”. El grupo también discutió los desafíos de realizar evaluaciones de existencias pesqueras a nivel regional en México y planeó consultar con científicos del gobierno sobre fuentes de datos más allá de CONAPESCA.
+
+**Recursos compartidos durante la Reunión #2**
+
+- [Presentación de la Reunión #2](https://docs.google.com/presentation/d/19rrnWGM-7TNrAqeddFoy-Sp1VpN5xvwRsy2dJcb4WiA/edit?slide=id.g37662c37759_0_1360#slide=id.g37662c37759_0_1360): discutimos el flujo de trabajo de los objetivos, la  definición de 'Provisión de Alimentos' y posibles indicadores.
+- [Resumen y Notas Generales de la Reunión #3](https://docs.google.com/document/d/1l4zVOSt-twGsw9FvBCq1bPtPyuienjRKovf8zbaizvE/edit?tab=t.qiibdzi316p3): revisa reuniones pasadas, mantén un registro de recursos compartidos y escribe tus ideas fuera de línea.
+
+**Tarea para la Reunión #3:**  
+Piensa en qué indicadores (variables) deberíamos incluir en nuestro modelo para estimar puntajes regionales de provisión de alimentos. Ven preparado para discutir indicadores y fuentes de datos relevantes más allá de los datos de CONAPESCA. Si usamos datos de CONAPESCA, ¿qué especies crees que serán más problemáticas o difíciles de evaluar?
+:::
+
+::: {.callout-note collapse="true"}
+## **FP Reunión #3 Resumen** - *PRÓXIMAMENTE 23 de septiembre*
+
+**En la Reunión #3**, finalizaremos la definición de 'Provisión de Alimentos' en el Golfo y discutiremos los indicadores del modelo.
+
+**Piensa en qué indicadores (variables) deberíamos incluir en nuestro modelo para Provisión de Alimentos.**  
+Ven preparado para discutir esto y las fuentes de datos relevantes más allá de CONAPESCA. Si usamos datos de CONAPESCA, ¿qué especies crees que serán problemáticas o difíciles de evaluar?
+
+**Recursos para la Reunión #3 próximamente.**
 :::
 
 <!-- ::: {.callout-note collapse="true"} -->
-<!-- ## **Reunión FP #3: Resumen**  *PRÓXIMAMENTE 23 de Septiembre* -->
-<!-- Próximamente recursos de la Reunión #3. -->
+<!-- ## **FP Reunión #4: Resumen**  *PRÓXIMAMENTE ____* -->
+<!-- Recursos para la Reunión #4 próximamente. -->
+<!-- ::: -->
+
+<!-- ::: {.callout-note collapse="true"} -->
+<!-- ## **FP Reunión #5: Resumen**  *PRÓXIMAMENTE ____* -->
+<!-- Recursos para la Reunión #5 próximamente. -->
+<!-- ::: -->
+
+<!-- ::: {.callout-note collapse="true"} -->
+<!-- ## **FP Reunión #6: Resumen**  *PRÓXIMAMENTE ____* -->
+<!-- Recursos para la Reunión #6 próximamente. -->
 <!-- ::: -->
 
 ------------------------------------------------------------------------
@@ -131,7 +154,7 @@ Agrega el calendario compartido a tu cuenta de Google Calendar usando el [enlace
 # Reuniones del Grupo de Expertos (EWG)
 
 ::: {.callout-note collapse="true"}
-## Reunión EWG #1: Consideraciones Regionales para FP
+## **Reunión EWG #1** - Consideraciones Regionales para FP
 
 Estos son algunos de los puntos discutidos por el Grupo de Expertos.
 
@@ -158,4 +181,7 @@ Estos son algunos de los puntos discutidos por el Grupo de Expertos.
   <a href="mailto:core-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button">
     <i class="fa-solid fa-square-poll-vertical"></i> Equipo Analítico Central de OHI
   </a>
-  <a href="mailto:fp-ohi-gulf-ca
+  <a href="mailto:fp-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button secondary">
+    <i class="fa-solid fa-people-group"></i> Grupo de Porteros de Aprovisionamiento de Alimentos
+  </a>
+</div>

@@ -17,7 +17,7 @@ editor:
 ------------------------------------------------------------------------
 
 ::: {.callout-note collapse="true"}
-# About the FP Goal
+# **About** the FP Goal
 
 Typically, this goal assesses our ability to sustainably maximize wild-caught or farmed marine foods.
 
@@ -47,9 +47,10 @@ What is the ideal sustainable state of the **Food Provisioning** goal?
 ------------------------------------------------------------------------
 
 # Goalkeeper Meetings
+*All resources shared during our meetings can be accessed in the group's shared google drive [here](https://drive.google.com/drive/u/0/folders/1W0_ki39XNR1zHN4tBo_tQ-wnVia4grP8).*
 
 ::: {.callout-note collapse="true"}
-## **Meeting Logistics**:  Who, What, When, Where
+## **Meeting Logistics** -  Who, What, When, Where
 
 ### **Meeting Access**
 
@@ -97,32 +98,37 @@ Add the shared calendar to your Google Calendar account using the [provided link
 :::
 
 ::: {.callout-note collapse="true"}
-## FP **Meeting #1: Summary**, Resources, & Next Steps
+## **FP Meeting #1: Summary** - Resources & Next Steps
 **Meeting #1** introduced participants and their research backgrounds related to the Gulf of California, with Erica facilitating and providing an overview of the Ocean Health Index. The group discussed the index's methodology and application to the Gulf of California region, including its assessment of various ocean health goals. The conversation ended with a discussion on the food provisioning goal, including how to define and measure sustainable food production from fisheries and mariculture in the Gulf of California. Participants were encouraged to prepare specific ideas for the next meeting.
 
 **Resources shared during Meeting #1**
 
-- [Presentation Slides](https://docs.google.com/presentation/d/1TKzHiRU-gqXfhaNUt087sUBVFBIyk0bD7gEz-7J_DyI/edit?usp=share_link)
+- [Meeting #1 Presentation Slides](https://docs.google.com/presentation/d/1TKzHiRU-gqXfhaNUt087sUBVFBIyk0bD7gEz-7J_DyI/edit?usp=share_link)
 : learn more about Ocean Health Index, the goals of this project in the Gulf of California, and objectives for the Goalkeeper Group.
-- [**Meeting #1 Summary & General Notes**](https://docs.google.com/document/d/1l4zVOSt-twGsw9FvBCq1bPtPyuienjRKovf8zbaizvE/edit?usp=share_link)
+- [Meeting #1 Summary & General Notes](https://docs.google.com/document/d/1l4zVOSt-twGsw9FvBCq1bPtPyuienjRKovf8zbaizvE/edit?usp=share_link)
 : catch up on meetings you missed and review meeting summaries; keep track of resources and data bases shared during our meetings, and write down your quick thoughts offline.
-
-*Resources shared during our meetings can be accessed in the group's shared google drive* [here](https://drive.google.com/drive/u/0/folders/1W0_ki39XNR1zHN4tBo_tQ-wnVia4grP8).
-
-**In Meeting #2**, we will discuss how we might measure access to 'Food Provisioning' in the Gulf, and possible FP reference points, so please come prepared for this discussion. A reference point is defined as the <u>ideal state</u> of 'Food Provisioning' in the GoC.
 :::
 
 ::: {.callout-note collapse="true"}
-## FP **Meeting #2: Summary**  *UPCOMING August 19*
-**In Meeting #2**, we will discuss how we might measure access to 'Food Provisioning' in the Gulf, and possible FP reference points, so please come prepared for this discussion. A reference point is defined as the ideal state of 'Food Provisioning' in the GoC.
+## **FP Meeting #2 Summary** - Resources & Next Steps
+In **Meeting #2** Erica, Sophia, and Andrés discussed the Ocean Health Index project's Food Provisioning goal, exploring definitions that incorporate sustainability, nutritional security, and food sovereignty considerations. They debated whether to measure food sovereignty as part of Food Provisioning or as a separate score. Ultimately, they decided that it is probably best to focus the Food Provisioning Goal on sustainably caught or farmed seafood that supports local nutritional needs (e.g., demand for protein) while potentially addressing the important cultural value of food sovereignty as a sub-goal under the "Sense of Belonging" Goal. The group also discussed challenges in conducting fishery stock assessments at the regional level in Mexico and planned to consult government scientists about available data sources beyond CONAPESCA.
 
-**Stay tuned for Meeting #2 resources.**
+**Resources shared during Meeting #2**
+
+- [Meeting #2 Presentation Slides](https://docs.google.com/presentation/d/19rrnWGM-7TNrAqeddFoy-Sp1VpN5xvwRsy2dJcb4WiA/edit?slide=id.g37662c37759_0_1360#slide=id.g37662c37759_0_1360)
+: slides to guide our discussion. We discussed goal workflow, the definition for 'Food Provisioning', and possible indicators.
+- [Meeting #3 Summary & General Notes](https://docs.google.com/document/d/1l4zVOSt-twGsw9FvBCq1bPtPyuienjRKovf8zbaizvE/edit?tab=t.qiibdzi316p3)
+: catch up on meetings you missed and review meeting summaries; keep track of resources and data bases shared during our meetings, and write down your quick thoughts offline.
+
+**Homework for FP Meeting #3:** Think about what indicators (variables) we should include in our model to estimate regional scores for Food Provisioning. Come prepared to discuss indicators and relevant data sources beyond CONAPESCA data. If we use CONAPESCA data, what stocks do you think will be problematic or most difficult to asses?
 :::
 
-<!-- ::: {.callout-note collapse="true"} -->
-<!-- ## **FP Meeting #3: Summary**  *UPCOMING September 23* -->
-<!-- Stay tuned for Meeting #3 resources. -->
-<!-- ::: -->
+::: {.callout-note collapse="true"}
+## **FP Meeting #3 Summary** - *UPCOMING September 23*
+**In Meeting #3**, we will finalize the definition of 'Food Provisioning' in the Gulf and discuss model indicators. **Think about what indicators (variables) we should include in our model for Food Provisioning.** Come prepared to discuss this and relevant data sources beyond CONAPESCA. If we use CONAPESCA data, what stocks do you think will be problematic or most difficult to asses?
+
+**Stay tuned for Meeting #3 resources.**
+:::
 
 
 <!-- ::: {.callout-note collapse="true"} -->
@@ -142,13 +148,12 @@ Add the shared calendar to your Google Calendar account using the [provided link
 <!-- Stay tuned for Meeting #6 resources. -->
 <!-- ::: -->
 
-
 ------------------------------------------------------------------------
 
 # Expert Working Group (EWG) Meetings
 
 ::: {.callout-note collapse="true"}
-## EWG Meeting #1: Regional Considerations for FP
+## **EWG Meeting #1** - Regional Considerations for the FP Goal
 
 These are some of the points discussed by the Expert Working Group.
 

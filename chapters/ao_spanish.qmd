@@ -58,10 +58,11 @@ versus *artesanales*?
 
 ------------------------------------------------------------------------
 
-# Reuniones de los Guardianes de la Meta
+# Reuniones de Porteros
+*Los recursos compartidos durante nuestras reuniones están disponibles en el [Google Drive del grupo](https://drive.google.com/drive/u/0/folders/1VUuocKEk9TqgssSgzeFb6y5LGtEoKQ2a).*
 
 ::: {.callout-note collapse="true"}
-## **Logística de Reuniones**: Quién, Qué, Cuándo, Dónde
+## **Logística de las Reuniones** – Quién, Qué, Cuándo, Dónde
 
 ### **Acceso a la Reunión**
 
@@ -70,16 +71,16 @@ versus *artesanales*?
 ---
 
 ### **Miembros del Equipo**
-Nombres de los miembros del equipo en orden alfabético
+Nombres ordenados alfabéticamente:
 
 -   Octavio Aburto  
 -   Michelle María Early Capistrán  
--   María José Espinosa  
--   Francisco Fernández  
+-   Maria Jose Espinosa  
+-   Francisco Fernandez  
 -   Ana Luisa Figueroa  
 -   Mar Mancha-Cisneros  
 -   Hem Nalini Morzaria-Luna  
--   Víctor Ricardez  
+-   Victor Ricardez  
 -   Jorge Torre  
 -   Amy Hudson Weaver
 
@@ -89,54 +90,79 @@ Nombres de los miembros del equipo en orden alfabético
 
 | Reunión | Mes | Fecha Específica | Enfoque |
 |---------|------|------------------|---------|
-| 1 | Julio/Agosto | 22 de julio de 2025 | Presentación del grupo, introducción a la plataforma OHI, cálculo de metas |
+| 1 | Julio/Agosto | 22 de julio de 2025 | Presentación del grupo, resumen de la plataforma OHI, cálculos de metas |
 | 2 | Agosto | 19 de agosto de 2025 | Discusión sobre el modelo y punto de referencia |
 | 3 | Septiembre | 23 de septiembre de 2025 | Modelo, punto de referencia y fuentes de datos |
 | 4 | Octubre | 21 de octubre de 2025 | Resultados preliminares y presión/resiliencia |
-| 5 | Noviembre | 18 de noviembre de 2025 | Revisión final del plan de análisis |
+| 5 | Noviembre | 18 de noviembre de 2025 | Revisión del plan de análisis final |
 | 6 | Diciembre | 9 de diciembre de 2025 *(tentativa)* | *Tentativa* |
 
 ---
 
 ### **Información sobre Coautoría**
 
-Este proyecto ofrece oportunidades para colaborar con expertos regionales y contribuir a la evaluación del OHI en el Golfo de California. La participación será reconocida en el sitio web y otros productos. Pueden haber oportunidades adicionales de coautoría con un compromiso extra como se describe [aquí](https://docs.google.com/document/d/16jwVGjbQpF_6B6sbkhb4xO00WAXdDiESBXu-n2a7D1k/edit?tab=t.0).
+Este proyecto ofrece oportunidades de colaboración con personas expertas de la región y de contribuir en la evaluación del OHI para el Golfo de California. La participación será reconocida en el sitio web y otros productos. Pueden existir oportunidades adicionales de coautoría con compromiso extra, como se explica [aquí](https://docs.google.com/document/d/16jwVGjbQpF_6B6sbkhb4xO00WAXdDiESBXu-n2a7D1k/edit?tab=t.0).
 
 ---
 
 ### **Calendario de Google**
 
-Agrega el calendario compartido a tu cuenta de Google Calendar utilizando el [enlace proporcionado](https://calendar.google.com/calendar/u/0?cid=Y184ZmIyNzhjNmQwM2E5MGFjZDJjYWE0MDdhOTcyY2ZlMjcxYTQwNzA3Mjc0MDFiNzM0NzRkNjdjNGM0NDE0ZjQyQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20). Aparecerá bajo "Otros calendarios" y te dará acceso a todas las reuniones programadas con enlaces de Zoom actualizados.
+Agrega el calendario compartido a tu cuenta de Google Calendar usando este [enlace](https://calendar.google.com/calendar/u/0?cid=Y184ZmIyNzhjNmQwM2E5MGFjZDJjYWE0MDdhOTcyY2ZlMjcxYTQwNzA3Mjc0MDFiNzM0NzRkNjdjNGM0NDE0ZjQyQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20). Aparecerá bajo "Otros calendarios" y te dará acceso a todas las reuniones programadas con los enlaces de Zoom actualizados.
 
-**Por favor, avísanos si tienes alguna pregunta. ¡Esperamos trabajar contigo en esta iniciativa!**
+**Por favor, avísanos si tienes preguntas. ¡Esperamos trabajar contigo en esta iniciativa!**
 :::
 
 ::: {.callout-note collapse="true"}
-## AO **Reunión #1: Resumen**, Recursos y Próximos Pasos
-**La Reunión #1** presentó a los participantes y sus antecedentes de investigación relacionados con el Golfo de California, con Erica facilitando y brindando una visión general del Índice de Salud del Océano. El grupo discutió la metodología del índice y su aplicación en la región, incluyendo la evaluación de diversas metas de salud oceánica y la necesidad del equipo de definir ‘oportunidades artesanales’ más allá de la pesca. La conversación concluyó con el acuerdo del grupo de seguir explorando conceptos como acceso a recursos y medios de vida sostenibles.
+## **Resumen Reunión AO #1** - Recursos y Próximos Pasos
 
-**Recursos compartidos durante la Reunión #1**
+**La Reunión #1** presentó a las y los participantes y sus antecedentes de investigación relacionados con el Golfo de California, con Erica facilitando y proporcionando una visión general del Índice de Salud del Océano. El grupo discutió la metodología del índice y su aplicación al Golfo de California, incluyendo la necesidad del equipo de definir "oportunidades artesanales" más allá de la pesca. La conversación terminó con el acuerdo de explorar más a fondo conceptos como acceso a los recursos y medios de vida sostenibles.
 
-- [Diapositivas de Presentación](https://docs.google.com/presentation/d/1_U1VeWu1582g6zRr3mirp-1e6U78iT3WomTGUKAzdNo/edit?usp=share_link)
-: aprende más sobre el Índice de Salud del Océano, los objetivos de este proyecto en el Golfo de California y los objetivos del Grupo de Guardianes de la Meta.
-- [**Resumen de la Reunión #1 y Notas Generales**](https://docs.google.com/document/d/1XjBi0qHSjbso1bPnc48mBbsjcm08wJig0kZueTe4PMQ/edit?tab=t.0#heading=h.8562cdkt8tdh)
-: ponte al día si te perdiste la reunión y revisa los resúmenes; da seguimiento a los recursos y bases de datos compartidos durante nuestras reuniones, y anota tus ideas de forma offline.
+**Recursos compartidos durante la Reunión AO #1**
 
-*Los recursos compartidos en nuestras reuniones pueden accederse en la carpeta compartida de Google Drive del grupo* [aquí](https://drive.google.com/drive/u/0/folders/1VUuocKEk9TqgssSgzeFb6y5LGtEoKQ2a).
-
-**En la Reunión #2**, discutiremos cómo podríamos medir el acceso a las 'Oportunidades Artesanales' en el Golfo, y posibles puntos de referencia de AO, así que por favor ven preparado/a para esta discusión. Un punto de referencia se define como el estado ideal de las oportunidades artesanales en el GoC.
+- [Presentación Reunión #1](https://docs.google.com/presentation/d/1_U1VeWu1582g6zRr3mirp-1e6U78iT3WomTGUKAzdNo/edit?slide=id.g36f700a243e_0_9)
+: aprende más sobre el Índice de Salud del Océano, las metas de este proyecto en el Golfo de California y los objetivos del Grupo de Trabajo.
+- [Resumen Reunión #1 y Notas Generales](https://docs.google.com/document/d/1XjBi0qHSjbso1bPnc48mBbsjcm08wJig0kZueTe4PMQ/edit?tab=t.kyrkgpt50url#heading=h.9ic47zdlpdcx)
+: revisa reuniones que no pudiste atender, consulta resúmenes, recursos compartidos y anota tus pensamientos offline.
 :::
 
 ::: {.callout-note collapse="true"}
-## AO **Reunión #2: Resumen**  *PRÓXIMAMENTE 19 de Agosto*
-**En la Reunión #2**, discutiremos cómo podríamos medir las 'Oportunidades Artesanales' en el Golfo, y posibles puntos de referencia de AO, así que por favor ven preparado/a para esta discusión. Un punto de referencia se define como el <u>estado ideal</u> de las oportunidades artesanales en el GoC.
+## **Resumen Reunión AO #2** - Recursos y Próximos Pasos
 
-**Próximamente recursos de la Reunión #2.**
+El enfoque principal de la **Reunión #2** fue solidificar la definición de la meta antes de seleccionar los indicadores del modelo. En este contexto, nuestro “modelo” será una serie de indicadores que representen la definición de la meta; probablemente no será muy complejo matemáticamente. Erica explicó el flujo de trabajo de la meta – un proceso de seis pasos desde la definición hasta la verificación de los resultados. El equipo discutió distintos aspectos de AO, incluyendo la importancia social y económica del acceso a la pesca, otros recursos, y espacios clave. Victor presentó trabajos actuales sobre soberanía alimentaria y bienestar comunitario. El grupo avanzó hacia una definición más clara de AO, que incluirá algún componente de acceso a recursos comunitarios. Las y los participantes acordaron finalizar la definición de la meta en la próxima reunión, donde también se intentará seleccionar indicadores.
+
+**Recursos compartidos durante la Reunión AO #2**
+
+- [Presentación Reunión #2](https://docs.google.com/presentation/d/1qGZib7yG2efbF7vQmwTaKDUzSDSDc6r0Pf37-EHw79g/edit?slide=id.g37b501de360_0_328)
+: guía de la discusión. Se habló del flujo de trabajo, la terminología y la definición de 'Oportunidades Artesanales'.
+- [Resumen Reunión #2 y Notas Generales](https://docs.google.com/document/d/1XjBi0qHSjbso1bPnc48mBbsjcm08wJig0kZueTe4PMQ/edit?tab=t.uk3ygqm9i4qc)
+: para ponerte al día si te perdiste alguna reunión y revisar notas y recursos compartidos.
+
+**Tarea para la Reunión AO #3:** Piensa qué indicadores (variables) debemos incluir en nuestro modelo para AO. Ven preparado/a para discutir indicadores y fuentes de datos relevantes.
+:::
+
+::: {.callout-note collapse="true"}
+## **Resumen Reunión AO #3** - *PRÓXIMAMENTE 23 de septiembre*
+
+**En la Reunión #3**, finalizaremos la definición de ‘Oportunidades Artesanales’ en el Golfo y discutiremos los indicadores del modelo. **Piensa en qué indicadores (variables) se deberían incluir en el modelo AO.** Ven preparado/a para discutirlos junto con fuentes de datos relevantes.
+
+**Próximamente se compartirán recursos de la Reunión #3.**
 :::
 
 <!-- ::: {.callout-note collapse="true"} -->
-<!-- ## AO **Reunión #3: Resumen**  *PRÓXIMAMENTE 23 de Septiembre* -->
-<!-- Próximamente recursos de la Reunión #3. -->
+<!-- ## **Resumen Reunión AO #4**  *PRÓXIMAMENTE ____* -->
+<!-- Próximamente se compartirán los recursos de la Reunión #4. -->
+<!-- ::: -->
+
+
+<!-- ::: {.callout-note collapse="true"} -->
+<!-- ## **Resumen Reunión AO #5**  *PRÓXIMAMENTE ____* -->
+<!-- Próximamente se compartirán los recursos de la Reunión #5. -->
+<!-- ::: -->
+
+
+<!-- ::: {.callout-note collapse="true"} -->
+<!-- ## **Resumen Reunión AO #6**  *PRÓXIMAMENTE ____* -->
+<!-- Próximamente se compartirán los recursos de la Reunión #6. -->
 <!-- ::: -->
 
 ------------------------------------------------------------------------
@@ -144,44 +170,43 @@ Agrega el calendario compartido a tu cuenta de Google Calendar utilizando el [en
 # Reuniones del Grupo de Expertos (EWG)
 
 ::: {.callout-note collapse="true"}
-## Reunión EWG #1: Consideraciones Regionales para AO
+## **Reunión EWG #1** – Consideraciones Regionales sobre AO
 
-Estos son algunos de los puntos discutidos por el Grupo de Expertos.
+Estos son algunos de los puntos discutidos por el Grupo de Expertos:
 
 ### Permisos
 
--   En México, los pescadores artesanales generalmente necesitan permisos, a menos que pesquen desde la orilla.\
--   Obtener permisos es burocráticamente complejo, costoso y
-    limitado — es difícil conseguir permisos nuevos.
--   Existe un **mercado negro de permisos** debido a la dificultad de acceso legal.
+-   En México, las y los pescadores artesanales generalmente necesitan permisos, a menos que pesquen desde la orilla.\
+-   Obtener permisos es un proceso burocrático complejo, caro y limitado — es difícil conseguir nuevos permisos.
+-   Existe un **mercado negro de permisos** debido a la dificultad de obtener acceso legal.
 
 ### Acceso Costero y Gentrificación
 
 **Acceso Legal vs. Realidad Física**
 
--   La línea de marea alta y 10 metros hacia tierra son zonas federales protegidas; hoteles y condominios no son dueños legales de la playa. El acceso público está garantizado.
--   Sin embargo, la gentrificación, la propiedad extranjera y el desarrollo turístico restringen el acceso físico a playas y líneas costeras.
--   En algunas regiones, la inseguridad y la violencia limitan el acceso costero.
--   El aumento de precios turísticos (por ejemplo, buceo en Cabo Pulmo) excluye económicamente a los locales.
--   Movimientos sociales en lugares como Sinaloa están resistiendo activamente la pérdida de acceso.
--   En general, los puntos de acceso costero están disminuyendo debido a cercas y desarrollos — incluso cuando los esfuerzos políticos afirman apoyar los derechos de acceso.
+-   La línea de pleamar y 10 metros tierra adentro son zonas federales protegidas; hoteles y condominios no son propietarios legales de la playa. El acceso público está garantizado.
+-   Sin embargo, la gentrificación, la propiedad extranjera y el desarrollo turístico restringen el acceso físico a playas y zonas costeras.
+-   En algunas regiones, la delincuencia y preocupaciones de seguridad también limitan el acceso costero.
+-   El aumento en los precios turísticos (ej. buceo en Cabo Pulmo) excluye económicamente a la población local.
+-   Hay movimientos sociales (ej. en Sinaloa) que resisten activamente la pérdida de acceso.
+-   En general, los puntos de acceso costero están disminuyendo debido a cercas y desarrollos, aun cuando los discursos políticos dicen apoyar el acceso.
 
-### Temas Específicos de Pesquerías
+### Problemáticas Específicas de Pesquerías
 
--   La pesquería de dorado (mahi mahi) es esencial para los medios de vida locales, pero a menudo es ilegal a menos que se clasifique como pesca deportiva, creando un conflicto.
+-   La pesquería de dorado (mahi mahi) es esencial para los medios de vida locales pero frecuentemente ilegal, a menos que se clasifique como pesca deportiva, lo que genera conflicto.
 -   No se permite aumentar el esfuerzo pesquero legal. El número de permisos está limitado.
 
-::: {.callout-tip title="Ideas para Incorporación en el Índice"}
--   Representar explícitamente **restricciones legales y físicas de acceso**\
--   Distinguir los impactos de la **gentrificación vs. desarrollo turístico**, considerando sus interacciones\
--   Considerar la **seguridad y el crimen** como barreras clave\
--   Evaluar la **accesibilidad económica** de la pesca y actividades costeras, no solo el acceso físico\
--   Evaluar la **complejidad del sistema de permisos** y prevalencia de **pesca INDNR (Ilegal, No Declarada y No Reglamentada)**\
+::: {.callout-tip title="Ideas para Incorporar en el Índice"}
+-   Representar **restricciones legales y físicas de acceso** explícitamente\
+-   Distinguir impactos de **gentrificación vs. desarrollo turístico**, considerando sus interacciones\
+-   Considerar **seguridad y delincuencia** como barreras clave\
+-   Evaluar la **asequibilidad económica** de pescar y realizar actividades costeras, no solo el acceso físico\
+-   Evaluar la **complejidad del sistema de permisos** y la prevalencia de **pesca IUU** (ilegal, no reportada y no regulada)\
 -   Explorar formas de medir el acceso en términos de:
-    -   Kilómetros de costa accesible (sin cercas ni restricciones)
+    -   Kilómetros de costa accesible (no cercada o restringida)
     -   Demografía socioeconómica de quienes tienen/no tienen acceso\
--   Resaltar **movimientos sociales locales y resiliencia** que defienden los derechos de acceso\
--   Considerar expandir esta meta para incluir el acceso a la investigación científica, que puede estar limitada por la **burocracia de permisos** y problemas de seguridad.
+-   Resaltar **resiliencia y movimientos sociales locales** que defienden los derechos de acceso\
+-   Considerar incluir acceso para la **investigación científica**, que también puede verse limitado por la **burocracia de permisos** y preocupaciones de seguridad.
 :::
 
 :::
@@ -195,6 +220,6 @@ Estos son algunos de los puntos discutidos por el Grupo de Expertos.
     <i class="fa-solid fa-square-poll-vertical"></i> Equipo Analítico Central de OHI
   </a>
   <a href="mailto:ao-ohi-gulf-ca@nceas.ucsb.edu" class="custom-button secondary">
-    <i class="fa-solid fa-people-group"></i> Grupo de Guardianes de la Meta de Oportunidades Artesanales
+    <i class="fa-solid fa-people-group"></i> Grupo de Porteros de Oportunidades Artesanales
   </a>
 </div>
