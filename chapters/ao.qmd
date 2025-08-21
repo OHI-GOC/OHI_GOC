@@ -14,6 +14,17 @@ editor:
 <i class="fas fa-globe"></i> En Español </a>
 :::
 
+::: {.callout-tip}
+# **New Working Definition**
+
+This definition was defined by the Goalkeeper Group during Meeting #2.  See the below tab for more details.
+
+
+**_The conditions which allow members of small-scale fishing communities and pueblos originarios to thrive, including legal and regulated access to marine resources, knowledge-based use rules, clear boundaries, clear decision-making spaces, and reliable follow-through to ensure access, sustainability, and equity long-term._**
+
+
+:::
+
 ------------------------------------------------------------------------
 
 ::: {.callout-note collapse="true"}

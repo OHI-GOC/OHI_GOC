@@ -15,6 +15,15 @@ editor:
   </a>
 </div>
 
+::: {.callout-tip}
+# **Nueva Definición Provisional**
+
+Esta definición fue establecida por el Grupo de Guardianes de la Meta durante la Reunión #2. Consulta la pestaña de abajo para más detalles.  
+
+**_La cantidad de productos del mar que se producen de manera sostenible mediante la pesca extractiva y las operaciones de maricultura en la región, con cierta referencia a la proporción que permanece en México y que apoya las demandas nutricionales/proteicas de las comunidades locales._**  
+
+:::
+
 ------------------------------------------------------------------------
 
 ::: {.callout-note collapse="true"}

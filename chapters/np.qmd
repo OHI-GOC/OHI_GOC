@@ -21,32 +21,30 @@ editor:
 
 This goal assesses whether countries are maximizing the sustainable harvest of non-food marine resources.
 
----
-
 <div class="custom-box">
-{{< fa lightbulb >}} **This information is meant to help guide the process of developing the Gulf of California OHI!**
+{{< fa lightbulb >}} **CORE DEFINITION**
 
-This goal is included in the global OHI, but other regional assessments have cut or modified this goal to better meet their objectives for ocean health.
+This is the core definition of the *global* OHI framework.  **This will be adapted and tailored to the Gulf of California by the Goalkeeper Group.**
+
+**Focus:** The natural products goal measures the sustainable harvest of ocean resources—such as seaweeds, ornamental fish, shells, corals, and other non-food marine products—that people use for medicine, construction, crafts, and cultural purposes. It highlights the balance between use and long-term availability.
+
+**Not:** This goal does not include fish and shellfish harvested for food (covered under the Food Provision goal). It also does not assess the economic value of products (Livelihoods & Economies goal), or cultural importance beyond harvest (Sense of Place goal).
+
 </div>
 
+<br> 
 
-#### Overview
+Although there are no formal sub-goals, this goal draws on several types of marine resources that people harvest for non-food purposes. In the global framework, these include:
 
-#### Practical Guidance
+1.  **Seaweeds and algae** – harvested for food additives, fertilizers, cosmetics, and pharmaceuticals.
 
+2.  **Ornamental species** – such as reef fish, corals, shells, and sponges collected for aquariums, jewelry, and crafts.
 
-#### LEARN MORE
-Explore the full description of the data and model used in the GLOBAL MODEL. Or, take a look at REGIONAL APPROACHES to learn how other OHI+ assessments have modified this goal to address differences in data availability or priorities.
+3.  **Other marine materials** – including items like corals for building materials or saguaro cacti for cultural uses.
 
+Each component reflects a different way that people depend on the ocean beyond food. The goal measures whether these resources are being used sustainably, so that harvest today does not compromise availability in the future.
 
-<div class="button-container">
-  <a href="https://ohi-science.org/ohi-methods/goals/goal-models-data.html#natural-products" class="custom-button">
-    <i class="fas fa-globe"></i> GLOBAL MODEL
-  </a>
-  <a href="https://oceanhealthindex.org/guidance/natural-products/" class="custom-button secondary">
-    <i class="fas fa-location-dot"></i> REGIONAL APPROACHES
-  </a>
-</div>
+**And together, we will assess this for the Gulf of California!**
 
 :::
 

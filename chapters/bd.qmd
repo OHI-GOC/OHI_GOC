@@ -19,42 +19,30 @@ editor:
 ::: {.callout-note collapse="true"}
 # About the BD Goal
 
-This goal describes how successfully we are preserving the richness and variety of marine life.
-
----
+Biodiversity reflects the variety of life in the ocean and the importance people place on its existence. This goal tracks how well species and habitats are being conserved, recognizing that the loss of biodiversity raises serious ecological, cultural, and moral concerns.
 
 <div class="custom-box">
-{{< fa lightbulb >}} **This information is meant to help guide the process of developing the Gulf of California OHI!**
+{{< fa lightbulb >}} **CORE DEFINITION**
 
-This goal is included in the global OHI, but other regional assessments have cut or modified this goal to better meet their objectives for ocean health.
+This is the core definition of the *global* OHI framework.  **This will be adapted and tailored to the Gulf of California by the Goalkeeper Group.**
+
+**Focus:** The biodiversity goal measures the conservation status of marine life, assessed through species risk of extinction and the condition of key marine habitats. It focuses on whether ecosystems can sustain the variety of species that exist today and into the future.
+
+**Not:** This goal does not measure all aspects of nature or ecosystem health (e.g., genetic diversity, ecosystem function, or terrestrial biodiversity). It also does not capture every marine species—only those assessed through global datasets—or every local habitat, given significant data gaps.
+
 </div>
 
-#### Overview
+<br> 
 
-#### Practical Guidance
+The global framework measures biodiversity through two equally weighted sub-goals:
 
-#### LEARN MORE
-Explore the full description of the data and model used in the GLOBAL MODEL. Or, take a look at REGIONAL APPROACHES to learn how other OHI+ assessments have modified this goal to address differences in data availability or priorities.
+1.  **Species:** Based on the global conservation status of marine species, drawing on assessments from the IUCN Red List and BirdLife International. The target is for all species to be at “Least Concern” risk of extinction.
 
-HABITAT
-<div class="button-container">
-  <a href="https://ohi-science.org/ohi-methods/goals/goal-models-data.html#habitat-subgoal-of-biodiversity" class="custom-button">
-    <i class="fas fa-globe"></i> GLOBAL MODEL
-  </a>
-  <a href="https://oceanhealthindex.org/guidance/habitats/" class="custom-button secondary">
-    <i class="fas fa-location-dot"></i> REGIONAL APPROACHES
-  </a>
-</div>
+2.  **Habitats:** Focused on the health of critical marine ecosystems such as coral reefs, mangroves, seagrasses, kelp forests, salt marshes, tidal flats, sea ice edges, and soft-bottom habitats. These ecosystems are used as proxies for the many species that depend on them.
 
-SPECIES
-<div class="button-container">
-  <a href="https://ohi-science.org/ohi-methods/goals/goal-models-data.html#species-condition-subgoal-of-biodiversity" class="custom-button">
-    <i class="fas fa-globe"></i> GLOBAL MODEL
-  </a>
-  <a href="https://oceanhealthindex.org/guidance/species/" class="custom-button secondary">
-    <i class="fas fa-location-dot"></i> REGIONAL APPROACHES
-  </a>
-</div>
+Data limitations remain a challenge, but we use the best available global information to assess both current conditions and recent trends. By combining species and habitat results, the biodiversity goal aims to provide a snapshot of how well marine life is being sustained, and highlights where conservation efforts are most needed.
+
+**And hopefully, there are even better ways to measure the regional biodiversity of the Gulf of California!**
 
 :::
 
