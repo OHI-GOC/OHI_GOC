@@ -1,10 +1,43 @@
 ---
 title: "Ocean Health Index Gulf of California"
-subtitle: "Subregion Draft #2 for feedback"
+subtitle: "Current GoC OHI Regions"
 toc: false
 editor_options: 
   chunk_output_type: console
 ---
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| output: false
+#| results: hide
+
+library(magrittr)
+library(mapview)
+library(sf)
+library(tidyverse)
+library(here)
+
+# read in data
+ohi_nolines_git <- st_read("https://raw.githubusercontent.com/OHI-GOC/ohi_goc_prep/refs/heads/gh-pages/spatial/marine_ohi/ohirgns_nolines.geojson", quiet=TRUE)
+
+```
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+
+mapview(ohi_nolines_git, zcol = "rgn_id",layer.name = "GoC OHI regions") 
+```
+
+
+::: {.callout-note collapse="true"}
+# Abre esta pestaña para ver discusiones anteriores
+
 
 Hola a todos, ¡esperamos que todos estén bien!
 
@@ -330,3 +363,5 @@ mapview(draft_2_ohi_rgns, zcol = "ecorgn", layer.name = "Ecoregions Draft #2") #
 ![Ecoregion Boundaries for the Gulf of California.](figs/ecoregion_boundaries.png){fig-align="center"}
 
 ## Thank you all for your time! ¡Gracias a todos por su tiempo!
+
+:::
