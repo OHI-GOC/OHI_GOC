@@ -176,8 +176,20 @@ We'll also start to define the **reference point** for this goal — our vision 
 :::
 
 ::: {.callout-note collapse="true"}
-# <i class="fa-regular fa-clipboard"></i> **Meeting #2:** *Upcoming on August 26th!*
+# <i class="fa-regular fa-clipboard"></i> **Meeting #2:** *Tuesday, August 26th!*
 
+## Meeting Agenda
+
+- **Quick introductions** for new members  
+- **Presentation:** Meeting #1 recap and prep for group discussion  
+- **Discussion:** Defining the *ideal state* of this goal  
+- **Discussion:** Indicators to measure progress toward the *ideal state*  
+- **_(If time)_** **Discussion:** Anthropogenic activities within each region that may contribute to contamination in the Gulf  
+- **Wrap up & next steps**  
+
+---
+
+Thank you, and I’m looking forward to our discussion tomorrow!
 :::
 
 <!-- ::: {.callout-note collapse="true"} -->

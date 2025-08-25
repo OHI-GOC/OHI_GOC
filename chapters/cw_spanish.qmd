@@ -170,9 +170,22 @@ También comenzaremos a definir el **punto de referencia** de esta meta — nues
 :::
 
 ::: {.callout-note collapse="true"}
-# <i class="fa-regular fa-clipboard"></i> **Reunión #2:** *Próxima el 26 de agosto*
+# <i class="fa-regular fa-clipboard"></i> **Reunión #2:** *¡Martes, 26 de agosto!*
 
+## Agenda de la Reunión
+
+- **Breves presentaciones** de las y los nuevos integrantes  
+- **Presentación:** Resumen de la Reunión #1 y preparación para la discusión en grupo  
+- **Discusión:** Definiendo el *estado ideal* de esta meta  
+- **Discusión:** Indicadores para medir el progreso hacia el *estado ideal*  
+- **_(Si hay tiempo)_** **Discusión:** Actividades antropogénicas en cada región que pueden contribuir a la contaminación en el Golfo  
+- **Cierre y próximos pasos**  
+
+---
+
+¡Gracias, y espero con entusiasmo nuestra discusión de mañana!  
 :::
+
 
 ---
 
