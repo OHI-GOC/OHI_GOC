@@ -57,11 +57,13 @@ El estado de estos componentes suele ser el inverso de su intensidad. Esto signi
 ---
 
 ##### **Miembros Clave del Equipo**
-- Alejandra Irasema Campos  
-- Geovanni (Geo) Coredero Herrera  
-- Jaqueline Garcia-Hernandez  
-- Jorge Arriaga  
-- Miguel Betancourt  
+- Alejandra Irasema Campos
+- David Alberto Salas de León
+- Geovanni (Geo) Coredero Herrera
+- Jaqueline Garcia-Hernandez
+- Jorge Arriaga
+- José Antonio Romero Gil
+- Miguel Betancourt
 
 ---
 
