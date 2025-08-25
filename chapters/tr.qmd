@@ -154,14 +154,64 @@ We'll also start to define the **reference point** for this goal — our vision 
 :::
 
 ::: {.callout-note collapse="true"}
-# <i class="fa-regular fa-clipboard"></i>  **Meeting #2:** *Upcoming on August 18th!*
+# <i class="fa-regular fa-clipboard"></i> **Meeting #2:** Recap & Next Steps
+
+Below are some key themes and insights from this month’s Tourism & Recreation discussion. Even though participation was limited, the conversation provided valuable context, examples, and new ideas for refining our goals and indicators.  
+
+1. **What makes “healthy” tourism?**  
+We explored whether growth in international visitors is automatically beneficial for local communities. While tourism brings jobs, there are trade-offs in terms of real estate pressures and lifestyle changes. The group emphasized that growth is positive only if:
+   - local communities benefit,  
+   - ecosystems remain healthy, and  
+   - use stays within the region’s carrying capacity (TCC).
+
+2. **Real estate and access**  
+Tourism-related real estate development strongly affects both community well being and coastal access. In the Gulf of California, beach access is often restricted by resorts or private properties, despite Mexican law requiring public access points. Tracking property patterns and access roads may help us create stronger indicators.
+
+3. **Types of tourism**  
+We distinguished between different tourism forms:
+   - **International & domestic:** Resorts, nautical tourism (boating/yachting), and most ecotourism.  
+   - **Local:** More tied to everyday activities (restaurants, malecón visits).  
+Nautical tourism in particular is likely limited to wealthier visitors, given costs and leisure constraints.  
+
+   _See draft tourism types matrix below:_  
+   ![](figs/quantity_tr_meeting2.png)
+
+4. **Socioeconomic impacts**  
+High quality jobs in tourism (ex: guides, operators, business owners) often go to outsiders rather than local residents. While progress *is* being made, with more young locals entering the sector, it remains a key area to monitor to ensure benefits are equitably shared.
+
+5. **Carrying Capacity & Sustainability**  
+Resource use, particularly water and energy, highlights the inequities between resorts and local households. Assessing sustainability will require balancing visitor numbers with fair allocation of essential resources.
+
+6. **Indicator framework possibility:**  
+The group suggested structuring indicators into three subcomponents:  
+   - **Quantity** (number of visitors, tourism types)  
+   - **Quality** (job opportunities, local benefits)  
+   - **Sustainability** (resource use, ecological impacts, cultural impacts)  
+
+We also noted that some certifications (like Blue Flag beaches) may apply primarily to high traffic tourism areas, which could affect how sustainability indicators are framed.
+
+---
+
+### Resources Shared
+- [Global economic impact of scuba dive tourism (2025)](https://www.cell.com/cell-reports-sustainability/fulltext/S2949-7906(25)00131-4)  
+
+- [Nature-based marine tourism in the Gulf of California and Baja California Peninsula: Economic benefits and key species (2020)](https://onlinelibrary.wiley.com/doi/full/10.1111/1477-8947.12193)  
+
+---
+
+### Next Steps
+
+We will be discussing the indicator framework (Quantity, Quality, Sustainability), as well as ideal indicators to reflect the intent of this goal.  Please come prepared to discuss indicators for each type of tourism's quantity, quality, and sustainability.
+
+Thank you, and stay tuned for a meeting agenda for Meeting #3!
 
 :::
 
-<!-- ::: {.callout-note collapse="true"} -->
-<!-- # <i class="fa-regular fa-clipboard"></i>  **Meeting #3:** *Upcoming on ____!* -->
-<!-- Stay tuned for Meeting #3 resources. -->
-<!-- ::: -->
+
+::: {.callout-note collapse="true"}
+# <i class="fa-regular fa-clipboard"></i>  **Meeting #3:** *Upcoming on September 22nd!*
+Stay tuned for Meeting #3 resources.
+:::
 
 
 <!-- ::: {.callout-note collapse="true"} -->

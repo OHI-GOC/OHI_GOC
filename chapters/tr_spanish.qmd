@@ -153,8 +153,62 @@ También comenzaremos a definir el **punto de referencia** para esta meta — nu
 :::
 
 ::: {.callout-note collapse="true"}
-# <i class="fa-regular fa-clipboard"></i>  **Reunión #2:** *¡Próxima el 18 de agosto!*
+# <i class="fa-regular fa-clipboard"></i> **Reunión #2:** Resumen y Próximos Pasos
 
+A continuación se presentan algunos temas clave y hallazgos de la discusión de este mes sobre Turismo y Recreación. Aunque la participación fue limitada, la conversación aportó un valioso contexto, ejemplos e ideas nuevas para afinar nuestras metas e indicadores.  
+
+1. **¿Qué hace que el turismo sea “saludable”?**  
+Exploramos si el aumento de visitantes internacionales es automáticamente beneficioso para las comunidades locales. Si bien el turismo genera empleos, también existen desventajas en cuanto a presiones inmobiliarias y cambios en el estilo de vida. El grupo enfatizó que el crecimiento es positivo solo si:  
+   - las comunidades locales se benefician,  
+   - los ecosistemas se mantienen sanos, y  
+   - el uso se mantiene dentro de la capacidad de carga turística de la región (TCC).  
+
+2. **Desarrollo inmobiliario y acceso**  
+El desarrollo inmobiliario turístico impacta fuertemente tanto el bienestar comunitario como el acceso a la costa. En el Golfo de California, el acceso a las playas suele estar restringido por desarrollos turísticos u hoteles privados, a pesar de que la ley mexicana exige puntos de acceso público. Dar seguimiento a los patrones de propiedad y a los caminos de acceso puede ayudarnos a crear indicadores más sólidos.  
+
+3. **Tipos de turismo**  
+Se distinguieron diferentes formas de turismo:  
+   - **Internacional y nacional:** Hoteles turísticos, turismo náutico (paseos en barco/yates) y la mayoría del ecoturismo.  
+   - **Local:** Más vinculado a actividades cotidianas (restaurantes, visitas al malecón).  
+El turismo náutico en particular probablemente esté limitado a visitantes con mayores recursos, dado el costo y las restricciones de tiempo libre.  
+
+   _Ver borrador de la matriz de tipos de turismo abajo:_  
+   ![](figs/quantity_tr_meeting2.png)  
+
+4. **Impactos socioeconómicos**  
+Los empleos de mayor calidad en el turismo (ej: guías, operadores, dueños de negocios) a menudo son ocupados por foráneos en lugar de residentes locales. Aunque *sí* se están viendo avances, con más jóvenes locales incorporándose al sector, sigue siendo un área clave a monitorear para asegurar que los beneficios se distribuyan de manera equitativa.  
+
+5. **Capacidad de carga y sostenibilidad**  
+El uso de recursos, en particular agua y energía, resalta las inequidades entre los desarrollos turísticos y los hogares locales. Evaluar la sostenibilidad requerirá equilibrar el número de visitantes con una distribución justa de los recursos esenciales.  
+
+6. **Posible marco de indicadores:**  
+El grupo sugirió estructurar los indicadores en tres subcomponentes:  
+   - **Cantidad** (número de visitantes, tipos de turismo)  
+   - **Calidad** (oportunidades de empleo, beneficios locales)  
+   - **Sostenibilidad** (uso de recursos, impactos ecológicos, impactos culturales)  
+
+También se señaló que algunas certificaciones (como las playas con distintivo Blue Flag) pueden aplicarse principalmente a zonas de turismo de alto volumen, lo cual podría influir en la manera en que se enmarcan los indicadores de sostenibilidad.  
+
+---
+
+### Recursos Compartidos
+- [Impacto económico global del turismo de buceo (2025)](https://www.cell.com/cell-reports-sustainability/fulltext/S2949-7906(25)00131-4)  
+
+- [Turismo marino de naturaleza en el Golfo de California y la Península de Baja California: Beneficios económicos y especies clave (2020)](https://onlinelibrary.wiley.com/doi/full/10.1111/1477-8947.12193)  
+
+---
+
+### Próximos Pasos
+
+Estaremos discutiendo el marco de indicadores (Cantidad, Calidad, Sostenibilidad), así como los indicadores ideales para reflejar la intención de esta meta. Por favor prepárense para discutir indicadores de cantidad, calidad y sostenibilidad para cada tipo de turismo.  
+
+¡Gracias, y estén pendientes de la agenda para la Reunión #3!  
+
+:::
+
+::: {.callout-note collapse="true"}
+# <i class="fa-regular fa-clipboard"></i> **Reunión #3:** *¡Próximamente el 22 de septiembre!*
+Estén pendientes de los recursos para la Reunión #3.
 :::
 
 ---
