@@ -97,8 +97,12 @@ Agrega el calendario compartido a tu cuenta de Google Calendar usando el [enlace
 ::: {.callout-note collapse="true"}
 # <i class="fa-regular fa-circle-down"></i>  **Recursos Clave:** Diapositivas, documentos colaborativos
 
-- [Diapositivas de la Reunión #1](https://docs.google.com/presentation/d/1MhTPHz6HSe0NVeA3UcxgCPXBzhQ9l6VAMkSiQkBCeNk/edit?usp=sharing) para repasar las ideas principales.  
-- [Ideas del Responsable de la Meta CW](https://docs.google.com/document/d/1JhF0Wf9g4VH-iDHVK07Qk2FdLBZNtWXTxdxrRecbF-Q/edit?tab=t.kyrkgpt50url), donde puedes agregar tus comentarios, ideas y posibles fuentes de datos al documento colaborativo en curso.
+- [Diapositivas de la reunión #1](https://docs.google.com/presentation/d/1MhTPHz6HSe0NVeA3UcxgCPXBzhQ9l6VAMkSiQkBCeNk/edit?usp=sharing) para repasar las ideas principales.  
+- [Diapositivas de la reunión #2](https://docs.google.com/presentation/d/1gyUK6e09TsSoLcJpYegH_WOPe8a2vkF5aCGa97FnM5U/edit?slide=id.g2a86c82ea32_0_0# slide=id.g2a86c82ea32_0_0), sobre la definición del "estado ideal" del agua limpia en el Golfo.
+
+---
+
+- [Ideas del Goalkeeper de CW](https://docs.google.com/document/d/1JhF0Wf9g4VH-iDHVK07Qk2FdLBZNtWXTxdxrRecbF-Q/edit?tab=t.kyrkgpt50url), donde puede añadir sus opiniones, ideas y posibles fuentes de datos al documento colaborativo en curso.
 
 :::
 
