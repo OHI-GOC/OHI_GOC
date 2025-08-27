@@ -178,26 +178,158 @@ We'll also start to define the **reference point** for this goal — our vision 
 :::
 
 ::: {.callout-note collapse="true"}
-# <i class="fa-regular fa-clipboard"></i> **Meeting #2:** *Tuesday, August 26th!*
+# <i class="fa-regular fa-clipboard"></i> **Meeting #2:** Defining the *Ideal State* of Clean Waters  
 
-## Meeting Agenda
+**Thank you to everyone who joined our second Clean Waters (CW) Goalkeeper meeting!**  
 
-- **Quick introductions** for new members  
-- **Presentation:** Meeting #1 recap and prep for group discussion  
-- **Discussion:** Defining the *ideal state* of this goal  
-- **Discussion:** Indicators to measure progress toward the *ideal state*  
-- **_(If time)_** **Discussion:** Anthropogenic activities within each region that may contribute to contamination in the Gulf  
-- **Wrap up & next steps**  
+This session built upon our introduction in Meeting #1. We began to define what **_clean waters_** mean in an *ideal world* for the Gulf of California, and brainstormed possible **indicators** to measure progress toward this goal.  
 
 ---
 
-Thank you, and I’m looking forward to our discussion tomorrow!
+::: {.callout-tip}
+
+#### {{< fa book >}} **Meeting Recap**
+
+We reviewed **Meeting #1** takeaways:  
+
+- The **OHI GoCA project** is part of a *three-legged stool* framework: Index, Investment, Action.  
+- The **Clean Waters goal** captures the degree to which local waters are unpolluted by human-made causes, with implications for ecosystem health, human recreation, and food safety.  
+- **Contamination categories** include: Eutrophication (nutrients), Chemicals, Pathogens, and Marine Debris.  
+
+We then focused on two key questions:  
+
+1. What is the **ideal state** of Clean Waters in the Gulf of California?  
+2. What **indicators** could capture this state in practice?  
+
+---
+
+##### <i class="fa-solid fa-wave"></i> *The Ideal State of Clean Waters*  
+In a perfect world, clean waters in the Gulf would mean:  
+
+- **No contamination** of marine and coastal waters  
+- **Safe swimming & recreation** (no beach closures)  
+- **Safe seafood** (low heavy metal content)  
+- **No spills or illegal dumping**  
+- **Healthy ecosystems**: fish biomass, species richness, trophic balance, and habitat recovery **_(will be covered in the Biodiversity goal)_**
+
+---
+
+##### <i class="fa-solid fa-chart-line"></i> **Possible Indicators Mentioned**  
+*(not all are formal indicators yet -- these are ideas to refine further)*  
+
+**Biodiversity & Ecological Function** 
+
+- Fish biomass  
+- Species richness  
+- Trophic balance  
+- Habitat recovery  
+- Recovery of endangered species  
+
+**Pollution & Human Health**  
+
+- The number of oil spills/year  
+- Area (km²) of surface affected by spills  
+- Volume of oil spilled (L/km²)  
+- Wastewater treatment efficiency (% treated; goal = 100%)  
+- Frequency of beach closures  
+
+**Waste Management & Plastics**  
+
+- Compliance with “clean fleet” policies  
+- Tour ships not dumping waste  
+- Ban on single-use plastics  
+- Circular economy initiatives (green jobs, regenerative approaches)  
+
+**Chemical & Mining Impacts**  
+
+- Hydrocarbon inputs from small-scale fisheries & industry  
+- Bioindicator monitoring (bird eggs, mussel watch programs)  
+- Reduced nutrient inputs from aquaculture/fish waste  
+- Ban on artisanal mercury mining; best practices for commercial mining  
+
+**Harmful Algal Blooms (HABs)**  
+
+- Monitoring via satellite (N, chlorophyll, sediments) + in situ validation  
+- Predictive hotspot alerts  
+
+**Nature-Based Solutions (NBS) and other frameworks** 
+
+- Wetland water treatment  
+- Mangrove health preserved  
+- Agriculture runoff managed with NBS
+- Source-to-Sea (S2S) framework [(Mathews et al., 2019)](https://www.researchgate.net/publication/354118662_Implementing_the_source-to-sea_approach_-_A_guide_for_practitioners)
+
+---
+
+##### **Relevant resources**
+
+- **Potential for "clean fleet policies"**: [EPA: Collaboration with Mexico to Reduce Emissions from Ships](https://www.epa.gov/international-cooperation/collaboration-mexico-reduce-emissions-ships)
+
+- **Best available mining practices**: [Amendments to Mexican Mining and Environmental Laws: a Comprehensive Overview (2023)](https://www.mayerbrown.com/en/insights/publications/2023/05/amendments-to-mexican-mining-and-environmental-laws-a-comprehensive-overview)
+
+  "*Requirement for maintaining a Restoration, Closure, and Post-closure Program:* The New Bill mandates that mining concession holders submit        to the Ministry of Environment and Natural Resources a Restoration, Closure, and Post-closure Program to ensure compliance with environmental     regulations upon the termination of a mining concession for any reason. This program includes plans for site remediation, waste management,       and environmental monitoring during and after the closure of mining operations."
+  
+- **PROFEPA**: [Federal Attorney's Office for Environmental Protection](https://www.gob.mx/profepa/que-hacemos)
+
+  "What do we do?"
+
+  "Monitor and evaluate compliance with legal provisions applicable to the restoration, preservation, and protection of natural resources through    visits and inspections, addressing public complaints, and promoting social participation in matters of environmental protection and defense."
+
+- **Source-to-Sea (S2S) framework**: [(Mathews et al., 2019)](https://www.researchgate.net/publication/354118662_Implementing_the_source-to-sea_approach_-_A_guide_for_practitioners)  
+  A guide for practitioners to connect freshwater and marine pollution management across the full land-to-sea continuum.
+  
+  "The source-to-sea concept defines key flows found within a source-to-sea system;describes six steps to guide analysis and planning; and presents a framework for elaborating a theory of change; all with an aim of designing initiatives that support healthy ecosystems and sustainable green and blue economies."
+
+- **Páez-Osuna et al. (2017)**: [Environmental status of the Gulf of California: A pollution review](https://www.sciencedirect.com/science/article/pii/S0012825217300429?via%3Dihub)
+
+  Identifies *pollution from economic activities* as one of the four major environmental problems in the region (focus of CW goal).  
+
+  *Key Contamination Findings (from literature review):*  
+
+  - **Nutrients & Eutrophication**  
+    - Reported mainly in estuaries and lagoons of the north and central Gulf, especially those influenced by aquaculture (shrimp farms) and agriculture runoff.  
+    - Indicators: dissolved oxygen (hypoxia), chlorophyll-a, and nutrient concentrations (N, P).  
+
+  - **Harmful Algal Blooms (HABs)**  
+    - More frequent and intense in the southern Gulf and central coastal lagoons, with records of sanitary closures and red tide events.  
+    - Indicators: phytoplankton cell counts, chlorophyll-a, closure events.  
+
+  - **Chemicals**  
+    - *Metals & metalloids:* higher concentrations in northern Gulf estuaries near mining and industrial activities.  
+    - *Pesticides & POPs:* concentrated in central and southern Gulf, especially in fishing grounds and near agriculture zones.  
+    - *Hydrocarbons (oil, diesel):* localized near ports, coastal urban centers, and oil transport routes (mainly central/southern Gulf).  
+
+  - **Pathogens**  
+    - Fecal contamination reported in coastal waters near urban centers (ex: Mazatlán, Guaymas, La Paz).  
+
+  - **Marine Debris**  
+    - Macro- and microplastics recorded in surface waters of the central Gulf and in sediments/organisms throughout the Gulf, with hotspots near urbanized coasts and fishing activity zones.
+
 :::
 
-<!-- ::: {.callout-note collapse="true"} -->
-<!-- # <i class="fa-regular fa-clipboard"></i>  **Meeting #3:** *Upcoming on ____!* -->
-<!-- Stay tuned for Meeting #3 resources. -->
-<!-- ::: -->
+---
+
+::: {.callout-important}
+
+#### <i class="fa fa-step-forward" aria-hidden="true"></i> **Next Steps**
+
+- [ ] Continue adding to the **[CW Goalkeeper Ideas doc](https://docs.google.com/document/d/1JhF0Wf9g4VH-iDHVK07Qk2FdLBZNtWXTxdxrRecbF-Q/edit?tab=t.kyrkgpt50url#heading=h.f8e9m5wrouen)** ~ refine or suggest new **ideal indicators**.  
+- [ ] Think about how we might eventually move from ideal indicators to **realistic data sources**.   
+
+In our **next meeting**, we will:  
+
+- Finalize our vision of the **ideal state**  
+- Begin to match indicators with **real world datasets**  
+
+> Please keep brainstorming and contributing ideas, as your input is key to shaping how we measure clean waters in the Gulf of California!  
+
+:::
+:::
+
+::: {.callout-note collapse="true"}
+# <i class="fa-regular fa-clipboard"></i>  **Meeting #3:** *Upcoming on September 30!*
+Stay tuned for Meeting #3 resources.
+:::
 
 
 <!-- ::: {.callout-note collapse="true"} -->
