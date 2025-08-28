@@ -220,6 +220,14 @@ More topics to think about before our **next meeting**:
 ::: {.callout-note collapse="true"}
 # <i class="fa-regular fa-clipboard"></i> **Meeting #2:** *Upcoming on August 29th!*
 
+**Meeting agenda:**
+
+- **Presentation**: Meeting #1 recap and prep for group discussion
+- **Discussion**: What data sources are available to quantify "Safety" (the objective incidence of crime/threats) and "Security" (the subjective perception/feelings of safety, trust in law enforcement, and institutions)?
+- Wrap up & next steps
+
+Thank you, and I’m looking forward to our discussion!
+
 :::
 
 <!-- ::: {.callout-note collapse="true"} -->

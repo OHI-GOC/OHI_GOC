@@ -219,6 +219,13 @@ Más temas para pensar antes de nuestra **próxima reunión**:
 ::: {.callout-note collapse="true"}
 # <i class="fa-regular fa-clipboard"></i> **Reunión #2:** *¡Próxima el 29 de agosto!*
 
+**Agenda de la reunión:**
+
+- **Presentación**: Resumen de la Reunión #1 y preparación para la discusión en grupo
+- **Discusión**: ¿Qué fuentes de datos están disponibles para cuantificar “Seguridad” (la incidencia objetiva de delitos/amenazas) y “Protección” (la percepción/los sentimientos subjetivos de seguridad, confianza en las fuerzas del orden y en las instituciones)?
+- Cierre y próximos pasos
+
+¡Muchas gracias, y espero con entusiasmo nuestra conversación!
 :::
 
 <br>
