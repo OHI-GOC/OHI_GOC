@@ -124,6 +124,10 @@ Add the shared calendar to your Google Calendar account using the [provided link
 # <i class="fa-regular fa-circle-down"></i>  **Key Resources:** Slides, collaborative documents
 
 - [Meeting #1 Slides](https://docs.google.com/presentation/d/1GCZWVmivMn4AGB6LoaqxCzxCEH_qYy87rUmY3Z-fryw/edit?usp=sharing) to revisit the main ideas.  
+- [Meeting #2 Slides](https://docs.google.com/presentation/d/1pCmABX5FmBJ4PkI4-rnFWlXDxEQXZqYdGtnxIK1CQrU/edit?usp=sharing) on the impacts of safety & security across OHI goals.  
+
+---
+
 - [SS Goalkeeper Ideas](https://docs.google.com/document/d/1djLJpt2VB8fZLe518mnSzd6l7GaU1IQLpPlLuiK6flU/edit?tab=t.kyrkgpt50url), where you can add your thoughts, ideas, and potential data sources to the ongoing collaborative document.
 
 :::
@@ -218,22 +222,124 @@ More topics to think about before our **next meeting**:
 :::
 
 ::: {.callout-note collapse="true"}
-# <i class="fa-regular fa-clipboard"></i> **Meeting #2:** *Upcoming on August 29th!*
+# <i class="fa-regular fa-clipboard"></i> **Meeting #2:** Impacts of Safety & Security Across OHI Goals  
 
-**Meeting agenda:**
+**Thank you for joining our second Safety & Security (SS) Goalkeeper meeting!**  
 
-- **Presentation**: Meeting #1 recap and prep for group discussion
-- **Discussion**: What data sources are available to quantify "Safety" (the objective incidence of crime/threats) and "Security" (the subjective perception/feelings of safety, trust in law enforcement, and institutions)?
-- Wrap up & next steps
+This session built on our introduction in Meeting #1. We focused on defining how organized crime and perceptions of safety/security affect each Ocean Health Index (OHI) goal in the Gulf of California.  
 
-Thank you, and I’m looking forward to our discussion!
+::: {.callout-tip}
+
+### {{< fa book >}} **Meeting Recap**
+
+The group reaffirmed that **organized crime is the main driver of insecurity in the Gulf**, since even “petty crime” is often linked to cartel activity. Perceptions of safety also play a critical role, shaping trust in communities and affecting daily life.  
+
+First, we talked about the **ideal state of Safety & Security in the Gulf of California**, and agreed that in a perfect world, there would be no crime and perceptions of safety/trust in institutions.  This will be our high-level reference point.
+
+The group then reinforced the idea that SS should be treated as a **unique pressure** that influences all OHI goals, with varying degrees of weight.  
+
+We then walked through each OHI goal and discussed how safety and security influence them:
+
+#### **Biodiversity**  
+*A diversity of healthy marine species, habitats, and landscapes*  
+
+- Wildlife trafficking (e.g., totoaba bladder) and drug waste harm local species.  
+- Drug labs in mangroves produce toxic waste; ratio of waste to product is high (more waste per amount of product).  
+- Cartel activity on the Sinaloa coast destroys mangroves; discarded barrels and fuel containers wash up with dead animals (turtles) near Culiacán.  
+- No agency is responsible for cleanup or follow up assessments. Even inland drug production affects watersheds, flowing into the Gulf.  
+- The exact impact is hard to quantify, but definitely linked to organized crime and their practices in coastal areas.  
+
+#### **Sense of Place**  
+*A deep sense of identity and belonging with the Gulf of California*  
+
+- Narco-culture erodes traditions and social fabric; displaces communities.  
+- Local families leave due to fear, while others (domestic and international) arrive to work under organized crime.  
+- Some residents are proud of cartel presence because of perceived benefits.  
+- Example: Kino commissario negotiated with a cartel boss over local leadership.  
+- Corruption and land-title changes strip locals of territory, creating feelings of defeat and hopelessness among youth.  
+- Areas, such as public beaches, get claimed by organized crime (OC) groups and changed to private beaches. This is technically illegally done, but through federal and state corruption, public beaches are not enforced.
+- Driven by organized crime and safety perceptions.  
+
+#### **Livelihoods & Economies**  
+*Quantity and quality of ocean-dependent jobs and revenue*  
+
+- Cartels buy out entire production, set prices, and control supply chains.  
+- Transactions feel normal, or even friendly, until resistance occurs.  Then violence escalates.  
+- Fishers are sometimes paid in drugs as partial currency, fueling addiction cycles.  
+- Example: An app used to record catch data led to retaliation; a fisher’s house was burned. Cartels resist order and negotiation.  
+- Youth are recruited, given motorcycles to patrol, and ensure fishers sell to cartels.  This becomes their jobs/livelihoods.  
+
+#### **Food Provision**  
+*Sustainably harvested seafood from fisheries and mariculture*  
+
+- Small-scale illegal fishing is prosecuted (such as pangas fishing without a license), while industrial-scale cartel fishing is ignored. 
+- White collar, industrial crime is often mistaken for community-level issues.  
+- Linked to corruption across federal, state, and municipal levels. The corruption is so deep that it appears legal.
+- Example: Certified marine stewardship council boats follow rules, but obscure sardine fleets operate illegally with "impunity" because no one wants to question them.  
+- In mariculture, permits are sometimes granted through corrupt arrangements that appear legal but tie back to organized crime.  
+
+#### **Tourism & Recreation**  
+*Quantity, quality, and sustainability of visitor experiences*  
+
+- Violence reduces tourism in some regions, though fewer tourists can reduce biodiversity pressure.  
+- Core issue: corruption that enables land grabs and privatization of beaches (as mentioned in Sense of Place).  
+- Cartel groups have power to close beaches, claiming them for operations.  
+- Activities may look legal “on paper” but are supported by organized crime and complicit politicians.  
+
+#### **Natural Products**  
+*Sustainably harvested marine resources beyond food*  
+
+- High value species (seahorses, sea cucumbers, totoaba, turtles) are trafficked.  
+- Anything with value is controlled by organized crime, often exported to Asia.  
+
+#### **Artisanal Opportunities**  
+*Access to local marine resources and small-scale practices*  
+
+- Traditional riverine and artisanal fishing cultures are at risk of extinction.  
+- Ancestral fishing practices tied to community survival are eroding.  
+- Organized crime presence is normalized; extortion (“pago de piso”) affects even small businesses and fishers.  
+
+#### **Clean Waters**  
+*Water quality and contaminant levels*  
+
+- Drug labs destroy mangroves, reducing natural water filtration.  
+- Cocaine and other drug byproducts are spilled into rivers and seas.  
+- Similar to biodiversity impacts, but framed around water quality and ecosystem function.  
+
+#### **Research & Ocean Literacy**  
+*Educational and research access to ocean knowledge*  
+
+- Insecurity blocks researchers and NGOs from accessing sites.  
+- Journalists and scientists face intimidation, making data collection difficult.  
+- Recently, it has become increasingly dangerous due to shifts in political and cartel power; it is harder to know who to negotiate with.  
+- Example: far fewer researchers in Sinaloa compared to Baja California due to security concerns.  
+
+The group emphasized the difficulty of **quantifying these impacts** due to lack of data, fear of speaking openly, and risks to researchers and journalists. 
+
+At the end of the meeting, we began to talk about data sources, such as Global Initiative's Organized Crime Index.  We will continue to explore and talk about indicators in the next meeting.
 
 :::
 
-<!-- ::: {.callout-note collapse="true"} -->
-<!-- # <i class="fa-regular fa-clipboard"></i>  **Meeting #3:** *Upcoming on ____!* -->
-<!-- Stay tuned for Meeting #3 resources. -->
-<!-- ::: -->
+::: {.callout-important}
+### <i class="fa fa-step-forward" aria-hidden="true"></i> Next Steps  
+
+- [ ] Explore potential **data sources** to capture both:  
+  - **Objective crime/incidents** (organized crime, illegal fishing, wildlife trafficking, drug lab seizures)  
+  - **Subjective perceptions of safety** (community trust, sense of security)  
+- [ ] Consider case studies (e.g., mangrove destruction, fisheries under cartel control) as illustrative examples.  
+
+Please add any resources or ideas you have to the [SS Goalkeeper Ideas](https://docs.google.com/document/d/1djLJpt2VB8fZLe518mnSzd6l7GaU1IQLpPlLuiK6flU/edit?tab=t.kyrkgpt50url) document!  That way, the OHI Core Team can explore them before the next meeting.
+
+Thank you, and see you next month!
+
+:::
+
+:::
+
+::: {.callout-note collapse="true"}
+# <i class="fa-regular fa-clipboard"></i>  **Meeting #3:** *Upcoming on September 26th!*
+Stay tuned for Meeting #3 resources.
+:::
 
 
 <!-- ::: {.callout-note collapse="true"} -->

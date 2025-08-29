@@ -121,12 +121,17 @@ Agrega el calendario compartido a tu cuenta de Google Calendar usando el [enlace
 :::
 
 ::: {.callout-note collapse="true"}
-# <i class="fa-regular fa-circle-down"></i>  **Recursos Clave:** Presentaciones, documentos colaborativos
+# <i class="fa-regular fa-circle-down"></i>  **Recursos Clave:** Presentaciones, documentos colaborativos  
 
-- [Diapositivas de la Reunión #1](https://docs.google.com/presentation/d/1GCZWVmivMn4AGB6LoaqxCzxCEH_qYy87rUmY3Z-fryw/edit?usp=sharing) para repasar las ideas principales.  
-- [Ideas para la Meta SS](https://docs.google.com/document/d/1djLJpt2VB8fZLe518mnSzd6l7GaU1IQLpPlLuiK6flU/edit?tab=t.kyrkgpt50url), donde puedes añadir tus pensamientos, ideas y posibles fuentes de datos en el documento colaborativo en curso.
+- [Presentación Reunión #1](https://docs.google.com/presentation/d/1GCZWVmivMn4AGB6LoaqxCzxCEH_qYy87rUmY3Z-fryw/edit?usp=sharing) para revisar las ideas principales.  
+- [Presentación Reunión #2](https://docs.google.com/presentation/d/1pCmABX5FmBJ4PkI4-rnFWlXDxEQXZqYdGtnxIK1CQrU/edit?usp=sharing) sobre los impactos de seguridad en las metas de OHI.  
+
+---
+
+- [Ideas del grupo de Seguridad (SS)](https://docs.google.com/document/d/1djLJpt2VB8fZLe518mnSzd6l7GaU1IQLpPlLuiK6flU/edit?tab=t.kyrkgpt50url), donde puedes agregar tus comentarios, ideas y posibles fuentes de datos en el documento colaborativo en curso.  
 
 :::
+
 
 <br>
 
@@ -217,15 +222,123 @@ Más temas para pensar antes de nuestra **próxima reunión**:
 :::
 
 ::: {.callout-note collapse="true"}
-# <i class="fa-regular fa-clipboard"></i> **Reunión #2:** *¡Próxima el 29 de agosto!*
+# <i class="fa-regular fa-clipboard"></i> **Reunión #2:** Impactos de Seguridad en las Metas de OHI  
 
-**Agenda de la reunión:**
+**¡Gracias por acompañarnos en nuestra segunda reunión del grupo de Seguridad (SS)!**  
 
-- **Presentación**: Resumen de la Reunión #1 y preparación para la discusión en grupo
-- **Discusión**: ¿Qué fuentes de datos están disponibles para cuantificar “Seguridad” (la incidencia objetiva de delitos/amenazas) y “Protección” (la percepción/los sentimientos subjetivos de seguridad, confianza en las fuerzas del orden y en las instituciones)?
-- Cierre y próximos pasos
+Esta sesión se construyó a partir de la introducción en la Reunión #1. Nos enfocamos en definir cómo el crimen organizado y las percepciones de seguridad afectan cada meta del Índice de Salud del Océano (OHI) en el Golfo de California.  
 
-¡Muchas gracias, y espero con entusiasmo nuestra conversación!
+::: {.callout-tip}
+
+### {{< fa book >}} **Resumen de la Reunión**
+
+El grupo reafirmó que **el crimen organizado es el principal impulsor de la inseguridad en el Golfo**, ya que incluso los “delitos menores” suelen estar vinculados con la actividad de los carteles. Las percepciones de seguridad también juegan un papel crítico, moldeando la confianza en las comunidades y afectando la vida diaria.  
+
+Primero, hablamos sobre el **estado ideal de Seguridad en el Golfo de California**, y acordamos que en un mundo perfecto no existiría el crimen y sí la percepción de seguridad/confianza en las instituciones. Este será nuestro punto de referencia de alto nivel.  
+
+El grupo reforzó la idea de que SS debe tratarse como una **presión única** que influye en todas las metas de OHI, con diferentes grados de peso.  
+
+Después revisamos cada meta de OHI y discutimos cómo la seguridad las afecta:
+
+#### **Biodiversidad**  
+*Una diversidad de especies marinas, hábitats y paisajes saludables*  
+
+- El tráfico de vida silvestre (ej. vejiga de totoaba) y los desechos de drogas dañan especies locales.  
+- Los laboratorios de drogas en manglares producen desechos tóxicos; la proporción de desecho a producto es alta (más desecho por cada cantidad de producto).  
+- La actividad de los carteles en la costa de Sinaloa destruye manglares; barriles y contenedores de combustible aparecen con animales muertos (tortugas) cerca de Culiacán.  
+- Ninguna institución se hace responsable de la limpieza ni de evaluaciones posteriores. Incluso la producción de drogas en tierra afecta las cuencas y fluye hacia el Golfo.  
+- El impacto exacto es difícil de cuantificar, pero está claramente vinculado al crimen organizado y sus prácticas en áreas costeras.  
+
+#### **Sentido de Pertenencia**  
+*Un profundo sentido de identidad y pertenencia con el Golfo de California*  
+
+- La narcocultura erosiona tradiciones y el tejido social; desplaza comunidades.  
+- Familias locales se van por miedo, mientras que otras (nacionales e internacionales) llegan a trabajar bajo el crimen organizado.  
+- Algunos residentes se sienten orgullosos de la presencia de carteles por los beneficios percibidos.  
+- Ejemplo: un comisario en Kino negoció con un jefe de cartel sobre liderazgo local.  
+- La corrupción y los cambios en títulos de tierra despojan a los locales de su territorio, creando sentimientos de derrota y desesperanza entre los jóvenes.  
+- Áreas como playas públicas son tomadas por grupos de crimen organizado y convertidas en privadas. Esto es ilegal en teoría, pero gracias a la corrupción federal y estatal no se hace cumplir.  
+- Impulsado tanto por el crimen organizado como por las percepciones de seguridad.  
+
+#### **Medios de Vida y Economías**  
+*Cantidad y calidad de empleos y ganancias dependientes del océano*  
+
+- Los carteles compran toda la producción, fijan precios y controlan las cadenas de suministro.  
+- Las transacciones parecen normales, o incluso amistosas, hasta que alguien se resiste; ahí es cuando la violencia escala.  
+- A veces los pescadores reciben drogas como parte del pago, lo que alimenta ciclos de adicción.  
+- Ejemplo: una aplicación para registrar capturas provocó represalias; la casa de un pescador fue incendiada. Los carteles rechazan el orden y la negociación.  
+- Los jóvenes son reclutados, reciben motocicletas para patrullar y asegurar que los pescadores vendan a los carteles. Esto se convierte en su “empleo”.  
+
+#### **Provisión de Alimentos**  
+*Mariscos sustentables de la pesca y la maricultura*  
+
+- Se castiga la pesca ilegal a pequeña escala (como pangas sin permiso), mientras que la pesca industrial de los carteles se ignora.  
+- El crimen de cuello blanco e industrial suele confundirse con problemas comunitarios.  
+- Vinculado a corrupción en los tres niveles de gobierno. La corrupción es tan profunda que parece legal.  
+- Ejemplo: barcos certificados por el Marine Stewardship Council cumplen con las reglas, pero flotas sardineras “oscuras” operan ilegalmente con impunidad porque nadie quiere cuestionarlas.  
+- En maricultura, permisos a veces se otorgan mediante arreglos corruptos que parecen legales pero están ligados al crimen organizado.  
+
+#### **Turismo y Recreación**  
+*Cantidad, calidad y sostenibilidad de las experiencias turísticas*  
+
+- La violencia reduce el turismo en algunas regiones, aunque menos turismo también puede reducir la presión sobre la biodiversidad.  
+- Problema central: corrupción que facilita el despojo de tierras y la privatización de playas (como se mencionó en Sentido de Pertenencia).  
+- Grupos criminales tienen poder para cerrar playas y reclamarlas para sus operaciones.  
+- Actividades que parecen legales “en papel” están respaldadas por crimen organizado y políticos cómplices.  
+
+#### **Productos Naturales**  
+*Recursos marinos sustentables más allá de los alimentos*  
+
+- Especies de alto valor (caballitos de mar, pepinos de mar, totoaba, tortugas) son traficadas.  
+- Todo lo que tiene valor está controlado por el crimen organizado, frecuentemente exportado a Asia.  
+
+#### **Oportunidades Artesanales**  
+*Acceso a recursos marinos locales y prácticas tradicionales*  
+
+- Culturas pesqueras ribereñas y artesanales están en riesgo de desaparecer.  
+- Prácticas ancestrales ligadas a la supervivencia comunitaria se están erosionando.  
+- La presencia del crimen organizado se ha normalizado; la extorsión (“pago de piso”) afecta incluso a pequeños negocios y pescadores.  
+
+#### **Aguas Limpias**  
+*Calidad del agua y niveles de contaminantes*  
+
+- Los laboratorios de drogas destruyen manglares, reduciendo la filtración natural del agua.  
+- La cocaína y otros subproductos se derraman en ríos y mares.  
+- Impactos similares a biodiversidad, pero enfocados en calidad del agua y función del ecosistema.  
+
+#### **Investigación y Cultura Oceánica**  
+*Acceso educativo y científico al conocimiento del océano*  
+
+- La inseguridad bloquea a investigadores y ONGs de acceder a sitios.  
+- Periodistas y científicos enfrentan intimidación, lo que dificulta la recolección de datos.  
+- Recientemente se ha vuelto más peligroso debido a cambios en el poder político y de carteles; es más difícil saber con quién negociar.  
+- Ejemplo: hay muchos menos investigadores en Sinaloa comparado con Baja California debido a preocupaciones de seguridad.  
+
+El grupo enfatizó la dificultad de **cuantificar estos impactos** por la falta de datos, el miedo a hablar abiertamente y los riesgos para investigadores y periodistas.  
+
+Al final de la reunión, comenzamos a hablar sobre **fuentes de datos**, como el *Organized Crime Index* de Global Initiative. Continuaremos explorando indicadores en la próxima reunión.  
+
+:::
+
+::: {.callout-important}
+### <i class="fa fa-step-forward" aria-hidden="true"></i> Próximos Pasos  
+
+- [ ] Explorar posibles **fuentes de datos** para capturar tanto:  
+  - **Crimen/incidentes objetivos** (crimen organizado, pesca ilegal, tráfico de vida silvestre, decomisos de narcolaboratorios)  
+  - **Percepciones subjetivas de seguridad** (confianza comunitaria, sentido de seguridad)  
+- [ ] Considerar **estudios de caso** (ej. destrucción de manglares, pesquerías bajo control de carteles) como ejemplos ilustrativos.  
+
+Por favor agrega cualquier recurso o idea al documento [SS Goalkeeper Ideas](https://docs.google.com/document/d/1djLJpt2VB8fZLe518mnSzd6l7GaU1IQLpPlLuiK6flU/edit?tab=t.kyrkgpt50url). ¡Así el equipo central de OHI podrá revisarlos antes de la próxima reunión!  
+
+¡Gracias y nos vemos el próximo mes!  
+
+:::
+
+:::
+
+::: {.callout-note collapse="true"}
+# <i class="fa-regular fa-clipboard"></i>  **Reunión #3:** *¡Próxima el 26 de septiembre!*  
+Mantente al tanto de los recursos para la Reunión #3.  
 :::
 
 <br>
