@@ -14,7 +14,7 @@ editor:
 <i class="fas fa-globe"></i> En Español </a>
 :::
 
-:::* {.callout-tip}
+::: {.callout-tip}
 # **Working Definition** for the AO Goal
 The objective of the AO goal is to evaluate the conditions which allow members of small-scale fishing communities and pueblos originarios to thrive - including legal, regulated access to marine resources, knowledge-based use rules, clear boundaries, clear decision-making spaces, and reliable follow-through to ensure access, sustainability, and equity long-term.
 

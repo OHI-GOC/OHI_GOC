@@ -14,7 +14,13 @@ editor:
 <i class="fas fa-globe"></i> En Español </a>
 :::
 
-------------------------------------------------------------------------
+::: {.callout-tip}
+# **Working Definition** for the NP Goal
+The objective of the NP goal is to quantify the benefits of sustainable legal harvest of commercially-important and culturally-important resources not used for food in the Gulf of California.
+
+*This definition is finalized for now, based on conversations had in Goalkeeper Meetings #1 and #2.  See the Meeting #2 tab below for more details.*
+
+:::
 
 ::: {.callout-note collapse="true"}
 # About the NP Goal
@@ -114,16 +120,29 @@ Add the shared calendar to your Google Calendar account using the [provided link
 :::
 
 ::: {.callout-note collapse="true"}
-## NP **Meeting #2: Summary**  *UPCOMING August 28*
-**In Meeting #2**, we will discuss how we should define and assess 'Natural Products' in the Gulf, and possible NP reference points, so please come prepared for this discussion. A reference point is defined as the <u>ideal state</u> of natural products in the GoC.
+## **NP Meeting #2 Summary** - Resources & Next Steps
+The main focus of **Meeting #2** was to solidify the goal definition before selecting model indicators. In this context, our ‘model’ will be a series of indicators intended to capture the definition of the goal; it will probably not be very mathematically complicated. Erica outlined the goal workflow – a six-step process from step 1 (defining the goal) to step 6 (verifying model outputs). Participants discussed various products and their applications as well as challenges for quantification and categorization. The team worked to define non-subsistence resources and explored waste and residue indicators, with discussions on how to measure benefits and incorporate waste into the goal model. The conversation ended with a group activity focused on defining the NP goal (link to whiteboard activity below). A working definition for the goal was solidified!
 
-**Stay tuned for Meeting #2 resources.**
+**Resources shared during NP Meeting #2**
+
+- [Meeting #2 Presentation Slides](https://docs.google.com/presentation/d/1fa9tFNdU-syurl26eOCfO8w3DcDZgaECCkfbWmpeCys/edit?slide=id.g364d8d736da_0_2619#slide=id.g364d8d736da_0_2619)
+: slides to guide our discussion. We discussed workflow, terminology, and solidified the definition / objective for the 'Natural Products' goal.
+- [Meeting #2 Summary & General Notes](https://docs.google.com/document/d/11LrbOWL7UnQ2SU3u-POucAdKruhMNsFJ6rCkEMtNIqI/edit?tab=t.m9gqoits4ce7#heading=h.4gu51own9p5j)
+: catch up on meetings you missed and review meeting summaries; keep track of resources and data bases shared during our meetings, and write down your thoughts offline.
+- [Powerpoint presentation shared by Liliana](https://docs.google.com/presentation/d/1HpaWFFdYJWdCv8Pjls8jI-MPyPLg99nc/edit?usp=share_link&ouid=101513442493251196406&rtpof=true&sd=true)
+: please review Liliana's presentation on natural products in the region! It is incredibly helpful.
+- [Whiteboard Group Activity](https://drive.google.com/drive/u/1/folders/11vzy2cgSxRSWaPTaHIKawYgynVozh0yl)
+: review the whiteboard / group activity shared during the meeting, wherein participants were asked to write their definition of the goal.
+
+**Homework for NP Meeting #3:** Please come prepared to discuss goal indicators and possible data sources. Keep in mind that our working definition captures the *intent* of the goal, whereas indicators represent the specific types of data we will use to quantify the goal's status.
 :::
 
-<!-- ::: {.callout-note collapse="true"} -->
-<!-- ## **NP Meeting #3: Summary**  *UPCOMING September 23* -->
-<!-- Stay tuned for Meeting #3 resources. -->
-<!-- ::: -->
+::: {.callout-note collapse="true"}
+## **NP Meeting #3 Summary** - *UPCOMING September 25*
+**In Meeting #3**, we will discuss model indicators. **Please come prepared to discuss goal indicators and possible data sources.** Keep in mind that our working definition captures the *intent* of the goal, whereas indicators represent the specific types of data we will use to quantify the goal's status.
+
+*Stay tuned for Meeting #3 resources.*
+:::
 
 
 <!-- ::: {.callout-note collapse="true"} -->

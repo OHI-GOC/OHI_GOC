@@ -109,7 +109,7 @@ Add the shared calendar to your Google Calendar account using the [provided link
 :::
 
 ::: {.callout-note collapse="true"}
-## BD **Meeting #1: Summary**, Resources, & Next Steps
+## **BD Meeting #1: Summary**, Resources, & Next Steps
 **Meeting #1** began with a discussion about AI meeting tools, language translation services in Zoom, and group member introductions. This was followed by a presentation and overview of the Ocean Health Index (OHI) and its application to the Gulf of California. Participants explored OHI methodology for assessing biodiversity goals, including the importance of establishing appropriate reference points and quantifying current status of biodiversity in the region. The group discussed challenges for data collection and analysis, with a focus on habitat degradation trends, and the difficulty of defining a 'healthy state' or baseline.
 
 **Resources shared during Meeting #1**
@@ -134,12 +134,16 @@ The main focus of **Meeting #2** was to solidify the goal definition before sele
 : slides to guide our discussion. We discussed workflow, terminology, and the definition of 'Biodiversity' in the OHI context.
 - [Meeting #2 Summary & General Notes](https://docs.google.com/document/d/1IFH2GoHWF_8XMBelkLNQp0xbIPvyZNyFzFERgjGNWrU/edit?tab=t.2v28eiuo9nh0#heading=h.9ic47zdlpdcx)
 : catch up on meetings you missed and review meeting summaries; keep track of resources and data bases shared during our meetings, and write down your thoughts offline.
+- [Whiteboard Group Activity](https://drive.google.com/drive/u/1/folders/1JyiiyMa41FiYwM-l8rVXM1lPkMiWl6TH)
+: review the whiteboard / group activity shared during the meeting, wherein participants were asked to write their definition of the goal.
 - [Notes on Biodiversity shared by Rick & Lorayne](https://drive.google.com/drive/folders/1_DE5egWTcY_y_-hXRpIOEvKqQk0WdSiy)
 : please review Rick and Lorayne's notes!
 - Link to the CEDO Shiny App shared by Hem and Ricardo** Link is forthcoming.
 : explore this data visualization and download tool!
 
-**Homework for BD Meeting #3:** Think about what indicators (variables) we should include in our model for BD. Come prepared to finalize the goal definition and discuss possible indicators.
+**Homework for BD Meeting #3:** Come prepared to finalize the goal definition and discuss possible indicators.
+
+As much as possible, try not to let data availability constrain your definition – instead, let's try to make the definition philosophical or aspirational; we can redefine it once we've identified data constraints. Please also keep in mind that our working definition should capture the *intent* of the goal, whereas indicators represent the specific types of data we will use to quantify the goal's status. This is a subtle but important distinction. For example, the phrase "to measure ecosystem condition" is more philosophical and captures intent, whereas "the presence / absence of habitat-forming species" is more likely an indicator.
 :::
 
 ::: {.callout-note collapse="true"}
