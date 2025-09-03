@@ -134,12 +134,28 @@ The main focus of **Meeting #2** was to solidify the goal definition before sele
 - [Whiteboard Group Activity](https://drive.google.com/drive/u/1/folders/11vzy2cgSxRSWaPTaHIKawYgynVozh0yl)
 : review the whiteboard / group activity shared during the meeting, wherein participants were asked to write their definition of the goal.
 
-**Homework for NP Meeting #3:** Please come prepared to discuss goal indicators and possible data sources. Keep in mind that our working definition captures the *intent* of the goal, whereas indicators represent the specific types of data we will use to quantify the goal's status.
+**Homework for NP Meeting #3:** Please review the list of natural products and come prepared to discuss goal indicators. Keep in mind that our working definition captures the *intent* of the goal, whereas indicators represent the specific types of data we will use to quantify the goal's status.
+
+:::
+
+::: {.callout-tip}
+# **Working List of Natural Products** - As of Meeting #2 (list is under construction)
+
+- Algaes (note: currently there is little algae aquaculture in the GoC but lots of potential)
+- Animal feed and bioactive food additives (used for human and animal nutrition)
+- Aquarium trade species
+- Biofuels and bioenergy
+- Fertilizers, biofertilizers
+- Fisheries residues: fish, crustaceans, molluscs
+- Pearls
+- Pharmaceuticals and cosmetics
+- Seashell byproducts / residues
+- Traditional medicines / homeopathy (e.g., totoaba bladder, peyote, mangroves)
 :::
 
 ::: {.callout-note collapse="true"}
 ## **NP Meeting #3 Summary** - *UPCOMING September 25*
-**In Meeting #3**, we will discuss model indicators. **Please come prepared to discuss goal indicators and possible data sources.** Keep in mind that our working definition captures the *intent* of the goal, whereas indicators represent the specific types of data we will use to quantify the goal's status.
+**In Meeting #3**, we will discuss model indicators. **Please review the list of natural products and come prepared to discuss goal indicators.** Keep in mind that our working definition captures the *intent* of the goal, whereas indicators represent the specific types of data we will use to quantify the goal's status.
 
 *Stay tuned for Meeting #3 resources.*
 :::

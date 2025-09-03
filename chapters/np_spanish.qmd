@@ -140,12 +140,27 @@ El enfoque principal de la **Reunión #2** fue solidificar la definición del ob
 - [Actividad grupal en pizarra](https://drive.google.com/drive/u/1/folders/11vzy2cgSxRSWaPTaHIKawYgynVozh0yl)  
 : revisa la actividad grupal en pizarra compartida durante la reunión, en la que se pidió a los participantes que escribieran su definición del objetivo.
 
-**Tarea para la Reunión #3 de NP:** Por favor, ven preparado/a para discutir indicadores del objetivo y posibles fuentes de datos. Ten en cuenta que nuestra definición de trabajo captura la *intención* del objetivo, mientras que los indicadores representan los tipos específicos de datos que usaremos para cuantificar el estado del objetivo.
+**Tarea para la Reunión #3 de NP:** Por favor, revisar la lista de productos naturales en el sitio web y ven preparado/a para discutir indicadores del objetivo. Ten en cuenta que nuestra definición de trabajo captura la *intención* del objetivo, mientras que los indicadores representan los tipos específicos de datos que usaremos para cuantificar el estado del objetivo.
+:::
+
+::: {.callout-tip}
+# **Lista de Productos Naturales en Proceso** - A partir de la Reunión #2 (lista en construcción)
+
+- Algas (nota: actualmente hay poca acuicultura de algas en el Golfo de California, pero con mucho potencial)
+- Alimentos para animales y aditivos bioactivos para alimentos (usados para nutrición humana y animal)
+- Especies para el comercio de acuarios
+- Biocombustibles y bioenergía
+- Fertilizantes, biofertilizantes
+- Residuos de la pesca: pescado, crustáceos, moluscos
+- Perlas
+- Productos farmacéuticos y cosméticos
+- Subproductos / residuos de conchas marinas
+- Medicinas tradicionales / homeopatía (por ejemplo, vejiga de totoaba, peyote, manglares)
 :::
 
 ::: {.callout-note collapse="true"}
 ## **Resumen de la Reunión #3 de NP** - *PRÓXIMAMENTE el 25 de septiembre*
-**En la Reunión #3**, discutiremos los indicadores del modelo. **Por favor, ven preparado/a para hablar sobre los indicadores del objetivo y posibles fuentes de datos.** Recuerda que nuestra definición de trabajo captura la *intención* del objetivo, mientras que los indicadores representan los tipos específicos de datos que utilizaremos para cuantificar el estado del objetivo.
+**En la Reunión #3**, discutiremos los indicadores del modelo. **Por favor, revisar la lista de productos naturales en el sitio web y ven preparado/a para discutir indicadores del objetivo.** Recuerda que nuestra definición de trabajo captura la *intención* del objetivo, mientras que los indicadores representan los tipos específicos de datos que utilizaremos para cuantificar el estado del objetivo.
 
 *Pronto compartiremos los recursos de la Reunión #3.*
 :::
