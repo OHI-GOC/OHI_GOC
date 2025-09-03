@@ -15,13 +15,10 @@ editor:
 :::
 
 ::: {.callout-tip}
-# **New Working Definition**
+# **Working Definition** for the FP Goal
+The objective of the FP goal is to quantify the amount of seafood that is sustainably produced by wild-catch fisheries and mariculture operations in the region, with some reference to the proportion that stays in Mexico and supports the nutritional / protein demands of local communities.
 
-This definition was defined by the Goalkeeper Group during Meeting #2.  See the below tab for more details.
-
-
-**_The amount of seafood that is sustainably produced by wild-catch fisheries and mariculture operations in the region, with some reference to the proportion that stays in Mexico and supports the nutritional / protein demands of local communities._**
-
+*This definition was defined by the Goalkeeper Group during Meeting #2 but is not finalized.  See the Meeting #2 tab below for more details.*
 
 :::
 

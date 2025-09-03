@@ -45,7 +45,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-right: 0; /* Remove margin from the last button */
 }
 
-/* custom_fonts.scss: change font for callout-note - Added Erica August 5 and revised August 11 (2025)*/
+/* custom_fonts.scss: change font for callout-note - Added by Erica August 5 and revised August 11 (2025)*/
 
 .callout.callout-note {
   font-family: 'Montserrat', sans-serif;
@@ -57,4 +57,18 @@ h1, h2, h3, h4, h5, h6 {
 .callout.callout-note .callout-title {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400 !important;
+}
+
+/* custom_fonts.scss: change font for callout-TIP - Added by Erica September 2 (2025)*/
+
+.callout.callout-tip {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.6rem;
+  color: #222222;
+  border-radius: 10px;
+}
+
+.callout.callout-tip .callout-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
 }

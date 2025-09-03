@@ -15,7 +15,13 @@ editor:
   </a>
 </div>
 
-------------------------------------------------------------------------
+::: {.callout-tip}
+# **Definición Preliminar** para el BD Goal
+El objetivo del propósito BD es evaluar el estado de los hábitats locales y las comunidades de organismos que mantienen ecosistemas marinos productivos y servicios ecosistémicos.
+
+*Esta definición no está finalizada. Está basada en las conversaciones realizadas en las Reuniones de Goalkeeper #1 y #2. Consulte la pestaña de la Reunión #2 a continuación para más detalles.*
+
+:::
 
 ::: {.callout-note collapse="true"}
 # Sobre la Meta de BD
@@ -122,17 +128,36 @@ Agrega el calendario compartido a tu cuenta de Google Calendar usando el [enlace
 :::
 
 ::: {.callout-note collapse="true"}
-## BD **Reunión #2: Resumen**  *PRÓXIMAMENTE 28 de Agosto*
+## **Resumen de la Reunión BD #2** - Recursos y próximos pasos  
+El enfoque principal de la **Reunión #2** fue solidificar la definición del objetivo antes de seleccionar los indicadores del modelo. En este contexto, nuestro ‘modelo’ será una serie de indicadores destinados a capturar la definición del objetivo; probablemente no será muy matemáticamente complicado. Erica presentó el flujo de trabajo del objetivo – un proceso de seis pasos desde el paso 1 (definir el objetivo) hasta el paso 6 (verificar los resultados del modelo). El equipo discutió diversos aspectos de la BD, incluyendo puntos de referencia ambientales y el abordaje de la degradación del hábitat, mientras revisaba los recursos disponibles. Exploraron los desafíos en la definición de indicadores de biodiversidad y el establecimiento de datos base, con discusiones sobre el uso de proxies y la opinión de expertos cuando los datos históricos son limitados. El equipo participó en una actividad grupal colaborativa para enfocar la definición del objetivo de biodiversidad, con planes de solidificar la definición en la próxima reunión. La reunión concluyó con una presentación de Hem y Ricardo, quienes discutieron su herramienta próxima para consultar bases de datos internacionales.
 
-**En la Reunión #2**, discutiremos cómo podríamos medir el estado de la 'Biodiversidad' en el Golfo y posibles puntos de referencia para BD, así que por favor prepárate para esta conversación. Un punto de referencia se define como el estado ideal de biodiversidad en el GoC.
+**Recursos compartidos durante la Reunión BD #2**
 
-**Próximamente se compartirán los recursos de la Reunión #2.**
+- [Diapositivas de la presentación de la Reunión #2](https://docs.google.com/presentation/d/1LyjunbOq2e4QEM4Z0w4DIxiYj-NZSTL3wBdaTdUoTxo/edit)
+: diapositivas para guiar nuestra discusión. Hablamos sobre el flujo de trabajo, la terminología y la definición de 'Biodiversidad' en el contexto OHI.
+- [Resumen de la Reunión #2 y Notas Generales](https://docs.google.com/document/d/1IFH2GoHWF_8XMBelkLNQp0xbIPvyZNyFzFERgjGNWrU/edit?tab=t.2v28eiuo9nh0#heading=h.9ic47zdlpdcx)
+: pónganse al día con las reuniones que se perdieron y revisen los resúmenes de las reuniones; sigan el rastro de los recursos y bases de datos compartidos durante nuestras reuniones, y anoten sus pensamientos de manera individual.
+- [Notas sobre Biodiversidad compartidas por Rick y Lorayne](https://drive.google.com/drive/folders/1_DE5egWTcY_y_-hXRpIOEvKqQk0WdSiy)
+: ¡por favor revisen las notas de Rick y Lorayne!
+- Enlace a la aplicación CEDO Shiny compartida por Hem y Ricardo** El enlace está por llegar.
+: ¡exploren esta herramienta de visualización de datos y descarga!
+
+**Tarea para la Reunión BD #3:** Piensen en qué indicadores (variables) deberíamos incluir en nuestro modelo para BD. Vengan preparados para finalizar la definición del objetivo BD y discutir los posibles indicadores.
 :::
 
-<!-- ::: {.callout-note collapse="true"} -->
-<!-- ## **Reunión BD #3: Resumen**  *PRÓXIMAMENTE 23 de septiembre* -->
-<!-- Próximamente recursos de la Reunión #3. -->
-<!-- ::: -->
+::: {.callout-note collapse="true"}
+## **Resumen de la Reunión BD #3** - *PRÓXIMAMENTE 25 de septiembre*  
+En la **Reunión #3**, finalizaremos la definición / objetivo del propósito 'Biodiversidad' y avanzaremos a la discusión de los indicadores del modelo. **Vengan preparados para finalizar la definición / objetivo del propósito BD.**
+
+*Estén atentos a los recursos de la Reunión #3.*
+:::
+
+::: {.callout-note collapse="true"}
+## **Resumen de la Reunión BD #3** - *PRÓXIMAMENTE 25 de septiembre*  
+En la **Reunión #3**, finalizaremos la definición / objetivo del propósito 'Biodiversidad' y pasaremos a la discusión de los indicadores del modelo. **Vengan preparados para finalizar la definición / objetivo del propósito BD.**
+
+**Estén atentos a los recursos de la Reunión #3.**
+:::
 
 ------------------------------------------------------------------------
 

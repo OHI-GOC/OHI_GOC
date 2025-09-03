@@ -14,7 +14,13 @@ editor:
 <i class="fas fa-globe"></i> En Español </a>
 :::
 
-------------------------------------------------------------------------
+::: {.callout-tip}
+# **Working Definition** for the BD Goal
+The objective of the BD goal is to assess the condition of local habitats and organismal communities that maintain productive marine ecosystems and ecosystem services.
+
+*This definition is not finalized. It is based on conversations had in Goalkeeper Meetings #1 and #2.  See the Meeting #2 tab below for more details.*
+
+:::
 
 ::: {.callout-note collapse="true"}
 # About the BD Goal
@@ -119,17 +125,29 @@ Add the shared calendar to your Google Calendar account using the [provided link
 :::
 
 ::: {.callout-note collapse="true"}
-## BD **Meeting #2: Summary**  *UPCOMING August 28*
-**In Meeting #2**, we will discuss how we might measure the state of 'Biodiversity' in the Gulf, and possible BD reference points, so please come prepared for this discussion. A reference point is defined as the ideal state of biodiversity in the GoC.
+## **BD Meeting #2 Summary** - Resources & Next Steps
+The main focus of **Meeting #2** was to solidify the goal definition before selecting model indicators. In this context, our ‘model’ will be a series of indicators intended to capture the definition of the goal; it will probably not be very mathematically complicated. Erica outlined the goal workflow – a six-step process from step 1 (defining the goal) to step 6 (verifying model outputs). The team discussed various aspects of BD, including environmental reference points and addressing habitat degradation while reviewing available resources. They explored challenges in defining biodiversity indicators and establishing baseline data, with discussions around using proxies and expert opinion when historical data is limited. The team engaged in a collaborative group activity to narrow in on a definition of the biodiversity goal, with plans to solidify the goal definition next meeting. The meeting concluded with a presentation by Hem and Ricardo, who discussed their forthcoming tool for querying international databases.
 
-**Stay tuned for Meeting #2 resources.**
+**Resources shared during BD Meeting #2**
+
+- [Meeting #2 Presentation Slides](https://docs.google.com/presentation/d/1LyjunbOq2e4QEM4Z0w4DIxiYj-NZSTL3wBdaTdUoTxo/edit)
+: slides to guide our discussion. We discussed workflow, terminology, and the definition of 'Biodiversity' in the OHI context.
+- [Meeting #2 Summary & General Notes](https://docs.google.com/document/d/1IFH2GoHWF_8XMBelkLNQp0xbIPvyZNyFzFERgjGNWrU/edit?tab=t.2v28eiuo9nh0#heading=h.9ic47zdlpdcx)
+: catch up on meetings you missed and review meeting summaries; keep track of resources and data bases shared during our meetings, and write down your thoughts offline.
+- [Notes on Biodiversity shared by Rick & Lorayne](https://drive.google.com/drive/folders/1_DE5egWTcY_y_-hXRpIOEvKqQk0WdSiy)
+: please review Rick and Lorayne's notes!
+- Link to the CEDO Shiny App shared by Hem and Ricardo** Link is forthcoming.
+: explore this data visualization and download tool!
+
+**Homework for BD Meeting #3:** Think about what indicators (variables) we should include in our model for BD. Come prepared to finalize the goal definition and discuss possible indicators.
 :::
 
-<!-- ::: {.callout-note collapse="true"} -->
-<!-- ## **BD Meeting #3: Summary**  *UPCOMING September 23* -->
-<!-- Stay tuned for Meeting #3 resources. -->
-<!-- ::: -->
+::: {.callout-note collapse="true"}
+## **BD Meeting #3 Summary** - *UPCOMING September 25*
+**In Meeting #3**, we will finalize the definition / objective of the 'Biodiversity' goal and move on to a discussion of model indicators. **Come prepared to finalize the BD goal definition / objective.**
 
+*Stay tuned for Meeting #3 resources.*
+:::
 
 <!-- ::: {.callout-note collapse="true"} -->
 <!-- ## **BD Meeting #4: Summary**  *UPCOMING ____* -->

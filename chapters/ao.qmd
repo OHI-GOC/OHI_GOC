@@ -14,18 +14,13 @@ editor:
 <i class="fas fa-globe"></i> En Español </a>
 :::
 
-::: {.callout-tip}
-# **New Working Definition**
+:::* {.callout-tip}
+# **Working Definition** for the AO Goal
+The objective of the AO goal is to evaluate the conditions which allow members of small-scale fishing communities and pueblos originarios to thrive - including legal, regulated access to marine resources, knowledge-based use rules, clear boundaries, clear decision-making spaces, and reliable follow-through to ensure access, sustainability, and equity long-term.
 
-This definition was defined by the Goalkeeper Group during Meeting #2.  See the below tab for more details.
-
-
-**_The conditions which allow members of small-scale fishing communities and pueblos originarios to thrive, including legal and regulated access to marine resources, knowledge-based use rules, clear boundaries, clear decision-making spaces, and reliable follow-through to ensure access, sustainability, and equity long-term._**
-
+*This definition was defined by the Goalkeeper Group during Meeting #2 but is not finalized.  See the Meeting #2 tab below for more details.*
 
 :::
-
-------------------------------------------------------------------------
 
 ::: {.callout-note collapse="true"}
 # **About** the AO Goal
@@ -153,7 +148,7 @@ The main focus of **Meeting #2** was to solidify the goal definition before sele
 - [Meeting #2 Presentation Slides](https://docs.google.com/presentation/d/1qGZib7yG2efbF7vQmwTaKDUzSDSDc6r0Pf37-EHw79g/edit?slide=id.g37b501de360_0_328#slide=id.g37b501de360_0_328)
 : slides to guide our discussion. We discussed workflow, terminology, and the definition of 'Artisanal Opportunities'.
 - [Meeting #2 Summary & General Notes](https://docs.google.com/document/d/1XjBi0qHSjbso1bPnc48mBbsjcm08wJig0kZueTe4PMQ/edit?tab=t.uk3ygqm9i4qc)
-: catch up on meetings you missed and review meeting summaries; keep track of resources and data bases shared during our meetings, and write down your quick thoughts offline.
+: catch up on meetings you missed and review meeting summaries; keep track of resources and data bases shared during our meetings, and write down your thoughts offline.
 
 **Homework for AO Meeting #3:** Think about what indicators (variables) we should include in our model for AO. Come prepared to discuss indicators and possible data sources.
 :::
