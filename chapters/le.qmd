@@ -109,6 +109,11 @@ Add the shared calendar to your Google Calendar account using the [provided link
 # <i class="fa-regular fa-circle-down"></i>  **Key Resources:** Slides, collaborative documents
 
 - [Meeting #1 Slides](https://docs.google.com/presentation/d/1X9Yd-SqRzeTsktJ3qqSJelGoPGWp7dH9kbmvPSaI1V0/edit?slide=id.g2a86c82ea32_0_0#slide=id.g2a86c82ea32_0_0) to revisit the main ideas.  
+- [Meeting #2 Slides](https://docs.google.com/presentation/d/1_toOvYJWUV75AwawJ8wdtyVTUp1qb2NEsDzjikbOlbo/edit?slide=id.g2a86c82ea32_0_0#slide=id.g2a86c82ea32_0_0) on the goal definition, targets & sector scope.
+
+---
+
+
 - [LE Goalkeeper Ideas](https://docs.google.com/document/d/1Ixhixn-pC6BPo4fwVi4sTkPXQbd7R-iKG3MF5XV4l_g/edit?tab=t.0#heading=h.8562cdkt8tdh), where you can add your thoughts, ideas, and potential data sources to the ongoing collaborative document.
 
 :::
@@ -194,15 +199,95 @@ Thank you all, and see you next meeting (see the [LE Goalkeeper Group Informatio
 :::
 :::
 
+
 ::: {.callout-note collapse="true"}
-# <i class="fa-regular fa-clipboard"></i> **Meeting #2:** *Upcoming on September 5th!*
+# <i class="fa-regular fa-clipboard"></i> **Meeting #2:** Goal Definition, Targets & Sector Scope
+
+**Thank you to everyone who joined our second Livelihoods & Economies Goalkeeper meeting!**  
+This session included discussions on what the LE goal means and which sectors it should cover.
+
+::: {.callout-tip}
+
+### {{< fa book >}} **Meeting Recap**
+
+All in all, we focused on three core topics:
+
+1. **LE Goal Definition**  
+   We confirmed the Gulf of California LE goal measures **jobs and revenue from marine-related industries**, split into:
+   - **Livelihoods:** quantity and quality of ocean-related jobs (*ideal state → more, higher-quality jobs*).  
+   - **Economies:** revenue from all coastal regions tied to marine sectors (*ideal state → equitable revenue growth*).
+
+2. **Targets (“Ideal States”)**  
+   The group reaffirmed that the goal should envision thriving, **sustainable livelihoods and economies**, not just higher numbers.
+
+3. **Sustainability & Sector Inclusion**  
+   After debate, we chose **not** to restrict the goal to “only sustainable sectors.”  
+   Instead, we will:
+   - Include **all major marine and Gulf-relevant sectors** (even those not fully reliant on a healthy ocean, such as **shipping/ports** or **renewable energy**).  
+   - Apply a **sustainability factor** to capture ecological footprint and social equity (management quality, local hiring, etc.).  
+   Rationale: omitting ports or energy would under-represent real economic activity and limit the Ocean Health Index’s **Action pillar** from targeting needed improvements. For example, if ports have strong laws but **weak management**, the GoC OHI can identify that gap and spur reforms.
+
+---
+
+#### Sectors to be included
+
+- **Shipping & ports:** retained for **jobs & revenue**, while acknowledging ballast water, invasive species, and pollution as **pressures** to be handled separately.
+- **Renewable/tidal energy:** not large today, but the Secretaría de Medio Ambiente y Recursos Naturale aims to move what is currently [a potential into a reality](https://www.gob.mx/semarnat/documentos/guia-de-programas-de-fomento-a-la-generacion-de-energia-con-recursos-renovables).
+
+- **Salt extraction:** this likely fits better under **Natural Products**; final placement will depend on available datasets.
+- **Research & science:**  the group agreed we should include this sector for **livelihoods** (scientist jobs, local services) and potentially **economies** if we can quantify value added through:
+  - Aquariums and nature-based tourism  
+  - Conservation-linked outreach or “science tourism”  
+  - Regional economic activity linked to research stations
+- **Other pre-established sectors from Meeting #1** (commercial fishing (industrial, artisanal, etc), tourism and recreation, ecotourism, aquaculture/mariculture) remain included.
+
+#### Table of agreed sectors (working list)
+
+The idea is that for each of these sectors, we will be considering its livelihoods (number of jobs, their quality) and economy (revenue from that sector).
+
+| Sector / Industry                | Key Notes |
+|-----------------------------------|-----------|
+| **Commercial Fishing (Artisanal)** | Long-standing livelihood; culturally & economically vital; dependent on local marine resources. |
+| **Commercial Fishing (Subsistence)** | Provides household food security; surplus generates modest income. |
+| **Commercial Fishing (Industrial)** | Major driver for shrimp, tuna & other export species; broad market reach. |
+| **Recreational / Sport Fishing**   | Significant tourism draw; tour operators generate local jobs; sometimes surpasses diving in value. |
+| **Tourism / Recreation**           | Broad visitor employment & revenue (guiding, hospitality, transport); affects local resource access. |
+| **Ecotourism**                     | Focused on wildlife & ecosystem experiences (whale watching, seabird tours, scuba, kayaking). |
+| **Aquaculture / Mariculture**      | Expanding sector; regenerative aquaculture hubs (e.g., [La Paz](https://www.globalseafood.org/advocate/mexico-launches-global-center-for-regenerative-aquaculture-at-2025-un-ocean-conference/)); stable, year-round employment potential. |
+| **Shipping / Ports**               | Substantial employment & trade; requires careful management of ballast water, emissions & habitat pressures. |
+| **Renewable / Tidal Energy**       | Minimal activity now; possible increase in the future. |
+| **Natural Products / Salt Extraction** | Historically important, now largely artisanal; includes collagen from fish scales, sea cucumbers for medicinal uses, salt mining, etc. |
+| **Research & Ocean Education**    | Science & education jobs, local service demand; resilience value via knowledge generation. |
+
+---
+
+#### OHI Core team strategy before the next meeting
+
+The group identified **INEGI’s National Survey of Occupation and Employment (ENOE)** as the most promising starting point for quantifying both **job numbers** and **job quality** across sectors. Sophia will begin by classifying the specific occupation types available in ENOE into the sectors our group has agreed upon. She will also explore which ENOE variables can serve as indicators of **job quality** — for example, benefits, employment stability, or contract type — and start investigating potential approaches to estimate **sector revenue**. 
+
+In the coming weeks, please share **any additional datasets** or resources that might provide insight on employment, revenue, or sustainability metrics so they can be incorporated into our shared analysis!
 
 :::
 
-<!-- ::: {.callout-note collapse="true"} -->
-<!-- # <i class="fa-regular fa-clipboard"></i>  **Meeting #3:** *Upcoming on ____!* -->
-<!-- Stay tuned for Meeting #3 resources. -->
-<!-- ::: -->
+::: {.callout-important}
+### <i class="fa fa-step-forward" aria-hidden="true"></i> Next Steps
+- [ ] Populate the [LE Goalkeeper Ideas Document](#) with **additional indicators, datasets, and thoughts on sustainability multipliers**.
+- [ ] Review and comment on **sector placement** (e.g., salt, research).
+- [ ] Identify any **regional data** on port certifications, management practices, or university 
+
+We’ll reconvene for **Meeting #3 on _October 3_** to refine indicators and explore initial ENOE results.
+
+Thank you all for helping sharpen the vision for Livelihoods & Economies in the Gulf of California!
+
+:::
+:::
+
+
+
+::: {.callout-note collapse="true"}
+# <i class="fa-regular fa-clipboard"></i>  **Meeting #3:** *Upcoming on October 3rd!*
+Stay tuned for Meeting #3 resources.
+:::
 
 
 <!-- ::: {.callout-note collapse="true"} -->

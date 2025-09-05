@@ -103,6 +103,10 @@ Agrega el calendario compartido a tu cuenta de Google Calendar usando el [enlace
 # <i class="fa-regular fa-circle-down"></i>  **Recursos Clave:** Diapositivas, documentos colaborativos
 
 - [Diapositivas de la Reunión #1](https://docs.google.com/presentation/d/1X9Yd-SqRzeTsktJ3qqSJelGoPGWp7dH9kbmvPSaI1V0/edit?slide=id.g2a86c82ea32_0_0#slide=id.g2a86c82ea32_0_0) para repasar las ideas principales.  
+- [Diapositivas de la Reunión #2](https://docs.google.com/presentation/d/1_toOvYJWUV75AwawJ8wdtyVTUp1qb2NEsDzjikbOlbo/edit?slide=id.g2a86c82ea32_0_0#slide=id.g2a86c82ea32_0_0) sobre la definición del objetivo, las metas y el alcance por sectores.
+
+---
+
 - [Ideas para la Meta LE](https://docs.google.com/document/d/1Ixhixn-pC6BPo4fwVi4sTkPXQbd7R-iKG3MF5XV4l_g/edit?tab=t.0#heading=h.8562cdkt8tdh), donde puedes agregar tus comentarios, ideas y posibles fuentes de datos al documento colaborativo en curso.
 
 :::
@@ -187,9 +191,94 @@ Más temas para pensar antes de nuestra **próxima reunión**:
 :::
 
 ::: {.callout-note collapse="true"}
-# <i class="fa-regular fa-clipboard"></i> **Reunión #2:** *Próxima el 5 de septiembre*
+# <i class="fa-regular fa-clipboard"></i> **Reunión #2:** Definición del Objetivo, Metas y Alcance por Sectores
+
+**¡Gracias a todas y todos quienes participaron en nuestra segunda reunión del equipo de Medios de Vida y Economías!**  
+En esta sesión conversamos sobre qué significa el objetivo de ME y qué sectores debería abarcar.
+
+::: {.callout-tip}
+
+### {{< fa book >}} **Resumen de la Reunión**
+
+En general, nos enfocamos en tres temas centrales:
+
+1. **Definición del Objetivo de ME**  
+   Confirmamos que el objetivo de ME para el Golfo de California mide **empleos e ingresos de las industrias relacionadas con el mar**, divididos en:
+   - **Medios de vida:** cantidad y calidad de empleos relacionados con el océano (*estado ideal → más y mejores empleos*).  
+   - **Economías:** ingresos de todas las regiones costeras vinculadas a los sectores marinos (*estado ideal → crecimiento equitativo de ingresos*).
+
+2. **Metas (“Estados Ideales”)**  
+   El grupo reafirmó que el objetivo debe visualizar **medios de vida y economías prósperas y sostenibles**, no solo mayores cifras.
+
+3. **Sostenibilidad e Inclusión de Sectores**  
+   Tras debatir, se decidió **no** restringir el objetivo a “solo sectores sostenibles”.  
+   En su lugar:
+   - Se incluirán **todos los sectores marinos y relevantes para el Golfo** (incluso aquellos que no dependen por completo de un océano saludable, como **transporte marítimo/puertos** o **energía renovable**).  
+   - Se aplicará un **factor de sostenibilidad** para reflejar la huella ecológica y la equidad social (calidad de gestión, contratación local, etc.).  
+   Justificación: omitir puertos o energía subrepresentaría la actividad económica real y limitaría el **Pilar de Acción** del Índice de Salud del Océano, reduciendo su capacidad de orientar mejoras. Por ejemplo, si los puertos tienen buenas leyes pero **gestión deficiente**, el OHI GoC puede identificar esa brecha e impulsar reformas.
+
+---
+
+#### Sectores a incluir
+
+- **Transporte marítimo y puertos:** se mantienen para **empleos e ingresos**, reconociendo que el agua de lastre, especies invasoras y contaminación son **presiones** a tratar por separado.
+- **Energía renovable/mareomotriz:** hoy es incipiente, pero la Secretaría de Medio Ambiente y Recursos Naturales busca convertir [un potencial en una realidad](https://www.gob.mx/semarnat/documentos/guia-de-programas-de-fomento-a-la-generacion-de-energia-con-recursos-renovables).
+
+- **Extracción de sal:** probablemente encaje mejor en **Productos Naturales**; su ubicación final dependerá de los datos disponibles.
+- **Investigación y ciencia:** el grupo acordó incluir este sector para **medios de vida** (empleos de científicas/os, servicios locales) y potencialmente **economías** si se logra cuantificar su valor agregado mediante:
+  - Acuarios y turismo basado en la naturaleza  
+  - Divulgación vinculada a la conservación o “turismo científico”  
+  - Actividad económica regional ligada a estaciones de investigación
+- **Otros sectores previamente establecidos en la Reunión #1** (pesca comercial –industrial, artesanal, etc.–, turismo y recreación, ecoturismo, acuacultura/maricultura) permanecen incluidos.
+
+#### Tabla de sectores acordados (lista de trabajo)
+
+La idea es que para cada uno de estos sectores consideraremos sus medios de vida (número de empleos, su calidad) y economía (ingresos del sector).
+
+| Sector / Industria                 | Notas clave |
+|-------------------------------------|-------------|
+| **Pesca Comercial (Artesanal)**     | Medio de vida histórico; cultural y económicamente vital; dependiente de recursos marinos locales. |
+| **Pesca Comercial (Subsistencia)**  | Aporta seguridad alimentaria al hogar; el excedente genera ingresos modestos. |
+| **Pesca Comercial (Industrial)**    | Motor principal para camarón, atún y otras especies de exportación; gran alcance de mercado. |
+| **Pesca Recreativa / Deportiva**    | Atrae turismo; los operadores generan empleos locales; a veces supera al buceo en valor. |
+| **Turismo / Recreación**            | Amplio empleo e ingresos por visitantes (guiado, hospitalidad, transporte); influye en acceso a recursos locales. |
+| **Ecoturismo**                      | Enfocado en experiencias de vida silvestre y ecosistemas (avistamiento de ballenas, tours de aves marinas, buceo, kayak). |
+| **Acuacultura / Maricultura**       | Sector en expansión; polos de acuacultura regenerativa (p.ej., [La Paz](https://www.globalseafood.org/advocate/mexico-launches-global-center-for-regenerative-aquaculture-at-2025-un-ocean-conference/)); potencial de empleo estable y todo el año. |
+| **Transporte Marítimo / Puertos**   | Amplio empleo y comercio; requiere gestión cuidadosa del agua de lastre, emisiones y presiones al hábitat. |
+| **Energía Renovable / Mareomotriz** | Actividad mínima hoy; posible incremento a futuro. |
+| **Productos Naturales / Extracción de Sal** | Históricamente importante, hoy mayormente artesanal; incluye colágeno de escamas, pepino de mar para usos medicinales, sal, etc. |
+| **Investigación y Educación Marina**| Empleos en ciencia y educación, demanda de servicios locales; valor de resiliencia vía generación de conocimiento. |
+
+---
+
+#### Estrategia del equipo central del OHI antes de la próxima reunión
+
+El grupo identificó la **Encuesta Nacional de Ocupación y Empleo (ENOE) de INEGI** como el punto de partida más prometedor para cuantificar tanto el **número de empleos** como su **calidad** en los sectores. Sophia comenzará clasificando los tipos específicos de ocupación disponibles en la ENOE dentro de los sectores acordados por el grupo. También explorará qué variables de ENOE pueden servir como indicadores de **calidad del empleo** —por ejemplo, prestaciones, estabilidad laboral o tipo de contrato— y empezará a investigar posibles métodos para estimar los **ingresos por sector**.  
+
+En las próximas semanas, por favor compartan **cualquier conjunto de datos adicional** o recurso que pueda aportar información sobre empleo, ingresos o métricas de sostenibilidad, para incorporarlo a nuestro análisis compartido.
 
 :::
+
+::: {.callout-important}
+### <i class="fa fa-step-forward" aria-hidden="true"></i> Próximos Pasos
+- [ ] Completar el [Documento de Ideas del Objetivo ME](#) con **indicadores adicionales, conjuntos de datos y reflexiones sobre multiplicadores de sostenibilidad**.
+- [ ] Revisar y comentar sobre la **ubicación de sectores** (por ejemplo, sal, investigación).
+- [ ] Identificar **datos regionales** sobre certificaciones portuarias, prácticas de gestión o universidades.  
+
+Nos volveremos a reunir para la **Reunión #3 el _3 de octubre_** para afinar indicadores y explorar los primeros resultados de ENOE.
+
+¡Gracias por ayudar a afinar la visión de Medios de Vida y Economías en el Golfo de California!
+
+:::
+:::
+
+
+
+::: {.callout-note collapse="true"}
+# <i class="fa-regular fa-clipboard"></i> **Reunión #3:** *¡Próximamente el 3 de octubre!*
+Manténganse atentas y atentos a los recursos de la Reunión #3.
+:::
+
 
 ---
 
