@@ -11,8 +11,15 @@ format: html
   </a>
 </div>
 
+::: {.callout-tip} 
+# OHI GoCA Goal Definition
+
+The objective of the Sense of Belonging goal is to determine **how well we are caring and promoting** the heritage, shared memories, and identity that connect Gulf of California communities, including pueblos originarios, to their marine and coastal spaces: indicating how strongly people are rooted and included in the Gulf’s past, present, and future.
+
+:::
+
 ::: {.callout-tip collapse="true"}
-# <i class="fa-regular fa-star"></i>  About the SB Goal
+# <i class="fa-regular fa-star"></i>  Background Information on the SB Goal
 
 **This goal measures human connections to the marine environment that provide a deep sense of identity and belonging.**
 
@@ -130,6 +137,10 @@ Add the shared calendar to your Google Calendar account using the [provided link
 # <i class="fa-regular fa-circle-down"></i>  **Key Resources:** Slides, collaborative documents
 
 - [Meeting #1 Slides](https://docs.google.com/presentation/d/169YPUcF8fLgdq41xPMiUorCxNoTo3be0NIefNLF_Egw/edit?slide=id.g3702978bd0b_0_539#slide=id.g3702978bd0b_0_539) to revisit the main ideas.  
+- [Meeting #2 Slides](https://docs.google.com/presentation/d/1oZ5G9HDNyQ8u4WrENG-p9J6Kld2l7Wn9qZBkc1VGxTU/edit?slide=id.g2a86c82ea32_0_0#slide=id.g2a86c82ea32_0_0) for the SB goal definition we came up with as a group, as well as the slides for the discussion on how to measure SB.  
+
+---
+
 - [SB Goalkeeper Ideas](https://docs.google.com/document/d/1LWyrU_Ty38a4IMTRpzMMrrSGTjv_pPqvX2ICKJ8Gupo/edit?tab=t.0#heading=h.8562cdkt8tdh), where you can add your thoughts, ideas, and potential data sources to the ongoing collaborative document.
 
 :::
@@ -140,7 +151,7 @@ Add the shared calendar to your Google Calendar account using the [provided link
 
 
 ::: {.callout-note collapse="true"}
-# <i class="fa-regular fa-clipboard"></i> **Meeting #1:** Recap & Next Steps
+# <i class="fa-regular fa-clipboard"></i> **Meeting #1:** Introduction to OHI and Sense of Belonging
 
 **Thank you for joining our first Sense of Belonging (SB) Goalkeeper meeting!**  
 It was a great start to our work together in defining what sense of belonging and place means for the **Gulf of California**, and how it should be integrated into this assessment.  
@@ -194,14 +205,126 @@ Thank you all and see you next meeting (see the [SB Goalkeeper Group Information
 :::
 
 ::: {.callout-note collapse="true"}
-# <i class="fa-regular fa-clipboard"></i> **Meeting #2:** *Upcoming on September 9th!*
+# <i class="fa-regular fa-clipboard"></i> **Meeting #2:** SB Goal Definition & Possible Subgoals 
+
+**Thank you for joining our second Sense of Belonging (SB) Goalkeeper meeting!**  
+This was such a fruitful discussion on the definition of Sense of Belonging, the possible ways to measure the goal, and based on that, the possible subgoals to be associated with this goal.  
+
+We started this meeting by solidifying the general definition for the Sense of Belonging goal.  It is as follows:
+
+::: custom-box
+
+The objective of the Sense of Belonging goal is to determine **how well we are caring and promoting** the heritage, shared memories, and identity that connect Gulf of California communities, including pueblos originarios, to their marine and coastal spaces: indicating how strongly people are rooted and included in the Gulf’s past, present, and future.
 
 :::
 
-<!-- ::: {.callout-note collapse="true"} -->
-<!-- # <i class="fa-regular fa-clipboard"></i>  **Meeting #3:** *Upcoming on ____!* -->
-<!-- Stay tuned for Meeting #3 resources. -->
-<!-- ::: -->
+
+### What is Important to Measure in Sense of Belonging
+
+Next, the group discussed indicators that could reflect how strongly Gulf of California communities feel rooted in and connected to their coasts. Four main themes emerged:
+
+- **Coastal Access (CA)**  
+  Public beach access and the availability of paths, roads, and parking. Repeat exposure to the ocean builds pride and stewardship.
+
+- **Coastal Protection (CP)**
+  How well culturally important Gulf-specific sites and legally protected areas are managed and preserved.
+
+- **Coastal Culture (CC)**  
+  Presence and condition of cultural organizations, events, NGO funding, educational programs related to the Gulf, and activism movements.  Additionally, the presence and condition of public spaces (malecónes, overlooks), and iconic landmarks (e.g., Cabo arch) that sustain community identity.
+
+- **Iconic Species (IS)**  
+  The status of culturally significant or symbolic species (e.g., vaquita, clams, whales, sea lions) that contribute to identity, tradition, and tourism.
+
+
+### Group Discussion Highlights
+
+During the discussion, participants emphasized how these indicators could be adapted to the Gulf’s unique contexts:
+
+- **Ana Figueroa** highlighted the importance of recognizing **pueblos originarios** in the definition of Sense of Belonging, and noted that Mexico has several **legal instruments** that already protect species and habitats, even outside of formal protected areas. For example, the **NOM-059-SEMARNAT-2010** identifies species at risk and sets conservation criteria, while the **Ley General de Vida Silvestre** establishes the national framework for sustainable use and protection of wildlife and their habitats. Other **normas** provide safeguards for particular species, such as marine turtles. Ana suggested layering these diverse conservation instruments to capture a fuller picture of coastal and cultural protection in the Gulf. She also pointed to the **acuerdos de destino**, concessions that grant authority over sections of the Federal Maritime Terrestrial Zone (*Zona Federal Marítimo Terrestre*) to government agencies (e.g., CONANP) for conservation purposes. While these instruments are unevenly applied and sometimes controversial, they still represent another way belonging and stewardship are exercised through law.  
+
+  Ana cautioned that community movements often persist without formal funding, and that mapping the growth of NGOs and local groups over decades might be a stronger indicator than financial measures alone.
+
+- **Marlu Robledo** emphasized the role of **territory defenders, youth collectives, and educational programs** in sustaining belonging. She and Ana both stressed that over-relying on financial metrics risks ignoring the social and cultural resources that communities contribute. Marlu offered to share research on **community philanthropy**, which shows that local contributions often outweigh foundation support.
+
+- **Víctor Ricárdez** underscored the role of **territorial rights and ancestral lands**, pointing to examples like the Seri and Yaqui territories, as well as community-led restoration and conservation projects. He stressed that sense of belonging is deeply tied to these cultural-geographic identities, which should be visible in how indicators are defined.
+
+- **Amy Hudson Weaver** suggested broadening **Coastal Protection** to include **fishing refuges and concessions** created by cooperatives, which foster stewardship and place-based identity. She also proposed tracking **community defense movements** (e.g., resisting extractive industries) as a reflection of belonging, and raised demographic dynamics (such as immigration and emigration) as factors influencing identity and community connection.
+
+- **Rick Brusca** had an integral part in creating the four possible indicators presented earlier (CA, CP, etc).  He also proposed an additional indicator: the **proportion of a community directly dependent on the coast for their livelihoods** (e.g., fishing, tourism). He argued this economic reliance often signals a strong cultural connection to the sea.
+
+Together, these insights enriched the four initial themes by adding nuance around **legal frameworks, territorial rights, community movements, and social change** as essential components of belonging in the Gulf of California.
+
+
+### Using these ideas to define subgoals
+
+From the discussion, all four example themes (**Coastal Access, Coastal Protection, Coastal Culture, and Iconic Species**) are important to integrate into the Sense of Belonging goal. In the next meeting, I will be presenting a possible way to integrate all of these ideas into specific subgoals, which we will discuss and solidify as a group.  
+
+For context, these subgoals will each have their own indicators and score, which will then be averaged (simple or weighted) into one score for Sense of Belonging for each OHI GoCA region. 
+
+Though this may change before the next meeting, the OHI team felt the themes might fit into three subgoals. Here are our preliminary thoughts for each:
+
+##### **Lasting Special Places**
+
+The condition or protection of locations that hold particular value for aesthetic, spiritual, cultural, recreational, or existence reasons. This subgoal combines elements of *Coastal Protection* and *Coastal Culture*, since special places are both culturally significant and ecologically valuable.
+
+First, the "special places" need to be identified. Based on this meeting, here is a preliminary list:
+
+* Iconic landmarks and public spaces 
+* Concessions  
+  * Government-led concessions (e.g., acuerdos de destino)  
+  * Community-led concessions (fishing refuges, cooperative fishing concessions/TURFs)  
+  * Indigenous territorial rights (as raised by Víctor: Seri, Yaqui, Cucapá)  
+* Special habitats protected by normas or leys  
+* Areas where restoration projects or large movements are taking place — the idea being that places with strong community mobilization likely reflect a high sense of belonging.  
+* The spatial coverage of NGO involvement and capacity in marine and coastal areas.  
+
+The OHI Core Team thinks it would be best to have a meeting devoted to identifying both cultural and ecological special places in the Gulf, so that areas that are important but not yet protected or well-managed can be highlighted by this goal. A follow-up meeting may then be needed to discuss each special place’s condition or level of protection.  
+
+##### **Iconic Species**
+
+The condition of iconic species that are relevant to local cultural identity.  
+
+Typically, this subgoal starts by first creating a list of the iconic species and identifying which regions they belong to. Stock or local assessments (such as the [N-gen long-term study](https://nextgensd.com/gocecologicalhealth/) of species and their trends) can then be used to evaluate their condition.  
+
+For each region, the *average status* of all iconic species can be calculated. The reference point could then be defined as maintaining or improving the condition of these species in each region over time.  
+
+We will discuss this more in Meeting #3. In the meantime, if you have any ideas, please send an email to me or place them in the [SB Goalkeeper Idea document](https://docs.google.com/document/d/1LWyrU_Ty38a4IMTRpzMMrrSGTjv_pPqvX2ICKJ8Gupo/edit?tab=t.kyrkgpt50url).  
+
+##### **Community Involvement**
+
+The number and vitality of educational programs, cultural organizations, cultural events, and activism campaigns all demonstrate collective action and stewardship capacity in each region. Together, these can serve as indicators of community involvement.  
+
+This subgoal could incorporate *Coastal Access* as a multiplier: even with strong activism and programs, limited access to the coast weakens people’s ability to connect with marine and coastal areas.  
+
+---
+
+*Although we are not yet focusing on pressures and resiliences, the OHI Core Team noted that immigration and emigration dynamics, as raised by Amy Hudson Weaver, could act as an important pressure on the Sense of Belonging goal.*
+
+::: {.callout-important}
+### <i class="fa fa-step-forward" aria-hidden="true"></i> Next steps 
+
+- [ ] Review the [SB Meeting #2 slides](https://docs.google.com/presentation/d/1oZ5G9HDNyQ8u4WrENG-p9J6Kld2l7Wn9qZBkc1VGxTU/edit?slide=id.g2a86c82ea32_0_0#slide=id.g2a86c82ea32_0_0), also available in the "Key Resources" tab.  
+- [ ] Add your thoughts, ideas, and potential data sources to the ongoing collaborative [SB Goalkeeper Ideas document](https://docs.google.com/document/d/1LWyrU_Ty38a4IMTRpzMMrrSGTjv_pPqvX2ICKJ8Gupo/edit?tab=t.0#heading=h.8562cdkt8tdh).
+
+**More topics to think about before our next meeting:**
+
+- What should the subgoals be?  Are they of equal importance?
+- If we include Lasting Special Places (LSP), how do we measure the protection levels of special areas that are not legally protected areas?
+- What are the special areas for LSP?
+- What are the iconic species in the Gulf of California?
+- What are indicators for the condition of community involvement in the Gulf?
+- What are potential reference points for the subgoals within the Sense of Belonging goal?
+
+**Thank you all and see you next meeting (see the [SB Goalkeeper Group Information: who, what, when, where, why!](#admin-info) tab at the top of the page for more information)!**
+
+:::
+
+:::
+
+::: {.callout-note collapse="true"}
+# <i class="fa-regular fa-clipboard"></i>  **Meeting #3:** *Upcoming on October 7th!*
+Stay tuned for Meeting #3 resources.
+:::
 
 
 <!-- ::: {.callout-note collapse="true"} -->

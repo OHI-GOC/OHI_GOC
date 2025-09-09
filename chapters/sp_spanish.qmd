@@ -11,8 +11,15 @@ format: html
   </a>
 </div>
 
+::: {.callout-tip} 
+# OHI GoCA Definición de objetivos
+
+El objetivo de la meta de Sentido de Pertenencia es determinar **qué tan bien estamos cuidando y promoviendo** el patrimonio, los recuerdos compartidos y la identidad que conectan a las comunidades del Golfo de California, incluyendo a los pueblos originarios, con sus espacios marinos y costeros: indicando qué tan fuertemente las personas están arraigadas e incluidas en el pasado, presente y futuro del Golfo.
+
+:::
+
 ::: {.callout-tip collapse="true"}
-# <i class="fa-regular fa-star"></i>  Sobre de la Meta SB
+# <i class="fa-regular fa-star"></i>  Información general sobre el objetivo del SB
 
 **Esta meta mide las conexiones humanas con el ambiente marino que brindan un profundo sentido de identidad y pertenencia.**
 
@@ -128,6 +135,10 @@ Agrega el calendario compartido a tu cuenta de Google Calendar usando el [enlace
 # <i class="fa-regular fa-circle-down"></i>  **Recursos Clave:** Diapositivas, documentos colaborativos
 
 - [Diapositivas de la Reunión #1](https://docs.google.com/presentation/d/169YPUcF8fLgdq41xPMiUorCxNoTo3be0NIefNLF_Egw/edit?slide=id.g3702978bd0b_0_539#slide=id.g3702978bd0b_0_539) para repasar las ideas principales.  
+- [Diapositivas de la Reunión #2](https://docs.google.com/presentation/d/1oZ5G9HDNyQ8u4WrENG-p9J6Kld2l7Wn9qZBkc1VGxTU/edit?slide=id.g2a86c82ea32_0_0#slide=id.g2a86c82ea32_0_0) sobre la definición de la meta de SB que construimos en conjunto, así como las diapositivas de la discusión sobre cómo medir SB.  
+
+---
+
 - [Ideas para la Meta SB](https://docs.google.com/document/d/1LWyrU_Ty38a4IMTRpzMMrrSGTjv_pPqvX2ICKJ8Gupo/edit?tab=t.0#heading=h.8562cdkt8tdh), donde puedes agregar tus comentarios, ideas y posibles fuentes de datos al documento colaborativo en curso.
 
 :::
@@ -192,9 +203,125 @@ Más temas para pensar antes de nuestra **próxima reunión**:
 :::
 
 ::: {.callout-note collapse="true"}
-# <i class="fa-regular fa-clipboard"></i> **Reunión #2:** *Próxima el 9 de septiembre*
+# <i class="fa-regular fa-clipboard"></i> **Reunión #2:** Definición de la meta SB y posibles sub-metas 
+
+**¡Gracias por acompañarnos en nuestra segunda reunión del grupo guardián de Sentido de Pertenencia (SB)!**  
+Esta fue una discusión muy productiva sobre la definición del Sentido de Pertenencia, las posibles formas de medir la meta y, con base en eso, las posibles sub-metas que podrían asociarse con esta meta.  
+
+Comenzamos la reunión solidificando la definición general de la meta de Sentido de Pertenencia. Es la siguiente:
+
+::: custom-box
+
+El objetivo de la meta de Sentido de Pertenencia es determinar **qué tan bien estamos cuidando y promoviendo** el patrimonio, los recuerdos compartidos y la identidad que conectan a las comunidades del Golfo de California, incluyendo a los pueblos originarios, con sus espacios marinos y costeros: indicando qué tan fuertemente las personas están arraigadas e incluidas en el pasado, presente y futuro del Golfo.
 
 :::
+
+
+### Qué es importante medir en Sentido de Pertenencia
+
+Después, el grupo discutió indicadores que podrían reflejar qué tan fuertemente las comunidades del Golfo de California se sienten arraigadas y conectadas con sus costas. Surgieron cuatro temas principales:
+
+- **Acceso Costero (AC)**  
+  El acceso público a las playas y la disponibilidad de caminos, carreteras y estacionamiento. La exposición repetida al mar genera orgullo y sentido de cuidado.
+
+- **Protección Costera (PC)**  
+  Qué tan bien se manejan y preservan los sitios culturalmente importantes del Golfo y las áreas legalmente protegidas.
+
+- **Cultura Costera (CC)**  
+  Presencia y condición de organizaciones culturales, eventos, financiamiento a ONGs, programas educativos relacionados con el Golfo y movimientos de activismo. Además, la presencia y condición de espacios públicos (malecónes, miradores) y sitios icónicos (ej., el Arco de Cabo) que sostienen la identidad comunitaria.
+
+- **Especies Icónicas (EI)**  
+  El estado de especies culturalmente significativas o simbólicas (ej., vaquita, almejas, ballenas, lobos marinos) que contribuyen a la identidad, la tradición y el turismo.
+
+
+### Destacados de la discusión del grupo
+
+Durante la discusión, los participantes enfatizaron cómo estos indicadores podrían adaptarse a los contextos únicos del Golfo:
+
+- **Ana Figueroa** destacó la importancia de reconocer a los **pueblos originarios** en la definición de Sentido de Pertenencia, y señaló que México ya cuenta con varios **instrumentos legales** que protegen especies y hábitats incluso fuera de áreas protegidas formales. Por ejemplo, la **NOM-059-SEMARNAT-2010** identifica especies en riesgo y establece criterios de conservación, mientras que la **Ley General de Vida Silvestre** define el marco nacional para el uso sustentable y la protección de la vida silvestre y sus hábitats. Otras **normas** brindan protección a especies específicas, como las tortugas marinas. Ana sugirió superponer estos instrumentos de conservación para obtener una visión más completa de la protección costera y cultural en el Golfo. También señaló los **acuerdos de destino**, concesiones que otorgan autoridad sobre secciones de la Zona Federal Marítimo Terrestre (*ZOFEMAT*) a dependencias gubernamentales (ej., CONANP) para fines de conservación. Aunque estos instrumentos se aplican de manera desigual y a veces son controvertidos, representan otra forma en que el sentido de pertenencia y el cuidado se ejercen a través de la ley.  
+
+  Ana advirtió que los movimientos comunitarios a menudo persisten sin financiamiento formal, y que mapear el crecimiento de las ONGs y grupos locales a lo largo de décadas podría ser un indicador más sólido que solo las medidas financieras.
+
+- **Marlu Robledo** enfatizó el papel de los **defensores del territorio, colectivos juveniles y programas educativos** en mantener el sentido de pertenencia. Ella y Ana subrayaron que depender demasiado de métricas financieras corre el riesgo de ignorar los recursos sociales y culturales que aportan las comunidades. Marlu ofreció compartir investigación sobre **filantropía comunitaria**, que demuestra que las contribuciones locales a menudo superan el apoyo de fundaciones.
+
+- **Víctor Ricárdez** subrayó el papel de los **derechos territoriales y las tierras ancestrales**, señalando ejemplos como los territorios Seri y Yaqui, así como proyectos comunitarios de restauración y conservación. Recalcó que el sentido de pertenencia está profundamente ligado a estas identidades cultural-geográficas, que deben reflejarse en la forma en que se definen los indicadores.
+
+- **Amy Hudson Weaver** sugirió ampliar la **Protección Costera** para incluir **refugios pesqueros y concesiones** creadas por cooperativas, que fomentan el cuidado y la identidad territorial. También propuso dar seguimiento a los **movimientos de defensa comunitaria** (ej., resistiendo industrias extractivas) como reflejo del sentido de pertenencia, y señaló las dinámicas demográficas (como inmigración y emigración) como factores que influyen en la identidad y la conexión comunitaria.
+
+- **Rick Brusca** tuvo un papel integral en la creación de los cuatro posibles indicadores presentados anteriormente (AC, PC, etc.). También propuso un indicador adicional: la **proporción de una comunidad directamente dependiente de la costa para sus medios de vida** (ej., pesca, turismo). Argumentó que esta dependencia económica a menudo señala una fuerte conexión cultural con el mar.
+
+En conjunto, estas ideas enriquecieron los cuatro temas iniciales al añadir matices sobre **marcos legales, derechos territoriales, movimientos comunitarios y cambio social** como componentes esenciales del sentido de pertenencia en el Golfo de California.
+
+
+### Usando estas ideas para definir sub-metas
+
+A partir de la discusión, los cuatro temas de ejemplo (**Acceso Costero, Protección Costera, Cultura Costera y Especies Icónicas**) son importantes de integrar en la meta de Sentido de Pertenencia. En la próxima reunión presentaré una posible forma de integrar todas estas ideas en sub-metas específicas, las cuales discutiremos y solidificaremos en grupo.  
+
+Como contexto, cada una de estas sub-metas tendrá sus propios indicadores y un puntaje, que después se promediarán (simple o ponderado) en un solo puntaje de Sentido de Pertenencia para cada región del OHI GoCA.  
+
+Aunque esto puede cambiar antes de la siguiente reunión, el equipo OHI consideró que los temas podrían organizarse en tres sub-metas. Aquí están nuestras ideas preliminares para cada una:
+
+##### **Lugares Especiales Duraderos**
+
+La condición o protección de lugares que tienen un valor particular por razones estéticas, espirituales, culturales, recreativas o de existencia. Esta sub-meta combina elementos de *Protección Costera* y *Cultura Costera*, ya que los lugares especiales son tanto culturalmente significativos como ecológicamente valiosos.  
+
+Primero, es necesario identificar los “lugares especiales”. Con base en esta reunión, aquí hay una lista preliminar:
+
+* Sitios icónicos y espacios públicos  
+* Concesiones  
+  * Concesiones lideradas por el gobierno (ej., acuerdos de destino)  
+  * Concesiones lideradas por comunidades (refugios pesqueros, concesiones/TURFs de pesca cooperativa)  
+  * Derechos territoriales indígenas (mencionados por Víctor: Seri, Yaqui, Cucapá)  
+* Hábitats especiales protegidos por normas o leyes  
+* Áreas donde se realizan proyectos de restauración o grandes movimientos — la idea es que los lugares con fuerte movilización comunitaria probablemente reflejan un alto sentido de pertenencia.  
+* La cobertura espacial de la participación y capacidad de ONGs en áreas marinas y costeras.  
+
+El equipo OHI considera que sería mejor tener una reunión dedicada a identificar tanto los lugares culturales como los ecológicos especiales en el Golfo, para que las áreas que son importantes pero que aún no están protegidas o bien gestionadas puedan resaltarse mediante esta meta. Luego podría ser necesaria otra reunión para discutir la condición o nivel de protección de cada lugar especial.  
+
+##### **Especies Icónicas**
+
+La condición de especies icónicas que son relevantes para la identidad cultural local.  
+
+Típicamente, esta sub-meta comienza elaborando una lista de las especies icónicas e identificando en qué regiones se encuentran. Después, evaluaciones locales o de poblaciones (como el [estudio de largo plazo N-gen](https://nextgensd.com/gocecologicalhealth/) de especies y sus tendencias) pueden usarse para evaluar su condición.  
+
+En cada región se puede calcular el *promedio del estado* de todas las especies icónicas. El punto de referencia podría definirse como mantener o mejorar la condición de estas especies en cada región a lo largo del tiempo.  
+
+Discutiremos esto más en la Reunión #3. Mientras tanto, si tienen ideas, por favor envíenme un correo electrónico o agréguenlas en el [documento de ideas del grupo guardián de SB](https://docs.google.com/document/d/1LWyrU_Ty38a4IMTRpzMMrrSGTjv_pPqvX2ICKJ8Gupo/edit?tab=t.kyrkgpt50url).  
+
+##### **Participación Comunitaria**
+
+El número y la vitalidad de programas educativos, organizaciones culturales, eventos culturales y campañas de activismo demuestran la capacidad de acción colectiva y de cuidado en cada región. En conjunto, estos pueden servir como indicadores de participación comunitaria.  
+
+Esta sub-meta probablemente incorporará el *Acceso Costero* como un multiplicador: incluso con un fuerte activismo y programas, un acceso limitado a la costa debilita la capacidad de las personas para conectarse con las áreas marinas y costeras.  
+
+Aunque aún no estamos enfocándonos en presiones y resiliencias, el equipo OHI señaló que las dinámicas de inmigración y emigración, mencionadas por Amy Hudson Weaver, podrían actuar como una presión importante sobre la meta de Sentido de Pertenencia.  
+
+::: {.callout-important}
+### <i class="fa fa-step-forward" aria-hidden="true"></i> Próximos pasos 
+
+- [ ] Revisar las [diapositivas de la Reunión #2 de SB](https://docs.google.com/presentation/d/1oZ5G9HDNyQ8u4WrENG-p9J6Kld2l7Wn9qZBkc1VGxTU/edit?slide=id.g2a86c82ea32_0_0#slide=id.g2a86c82ea32_0_0), también disponibles en la pestaña "Recursos clave".  
+- [ ] Agregar sus ideas, pensamientos y posibles fuentes de datos al [documento colaborativo de ideas del grupo guardián de SB](https://docs.google.com/document/d/1LWyrU_Ty38a4IMTRpzMMrrSGTjv_pPqvX2ICKJ8Gupo/edit?tab=t.0#heading=h.8562cdkt8tdh).  
+
+**Más temas para reflexionar antes de nuestra próxima reunión:**  
+
+- ¿Cuáles deben ser las sub-metas? ¿Tienen la misma importancia?  
+- Si incluimos Lugares Especiales Duraderos (LSD), ¿cómo medimos el nivel de protección de áreas especiales que no son áreas legalmente protegidas?  
+- ¿Cuáles son esas áreas especiales para LSD?  
+- ¿Cuáles son las especies icónicas del Golfo de California?  
+- ¿Cuáles son los indicadores de la condición de la participación comunitaria en el Golfo?  
+- ¿Cuáles son los posibles puntos de referencia para las sub-metas dentro de la meta de Sentido de Pertenencia?  
+
+**¡Gracias a todas y todos, y nos vemos en la próxima reunión (vean la pestaña [Información del grupo guardián de SB: quién, qué, cuándo, dónde y por qué](#admin-info) en la parte superior de la página para más información)!**
+
+:::
+
+:::
+
+::: {.callout-note collapse="true"}
+# <i class="fa-regular fa-clipboard"></i>  **Reunión #3:** *¡Próximamente el 7 de octubre!*  
+Mantente al tanto de los recursos de la Reunión #3.  
+:::
+
 
 ---
 
