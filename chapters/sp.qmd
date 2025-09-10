@@ -143,6 +143,10 @@ Add the shared calendar to your Google Calendar account using the [provided link
 
 - [SB Goalkeeper Ideas](https://docs.google.com/document/d/1LWyrU_Ty38a4IMTRpzMMrrSGTjv_pPqvX2ICKJ8Gupo/edit?tab=t.0#heading=h.8562cdkt8tdh), where you can add your thoughts, ideas, and potential data sources to the ongoing collaborative document.
 
+---
+
+- [(SB) Recursos compartidos / Shared resources](https://drive.google.com/drive/u/2/folders/1U9D9TYAKCeK8YWbwzpWI1f_fr1tjCOHj) Google Drive folder.
+
 :::
 
 <br>
