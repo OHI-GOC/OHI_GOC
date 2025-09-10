@@ -134,9 +134,9 @@ The main focus of **Meeting #2** was to solidify the goal definition before sele
 : slides to guide our discussion. We discussed workflow, terminology, and the definition of 'Biodiversity' in the OHI context.
 - [Meeting #2 Summary & General Notes](https://docs.google.com/document/d/1IFH2GoHWF_8XMBelkLNQp0xbIPvyZNyFzFERgjGNWrU/edit?tab=t.2v28eiuo9nh0#heading=h.9ic47zdlpdcx)
 : catch up on meetings you missed and review meeting summaries; keep track of resources and data bases shared during our meetings, and write down your thoughts offline.
-- [Whiteboard Group Activity](https://drive.google.com/drive/u/1/folders/1JyiiyMa41FiYwM-l8rVXM1lPkMiWl6TH)
+- [Whiteboard Group Activity](https://drive.google.com/file/d/1X3hmqbozcdJgTr-KOCuPAvpEjhJFKbJ0/view)
 : review the whiteboard / group activity shared during the meeting, wherein participants were asked to write their definition of the goal.
-- [Notes on Biodiversity shared by Rick & Lorayne](https://drive.google.com/drive/folders/1_DE5egWTcY_y_-hXRpIOEvKqQk0WdSiy)
+- [Notes on Biodiversity shared by Rick & Lorayne](https://drive.google.com/drive/u/2/folders/1PG_rn6SuAR8naIcQt9V85BFpSs358szY)
 : please review Rick and Lorayne's notes!
 - Link to the CEDO Shiny App shared by Hem and Ricardo** Link is forthcoming.
 : explore this data visualization and download tool!

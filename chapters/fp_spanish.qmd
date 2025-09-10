@@ -53,7 +53,7 @@ Típicamente, esta meta evalúa nuestra capacidad para maximizar de manera soste
 ------------------------------------------------------------------------
 
 # Reuniones de Porteros
-*Todos los recursos compartidos durante nuestras reuniones se pueden acceder en el Google Drive compartido del grupo [aquí](https://drive.google.com/drive/u/0/folders/1W0_ki39XNR1zHN4tBo_tQ-wnVia4grP8).*
+*Todos los recursos compartidos durante nuestras reuniones se pueden acceder en el Google Drive compartido del grupo [aquí](https://drive.google.com/drive/u/2/folders/18PTESSmV9wKsxFJLx1aTW8sbVYW-WQBJ).*
 
 ::: {.callout-note collapse="true"}
 ## **Logística de Reuniones** - Quién, Qué, Cuándo, Dónde
