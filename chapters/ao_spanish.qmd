@@ -86,7 +86,7 @@ Nombres ordenados alfabéticamente:
 -   Ana Luisa Figueroa  
 -   Mar Mancha-Cisneros  
 -   Hem Nalini Morzaria-Luna  
--   Victor Ricardez  
+-   Víctor Ricardez  
 -   Jorge Torre  
 -   Amy Hudson Weaver
 
@@ -142,6 +142,8 @@ El enfoque principal de la **Reunión #2** fue solidificar la definición de la 
 : guía de la discusión. Se habló del flujo de trabajo, la terminología y la definición de 'Oportunidades Artesanales'.
 - [Resumen Reunión #2 y Notas Generales](https://docs.google.com/document/d/1XjBi0qHSjbso1bPnc48mBbsjcm08wJig0kZueTe4PMQ/edit?tab=t.uk3ygqm9i4qc)
 : para ponerte al día si te perdiste alguna reunión y revisar notas y recursos compartidos.
+- [Presentación de PowerPoint compartida por Víctor](https://drive.google.com/file/d/1BdgoFOBt5s2hreuVxGtDzhqtbtZbzSgG/view?usp=drive_link)
+: Por favor, revisen la presentación de Víctor sobre la importancia de la pesca (incluida la pesca artesanal) en la región. Es increíblemente útil.
 
 **Tarea para la Reunión AO #3:** Piensa qué indicadores (variables) debemos incluir en nuestro modelo para AO. Ven preparado/a para discutir indicadores y fuentes de datos relevantes.
 :::

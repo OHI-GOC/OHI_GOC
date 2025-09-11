@@ -95,7 +95,7 @@ Names of team members listed in alphabetical order
 -   Ana Luisa Figueroa
 -   Mar Mancha-Cisneros
 -   Hem Nalini Morzaria-Luna
--   Victor Ricardez
+-   Víctor Ricardez
 -   Jorge Torre
 -   Amy Hudson Weaver
 
@@ -149,6 +149,8 @@ The main focus of **Meeting #2** was to solidify the goal definition before sele
 : slides to guide our discussion. We discussed workflow, terminology, and the definition of 'Artisanal Opportunities'.
 - [Meeting #2 Summary & General Notes](https://docs.google.com/document/d/1XjBi0qHSjbso1bPnc48mBbsjcm08wJig0kZueTe4PMQ/edit?tab=t.uk3ygqm9i4qc)
 : catch up on meetings you missed and review meeting summaries; keep track of resources and data bases shared during our meetings, and write down your thoughts offline.
+- [Powerpoint presentation shared by Víctor](https://drive.google.com/file/d/1BdgoFOBt5s2hreuVxGtDzhqtbtZbzSgG/view?usp=drive_link)
+: please review Víctor's presentation on the importance of fishing (including artisanal fishing) in the region! It is incredibly helpful.
 
 **Homework for AO Meeting #3:** Think about what indicators (variables) we should include in our model for AO. Come prepared to discuss indicators and possible data sources.
 :::
