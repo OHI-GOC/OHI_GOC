@@ -76,7 +76,7 @@ Names of team members listed in alphabetical order
 
 ---
 
-### **Meeting Schedule _(Thursday 11:00 AM - 12:00 PM PDT)_**
+### **Meeting Schedule _(Thursday 10:00 AM - 11:00 AM PDT)_**
 
 | Meeting | Date | Specific Date | Focus |
 |---------|------|---------------|-------|

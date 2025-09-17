@@ -78,7 +78,7 @@ Nombres de los miembros del equipo en orden alfabético
 
 ---
 
-### **Calendario de Reuniones _(Jueves 11:00 AM - 12:00 PM PDT)_**
+### **Calendario de Reuniones _(Jueves 10:00 AM - 11:00 AM PDT)_**
 
 | Reunión | Mes | Fecha específica | Enfoque |
 |--------|------|------------------|---------|
