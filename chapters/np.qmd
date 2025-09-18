@@ -149,6 +149,7 @@ The main focus of **Meeting #2** was to solidify the goal definition before sele
 - Fisheries residues: fish, crustaceans, molluscs
 - Pearls
 - Pharmaceuticals and cosmetics
+- Salt
 - Seashell byproducts / residues
 - Traditional medicines / homeopathy (e.g., totoaba bladder, peyote, mangroves)
 :::
