@@ -86,7 +86,7 @@ Nombres de los miembros del equipo en orden alfabético
 | 3 | Septiembre | 23 de septiembre de 2025 | Modelo, punto de referencia y fuentes de datos |
 | 4 | Octubre | 21 de octubre de 2025 | Resultados preliminares y presión/resiliencia |
 | 5 | Noviembre | 18 de noviembre de 2025 | Revisión final del plan de análisis |
-| 6 | Diciembre | 9 de diciembre de 2025 *(tentativa)* | *Tentativa* |
+| 6 | ~~Diciembre~~ Enero | ~~9 de diciembre de 2025~~ *(tentativa)* | *Tentativa* |
 
 ---
 
@@ -102,6 +102,14 @@ Agrega el calendario compartido a tu cuenta de Google Calendar usando el [enlace
 
 **Por favor contáctanos si tienes alguna pregunta. ¡Esperamos trabajar contigo en esta iniciativa!**
 :::
+
+::: {.callout-important}
+# **Anuncio de Horario**
+La Reunión #6 se moverá de diciembre a enero.  
+Por favor, mantente atento/a a más información y actualizaciones del calendario de reuniones.
+:::
+
+------------------------------------------------------------------------
 
 ::: {.callout-note collapse="true"}
 ## **FP Reunión #1 Resumen** - Recursos y Próximos Pasos
@@ -139,10 +147,25 @@ Ven preparado para discutir esto y las fuentes de datos relevantes más allá de
 **Recursos para la Reunión #3 próximamente.**
 :::
 
-<!-- ::: {.callout-note collapse="true"} -->
-<!-- ## **FP Reunión #4: Resumen**  *PRÓXIMAMENTE ____* -->
-<!-- Recursos para la Reunión #4 próximamente. -->
-<!-- ::: -->
+::: {.callout-note collapse="true"}
+## **Resumen de la Reunión #3 de FP** - *PRÓXIMAMENTE 23 de septiembre*
+**En la Reunión #3**, vamos a finalizar la definición de 'Provisión de Alimentos' en el Golfo y a discutir los indicadores del modelo. **Piensa en qué indicadores (variables) deberíamos incluir en nuestro modelo para Provisión de Alimentos.** Llega preparado/a para hablar de esto y de fuentes de datos relevantes más allá de CONAPESCA. Si usamos datos de CONAPESCA, ¿qué especies crees que serán problemáticas o más difíciles de evaluar?
+
+**Recursos compartidos durante la Reunión #3 de Provisión de Alimentos (FP)**
+
+- [Diapositivas de la Reunión #3](https://docs.google.com/presentation/d/1B_3Vc2GPvScA4Li3woz2HkW7TjVA1i__U6gjYcRpjZE/edit?slide=id.g38064938fca_0_17#slide=id.g38064938fca_0_17)
+: presentación para guiar nuestra conversación.
+<!-- - [Resumen y Notas Generales de la Reunión #3](https://docs.google.com/document/d/1XjBi0qHSjbso1bPnc48mBbsjcm08wJig0kZueTe4PMQ/edit?pli=1&tab=t.si1a55fewcmq) -->
+<!-- : revisa las reuniones que te perdiste y repasa los resúmenes; lleva un registro de los recursos y bases de datos compartidos, y anota tus ideas por fuera de las reuniones. -->
+- [Actividad Grupal - Identificación de Indicadores y Fuentes de Datos](https://docs.google.com/document/d/1YXTf5YN69t_9Lj0Oz5HkkS2xt9GNHzh9xq6ra7j4rG0/edit?tab=t.0)
+: revisa la actividad grupal compartida durante la reunión, donde se pidió a los participantes ayudar a identificar posibles indicadores y fuentes de datos.
+
+:::
+
+::: {.callout-note collapse="true"}
+## **Resumen de la Reunión #4 de FP**  *PRÓXIMAMENTE 21 de octubre*
+Muy pronto compartiremos los recursos de la Reunión #4.
+:::
 
 <!-- ::: {.callout-note collapse="true"} -->
 <!-- ## **FP Reunión #5: Resumen**  *PRÓXIMAMENTE ____* -->

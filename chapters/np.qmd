@@ -86,6 +86,7 @@ Names of team members listed in alphabetical order
 | 4 | October | October 30, 2025 | Preliminary results and pressure/resilience |
 | 5 | November | November 20, 2025 | Final analysis plan review |
 | 6 | December | December 11, 2025 *(tentative)* | *Tentative* |
+| 6 | ~~December~~ January | ~~December 11, 2025~~ *(TBD)* | *Tentative* |
 
 
 ---
@@ -102,6 +103,14 @@ Add the shared calendar to your Google Calendar account using the [provided link
 
 **Please let us know if you have any questions. We look forward to working on this initiative with you!**
 :::
+
+::: {.callout-important}
+# **Scheduling Announcement**
+Meeting #6 will be moved from December to January.
+Please stay tuned for more information and updates to the meeting schedule.
+:::
+
+------------------------------------------------------------------------
 
 ::: {.callout-note collapse="true"}
 ## NP **Meeting #1: Summary**, Resources, & Next Steps
@@ -134,7 +143,7 @@ The main focus of **Meeting #2** was to solidify the goal definition before sele
 - [Whiteboard Group Activity](https://drive.google.com/file/d/1ICeDwHUU1LP7_6K44Maso6CgmdWK4uzE/view)
 : review the whiteboard / group activity shared during the meeting, wherein participants were asked to write their definition of the goal.
 
-**Homework for NP Meeting #3:** Please review the list of natural products and come prepared to discuss goal indicators. Keep in mind that our working definition captures the *intent* of the goal, whereas indicators represent the specific types of data we will use to quantify the goal's status.
+**Homework for NP Meeting #3:** Please review the list of natural products and come prepared to discuss goal indicators, data sources, and technical reference points. Keep in mind that our working definition captures the *intent* of the goal, whereas indicators represent the specific types of data we will use to quantify the goal's status.
 
 :::
 
@@ -156,23 +165,29 @@ The main focus of **Meeting #2** was to solidify the goal definition before sele
 
 ::: {.callout-note collapse="true"}
 ## **NP Meeting #3 Summary** - *UPCOMING September 25*
-**In Meeting #3**, we will discuss model indicators. **Please review the list of natural products and come prepared to discuss goal indicators.** Keep in mind that our working definition captures the *intent* of the goal, whereas indicators represent the specific types of data we will use to quantify the goal's status.
+**In Meeting #3**, we will discuss model indicators, data sources, and technical reference points. **Please review the list of natural products and come prepared to discuss goal indicators.** Keep in mind that our working definition captures the *intent* of the goal, whereas indicators represent the specific types of data we will use to quantify the goal's status.
 
-*Stay tuned for Meeting #3 resources.*
+**Resources shared during NP Meeting #3**
+
+- [Meeting #3 Presentation Slides](https://docs.google.com/presentation/d/1P0WU1V1x5A_E9xgUc18bsogD7DLyyCalKtKm97Px46k/edit?slide=id.g380ae5a8885_0_7#slide=id.g380ae5a8885_0_7)
+: slides to guide our discussion.
+<!-- - [Meeting #3 Summary & General Notes](https://docs.google.com/document/d/11LrbOWL7UnQ2SU3u-POucAdKruhMNsFJ6rCkEMtNIqI/edit?tab=t.gb2sy7trdzk7) -->
+<!-- : catch up on meetings you missed and review meeting summaries; keep track of resources and data bases shared during our meetings, and write down your thoughts offline. -->
+- [Group Activity - Identifying Indicators](https://docs.google.com/document/d/1x2Uez1Gl2FIRHkNtrO2bsXqID8nvRx4GqLptpG4IHAU/edit?tab=t.0)
+: review the group activity shared during the meeting, wherein participants were asked to help identify potential indicators and data sources.
+
 :::
 
 
-<!-- ::: {.callout-note collapse="true"} -->
-<!-- ## **NP Meeting #4: Summary**  *UPCOMING ____* -->
-<!-- Stay tuned for Meeting #4 resources. -->
-<!-- ::: -->
-
+::: {.callout-note collapse="true"}
+## **NP Meeting #4: Summary**  *UPCOMING October 30*
+Stay tuned for Meeting #4 resources.
+:::
 
 <!-- ::: {.callout-note collapse="true"} -->
 <!-- ## **NP Meeting #5: Summary**  *UPCOMING ____* -->
 <!-- Stay tuned for Meeting #5 resources. -->
 <!-- ::: -->
-
 
 <!-- ::: {.callout-note collapse="true"} -->
 <!-- ## **NP Meeting #6: Summary**  *UPCOMING ____* -->

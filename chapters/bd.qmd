@@ -91,7 +91,7 @@ Names of team members listed in alphabetical order
 | 3 | September | September 25, 2025 | Model, reference point, and data sources |
 | 4 | October | October 30, 2025 | Preliminary results and pressure/resilience |
 | 5 | November | November 20, 2025 | Final analysis plan review |
-| 6 | December | December 11, 2025 *(tentative)* | *Tentative* |
+| 6 | ~~December~~ January | ~~December 11, 2025~~ *(TBD)* | *Tentative* |
 
 ---
 
@@ -107,6 +107,14 @@ Add the shared calendar to your Google Calendar account using the [provided link
 
 **Please let us know if you have any questions. We look forward to working on this initiative with you!**
 :::
+
+::: {.callout-important}
+# **Scheduling Announcement**
+Meeting #6 will be moved from December to January.
+Please stay tuned for more information and updates to the meeting schedule.
+:::
+
+------------------------------------------------------------------------
 
 ::: {.callout-note collapse="true"}
 ## **BD Meeting #1: Summary**, Resources, & Next Steps
@@ -150,14 +158,22 @@ As much as possible, try not to let data availability constrain your definition 
 ## **BD Meeting #3 Summary** - *UPCOMING September 25*
 **In Meeting #3**, we will finalize the definition / objective of the 'Biodiversity' goal and move on to a discussion of model indicators. **Come prepared to finalize the BD goal definition / objective.**
 
-*Stay tuned for Meeting #3 resources.*
+**Resources shared during BD Meeting #3**
+
+- [Meeting #3 Presentation Slides](https://docs.google.com/presentation/d/163362ZdhggO0F7hhk9Olw0iOykURR2dZUduT82RXFXM/edit?slide=id.g380cb7d18a2_0_0#slide=id.g380cb7d18a2_0_0)
+: slides to guide our discussion.
+<!-- - [Meeting #3 Summary & General Notes](https://docs.google.com/document/d/11LrbOWL7UnQ2SU3u-POucAdKruhMNsFJ6rCkEMtNIqI/edit?tab=t.gb2sy7trdzk7) -->
+<!-- : catch up on meetings you missed and review meeting summaries; keep track of resources and data bases shared during our meetings, and write down your thoughts offline. -->
+- [Group Activity - Identifying Indicators](https://docs.google.com/document/d/1rgTDw8qoBTiB60euL_D7FB5ee5gD9t-gaS4dzKDGcnA/edit?tab=t.0)
+: review the group activity shared during the meeting, wherein participants were asked to help identify potential indicators and data sources.
+
 :::
 
-<!-- ::: {.callout-note collapse="true"} -->
-<!-- ## **BD Meeting #4: Summary**  *UPCOMING ____* -->
-<!-- Stay tuned for Meeting #4 resources. -->
-<!-- ::: -->
 
+::: {.callout-note collapse="true"}
+## **BD Meeting #4: Summary**  *UPCOMING October 30*
+Stay tuned for Meeting #4 resources.
+:::
 
 <!-- ::: {.callout-note collapse="true"} -->
 <!-- ## **BD Meeting #5: Summary**  *UPCOMING ____* -->

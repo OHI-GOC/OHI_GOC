@@ -110,7 +110,7 @@ Names of team members listed in alphabetical order
 | 3 | September | September 23, 2025 | Model, reference point, and data sources |
 | 4 | October | October 21, 2025 | Preliminary results and pressure/resilience |
 | 5 | November | November 18, 2025 | Final analysis plan review |
-| 6 | December | December 9, 2025 *(tentative)* | *Tentative* |
+| 6 | ~~December~~ January | ~~December 9, 2025~~ *(TBD)* | *Tentative* |
 
 ---
 
@@ -126,6 +126,14 @@ Add the shared calendar to your Google Calendar account using the [provided link
 
 **Please let us know if you have any questions. We look forward to working on this initiative with you!**
 :::
+
+::: {.callout-important}
+# **Scheduling Announcement**
+Meeting #6 will be moved from December to January.
+Please stay tuned for more information and updates to the meeting schedule.
+:::
+
+------------------------------------------------------------------------
 
 ::: {.callout-note collapse="true"}
 ## **AO Meeting #1 Summary** - Resources & Next Steps
@@ -159,15 +167,21 @@ The main focus of **Meeting #2** was to solidify the goal definition before sele
 ## **AO Meeting #3 Summary** - *UPCOMING September 23*
 **In Meeting #3**, we will finalize the definition of 'Artisanal Opportunities' in the Gulf and discuss model indicators. **Think about what indicators (variables) we should include in our AO model.** Come prepared to discuss indicators and relevant data sources.
 
-**Stay tuned for Meeting #3 resources.**
+**Resources shared during AO Meeting #3**
+
+- [Meeting #3 Presentation Slides](https://docs.google.com/presentation/d/1Wx-vo-bgAgsIusNGDczln7Ej6cinRuHUuZqduhhY0cE/edit?slide=id.g380a7fd06da_0_7#slide=id.g380a7fd06da_0_7)
+: slides to guide our discussion.
+<!-- - [Meeting #3 Summary & General Notes](https://docs.google.com/document/d/1XjBi0qHSjbso1bPnc48mBbsjcm08wJig0kZueTe4PMQ/edit?pli=1&tab=t.si1a55fewcmq) -->
+<!-- : catch up on meetings you missed and review meeting summaries; keep track of resources and data bases shared during our meetings, and write down your thoughts offline. -->
+- [Group Activity - Identifying Indicators & Data Sources](https://docs.google.com/document/d/16Gkoz0xp6WDkVHujWOE46toErhnJC9NRBubvftgnxcE/edit?tab=t.0)
+: review the group activity shared during the meeting, wherein participants were asked to help identify potential indicators and data sources.
+
 :::
 
-
-<!-- ::: {.callout-note collapse="true"} -->
-<!-- ## **AO Meeting #4: Summary**  *UPCOMING ____* -->
-<!-- Stay tuned for Meeting #4 resources. -->
-<!-- ::: -->
-
+::: {.callout-note collapse="true"}
+## **AO Meeting #4: Summary**  *UPCOMING October 21*
+Stay tuned for Meeting #4 resources.
+:::
 
 <!-- ::: {.callout-note collapse="true"} -->
 <!-- ## **AO Meeting #5: Summary**  *UPCOMING ____* -->
