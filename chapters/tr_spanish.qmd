@@ -90,11 +90,12 @@ Agrega el calendario compartido a tu cuenta de Google Calendar usando el [enlace
 
 - [Diapositivas de la Reunión #1](https://docs.google.com/presentation/d/14jGvm4OQk5iQ8YPZknfYBqDwHC0SU6ElYwz0OoRrvlo/edit?usp=sharing) para repasar las ideas principales.  
 - [Diapositivas de la Reunión #2](https://docs.google.com/presentation/d/1kNF4-JXpjv1RGkzwWJjffoiTf36I5VSc259slFL3IzQ/edit?usp=sharing), sobre la definición del objetivo TR.
+- [Diapositivas de la Reunión #3](https://docs.google.com/presentation/d/10Cn3u9QPnvgB7B2rPnvJmUF3dp_egSa0dnvDF3fhtL8/edit?slide=id.g2a86c82ea32_0_0#slide=id.g2a86c82ea32_0_0), sobre indicadores y fuentes de datos.
 
 ---
 
 
--  [Ideas para la Meta TR](https://docs.google.com/document/d/1ZtgUCeaz3Rx2r93bPzRdEeiBQDZv8U6cH1i12CnIcAI/edit?tab=t.0), donde puedes añadir tus pensamientos, ideas y posibles fuentes de datos en el documento colaborativo en curso.
+-  [Ideas para la Meta TR](https://docs.google.com/document/d/1ZtgUCeaz3Rx2r93bPzRdEeiBQDZv8U6cH1i12CnIcAI/edit?tab=t.m4jmmgpcanvc), donde puedes añadir tus pensamientos, ideas y posibles fuentes de datos en el documento colaborativo en curso.
 
 :::
 
@@ -103,7 +104,7 @@ Agrega el calendario compartido a tu cuenta de Google Calendar usando el [enlace
 ### **Resumen de Reuniones**
 
 ::: {.callout-note collapse="true"}
-# <i class="fa-regular fa-clipboard"></i> **Reunión #1:** Resumen y Próximos Pasos
+# <i class="fa-regular fa-clipboard"></i> **Reunión #1:** Introducción a TR
 
 **¡Gracias a todos los que se unieron a nuestra primera reunión de la Meta de Turismo y Recreación (TR)!**  
 Fue un excelente inicio para nuestro trabajo conjunto en definir qué significa un turismo y recreación sostenibles para el **Golfo de California**.
@@ -158,7 +159,7 @@ También comenzaremos a definir el **punto de referencia** para esta meta — nu
 :::
 
 ::: {.callout-note collapse="true"}
-# <i class="fa-regular fa-clipboard"></i> **Reunión #2:** Resumen y Próximos Pasos
+# <i class="fa-regular fa-clipboard"></i> **Reunión #2:** Estados ideales
 
 A continuación se presentan algunos temas clave y hallazgos de la discusión de este mes sobre Turismo y Recreación. Aunque la participación fue limitada, la conversación aportó un valioso contexto, ejemplos e ideas nuevas para afinar nuestras metas e indicadores.  
 
@@ -212,9 +213,135 @@ Estaremos discutiendo el marco de indicadores (Cantidad, Calidad, Sostenibilidad
 :::
 
 ::: {.callout-note collapse="true"}
-# <i class="fa-regular fa-clipboard"></i> **Reunión #3:** *¡Próximamente el 22 de septiembre!*
-Estén pendientes de los recursos para la Reunión #3.
+# <i class="fa-regular fa-clipboard"></i> **Reunión #3:** Indicadores y Fuentes de Datos
+
+¡Gracias a todas y todos por asistir a la tercera reunión del grupo **Tourism & Recreation Goalkeeper**!  
+
+En esta reunión, trabajamos en conjunto para identificar indicadores y sus posibles fuentes de datos para los tres componentes de **TR: Cantidad, Calidad y Sostenibilidad.**
+
+---
+
+El objetivo de TR *“captura la cantidad, calidad y sostenibilidad de las experiencias que tienen las personas al visitar zonas costeras y marinas.”*  
+
+Como grupo, discutimos posibles fuentes de datos y referencias técnicas para cada indicador de TR.  
+
+A continuación se presenta una síntesis de nuestra discusión y de la Actividad en la que participamos de manera colectiva, ubicada en el documento de Ideas del TR Goalkeeper bajo la pestaña:  
+
+<i class="fa-solid fa-link"></i>[**Reunión #3 Actividad**](https://docs.google.com/document/d/1ZtgUCeaz3Rx2r93bPzRdEeiBQDZv8U6cH1i12CnIcAI/edit?tab=t.m4jmmgpcanvc)
+
+---
+
+::: {.custom-box}
+
+### **Cantidad**
+
+Las fuentes más consistentes y accesibles en las regiones de OHI son:  
+
+- **Programa de Monitoreo de la Actividad Hotelera**  
+- **DataTur de SECTUR** (llegadas de turistas y pernoctaciones)  
+- Datos de **SEMAR** sobre llegadas de cruceros y volúmenes de pasajeros  
+
+También discutimos fuentes locales como:  
+
+- Asociaciones de marinas para ocupación de embarcaciones (ej: Marina San Carlos)  
+- Autoridades portuarias (# de embarcaciones con permisos para turismo y recreación, obtenidos vía solicitudes de transparencia)  
+- **CONANP** cobro de derechos de visitantes (como proxy de visitas a áreas naturales protegidas costeras)  
+
+El ecoturismo resulta más difícil de cuantificar, pero algunos indicadores potenciales incluyen:  
+
+- Número de empresas de ecoturismo ([**INEGI** registro de unidades económicas](https://www.inegi.org.mx/app/descarga/?ti=6))  
+- Ocupaciones relacionadas con ecoturismo en INEGI como proxy del número de ecoturistas (**INEGI ENOE**)  
+- Número de ecoturistas marinos, sitios de buceo SCUBA (Investigación publicada, ej. Favoretto y Schuhbauer)  
+
+---
+
+### **Calidad**
+
+Identificamos indicadores tanto de infraestructura como de percepción:  
+
+- Tasa de retorno, mejor que la duración de estancia (encuestas estatales de satisfacción de visitantes)  
+- Densidad de servicios/actividades cercanas a la costa (**INEGI DENUE**)  
+- Percepciones sociales de seguridad (**Índice de Paz México**)  
+
+---
+
+### **Sostenibilidad**
+
+Distinguimos entre aspectos ambientales y sociales.  
+
+**Posibles indicadores de sostenibilidad ambiental**:  
+
+- Peso relativo del ecoturismo frente al turismo masivo (expandiendo oportunidades de ecoturismo, considerando que cuando se hace bien, es el estándar de oro en prácticas turísticas)  
+- Medidas de certificación o gestión (como las distinciones de playas **Blue Flag**)  
+- Cambio en uso de suelo (áreas de conservación prioritaria convertidas en desarrollos turísticos → requiere solicitudes de transparencia para acceso a datos)  
+
+**Posibles aspectos de sostenibilidad social**:  
+
+- Calidad de los empleos turísticos locales (**INEGI ENOE** para evaluar calidad de empleo, como beneficios, salario)  
+- Que los beneficios del turismo permanezcan dentro de las comunidades (se requieren indicadores específicos para esto)  
+- Igualdad de género en las oportunidades laborales del turismo  
+
+---
+
 :::
+
+<br>
+
+Si bien existen bases de datos sólidas para el conteo básico de visitantes, será necesario utilizar combinaciones más creativas de **proxies, encuestas estatales, solicitudes de transparencia e investigación internacional** para capturar la totalidad del objetivo TR.  
+
+_El reto es equilibrar disponibilidad y rigor evitando supuestos excesivamente normativos, especialmente en lo referente a la **calidad** de la experiencia._  
+
+**¡Este es un gran inicio para que el equipo central de OHI continúe explorando estos indicadores y sus fuentes potenciales de datos!**  
+
+---
+
+::: {.callout-important}
+### <i class="fa fa-step-forward" aria-hidden="true"></i> Próximos Pasos 
+
+Estaremos identificando puntos de referencia para los indicadores dentro de **Cantidad, Calidad y Sostenibilidad.**  
+
+Un ejemplo de las discusiones que tendremos:  
+
+- Si el indicador de cantidad de turismo es **“número de llegadas de turistas”**, ¿el punto de referencia debería reflejar la meta del *Plan México* de incrementar el turismo internacional en 40% para 2030?  
+  - [Algunas metas para 2030 del Plan México:](https://www.gob.mx/presidencia/prensa/el-objetivo-para-turismo-en-el-plan-mexico-es-ser-el-5to-pais-mas-visitado-del-mundo-para-el-2030-presidenta-claudia-sheinbaum?idiom=en)  
+    - Impacto económico de turistas internacionales aumentó en 46%.  
+    - Cuartos de hotel en 12%.  
+    - Generación de empleo turístico en 27%.  
+    - Participación del turismo en el PIB en 9%.  
+    - Turismo doméstico en 9.8%.  
+    - Número de prestadores de servicios certificados en sostenibilidad en 31.5%.  
+    - Gasto promedio por turista internacional en 3.3%.  
+    - Llegada de visitantes internacionales en 30%.  
+    - Recaudación de derechos (DNR) en 40.5%.  
+
+<br>
+
+- ¿O debería el número de turistas relacionarse con la población local del área (turistas : habitantes en centros turísticos)?  
+  - En ese caso, el punto de referencia podría ser:  
+    - **Histórico** (ej. la proporción en 2019 entre turistas y locales, con la meta de mantenerla estable), o  
+    - **Teórico/Definido por expertos** (lo que ustedes, como expertos, consideren ideal para el GoCA).  
+
+---
+
+**Por favor vengan preparados para discutir este tipo de preguntas en cuanto a:**  
+
+- Cantidad  
+- Calidad  
+- Sostenibilidad ambiental  
+- Sostenibilidad social  
+
+_**¡Gracias, y estén atentos a la agenda de la Reunión #4!**_  
+
+Que tengan un excelente resto de mes, y no duden en comunicarse por correo electrónico o añadir comentarios en el [documento TR Goalkeeper](https://docs.google.com/document/d/1ZtgUCeaz3Rx2r93bPzRdEeiBQDZv8U6cH1i12CnIcAI/edit?tab=t.m4jmmgpcanvc) si tienen dudas o aportaciones.  
+
+:::
+:::
+
+::: {.callout-note collapse="true"}
+# <i class="fa-regular fa-clipboard"></i> **Reunión #4:** *¡Próxima el 20 de octubre!*  
+Estén atentos a los recursos de la Reunión #4.  
+:::
+
 
 ---
 

@@ -90,10 +90,11 @@ Add the shared calendar to your Google Calendar account using the [provided link
 
 - [Meeting #1 Slides](https://docs.google.com/presentation/d/14jGvm4OQk5iQ8YPZknfYBqDwHC0SU6ElYwz0OoRrvlo/edit?usp=sharing) to revisit the main ideas.  
 - [Meeting #2 Slides](https://docs.google.com/presentation/d/1kNF4-JXpjv1RGkzwWJjffoiTf36I5VSc259slFL3IzQ/edit?usp=sharing), on defining the TR goal.
+- [Meeting #3 Slides](https://docs.google.com/presentation/d/10Cn3u9QPnvgB7B2rPnvJmUF3dp_egSa0dnvDF3fhtL8/edit?slide=id.g2a86c82ea32_0_0#slide=id.g2a86c82ea32_0_0), on indicators and data sources.
 
 ---
 
--  [TR Goalkeeper Ideas](https://docs.google.com/document/d/1ZtgUCeaz3Rx2r93bPzRdEeiBQDZv8U6cH1i12CnIcAI/edit?tab=t.0), where you can add your thoughts, ideas, and potential data sources to the ongoing collaborative document.
+-  [TR Goalkeeper Ideas](https://docs.google.com/document/d/1ZtgUCeaz3Rx2r93bPzRdEeiBQDZv8U6cH1i12CnIcAI/edit?tab=t.m4jmmgpcanvc), where you can add your thoughts, ideas, and potential data sources to the ongoing collaborative document.
 
 :::
 
@@ -103,7 +104,7 @@ Add the shared calendar to your Google Calendar account using the [provided link
 
 
 ::: {.callout-note collapse="true"}
-# <i class="fa-regular fa-clipboard"></i> **Meeting #1:** Recap & Next Steps
+# <i class="fa-regular fa-clipboard"></i> **Meeting #1:** Introduction to TR
 
 **Thank you to everyone who joined our first Tourism & Recreation (TR) Goalkeeper meeting!**  
 It was a great start to our work together in defining what sustainable tourism and recreation means for the **Gulf of California**.  
@@ -158,7 +159,7 @@ We'll also start to define the **reference point** for this goal — our vision 
 :::
 
 ::: {.callout-note collapse="true"}
-# <i class="fa-regular fa-clipboard"></i> **Meeting #2:** Recap & Next Steps
+# <i class="fa-regular fa-clipboard"></i> **Meeting #2:** Ideal states
 
 Below are some key themes and insights from this month’s Tourism & Recreation discussion. Even though participation was limited, the conversation provided valuable context, examples, and new ideas for refining our goals and indicators.  
 
@@ -213,15 +214,135 @@ Thank you, and stay tuned for a meeting agenda for Meeting #3!
 
 
 ::: {.callout-note collapse="true"}
-# <i class="fa-regular fa-clipboard"></i>  **Meeting #3:** *Upcoming on September 22nd!*
-Stay tuned for Meeting #3 resources.
+# <i class="fa-regular fa-clipboard"></i> **Meeting #3:** Indicators & Data Sources
+
+Thank you all for coming to the third Tourism & Recreation Goalkeeper meeting!  
+
+During this meeting, we worked together to identify indicators and their possible data sources for the three components of **TR: Quantity, Quality, and Sustainability.**
+
+---
+
+The TR goal *“captures the quantity, quality, and sustainability of experiences that people have when visiting coastal and marine areas.”*  
+
+As a group, we discussed possible data sources and technical benchmarks for each TR indicator.  
+
+Below is a synthesis of our meeting discussion and the Activity we participated in as a group, located in the TR Goalkeeper Ideas document under the tab:  
+
+<i class="fa-solid fa-link"></i>[**Meeting #3 Activity**](https://docs.google.com/document/d/1ZtgUCeaz3Rx2r93bPzRdEeiBQDZv8U6cH1i12CnIcAI/edit?tab=t.m4jmmgpcanvc)
+
+---
+
+::: {.custom-box}
+
+### **Quantity**
+
+The most consistent and accessible sources across OHI regions are:  
+
+- **Programa de Monitoreo de la Actividad Hotelera**  
+- **DataTur from SECTUR** (tourist arrivals and overnights)  
+- **SEMAR** data on cruise ship arrivals and passenger volumes  
+
+We also discussed localized sources such as:
+
+- Marina associations for occupancy of boats (ex: San Carlos Marina)  
+- Port authorities (# of vessels that have permits for tourism & recreation, obtained via transparency requests)  
+- **CONANP** cobro de derechos visitor fees (as proxies for visitation of coastal protected areas)  
+
+Ecotourism proves harder to quantify, but potential indicators include:  
+
+- The number of ecotourism companies ([**INEGI** registry of economic units](https://www.inegi.org.mx/app/descarga/?ti=6))
+- INEGI occupations in ecotourism as a proxy for amount of ecotourists (**INEGI ENOE**)
+- Number of marine ecotourists, SCUBA diving sites (Published research, e.g., Favoretto and Schuhbauer)  
+
+---
+
+### **Quality**
+
+We identified both infrastructure- and perception-based indicators:  
+
+- Rate of return, better than length of stay (state tourism visitor satisfaction surveys)  
+- Density of services/activities near coast (**INEGI DENUE data**)  
+- Social perceptions of security (**Mexican Peace Index**)  
+
+---
+
+### **Sustainability**
+
+We distinguished between environmental and social aspects.  
+
+Potential **Environmental sustainability** indicators:  
+
+- Relative weight of ecotourism vs. mass tourism  (expanding ecotourism opportunities, assuming that when ecotourism is done right, it is the gold standard for tourism practices)
+- Stewardship measures (such as Blue Flag beach distinctions)  
+- Land-system change (conservation priority areas converted to resorts → accessing data requires transparency requests)  
+
+Potential aspects of **Social sustainability**:  
+
+- Quality of local tourism jobs (**INEGI ENOE data** to assess job quality, such as benefits, salary)
+- Tourism benefits should be within communities (need indicators for this)
+- Gender equality in tourism employment opportunities
+  
+
+---
+
+:::
+
+<br>
+
+While strong datasets exist for basic visitor numbers, more creative combinations of proxies, state-level surveys, transparency requests, and international research will be needed to capture the full TR goal.  _The challenge is to balance availability and rigor while avoiding overly normative assumptions, especially when it comes to visitor **quality.**_
+
+**This is a great start for the OHI Core Team to continue exploring these indicators and their potential data sources!**
+
+
+---
+
+::: {.callout-important}
+### <i class="fa fa-step-forward" aria-hidden="true"></i> Next Steps 
+
+We will be identifying reference points for indicators within **Quantity, Quality, and Sustainability.**  
+
+An example of the discussions we will have:  
+
+- If the indicator for tourism quantity is **“number of tourist arrivals”**, should the reference point reflect *Plan México’s* goal to increase international tourism by 40% by 2030?  
+  - [These are some targets for 2030 for Plan México:](https://www.gob.mx/presidencia/prensa/el-objetivo-para-turismo-en-el-plan-mexico-es-ser-el-5to-pais-mas-visitado-del-mundo-para-el-2030-presidenta-claudia-sheinbaum?idiom=en)
+    - The economic impact of international tourists increased by 46 percent.
+    - Hotel rooms by 12 percent.
+    - Tourism employment generation by 27 percent.
+    - Of the Gross Domestic Product (GDP) tourism by 9 percent.
+    - Of domestic tourism, 9.8 percent.
+    - The number of service providers certified in sustainability increased by 31.5 percent.
+    - Average spending per international tourist by 3.3 percent.
+    - The arrival of international visitors by 30 percent.
+    - The DNR's revenue collection increased by 40.5 percent.
+
+<br>
+
+- Or should the number of tourists be relative to the local population in the area (tourist_arrivals : locals_residing_in_tourist_centers)?  
+  - In that case, the reference point could be:  
+    - **Historical** (e.g., the 2019 proportion between tourists and locals, with the goal of keeping it stable), or  
+    - **Theoretical/Expert-based** (what you, as experts, deem ideal for the GoCA).  
+
+---
+
+**Please come prepared to discuss these types of questions for:**
+
+- Quantity  
+- Quality  
+- Environmental sustainability  
+- Social sustainability  
+
+_**Thank you, and stay tuned for the Meeting #4 agenda!**_ 
+
+Have a great rest of your month, and please don’t hesitate to reach out via email or add to the [TR Goalkeeper document](https://docs.google.com/document/d/1ZtgUCeaz3Rx2r93bPzRdEeiBQDZv8U6cH1i12CnIcAI/edit?tab=t.m4jmmgpcanvc) if you have any questions or comments.  
+
+:::
 :::
 
 
-<!-- ::: {.callout-note collapse="true"} -->
-<!-- # <i class="fa-regular fa-clipboard"></i>  **Meeting #4:** *Upcoming on ____!* -->
-<!-- Stay tuned for Meeting #4 resources. -->
-<!-- ::: -->
+::: {.callout-note collapse="true"}
+# <i class="fa-regular fa-clipboard"></i>  **Meeting #4:** *Upcoming on October 20th!*
+Stay tuned for Meeting #4 resources.
+:::
 
 
 <!-- ::: {.callout-note collapse="true"} -->
