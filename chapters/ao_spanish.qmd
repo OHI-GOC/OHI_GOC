@@ -16,10 +16,12 @@ editor:
 </div>
 
 ::: {.callout-tip}
-# **Definición Preliminar** para el AO Goal
-El objetivo del propósito AO es evaluar las condiciones que permiten que los miembros de las comunidades pesqueras de pequeña escala y los pueblos originarios prosperen, incluyendo el acceso legal y regulado a los recursos marinos, reglas de uso basadas en el conocimiento, límites claros, espacios de toma de decisiones definidos y un seguimiento confiable para garantizar el acceso, la sostenibilidad y la equidad a largo plazo.
+# **Definición de Trabajo** para la Meta de AO  
+Los miembros de comunidades costeras –incluyendo integrantes de comunidades pesqueras de pequeña escala y pueblos originarios– tienen acceso a los recursos marinos que les permiten prosperar. Esto incluye acceso legal y regulado a los recursos marinos, reglas de uso basadas en el conocimiento, límites claramente definidos, espacios claros de toma de decisiones y un seguimiento confiable para garantizar el acceso, la sostenibilidad y la equidad a largo plazo.
 
-*Esta definición fue establecida por el Grupo Goalkeeper durante la Reunión #2, pero no está finalizada. Consulte la pestaña de la Reunión #2 a continuación para más detalles.*
+*Esta definición fue establecida por el Grupo de Guardianes durante la Reunión #3. Consulta la pestaña de la Reunión #3 abajo para más detalles.*
+
+*Definición de trabajo anterior (a partir de la Reunión #2): El objetivo de la meta de AO es evaluar las condiciones que permiten a los miembros de comunidades pesqueras de pequeña escala y pueblos originarios prosperar – incluyendo acceso legal y regulado a los recursos marinos, reglas de uso basadas en el conocimiento, límites claramente definidos, espacios claros de toma de decisiones y un seguimiento confiable para garantizar el acceso, la sostenibilidad y la equidad a largo plazo.*
 
 :::
 
@@ -127,7 +129,7 @@ Por favor, mantente atento/a a más información y actualizaciones del calendari
 ------------------------------------------------------------------------
 
 ::: {.callout-note collapse="true"}
-## **Resumen Reunión AO #1** - Recursos y Próximos Pasos
+## **Resumen Reunión AO #1** - 22 de julio
 
 **La Reunión #1** presentó a las y los participantes y sus antecedentes de investigación relacionados con el Golfo de California, con Erica facilitando y proporcionando una visión general del Índice de Salud del Océano. El grupo discutió la metodología del índice y su aplicación al Golfo de California, incluyendo la necesidad del equipo de definir "oportunidades artesanales" más allá de la pesca. La conversación terminó con el acuerdo de explorar más a fondo conceptos como acceso a los recursos y medios de vida sostenibles.
 
@@ -140,7 +142,7 @@ Por favor, mantente atento/a a más información y actualizaciones del calendari
 :::
 
 ::: {.callout-note collapse="true"}
-## **Resumen Reunión AO #2** - Recursos y Próximos Pasos
+## **Resumen Reunión AO #2** - 19 de agosto
 
 El enfoque principal de la **Reunión #2** fue solidificar la definición de la meta antes de seleccionar los indicadores del modelo. En este contexto, nuestro “modelo” será una serie de indicadores que representen la definición de la meta; probablemente no será muy complejo matemáticamente. Erica explicó el flujo de trabajo de la meta – un proceso de seis pasos desde la definición hasta la verificación de los resultados. El equipo discutió distintos aspectos de AO, incluyendo la importancia social y económica del acceso a la pesca, otros recursos, y espacios clave. Victor presentó trabajos actuales sobre soberanía alimentaria y bienestar comunitario. El grupo avanzó hacia una definición más clara de AO, que incluirá algún componente de acceso a recursos comunitarios. Las y los participantes acordaron finalizar la definición de la meta en la próxima reunión, donde también se intentará seleccionar indicadores.
 
@@ -157,18 +159,25 @@ El enfoque principal de la **Reunión #2** fue solidificar la definición de la 
 :::
 
 ::: {.callout-note collapse="true"}
-## **Resumen de la Reunión #3 de OA** - *PRÓXIMAMENTE 23 de septiembre*
-**En la Reunión #3**, vamos a finalizar la definición de 'Oportunidades Artesanales' en el Golfo y a discutir los indicadores del modelo. **Piensa en qué indicadores (variables) deberíamos incluir en nuestro modelo de OA.** Llega preparado/a para conversar sobre los indicadores y las fuentes de datos relevantes.
+## **Resumen de la Reunión #3 de AO** - 23 de septiembre  
+**En la Reunión #3**, el equipo consolidó la definición de la meta de AO:  
+*Los miembros de comunidades costeras –incluyendo integrantes de comunidades pesqueras de pequeña escala y pueblos originarios– tienen acceso a los recursos marinos que les permiten prosperar. Esto incluye acceso legal y regulado a los recursos marinos, reglas de uso basadas en el conocimiento, límites claramente definidos, espacios claros de toma de decisiones y un seguimiento confiable para garantizar el acceso, la sostenibilidad y la equidad a largo plazo.*
 
-**Recursos compartidos durante la Reunión #3 de Oportunidades Artesanales (AO)**
+Luego, el equipo exploró diversos indicadores para medir AO, incluyendo oportunidades de pesca artesanal, oportunidades de uso por parte de pueblos originarios y acceso costero, considerando factores culturales, legales y socioeconómicos que afectan el uso. Se discutieron los desafíos al seleccionar indicadores adecuados para medir el uso indígena y las oportunidades de pesca artesanal, y se acordó investigar más a fondo las fuentes de datos y desarrollar un modelo preliminar para revisar en la próxima reunión.
 
-- [Diapositivas de la Reunión #3](https://docs.google.com/presentation/d/1Wx-vo-bgAgsIusNGDczln7Ej6cinRuHUuZqduhhY0cE/edit?slide=id.g380a7fd06da_0_7#slide=id.g380a7fd06da_0_7)
-: presentación para guiar nuestra conversación.
-<!-- - [Resumen y Notas Generales de la Reunión #3](https://docs.google.com/document/d/1XjBi0qHSjbso1bPnc48mBbsjcm08wJig0kZueTe4PMQ/edit?pli=1&tab=t.si1a55fewcmq) -->
-<!-- : revisa las reuniones que te perdiste y repasa los resúmenes; lleva un registro de los recursos y bases de datos compartidos, y anota tus ideas por fuera de las reuniones. -->
-- [Actividad Grupal - Identificación de Indicadores y Fuentes de Datos](https://docs.google.com/document/d/16Gkoz0xp6WDkVHujWOE46toErhnJC9NRBubvftgnxcE/edit?tab=t.0)
-: revisa la actividad grupal compartida durante la reunión, donde se pidió a los participantes ayudar a identificar posibles indicadores y fuentes de datos.
+**Recursos compartidos durante la Reunión #3 de AO**
 
+- [Diapositivas de la Reunión #3](https://docs.google.com/presentation/d/1Wx-vo-bgAgsIusNGDczln7Ej6cinRuHUuZqduhhY0cE/edit?slide=id.g380a7fd06da_0_7#slide=id.g380a7fd06da_0_7)  
+: diapositivas para guiar nuestra discusión.
+- [Resumen de la Reunión #3 y Notas Generales](https://docs.google.com/document/d/1XjBi0qHSjbso1bPnc48mBbsjcm08wJig0kZueTe4PMQ/edit?pli=1&tab=t.si1a55fewcmq)  
+: repasa las reuniones a las que no pudiste asistir y revisa los resúmenes; lleva un seguimiento de los recursos y bases de datos compartidos durante nuestras reuniones, y escribe tus ideas de forma offline.
+- [Actividad Grupal – Identificación de Indicadores y Fuentes de Datos](https://docs.google.com/document/d/16Gkoz0xp6WDkVHujWOE46toErhnJC9NRBubvftgnxcE/edit?tab=t.0)  
+: revisa la actividad grupal compartida durante la reunión, en la que se pidió a los participantes ayudar a identificar posibles indicadores y fuentes de datos.
+
+**Plan para la Reunión #4 de AO:**  
+Continuaremos nuestra discusión sobre los indicadores de AO y los puntos de referencia técnicos, y Erica propondrá un modelo de AO que podremos criticar como grupo.  
+**Por favor, vengan preparados para compartir su perspectiva sobre el modelo propuesto y los indicadores apropiados.**  
+Al hacerlo, tengan en cuenta que necesitaremos seleccionar un punto de referencia técnico apropiado para cada indicador – una "línea base". Mientras más cerca o más lejos estemos del punto de referencia técnico según algún indicador X, mayor o menor será la puntuación de AO. Si un indicador no tiene un punto de referencia técnico asociado, será difícil —si no imposible— parametrizarlo dentro del modelo de la meta.
 :::
 
 ::: {.callout-note collapse="true"}

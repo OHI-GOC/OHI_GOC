@@ -16,9 +16,11 @@ editor:
 
 ::: {.callout-tip}
 # **Working Definition** for the AO Goal
-The objective of the AO goal is to evaluate the conditions which allow members of small-scale fishing communities and pueblos originarios to thrive - including legal, regulated access to marine resources, knowledge-based use rules, clear boundaries, clear decision-making spaces, and reliable follow-through to ensure access, sustainability, and equity long-term.
+Members of coastal communities – including members of small-scale fishing communities and pueblos originarios – have access to marine resources that allow them to thrive. This includes legal and regulated access to marine resources, knowledge-based use rules, clear boundaries, clear decision-making spaces, and reliable follow-through to ensure access, sustainability, and equity long-term.
 
-*This definition was defined by the Goalkeeper Group during Meeting #2 but is not finalized.  See the Meeting #2 tab below for more details.*
+*This definition was defined by the Goalkeeper Group during Meeting #3. See the Meeting #3 tab below for more details.*
+
+*Previous working definition (as of Meeting #2): The objective of the AO goal is to evaluate the conditions which allow members of small-scale fishing communities and pueblos originarios to thrive - including legal, regulated access to marine resources, knowledge-based use rules, clear boundaries, clear decision-making spaces, and reliable follow-through to ensure access, sustainability, and equity long-term.*
 
 :::
 
@@ -136,7 +138,7 @@ Please stay tuned for more information and updates to the meeting schedule.
 ------------------------------------------------------------------------
 
 ::: {.callout-note collapse="true"}
-## **AO Meeting #1 Summary** - Resources & Next Steps
+## **AO Meeting #1 Summary** - July 22
 **Meeting #1** introduced participants and their research backgrounds related to the Gulf of California, with Erica facilitating and providing an overview of the Ocean Health Index. The group discussed the index's methodology and application to the Gulf of California region, including its assessment of various ocean health goals and the team’s need to define ‘artisanal opportunities’ beyond fishing. The conversation ended with participants agreeing to further explore concepts like resource access and sustainable livelihoods. 
 
 **Resources shared during AO Meeting #1**
@@ -148,7 +150,7 @@ Please stay tuned for more information and updates to the meeting schedule.
 :::
 
 ::: {.callout-note collapse="true"}
-## **AO Meeting #2 Summary** - Resources & Next Steps
+## **AO Meeting #2 Summary** - August 19
 The main focus of **Meeting #2** was to solidify the goal definition before selecting model indicators. In this context, our ‘model’ will be a series of indicators intended to capture the definition of the goal; it will probably not be very mathematically complicated. Erica outlined the goal workflow – a six-step process from step 1 (defining the goal) to step 6 (verifying model outputs). The team discussed various aspects of AO including social and economic importance of fishing access, access to other resources, and access to important spaces. Victor presented current work related to this topic, including measures of food sovereignty and community well-being. The group came closer to solidifying the definition of AO, which will include some measure of community resource access. Participants agreed to finalize the goal’s definition at the next meeting, where we will also try to select indicators. Please come to the next meeting prepared to settle the AO definition and suggest relevant indicators.
 
 **Resources shared during AO Meeting #2**
@@ -164,18 +166,22 @@ The main focus of **Meeting #2** was to solidify the goal definition before sele
 :::
 
 ::: {.callout-note collapse="true"}
-## **AO Meeting #3 Summary** - *UPCOMING September 23*
-**In Meeting #3**, we will finalize the definition of 'Artisanal Opportunities' in the Gulf and discuss model indicators. **Think about what indicators (variables) we should include in our AO model.** Come prepared to discuss indicators and relevant data sources.
+## **AO Meeting #3 Summary** - September 23
+**In Meeting #3**, the team solidified the AO goal definition:
+*Members of coastal communities – including members of small-scale fishing communities and pueblos originarios – have access to marine resources that allow them to thrive. This includes legal and regulated access to marine resources, knowledge-based use rules, clear boundaries, clear decision-making spaces, and reliable follow-through to ensure access, sustainability, and equity long-term.*
+
+Next the team explored various indicators for measuring AO, including artisanal fishing opportunities, Indigenous use opportunities, and coastal access, while considering cultural, legal, and socioeconomic factors that affect use. They discussed challenges in selecting appropriate indicators for measuring Indigenous use and artisanal fishing opportunities, with plans to further investigate data sources and develop a preliminary model for review at the next meeting.
 
 **Resources shared during AO Meeting #3**
 
 - [Meeting #3 Presentation Slides](https://docs.google.com/presentation/d/1Wx-vo-bgAgsIusNGDczln7Ej6cinRuHUuZqduhhY0cE/edit?slide=id.g380a7fd06da_0_7#slide=id.g380a7fd06da_0_7)
 : slides to guide our discussion.
-<!-- - [Meeting #3 Summary & General Notes](https://docs.google.com/document/d/1XjBi0qHSjbso1bPnc48mBbsjcm08wJig0kZueTe4PMQ/edit?pli=1&tab=t.si1a55fewcmq) -->
-<!-- : catch up on meetings you missed and review meeting summaries; keep track of resources and data bases shared during our meetings, and write down your thoughts offline. -->
+- [Meeting #3 Summary & General Notes](https://docs.google.com/document/d/1XjBi0qHSjbso1bPnc48mBbsjcm08wJig0kZueTe4PMQ/edit?pli=1&tab=t.si1a55fewcmq)
+: catch up on meetings you missed and review meeting summaries; keep track of resources and data bases shared during our meetings, and write down your thoughts offline.
 - [Group Activity - Identifying Indicators & Data Sources](https://docs.google.com/document/d/16Gkoz0xp6WDkVHujWOE46toErhnJC9NRBubvftgnxcE/edit?tab=t.0)
 : review the group activity shared during the meeting, wherein participants were asked to help identify potential indicators and data sources.
 
+**Plan for AO Meeting #4:** We will continue our discussion of AO indicators and technical reference points, and Erica will propose an AO model that we can critique as a group. **Please come prepared to share your perspective on the proposed model and appropriate indicators.** In doing so, please also keep in mind that we will need to select an appropriate technical reference point for each indicator – a "baseline". The closer or further away we are from the technical reference point according to some indicator X, the higher or lower the AO score will be. If an indicator does not have a technical reference point associated with it, it will be difficult if not impossible for us to parameterize it within the goal model.
 :::
 
 ::: {.callout-note collapse="true"}
