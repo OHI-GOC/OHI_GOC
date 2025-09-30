@@ -160,21 +160,22 @@ En la medida de lo posible, evite que la disponibilidad de datos limite su defin
 :::
 
 ::: {.callout-note collapse="true"}
-## **Resumen de la Reunión de BD #3** – 25 de septiembre  
+## **Resumen de la Reunión de BD #3** - 25 de septiembre  
 **Durante la Reunión #3**, el grupo consolidó una definición de trabajo para el Objetivo de Biodiversidad (BD) y discutió posibles indicadores del modelo. La reunión comenzó con actualizaciones administrativas sobre el calendario de reuniones y las contribuciones al glosario. Luego de definir el objetivo de BD, la mayor parte de la discusión se centró en refinar los indicadores de biodiversidad y los métodos de evaluación, incluyendo conversaciones sobre el estado de los hábitats, vulnerabilidades de especies y enfoques para la recolección de datos. El equipo exploró diversas fuentes de datos y técnicas de modelado para evaluar la biodiversidad, con planes de continuar desarrollando y perfeccionando estos enfoques en la próxima reunión.
 
 *La nueva definición de trabajo para el objetivo de BD es: El objetivo de BD busca evaluar el estado de los hábitats locales y la biodiversidad como indicadores del funcionamiento de los ecosistemas marinos en el golfo.*
 
 **Recursos compartidos durante la Reunión de BD #3**
 
-- [Diapositivas de la Reunión #3](https://docs.google.com/presentation/d/163362ZdhggO0F7hhk9Olw0iOykURR2dZUduT82RXFXM/edit?slide=id.g380cb7d18a2_0_0#slide=id.g380cb7d18a2_0_0): diapositivas que guiaron nuestra discusión.  
-- [Resumen y notas generales de la Reunión #3](https://docs.google.com/document/d/1IFH2GoHWF_8XMBelkLNQp0xbIPvyZNyFzFERgjGNWrU/edit?tab=t.fypzuuh89xj3): para ponerse al día si no asististe; puedes revisar los resúmenes de las reuniones, seguir los recursos y bases de datos compartidas, y anotar tus ideas de forma offline.
+- [Diapositivas de la Reunión #3](https://docs.google.com/presentation/d/163362ZdhggO0F7hhk9Olw0iOykURR2dZUduT82RXFXM/edit?slide=id.g380cb7d18a2_0_0#slide=id.g380cb7d18a2_0_0)
+: diapositivas que guiaron nuestra discusión.  
+- [Resumen y notas generales de la Reunión #3](https://docs.google.com/document/d/1IFH2GoHWF_8XMBelkLNQp0xbIPvyZNyFzFERgjGNWrU/edit?tab=t.fypzuuh89xj3)
+: para ponerse al día si no asististe; puedes revisar los resúmenes de las reuniones, seguir los recursos y bases de datos compartidas, y anotar tus ideas de forma offline.
 
 **Plan para la Reunión de BD #4:**  
-Erica presentará un modelo preliminar (tipo "dummy") para que el grupo lo analice y critique. Continuaremos con la discusión sobre los indicadores de BD, fuentes de datos y puntos de referencia técnicos.  
-**Por favor vengan preparados para discutir los indicadores que consideran más prometedores (según la disponibilidad de datos) y puntos de referencia técnicos apropiados.**  
-Tengan en cuenta que un punto de referencia técnico para cada indicador será fundamental, ya que funciona como una “línea base” del objetivo. Cuanto más cerca o más lejos estemos del punto de referencia técnico según algún indicador X, mayor o menor será la puntuación de BD. Por lo tanto, si un indicador no tiene un punto de referencia técnico asociado, será difícil —o incluso imposible— parametrizarlo dentro del modelo del objetivo.  
-*Esto significa que, aunque algunos indicadores de biodiversidad puedan ser importantes, no podremos utilizarlos si no podemos determinar un punto de referencia adecuado.*
+Erica presentará un modelo preliminar (tipo "dummy") para que el grupo lo analice y critique. Continuaremos con la discusión sobre los indicadores de BD, fuentes de datos y puntos de referencia técnicos. **Por favor vengan preparados para discutir los indicadores que consideran más prometedores (según la disponibilidad de datos) y puntos de referencia técnicos apropiados.**  
+
+Tengan en cuenta que un punto de referencia técnico para cada indicador será fundamental, ya que funciona como una “línea base” del objetivo. Cuanto más cerca o más lejos estemos del punto de referencia técnico según algún indicador X, mayor o menor será la puntuación de BD. Por lo tanto, si un indicador no tiene un punto de referencia técnico asociado, será difícil —o incluso imposible— parametrizarlo dentro del modelo del objetivo.  *Esto significa que, aunque algunos indicadores de biodiversidad puedan ser importantes, no podremos utilizarlos si no podemos determinar un punto de referencia adecuado.*
 
 ::: {.callout-tip}
 # **¿Quieres que revisemos una fuente de datos en particular?**
@@ -186,6 +187,11 @@ Mientras tanto, por favor agrega cualquier fuente de datos o indicador potencial
 ::: {.callout-note collapse="true"}
 ## **Resumen de la Reunión #4 de BD**  *PRÓXIMAMENTE 30 de octubre*
 Muy pronto compartiremos los recursos de la Reunión #4.
+
+**Plan para la Reunión de BD #4:**  
+Erica presentará un modelo preliminar (tipo "dummy") para que el grupo lo analice y critique. Continuaremos con la discusión sobre los indicadores de BD, fuentes de datos y puntos de referencia técnicos. **Por favor vengan preparados para discutir los indicadores que consideran más prometedores (según la disponibilidad de datos) y puntos de referencia técnicos apropiados.**  
+
+Tengan en cuenta que un punto de referencia técnico para cada indicador será fundamental, ya que funciona como una “línea base” del objetivo. Cuanto más cerca o más lejos estemos del punto de referencia técnico según algún indicador X, mayor o menor será la puntuación de BD. Por lo tanto, si un indicador no tiene un punto de referencia técnico asociado, será difícil —o incluso imposible— parametrizarlo dentro del modelo del objetivo.  *Esto significa que, aunque algunos indicadores de biodiversidad puedan ser importantes, no podremos utilizarlos si no podemos determinar un punto de referencia adecuado.*
 :::
 
 <!-- ::: {.callout-note collapse="true"} -->

@@ -168,17 +168,24 @@ As much as possible, try not to let data availability constrain your definition 
 - [Meeting #3 Summary & General Notes](https://docs.google.com/document/d/1IFH2GoHWF_8XMBelkLNQp0xbIPvyZNyFzFERgjGNWrU/edit?tab=t.fypzuuh89xj3)
 : catch up on meetings you missed and review meeting summaries; keep track of resources and data bases shared during our meetings, and write down your thoughts offline.
 
-**Plan for BD Meeting #4:** Erica will come with a preliminary BD "dummy" model for the group to think about and critique. We will continue our discussion of BD indicators, data sources, and technical reference points. **Please come prepared to discuss the indicators you feel are most promising (given data availability), and suitable technical reference points.** Keep in mind that a technical reference point for each indicator will be critical as it is essentially a goal "baseline". The closer or further away we are from the technical reference point according to some indicator X, the higher or lower the BD score will be. So, if an indicator does not have a technical reference point associated with it, it will be difficult if not impossible for us to parameterize it within the goal model. *This means that while some indicators of biodiversity might be important, we won't be able to use them if we cannot determine an appropriate reference point.*
+**Plan for BD Meeting #4:** Erica will come with a preliminary BD "dummy" model for the group to think about and critique. We will continue our discussion of BD indicators, data sources, and technical reference points. **Please come prepared to discuss the indicators you feel are most promising (given data availability), and suitable technical reference points.** 
+
+Keep in mind that a technical reference point for each indicator will be critical as it is essentially a goal "baseline". The closer or further away we are from the technical reference point according to some indicator X, the higher or lower the BD score will be. So, if an indicator does not have a technical reference point associated with it, it will be difficult if not impossible for us to parameterize it within the goal model. *This means that while some indicators of biodiversity might be important, we won't be able to use them if we cannot determine an appropriate reference point.*
 
 ::: {.callout-tip}
 # **Want us to review a particular data source?**
 - We did not get to [this Group Activity: Identifying Data Sources](https://docs.google.com/document/d/1rgTDw8qoBTiB60euL_D7FB5ee5gD9t-gaS4dzKDGcnA/edit?tab=t.0) during Meeting #3 as expected. Perhaps we will return to this next time during Meeting #4. In the meantime, please add any potential data sources and indicators you would like members of the OHI Core Team to review.
 :::
+
 :::
 
 ::: {.callout-note collapse="true"}
 ## **BD Meeting #4: Summary**  *UPCOMING October 30*
 Stay tuned for Meeting #4 resources.
+
+**Plan for BD Meeting #4:** Erica will come with a preliminary BD "dummy" model for the group to think about and critique. We will continue our discussion of BD indicators, data sources, and technical reference points. **Please come prepared to discuss the indicators you feel are most promising (given data availability), and suitable technical reference points.** 
+
+Keep in mind that a technical reference point for each indicator will be critical as it is essentially a goal "baseline". The closer or further away we are from the technical reference point according to some indicator X, the higher or lower the BD score will be. So, if an indicator does not have a technical reference point associated with it, it will be difficult if not impossible for us to parameterize it within the goal model. *This means that while some indicators of biodiversity might be important, we won't be able to use them if we cannot determine an appropriate reference point.*
 :::
 
 <!-- ::: {.callout-note collapse="true"} -->
