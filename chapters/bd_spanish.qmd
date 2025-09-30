@@ -16,12 +16,14 @@ editor:
 </div>
 
 ::: {.callout-tip}
-# **Definición Preliminar** para el BD Goal
-El objetivo del propósito BD es evaluar el estado de los hábitats locales y las comunidades de organismos que mantienen ecosistemas marinos productivos y servicios ecosistémicos.
+# **Definición de trabajo** para el objetivo de BD
+El objetivo de BD busca evaluar el estado de los hábitats locales y la biodiversidad como indicadores del funcionamiento de los ecosistemas marinos en el Golfo.
 
-*Esta definición no está finalizada. Está basada en las conversaciones realizadas en las Reuniones de Goalkeeper #1 y #2. Consulte la pestaña de la Reunión #2 a continuación para más detalles.*
+*Esta es una definición de trabajo, definida por el Grupo de Guardianes durante la Reunión #3 y basada en conversaciones sostenidas en las Reuniones #1 y #2. Consulta las pestañas de Reuniones más abajo para más detalles.*
 
+*Definición de trabajo anterior (hasta la Reunión #2): El objetivo del BD era evaluar el estado de los hábitats locales y las comunidades de organismos que mantienen ecosistemas marinos productivos y servicios ecosistémicos.*
 :::
+
 
 ::: {.callout-note collapse="true"}
 # Sobre la Meta de BD
@@ -118,7 +120,7 @@ Por favor, mantente atento/a a más información y actualizaciones del calendari
 ------------------------------------------------------------------------
 
 ::: {.callout-note collapse="true"}
-## **BD Reunión #1: Resumen**, Recursos y Próximos Pasos
+## **BD Reunión #1: Resumen** - 31 de julio
 
 **Reunión #1** comenzó con una conversación sobre las herramientas de reuniones de IA, los servicios de traducción de idiomas en Zoom y las presentaciones de los miembros del grupo. A continuación, se realizó una presentación y una descripción general del Ocean Health Index (OHI) y su aplicación en el Golfo de California. Los participantes exploraron la metodología para evaluar los objetivos de biodiversidad, incluyendo la importancia de establecer puntos de referencia adecuados y cuantificar el estado actual de la biodiversidad en la región. El grupo debatió los desafíos para la recopilación y el análisis de datos, con especial atención a las tendencias de degradación del hábitat y la dificultad de definir un "estado saludable" o línea de base.
 
@@ -136,7 +138,7 @@ Por favor, mantente atento/a a más información y actualizaciones del calendari
 :::
 
 ::: {.callout-note collapse="true"}
-## **Resumen de la Reunión BD #2** - Recursos y próximos pasos  
+## **Resumen de la Reunión BD #2** - 28 de agosto
 El enfoque principal de la **Reunión #2** fue solidificar la definición del objetivo antes de seleccionar los indicadores del modelo. En este contexto, nuestro ‘modelo’ será una serie de indicadores destinados a capturar la definición del objetivo; probablemente no será muy matemáticamente complicado. Erica presentó el flujo de trabajo del objetivo – un proceso de seis pasos desde el paso 1 (definir el objetivo) hasta el paso 6 (verificar los resultados del modelo). El equipo discutió diversos aspectos de la BD, incluyendo puntos de referencia ambientales y el abordaje de la degradación del hábitat, mientras revisaba los recursos disponibles. Exploraron los desafíos en la definición de indicadores de biodiversidad y el establecimiento de datos base, con discusiones sobre el uso de proxies y la opinión de expertos cuando los datos históricos son limitados. El equipo participó en una actividad grupal colaborativa para enfocar la definición del objetivo de biodiversidad, con planes de solidificar la definición en la próxima reunión. La reunión concluyó con una presentación de Hem y Ricardo, quienes discutieron su herramienta próxima para consultar bases de datos internacionales.
 
 **Recursos compartidos durante la Reunión BD #2**
@@ -158,25 +160,27 @@ En la medida de lo posible, evite que la disponibilidad de datos limite su defin
 :::
 
 ::: {.callout-note collapse="true"}
-## **Resumen de la Reunión BD #3** - *PRÓXIMAMENTE 25 de septiembre*  
-En la **Reunión #3**, finalizaremos la definición / objetivo del propósito 'Biodiversidad' y avanzaremos a la discusión de los indicadores del modelo. **Vengan preparados para finalizar la definición / objetivo del propósito BD.**
+## **Resumen de la Reunión de BD #3** – 25 de septiembre  
+**Durante la Reunión #3**, el grupo consolidó una definición de trabajo para el Objetivo de Biodiversidad (BD) y discutió posibles indicadores del modelo. La reunión comenzó con actualizaciones administrativas sobre el calendario de reuniones y las contribuciones al glosario. Luego de definir el objetivo de BD, la mayor parte de la discusión se centró en refinar los indicadores de biodiversidad y los métodos de evaluación, incluyendo conversaciones sobre el estado de los hábitats, vulnerabilidades de especies y enfoques para la recolección de datos. El equipo exploró diversas fuentes de datos y técnicas de modelado para evaluar la biodiversidad, con planes de continuar desarrollando y perfeccionando estos enfoques en la próxima reunión.
 
-*Estén atentos a los recursos de la Reunión #3.*
+*La nueva definición de trabajo para el objetivo de BD es: El objetivo de BD busca evaluar el estado de los hábitats locales y la biodiversidad como indicadores del funcionamiento de los ecosistemas marinos en el golfo.*
+
+**Recursos compartidos durante la Reunión de BD #3**
+
+- [Diapositivas de la Reunión #3](https://docs.google.com/presentation/d/163362ZdhggO0F7hhk9Olw0iOykURR2dZUduT82RXFXM/edit?slide=id.g380cb7d18a2_0_0#slide=id.g380cb7d18a2_0_0): diapositivas que guiaron nuestra discusión.  
+- [Resumen y notas generales de la Reunión #3](https://docs.google.com/document/d/1IFH2GoHWF_8XMBelkLNQp0xbIPvyZNyFzFERgjGNWrU/edit?tab=t.fypzuuh89xj3): para ponerse al día si no asististe; puedes revisar los resúmenes de las reuniones, seguir los recursos y bases de datos compartidas, y anotar tus ideas de forma offline.
+
+**Plan para la Reunión de BD #4:**  
+Erica presentará un modelo preliminar (tipo "dummy") para que el grupo lo analice y critique. Continuaremos con la discusión sobre los indicadores de BD, fuentes de datos y puntos de referencia técnicos.  
+**Por favor vengan preparados para discutir los indicadores que consideran más prometedores (según la disponibilidad de datos) y puntos de referencia técnicos apropiados.**  
+Tengan en cuenta que un punto de referencia técnico para cada indicador será fundamental, ya que funciona como una “línea base” del objetivo. Cuanto más cerca o más lejos estemos del punto de referencia técnico según algún indicador X, mayor o menor será la puntuación de BD. Por lo tanto, si un indicador no tiene un punto de referencia técnico asociado, será difícil —o incluso imposible— parametrizarlo dentro del modelo del objetivo.  
+*Esto significa que, aunque algunos indicadores de biodiversidad puedan ser importantes, no podremos utilizarlos si no podemos determinar un punto de referencia adecuado.*
+
+::: {.callout-tip}
+# **¿Quieres que revisemos una fuente de datos en particular?**
+- No alcanzamos a trabajar en [esta Actividad Grupal: Identificación de Fuentes de Datos](https://docs.google.com/document/d/1rgTDw8qoBTiB60euL_D7FB5ee5gD9t-gaS4dzKDGcnA/edit?tab=t.0) durante la Reunión #3 como se esperaba. Tal vez retomemos esta actividad en la Reunión #4.  
+Mientras tanto, por favor agrega cualquier fuente de datos o indicador potencial que te gustaría que el equipo central de OHI revise.
 :::
-
-::: {.callout-note collapse="true"}
-## **Resumen de la Reunión #3 de BD** - *PRÓXIMAMENTE 25 de septiembre*
-**En la Reunión #3**, vamos a finalizar la definición / objetivo de la meta de 'Biodiversidad' y pasaremos a discutir los indicadores del modelo. **Llega preparado/a para finalizar la definición / objetivo de la meta de BD.**
-
-**Recursos compartidos durante la Reunión #3 de Biodiversidad (BD)**
-
-- [Diapositivas de la Reunión #3](https://docs.google.com/presentation/d/163362ZdhggO0F7hhk9Olw0iOykURR2dZUduT82RXFXM/edit?slide=id.g380cb7d18a2_0_0#slide=id.g380cb7d18a2_0_0)
-: presentación para guiar nuestra conversación.
-<!-- - [Resumen y Notas Generales de la Reunión #3](https://docs.google.com/document/d/11LrbOWL7UnQ2SU3u-POucAdKruhMNsFJ6rCkEMtNIqI/edit?tab=t.gb2sy7trdzk7) -->
-<!-- : revisa las reuniones que te perdiste y repasa los resúmenes; lleva un registro de los recursos y bases de datos compartidos, y anota tus ideas por fuera de las reuniones. -->
-- [Actividad Grupal - Identificación de Indicadores](https://docs.google.com/document/d/1rgTDw8qoBTiB60euL_D7FB5ee5gD9t-gaS4dzKDGcnA/edit?tab=t.0)
-: revisa la actividad grupal compartida durante la reunión, donde se pidió a los participantes ayudar a identificar posibles indicadores y fuentes de datos.
-
 :::
 
 ::: {.callout-note collapse="true"}
