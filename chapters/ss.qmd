@@ -85,6 +85,7 @@ Does the safety and security goal seem to be more of **a pressure on many other 
 ---
 
 ##### **Key Team Members**
+
 - Amy Hudson Weaver 
 - Francisco Fernandez  
 - Jorge Torre  
@@ -102,7 +103,7 @@ Does the safety and security goal seem to be more of **a pressure on many other 
 | 3 | September 26, 2025 | Model, reference point, and data sources |
 | 4 | October 24, 2025 | Preliminary results and pressure/resilience |
 | 5 | November 21, 2025 | Final analysis plan review |
-| 6 | December 5, 2025 *(tentative)* | *Tentative* |
+| 6 | January 2026 *(tentative)* | *Tentative* |
 
 ---
 
@@ -337,15 +338,52 @@ Thank you, and see you next month!
 :::
 
 ::: {.callout-note collapse="true"}
-# <i class="fa-regular fa-clipboard"></i>  **Meeting #3:** *Upcoming on September 26th!*
-Stay tuned for Meeting #3 resources.
+# <i class="fa-regular fa-clipboard"></i>  **Meeting #3:** Optional Office Hours
+
+**_Our formal meeting this month was an optional office hours to discuss, ask questions, and share thoughts.  This was because many of the OHI goals are still in development, and their indicators may shift. So, while we could start identifying how this SS pressure aligns with which OHI goals now, that work might need to be revised shortly._**
+
+We will resume our next scheduled meeting on October 24th. In the meantime, we can continue collaborating via email or through the [SS Pressurekeeper Ideas document](https://docs.google.com/document/d/1djLJpt2VB8fZLe518mnSzd6l7GaU1IQLpPlLuiK6flU/edit?tab=t.kyrkgpt50url#heading=h.247se0v7ftjr).  
+
+I’ve recently come across the [Mexico Peace Index (MPI)](https://www.visionofhumanity.org/maps/mexico-peace-index/#/) and [Mexico Positive Peace Index (MPPI)](https://www.visionofhumanity.org/wp-content/uploads/2025/05/MPI-ENG-2025-web.pdf) by Vision of Humanity, which offers state-level indicator scores for the years 2015 - 2024, similar to the global Organized Crime Index from Global Initiative.  For your convenience, I have added a quick overview of the MPI/MPPI indicators in the [SS Pressurekeepers Ideas document](https://docs.google.com/document/d/1djLJpt2VB8fZLe518mnSzd6l7GaU1IQLpPlLuiK6flU/edit?tab=t.kyrkgpt50url#heading=h.247se0v7ftjr) to help guide our discussions.
+
+I believe we could use MPI indicator scores as pressure scores (and possibly resilience?) that affect specific OHI GoC goals, which helps us avoid reinventing the wheel. 
+
+::: {.custom-box}
+
+However, the MPI is only available at the state level, and there are other data sources that are more specific to municipios within the coastal area of the Gulf of California.  These include:
+
+- For Safety (objective criminal incidents):
+
+  - **[SEMAFORO:](https://jalisco.semaforo.com.mx/)** how concentrated different types of crime are, scaled from green → red (like a traffic light)
+    - By municipality and year
+
+  - **[México Unido Contra la Delincuencia (MUCD):](https://incidenciadelictiva.mucd.org.mx/)** geographical distribution of the registry of investigation files opened for the crime of intentional homicide and femicide
+    - This is **not** by municipio, but instead by geographical area and year
+    
+  - **Mexico Peace Index scores (2015 - 2024):** from Vision of Humanity
+    - Scores are by state and by year, could be adjusted based on population to estimate a score for coastal GoC areas.
+    
+- For Security (subjective fear of crime):
+
+  - **INEGI: National Survey on Victimization and Perception of Public Safety (ENVIPE) 2024:**
+    - Need to consider data completeness by year.  As this is survey data, it will take more time and effort to ensure everything is done correctly, and we would need to decide which survey questions best apply.
+  - **Mexico Peace Index scores (2015 - 2024):** 
+    - “Fear of Violence” indicator score from Vision of Humanity, scores are by state and by year 
+    - They use INEGI ENVIPE data, which is good!
+
+:::
+
+<br>
+
+**Thank you all again for all the insights and time you contribute. Your participation is deeply appreciated! See you next meeting.**
+
 :::
 
 
-<!-- ::: {.callout-note collapse="true"} -->
-<!-- # <i class="fa-regular fa-clipboard"></i>  **Meeting #4:** *Upcoming on ____!* -->
-<!-- Stay tuned for Meeting #4 resources. -->
-<!-- ::: -->
+::: {.callout-note collapse="true"}
+# <i class="fa-regular fa-clipboard"></i>  **Meeting #4:** *Upcoming on October 24th!*
+Stay tuned for Meeting #4 resources.
+:::
 
 
 <!-- ::: {.callout-note collapse="true"} -->

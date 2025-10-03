@@ -102,7 +102,7 @@ Al explorar la idea de incorporar **Seguridad y Protección** en el OHI para el 
 | 3 | 26 de septiembre de 2025 | Modelo, punto de referencia y fuentes de datos |
 | 4 | 24 de octubre de 2025 | Resultados preliminares y presión/resiliencia |
 | 5 | 21 de noviembre de 2025 | Revisión del plan final de análisis |
-| 6 | 5 de diciembre de 2025 *(tentativo)* | *Tentativo* |
+| 6 | Enero de 2026 *(tentativo)* | *Tentativo* |
 
 ---
 
@@ -337,9 +337,53 @@ Por favor agrega cualquier recurso o idea al documento [SS Goalkeeper Ideas](htt
 :::
 
 ::: {.callout-note collapse="true"}
-# <i class="fa-regular fa-clipboard"></i>  **Reunión #3:** *¡Próxima el 26 de septiembre!*  
-Mantente al tanto de los recursos para la Reunión #3.  
+# <i class="fa-regular fa-clipboard"></i>  **Reunión #3:** Horas de Oficina Opcionales
+
+**_Nuestra reunión formal de este mes fue en formato de horas de oficina opcionales para conversar, hacer preguntas y compartir ideas. Esto se debió a que muchas de las metas del OHI aún están en desarrollo, y sus indicadores pueden cambiar. Entonces, aunque ya podíamos empezar a identificar cómo esta presión de SS se alinea con las metas del OHI, es posible que ese trabajo necesite revisarse pronto._**
+
+Reanudaremos nuestra siguiente reunión programada el 24 de octubre. Mientras tanto, podemos seguir colaborando por correo electrónico o a través del [documento de Ideas de los SS Pressurekeepers](https://docs.google.com/document/d/1djLJpt2VB8fZLe518mnSzd6l7GaU1IQLpPlLuiK6flU/edit?tab=t.kyrkgpt50url#heading=h.247se0v7ftjr).  
+
+Recientemente encontré el [Índice de Paz México (MPI)](https://www.visionofhumanity.org/maps/mexico-peace-index/#/) y el [Índice de Paz Positiva México (MPPI)](https://www.visionofhumanity.org/wp-content/uploads/2025/05/MPI-ENG-2025-web.pdf) de Vision of Humanity, que ofrecen puntajes de indicadores a nivel estatal para los años 2015 - 2024, similares al Índice Global de Crimen Organizado de Global Initiative. Para su comodidad, añadí un resumen rápido de los indicadores MPI/MPPI en el [documento de Ideas de los SS Pressurekeepers](https://docs.google.com/document/d/1djLJpt2VB8fZLe518mnSzd6l7GaU1IQLpPlLuiK6flU/edit?tab=t.kyrkgpt50url#heading=h.247se0v7ftjr) para ayudar a guiar nuestras discusiones.
+
+Creo que podríamos usar los puntajes de los indicadores MPI como puntajes de presión (¿y posiblemente de resiliencia?) que afectan metas específicas del OHI GoC, lo cual nos ayuda a no reinventar la rueda. 
+
+::: {.custom-box}
+
+Sin embargo, el MPI solo está disponible a nivel estatal, y existen otras fuentes de datos más específicas para los municipios dentro del área costera del Golfo de California. Estas incluyen:
+
+- Para Seguridad Objetiva (incidentes criminales registrados):
+
+  - **[SEMAFORO:](https://jalisco.semaforo.com.mx/)** muestra qué tan concentrados están distintos tipos de delitos, en una escala de verde → rojo (como un semáforo)
+    - Por municipio y año
+
+  - **[México Unido Contra la Delincuencia (MUCD):](https://incidenciadelictiva.mucd.org.mx/)** distribución geográfica del registro de carpetas de investigación abiertas por homicidio doloso y feminicidio
+    - **No** es por municipio, sino por área geográfica y año
+    
+  - **Puntajes del Índice de Paz México (2015 - 2024):** de Vision of Humanity  
+    - Puntajes por estado y por año, se podrían ajustar en función de la población para estimar un puntaje en las zonas costeras del GoC.
+    
+- Para Seguridad Subjetiva (percepción de miedo al crimen):
+
+  - **INEGI: Encuesta Nacional de Victimización y Percepción sobre Seguridad Pública (ENVIPE) 2024:**  
+    - Es necesario considerar la completitud de los datos por año. Al ser datos de encuesta, tomará más tiempo y esfuerzo asegurarnos de que todo se procese correctamente, y deberíamos decidir qué preguntas de la encuesta aplican mejor.
+  - **Puntajes del Índice de Paz México (2015 - 2024):**  
+    - Indicador de “Miedo a la Violencia” de Vision of Humanity, puntajes por estado y por año  
+    - Usan datos de la ENVIPE de INEGI, ¡lo cual es muy bueno!
+
 :::
+
+<br>
+
+**¡Muchas gracias nuevamente por todas las ideas y el tiempo que aportan! Su participación es muy valiosa. Nos vemos en la próxima reunión.**
+
+:::
+
+
+::: {.callout-note collapse="true"}
+# <i class="fa-regular fa-clipboard"></i>  **Reunión #4:** *¡Próximamente el 24 de octubre!*
+Manténganse al tanto de los recursos de la Reunión #4.
+:::
+
 
 <br>
 

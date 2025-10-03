@@ -79,7 +79,7 @@ What is the ideal sustainable state of the **clean waters** goal?
 | 3 | September 30, 2025 | Model, reference point, and data sources |
 | 4 | October 28, 2025 | Preliminary results and pressure/resilience |
 | 5 |  November 18, 2025 | Final analysis plan review |
-| 6 |  December 9, 2025 *(tentative)* | *Tentative* |
+| 6 |  January 2026 *(tentative)* | *Tentative* |
 
 ---
 
@@ -331,15 +331,51 @@ In our **next meeting**, we will:
 :::
 
 ::: {.callout-note collapse="true"}
-# <i class="fa-regular fa-clipboard"></i>  **Meeting #3:** *Upcoming on September 30!*
-Stay tuned for Meeting #3 resources.
+# <i class="fa-regular fa-clipboard"></i>  **Meeting #3:** Data Sources & Reference Points
+
+**_During our group activity on the Clean Waters goal, we focused on identifying key contaminants, possible data sources, and technical reference points to evaluate the extent to which local waters remain free from human-caused pollution._**
+
+<i class="fa-solid fa-link"></i>[**Meeting #3 Activity**](https://docs.google.com/document/d/1JhF0Wf9g4VH-iDHVK07Qk2FdLBZNtWXTxdxrRecbF-Q/edit?tab=t.2zz7o4vt68td)
+
+Throughout the discussion, we organized our work around four main categories of contaminants: **pathogens, nutrients (eutrophication), chemicals, and marine debris**. For each category, we reviewed existing data sources, their limitations, and possible indicators for evaluation.
+
+- **Pathogens:**  
+  We considered data from **CONAGUA** (wastewater treatment plant inventories), the **Clean Beaches Program** from COFEPRIS, and international guidelines (WHO). The group highlighted the uncertainty of wastewater treatment efficiency in rural areas and the reliability of official program data compared with scientific literature. Bacterial indicators such as *E. coli* and enterococci, as well as viruses introduced from human sewage, were discussed as indicators.
+
+- **Nutrients (Eutrophication):**  
+  Possible data sources included nutrient output models from aquaculture and agriculture, records of sanitary closures and red tide events, and the **HAEDAT** database of harmful algal blooms (HABs). The group emphasized the importance of nature-based solutions for nutrient management and combining satellite monitoring with in-situ measurements to better predict and track harmful algal blooms (HABs).  
+  
+  As of now, the OHI Core Team feels that tracking HAB events in the GoC is the best indicator.  This is because nutrient inputs in the marine system are not necessarily bad *unless they cause a HAB that affects both the species there, and humans.* Therefore, it would make more sense to track HABs, rather than try to estimate how much nutrient pollution becomes an issue.  
+
+- **Chemicals:**  
+  Discussions focused on pesticides, heavy metals, and hydrocarbons. Sources included SEMARNAT and mining industry databases, as well as scientific studies using bioindicators (bivalves, fish). We noted the importance of evaluating mining practices, tracking oil spills, and assessing compliance with “clean fleet” fuel and waste management policies.
+  
+  SEMARNAT has the most promising data for heavy metals and hydrocarbons in coastal areas, as they have the number of contaminated sites by entity, municipality, year (2015-2025), and type/name of contaminant; Hazardous waste generation estimates by types of waste, from 2017 - 2025 by state and by municipio; and a list of contaminated and remediated sites with their exact location and the year they were identified/remediated.
+
+- **Marine Debris:**  
+  The group examined both micro- and macroplastics, citing recent studies on fish and sea lions, along with the **National Inventory of Plastic Pollution Sources**. Possible reference points could be improving waste management practices in coastal communities and considering policies on single-use plastics.
+
+Overall, the group agreed that the main challenge is **identifying/harmonizing diverse data sources** and defining **clear technical reference points** to translate this information into meaningful indicators for the Clean Waters goal in the Gulf of California.
+
+---
+
+**_NEXT STEPS:_**
+
+- Miguel will reach out to Dr. Paez-Osuna for data used in the [Environmental Status of the Gulf of California](https://www.sciencedirect.com/science/article/abs/pii/S0012825217300429?via%3Dihub) paper from 2017.
+- We will continue to evaluate the usability of data (Clean beach program report (programa playas limpias) / COFEPRIS / CONAGUA)
+- Jaqueline will advise us on inconsistencies in the Playas Limpias program.
+
+---
+
+**Thank you all for your thoughtful input and time! We are so appreciative of the collective effort that will be necessary to obtain robust CW scores.**
+
 :::
 
 
-<!-- ::: {.callout-note collapse="true"} -->
-<!-- # <i class="fa-regular fa-clipboard"></i>  **Meeting #4:** *Upcoming on ____!* -->
-<!-- Stay tuned for Meeting #4 resources. -->
-<!-- ::: -->
+::: {.callout-note collapse="true"}
+# <i class="fa-regular fa-clipboard"></i>  **Meeting #4:** *Upcoming on October 28th!*
+Stay tuned for Meeting #4 resources.
+:::
 
 
 <!-- ::: {.callout-note collapse="true"} -->
