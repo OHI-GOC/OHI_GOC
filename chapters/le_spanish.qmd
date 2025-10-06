@@ -86,7 +86,7 @@ Esta meta suele tener un aspecto de cantidad y calidad. **¿Hay algo importante 
 | 2       | 5 de septiembre de 2025 | Discusión del modelo y punto de referencia                    |
 | 3       | 3 de octubre de 2025   | Modelo, punto de referencia y fuentes de datos                 |
 | 4       | 7 de noviembre de 2025 | Resultados preliminares y presión/resiliencia                 |
-| 5       | 5 de diciembre de 2025 | Revisión del plan final de análisis                            |
+| 5       | Enero de 2026 | Revisión del plan final de análisis                            |
 
 ##### **Información sobre Coautoría**
 
@@ -275,9 +275,67 @@ Nos volveremos a reunir para la **Reunión #3 el _3 de octubre_** para afinar in
 
 
 ::: {.callout-note collapse="true"}
-# <i class="fa-regular fa-clipboard"></i> **Reunión #3:** *¡Próximamente el 3 de octubre!*
-Manténganse atentas y atentos a los recursos de la Reunión #3.
+# <i class="fa-regular fa-clipboard"></i>  **Reunión #3:** Fuentes de Ingresos y Puntos de Referencia
+
+**_Durante nuestra actividad grupal para la meta de Medios de Vida y Economías (LE), nos enfocamos en identificar fuentes de datos de ingresos y posibles puntos de referencia en los sectores relacionados con el mar en el Golfo de California._**
+
+Se destacó que los indicadores de **Medios de Vida** están en gran parte cubiertos por la **Encuesta Nacional de Ocupación y Empleo (ENOE) de INEGI**, la cual ya ofrece una cobertura sólida de empleo, ingresos y calidad del trabajo. Sin embargo, para la **Pesca Recreativa** y el **Ecoturismo**, será necesario usar enfoques creativos que complementen a la ENOE.
+
+Puntos clave de la discusión:
+
+- **Pesca Comercial Industrial y Artesanal:**  
+  Los datos de ingresos están disponibles en los **registros de desembarques de CONAPESCA**, con posibles indicadores como valor de desembarques, número de embarcaciones y CPUE. Ideas específicas incluyen ingresos por unidad de esfuerzo o puntos de referencia basados en MSY (BMSY * precio).  
+
+- **Pesca Recreativa/Deportiva:**  
+  Los datos son limitados, pero los **permisos de pesca deportiva** (disponibles desde 2009) proporcionan una serie de tiempo. Otras fuentes incluyen **directorios de capitanías de puerto** (por estado) y literatura sobre turismo basado en la pesca deportiva. Los ingresos podrían aproximarse a partir de permisos vendidos, cobros de derechos o estimaciones de actividad turística en lugares clave como La Paz, Los Cabos, San Felipe, Puerto Peñasco, Guaymas y Loreto.  
+
+- **Turismo:**  
+  Posibles fuentes incluyen el **PIB Turístico de INEGI**, la **ocupación hotelera de Datatur**, y el **Derecho de No Residente (DNR)** de México, un cobro federal recaudado de turistas que ingresan por mar o tierra y de pasajeros de cruceros. Existen **puntos de referencia del Plan México**:  
+  - Incrementar el PIB turístico de México en **9%**.  
+  - Incrementar la recaudación del DNR en **40.5%**.  
+  Estos puntos de referencia pueden servir como metas útiles para los indicadores de ingresos.  
+
+- **Ecoturismo:**  
+  La mayor parte del ecoturismo se concentra en **áreas naturales protegidas**, donde las **oficinas de CONANP registran los cobros de derechos de entrada**. Estos datos pueden solicitarse mediante la Plataforma Nacional de Transparencia o directamente con los directores de cada ANP. Los puntos de referencia podrían incluir límites máximos de visitantes o el total de ingresos por entradas como un proxy del nivel de actividad.  
+
+- **Acuacultura y Maricultura:**  
+  Las fuentes incluyen los **diagnósticos acuícolas de CONAPESCA** y los comités estatales de sanidad acuícola (ej. camarón, ostión). Dado que las prácticas de sostenibilidad influyen en los rendimientos, los ingresos ajustados por prácticas sostenibles podrían ser mejores indicadores.  
+
+- **Energías Renovables:**  
+  El **Atlas Nacional de Áreas con Alto Potencial de Energías Limpias (SENER)** muestra alto potencial mareomotriz y de energía de olas entre Sinaloa y Baja California Sur. El equipo central del OHI continuará buscando datos de ingresos en industrias de recursos renovables para evaluar su inclusión en el marco del LE.  
+
+- **Productos Naturales y Sal:**  
+  Los flujos de ingresos pueden incluir algas, residuos pesqueros, perlas, farmacéuticos, cosméticos, especies para el comercio de acuarios, biocombustibles y productos tradicionales (ej. totoaba, peyote, manglares). Los datos de **extracción de sal** están disponibles en el **Anuario Estadístico de la Minería Mexicana**, que reporta por municipio (volumen, no valor). En caso de dudas, el grupo sugirió contactar a la [**Asociación Mexicana de la Industria Salinera**](https://www.amisac.org.mx/miembros-de-amisac/) para mayor claridad.  
+
+- **Transporte Marítimo y Puertos:**  
+  Las **Capitanías de Puerto** (bajo la SICT) regulan el registro de embarcaciones comerciales y recreativas. Toda embarcación debe registrarse en la **Secretaría de Infraestructura, Comunicaciones y Transportes (SICT)**, lo que constituye una fuente clave para indicadores de ingresos relacionados con transporte marítimo y puertos.  
+
+- **Investigación y Educación Oceánica:**  
+  Los indicadores podrían incluir el número de investigadores marinos registrados en el **Sistema Nacional de Investigadores (SNI)** y el número de instituciones de ciencia y educación acreditadas en RENIECYT.  
+
+En general, el grupo coincidió en que el **próximo paso** es refinar los indicadores de ingresos y empleos en estos sectores y alinearlos con puntos de referencia viables. Esto asegurará que la meta LE refleje tanto la magnitud de la actividad económica marina como su sostenibilidad en el Golfo de California.
+
+---
+
+**PRÓXIMOS PASOS**
+
+- Revisar las ocupaciones laborales y los sectores/industrias relacionados, [aquí.](https://docs.google.com/document/d/1Ixhixn-pC6BPo4fwVi4sTkPXQbd7R-iKG3MF5XV4l_g/edit?tab=t.b70pl17vrhvs#heading=h.98g1rjoyl0rg)  
+- Revisar las métricas posibles de calidad del empleo, [aquí.](https://docs.google.com/document/d/1Ixhixn-pC6BPo4fwVi4sTkPXQbd7R-iKG3MF5XV4l_g/edit?tab=t.1pis55i8x5m#heading=h.98g1rjoyl0rg)  
+- Continuar la búsqueda de datos de ingresos sobre energías renovables.  
+
+---
+
+**¡Gracias a todas y todos por sus valiosas aportaciones! Estas notas guiarán nuestro trabajo en el desarrollo de la meta LE.**
+
 :::
+
+
+
+::: {.callout-note collapse="true"}
+# <i class="fa-regular fa-clipboard"></i>  **Reunión #4:** *¡Próximamente el 7 de noviembre!*  
+Mantente al tanto de los recursos de la Reunión #4.
+:::
+
 
 
 ---

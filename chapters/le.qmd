@@ -90,7 +90,7 @@ What are some important marine-sector industries within the Gulf that come to mi
 | 2       | September 5, 2025 | Model and reference point discussion                          |
 | 3       | October 3, 2025   | Model, reference point, and data sources                      |
 | 4       | November 7, 2025 | Preliminary results and pressure/resilience                   |
-| 5       | December 5, 2025  | Final analysis plan review                                    |
+| 5       | January 2026  | Final analysis plan review                                    |
 
 
 ##### **Co-authorship Information**
@@ -283,17 +283,67 @@ Thank you all for helping sharpen the vision for Livelihoods & Economies in the 
 :::
 
 
-
 ::: {.callout-note collapse="true"}
-# <i class="fa-regular fa-clipboard"></i>  **Meeting #3:** *Upcoming on October 3rd!*
-Stay tuned for Meeting #3 resources.
+# <i class="fa-regular fa-clipboard"></i>  **Meeting #3:** Revenue Data & Reference Points
+
+**_During our group activity for the Livelihoods & Economies (LE) goal, we focused on identifying revenue data sources and possible benchmarks across marine-related sectors in the Gulf of California._**
+
+We noted that **Livelihoods** indicators are largely covered by INEGI’s **ENOE survey**, which already provides strong coverage of employment, income, and job quality. For **Recreational Fishing** and **Ecotourism**, however, we will need creative approaches to complement ENOE.
+
+Key points from the discussion included:
+
+- **Industrial & Artisanal Commercial Fishing:**  
+  Revenue data are available from **CONAPESCA landings records**, with possible indicators including landed value, vessel counts, and CPUE. Specific ideas include revenue per unit effort or MSY-based reference points (BMSY * price).  
+
+- **Recreational/Sports Fishing:**  
+  Limited data exist, but **sportfishing permits** (available since 2009) provide one time series. Additional sources include **port captaincy directories** (by state) and literature on tourism-based sportfishing. Revenue may be approximated using permits sold, right fees, or estimates from tourism activity in key locations such as La Paz,Los Cabos, San Felipe, Puerto Peñasco, Guaymas, and Loreto.  
+
+- **Tourism:**  
+  Possible sources include **INEGI’s PIB Turístico (tourism GDP)**, **Datatur hotel occupancy**, and Mexico’s **Non-Resident Duty (DNR)**, a federal fee collected from cruise ship passengers and land/sea tourists. There are **government reference points from Plan México**:  
+  - Increase Mexico’s tourism GDP by **9%**.  
+  - Increase DNR revenue collection by **40.5%**.  
+  These reference points could provide useful targets for revenue indicators. 
+
+- **Ecotourism:**  
+  Most ecotourism focuses on **protected areas**, where **CONANP offices maintain entrance fee records (*cobro de derechos*)**. These fees can be requested through the Transparency Platform or directly from CONANP directors. Reference points could include maximum visitation limits or total entrance fee revenue as a proxy for activity levels.  
+
+- **Aquaculture & Mariculture:**  
+  Sources include **CONAPESCA’s aquaculture diagnostics** and state aquaculture health committees (e.g., shrimp, oysters). Because sustainability practices affect yields, profits or revenue adjusted for sustainable practices may serve as better indicators.  
+
+- **Renewable Energy:**  
+  The **National Atlas of Areas with High Clean Energy Potential** (SENER) shows high tidal/wave energy potential between Sinaloa and Baja California Sur. The OHI Core Team will continue searching for revenue data on renewable resource industries to evaluate whether these can be included in the LE framework.  
+
+- **Natural Products & Salt:**  
+  Revenue streams may include algae, fisheries residues, pearls, pharmaceuticals, cosmetics, aquarium trade species, biofuels, and traditional products (e.g., totoaba, peyote, mangroves). **Salt extraction** data are available in the **Statistical Yearbook of Mexican Mining**, which reports by municipality (volume, not value). If questions arise, the group suggested we could reach out to the [**Asociación Mexicana de la Industria Salinera**](https://www.amisac.org.mx/miembros-de-amisac/) for clarification.  
+
+- **Shipping & Ports:**  
+  **Capitanías de Puerto** (under SICT) regulate vessel registries for commercial vs. recreational fleets. Every vessel must be registered with the **Secretaría de Infraestructura, Comunicaciones y Transportes (SICT)**, making this an important source for shipping/port-related revenue indicators.  
+
+- **Research & Ocean Education:**  
+  Indicators could include the number of marine researchers registered in the **National System for Researchers (SNI)** and the number of accredited science and education institutions in RENIECYT.  
+
+Overall, the group agreed that the **next step** is to refine revenue and job indicators across these sectors and align them with feasible reference points. This will ensure that the LE goal reflects both the scale of marine-related economic activity and its sustainability in the Gulf of California.
+
+---
+
+**NEXT STEPS**
+
+- Review job occupations and their related sectors/industries, [here.](https://docs.google.com/document/d/1Ixhixn-pC6BPo4fwVi4sTkPXQbd7R-iKG3MF5XV4l_g/edit?tab=t.b70pl17vrhvs#heading=h.98g1rjoyl0rg)
+- Review the possible job quality metrics, [here.](https://docs.google.com/document/d/1Ixhixn-pC6BPo4fwVi4sTkPXQbd7R-iKG3MF5XV4l_g/edit?tab=t.1pis55i8x5m#heading=h.98g1rjoyl0rg)
+- Continue searching for revenue data for renewable energy. 
+
+---
+
+**Thank you all for your thoughtful input! These notes will guide us as we build out the LE goal.**
+
 :::
 
 
-<!-- ::: {.callout-note collapse="true"} -->
-<!-- # <i class="fa-regular fa-clipboard"></i>  **Meeting #4:** *Upcoming on ____!* -->
-<!-- Stay tuned for Meeting #4 resources. -->
-<!-- ::: -->
+
+::: {.callout-note collapse="true"}
+# <i class="fa-regular fa-clipboard"></i>  **Meeting #4:** *Upcoming on November 7th!*
+Stay tuned for Meeting #4 resources.
+:::
 
 
 <!-- ::: {.callout-note collapse="true"} -->
