@@ -3,7 +3,7 @@ title: ""
 format: html
 ---
 
-# ![](figs/sense-of-place.svg){width="8%" height="8%" color="red"} Sense of belonging {#key-questions}
+# ![](figs/sense-of-place.svg){width="8%" height="8%" color="red"} Sense of Place {#key-questions}
 
 <div class="button-container">
   <a href="https://ohi-goc.github.io/OHI_GOC/chapters/sp_spanish.html" class="custom-button">
@@ -11,15 +11,25 @@ format: html
   </a>
 </div>
 
-::: {.callout-tip} 
-# OHI GoCA Goal Definition
+::: {.callout-warning} 
+# Immediate Next Steps 
 
-The objective of the Sense of Belonging goal is to determine **how well we are caring and promoting** the heritage, shared memories, and identity that connect Gulf of California communities, including pueblos originarios, to their marine and coastal spaces: indicating how strongly people are rooted and included in the Gulf’s past, present, and future.
+**By October 28th, please:**
+
+- Finalize the list of iconic species (reasoning for each included). 
+  
+  [Link to Iconic Species list spreadsheet here!](https://docs.google.com/spreadsheets/d/1D6VWMVoEhhkJf7aqx0DaqKFaP6XKi8OW1fAR9l_XfhA/edit?gid=239620565#gid=239620565)
+
+- Finalize a list of *categories* of Lasting Special Places, before the group works together to identify **all** of the special places in the coastal and marine Gulf area. 
+  
+  [Link to Lasting Special Places categories spreadsheet here!](https://docs.google.com/spreadsheets/d/1EL6io4VelgUIhnjTHgho8tzARpzDYssi73shVkanAYI/edit?gid=224622882#gid=224622882)
+  
+**After October 28th, I will assume that the lists are complete and move forward on those subgoals.**
 
 :::
 
 ::: {.callout-tip collapse="true"}
-# <i class="fa-regular fa-star"></i>  Background Information on the SB Goal
+# <i class="fa-regular fa-star"></i>  Background Information on the SP Goal
 
 **This goal measures human connections to the marine environment that provide a deep sense of identity and belonging.**
 
@@ -33,55 +43,9 @@ Feelings of identity and belonging stem from – for example:
 ::: custom-box
 {{< fa lightbulb >}} **CORE DEFINITIONS**
 
-In the global framework, these are the definitions of the goal and subgoals (Iconic Species, and Lasting Special Places):
+The objective of the Sense of Belonging/Place goal is to determine **how well we are sustainably caring** for the marine regions that provide heritage, shared memories, and identity, and **to promote** the connections between the Gulf of California and local communities, including pueblos originarios.
 
-**Sense of Place (Goal)**
-
-*Definition*: Captures aspects of coastal and marine systems that people value as part of their cultural identity.  There was a proposed alternative name: "Sense of belonging" *(suggested by Marlu)*
-
-**Iconic Species (Subgoal)**
-
-*Definition*: Species relevant to local cultural identity through traditional activities (fishing, hunting, commerce), local ethnic or religious practices, existence value, and locally-recognized aesthetic value (tourism, art subjects).
-
-**Lasting Special Places (Subgoal)**
-
-*Definition*: Geographic locations with particular value for aesthetic, spiritual, cultural, recreational, or existence reasons.  These areas are then assessed by their protection levels/status for these valued locations.
 :::
-
-## Key Questions
-
-What does **sense of place, or belonging,** mean to all of you? Does the global definition of the goal, and its subgoals, make sense for the Gulf of California? 
-
-If so, here are some questions for each subgoal:
-
-#### **Iconic Species subgoal**
-
-How can we identify **species** that are relevant to **local cultural identity** through:
-
-1. Traditional activities (fishing, hunting, commerce)
-2. Local ethnic or religious practices
-3. Existence value
-4. Locally-recognized aesthetic value (tourism, art subjects)
-  
-Are there publications about these types of species, or would all of you like to work together to **create a list** of the species that are iconic to the Gulf?
-
-#### **Lasting Special Places subgoal**
-
-How can we identify places or areas that are relevant to local cultural identity through:
-
-1. Aesthetic, 
-2. Spiritual,
-3. Cultural,
-4. Recreational,
-5. Existence reasons, 
-6. and more?
-
-And, how do we define their **condition**? How will we quantify when this subgoal is doing really well (100/100)? Could it be:
-
-* How well *protected* all of these special places are?
-* How well they are *preserved*?
-* How much funding is going towards them?
-* How many people care about these places?
 :::
 
 ---
@@ -138,6 +102,12 @@ Add the shared calendar to your Google Calendar account using the [provided link
 
 - [Meeting #1 Slides](https://docs.google.com/presentation/d/169YPUcF8fLgdq41xPMiUorCxNoTo3be0NIefNLF_Egw/edit?slide=id.g3702978bd0b_0_539#slide=id.g3702978bd0b_0_539) to revisit the main ideas.  
 - [Meeting #2 Slides](https://docs.google.com/presentation/d/1oZ5G9HDNyQ8u4WrENG-p9J6Kld2l7Wn9qZBkc1VGxTU/edit?slide=id.g2a86c82ea32_0_0#slide=id.g2a86c82ea32_0_0) for the SB goal definition we came up with as a group, as well as the slides for the discussion on how to measure SB.  
+- [Meeting #3 Slides](https://docs.google.com/presentation/d/1dm1Ch8Lb32LtaBzUa1lVfbxh9sAGAqzOTTmLa33ZA-4/edit?slide=id.g38f059fe930_0_1150#slide=id.g38f059fe930_0_1150) for the discussion on subgoal indicators for SP.  
+
+---
+
+- [Link to Iconic Species list spreadsheet here.](https://docs.google.com/spreadsheets/d/1D6VWMVoEhhkJf7aqx0DaqKFaP6XKi8OW1fAR9l_XfhA/edit?gid=239620565#gid=239620565) 
+- [Link to Lasting Special Places categories spreadsheet here.](https://docs.google.com/spreadsheets/d/1EL6io4VelgUIhnjTHgho8tzARpzDYssi73shVkanAYI/edit?gid=224622882#gid=224622882) 
 
 ---
 
@@ -326,15 +296,60 @@ This subgoal could incorporate *Coastal Access* as a multiplier: even with stron
 :::
 
 ::: {.callout-note collapse="true"}
-# <i class="fa-regular fa-clipboard"></i>  **Meeting #3:** *Upcoming on October 7th!*
-Stay tuned for Meeting #3 resources.
+# <i class="fa-regular fa-clipboard"></i> **Meeting #3:** SP Goal / Subgoal Structure & Integration
+
+**Thank you for joining our third Sense of Place (SP) Goalkeeper meeting!**  
+This meeting focused on refining the SP goal’s definition and the name of the goal, finalizing how subgoals will be organized, and deepening the connection between indicators and the Gulf of California’s health.
+
+A key item discussed this meeting was the use of terminology in both English and Spanish. The group affirmed that **Sense of Place** would be retained for the English goal name to maintain alignment with global Ocean Health Index frameworks and definitions in literature, and to avoid confusion with the U.S.-centric meaning of "belonging." For the Spanish goal name, everyone agreed on using **Sentido de Pertenencia** instead of Sentido de Lugar or Sentido de pertenencia geográfica, to capture the broader cultural, emotional, and cosmological ties present throughout México, where belonging reflects not just geography but a deep-rooted sense of identity and community inclusion with the environment.
+
+We began by reaffirming and clarifying the objective for the Sense of Place / Sentido de Pertenencia goal:
+
+::: custom-box
+
+The objective of the Sense of Belonging/Place goal is to determine **how well we are sustainably caring** for the marine regions that provide heritage, shared memories, and identity, and **to promote** the connections between the Gulf of California and local communities, including pueblos originarios.
+
 :::
 
 
-<!-- ::: {.callout-note collapse="true"} -->
-<!-- # <i class="fa-regular fa-clipboard"></i>  **Meeting #4:** *Upcoming on ____!* -->
-<!-- Stay tuned for Meeting #4 resources. -->
-<!-- ::: -->
+#### Four key subgoals were discussed and refined, focusing on what best indicates a maintained connection to the ocean in the Gulf’s communities:
+
+- **Iconic Species (ICO)**  
+  Assessment of species central to regional cultural identity, encompassing traditional, aesthetic, spiritual, and tourism value. The group debated including only non-commercial species and decided that a clear list will be compiled, with regional distinctions noted. The risk status of these species will be tracked using authoritative sources NOM-059-SEMARNAT-2010 and/or conservation databases.
+
+- **Lasting Special Places (LSP)**  
+  Identification of locations in Gulf of California with cultural, spiritual, recreational, or ecological significance—these are both formally protected areas and locally recognized sites important to community identity. While we need to discuss this as a group, their condition could be determined based on how well those special places are managed to mitigate pressures that might decrease their ability to be a **_lasting_** special place.  A dedicated follow-up meeting will map out which places should be tracked and how their condition is measured.
+
+- **Coastal Community Engagement (CCE)**  
+  Evaluation of how strongly communities engage with the ocean through cultural centers, festivals, and possibly educational programs and activism. The OHI Core Team is currently engaging in extensive internal discussions and considering diverse approaches for meaningfully incorporating pueblos originarios and their unique coastal traditions into this subgoal, with further perspectives to be sought from the larger group at the next meeting.
+
+- **Coastal Access (CA)**  
+  This indicator was discussed as a possible stand-alone or as part of CCE, with consensus that communities need physical access to fully participate in marine stewardship. The integration of CA into the SP goal will be revisited once the Artisanal Opportunities goal is more solidified.
+
+### Discussion Highlights
+
+- The group emphasized the importance of reflecting the connection that pueblos originarios have with the ocean, possibly considering unique indicators such as rights-based land or sea concessions and Indigenous languages retention, when tied to marine traditions. 
+- Immigration, emigration, and demographic shifts were raised as pressures affecting Sentido de Pertenencia, though the team agreed their relevance should be carefully contextualized to **marine connection** rather than applied broadly.
+- We will need to work as a group to define the Gulf's lasting special places, and iconic species, as soon as possible.
+
+### Immediate Next Steps
+
+- [ ] Finalize the list of iconic species (reasoning for each included) **by October 28th**. [Link to ICO speadsheet here!](https://docs.google.com/spreadsheets/d/1D6VWMVoEhhkJf7aqx0DaqKFaP6XKi8OW1fAR9l_XfhA/edit?gid=239620565#gid=239620565)
+- [ ] Finalize a list of *categories* of Lasting Special Places, before the group works together to identify **all** of the special places in the coastal and marine Gulf area, **by October 28th**. [Link to LSP speadsheet here!](https://docs.google.com/spreadsheets/d/1EL6io4VelgUIhnjTHgho8tzARpzDYssi73shVkanAYI/edit?gid=224622882#gid=224622882)
+
+After October 28th, I will assume that the lists are complete and move forward on those subgoals.
+
+*Before the next meeting, please reflect on what reference points and benchmarks will define “success” within each subgoal, if possible!*
+
+**Thank you for your engagement, see you next meeting on November 11th!**
+
+:::
+
+
+::: {.callout-note collapse="true"}
+# <i class="fa-regular fa-clipboard"></i>  **Meeting #4:** *Upcoming on November 11th!*
+Stay tuned for Meeting #4 resources.
+:::
 
 
 <!-- ::: {.callout-note collapse="true"} -->

@@ -3,7 +3,7 @@ title: ""
 format: html
 ---
 
-# ![](figs/sense-of-place.svg){width="8%" height="8%" color="red"} Sentido del Lugar y Pertenencia
+# ![](figs/sense-of-place.svg){width="8%" height="8%" color="red"} Sentido de Pertenencia
 
 <div class="button-container">
   <a href="https://ohi-goc.github.io/OHI_GOC/chapters/sp.html" class="custom-button">
@@ -11,77 +11,42 @@ format: html
   </a>
 </div>
 
-::: {.callout-tip} 
-# OHI GoCA Definición de objetivos
+::: {.callout-warning} 
+# Próximos Pasos Inmediatos 
 
-El objetivo de la meta de Sentido de Pertenencia es determinar **qué tan bien estamos cuidando y promoviendo** el patrimonio, los recuerdos compartidos y la identidad que conectan a las comunidades del Golfo de California, incluyendo a los pueblos originarios, con sus espacios marinos y costeros: indicando qué tan fuertemente las personas están arraigadas e incluidas en el pasado, presente y futuro del Golfo.
+**Para el 28 de octubre, por favor:**
+
+- Finalizar la lista de especies icónicas (incluyendo la justificación de cada una).  
+  
+  [¡Enlace a la hoja de cálculo de Especies Icónicas aquí!](https://docs.google.com/spreadsheets/d/1D6VWMVoEhhkJf7aqx0DaqKFaP6XKi8OW1fAR9l_XfhA/edit?gid=239620565#gid=239620565)  
+
+- Finalizar una lista de *categorías* de Lugares Especiales Duraderos, antes de que el grupo trabaje en conjunto para identificar **todos** los lugares especiales en las zonas costeras y marinas del Golfo.  
+  
+  [¡Enlace a la hoja de cálculo de categorías de Lugares Especiales Duraderos aquí!](https://docs.google.com/spreadsheets/d/1EL6io4VelgUIhnjTHgho8tzARpzDYssi73shVkanAYI/edit?gid=224622882#gid=224622882)
+
+**Después del 28 de octubre, asumiré que las listas están completas y avanzaremos con esos subobjetivos.**
 
 :::
 
 ::: {.callout-tip collapse="true"}
-# <i class="fa-regular fa-star"></i>  Información general sobre el objetivo del SB
+# <i class="fa-regular fa-star"></i>  Información de Antecedente sobre el Objetivo SP
 
-**Esta meta mide las conexiones humanas con el ambiente marino que brindan un profundo sentido de identidad y pertenencia.**
+**Este objetivo mide las conexiones humanas con el entorno marino que generan un profundo sentido de identidad y pertenencia.**
 
 Los sentimientos de identidad y pertenencia surgen, por ejemplo, de:
 
-- Sentido de identidad dentro de una comunidad  
-- Conexión(es) con lugar(es)  
-- Conexiones con plantas y animales  
+-   El sentido de identidad dentro de una comunidad  
+-   Las conexiones con los lugares  
+-   Las conexiones con plantas y animales  
+
 ---
 
-::: {.custom-box}
-{{< fa lightbulb >}} **DEFINICIONES PRINCIPALES**
+::: custom-box
+{{< fa lightbulb >}} **DEFINICIONES CLAVE**
 
-En el marco global, estas son las definiciones de la meta y las sub-metas (Especies Icónicas y Lugares Especiales Duraderos):
+El objetivo del indicador *Sentido de Pertenencia/Lugar* es determinar **qué tan bien estamos cuidando de manera sostenible** las regiones marinas que proveen herencia, memorias compartidas e identidad, y **promover** las conexiones entre el Golfo de California y las comunidades locales, incluyendo los pueblos originarios.  
 
-**Sentido de Lugar (Meta)**
-
-*Definición:* Captura aspectos de los sistemas costeros y marinos que la gente valora como parte de su identidad cultural. Se propuso un nombre alternativo: "Sentido de pertenencia" *(sugerido por Marlu)*
-
-**Especies Icónicas (Submeta)**
-
-*Definición:* Especies relevantes para la identidad cultural local a través de actividades tradicionales (pesca, caza, comercio), prácticas étnicas o religiosas locales, valor de existencia y valor estético reconocido localmente (turismo, temas artísticos).
-
-**Lugares Especiales Duraderos (Submeta)**
-
-*Definición:* Ubicaciones geográficas con valor particular por razones estéticas, espirituales, culturales, recreativas o de existencia. Estas áreas se evalúan según sus niveles/estatus de protección para estos lugares valorados.
 :::
-
-## Preguntas Clave
-
-¿Qué significa para ustedes el **sentido de lugar o pertenencia**? ¿Tiene sentido la definición global de la meta y sus sub-metas para el Golfo de California?
-
-Si es así, aquí hay algunas preguntas para cada sub-meta:
-
-#### **Submeta Especies Icónicas**
-
-¿Cómo podemos identificar **especies** que son relevantes para la **identidad cultural local** a través de:
-
-1. Actividades tradicionales (pesca, caza, comercio)  
-2. Prácticas étnicas o religiosas locales  
-3. Valor de existencia  
-4. Valor estético reconocido localmente (turismo, temas artísticos)  
-  
-¿Existen publicaciones sobre estos tipos de especies, o les gustaría trabajar juntos para **crear una lista** de las especies icónicas del Golfo?
-
-#### **Submeta Lugares Especiales Duraderos**
-
-¿Cómo podemos identificar lugares o áreas relevantes para la identidad cultural local a través de:
-
-1. Estética,  
-2. Espiritualidad,  
-3. Cultura,  
-4. Recreación,  
-5. Razones de existencia,  
-6. y más?
-
-¿Y cómo definimos su **condición**? ¿Cómo cuantificamos cuando esta sub-meta está funcionando muy bien (100/100)? ¿Podría ser:
-
-* Qué tan *protegidos* están todos estos lugares especiales?  
-* Qué tan bien están *preservados*?  
-* Cuánto financiamiento se destina a ellos?  
-* Cuánta gente se preocupa por estos lugares?  
 :::
 
 ---
@@ -136,6 +101,12 @@ Agrega el calendario compartido a tu cuenta de Google Calendar usando el [enlace
 
 - [Diapositivas de la Reunión #1](https://docs.google.com/presentation/d/169YPUcF8fLgdq41xPMiUorCxNoTo3be0NIefNLF_Egw/edit?slide=id.g3702978bd0b_0_539#slide=id.g3702978bd0b_0_539) para repasar las ideas principales.  
 - [Diapositivas de la Reunión #2](https://docs.google.com/presentation/d/1oZ5G9HDNyQ8u4WrENG-p9J6Kld2l7Wn9qZBkc1VGxTU/edit?slide=id.g2a86c82ea32_0_0#slide=id.g2a86c82ea32_0_0) sobre la definición de la meta de SB que construimos en conjunto, así como las diapositivas de la discusión sobre cómo medir SB.  
+- [Diapositivas de la Reunión #3](https://docs.google.com/presentation/d/1dm1Ch8Lb32LtaBzUa1lVfbxh9sAGAqzOTTmLa33ZA-4/edit?slide=id.g38f059fe930_0_1150#slide=id.g38f059fe930_0_1150) sobre la discusión de los indicadores de subobjetivos del SP.  
+
+---
+
+- [Enlace a la hoja de cálculo de Especies Icónicas aquí.](https://docs.google.com/spreadsheets/d/1D6VWMVoEhhkJf7aqx0DaqKFaP6XKi8OW1fAR9l_XfhA/edit?gid=239620565#gid=239620565)  
+- [Enlace a la hoja de cálculo de categorías de Lugares Especiales Duraderos aquí.](https://docs.google.com/spreadsheets/d/1EL6io4VelgUIhnjTHgho8tzARpzDYssi73shVkanAYI/edit?gid=224622882#gid=224622882)
 
 ---
 
@@ -321,9 +292,67 @@ Aunque aún no estamos enfocándonos en presiones y resiliencias, el equipo OHI 
 
 :::
 
+
 ::: {.callout-note collapse="true"}
-# <i class="fa-regular fa-clipboard"></i>  **Reunión #3:** *¡Próximamente el 7 de octubre!*  
-Mantente al tanto de los recursos de la Reunión #3.  
+# <i class="fa-regular fa-clipboard"></i> **Reunión #3:** Estructura e Integración del Objetivo / Subobjetivos de *Sentido de Pertenencia (SP)*
+
+**¡Gracias por acompañarnos en nuestra tercera reunión del grupo guardián del objetivo de Sentido de Pertenencia (SP)!**  
+Esta reunión se centró en perfeccionar la definición y el nombre del objetivo del SP, finalizar la organización de los subobjetivos y profundizar la conexión entre los indicadores y la salud del Golfo de California.
+
+Un punto clave discutido en esta reunión fue el uso de la terminología en inglés y español. El grupo confirmó que **Sense of Place** se conservará como el nombre del objetivo en inglés, para mantener la alineación con los marcos globales del *Ocean Health Index* y con las definiciones empleadas en la literatura, además de evitar confusión con el sentido estadounidense de la palabra “belonging.”  Para el nombre del objetivo en español, todos acordaron usar **Sentido de Pertenencia** (en lugar de *Sentido de Lugar* o *Sentido de pertenencia geográfica*), para reflejar los lazos culturales, emocionales y cosmológicos presentes en todo México, donde el sentido de pertenencia expresa no solo la geografía, sino una profunda identidad y conexión comunitaria con el entorno.  
+
+Comenzamos reafirmando y aclarando el objetivo del indicador *Sentido de Pertenencia*:  
+
+::: custom-box
+
+El objetivo del indicador *Sentido de Pertenencia* es determinar **qué tan bien estamos cuidando de manera sostenible** las regiones marinas que proveen herencia, memorias compartidas e identidad, y **promover** las conexiones entre el Golfo de California y las comunidades locales, incluyendo los pueblos originarios.  
+
+:::
+
+#### Se discutieron y refinaron cuatro subobjetivos clave, enfocados en identificar qué refleja mejor una conexión mantenida con el océano en las comunidades del Golfo:
+
+- **Especies Icónicas (EI)**  
+  Evaluación de las especies centrales para la identidad cultural regional, que abarcan valores tradicionales, estéticos, espirituales y turísticos.  
+  El grupo debatió incluir únicamente especies no comerciales y decidió que se elaborará una lista clara, tomando en cuenta las diferencias regionales.  
+  El estado de riesgo de estas especies se dará seguimiento mediante fuentes oficiales como la **NOM-059-SEMARNAT-2010** y/o bases de datos de conservación.  
+
+- **Lugares Especiales Duraderos (LED)**  
+  Identificación de sitios en el Golfo de California con significado cultural, espiritual, recreativo o ecológico—incluyendo tanto áreas formalmente protegidas como lugares reconocidos localmente por su importancia para la identidad comunitaria.  
+  Aunque esto aún se debe discutir en grupo, su condición podría determinarse según qué tan bien se gestionan para mitigar presiones que reduzcan su capacidad de seguir siendo un lugar **_duradero_**.  
+  Se programará una reunión específica para definir qué lugares se deben monitorear y cómo se medirá su condición.  
+
+- **Participación Comunitaria Costera (PCC)**  
+  Evaluación de qué tan fuertemente las comunidades se vinculan con el océano a través de centros culturales, festivales y posiblemente programas educativos y de activismo.  
+  El equipo central del OHI actualmente se encuentra en un proceso de discusión interna, considerando diversos enfoques para incorporar de manera significativa a los pueblos originarios y sus tradiciones costeras únicas en este subobjetivo.  
+  En la próxima reunión se buscarán perspectivas adicionales del grupo más amplio.  
+
+- **Acceso Costero (AC)**  
+  Este indicador se discutió como posible componente independiente o parte de PCC, coincidiendo en que las comunidades necesitan acceso físico al mar para participar plenamente en el cuidado y manejo marino.  
+  La integración de AC en el objetivo SP se revisará una vez que el objetivo de *Oportunidades Artesanales* esté más consolidado.  
+
+### Puntos Destacados de la Discusión
+
+- El grupo enfatizó la importancia de reflejar la conexión que los pueblos originarios tienen con el océano, considerando posibles indicadores únicos como concesiones de tierra o mar basadas en derechos, y la conservación de lenguas indígenas vinculadas a tradiciones marinas.  
+- Se mencionaron la migración, emigración y los cambios demográficos como presiones que afectan el *Sentido de Pertenencia*; sin embargo, se acordó que su relevancia debe contextualizarse cuidadosamente en torno a la **conexión marina**, más que aplicarse de manera general.  
+- Será necesario trabajar en conjunto para definir lo antes posible las *especies icónicas* y los *lugares especiales duraderos* del Golfo.  
+
+### Próximos Pasos Inmediatos
+
+- [ ] Finalizar la lista de especies icónicas (incluyendo la justificación de cada una) **para el 28 de octubre**. [¡Enlace a la hoja de especies EI aquí!](https://docs.google.com/spreadsheets/d/1D6VWMVoEhhkJf7aqx0DaqKFaP6XKi8OW1fAR9l_XfhA/edit?gid=239620565#gid=239620565)  
+- [ ] Finalizar una lista de *categorías* de Lugares Especiales Duraderos, antes de que el grupo trabaje en conjunto para identificar **todos** los lugares especiales en las zonas costeras y marinas del Golfo, **para el 28 de octubre**. [¡Enlace a la hoja de LED aquí!](https://docs.google.com/spreadsheets/d/1EL6io4VelgUIhnjTHgho8tzARpzDYssi73shVkanAYI/edit?gid=224622882#gid=224622882)  
+
+Después del 28 de octubre, asumiré que las listas están completas y avanzaremos con esos subobjetivos.  
+
+*Antes de la próxima reunión, por favor reflexionen sobre qué puntos de referencia o valores de comparación podrían definir el “éxito” dentro de cada subobjetivo.*  
+
+**Gracias por su participación. ¡Nos vemos en la próxima reunión el 11 de noviembre!**
+
+:::
+
+
+::: {.callout-note collapse="true"}
+# <i class="fa-regular fa-clipboard"></i>  **Reunión #4:** *¡Próximamente el 11 de noviembre!*  
+Mantente al tanto de los recursos de la Reunión #4.  
 :::
 
 
