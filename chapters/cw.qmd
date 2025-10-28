@@ -103,10 +103,13 @@ Add the shared calendar to your Google Calendar account using the [provided link
 
 - [Meeting #1 Slides](https://docs.google.com/presentation/d/1MhTPHz6HSe0NVeA3UcxgCPXBzhQ9l6VAMkSiQkBCeNk/edit?usp=sharing) to revisit the main ideas.  
 - [Meeting #2 Slides](https://docs.google.com/presentation/d/1gyUK6e09TsSoLcJpYegH_WOPe8a2vkF5aCGa97FnM5U/edit?slide=id.g2a86c82ea32_0_0#slide=id.g2a86c82ea32_0_0), on defining the "ideal state" of clean water in the Gulf.
+- [Meeting #3 Slides](https://docs.google.com/presentation/d/1VegYgXzx5NsCr6OPyPF-fIhQ4TFhW0nVnw8TGlZEY8Q/edit?usp=sharing) for identifying data sources.
+- [Meeting #4 Slides](https://docs.google.com/presentation/d/1lcz5MCcrPlvjJ6A_8fyXEMVvQz6zjRNVERRy7ZR44HY/edit?usp=sharing) to review indicators and reference points.
 
 ---
 
 - [CW Goalkeeper Ideas](https://docs.google.com/document/d/1JhF0Wf9g4VH-iDHVK07Qk2FdLBZNtWXTxdxrRecbF-Q/edit?tab=t.kyrkgpt50url), where you can add your thoughts, ideas, and potential data sources to the ongoing collaborative document.
+- [Meeting #3 Group Activity](https://docs.google.com/document/d/1JhF0Wf9g4VH-iDHVK07Qk2FdLBZNtWXTxdxrRecbF-Q/edit?tab=t.2zz7o4vt68td)
 
 :::
 
@@ -373,15 +376,86 @@ Overall, the group agreed that the main challenge is **identifying/harmonizing d
 
 
 ::: {.callout-note collapse="true"}
-# <i class="fa-regular fa-clipboard"></i>  **Meeting #4:** *Upcoming on October 28th!*
-Stay tuned for Meeting #4 resources.
+# <i class="fa-regular fa-clipboard"></i> **Meeting #4:** Indicators, Reference Points, and Clean Waters Components  
+
+**_In this fourth meeting of the Clean Waters working group, we reviewed the selected indicators, potential reference points, and data sources for each component of the goal. We also discussed methodological adjustments and included a new component (sedimentation)._**
+
+<i class="fa-solid fa-link"></i> [**Meeting #4 Presentation**](https://docs.google.com/presentation/d/1lcz5MCcrPlvjJ6A_8fyXEMVvQz6zjRNVERRy7ZR44HY/edit?usp=sharing)
+
+The OHI Core Team presented progress on structuring pollution indicators and identifying usable data sources. Discussion focused on how to interpret, scale, and combine different types of data into a single, meaningful score.
+
+---
+
+### **Summary of Discussion**
+
+- **Overall structure of the goal:**  
+  The group reaffirmed that the Clean Waters goal aims to capture the extent to which local waters remain unpolluted by human activities. The main components continue to be **eutrophication, pathogens, chemicals, and marine debris**, with the new and tentative addition of **sedimentation** as a fifth, separate component.
+
+- **Methodology and aggregation:**  
+  The goalkeeper team reviewed how each indicator will be scaled from 0 - 100 and then combined within each component, which will then be combined into an overall Clean Waters score.  
+  Miguel suggested using **example or mock data** to visualize how indicator scores behave under different scenarios before deciding on an aggregation method (geometric or weighted mean).  
+  The OHI Core Team will prep to discuss this in detail in the next meeting on November 18th.
+
+---
+
+### **Reviewed Components**
+
+#### **1. Eutrophication**  
+- The group agreed to **focus indicators on observable negative outcomes**, rather than absolute nutrient levels (N and P).  
+- It was validated that **harmful algal bloom (HAB) occurrence** should be the main indicator, using data from the **HAEDAT** database (1979–2023), with an emphasis on identifying regional trends and potential causes.  
+- Jacqueline and Miguel recommended comparing each region with itself over time, since natural conditions vary greatly.  
+- Melanie suggested weighting events based on their ecological or human impact, since not all HABs cause the same level of stress.  
+- The inclusion of **chlorophyll-a satellite data (Copernicus Marine)** was supported as an additional indicator to detect increases in algal biomass compared to historical concentrations.
+
+#### **2. Sedimentation (potential new component)**  
+- The group discussed separating **sedimentation and turbidity** into a new component, as they do not always coincide with eutrophication.  
+- **Miguel** linked sedimentation to **erosion and deforestation** in upper watersheds, while **Jacqueline** noted its natural influence in the Upper Gulf (Colorado River discharges and strong tidal mixing).  
+- It was agreed that potential indicators could include **Secchi depth (Copernicus Marine Service / CONABIO)** or **total suspended solids (CONAGUA RENAMECA)**, analyzed as deviations from historical averages.
+
+#### **3. Pathogens**  
+- Two main indicators were confirmed:  
+  1. **Beach suitability (APTA/no APTA)** -- based on enterococcus levels from the *Playas Limpias* program (COFEPRIS). 
+  
+     - Access to historical data remains a challenge, and requests have been submitted through the **National Transparency Platform**.  
+     - Melanie suggested that, because this is direct human contamination, the **reference point could simply be “zero contamination”**, without requiring long-term historical series.
+
+  2. **Sewage inputs** -- modeled using coastal population data, sanitation access, and wastewater treatment efficiency.  
+     - The OHI Core Team will continue to search *INEGI* and *CONAGUA* for data on who has access to sanitation facilities, how the sanitation systems in México work, and how efficient they are in removing pathogens.
+
+#### **4. Chemicals**  
+- The group reviewed data from **SEMARNAT** on hazardous waste sites and chemical pollutants, including **pesticides, hydrocarbons, and heavy metals**.  
+- The most promising dataset is: **Contaminated and remediated sites** (by state, municipality, year, remediation program, waste type, etc).
+- These data provide the opportunity to evaluate both **point-source pollution** and **remediation efforts**, helping to capture the balance between contamination and recovery.  
+- Jacqueline suggested that indicators should not only record whether programs or facilities exist, but also evaluate their **operational efficiency or level of compliance**.  
+- Miguel emphasized that this component could include a **resilience-type indicator**, such as the number or effectiveness of **programs to eliminate point sources** (e.g., clean fleet policies, industrial wastewater controls).
+- **Indicators of pesticides, pharmaceuticals, and vessel pollution in the GoC do not currently have data source identified for them.** Everyone will continue to research these topics.
+
+#### **5. Marine Debris**  
+- The group discussed both **macroplastics and microplastics**.
+- Potential indicators include:  
+  - **Management condition of coastal waste sites** from SEMARNAT -- assuming better management reduces plastic leakage into the ocean.  
+  - **Policies or bans** related to single-use plastics, as suggested by Miguel, in which these have a big impact on the plastic pollution that makes it ot the ocean.  
+  - **Organized beach cleanups**, as a measure of community action and mitigation.  
+- It was agreed that this component should combine **management-based indicators** (preventive) and **removal-based indicators** (reactive) to better reflect progress toward cleaner coastal waters.
+
+---
+
+### **Next Steps**
+
+- The OHI team will present **preliminary indicator scores** and possibly some mock combinations at the next meeting to illustrate how indicators and weights can behave in combination.  
+- Sophia will circulate updated summary statistics of **HAB events filtered to include only Gulf of California municipalities**.  
+- The team will continue evaluating the **inclusion of sedimentation as a fifth component**, and follow up on access to Playa Limpias data through transparency requests.  
+
+---
+
+**_Many thanks to everyone for your thoughtful technical contributions and the collaborative effort to strengthen the Clean Waters goal methodology. Please continue to stay in touch if you have any ideas!_**
+
 :::
 
-
-<!-- ::: {.callout-note collapse="true"} -->
-<!-- # <i class="fa-regular fa-clipboard"></i>  **Meeting #5:** *Upcoming on ____!* -->
-<!-- Stay tuned for Meeting #5 resources. -->
-<!-- ::: -->
+::: {.callout-note collapse="true"}
+# <i class="fa-regular fa-clipboard"></i>  **Meeting #5:** *Upcoming on November 18th!*
+Stay tuned for Meeting #5 resources.
+:::
 
 <!-- ::: {.callout-note collapse="true"} -->
 <!-- # <i class="fa-regular fa-clipboard"></i>  **Meeting #6:** *Upcoming on ____!* -->

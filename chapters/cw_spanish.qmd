@@ -97,12 +97,16 @@ Agrega el calendario compartido a tu cuenta de Google Calendar usando el [enlace
 ::: {.callout-note collapse="true"}
 # <i class="fa-regular fa-circle-down"></i>  **Recursos Clave:** Diapositivas, documentos colaborativos
 
-- [Diapositivas de la reunión #1](https://docs.google.com/presentation/d/1MhTPHz6HSe0NVeA3UcxgCPXBzhQ9l6VAMkSiQkBCeNk/edit?usp=sharing) para repasar las ideas principales.  
-- [Diapositivas de la reunión #2](https://docs.google.com/presentation/d/1gyUK6e09TsSoLcJpYegH_WOPe8a2vkF5aCGa97FnM5U/edit?slide=id.g2a86c82ea32_0_0# slide=id.g2a86c82ea32_0_0), sobre la definición del "estado ideal" del agua limpia en el Golfo.
+- [Diapositivas de la Reunión #1](https://docs.google.com/presentation/d/1MhTPHz6HSe0NVeA3UcxgCPXBzhQ9l6VAMkSiQkBCeNk/edit?usp=sharing) para revisar las ideas principales.  
+- [Diapositivas de la Reunión #2](https://docs.google.com/presentation/d/1gyUK6e09TsSoLcJpYegH_WOPe8a2vkF5aCGa97FnM5U/edit?slide=id.g2a86c82ea32_0_0#slide=id.g2a86c82ea32_0_0), sobre la definición del “estado ideal” de las aguas limpias en el Golfo.  
+- [Diapositivas de la Reunión #3](https://docs.google.com/presentation/d/1VegYgXzx5NsCr6OPyPF-fIhQ4TFhW0nVnw8TGlZEY8Q/edit?usp=sharing) para identificar fuentes de datos.  
+- [Diapositivas de la Reunión #4](https://docs.google.com/presentation/d/1lcz5MCcrPlvjJ6A_8fyXEMVvQz6zjRNVERRy7ZR44HY/edit?usp=sharing) para revisar indicadores y puntos de referencia.  
 
 ---
 
-- [Ideas del Goalkeeper de CW](https://docs.google.com/document/d/1JhF0Wf9g4VH-iDHVK07Qk2FdLBZNtWXTxdxrRecbF-Q/edit?tab=t.kyrkgpt50url), donde puede añadir sus opiniones, ideas y posibles fuentes de datos al documento colaborativo en curso.
+- [Ideas para la Meta de Aguas Limpias (CW Goalkeeper)](https://docs.google.com/document/d/1JhF0Wf9g4VH-iDHVK07Qk2FdLBZNtWXTxdxrRecbF-Q/edit?tab=t.kyrkgpt50url), donde puedes agregar tus comentarios, ideas y posibles fuentes de datos al documento colaborativo.  
+- [Actividad Grupal de la Reunión #3](https://docs.google.com/document/d/1JhF0Wf9g4VH-iDHVK07Qk2FdLBZNtWXTxdxrRecbF-Q/edit?tab=t.2zz7o4vt68td)
+
 
 :::
 
@@ -367,8 +371,84 @@ En general, el grupo coincidió en que el principal desafío es **identificar y 
 
 
 ::: {.callout-note collapse="true"}
-# <i class="fa-regular fa-clipboard"></i>  **Reunión #4:** *¡Próximamente el 28 de octubre!*
-Mantente al tanto de los recursos de la Reunión #4.
+# <i class="fa-regular fa-clipboard"></i> **Reunión #4:** Indicadores, Puntos de Referencia y Componentes de Aguas Limpias  
+
+**_En esta cuarta reunión del grupo de trabajo de Aguas Limpias, revisamos los indicadores seleccionados, posibles puntos de referencia y fuentes de datos para cada componente de la meta. También discutimos ajustes metodológicos e incluimos un nuevo componente (sedimentación)._**
+
+<i class="fa-solid fa-link"></i> [**Presentación de la Reunión #4**](https://docs.google.com/presentation/d/1lcz5MCcrPlvjJ6A_8fyXEMVvQz6zjRNVERRy7ZR44HY/edit?usp=sharing)
+
+El Equipo Central del OHI presentó avances en la estructuración de indicadores de contaminación e identificación de fuentes de datos disponibles. La discusión se centró en cómo interpretar, escalar y combinar distintos tipos de datos en un puntaje único y significativo.
+
+---
+
+### **Resumen de la Discusión**
+
+- **Estructura general de la meta:**  
+  El grupo reafirmó que la meta de Aguas Limpias busca reflejar en qué medida las aguas locales permanecen libres de contaminación causada por actividades humanas. Los principales componentes continúan siendo **eutrofización, patógenos, químicos y residuos marinos**, con la nueva y tentativa adición de **sedimentación** como un quinto componente independiente.
+
+- **Metodología y agregación:**  
+  El equipo de la meta revisó cómo cada indicador será escalado de 0 a 100 y luego combinado dentro de cada componente, los cuales posteriormente se integrarán en un puntaje general de Aguas Limpias.  
+  Miguel sugirió utilizar **datos de ejemplo o simulados** para visualizar cómo se comportan los puntajes de los indicadores bajo diferentes escenarios antes de decidir el método de agregación (media geométrica o ponderada).  
+  El Equipo Central del OHI se preparará para discutir este tema en detalle en la próxima reunión, el **18 de noviembre**.
+
+
+---
+
+### **Componentes Revisados**
+
+#### **1. Eutrofización**  
+- El grupo acordó **enfocar los indicadores en resultados negativos observables**, más que en niveles absolutos de nutrientes (N y P).  
+- Se validó que la **ocurrencia de florecimientos algales nocivos (HABs)** sea el indicador principal, utilizando datos de la base **HAEDAT** (1979–2023), con énfasis en identificar tendencias regionales y posibles causas.  
+- Jacqueline y Miguel recomendaron comparar cada región consigo misma a lo largo del tiempo, dado que las condiciones naturales varían ampliamente.  
+- Melanie sugirió ponderar los eventos según su impacto ecológico o humano, ya que no todos los HABs generan el mismo nivel de estrés.  
+- Se apoyó la inclusión de **datos satelitales de clorofila-a (Copernicus Marine)** como indicador complementario para detectar aumentos en la biomasa algal respecto a concentraciones históricas.
+
+#### **2. Sedimentación (nuevo componente potencial)**  
+- El grupo discutió separar la **sedimentación y la turbidez** como un nuevo componente, ya que no siempre coinciden con la eutrofización.  
+- **Miguel** la vinculó con procesos de **erosión y deforestación** en las cuencas altas, mientras que **Jacqueline** destacó su influencia natural en el Alto Golfo (descargas del Río Colorado y fuerte mezcla mareal).  
+- Se acordó que los indicadores potenciales podrían incluir la **profundidad Secchi (Copernicus Marine Service / CONABIO)** o los **sólidos suspendidos totales (CONAGUA RENAMECA)**, analizados como desviaciones respecto a los promedios históricos.
+
+#### **3. Patógenos**  
+- Se confirmaron dos indicadores principales:  
+  1. **Aptitud de playas (APTA/no APTA)** — basada en los niveles de enterococos del programa *Playas Limpias* (COFEPRIS). 
+     - El acceso a datos históricos sigue siendo un reto, y se han presentado solicitudes a través de la **Plataforma Nacional de Transparencia**.  
+     - Melanie propuso que, al tratarse de contaminación humana directa, el **punto de referencia podría ser “cero contaminación”**, sin necesidad de series históricas prolongadas.  
+  2. **Aportes de aguas residuales** — modelados con base en la población costera, acceso a saneamiento y eficiencia de las plantas de tratamiento de aguas residuales.  
+     - El Equipo Central del OHI continuará revisando datos de *INEGI* y *CONAGUA* sobre cobertura de saneamiento, operación de sistemas de tratamiento y eficiencia en la eliminación de patógenos.
+
+#### **4. Químicos**  
+- El grupo revisó datos de **SEMARNAT** sobre sitios contaminados y remediados, y contaminantes químicos como **pesticidas, hidrocarburos y metales pesados**.  
+- El conjunto de datos más prometedor es el de **sitios contaminados y remediados** (por estado, municipio, año, programa de remediación, tipo de residuo, etc.).  
+- Estos datos permiten evaluar tanto la **contaminación por fuentes puntuales** como los **esfuerzos de remediación**, ayudando a representar el balance entre contaminación y recuperación.  
+- Jacqueline sugirió que los indicadores no solo reflejen la existencia de programas o instalaciones, sino también su **eficiencia operativa o nivel de cumplimiento**.  
+- Miguel destacó que este componente podría incluir un **indicador de resiliencia**, como el número o la efectividad de los **programas para eliminar fuentes puntuales** (por ejemplo, políticas de “flota limpia” o control de descargas industriales).  
+- **Aún no se han identificado fuentes de datos para pesticidas, farmacéuticos o contaminación por embarcaciones en el Golfo de California.** Todo el equipo continuará investigando estos temas.
+
+#### **5. Residuos Marinos**  
+- El grupo abordó tanto los **macroplásticos como los microplásticos**.  
+- Los posibles indicadores incluyen:  
+  - **Condición de manejo de sitios de disposición de residuos costeros** (SEMARNAT), bajo el supuesto de que una mejor gestión reduce la fuga de plásticos al océano.  
+  - **Políticas o prohibiciones** relacionadas con plásticos de un solo uso, como señaló Miguel, dado su impacto significativo en la cantidad de plásticos que llegan al mar.  
+  - **Limpiezas de playas organizadas**, como medida de acción comunitaria y mitigación.  
+- Se acordó que este componente combine **indicadores basados en gestión** (preventivos) y **en remoción** (reactivos), para reflejar de manera más completa el avance hacia aguas costeras más limpias.
+
+---
+
+### **Próximos Pasos**
+
+- El equipo OHI presentará **puntajes preliminares de los indicadores** y posibles combinaciones simuladas en la próxima reunión, para ilustrar cómo pueden comportarse los indicadores y sus ponderaciones en conjunto.  
+- Sophia compartirá un resumen actualizado de los **eventos de HAB filtrados para incluir únicamente los municipios del Golfo de California**.  
+- El grupo continuará evaluando la **inclusión de sedimentación como un quinto componente** y dará seguimiento al acceso a los datos de *Playas Limpias* mediante solicitudes de transparencia.  
+
+---
+
+**_¡Muchas gracias a todas y todos por sus valiosas contribuciones técnicas y por el esfuerzo colectivo para fortalecer la metodología de la meta de Aguas Limpias! Si tienen ideas adicionales, no duden en compartirlas._**
+
+:::
+
+::: {.callout-note collapse="true"}
+# <i class="fa-regular fa-clipboard"></i>  **Reunión #5:** *¡Próximamente, el 18 de noviembre!*  
+Manténganse pendientes para los recursos de la Reunión #5.
 :::
 
 
