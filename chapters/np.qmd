@@ -104,13 +104,36 @@ Add the shared calendar to your Google Calendar account using the [provided link
 **Please let us know if you have any questions. We look forward to working on this initiative with you!**
 :::
 
+------------------------------------------------------------------------
+
 ::: {.callout-important}
-# **Scheduling Announcement**
-Meeting #6 will be moved from December to January.
+# **Meeting #4 POSTPONED until November 20**
+See Erica's email on October 27 for details. 
+:::
+
+::: {.callout-important}
+# **Meeting #5 will take place in 2026**
 Please stay tuned for more information and updates to the meeting schedule.
 :::
 
-------------------------------------------------------------------------
+::: {.callout-tip}
+# **Working List of Natural Products**
+
+As of Meeting #2 (August, 2025) (under construction)
+- Algaes (note: currently there is little algae aquaculture in the GoC but lots of potential)
+- Animal feed and bioactive food additives (used for human and animal nutrition)
+- Aquarium trade species
+- Biofuels and bioenergy
+- Fertilizers, biofertilizers
+- Fisheries residues: fish, crustaceans, molluscs
+- Pearls
+- Pharmaceuticals and cosmetics
+- Salt
+- Seashell byproducts / residues
+- Traditional medicines / homeopathy (e.g., totoaba bladder, peyote, mangroves)
+
+[Working list](https://docs.google.com/spreadsheets/d/1W79dH11jelVMsHhUBHvsr1pt-zhFYFqikUCcIl3glfc/edit?gid=0#gid=0) as of end Meeting 3 (October, 2025).
+:::
 
 ::: {.callout-note collapse="true"}
 ## NP **Meeting #1: Summary** - July 31
@@ -147,22 +170,6 @@ The main focus of **Meeting #2** was to solidify the goal definition before sele
 
 :::
 
-::: {.callout-tip}
-# **Working List of Natural Products** - As of Meeting #2 (list is under construction)
-
-- Algaes (note: currently there is little algae aquaculture in the GoC but lots of potential)
-- Animal feed and bioactive food additives (used for human and animal nutrition)
-- Aquarium trade species
-- Biofuels and bioenergy
-- Fertilizers, biofertilizers
-- Fisheries residues: fish, crustaceans, molluscs
-- Pearls
-- Pharmaceuticals and cosmetics
-- Salt
-- Seashell byproducts / residues
-- Traditional medicines / homeopathy (e.g., totoaba bladder, peyote, mangroves)
-:::
-
 ::: {.callout-note collapse="true"}
 ## **NP Meeting #3 Summary** - September 25
 **In Meeting #3**, the team explored various data sources and technical reference points for each product identified last meeting (see working list of natural products above). Most of the discussion was focused on how to establish a technical reference point for each product, given data constraints. In particular, the team discussed challenges in data collection for small-scale operations. Members analyzed specific natural products, including salt production and marine algae, and discussed how to assess the sustainability of each product.
@@ -182,15 +189,13 @@ Keep in mind that a technical reference point for each indicator will be critica
 
 :::
 
-
 ::: {.callout-note collapse="true"}
-## **NP Meeting #4: Summary**  *UPCOMING October 30*
+## **NP Meeting #4: Summary**  *UPCOMING November 20*
 Stay tuned for Meeting #4 resources.
 
 **Plan for NP Meeting #4:** Erica will come with a preliminary NP "dummy" model for the group to think about and critique, and we will continue our discussion of technical reference points given available data sources. 
 
 Keep in mind that a technical reference point for each indicator will be critical as it is essentially a goal "baseline". If an indicator does not have a technical reference point associated with it, it will be difficult if not impossible for us to parameterize it within the goal model. So, we might have to get creative in terms of selecting reference points for this goal... *Exciting!* **Please come prepared to share your perspective on these important topics.**
-
 :::
 
 <!-- ::: {.callout-note collapse="true"} -->

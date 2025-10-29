@@ -105,13 +105,17 @@ Add the shared calendar to your Google Calendar account using the [provided link
 **Please let us know if you have any questions. We look forward to working on this initiative with you!**
 :::
 
+------------------------------------------------------------------------
+
 ::: {.callout-important}
-# **Scheduling Announcement**
-Meeting #6 will be moved from December to January.
-Please stay tuned for more information and updates to the meeting schedule.
+# **Meeting #4 POSTPONED until November 18**
+See Erica's email on October 17 for details.
 :::
 
-------------------------------------------------------------------------
+::: {.callout-important}
+# **Meeting #5 will take place in 2026**
+Please stay tuned for more information and updates to the meeting schedule.
+:::
 
 ::: {.callout-note collapse="true"}
 ## **FP Meeting #1: Summary** - July 22
@@ -126,7 +130,7 @@ Please stay tuned for more information and updates to the meeting schedule.
 :::
 
 ::: {.callout-note collapse="true"}
-## **FP Meeting #2 Summary** - August 19
+## **FP Meeting #2: Summary** - August 19
 In **Meeting #2** Erica, Sophia, and Andrés discussed the Ocean Health Index project's Food Provisioning goal, exploring definitions that incorporate sustainability, nutritional security, and food sovereignty considerations. They debated whether to measure food sovereignty as part of Food Provisioning or as a separate score. Ultimately, they decided that it is probably best to focus the Food Provisioning Goal on sustainably caught or farmed seafood that supports local nutritional needs (e.g., demand for protein) while potentially addressing the important cultural value of food sovereignty as a sub-goal under the "Sense of Belonging" Goal. The group also discussed challenges in conducting fishery stock assessments at the regional level in Mexico and planned to consult government scientists about available data sources beyond CONAPESCA.
 
 **Resources shared during Meeting #2**
@@ -140,7 +144,7 @@ In **Meeting #2** Erica, Sophia, and Andrés discussed the Ocean Health Index pr
 :::
 
 ::: {.callout-note collapse="true"}
-## **FP Meeting #3 Summary** - September 23
+## **FP Meeting #3: Summary** - September 23
 **In Meeting #3**, the group agreed on the working definition for the Food Provisioning Goal (discussed in previous meeting) and discussed model indicators. Discussions centered around data sources beyond CONAPESCA. The team explored various methods for evaluating fishery stocks and sustainability in the absence of traditional assessment data, including the use of expert opinions, catch per unit effort, and vessel monitoring data. They also discussed challenges in mariculture development and the need for technical reference points for this subgoal specifically.
 
 **Resources shared during FP Meeting #3**
@@ -156,8 +160,10 @@ In **Meeting #2** Erica, Sophia, and Andrés discussed the Ocean Health Index pr
 :::
 
 ::: {.callout-note collapse="true"}
-## **FP Meeting #4: Summary**  *UPCOMING October 21*
+## **FP Meeting #4: Summary**  *UPCOMING November 18*
 Stay tuned for Meeting #4 resources.
+
+**Plan for FP Meeting #4:** Erica will come with a preliminary FP model for the group to critique and will present some of the data that's available through CONAPESCA. We will continue our discussion of FP indicators, data sources, and technical reference points. (In particular, I think it would be helpful to discuss technical reference points for the Mariculture subgoal.) Think of the technical reference point as the "baseline" – the closer or further away we are from the baseline according to indicator X, the higher or lower the FP score will be. That said, if an indicator does not have a technical reference point associated with it, it will be difficult if not impossible for us to parameterize it within the goal model. **Please come prepared to share your perspective on these topics.**
 :::
 
 <!-- ::: {.callout-note collapse="true"} -->

@@ -104,16 +104,39 @@ Agrega el calendario compartido a tu cuenta de Google Calendar usando el [enlace
 **Por favor, contáctanos si tienes alguna pregunta. ¡Esperamos trabajar contigo en esta iniciativa!**
 :::
 
-::: {.callout-important}
-# **Anuncio de Horario**
-La Reunión #6 se moverá de diciembre a enero.  
-Por favor, mantente atento/a a más información y actualizaciones del calendario de reuniones.
-:::
-
 ------------------------------------------------------------------------
 
+::: {.callout-important}
+# **Reunión Nº 4 APLAZADA hasta el 20 de noviembre**  
+Ver el correo de Erica del 27 de octubre para más detalles.  
+:::
+
+::: {.callout-important}
+# **La Reunión Nº 5 se celebrará en 2026**  
+Por favor, mantente atento/a para más información y actualizaciones del calendario de reuniones.  
+:::
+
+::: {.callout-tip}
+# **Lista de Trabajo de Productos Naturales**
+
+A partir de la Reunión n.º 2 (agosto de 2025) (en construcción)  
+- Algas (nota: actualmente hay poca acuicultura de algas en la Región del Golfo de California, pero mucho potencial)  
+- Alimentos para animales y aditivos bioactivos para alimentos (utilizados en la nutrición humana y animal)  
+- Especies para el comercio de acuarios  
+- Biocombustibles y bioenergía  
+- Fertilizantes, biofertilizantes  
+- Residuos de pesquerías: peces, crustáceos, moluscos  
+- Perlas  
+- Productos farmacéuticos y cosméticos  
+- Sal  
+- Subproductos/residuos de conchas marinas  
+- Medicinas tradicionales / homeopatía (por ejemplo, vejiga de totoaba, peyote, manglares)
+
+[Lista de trabajo](https://docs.google.com/spreadsheets/d/1W79dH11jelVMsHhUBHvsr1pt-zhFYFqikUCcIl3glfc/edit?gid=0#gid=0) al cierre de la Reunión 3 (octubre de 2025).
+:::
+
 ::: {.callout-note collapse="true"}
-## NP **Reunión #1: Resumen** - 31 de julio
+## **Resumen: Reunión #1 NP** - 31 de julio
 
 **Reunión #1** presentó a los participantes el Índice de Salud del Océano y su aplicación en el Golfo de California. Erica explicó la metodología del índice y el enfoque de evaluación regional. El equipo debatió sobre los productos naturales del Golfo, explorando diversos recursos potenciales y consideraciones de sostenibilidad, incluyendo la captura incidental, el aprovechamiento de los desechos pesqueros, y el cultivo de totoaba. Los participantes acordaron recopilar más información sobre las fuentes de biomasa y los puntos de referencia para los productos naturales, a la vez que exploramos maneras de medir y mejorar el uso sostenible de los recursos en la región. 
 
@@ -131,7 +154,7 @@ Por favor, mantente atento/a a más información y actualizaciones del calendari
 :::
 
 ::: {.callout-note collapse="true"}
-## **Resumen de la Reunión #2 de NP** - 28 de agosto
+## **Resumen: Reunión #2 NP** - 28 de agosto
 El enfoque principal de la **Reunión #2** fue solidificar la definición del objetivo antes de seleccionar los indicadores del modelo. En este contexto, nuestro ‘modelo’ será una serie de indicadores destinados a capturar la definición del objetivo; probablemente no será muy complejo matemáticamente. Erica presentó el flujo de trabajo del objetivo: un proceso de seis pasos desde el paso 1 (definir el objetivo) hasta el paso 6 (verificar los resultados del modelo). Los participantes discutieron diversos productos y sus aplicaciones, así como desafíos en la cuantificación y categorización. El equipo trabajó en la definición de recursos no destinados a la subsistencia y exploró indicadores de desechos y residuos, con debates sobre cómo medir beneficios e incorporar los desechos al modelo de objetivo. La conversación finalizó con una actividad grupal centrada en definir el objetivo de NP (enlace a la actividad en pizarra abajo). ¡Se solidificó una definición de trabajo del objetivo!
 
 **Recursos compartidos durante la Reunión #2 de NP**
@@ -151,24 +174,8 @@ El enfoque principal de la **Reunión #2** fue solidificar la definición del ob
 **Tarea para la Reunión #3 de NP:** Por favor, revisar la lista de productos naturales en el sitio web y ven preparado/a para discutir los indicadores de modelo, las fuentes de datos y los puntos de referencia técnica. Ten en cuenta que nuestra definición de trabajo captura la *intención* del objetivo, mientras que los indicadores representan los tipos específicos de datos que usaremos para cuantificar el estado del objetivo.
 :::
 
-::: {.callout-tip}
-# **Lista de Productos Naturales en Proceso** - A partir de la Reunión #2 (lista en construcción)
-
-- Algas (nota: actualmente hay poca acuicultura de algas en el Golfo de California, pero con mucho potencial)
-- Alimentos para animales y aditivos bioactivos para alimentos (usados para nutrición humana y animal)
-- Especies para el comercio de acuarios
-- Biocombustibles y bioenergía
-- Fertilizantes, biofertilizantes
-- Residuos de la pesca: pescado, crustáceos, moluscos
-- Perlas
-- Productos farmacéuticos y cosméticos
-- Sal
-- Subproductos / residuos de conchas marinas
-- Medicinas tradicionales / homeopatía (por ejemplo, vejiga de totoaba, peyote, manglares)
-:::
-
 ::: {.callout-note collapse="true"}
-## **Resumen de la Reunión de NP #3** – 25 de septiembre  
+## **Resumen: Reunión #3 NP** – 25 de septiembre  
 **Durante la Reunión #3**, el equipo exploró diversas fuentes de datos y puntos de referencia técnicos para cada producto identificado en la reunión anterior (ver la lista de trabajo de productos naturales más arriba). La mayor parte de la discusión se centró en cómo establecer un punto de referencia técnico para cada producto, dadas las limitaciones de datos. En particular, el equipo discutió los desafíos en la recolección de datos para operaciones a pequeña escala. Los miembros analizaron productos naturales específicos, como la producción de sal y las algas marinas, y debatieron cómo evaluar la sostenibilidad de cada producto.
 
 **Recursos compartidos durante la Reunión de NP #3**
@@ -185,13 +192,11 @@ Erica presentará un modelo preliminar de NP (tipo "dummy") para que el grupo lo
 
 Recuerda que un punto de referencia técnico para cada indicador será fundamental, ya que actúa como la “línea base” del objetivo. Si un indicador no tiene un punto de referencia técnico asociado, será difícil —o incluso imposible— parametrizarlo dentro del modelo del objetivo.  
 Por lo tanto, puede que tengamos que ser creativos al seleccionar puntos de referencia para este objetivo... *¡Emocionante!* **Por favor vengan preparados para compartir sus perspectivas sobre estos temas tan importantes.**
-
 :::
 
-
 ::: {.callout-note collapse="true"}
-## **Resumen de la Reunión #4 de NP**  *PRÓXIMAMENTE 30 de octubre*
-Mantente atento/a a los recursos de la Reunión #4.
+## **Resumen:  Reunión #4 NP**  *PRÓXIMAMENTE – 20 de noviembre*
+Mantente atento a los recursos de la Reunión #4.
 
 **Plan para la Reunión de NP #4:**  
 Erica presentará un modelo preliminar de NP (tipo "dummy") para que el grupo lo analice y critique, y continuaremos la discusión sobre los puntos de referencia técnicos considerando las fuentes de datos disponibles.

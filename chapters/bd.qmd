@@ -109,13 +109,39 @@ Add the shared calendar to your Google Calendar account using the [provided link
 **Please let us know if you have any questions. We look forward to working on this initiative with you!**
 :::
 
+------------------------------------------------------------------------
+
 ::: {.callout-important}
-# **Scheduling Announcement**
-Meeting #6 will be moved from December to January.
+# **Meeting #4 POSTPONED until November 20**
+See Erica's email on October 27 for details.
+:::
+
+::: {.callout-important}
+# **Meeting #5 will take place in 2026**
 Please stay tuned for more information and updates to the meeting schedule.
 :::
 
-------------------------------------------------------------------------
+::: {.callout-tip}
+# **Want us to review a particular resource?**
+Send us an email! We are happy to review, respond to, and forward resources outside of meetings.
+:::
+
+::: {.callout-tip}
+# **Resources Shared by Dr. Rick Brusca for Meeting #4**
+- Biodiversity Meeting 4 has been postponed until November 20. 
+- In the meantime, check out these helpful resources shared by Rick! Links for each paper are included and can be found via our [shared google drive](https://drive.google.com/drive/u/1/folders/1PG_rn6SuAR8naIcQt9V85BFpSs358szY)
+
+- [Romero-Robles & Sala (2025) - PREPRINT](https://drive.google.com/file/d/1jqhJMRZeOSM-VvfSJbTUr-PL0vuW_RTX/view?usp=share_link) – The Gulf of California Under Different Climate Change Scenarios: A Hydrodynamic Approach.
+*"A General Circulation Model paper that predicts: "a general warming trend across the Gulf (SST), characterized by an increased frequency of extreme heat events and  prolonged summers.  Although note that the warming rate differs in location depending on which model is used. The Midriff Islands region and the Northern Gulf are the most resilient to climate change, due to tidal forces dominating over everything else (something we’ve all known for a very long time). [And,] the Southern Gulf (and the Gulf entrance) are the most likely to experience high numbers of extreme heat events."*
+
+- [Islands and Protected Areas in the Gulf of California 2025 Conservation Outlook Assessment.](https://drive.google.com/file/d/16Wg9aeF2g2DrkGyuFEEQawkDw1u0ip43/view?usp=share_link)
+*"When you look at that report you may be surprised to see all the “critical” ratings. I was an assessor for that report [...] and I disagreed with some of those “critical” ratings, and I also disagreed with the overall “critical” rating for the site.  In my opinion, the overall assessment was inordinately driven by the vaquita situation, and other factors (e.g., pollution, invasive species) were overblown."*
+
+- [Rafter et al. (2025)](https://drive.google.com/file/d/1Vs5XbRPojgQShY3m5eC0l3w76t1u2NE8/view?usp=share_link) – Persistent eastern equatorial Pacific Ocean upwelling since the warm Pliocene.
+Results predict *"global warming will eventually lead to a shift to more-or-less permanent El Niño conditions in the Tropical East Pacific (using Pliocene Epoch data as a model or analog).  However, the interesting twist is that the study also predicts little change from the impact of these warmer SSTs on upwelling and productivity patterns in the region (e.g., modern-like upwelling and productivity have persisted over the past 5 million years).  Furthermore, the extent of the East Equatorial Pacific oxygen deficient zone was actually smaller during the Pliocene than today, suggesting the current low-oxygen zones may contract (not expand) in the future."*
+
+[Revised list of potential indicators for BD](https://docs.google.com/document/d/1MJLwYKGsBC1YmY7_Qnhqr2AvovYkE5zC/edit?usp=share_link&ouid=101513442493251196406&rtpof=true&sd=true) - shared October 27 2025.
+:::
 
 ::: {.callout-note collapse="true"}
 ## **BD Meeting #1: Summary** - July 31
@@ -134,7 +160,7 @@ Please stay tuned for more information and updates to the meeting schedule.
 :::
 
 ::: {.callout-note collapse="true"}
-## **BD Meeting #2 Summary** - August 28
+## **BD Meeting #2: Summary** - August 28
 The main focus of **Meeting #2** was to solidify the goal definition before selecting model indicators. In this context, our ‘model’ will be a series of indicators intended to capture the definition of the goal; it will probably not be very mathematically complicated. Erica outlined the goal workflow – a six-step process from step 1 (defining the goal) to step 6 (verifying model outputs). The team discussed various aspects of BD, including environmental reference points and addressing habitat degradation while reviewing available resources. They explored challenges in defining biodiversity indicators and establishing baseline data, with discussions around using proxies and expert opinion when historical data is limited. The team engaged in a collaborative group activity to narrow in on a definition of the biodiversity goal, with plans to solidify the goal definition next meeting. The meeting concluded with a presentation by Hem and Ricardo, who discussed their forthcoming tool for querying international databases.
 
 **Resources shared during BD Meeting #2**
@@ -156,7 +182,7 @@ As much as possible, try not to let data availability constrain your definition 
 :::
 
 ::: {.callout-note collapse="true"}
-## **BD Meeting #3 Summary** - September 25
+## **BD Meeting #3: Summary** - September 25
 **In Meeting #3**, the group solidified a working definition for the Biodiversity Goal and discussed model indicators. The meeting began with administrative updates regarding meeting schedules and glossary contributions. After defining the BD goal, most of the discussion focused on refining biodiversity indicators and assessment methods, including discussions about habitat conditions, species vulnerabilities, and data collection approaches. The team explored various data sources and modeling techniques for assessing biodiversity, with plans to continue developing and refining these approaches at the next meeting.
 
 *The new working definition for the BD goal is: The BD goal aims to assess the condition of local habitats and biodiversity as proxies for functionality of marine ecosystems in the gulf.*
@@ -171,19 +197,13 @@ As much as possible, try not to let data availability constrain your definition 
 **Plan for BD Meeting #4:** Erica will come with a preliminary BD "dummy" model for the group to think about and critique. We will continue our discussion of BD indicators, data sources, and technical reference points. **Please come prepared to discuss the indicators you feel are most promising (given data availability), and suitable technical reference points.** 
 
 Keep in mind that a technical reference point for each indicator will be critical as it is essentially a goal "baseline". The closer or further away we are from the technical reference point according to some indicator X, the higher or lower the BD score will be. So, if an indicator does not have a technical reference point associated with it, it will be difficult if not impossible for us to parameterize it within the goal model. *This means that while some indicators of biodiversity might be important, we won't be able to use them if we cannot determine an appropriate reference point.*
-
-::: {.callout-tip}
-# **Want us to review a particular data source?**
-- We did not get to [this Group Activity: Identifying Data Sources](https://docs.google.com/document/d/1rgTDw8qoBTiB60euL_D7FB5ee5gD9t-gaS4dzKDGcnA/edit?tab=t.0) during Meeting #3 as expected. Perhaps we will return to this next time during Meeting #4. In the meantime, please add any potential data sources and indicators you would like members of the OHI Core Team to review.
-:::
-
 :::
 
 ::: {.callout-note collapse="true"}
-## **BD Meeting #4: Summary**  *UPCOMING October 30*
+## **BD Meeting #4: Summary**  *UPCOMING November 20*
 Stay tuned for Meeting #4 resources.
 
-**Plan for BD Meeting #4:** Erica will come with a preliminary BD "dummy" model for the group to think about and critique. We will continue our discussion of BD indicators, data sources, and technical reference points. **Please come prepared to discuss the indicators you feel are most promising (given data availability), and suitable technical reference points.** 
+**Plan for BD Meeting #4:** Erica will come with a preliminary BD "dummy" model and data sets for the group to think about and critique. We will continue our discussion of BD indicators, data sources, and technical reference points. **Please come prepared to discuss the indicators you feel are most promising (given data availability) and suitable technical reference points.** 
 
 Keep in mind that a technical reference point for each indicator will be critical as it is essentially a goal "baseline". The closer or further away we are from the technical reference point according to some indicator X, the higher or lower the BD score will be. So, if an indicator does not have a technical reference point associated with it, it will be difficult if not impossible for us to parameterize it within the goal model. *This means that while some indicators of biodiversity might be important, we won't be able to use them if we cannot determine an appropriate reference point.*
 :::

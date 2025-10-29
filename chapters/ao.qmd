@@ -129,16 +129,15 @@ Add the shared calendar to your Google Calendar account using the [provided link
 **Please let us know if you have any questions. We look forward to working on this initiative with you!**
 :::
 
+------------------------------------------------------------------------
+
 ::: {.callout-important}
-# **Scheduling Announcement**
-Meeting #6 will be moved from December to January.
+# **Meeting #6 will take place in 2026**
 Please stay tuned for more information and updates to the meeting schedule.
 :::
 
-------------------------------------------------------------------------
-
 ::: {.callout-note collapse="true"}
-## **AO Meeting #1 Summary** - July 22
+## **AO Meeting #1: Summary** - July 22
 **Meeting #1** introduced participants and their research backgrounds related to the Gulf of California, with Erica facilitating and providing an overview of the Ocean Health Index. The group discussed the index's methodology and application to the Gulf of California region, including its assessment of various ocean health goals and the team’s need to define ‘artisanal opportunities’ beyond fishing. The conversation ended with participants agreeing to further explore concepts like resource access and sustainable livelihoods. 
 
 **Resources shared during AO Meeting #1**
@@ -150,7 +149,7 @@ Please stay tuned for more information and updates to the meeting schedule.
 :::
 
 ::: {.callout-note collapse="true"}
-## **AO Meeting #2 Summary** - August 19
+## **AO Meeting #2: Summary** - August 19
 The main focus of **Meeting #2** was to solidify the goal definition before selecting model indicators. In this context, our ‘model’ will be a series of indicators intended to capture the definition of the goal; it will probably not be very mathematically complicated. Erica outlined the goal workflow – a six-step process from step 1 (defining the goal) to step 6 (verifying model outputs). The team discussed various aspects of AO including social and economic importance of fishing access, access to other resources, and access to important spaces. Victor presented current work related to this topic, including measures of food sovereignty and community well-being. The group came closer to solidifying the definition of AO, which will include some measure of community resource access. Participants agreed to finalize the goal’s definition at the next meeting, where we will also try to select indicators. Please come to the next meeting prepared to settle the AO definition and suggest relevant indicators.
 
 **Resources shared during AO Meeting #2**
@@ -166,7 +165,7 @@ The main focus of **Meeting #2** was to solidify the goal definition before sele
 :::
 
 ::: {.callout-note collapse="true"}
-## **AO Meeting #3 Summary** - September 23
+## **AO Meeting #3: Summary** - September 23
 **In Meeting #3**, the team solidified the AO goal definition:
 *Members of coastal communities – including members of small-scale fishing communities and pueblos originarios – have access to marine resources that allow them to thrive. This includes legal and regulated access to marine resources, knowledge-based use rules, clear boundaries, clear decision-making spaces, and reliable follow-through to ensure access, sustainability, and equity long-term.*
 
@@ -185,15 +184,21 @@ Next the team explored various indicators for measuring AO, including artisanal 
 :::
 
 ::: {.callout-note collapse="true"}
-## **AO Meeting #4: Summary**  *UPCOMING October 21*
-Stay tuned for Meeting #4 resources.
+## **AO Meeting #4: Summary** - October 21
+**In Meeting 4**, the OHI Core team presented an **initial dummy model** for the group to discuss and critique. The group explored the proposed components of the Artisanal Opportunities goal model, including indicators for the sub-goals of **Local Coastal Access (LCA)** and **Artisanal Fishing Opportunities (AFO)**. As part of this process, they discussed various aspects of Mexican artisanal fisheries, including transportation infrastructure and regulatory frameworks that promote or restrict fishing and coastal access.The OHI Core Team had proposed using **subsidy dollars** as one type of indicator for AFO and LCA. However —except for the [**BIENPESCA Program**](https://mexicobusiness.news/agribusiness/news/bienpesca-program-benefits-over-168000-fishers) (que brinda apoyo a los pescadores a través de lo que es esencialmente una forma de ingreso básico universal) (which provides support to fishers through what is essentially a type of universal basic income)— **fishing subsidies are no longer in use in Mexico as of 2018 and 2019**. The meeting ended with a discussion about **alternative indicators**, particularly those that will capture small-scale fishery access and stock sustainability.
+
+**Resources shared during AO Meeting #4**
+
+- [Meeting #4 Presentation Slides](https://docs.google.com/presentation/d/12WvdZiOYo365-aRGev2hLSROSY4AMnI7p6Gnox0itV4/edit?slide=id.g37e19b42d78_0_327#slide=id.g37e19b42d78_0_327)
+: slides to guide our discussion.
+- [Meeting #4 Summary & General Notes](https://docs.google.com/document/d/1XjBi0qHSjbso1bPnc48mBbsjcm08wJig0kZueTe4PMQ/edit?tab=t.z61oe3b0j67t)
+: catch up on meetings you missed and review meeting summaries; keep track of resources and data bases shared during our meetings, and write down your thoughts offline.
 :::
 
-<!-- ::: {.callout-note collapse="true"} -->
-<!-- ## **AO Meeting #5: Summary**  *UPCOMING ____* -->
-<!-- Stay tuned for Meeting #5 resources. -->
-<!-- ::: -->
-
+::: {.callout-note collapse="true"}
+## **AO Meeting #5: Summary**  *UPCOMING November 18*
+Stay tuned for Meeting #5 resources.
+:::
 
 <!-- ::: {.callout-note collapse="true"} -->
 <!-- ## **AO Meeting #6: Summary**  *UPCOMING ____* -->

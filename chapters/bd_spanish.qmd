@@ -111,16 +111,42 @@ Agrega el calendario compartido a tu cuenta de Google Calendar usando el [enlace
 **Por favor contáctanos si tienes alguna pregunta. ¡Esperamos trabajar contigo en esta iniciativa!**
 :::
 
-::: {.callout-important}
-# **Anuncio de Horario**
-La Reunión #6 se moverá de diciembre a enero.  
-Por favor, mantente atento/a a más información y actualizaciones del calendario de reuniones.
-:::
-
 ------------------------------------------------------------------------
 
+::: {.callout-important}
+# **Reunión n.º 4 APLAZADA hasta el 20 de noviembre**  
+Ver el correo de Erica del 27 de octubre para más detalles.
+:::
+
+::: {.callout-important}
+# **Reunión n.º 5 se realizará en 2026**  
+Por favor, esté atento a más información y actualizaciones del calendario de reuniones.
+:::
+
+::: {.callout-tip}
+# **¿Quieres que revisemos algún recurso en particular?**  
+¡Envíanos un correo! Estaremos encantados de revisarlo, responderte y reenviar recursos fuera de las reuniones.
+:::
+
+::: {.callout-tip}
+# **Recursos Compartidos por el Dr. Rick Brusca por Reunión n.º 4**
+- La Reunión sobre Biodiversidad #4 se ha pospuesto hasta el **20 de noviembre**.  
+- Mientras tanto, ¡revisa estos recursos útiles compartidos por Rick! Los enlaces de cada artículo están incluidos y también pueden encontrarse en nuestro [Google Drive compartido](https://drive.google.com/drive/u/1/folders/1PG_rn6SuAR8naIcQt9V85BFpSs358szY).
+
+- [Romero-Robles & Sala (2025) - PREPRINT](https://drive.google.com/file/d/1jqhJMRZeOSM-VvfSJbTUr-PL0vuW_RTX/view?usp=share_link) – *El Golfo de California bajo diferentes escenarios de cambio climático: un enfoque hidrodinámico.*  
+*"Un artículo de modelo de circulación general que predice: una tendencia general de calentamiento en todo el Golfo (SST), caracterizada por un aumento en la frecuencia de eventos extremos de calor y veranos prolongados. Sin embargo, se observa que la tasa de calentamiento difiere según la ubicación y el modelo utilizado. La región de las Islas Midriff y el norte del Golfo son las más resilientes al cambio climático, debido a que las fuerzas de marea predominan sobre todo lo demás (algo que ya sabíamos desde hace mucho tiempo). [Y,] el sur del Golfo (y la entrada al Golfo) son las zonas más propensas a experimentar un mayor número de eventos extremos de calor."*
+
+- [Islas y Áreas Protegidas del Golfo de California: Evaluación de Perspectivas de Conservación 2025.](https://drive.google.com/file/d/16Wg9aeF2g2DrkGyuFEEQawkDw1u0ip43/view?usp=share_link)  
+*"Al revisar ese informe, puede sorprenderte ver todas las calificaciones de “crítico”. Fui evaluador para ese reporte [...] y no estuve de acuerdo con algunas de esas calificaciones “críticas”, ni con la calificación general de “crítico” para el sitio. En mi opinión, la evaluación general estuvo excesivamente influenciada por la situación de la vaquita marina, y otros factores (por ejemplo, contaminación, especies invasoras) fueron exagerados."*
+
+- [Rafter et al. (2025)](https://drive.google.com/file/d/1Vs5XbRPojgQShY3m5eC0l3w76t1u2NE8/view?usp=share_link) – *Afloramiento persistente en el Océano Pacífico ecuatorial oriental desde el cálido Plioceno.*  
+Los resultados predicen que *"el calentamiento global eventualmente conducirá a un cambio hacia condiciones de El Niño más o menos permanentes en el Pacífico Tropical Oriental (usando datos del Época del Plioceno como modelo o análogo). Sin embargo, lo interesante es que el estudio también predice pocos cambios en el impacto de estas temperaturas superficiales más cálidas sobre los patrones de afloramiento y productividad en la región (por ejemplo, el afloramiento y la productividad tipo modernos han persistido durante los últimos 5 millones de años). Además, la extensión de la zona deficiente en oxígeno del Pacífico Ecuatorial Oriental fue en realidad menor durante el Plioceno que hoy, lo que sugiere que las zonas actuales de bajo oxígeno podrían contraerse (no expandirse) en el futuro."*
+
+[Lista revisada de indicadores potenciales para BD](https://docs.google.com/document/d/1MJLwYKGsBC1YmY7_Qnhqr2AvovYkE5zC/edit?usp=share_link&ouid=101513442493251196406&rtpof=true&sd=true) – compartida el **27 de octubre de 2025**.
+:::
+
 ::: {.callout-note collapse="true"}
-## **BD Reunión #1: Resumen** - 31 de julio
+## **Resumen: Reunión #1 BD** - 31 de julio
 
 **Reunión #1** comenzó con una conversación sobre las herramientas de reuniones de IA, los servicios de traducción de idiomas en Zoom y las presentaciones de los miembros del grupo. A continuación, se realizó una presentación y una descripción general del Ocean Health Index (OHI) y su aplicación en el Golfo de California. Los participantes exploraron la metodología para evaluar los objetivos de biodiversidad, incluyendo la importancia de establecer puntos de referencia adecuados y cuantificar el estado actual de la biodiversidad en la región. El grupo debatió los desafíos para la recopilación y el análisis de datos, con especial atención a las tendencias de degradación del hábitat y la dificultad de definir un "estado saludable" o línea de base.
 
@@ -138,7 +164,7 @@ Por favor, mantente atento/a a más información y actualizaciones del calendari
 :::
 
 ::: {.callout-note collapse="true"}
-## **Resumen de la Reunión BD #2** - 28 de agosto
+## **Resumen: Reunión #2 BD** - 28 de agosto
 El enfoque principal de la **Reunión #2** fue solidificar la definición del objetivo antes de seleccionar los indicadores del modelo. En este contexto, nuestro ‘modelo’ será una serie de indicadores destinados a capturar la definición del objetivo; probablemente no será muy matemáticamente complicado. Erica presentó el flujo de trabajo del objetivo – un proceso de seis pasos desde el paso 1 (definir el objetivo) hasta el paso 6 (verificar los resultados del modelo). El equipo discutió diversos aspectos de la BD, incluyendo puntos de referencia ambientales y el abordaje de la degradación del hábitat, mientras revisaba los recursos disponibles. Exploraron los desafíos en la definición de indicadores de biodiversidad y el establecimiento de datos base, con discusiones sobre el uso de proxies y la opinión de expertos cuando los datos históricos son limitados. El equipo participó en una actividad grupal colaborativa para enfocar la definición del objetivo de biodiversidad, con planes de solidificar la definición en la próxima reunión. La reunión concluyó con una presentación de Hem y Ricardo, quienes discutieron su herramienta próxima para consultar bases de datos internacionales.
 
 **Recursos compartidos durante la Reunión BD #2**
@@ -160,7 +186,7 @@ En la medida de lo posible, evite que la disponibilidad de datos limite su defin
 :::
 
 ::: {.callout-note collapse="true"}
-## **Resumen de la Reunión de BD #3** - 25 de septiembre  
+## **Resumen: Reunión #3 BD** - 25 de septiembre  
 **Durante la Reunión #3**, el grupo consolidó una definición de trabajo para el Objetivo de Biodiversidad (BD) y discutió posibles indicadores del modelo. La reunión comenzó con actualizaciones administrativas sobre el calendario de reuniones y las contribuciones al glosario. Luego de definir el objetivo de BD, la mayor parte de la discusión se centró en refinar los indicadores de biodiversidad y los métodos de evaluación, incluyendo conversaciones sobre el estado de los hábitats, vulnerabilidades de especies y enfoques para la recolección de datos. El equipo exploró diversas fuentes de datos y técnicas de modelado para evaluar la biodiversidad, con planes de continuar desarrollando y perfeccionando estos enfoques en la próxima reunión.
 
 *La nueva definición de trabajo para el objetivo de BD es: El objetivo de BD busca evaluar el estado de los hábitats locales y la biodiversidad como indicadores del funcionamiento de los ecosistemas marinos en el golfo.*
@@ -176,31 +202,27 @@ En la medida de lo posible, evite que la disponibilidad de datos limite su defin
 Erica presentará un modelo preliminar (tipo "dummy") para que el grupo lo analice y critique. Continuaremos con la discusión sobre los indicadores de BD, fuentes de datos y puntos de referencia técnicos. **Por favor vengan preparados para discutir los indicadores que consideran más prometedores (según la disponibilidad de datos) y puntos de referencia técnicos apropiados.**  
 
 Tengan en cuenta que un punto de referencia técnico para cada indicador será fundamental, ya que funciona como una “línea base” del objetivo. Cuanto más cerca o más lejos estemos del punto de referencia técnico según algún indicador X, mayor o menor será la puntuación de BD. Por lo tanto, si un indicador no tiene un punto de referencia técnico asociado, será difícil —o incluso imposible— parametrizarlo dentro del modelo del objetivo.  *Esto significa que, aunque algunos indicadores de biodiversidad puedan ser importantes, no podremos utilizarlos si no podemos determinar un punto de referencia adecuado.*
-
-::: {.callout-tip}
-# **¿Quieres que revisemos una fuente de datos en particular?**
-- No alcanzamos a trabajar en [esta Actividad Grupal: Identificación de Fuentes de Datos](https://docs.google.com/document/d/1rgTDw8qoBTiB60euL_D7FB5ee5gD9t-gaS4dzKDGcnA/edit?tab=t.0) durante la Reunión #3 como se esperaba. Tal vez retomemos esta actividad en la Reunión #4.  
-Mientras tanto, por favor agrega cualquier fuente de datos o indicador potencial que te gustaría que el equipo central de OHI revise.
-:::
 :::
 
 ::: {.callout-note collapse="true"}
-## **Resumen de la Reunión #4 de BD**  *PRÓXIMAMENTE 30 de octubre*
-Muy pronto compartiremos los recursos de la Reunión #4.
+## **Resumen: Reunión #4 BD**  *PRÓXIMAMENTE – 20 de noviembre*  
+Mantente atento a los recursos de la Reunión #4.
 
-**Plan para la Reunión de BD #4:**  
-Erica presentará un modelo preliminar (tipo "dummy") para que el grupo lo analice y critique. Continuaremos con la discusión sobre los indicadores de BD, fuentes de datos y puntos de referencia técnicos. **Por favor vengan preparados para discutir los indicadores que consideran más prometedores (según la disponibilidad de datos) y puntos de referencia técnicos apropiados.**  
+**Plan para la Reunión BD #4:**  
+Erica presentará un modelo “dummy” preliminar de BD y conjuntos de datos para que el grupo los analice y critique. Continuaremos nuestra discusión sobre los indicadores de BD, fuentes de datos y puntos de referencia técnicos.  
+**Por favor, ven preparado para discutir los indicadores que consideres más prometedores (según la disponibilidad de datos) y los puntos de referencia técnicos más adecuados.**
 
-Tengan en cuenta que un punto de referencia técnico para cada indicador será fundamental, ya que funciona como una “línea base” del objetivo. Cuanto más cerca o más lejos estemos del punto de referencia técnico según algún indicador X, mayor o menor será la puntuación de BD. Por lo tanto, si un indicador no tiene un punto de referencia técnico asociado, será difícil —o incluso imposible— parametrizarlo dentro del modelo del objetivo.  *Esto significa que, aunque algunos indicadores de biodiversidad puedan ser importantes, no podremos utilizarlos si no podemos determinar un punto de referencia adecuado.*
+Ten en cuenta que un punto de referencia técnico para cada indicador será crucial, ya que representa esencialmente una “línea base” o meta. Cuanto más cerca o más lejos estemos del punto de referencia técnico según algún indicador X, mayor o menor será la puntuación de BD. Por lo tanto, si un indicador no tiene un punto de referencia técnico asociado, será difícil —si no imposible— parametrizarlo dentro del modelo de metas.  
+*Esto significa que, aunque algunos indicadores de biodiversidad puedan ser importantes, no podremos utilizarlos si no podemos determinar un punto de referencia apropiado.*
 :::
 
 <!-- ::: {.callout-note collapse="true"} -->
-<!-- ## **BD Reunión #5: Resumen**  *PRÓXIMAMENTE ____* -->
+<!-- ## **Resumen: Reunión #5 BD**  *PRÓXIMAMENTE ____* -->
 <!-- Recursos para la Reunión #5 próximamente. -->
 <!-- ::: -->
 
 <!-- ::: {.callout-note collapse="true"} -->
-<!-- ## **BD Reunión #6: Resumen**  *PRÓXIMAMENTE ____* -->
+<!-- ## **Resumen: Reunión #6 BD**  *PRÓXIMAMENTE ____* -->
 <!-- Recursos para la Reunión #6 próximamente. -->
 <!-- ::: -->
 

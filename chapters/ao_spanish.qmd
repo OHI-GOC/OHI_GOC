@@ -120,16 +120,15 @@ Agrega el calendario compartido a tu cuenta de Google Calendar usando este [enla
 **Por favor, avísanos si tienes preguntas. ¡Esperamos trabajar contigo en esta iniciativa!**
 :::
 
-::: {.callout-important}
-# **Anuncio de Horario**
-La Reunión #6 se moverá de diciembre a enero.  
-Por favor, mantente atento/a a más información y actualizaciones del calendario de reuniones.
-:::
-
 ------------------------------------------------------------------------
 
+::: {.callout-important}
+# **Reunión n.º 6 se realizará en 2026**  
+Por favor, esté atento a más información y actualizaciones del calendario de reuniones.
+:::
+
 ::: {.callout-note collapse="true"}
-## **Resumen Reunión AO #1** - 22 de julio
+## **Resumen: Reunión AO #1** - 22 de julio
 
 **La Reunión #1** presentó a las y los participantes y sus antecedentes de investigación relacionados con el Golfo de California, con Erica facilitando y proporcionando una visión general del Índice de Salud del Océano. El grupo discutió la metodología del índice y su aplicación al Golfo de California, incluyendo la necesidad del equipo de definir "oportunidades artesanales" más allá de la pesca. La conversación terminó con el acuerdo de explorar más a fondo conceptos como acceso a los recursos y medios de vida sostenibles.
 
@@ -142,7 +141,7 @@ Por favor, mantente atento/a a más información y actualizaciones del calendari
 :::
 
 ::: {.callout-note collapse="true"}
-## **Resumen Reunión AO #2** - 19 de agosto
+## **Resumen: Reunión AO #2** - 19 de agosto
 
 El enfoque principal de la **Reunión #2** fue solidificar la definición de la meta antes de seleccionar los indicadores del modelo. En este contexto, nuestro “modelo” será una serie de indicadores que representen la definición de la meta; probablemente no será muy complejo matemáticamente. Erica explicó el flujo de trabajo de la meta – un proceso de seis pasos desde la definición hasta la verificación de los resultados. El equipo discutió distintos aspectos de AO, incluyendo la importancia social y económica del acceso a la pesca, otros recursos, y espacios clave. Victor presentó trabajos actuales sobre soberanía alimentaria y bienestar comunitario. El grupo avanzó hacia una definición más clara de AO, que incluirá algún componente de acceso a recursos comunitarios. Las y los participantes acordaron finalizar la definición de la meta en la próxima reunión, donde también se intentará seleccionar indicadores.
 
@@ -159,7 +158,7 @@ El enfoque principal de la **Reunión #2** fue solidificar la definición de la 
 :::
 
 ::: {.callout-note collapse="true"}
-## **Resumen de la Reunión #3 de AO** - 23 de septiembre  
+## **Resumen: Reunión AO #3** - 23 de septiembre  
 **En la Reunión #3**, el equipo consolidó la definición de la meta de AO:  
 *Los miembros de comunidades costeras –incluyendo integrantes de comunidades pesqueras de pequeña escala y pueblos originarios– tienen acceso a los recursos marinos que les permiten prosperar. Esto incluye acceso legal y regulado a los recursos marinos, reglas de uso basadas en el conocimiento, límites claramente definidos, espacios claros de toma de decisiones y un seguimiento confiable para garantizar el acceso, la sostenibilidad y la equidad a largo plazo.*
 
@@ -181,18 +180,25 @@ Al hacerlo, tengan en cuenta que necesitaremos seleccionar un punto de referenci
 :::
 
 ::: {.callout-note collapse="true"}
-## **Resumen de la Reunión #4 de AO**  *PRÓXIMAMENTE 21 de octubre*
-Muy pronto compartiremos los recursos de la Reunión #4.
+## **Resumen: Reunión AO #4** – 21 de octubre
+
+**En la Reunión 4**, el equipo central de OHI presentó un **modelo preliminar** para que el grupo lo analizara y comentara. El grupo exploró los componentes propuestos del modelo del objetivo de **Oportunidades Artesanales**, incluyendo los indicadores para los subobjetivos de **Acceso Costero Local (LCA)** y **Oportunidades de Pesca Artesanal (AFO)**.  Como parte de este proceso, se discutieron diversos aspectos de las pesquerías artesanales mexicanas, incluyendo la infraestructura de transporte y los marcos regulatorios que promueven o restringen la pesca y el acceso costero.  El equipo central de OHI había propuesto utilizar los **subsidios económicos** como un tipo de indicador para AFO y LCA. Sin embargo —excepto por el [**Programa BIENPESCA**](https://mexicobusiness.news/agribusiness/news/bienpesca-program-benefits-over-168000-fishers) (que brinda apoyo a los pescadores a través de lo que es esencialmente una forma de ingreso básico universal)— los **subsidios pesqueros dejaron de utilizarse en México desde 2018 y 2019**. La reunión concluyó con una discusión sobre **indicadores alternativos**, especialmente aquellos que puedan reflejar el acceso a las pesquerías de pequeña escala y la sostenibilidad de los recursos pesqueros.  
+
+**Recursos compartidos durante la Reunión AO #4**
+
+- [Presentación de la Reunión #4](https://docs.google.com/presentation/d/12WvdZiOYo365-aRGev2hLSROSY4AMnI7p6Gnox0itV4/edit?slide=id.g37e19b42d78_0_327#slide=id.g37e19b42d78_0_327)  
+: diapositivas que guiaron nuestra discusión.  
+- [Resumen y Notas Generales de la Reunión #4](https://docs.google.com/document/d/1XjBi0qHSjbso1bPnc48mBbsjcm08wJig0kZueTe4PMQ/edit?tab=t.z61oe3b0j67t)  
+: para ponerte al día con las reuniones que te perdiste, revisar los resúmenes, hacer seguimiento de recursos y bases de datos compartidas durante las reuniones, y anotar tus ideas fuera de línea.
+:::
+
+::: {.callout-note collapse="true"}
+## **Resumen: Reunión AO #5**  *PRÓXIMAMENTE – 18 de noviembre*
+Mantente atento a los recursos de la Reunión #5.
 :::
 
 <!-- ::: {.callout-note collapse="true"} -->
-<!-- ## **Resumen Reunión AO #5**  *PRÓXIMAMENTE ____* -->
-<!-- Próximamente se compartirán los recursos de la Reunión #5. -->
-<!-- ::: -->
-
-
-<!-- ::: {.callout-note collapse="true"} -->
-<!-- ## **Resumen Reunión AO #6**  *PRÓXIMAMENTE ____* -->
+<!-- ## **Resumen de la Reunión AO #6**  *PRÓXIMAMENTE ____* -->
 <!-- Próximamente se compartirán los recursos de la Reunión #6. -->
 <!-- ::: -->
 
