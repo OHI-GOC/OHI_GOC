@@ -351,7 +351,7 @@ Después del 28 de octubre, asumiré que las listas están completas y avanzarem
 
 
 ::: {.callout-note collapse="true"}
-# <i class="fa-regular fa-clipboard"></i>  **Reunión #4:** *¡Próximamente el 11 de noviembre!*  
+# <i class="fa-regular fa-clipboard"></i>  **Reunión #4:** *¡Próximamente el 2 de diciembre!*  
 Mantente al tanto de los recursos de la Reunión #4.  
 :::
 

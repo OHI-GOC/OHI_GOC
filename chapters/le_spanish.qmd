@@ -104,6 +104,8 @@ Agrega el calendario compartido a tu cuenta de Google Calendar usando el [enlace
 
 - [Diapositivas de la Reunión #1](https://docs.google.com/presentation/d/1X9Yd-SqRzeTsktJ3qqSJelGoPGWp7dH9kbmvPSaI1V0/edit?slide=id.g2a86c82ea32_0_0#slide=id.g2a86c82ea32_0_0) para repasar las ideas principales.  
 - [Diapositivas de la Reunión #2](https://docs.google.com/presentation/d/1_toOvYJWUV75AwawJ8wdtyVTUp1qb2NEsDzjikbOlbo/edit?slide=id.g2a86c82ea32_0_0#slide=id.g2a86c82ea32_0_0) sobre la definición del objetivo, las metas y el alcance por sectores.
+- [Diapositivas de la Reunión #3](https://docs.google.com/presentation/d/10OyGhotTnMNjNQifGOFAPbqshcNs2RidIebrOIKgRyY/edit?slide=id.g38e684abb2a_0_14#slide=id.g38e684abb2a_0_14)
+- [Diapositivas de la Reunión #4](https://docs.google.com/presentation/d/1cqnvTUj-zreseBhHRimJpN37JDsk0ZAG4ndKAFyMa5E/edit?slide=id.g3a0be70a506_0_586#slide=id.g3a0be70a506_0_586)
 
 ---
 
@@ -332,8 +334,139 @@ En general, el grupo coincidió en que el **próximo paso** es refinar los indic
 
 
 ::: {.callout-note collapse="true"}
-# <i class="fa-regular fa-clipboard"></i>  **Reunión #4:** *¡Próximamente el 7 de noviembre!*  
-Mantente al tanto de los recursos de la Reunión #4.
+# <i class="fa-regular fa-clipboard"></i> **Reunión #4:** Modelo de LE, Fuentes de Datos y Métricas de Empleo/Ingresos
+
+Gracias a todas y todos quienes asistieron a la Reunión #4 del grupo de Livelihoods & Economies (LE). En esta sesión revisamos el progreso de los subobjetivos de **Medios de Vida** y **Economías**, aclaramos la estructura del modelo, comparamos fuentes de datos y discutimos las métricas para empleos, calidad del empleo e ingresos.
+
+Si no pudieron asistir, por favor revisen las diapositivas actualizadas para ver detalles y ejemplos.
+
+**[Diapositivas de la Reunión #4](https://docs.google.com/presentation/d/1cqnvTUj-zreseBhHRimJpN37JDsk0ZAG4ndKAFyMa5E/edit?slide=id.g3a0be70a506_0_586#slide=id.g3a0be70a506_0_586)**
+
+---
+
+### **Resumen de la Reunión**
+
+#### **1. Revisión de la Estructura del Objetivo LE**
+Revisamos nuevamente la definición del objetivo LE, que consiste en dos subobjetivos:
+
+- **Medios de Vida (Livelihoods)**  
+  - Cantidad y calidad de empleos relacionados con el ámbito marino  
+  - Meta: que los empleos se mantengan o aumenten, y que la calidad laboral se conserve o mejore  
+
+- **Economías (Economies)**  
+  - Ingresos provenientes de sectores relacionados con el ámbito marino  
+  - Meta: que los ingresos se mantengan o aumenten en el futuro  
+
+También confirmamos por qué se incluyen **todos los sectores relevantes para el Golfo** (puertos, energía, turismo, pesca, procesamiento de productos marinos, investigación, etc.):  
+Excluir sectores económicos importantes subrepresentaría la actividad real en la región y limitaría la capacidad del OHI para identificar mejoras necesarias. Un **multiplicador de sostenibilidad** ayudará a reflejar diferencias en huella ecológica y equidad social entre sectores.
+
+---
+
+### **2. Medios de Vida: Número de Empleos**
+Revisamos cómo calcula el modelo el estado actual para la cantidad de empleos:
+
+1. Estandarizar empleos por población costera:  
+   **current = empleos / población costera**
+
+2. Determinar el **punto de referencia (baseline)**:
+   - Si un sector tiene una **meta gubernamental**, el baseline refleja esa meta (por ejemplo, un aumento del 27% en empleo turístico para 2030).
+   - Si no existe una meta, usamos un punto histórico (ejemplo discutido: **empleos por población costera en 2018**).
+
+3. Estado actual = **current / baseline**, donde un valor ≥ 1 recibe una calificación de 100.
+
+También revisamos qué sectores *sí* y *no* cuentan con metas laborales oficiales.
+
+---
+
+### **3. Medios de Vida: Calidad del Empleo**
+Discutimos cómo se medirá la calidad del empleo usando componentes de **remuneración** del SAIC, incluyendo:
+
+- Salarios al personal operativo (J010A)  
+- Salarios al personal administrativo/gerencial (J203A)  
+- Aportaciones patronales a la seguridad social (J300A)  
+- Prestaciones adicionales (J400A)  
+- Reparto de utilidades (J500A)  
+- Indemnizaciones/liquidaciones (J600A)
+
+El estado actual se calcula como:
+
+**current = (remuneración promedio actual del sector / remuneración total del municipio)**  
+**baseline = basado en metas o valores de 2018**, según disponibilidad de datos.
+
+Al igual que en empleos, un valor ≥ 1 corresponde a una calificación de 100.
+
+---
+
+### **4. Economías: Ingresos Relacionados con el Ámbito Marino**
+Revisamos las métricas de ingresos del SAIC, que incluyen:
+
+- Ingreso total por bienes y servicios (M000A)  
+- Reventa de mercancías (M010A)  
+- Servicios profesionales/técnicos (M020A)  
+- Productos manufacturados o extraídos (M030A)  
+- Ingresos por renta (M050A)  
+- Servicios de maquila (M700A)  
+- Otros ingresos (M090A)  
+- Ingreso total de todas las fuentes (A800A)
+
+Los ingresos deben ajustarse por **inflación** antes del cálculo del estado actual.
+
+Como con los empleos y la calidad laboral, los sectores usan una **meta gubernamental** (si existe) o un **baseline de 2018**.
+
+---
+
+### **5. SAIC vs ENOE: Comparación de Fuentes de Datos**
+Comparamos las fortalezas y limitaciones de **SAIC** y **ENOE**:
+
+- **SAIC**  
+  - Incluye número de empleos, calidad del empleo e ingresos  
+  - Algunos datos pueden estar suprimidos por confidencialidad  
+  - Disponible cada 5 años  
+
+- **ENOE**  
+  - Incluye número de empleos y calidad del empleo  
+  - Es una encuesta a hogares (datos sin anonimizar por municipio)  
+  - No contiene datos de ingresos  
+  - Disponible trimestralmente  
+
+**Plan de trabajo:**  
+
+Para Pesca y Acuacultura, considerar el número de beneficiarios de BIENPESCA, embarcaciones permitidas y datos de CONAPESCA. Usar la fuente que proporcione la cifra más precisa, ya que muchas personas no están en una nómina formal.
+
+Para todos los demás sectores:
+- Usar **SAIC** como fuente principal para empleos, calidad del empleo e ingresos.  
+- Usar **ENOE** para complementar sectores donde SAIC tenga datos faltantes o suprimidos.
+
+---
+
+### **6. Mirando Hacia Adelante: Sostenibilidad**
+Revisamos brevemente la propuesta de usar **multiplicadores de sostenibilidad**, aplicados por sector:
+
+- Sectores más sostenibles → multiplicador mayor (aumenta la calificación final)  
+- Sectores menos sostenibles → multiplicador menor  
+
+Se invita a todas y todos a proponer ideas o enfoques alternativos.
+
+---
+
+### **Próximos Pasos**
+
+- Revisar las diapositivas y enviar cualquier duda o comentario.  
+- Empezar a desarrollar puntos de referencia para ingresos y calidad del empleo.  
+- Continuar evaluando los conjuntos de datos de SAIC y ENOE.  
+- En la Reunión de enero (#5) se revisarán los puntajes preliminares para:
+  - Medios de Vida (empleos + calidad del empleo)  
+  - Economías (ingresos)  
+  - Sostenibilidad (si aplica)
+
+¡Gracias por sus contribuciones y por la discusión tan valiosa!
+
+:::
+
+
+::: {.callout-note collapse="true"}
+# <i class="fa-regular fa-clipboard"></i> **Reunión #5:** *¡Próximamente en enero!*
+Manténganse al tanto para los recursos de la Reunión #5.
 :::
 
 

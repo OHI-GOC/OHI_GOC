@@ -91,6 +91,7 @@ Add the shared calendar to your Google Calendar account using the [provided link
 - [Meeting #1 Slides](https://docs.google.com/presentation/d/14jGvm4OQk5iQ8YPZknfYBqDwHC0SU6ElYwz0OoRrvlo/edit?usp=sharing) to revisit the main ideas.  
 - [Meeting #2 Slides](https://docs.google.com/presentation/d/1kNF4-JXpjv1RGkzwWJjffoiTf36I5VSc259slFL3IzQ/edit?usp=sharing), on defining the TR goal.
 - [Meeting #3 Slides](https://docs.google.com/presentation/d/10Cn3u9QPnvgB7B2rPnvJmUF3dp_egSa0dnvDF3fhtL8/edit?slide=id.g2a86c82ea32_0_0#slide=id.g2a86c82ea32_0_0), on indicators and data sources.
+- [Meeting #4 Slides](https://docs.google.com/presentation/d/1y2zBpLJp5BLQSfolsbnE3Vd2eSfeYey4wsBUKl0_ZMU/edit?usp=sharing)
 
 ---
 
@@ -340,15 +341,79 @@ Have a great rest of your month, and please don’t hesitate to reach out via em
 
 
 ::: {.callout-note collapse="true"}
-# <i class="fa-regular fa-clipboard"></i>  **Meeting #4:** *Upcoming on October 20th!*
-Stay tuned for Meeting #4 resources.
+# <i class="fa-regular fa-clipboard"></i> **Meeting #4:** TR Indicators & Reference Points
+
+Thank you to everyone who was able to join.  Even with very low participation, we made progress discussing the **Quantity** and **Quality** indicators. 
+
+If you could not make the meeting, please review the updated slide deck:  
+[**TR Meeting #4 Slides**](https://docs.google.com/presentation/d/1y2zBpLJp5BLQSfolsbnE3Vd2eSfeYey4wsBUKl0_ZMU/edit?usp=sharing)
+
+---
+
+### **Meeting Recap**
+
+#### **1. Quantity Indicators**  
+We focused on the two indicators proposed for the TR Quantity component:
+
+- **Tourist Arrivals (SECTUR)**  
+  - Includes domestic and international visitors.  
+  - Some OHI regions lack data because they are not part of SECTUR’s monitored tourist centers.
+
+- **Employees in Accommodation Services (INEGI DENUE)**  
+  - Serves as an alternative proxy for visitor presence where tourist-center data is missing.  
+  - We will evaluate the relationship between visitor arrivals and accommodation employees to see if there is a relationship.  If so, this relationship can be used to help fill mid-Gulf data gaps.
+
+---
+
+#### **2. Quality Indicators**  
+
+We reviewed the current Quality indicators and next steps for data gathering:
+
+- **Rate of Return / Visitor Satisfaction**  
+  - Based on municipal or state visitor satisfaction surveys.  
+  - Data currently incomplete; have not received the needed responses to transparency requests, so this may likely be an unrealistic indicator.
+
+- **Crime Affecting Tourists**  
+  - Possible approach: a crime-per-capita rate with a scoring system where lower crime increases quality.  
+  - Reference point is zero crime per capita.
+  - We need to evaluate which crimes from the SESNSP we will consider "affecting tourists".
+
+- **Availability of Activities & Food Services (DENUE)**  
+  - Counts of food, recreation, cultural, and related establishments relative to tourist arrivals.  
+  - We discussed possibly incorporating ecotourism-linked services if feasible.
+  - CONANP replied with cobro de derechos revenue from 2012 - 2024, which we could use to quantify visitors to protected areas. 
+
+---
+
+#### **3. Sustainability Indicators (not discussed during the meeting)**  
+Although we did not reach this topic in the live meeting, the slides include an overview of potential Sustainability indicators, such as:
+
+- **Distintivo S and other sustainability certifications** for hotels and tourist establishments  
+- **Ecotourism participation and activity diversity**  
+- **Environmental and social dimensions** (resource use, local job quality, gender equity)  
+- **Protected area visitation, vessel permits, and other potential data sources**
+
+Because we did not have time to discuss these indicators, we encourage everyone to look at the **Sustainability section of the slide deck** for details and visual examples.
+
+---
+
+### **Next Steps**
+
+- Finalize reference point options for Quality indicators.  
+- Continue exploring data for activity availability, to help determine the reference point.  
+- Review the Sustainability section of the Meeting #4 slides to prepare for deeper discussion.  
+- Meeting #5 will have preliminary current status scores for: Quantity, Quality, and Sustainability.
+
+Thank you all -- especially during such a busy season -- and please continue adding questions or ideas to the shared TR document!
+
 :::
 
 
-<!-- ::: {.callout-note collapse="true"} -->
-<!-- # <i class="fa-regular fa-clipboard"></i>  **Meeting #5:** *Upcoming on ____!* -->
-<!-- Stay tuned for Meeting #5 resources. -->
-<!-- ::: -->
+
+::: {.callout-note collapse="true"}
+# <i class="fa-regular fa-clipboard"></i>  **Meeting #5:** *Upcoming in January!*
+Stay tuned for Meeting #5 resources.
+:::
 
 <!-- ::: {.callout-note collapse="true"} -->
 <!-- # <i class="fa-regular fa-clipboard"></i>  **Meeting #6:** *Upcoming on ____!* -->

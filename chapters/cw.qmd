@@ -105,6 +105,7 @@ Add the shared calendar to your Google Calendar account using the [provided link
 - [Meeting #2 Slides](https://docs.google.com/presentation/d/1gyUK6e09TsSoLcJpYegH_WOPe8a2vkF5aCGa97FnM5U/edit?slide=id.g2a86c82ea32_0_0#slide=id.g2a86c82ea32_0_0), on defining the "ideal state" of clean water in the Gulf.
 - [Meeting #3 Slides](https://docs.google.com/presentation/d/1VegYgXzx5NsCr6OPyPF-fIhQ4TFhW0nVnw8TGlZEY8Q/edit?usp=sharing) for identifying data sources.
 - [Meeting #4 Slides](https://docs.google.com/presentation/d/1lcz5MCcrPlvjJ6A_8fyXEMVvQz6zjRNVERRy7ZR44HY/edit?usp=sharing) to review indicators and reference points.
+- [Meeting #5 Slides](https://docs.google.com/presentation/d/1KCVKCSvSqIiZkA8Jltole48e6YnRYHghil190FrbARA/edit?usp=sharing)
 
 ---
 
@@ -453,14 +454,81 @@ The OHI Core Team presented progress on structuring pollution indicators and ide
 :::
 
 ::: {.callout-note collapse="true"}
-# <i class="fa-regular fa-clipboard"></i>  **Meeting #5:** *Upcoming on November 18th!*
-Stay tuned for Meeting #5 resources.
+# <i class="fa-regular fa-clipboard"></i> **Meeting #5:** Chemical Indicators Activity & Clean Waters Components
+
+Thank you to everyone who joined Clean Waters Meeting #5!  
+This session focused primarily on the **Expert Group Activity** to rank **chemical pollution indicators** by region. We also briefly reviewed the updated slides, which provide full details for each Clean Waters component.
+
+If you could not attend, please review the slides here:  
+**[Meeting #5 Slides](https://docs.google.com/presentation/d/1KCVKCSvSqIiZkA8Jltole48e6YnRYHghil190FrbARA/edit?usp=sharing)**
+
+---
+
+### **Meeting Recap**
+
+#### **1. Expert Activity: Ranking Chemical Indicators (Main Discussion)**  
+Together, we walked through each OHI region and ranked the chemical indicators from **1 (most relevant)** to **5 (least relevant)** based on your expert judgment of local conditions.
+
+The indicators evaluated were:  
+
+- **Hazardous waste point sources** (such as hydrocarbon sites, industrial waste, geothermal metals)  
+- **Pesticide pollution** (FAOSTAT-based estimates + regional agricultural patterns)  
+- **Pharmaceutical pollution** (untreated discharges, aquaculture, livestock)  
+- **Impervious surfaces** (urban runoff potential)  
+- **Vessel pollution** (hydrocarbon loads from fishing + commercial fleets)
+
+Key takeaways from the ranking activity:
+
+- Regions with **mining, geothermal activity, or industrial facilities** ranked **hazardous waste** as their highest impact pollutant.  
+- Regions with **intensive agriculture or large valleys** ranked **pesticide pollution** as their most relevant indicator.  
+- Regions with **aquaculture clusters** (especially shrimp farming) ranked **pharmaceutical contamination** among their top concerns.  
+- Regions with **major fishing ports** consistently ranked **vessel pollution** as highly impactful.  
+- Most regions ranked **impervious surfaces** as lowest impact, given limited rainfall and a lack of paved roads in rural areas.
+
+These rankings will help the OHI Core Team prioritize and weight chemical pollution indicators for the Clean Waters goal.
+
+---
+
+### **2. Overview of Other Components (Not Discussed Live)**  
+Although we did not have time to review the other components during the meeting, the slides summarize current progress for all sections of Clean Waters:
+
+#### **Eutrophication**
+- Indicators include **chlorophyll-a pressure** using Copernicus Marine Service.  Mel made slides on the current methodology; please ask us any questions you might have on this. 
+- We will not be using **HAB occurrences** from HAEDAT data anymore due to the stochastic nature of the data and the fact that it is likely underreported.  Additionally, we do not have the spatial extent of each bloom.  
+
+#### **Sedimentation**
+- The proposed new component from last meeting will be based on **secchi depth** from SIMAR/CONABIO and Copernicus.  
+- Tracks long-term changes in water clarity and possible sediment inputs.
+- Similar methodology to Chl-a.
+
+#### **Pathogens**
+- **Beach suitability (APTA/no APTA)** based on enterococcus levels remain a core indicator.  
+- **Sanitation access and WWTP efficiency** will be used to estimate pathogen loads entering coastal waters.  
+- Additional transparency requests are underway to obtain updated *Playas Limpias* data from COFEPRIS.
+
+#### **Marine Debris**
+- Indicators include:  
+  - **Coastal waste site management condition** (SEMARNAT)  
+  - **Beach cleanups** (Ama tu Playa 2025-2030 strategy)  
+- Requests have been submitted for both datasets in tabular or shapefile format.
+
+---
+
+### **Next Steps**
+
+- The OHI Team will assemble **preliminary scores** for each indicator and share mock combinations to compare aggregation approaches (geometric vs. arithmetic).  
+- Please continue contributing ideas for each component, especially where data may still be missing.  
+- The next meeting (January) will begin reviewing **current status scores and models**.
+
+Thank you all for your valuable regional expertise and contributions to strengthening the Clean Waters goal!
+
 :::
 
-<!-- ::: {.callout-note collapse="true"} -->
-<!-- # <i class="fa-regular fa-clipboard"></i>  **Meeting #6:** *Upcoming on ____!* -->
-<!-- Stay tuned for Meeting #6 resources. -->
-<!-- ::: -->
+
+::: {.callout-note collapse="true"}
+# <i class="fa-regular fa-clipboard"></i>  **Meeting #6:** *Upcoming in January!*
+Stay tuned for Meeting #6 resources.
+:::
 
 ---
 

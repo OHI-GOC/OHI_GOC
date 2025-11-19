@@ -381,7 +381,7 @@ However, the MPI is only available at the state level, and there are other data 
 
 
 ::: {.callout-note collapse="true"}
-# <i class="fa-regular fa-clipboard"></i>  **Meeting #4:** *Upcoming on October 24th!*
+# <i class="fa-regular fa-clipboard"></i>  **Meeting #4:** *Upcoming on November 21st!*
 Stay tuned for Meeting #4 resources.
 :::
 

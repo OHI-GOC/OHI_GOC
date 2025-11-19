@@ -110,6 +110,8 @@ Add the shared calendar to your Google Calendar account using the [provided link
 
 - [Meeting #1 Slides](https://docs.google.com/presentation/d/1X9Yd-SqRzeTsktJ3qqSJelGoPGWp7dH9kbmvPSaI1V0/edit?slide=id.g2a86c82ea32_0_0#slide=id.g2a86c82ea32_0_0) to revisit the main ideas.  
 - [Meeting #2 Slides](https://docs.google.com/presentation/d/1_toOvYJWUV75AwawJ8wdtyVTUp1qb2NEsDzjikbOlbo/edit?slide=id.g2a86c82ea32_0_0#slide=id.g2a86c82ea32_0_0) on the goal definition, targets & sector scope.
+- [Meeting #3 Slides](https://docs.google.com/presentation/d/10OyGhotTnMNjNQifGOFAPbqshcNs2RidIebrOIKgRyY/edit?slide=id.g38e684abb2a_0_14#slide=id.g38e684abb2a_0_14)
+- [Meeting #4 Slides](https://docs.google.com/presentation/d/1cqnvTUj-zreseBhHRimJpN37JDsk0ZAG4ndKAFyMa5E/edit?slide=id.g3a0be70a506_0_586#slide=id.g3a0be70a506_0_586)
 
 ---
 
@@ -341,15 +343,140 @@ Overall, the group agreed that the **next step** is to refine revenue and job in
 
 
 ::: {.callout-note collapse="true"}
-# <i class="fa-regular fa-clipboard"></i>  **Meeting #4:** *Upcoming on November 7th!*
-Stay tuned for Meeting #4 resources.
+# <i class="fa-regular fa-clipboard"></i> **Meeting #4:** LE Model, Data Sources & Job/Revenue Metrics
+
+Thank you to everyone who joined the Livelihoods & Economies (LE) Goalkeeper Meeting #4. In this session, we reviewed progress across the **Livelihoods** and **Economies** subgoals, clarified the model structure, compared data sources, and discussed metrics for jobs, job quality, and revenue.
+
+If you could not attend, please take a look at the updated slides for details and examples.
+
+**[Meeting #4 Slides](https://docs.google.com/presentation/d/1cqnvTUj-zreseBhHRimJpN37JDsk0ZAG4ndKAFyMa5E/edit?slide=id.g3a0be70a506_0_586#slide=id.g3a0be70a506_0_586)**
+
+---
+
+### **Meeting Recap**
+
+#### **1. Review of LE Goal Structure**
+We revisited the definition of the LE goal, which consists of two subgoals:
+
+- **Livelihoods**  
+  - Quantity and quality of marine-related jobs  
+  - Target: jobs are stable or increasing, and job quality is maintained or improved  
+
+- **Economies**  
+  - Revenue from marine-related sectors  
+  - Target: revenue is maintained or increases in the future  
+
+We also reaffirmed why **all major Gulf-relevant sectors** are included (ports, energy, tourism, fishing, seafood processing, research, etc.):  
+Excluding major economic sectors would underrepresent real regional economic activity and limit the OHI’s ability to identify needed improvements. A **sustainability multiplier** will help account for ecological footprint and social equity differences across sectors.
+
+---
+
+### **2. Livelihoods: Number of Jobs**
+We reviewed how the model calculates current status for job quantity:
+
+1. Standardize jobs by coastal population:  
+   **current = jobs / coastal population**
+
+2. Determine the **baseline**:
+   - If a sector has a **government target**, the baseline reflects that goal (e.g., a 27% employment increase for tourism by 2030).
+   - If no target exists, we use a historical reference point (example discussed: **2018 jobs per coastal population**).
+
+3. Current status = **current / baseline**, where a value ≥ 1 earns a score of 100.
+
+We also reviewed which sectors *do* and *do not* have official government employment targets.
+
+---
+
+### **3. Livelihoods: Job Quality**
+We discussed how job quality will be measured using **remuneration components** from SAIC, including:
+
+- Salaries to operational staff (J010A)  
+- Salaries to administrative/management staff (J203A)  
+- Employer social security contributions (J300A)  
+- Other benefits (J400A)  
+- Profit-sharing (J500A)  
+- Compensation/settlements (J600A)
+
+Current status is calculated as:
+
+**current = (current average remunerations for that sector / total municipal remuneration)**  
+**baseline = target-based or from 2018 values**, depending on data availability.
+
+As with jobs, a score ≥ 1 corresponds to status of 100.
+
+---
+
+### **4. Economies: Marine-related Revenue**
+We reviewed the revenue metrics from SAIC, including:
+
+- Total revenue from goods and services (M000A)  
+- Revenue from merchandise resale (M010A)  
+- Revenue from professional/technical services (M020A)  
+- Revenue from manufactured/extracted products (M030A)  
+- Rental income (M050A)  
+- Maquila services (M700A)  
+- Other income (M090A)  
+- Total revenue across all sources (A800A)
+
+Revenue must be **inflation-adjusted** before calculating the current status.
+
+As with jobs and job quality, sectors use either a **government target** (if available) or a **2018 baseline**.
+
+---
+
+### **5. SAIC vs ENOE: Data Source Comparison**
+We compared the strengths and limitations of **SAIC** and **ENOE**:
+
+- **SAIC**  
+  - Includes job numbers, job quality, and revenue  
+  - Some data may be suppressed for confidentiality  
+  - Available every 5 years  
+
+- **ENOE**  
+  - Includes job numbers and job quality  
+  - Raw household survey data  
+  - No revenue data  
+  - Available quarterly  
+
+**Working plan:**  
+
+For Fisheries and Aquaculture, look at the number of BIENPESCA beneficiaries, vessels permitted, and CONAPESCA data. Use whichever one results in the most accurate number.  This is because many individuals are not on a payroll.
+
+For all others:
+- Use **SAIC** as the primary source for jobs, job quality, and revenue.  
+- Use **ENOE** to *gapfill* sectors where SAIC has missing or suppressed values.
+
+---
+
+### **6. Looking Ahead: Sustainability**
+We briefly revisited the discussion on potential **sustainability multipliers**, applied by sector:
+
+- More sustainable sectors → higher multiplier (increasing final score)  
+- Less sustainable sectors → lower multiplier  
+
+Participants are invited to provide ideas or alternative approaches.
+
+---
+
+### **Next Steps**
+
+- Review the slides and send any comments or questions.
+- Begin developing reference points for revenue and job quality.
+- Continue evaluating the SAIC and ENOE datasets.
+- January Meeting (#5) will review preliminary scores for:
+  - Livelihoods (jobs + job quality)  
+  - Economies (revenue)  
+  - Sustainability (if applicable)
+
+Thank you for your contributions and thoughtful discussion!
+
 :::
 
 
-<!-- ::: {.callout-note collapse="true"} -->
-<!-- # <i class="fa-regular fa-clipboard"></i>  **Meeting #5:** *Upcoming on ____!* -->
-<!-- Stay tuned for Meeting #5 resources. -->
-<!-- ::: -->
+::: {.callout-note collapse="true"}
+# <i class="fa-regular fa-clipboard"></i>  **Meeting #5:** *Upcoming in January!*
+Stay tuned for Meeting #5 resources.
+:::
 
 <!-- ::: {.callout-note collapse="true"} -->
 <!-- # <i class="fa-regular fa-clipboard"></i>  **Meeting #6:** *Upcoming on ____!* -->

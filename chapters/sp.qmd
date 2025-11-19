@@ -347,7 +347,7 @@ After October 28th, I will assume that the lists are complete and move forward o
 
 
 ::: {.callout-note collapse="true"}
-# <i class="fa-regular fa-clipboard"></i>  **Meeting #4:** *Upcoming on November 11th!*
+# <i class="fa-regular fa-clipboard"></i>  **Meeting #4:** *Upcoming on December 2nd!*
 Stay tuned for Meeting #4 resources.
 :::
 
@@ -357,10 +357,6 @@ Stay tuned for Meeting #4 resources.
 <!-- Stay tuned for Meeting #5 resources. -->
 <!-- ::: -->
 
-<!-- ::: {.callout-note collapse="true"} -->
-<!-- # <i class="fa-regular fa-clipboard"></i>  **Meeting #6:** *Upcoming on ____!* -->
-<!-- Stay tuned for Meeting #6 resources. -->
-<!-- ::: -->
 
 ---
 

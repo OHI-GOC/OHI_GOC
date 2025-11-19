@@ -101,6 +101,7 @@ Agrega el calendario compartido a tu cuenta de Google Calendar usando el [enlace
 - [Diapositivas de la Reunión #2](https://docs.google.com/presentation/d/1gyUK6e09TsSoLcJpYegH_WOPe8a2vkF5aCGa97FnM5U/edit?slide=id.g2a86c82ea32_0_0#slide=id.g2a86c82ea32_0_0), sobre la definición del “estado ideal” de las aguas limpias en el Golfo.  
 - [Diapositivas de la Reunión #3](https://docs.google.com/presentation/d/1VegYgXzx5NsCr6OPyPF-fIhQ4TFhW0nVnw8TGlZEY8Q/edit?usp=sharing) para identificar fuentes de datos.  
 - [Diapositivas de la Reunión #4](https://docs.google.com/presentation/d/1lcz5MCcrPlvjJ6A_8fyXEMVvQz6zjRNVERRy7ZR44HY/edit?usp=sharing) para revisar indicadores y puntos de referencia.  
+- [Diapositivas de la Reunión #5](https://docs.google.com/presentation/d/1KCVKCSvSqIiZkA8Jltole48e6YnRYHghil190FrbARA/edit?usp=sharing)
 
 ---
 
@@ -447,9 +448,80 @@ El Equipo Central del OHI presentó avances en la estructuración de indicadores
 :::
 
 ::: {.callout-note collapse="true"}
-# <i class="fa-regular fa-clipboard"></i>  **Reunión #5:** *¡Próximamente, el 18 de noviembre!*  
-Manténganse pendientes para los recursos de la Reunión #5.
+# <i class="fa-regular fa-clipboard"></i> **Reunión #5:** Actividad de Indicadores Químicos y Componentes de Aguas Limpias
+
+¡Gracias a todas y todos quienes asistieron a la Reunión #5 de Aguas Limpias!  
+Esta sesión se enfocó principalmente en la **Actividad del Grupo de Personas Expertas** para clasificar los **indicadores de contaminación química** por región. También revisamos brevemente las diapositivas actualizadas, que contienen los detalles completos de cada componente de Aguas Limpias.
+
+Si no pudieron asistir, por favor revisen las diapositivas aquí:  
+**[Diapositivas de la Reunión #5](https://docs.google.com/presentation/d/1KCVKCSvSqIiZkA8Jltole48e6YnRYHghil190FrbARA/edit?usp=sharing)**
+
+---
+
+### **Resumen de la Reunión**
+
+#### **1. Actividad de Personas Expertas: Clasificación de Indicadores Químicos (Discusión Principal)**  
+Juntas y juntos analizamos cada región del OHI y clasificamos los indicadores químicos del **1 (más relevante)** al **5 (menos relevante)** con base en su conocimiento experto sobre las condiciones locales.
+
+Los indicadores evaluados fueron:  
+- **Fuentes puntuales de residuos peligrosos** (como sitios con hidrocarburos, residuos industriales, metales de plantas geotérmicas)  
+- **Contaminación por pesticidas** (estimaciones basadas en FAOSTAT + patrones agrícolas regionales)  
+- **Contaminación farmacéutica** (descargas sin tratamiento, acuacultura, ganadería)  
+- **Superficies impermeables** (potencial de escorrentía urbana)  
+- **Contaminación por embarcaciones** (cargas de hidrocarburos por pesca y flotas comerciales)
+
+Hallazgos principales de la actividad:
+- Regiones con **minería, actividad geotérmica o instalaciones industriales** clasificaron las **fuentes puntuales de residuos peligrosos** como su mayor problema.  
+- Regiones con **agricultura intensiva o grandes valles** clasificaron la **contaminación por pesticidas** como el indicador más relevante.  
+- Regiones con **acuacultura** (especialmente camaronicultura) ubicaron la **contaminación farmacéutica** entre sus principales preocupaciones.  
+- Regiones con **grandes puertos pesqueros** clasificaron constantemente la **contaminación por embarcaciones** como altamente impactante.  
+- La mayoría clasificó **superficies impermeables** como el indicador de menor impacto, debido a la poca lluvia y la falta de calles pavimentadas en zonas rurales.
+
+Estas clasificaciones ayudarán al equipo central del OHI a priorizar y ponderar los indicadores de contaminación química del objetivo de Aguas Limpias.
+
+---
+
+### **2. Resumen de Otros Componentes (No Discutidos en la Reunión)**  
+Aunque no tuvimos tiempo de revisar el resto de los componentes durante la reunión, las diapositivas muestran el avance actual en cada sección del objetivo.
+
+#### **Eutrofización**
+- Los indicadores incluyen **presión de clorofila-a** usando datos de Copernicus Marine Service.  
+  Mel preparó diapositivas sobre la metodología actual; pueden preguntarnos cualquier duda.
+- Ya **no utilizaremos los eventos de mareas rojas (HAB)** de HAEDAT debido a la naturaleza estocástica de esos datos, su probable subreporte y la falta de información sobre la extensión espacial de cada evento.
+
+#### **Sedimentación**
+- El nuevo componente propuesto se basará en **profundidad Secchi** usando SIMAR/CONABIO y Copernicus.  
+- Refleja cambios de largo plazo en la claridad del agua y posibles entradas de sedimentos.  
+- Su metodología será similar a la de clorofila-a.
+
+#### **Patógenos**
+- **Aptitud de playas (APTA/no APTA)** basada en niveles de enterococos sigue siendo un indicador central.  
+- **Acceso a saneamiento y eficiencia de PTARs** se usarán para estimar cargas de patógenos que llegan al mar.  
+- Se enviaron solicitudes adicionales de transparencia a COFEPRIS para obtener datos actualizados de *Playas Limpias*.
+
+#### **Desechos Marinos**
+- Los indicadores incluyen:  
+  - **Condición de los sitios de disposición de residuos costeros** (SEMARNAT)  
+  - **Limpiezas de playas** (estrategia Ama tu Playa 2025–2030)  
+- Ya se enviaron solicitudes para ambos conjuntos de datos en formato tabular o shapefile.
+
+---
+
+### **Próximos Pasos**
+- El equipo del OHI armará **puntajes preliminares** para cada indicador y compartirá combinaciones de prueba para comparar enfoques de agregación (geométrica vs. aritmética).  
+- Por favor sigan aportando ideas para cada componente, especialmente donde aún faltan datos.  
+- La próxima reunión (enero) comenzará a revisar **puntajes de estado actual y modelos preliminares**.
+
+¡Muchas gracias por su valiosa experiencia regional y por contribuir al fortalecimiento del objetivo de Aguas Limpias!
+
 :::
+
+
+::: {.callout-note collapse="true"}
+# <i class="fa-regular fa-clipboard"></i> **Reunión #6:** *¡Próximamente en enero!*
+Manténganse al tanto para los recursos de la Reunión #6.
+:::
+
 
 
 ---

@@ -1,107 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ohi-goc.github.io/OHI_GOC/about.html</loc>
-    <lastmod>2025-07-16T20:56:57.503Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/cp_cs.html</loc>
-    <lastmod>2025-11-11T01:03:09.231Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/OHIregions.html</loc>
-    <lastmod>2025-11-11T01:03:09.230Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/bd_spanish.html</loc>
-    <lastmod>2025-11-11T01:03:09.231Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/le_spanish.html</loc>
-    <lastmod>2025-11-11T01:03:09.232Z</lastmod>
+    <loc>https://ohi-goc.github.io/OHI_GOC/index.html</loc>
+    <lastmod>2025-11-19T17:33:04.917Z</lastmod>
   </url>
   <url>
     <loc>https://ohi-goc.github.io/OHI_GOC/chapters/bd.html</loc>
-    <lastmod>2025-11-11T01:03:09.230Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/fp_spanish.html</loc>
-    <lastmod>2025-11-11T01:03:09.232Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/cp.html</loc>
-    <lastmod>2025-07-16T20:56:57.518Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/cs.html</loc>
-    <lastmod>2025-07-16T20:56:57.518Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/ol.html</loc>
-    <lastmod>2025-11-11T01:03:09.233Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/fp.html</loc>
-    <lastmod>2025-11-11T01:03:09.232Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/sp.html</loc>
-    <lastmod>2025-11-11T01:03:09.233Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/cp_cs_spanish.html</loc>
-    <lastmod>2025-11-11T01:03:09.231Z</lastmod>
+    <lastmod>2025-10-31T18:35:44.621Z</lastmod>
   </url>
   <url>
     <loc>https://ohi-goc.github.io/OHI_GOC/chapters/tr_spanish.html</loc>
-    <lastmod>2025-11-11T01:03:09.234Z</lastmod>
+    <lastmod>2025-11-19T18:50:16.988Z</lastmod>
   </url>
   <url>
-    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/ss.html</loc>
-    <lastmod>2025-11-11T01:03:09.233Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/np_spanish.html</loc>
-    <lastmod>2025-11-11T01:03:09.233Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/tr.html</loc>
-    <lastmod>2025-11-11T01:03:09.233Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/le.html</loc>
-    <lastmod>2025-11-11T01:03:09.232Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/ao.html</loc>
-    <lastmod>2025-11-11T01:03:09.230Z</lastmod>
+    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/cp_cs_spanish.html</loc>
+    <lastmod>2025-08-18T21:53:51.078Z</lastmod>
   </url>
   <url>
     <loc>https://ohi-goc.github.io/OHI_GOC/chapters/ao_spanish.html</loc>
-    <lastmod>2025-11-11T01:03:09.230Z</lastmod>
+    <lastmod>2025-10-31T18:35:44.621Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/cp.html</loc>
+    <lastmod>2025-02-03T04:19:10.259Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/bd_spanish.html</loc>
+    <lastmod>2025-10-31T18:35:44.621Z</lastmod>
   </url>
   <url>
     <loc>https://ohi-goc.github.io/OHI_GOC/chapters/np.html</loc>
-    <lastmod>2025-11-11T01:03:09.232Z</lastmod>
+    <lastmod>2025-10-31T18:35:44.625Z</lastmod>
   </url>
   <url>
-    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/cw.html</loc>
-    <lastmod>2025-11-11T01:03:09.231Z</lastmod>
+    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/sp.html</loc>
+    <lastmod>2025-11-19T17:55:26.884Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/ss.html</loc>
+    <lastmod>2025-11-19T17:53:45.163Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/OHIregions.html</loc>
+    <lastmod>2025-08-25T20:18:51.891Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/cs.html</loc>
+    <lastmod>2025-02-03T04:19:10.263Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/fp_spanish.html</loc>
+    <lastmod>2025-10-31T18:35:44.625Z</lastmod>
   </url>
   <url>
     <loc>https://ohi-goc.github.io/OHI_GOC/chapters/ss_spanish.html</loc>
-    <lastmod>2025-11-11T01:03:09.233Z</lastmod>
+    <lastmod>2025-11-19T17:54:29.343Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/cp_cs.html</loc>
+    <lastmod>2025-08-18T21:52:22.221Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/le_spanish.html</loc>
+    <lastmod>2025-11-19T18:49:05.403Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/le.html</loc>
+    <lastmod>2025-11-19T18:49:31.899Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/np_spanish.html</loc>
+    <lastmod>2025-10-31T18:35:44.625Z</lastmod>
   </url>
   <url>
     <loc>https://ohi-goc.github.io/OHI_GOC/chapters/cw_spanish.html</loc>
-    <lastmod>2025-11-11T01:03:09.231Z</lastmod>
+    <lastmod>2025-11-19T19:06:05.451Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/tr.html</loc>
+    <lastmod>2025-11-19T18:50:38.032Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/fp.html</loc>
+    <lastmod>2025-10-31T18:35:44.621Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/cw.html</loc>
+    <lastmod>2025-11-19T19:18:24.380Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/ao.html</loc>
+    <lastmod>2025-10-31T18:35:44.621Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ohi-goc.github.io/OHI_GOC/chapters/ol.html</loc>
+    <lastmod>2025-07-17T21:56:58.599Z</lastmod>
   </url>
   <url>
     <loc>https://ohi-goc.github.io/OHI_GOC/chapters/sp_spanish.html</loc>
-    <lastmod>2025-11-11T01:03:09.233Z</lastmod>
+    <lastmod>2025-11-19T17:55:50.472Z</lastmod>
   </url>
   <url>
-    <loc>https://ohi-goc.github.io/OHI_GOC/index.html</loc>
-    <lastmod>2025-11-11T01:09:10.294Z</lastmod>
+    <loc>https://ohi-goc.github.io/OHI_GOC/about.html</loc>
+    <lastmod>2025-01-15T01:25:36.311Z</lastmod>
   </url>
 </urlset>

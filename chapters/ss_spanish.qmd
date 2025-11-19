@@ -380,7 +380,7 @@ Sin embargo, el MPI solo está disponible a nivel estatal, y existen otras fuent
 
 
 ::: {.callout-note collapse="true"}
-# <i class="fa-regular fa-clipboard"></i>  **Reunión #4:** *¡Próximamente el 24 de octubre!*
+# <i class="fa-regular fa-clipboard"></i>  **Reunión #4:** *¡Próximamente el 21 de noviembre!*
 Manténganse al tanto de los recursos de la Reunión #4.
 :::
 

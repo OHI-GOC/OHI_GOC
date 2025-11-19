@@ -91,6 +91,7 @@ Agrega el calendario compartido a tu cuenta de Google Calendar usando el [enlace
 - [Diapositivas de la Reunión #1](https://docs.google.com/presentation/d/14jGvm4OQk5iQ8YPZknfYBqDwHC0SU6ElYwz0OoRrvlo/edit?usp=sharing) para repasar las ideas principales.  
 - [Diapositivas de la Reunión #2](https://docs.google.com/presentation/d/1kNF4-JXpjv1RGkzwWJjffoiTf36I5VSc259slFL3IzQ/edit?usp=sharing), sobre la definición del objetivo TR.
 - [Diapositivas de la Reunión #3](https://docs.google.com/presentation/d/10Cn3u9QPnvgB7B2rPnvJmUF3dp_egSa0dnvDF3fhtL8/edit?slide=id.g2a86c82ea32_0_0#slide=id.g2a86c82ea32_0_0), sobre indicadores y fuentes de datos.
+- [Diapositivas de la Reunión #4](https://docs.google.com/presentation/d/1y2zBpLJp5BLQSfolsbnE3Vd2eSfeYey4wsBUKl0_ZMU/edit?usp=sharing)
 
 ---
 
@@ -338,9 +339,80 @@ Que tengan un excelente resto de mes, y no duden en comunicarse por correo elect
 :::
 
 ::: {.callout-note collapse="true"}
-# <i class="fa-regular fa-clipboard"></i> **Reunión #4:** *¡Próxima el 20 de octubre!*  
-Estén atentos a los recursos de la Reunión #4.  
+# <i class="fa-regular fa-clipboard"></i> **Reunión #4:** Indicadores de TR y Puntos de Referencia
+
+Gracias a todas y todos quienes pudieron asistir. A pesar de la baja participación, avanzamos en la discusión de los indicadores de **Cantidad** y **Calidad**.
+
+Si no pudieron asistir, por favor revisen la presentación actualizada:  
+[**Diapositivas de la Reunión #4 de TR**](https://docs.google.com/presentation/d/1y2zBpLJp5BLQSfolsbnE3Vd2eSfeYey4wsBUKl0_ZMU/edit?usp=sharing)
+
+---
+
+### **Resumen de la Reunión**
+
+#### **1. Indicadores de Cantidad**  
+Nos enfocamos en los dos indicadores propuestos para el componente de Cantidad de TR:
+
+- **Llegadas de Turistas (SECTUR)**  
+  - Incluye turistas nacionales e internacionales.  
+  - Algunas regiones del OHI no tienen datos porque no forman parte de los centros turísticos monitoreados por SECTUR.
+
+- **Personas Empleadas en Servicios de Alojamiento (INEGI DENUE)**  
+  - Funciona como un proxy alternativo para estimar la presencia turística donde no hay datos de centros turísticos.  
+  - Evaluaremos si existe una relación entre llegadas de turistas y personas empleadas en el sector de alojamiento. Si la relación es estable, podría ayudarnos a llenar vacíos de datos en la zona centro del Golfo.
+
+---
+
+#### **2. Indicadores de Calidad**
+
+Revisamos los indicadores actuales de Calidad y los próximos pasos para recopilar datos:
+
+- **Tasa de Retorno / Satisfacción del Visitante**  
+  - Basado en encuestas de satisfacción a nivel municipal o estatal.  
+  - Actualmente los datos están incompletos; no hemos recibido las respuestas necesarias de solicitudes de transparencia, por lo que este indicador podría no ser realista.
+
+- **Delitos que Afectan a Turistas**  
+  - Enfoque posible: tasa de delitos por persona (per cápita), donde menos delitos aumentan la calidad.  
+  - El punto de referencia sería **cero delitos per cápita**.  
+  - Necesitamos definir qué delitos del SESNSP consideraremos como “afectando a turistas”.
+
+- **Disponibilidad de Actividades y Servicios de Alimentos (DENUE)**  
+  - Conteo de establecimientos de alimentos, recreación, cultura y servicios relacionados, relativo al número de turistas.  
+  - Se discutió la posibilidad de incorporar servicios vinculados al ecoturismo si fuera factible.  
+  - CONANP respondió con datos de cobro de derechos (2012–2024), que podríamos usar para estimar visitas a áreas naturales protegidas.
+
+---
+
+#### **3. Indicadores de Sostenibilidad (no discutidos en la reunión)**  
+Aunque no alcanzamos este tema durante la reunión, las diapositivas incluyen un panorama de posibles indicadores de Sostenibilidad, tales como:
+
+- **Distintivo S y otras certificaciones de sostenibilidad** para hoteles y establecimientos turísticos  
+- **Participación en ecoturismo y diversidad de actividades**  
+- **Dimensiones ambientales y sociales** (uso de recursos, calidad del empleo local, equidad de género)  
+- **Visitas a áreas naturales protegidas, permisos de embarcaciones y otras fuentes potenciales de datos**
+
+Como no tuvimos tiempo para discutir estos indicadores, invitamos a todas y todos a revisar la **sección de Sostenibilidad** en las diapositivas para ver detalles y ejemplos visuales.
+
+---
+
+### **Próximos Pasos**
+
+- Finalizar las opciones de puntos de referencia para los indicadores de Calidad.  
+- Seguir explorando los datos sobre disponibilidad de actividades para determinar el punto de referencia adecuado.  
+- Revisar la sección de Sostenibilidad de las diapositivas de la Reunión #4 para prepararse para una discusión más profunda.  
+- La Reunión #5 presentará puntajes preliminares de estado actual para: Cantidad, Calidad y Sostenibilidad.
+
+¡Muchas gracias a todas y todos — especialmente en una temporada tan ocupada — y por favor sigan agregando preguntas o ideas al documento compartido de TR!
+
 :::
+
+
+
+::: {.callout-note collapse="true"}
+# <i class="fa-regular fa-clipboard"></i> **Reunión #5:** *¡Próximamente en enero!*
+Manténganse al tanto para más recursos de la Reunión #5.
+:::
+
 
 
 ---

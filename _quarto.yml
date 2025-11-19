@@ -4,6 +4,7 @@ project:
  
 website: 
   title: "OHI Gulf of California: Information Hub"
+  favicon: images/ohi-fav-dark.png
   site-url: "https://ohi-goc.github.io/OHI_GOC/"
   repo-url: https://github.com/ohi-goc/OHI_GOC
   repo-actions: [edit, issue]
