@@ -193,14 +193,25 @@ Al hacerlo, tengan en cuenta que necesitaremos seleccionar un punto de referenci
 :::
 
 ::: {.callout-note collapse="true"}
-## **Resumen: Reunión AO #5**  *PRÓXIMAMENTE – 18 de noviembre*
-Mantente atento a los recursos de la Reunión #5.
+## **Reunión AO #5: Resumen** - 18 de noviembre
+**En la Reunión 5**, el grupo se enfocó en los aspectos biológicos de las oportunidades artesanales y el acceso, y en lo que podemos aprender de una revisión de la base de datos de CONAPESCA y la Carta Nacional Pesquera de México. **Erica presentó un plan para evaluar el estado de las poblaciones de recursos pesqueros artesanales de importancia local (utilizando datos de CONAPESCA o de la CNP).** Mar presentó información sobre cómo podríamos clasificar / evaluar la naturaleza “a pequeña escala” versus “a gran escala” de las operaciones pesqueras en la región. El grupo revisó los taxones identificados como importantes por la Carta Nacional Pesquera 2023. En el nuevo año, Erica presentará datos sobre otros aspectos del objetivo de AO, incluyendo información sobre acceso físico, legal y regulatorio a oportunidades costeras.
+
+**No hay “tarea” para la próxima reunión. ¡Disfruten las fiestas y esperamos verles de nuevo en el nuevo año!**
+
+**Recursos compartidos durante la Reunión AO #5**
+
+- [Diapositivas de la Presentación de la Reunión #5](https://docs.google.com/presentation/d/1BPsj3uGunRQMvc08HVXuEVuFniElERJalCUgvkJJX00/edit)
+: diapositivas que guiaron nuestra discusión.
+- [Actividad Grupal de la Reunión #5 - Revisión de Taxa Artesanales Importantes de la C.N.P.](https://docs.google.com/spreadsheets/d/1fHH3BcernjTH620AqVtHQE4xHtJYD70G38N3ps0EM-k/edit?gid=0#gid=0)
+: taxa listados en la Carta Nacional Pesquera 2023.
+- [Resumen de la Reunión #5 y Notas Generales](https://docs.google.com/document/d/1XjBi0qHSjbso1bPnc48mBbsjcm08wJig0kZueTe4PMQ/edit?tab=t.3317icoiqvr5)
+: para ponerse al día con reuniones perdidas y revisar resúmenes; registrar recursos y bases de datos compartidas durante nuestras reuniones y anotar pensamientos offline.
 :::
 
-<!-- ::: {.callout-note collapse="true"} -->
-<!-- ## **Resumen de la Reunión AO #6**  *PRÓXIMAMENTE ____* -->
-<!-- Próximamente se compartirán los recursos de la Reunión #6. -->
-<!-- ::: -->
+::: {.callout-note collapse="true"}
+## **Reunión AO #6**  *PRÓXIMAMENTE Invierno 2026*
+¡Por favor estén pendientes de su correo electrónico para más detalles sobre la Reunión AO #6!
+:::
 
 ------------------------------------------------------------------------
 

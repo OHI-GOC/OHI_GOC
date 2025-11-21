@@ -195,15 +195,26 @@ Next the team explored various indicators for measuring AO, including artisanal 
 : catch up on meetings you missed and review meeting summaries; keep track of resources and data bases shared during our meetings, and write down your thoughts offline.
 :::
 
-::: {.callout-note collapse="true"}
-## **AO Meeting #5: Summary**  *UPCOMING November 18*
-Stay tuned for Meeting #5 resources.
-:::
+::: {.callout-note collapse="true"} 
+## **AO Meeting #5: Summary** - November 18 
+**In Meeting 5**, the group focused on the biological aspects of artisanal opportunities and access and what we can learn from a review of the CONAPESCA database and Mexico’s Carta Nacional Pesquera. **Erica presented a plan for evaluating the stock status of locally important artisanal stocks (using either the CONAPESCA or CNP data).** Mar presented information on how we might classify / assess the “small-scale” versus “large-scale” nature of fishing operations in the region. The group reviewed taxa identified as important by the 2023 Carta Nacional Pesquera. In the new year, Erica will present data on other aspects of the AO goal, including information on physical, legal, and regulatory access to coastal opportunities. 
 
-<!-- ::: {.callout-note collapse="true"} -->
-<!-- ## **AO Meeting #6: Summary**  *UPCOMING ____* -->
-<!-- Stay tuned for Meeting #6 resources. -->
-<!-- ::: -->
+**There is no "homework" for the next meeting. Enjoy the holidays and we look forward to seeing you again in the new year!**
+
+**Resources shared during AO Meeting #5**
+
+- [Meeting #5 Presentation Slides](https://docs.google.com/presentation/d/1BPsj3uGunRQMvc08HVXuEVuFniElERJalCUgvkJJX00/edit) 
+: slides to guide our discussion. 
+- [Meeting #5 Group Activity - Reviewing Important Artisanal Taxa from the C.N.P.](https://docs.google.com/spreadsheets/d/1fHH3BcernjTH620AqVtHQE4xHtJYD70G38N3ps0EM-k/edit?gid=0#gid=0) 
+: taxa listed within the 2023 Carta Nacional Pesquera. 
+- [Meeting #5 Summary & General Notes](https://docs.google.com/document/d/1XjBi0qHSjbso1bPnc48mBbsjcm08wJig0kZueTe4PMQ/edit?tab=t.3317icoiqvr5) 
+: catch up on meetings you missed and review meeting summaries; keep track of resources and data bases shared during our meetings, and write down your thoughts offline. 
+::: 
+
+::: {.callout-note collapse="true"}
+## **AO Meeting #6** *UPCOMING Winter 2026*
+Please keep an eye on your email for details regarding AO Meeting #6! 
+:::
 
 ------------------------------------------------------------------------
 
