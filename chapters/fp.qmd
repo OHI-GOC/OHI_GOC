@@ -108,11 +108,6 @@ Add the shared calendar to your Google Calendar account using the [provided link
 ------------------------------------------------------------------------
 
 ::: {.callout-important}
-# **Meeting #4 POSTPONED until November 18**
-See Erica's email on October 17 for details.
-:::
-
-::: {.callout-important}
 # **Meeting #5 will take place in 2026**
 Please stay tuned for more information and updates to the meeting schedule.
 :::
@@ -160,16 +155,26 @@ In **Meeting #2** Erica, Sophia, and Andrés discussed the Ocean Health Index pr
 :::
 
 ::: {.callout-note collapse="true"}
-## **FP Meeting #4: Summary**  *UPCOMING November 18*
-Stay tuned for Meeting #4 resources.
+## **FP Meeting #4: Summary** - November 18 
+**Meeting 4** focused primarily on reviewing outputs from the CONAPESCA database and discussing the proposed method for scoring the Fisheries (FIS) sub-goal. **The plan is to begin by estimating either the stock status, annual landings, or the catch per unit effort (CPUE) of the most important fishery taxa using CONAPESCA landings data relative to a 5 or 10-year baseline.** When possible, stock status will be estimated using data-poor assessment methods to calculate B/BMSY. When this is not feasible—either due to insufficient data or unreliable estimates—we will instead develop a broader measure of fisheries productivity or CPUE, comparing it to the catch recommendations in the Carta Nacional Pesquera. 
 
-**Plan for FP Meeting #4:** Erica will come with a preliminary FP model for the group to critique and will present some of the data that's available through CONAPESCA. We will continue our discussion of FP indicators, data sources, and technical reference points. (In particular, I think it would be helpful to discuss technical reference points for the Mariculture subgoal.) Think of the technical reference point as the "baseline" – the closer or further away we are from the baseline according to indicator X, the higher or lower the FP score will be. That said, if an indicator does not have a technical reference point associated with it, it will be difficult if not impossible for us to parameterize it within the goal model. **Please come prepared to share your perspective on these topics.**
+**In the new year, Erica will present preliminary FIS sub-goal scores for each OHI region.**
+Please keep and eye on your inbox between now and January for details regarding our next meeting!
+
+**Resources shared during FP Meeting #4**
+
+- [Meeting #4 Presentation Slides](https://docs.google.com/presentation/d/1PjOaxaQJhS56H7_d2DjqRoRkOcN1-XFB4TsH11dPvkw/edit) 
+: slides to guide our discussion. 
+- [Meeting #4 Group Activity - Short review of top-landed taxa](https://drive.google.com/drive/u/0/folders/1CYFI5nStx0U1xBCuOpabfZdIzj9HBsui) 
+: View Biomass and CPUE plots of top-landed fishery taxa per state.
+- [Meeting #4 Summary & General Notes](https://docs.google.com/document/d/1l4zVOSt-twGsw9FvBCq1bPtPyuienjRKovf8zbaizvE/edit?tab=t.16nwabxap3tz#heading=h.dfdweowfy33a) 
+: catch up on meetings you missed and review meeting summaries; keep track of resources and data bases shared during our meetings, and write down your thoughts offline. 
+::: 
+
+::: {.callout-note collapse="true"}
+## **FP Meeting #5** *UPCOMING Winter 2026*
+Please keep an eye on your email for details regarding FP Meeting #5! 
 :::
-
-<!-- ::: {.callout-note collapse="true"} -->
-<!-- ## **FP Meeting #5: Summary**  *UPCOMING ____* -->
-<!-- Stay tuned for Meeting #5 resources. -->
-<!-- ::: -->
 
 
 <!-- ::: {.callout-note collapse="true"} -->

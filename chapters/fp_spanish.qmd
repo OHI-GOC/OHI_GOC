@@ -106,16 +106,6 @@ Agrega el calendario compartido a tu cuenta de Google Calendar usando el [enlace
 
 ------------------------------------------------------------------------
 
-::: {.callout-important}
-# **Reunión n.º 4 APLAZADA hasta el 18 de noviembre**  
-Ver el correo de Erica del 17 de octubre para más detalles.
-:::
-
-::: {.callout-important}
-# **Reunión n.º 5 se realizará en 2026**  
-Por favor, esté atento a más información y actualizaciones del calendario de reuniones.
-:::
-
 ::: {.callout-note collapse="true"}
 ## **Resumen: Reunión #1 FP** - 22 de julio
 
@@ -162,28 +152,26 @@ Erica presentará un modelo preliminar de FP para que el grupo lo critique, y mo
 :::
 
 ::: {.callout-note collapse="true"}
-## **Resumen: Reunión #4 FP**  *PRÓXIMAMENTE – 18 de noviembre*
-Mantente atento a los recursos de la Reunión #4.
+## **Reunión FP #4: Resumen** - 18 de noviembre
+**La Reunión 4** se enfocó principalmente en revisar los resultados de la base de datos de CONAPESCA y en discutir el método propuesto para calificar el subobjetivo de Pesquerías (FIS). **El plan es comenzar estimando el estado de las poblaciones, los desembarques anuales o la captura por unidad de esfuerzo (CPUE) de los taxa pesqueros más importantes utilizando los datos de desembarques de CONAPESCA en relación con una línea base de 5 o 10 años.** Cuando sea posible, el estado de las poblaciones se estimará utilizando métodos de evaluación para datos limitados a fin de calcular B/BMSY. Cuando esto no sea factible —ya sea por datos insuficientes o por estimaciones poco confiables— desarrollaremos en su lugar una medida más general de la productividad pesquera o de la CPUE, comparándola con las recomendaciones de captura de la Carta Nacional Pesquera.
 
-**Plan para la Reunión FP #4:**  
-Erica presentará un modelo preliminar de FP para que el grupo lo analice y critique, y mostrará algunos de los datos disponibles a través de CONAPESCA. Continuaremos nuestra discusión sobre los indicadores de FP, las fuentes de datos y los puntos de referencia técnicos.  
-(En particular, sería útil discutir los puntos de referencia técnicos para el subobjetivo de Maricultura).  
+**En el nuevo año, Erica presentará las calificaciones preliminares del subobjetivo FIS para cada región OHI.**
+¡Por favor mantente pendiente de tu bandeja de entrada entre ahora y enero para más detalles sobre nuestra próxima reunión!
 
-Piensa en el punto de referencia técnico como la “línea base”: cuanto más cerca o más lejos estemos de la línea base según el indicador X, mayor o menor será la puntuación de FP. Dicho esto, si un indicador no tiene un punto de referencia técnico asociado, será difícil —si no imposible— parametrizarlo dentro del modelo de objetivos.  
+**Recursos compartidos durante la Reunión FP #4**
 
-**Por favor, ven preparado para compartir tu perspectiva sobre estos temas.**
+- [Diapositivas de la Presentación de la Reunión #4](https://docs.google.com/presentation/d/1PjOaxaQJhS56H7_d2DjqRoRkOcN1-XFB4TsH11dPvkw/edit)  
+: diapositivas para guiar nuestra discusión.
+- [Actividad Grupal de la Reunión #4 - Revisión breve de los taxa con mayores desembarques](https://drive.google.com/drive/u/0/folders/1CYFI5nStx0U1xBCuOpabfZdIzj9HBsui)  
+: Ver gráficas de biomasa y CPUE de los taxa pesqueros con mayores desembarques por estado.
+- [Resumen de la Reunión #4 y Notas Generales](https://docs.google.com/document/d/1l4zVOSt-twGsw9FvBCq1bPtPyuienjRKovf8zbaizvE/edit?tab=t.16nwabxap3tz#heading=h.dfdweowfy33a)  
+: ponerse al día con reuniones que no pudiste atender y revisar los resúmenes; llevar un registro de los recursos y bases de datos compartidos durante nuestras reuniones, y anotar tus ideas offline.
 :::
 
-
-<!-- ::: {.callout-note collapse="true"} -->
-<!-- ## **Resumen de la Reunión #5 FP**  *PRÓXIMAMENTE ____* -->
-<!-- Recursos para la Reunión #5 próximamente. -->
-<!-- ::: -->
-
-<!-- ::: {.callout-note collapse="true"} -->
-<!-- ## **Resumen de la Reunión #6 FP**  *PRÓXIMAMENTE ____* -->
-<!-- Recursos para la Reunión #6 próximamente. -->
-<!-- ::: -->
+::: {.callout-note collapse="true"}
+## **Reunión FP #5** *PRÓXIMAMENTE Invierno 2026*
+¡Por favor, estén pendientes de su correo electrónico para más detalles sobre la Reunión FP #5!
+:::
 
 ------------------------------------------------------------------------
 
