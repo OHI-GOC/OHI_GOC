@@ -107,11 +107,6 @@ Add the shared calendar to your Google Calendar account using the [provided link
 ------------------------------------------------------------------------
 
 ::: {.callout-important}
-# **Meeting #4 POSTPONED until November 20**
-See Erica's email on October 27 for details. 
-:::
-
-::: {.callout-important}
 # **Meeting #5 will take place in 2026**
 Please stay tuned for more information and updates to the meeting schedule.
 :::
