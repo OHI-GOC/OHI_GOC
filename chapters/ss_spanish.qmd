@@ -380,8 +380,93 @@ Sin embargo, el MPI solo está disponible a nivel estatal, y existen otras fuent
 
 
 ::: {.callout-note collapse="true"}
-# <i class="fa-regular fa-clipboard"></i>  **Reunión #4:** *¡Próximamente el 21 de noviembre!*
-Manténganse al tanto de los recursos de la Reunión #4.
+# <i class="fa-regular fa-clipboard"></i>  **Reunión #4:** Solicitud para Revisar Matrices de SS y Terminología
+
+¡Espero que se encuentren muy bien! Muchas gracias nuevamente a quienes pudieron asistir a nuestra reunión del viernes pasado. Aunque la asistencia fue baja, la discusión fue muy productiva y quiero compartir las actualizaciones clave con todo el grupo.
+
+::: {.callout-tip}
+### {{< fa book >}} **Resumen de la Reunión**
+
+## Actualizaciones y Acuerdos
+
+### 1. Uso de los Datos de SESNSP como Indicador Central de SS
+Acordamos que el **número de delitos reportados por el SESNSP** debe ser nuestro indicador principal de *Safety* (seguridad objetiva). Anteriormente considerábamos combinar el índice de Crimen Organizado del MPI con SESNSP, pero Jorge señaló algo importante: los conteos del SESNSP ya mezclan delitos organizados y no organizados.
+
+Por ello, **no debemos intentar separar delitos en delitos organizados y no organizados**, sino utilizar directamente los datos del SESNSP, reconociendo que los delitos pueden pertenecer a cualquiera de estas categorías.
+
+### 2. Destacar los Delitos Asociados al Crimen Organizado en el Informe
+Aunque el indicador utilizará el total de delitos del SESNSP, el informe debe **resaltar que ciertos tipos de delitos están más asociados al crimen organizado**. Por ejemplo, el *Mexico Peace Index* identifica **extorsión** y **delitos relacionados con drogas** como indicadores clave de OC (p. 74 de [la metodología MPI 2025](https://github.com/user-attachments/files/23684822/MPI-ENG-2025-web.pdf)). Su información también proviene del SESNSP, lo cual refuerza esta decisión.
+
+### 3. Matriz Delito × Meta OHI
+Dado que cada meta del OHI se ve afectada por distintos tipos de delitos, estamos desarrollando una **Matriz Delito × Meta OHI** que defina qué delitos del SESNSP son relevantes para cada meta. Ya elaboré una primera versión basada en mi propio criterio, y ahora solicito sus comentarios.
+
+### 4. Matriz de Miedo a la Violencia (ENVIPE)
+También estamos desarrollando una **Matriz Miedo a la Violencia × Meta OHI**, usando [la encuesta ENVIPE de INEGI](https://www.inegi.org.mx/programas/envipe/2025/). Esta matriz captura si las percepciones de inseguridad deben incorporarse a cada meta.
+
+### 5. Ubicación de Safety & Security dentro del Marco de Metas
+La pregunta general sobre “cómo deben incorporarse SS (estado actual vs. presiones, etc.)” será algo que nuestro equipo interno propondrá y luego compartiremos con ustedes para retroalimentación.
+
+En la reunión revisamos dos metas como ejemplo:
+
+- **Oportunidades Costeras (CO):** Incluye SS tanto en el estado actual como en la condición futura.  
+- **Biodiversidad (BD):** Incluye SS solo en la condición futura, ya que el estado actual ya refleja cualquier impacto.
+
+Jorge apoyó esta lógica, y estos ejemplos nos dan confianza de que vamos por buen camino para las demás metas.
+
+:::
+
+::: {.callout-warning}
+### Solicitud de Retroalimentación: Mejor Terminología en Español para “Safety” vs. “Security”
+
+Como parte de la metodología y documentación, queremos asegurarnos de utilizar **terminología adecuada y ampliamente aceptada** en español para distinguir entre condiciones objetivas de seguridad y percepciones subjetivas.
+
+Con base en el uso estándar en INEGI, ENVIPE, SESNSP y la literatura de seguridad pública, la recomendación es:
+
+- **Safety = Seguridad (objetiva)**  
+  *Se refiere a condiciones medibles de criminalidad o incidencia de amenazas.*
+
+- **Security = Percepción de seguridad (subjetiva)**  
+  *Se refiere a la sensación subjetiva de seguridad, miedo, confianza en instituciones y percepción del riesgo.*
+
+**¿Por qué estos términos?**
+
+- *Seguridad* es el término estándar para describir **condiciones objetivas y medibles de criminalidad** en los datos nacionales.  
+- *Percepción de seguridad* es el término utilizado por INEGI/ENVIPE para la dimensión **subjetiva y experiencial**.  
+- Esta pareja de términos separa de forma clara la dimensión **objetiva vs. subjetiva** sin introducir vocabulario poco común.
+
+Agradeceríamos mucho sus comentarios sobre si están de acuerdo con esta distinción o si recomiendan otro enfoque para una audiencia hispanohablante.
+
+:::
+
+::: {.callout-warning}
+### Solicitud de Acción: Por Favor Revisen las Matrices
+
+Antes de que termine el año, les pedimos que revisen y editen las dos matrices vinculadas a continuación:
+
+- **Matriz Delito × Meta OHI:** *[insertar enlace]*  
+- **Matriz Miedo a la Violencia × Meta OHI:** *[insertar enlace]*  
+
+Su retroalimentación es esencial para asegurar que el componente de SS refleje el entendimiento experto para todas las metas. Pueden agregar comentarios o ediciones directamente en los documentos.
+
+:::
+
+::: {.callout-important}
+### <i class="fa fa-step-forward" aria-hidden="true"></i> Próximos Pasos
+
+Esperamos que la **próxima reunión del equipo SS se realice en enero**, cuando ya contaremos con algunos resultados preliminares para revisar juntos.
+
+Mientras tanto, si **cualquiera de ustedes desea reunirse 1:1 para revisar las matrices, aportar comentarios o discutir el enfoque metodológico**, con mucho gusto podemos coordinar una llamada individual.
+
+Muchas gracias nuevamente por su tiempo y guía. Quedo atenta a cualquier pregunta, ¡y les deseo una excelente temporada navideña!
+
+:::
+
+:::
+
+
+::: {.callout-note collapse="true"}
+# <i class="fa-regular fa-clipboard"></i>  **Reunión #5:** *¡Próximamente en enero!*
+Manténganse al tanto de los recursos de la Reunión #5.
 :::
 
 

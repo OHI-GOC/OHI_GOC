@@ -379,10 +379,94 @@ However, the MPI is only available at the state level, and there are other data 
 
 :::
 
+::: {.callout-note collapse="true"}
+# <i class="fa-regular fa-clipboard"></i>  **Meeting #4:** Request to Review SS Matrices & Terminology
+
+I hope you are all doing well! Thank you again to those who were able to attend our meeting last Friday. Attendance was low, but the discussion was very productive, and I wanted to share the key updates with the whole group.
+
+::: {.callout-tip}
+### {{< fa book >}} **Meeting Recap**
+
+## Meeting Summary & Updates
+
+### 1. Using SESNSP Data as the Core SS Indicator
+We agreed that the **SESNSP’s number of crimes** should serve as our primary indicator of Safety. Although we previously considered using both the MPI's Organized Crime index and SESNSP, Jorge made an important point: SESNSP crime counts inherently blend organized and non-organized crime.
+
+Because of this, we should **not attempt to separate crimes into organized and non-organized crime**, but instead use SESNSP directly, acknowledging that the crimes captured may be of either type.
+
+### 2. Highlighting OC-related Crimes in the Report
+Although the indicator will use total SESNSP crime counts, the report should still **highlight that certain crime types are more associated with organized crime**. For example, the *Mexico Peace Index* identifies **extortion** and **drug-related crimes** as core OC indicators (p. 74 of [the MPI 2025 methodology](https://github.com/user-attachments/files/23684822/MPI-ENG-2025-web.pdf)). Their data also come from SESNSP, which further supports using SESNSP as our main source.
+
+### 3. Crime × OHI Goal Matrix
+Because each OHI goal is affected by different types of crime, we’re developing a **Crime × OHI Goal matrix** to define which SESNSP crimes are relevant to each goal. I’ve drafted an initial version based on my own intuition and am now asking for your feedback below.
+
+### 4. Fear of Violence Matrix (ENVIPE)
+We are also developing a **Fear of Violence × OHI Goal matrix**, using [INEGI’s ENVIPE survey](https://www.inegi.org.mx/programas/envipe/2025/). This matrix captures whether perceptions of insecurity should be incorporated into each goal.
+
+### 5. Placement of Safety & Security Within the Goal Framework
+The broader question: "how SS should be incorporated (current status vs. pressures, etc.)" is something our internal team will propose and then run by you for feedback.
+
+In our meeting, we reviewed two example goals:
+
+- **Coastal Opportunities (CO):** Includes SS in both current status and future condition.  
+- **Biodiversity (BD):** Includes SS only in the future condition, since the current status already reflects any impacts.
+
+Jorge endorsed this logic, and these examples give us confidence that we are on the right track for the other goals.
+
+:::
+
+::: {.callout-warning}
+### Request for Feedback: Best Spanish Terminology for “Safety” vs. “Security”
+
+As part of the methodology and documentation, we want to ensure that we are using **accurate and widely accepted Spanish terminology** to distinguish between objective crime conditions and subjective perceptions.
+
+Based on standard usage in INEGI, ENVIPE, SESNSP, and public-security literature, the recommended pair is:
+
+- **Safety = Seguridad (objetiva)**  
+  *Refers to measurable crime conditions or incidence of threats.*
+
+- **Security = Percepción de seguridad (subjetiva)**  
+  *Refers to the subjective feeling of safety, fear, trust in institutions, and perceived risk.*
+
+**Why these terms?**
+
+- *Seguridad* is the standard term used for **objective, measurable crime conditions** across national datasets.  
+- *Percepción de seguridad* is the term used by INEGI/ENVIPE to describe the **subjective, experiential dimension** of safety.  Aka, what people feel about their municipality, rather than what objectively occurs.  
+- This pairing clearly separates **objective vs. subjective** dimensions without introducing unfamiliar terminology.
+
+We would greatly appreciate your feedback on whether you agree with this distinction, or if you recommend an alternative phrasing for the Spanish-speaking audience.
+
+:::
+
+::: {.callout-warning}
+### Action Requested: Please Review the Matrices
+
+Before the end of the year, please take a moment to review and edit the two matrices linked below:
+
+- **Crime × OHI Goal Matrix:** *[insert link]*  
+- **Fear of Violence × OHI Goal Matrix:** *[insert link]*  
+
+Your input is essential to ensure the SS component reflects expert understanding across all goals. Feel free to add comments or edits directly in the documents.
+
+:::
+
+::: {.callout-important}
+### <i class="fa fa-step-forward" aria-hidden="true"></i> Next Steps 
+
+We expect the **next SS Goalkeeper meeting will likely be scheduled for January**, when we’ll have some preliminary results ready to review together.
+
+In the meantime, **if any of you would like to meet 1:1 to discuss the matrices, provide input, or review the methodological approach**, please feel free to reach out! I am very happy to coordinate individual calls.
+
+Thank you all again for your time and guidance. Please let me know if you have any questions, and have a great holiday season!
+
+:::
+
+:::
+
 
 ::: {.callout-note collapse="true"}
-# <i class="fa-regular fa-clipboard"></i>  **Meeting #4:** *Upcoming on November 21st!*
-Stay tuned for Meeting #4 resources.
+# <i class="fa-regular fa-clipboard"></i>  **Meeting #5:** *Upcoming in January!*
+Stay tuned for Meeting #5 resources.
 :::
 
 
