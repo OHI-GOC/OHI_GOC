@@ -1,0 +1,40 @@
+---
+title: "Recursos del Grupo de Trabajo de Expertos"
+format: html
+---
+
+<div class="button-container">
+  <a href="https://ohi-goc.github.io/OHI_GOC/chapters/ewg.html" class="custom-button">
+    <i class="fas fa-globe"></i> English Translation
+  </a>
+</div>
+
+## ¡Bienvenidas y bienvenidos a la segunda reunión del EWG, del 20 al 22 de enero!
+
+:::{.callout-tip} 
+# Enlaces clave
+
+La **agenda** de la reunión se encuentra [aquí.](https://docs.google.com/spreadsheets/d/1uj-wX8ZjulRe0ANkBcWkJ8pL33bdGw93cx5yUpLHH_4/edit?gid=0#gid=0) 
+
+*Notas de la reunión:*
+
+* [Día 1](https://docs.google.com/document/d/1XH1nKQz5E2xV3TkC-iQ6JWa8JAot_iyLqJBnZDwm0Mk/edit?tab=t.0#heading=h.kwsyc5wl8bzd)
+* [Día 2](https://docs.google.com/document/d/1vK-pKE0W5vBnucxgk3HD5ZHsDwee3TJi0qqJQwkJidE/edit?tab=t.0)
+* [Día 3](https://docs.google.com/document/d/1tN-Q0JTUXuplgT3OydbuzJGxjSDmI-Z0oh3FXk7SXZo/edit?tab=t.0#heading=h.kwsyc5wl8bzd)
+
+:::
+
+| Meta del OHI | Enlace a las presentaciones |
+|--------------|-----------------------------|
+| Provisión de Alimentos (FP) | [Haz clic aquí](https://docs.google.com/presentation/d/1CYpFMOLGcqjNDC_11URTJ0xFxqUhvLCn4oXLiKRerjs/edit?usp=drive_link) |
+| Turismo y Recreación (TR) | [Haz clic aquí](https://docs.google.com/presentation/d/1LVK5QcvnQ8TU-z3jx_GX_3cKrWBjTQASMj6AtgPQ0mo/edit?usp=drive_link) |
+| Biodiversidad | [Haz clic aquí](https://docs.google.com/presentation/d/15ksHpfWq9duDIg7FOAP40VHnjy5R3_AsE-nrTzuNX3g/edit?usp=drive_link) |
+| Servicios de Hábitat | [Haz clic aquí](https://docs.google.com/presentation/d/1GMIScPTpUMDhlTmTa7EZSNapVBiOYToRhFSka8jwWmQ/edit?usp=drive_link) |
+| Oportunidades de Acceso | [Haz clic aquí](https://docs.google.com/presentation/d/1TBDP0niiypVexpoEh0l2Pt4JfJULwPNm70a07DpB5gc/edit?usp=drive_link) |
+| Sentido de Pertenencia | [Haz clic aquí](https://docs.google.com/presentation/d/1fl4kmrNkpUrtNKhbvjzmaEB82R6bK4f30vTCpfro2uk/edit?usp=drive_link) |
+| Productos Naturales | [Haz clic aquí](https://docs.google.com/presentation/d/1wLfI5LymlJHFyAxy2EE9UlRhSFDg_mJEQnrIGEEkZWg/edit?usp=drive_link) |
+| Aguas Limpias | [Haz clic aquí](https://docs.google.com/presentation/d/1tZ-NOY5zUlKm5tYjbQq0U7wtUlUjkhWE3CjQVTrgqDQ/edit?usp=drive_link) |
+| Medios de Vida y Economías | [Haz clic aquí](https://docs.google.com/presentation/d/1eeBdWPzIhgnPMRyTr_c28q4iO204dq6w27MWfwBVuEY/edit?usp=drive_link) |
+| Seguridad y Percepción de seguridad | [Haz clic aquí](https://docs.google.com/presentation/d/1u7sp7RX9laoUO1-HdwB-fEculSI5nDnQ6XySn0WbrIk/edit?usp=drive_link) |
+| Presiones / Tendencias / Resiliencia | [Haz clic aquí](https://docs.google.com/presentation/d/1beZx6xqcT4kq024AyqIaxOqdcL6Chvwf36rSOh08m5U/edit?usp=drive_link) |
+---

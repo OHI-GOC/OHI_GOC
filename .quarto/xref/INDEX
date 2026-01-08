@@ -145,5 +145,11 @@
   },
   "chapters/cp_cs_spanish.qmd": {
     "cp_cs_spanish.html": "e4b02911"
+  },
+  "chapters/ewg.qmd": {
+    "ewg.html": "48c49f92"
+  },
+  "chapters/ewg_spanish.qmd": {
+    "ewg_spanish.html": "ba6c10ec"
   }
 }

@@ -25,29 +25,33 @@ website:
       - href: index.qmd
         text: "🏠 Home"
       - href: chapters/OHIregions.qmd
-        text: OHI regions
-      - href: chapters/ao.qmd
-        text: Artisanal opportunities
-      - href: chapters/bd.qmd
-        text: Biodiversity
-      - href: chapters/cp_cs.qmd
-        text: Coastal protection & Carbon storage
-      - href: chapters/cw.qmd
-        text: Clean waters
-      - href: chapters/fp.qmd
-        text: Food provisioning
-      - href: chapters/le.qmd
-        text: Livelihoods and economies
-      - href: chapters/np.qmd
-        text: Natural products
-      - href: chapters/sp.qmd
-        text: Sense of place/pertenencia
-      - href: chapters/tr.qmd
-        text: Tourism and recreation
-      - href: chapters/ss.qmd
-        text: Safety and security
-      - href: chapters/ol.qmd
-        text: Research and ocean literacy
+        text: "🌎️ Map of OHI regions"
+      - href: chapters/ewg.qmd
+        text: "📚 Expert Working Group Resources"
+      - section: Goalkeeper Resources
+        contents:
+          - href: chapters/ao.qmd
+            text: Artisanal opportunities
+          - href: chapters/bd.qmd
+            text: Biodiversity
+          - href: chapters/cp_cs.qmd
+            text: Coastal protection & Carbon storage
+          - href: chapters/cw.qmd
+            text: Clean waters
+          - href: chapters/fp.qmd
+            text: Food provisioning
+          - href: chapters/le.qmd
+            text: Livelihoods and economies
+          - href: chapters/np.qmd
+            text: Natural products
+          - href: chapters/sp.qmd
+            text: Sense of place/pertenencia
+          - href: chapters/tr.qmd
+            text: Tourism and recreation
+          - href: chapters/ss.qmd
+            text: Safety and security
+          - href: chapters/ol.qmd
+            text: Research and ocean literacy
 
 format:
   html:

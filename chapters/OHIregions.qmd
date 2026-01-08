@@ -23,6 +23,18 @@ library(here)
 # read in data
 ohi_nolines_git <- st_read("https://raw.githubusercontent.com/OHI-GOC/ohi_goc_prep/refs/heads/gh-pages/spatial/marine_ohi/ohirgns_nolines.geojson", quiet=TRUE)
 
+## for plotting:
+goc_region_colors <- c(
+  "Region_1" = "#1b9e77",
+  "Region_2" = "#d95f02",
+  "Region_3" = "#7570b3",
+  "Region_4" = "#e7298a",
+  "Region_5" = "#66a61e",
+  "Region_6" = "#e6ab02",
+  "Region_7" = "#a6761d",
+  "Region_8" = "#666666",
+  "Region_9" = "#1f78b4"
+)
 ```
 
 ```{r, fig.width = 10, fig.height = 10}
@@ -31,9 +43,35 @@ ohi_nolines_git <- st_read("https://raw.githubusercontent.com/OHI-GOC/ohi_goc_pr
 #| message: false
 
 
-mapview(ohi_nolines_git, zcol = "rgn_id",layer.name = "GoC OHI regions") 
+mapview(ohi_nolines_git, zcol = "rgn_id",layer.name = "GoC OHI regions", col.regions = goc_region_colors) 
 ```
 
+<div class="dark-table">
+
+| Region | English name | Nombre en español |
+|--------|--------------|------------------|
+| Region 1 | Western Upper Gulf | Alto Golfo Occidental |
+| Region 2 | Western Midriff Islands | Islas Grandes Occidentales  |
+| Region 3 | Western Central Gulf | Golfo Central Occidental |
+| Region 4 | Western Southern Gulf | Golfo Sur Occidental |
+| Region 5 | Eastern Upper Gulf | Alto Golfo Oriental |
+| Region 6 | Eastern Midriff Islands |  Islas Grandes Orientales |
+| Region 7 | Southern Sonora Coast | Costa Sur de Sonora |
+| Region 8 | Sinaloa Coast | Costa de Sinaloa |
+| Region 9 | Southeastern Gulf |  Golfo Sur Oriental |
+
+</div>
+
+<style>
+.dark-table table {
+  border-collapse: collapse;
+}
+
+.dark-table th,
+.dark-table td {
+  border: 0.5px solid #444;
+}
+</style>
 
 
 

@@ -1,0 +1,40 @@
+---
+title: "Expert Working Group Resources"
+format: html
+---
+
+<div class="button-container">
+  <a href="https://ohi-goc.github.io/OHI_GOC/chapters/ewg_spanish.html" class="custom-button">
+    <i class="fas fa-globe"></i> en español
+  </a>
+</div>
+
+## Welcome to the second EWG meeting, January 20th - 22nd!
+
+:::{.callout-tip} 
+# Key links
+
+The **agenda** for the meeting is located [here.](https://docs.google.com/spreadsheets/d/1uj-wX8ZjulRe0ANkBcWkJ8pL33bdGw93cx5yUpLHH_4/edit?gid=0#gid=0) 
+
+*Meeting notes:*
+
+* [Day 1](https://docs.google.com/document/d/1XH1nKQz5E2xV3TkC-iQ6JWa8JAot_iyLqJBnZDwm0Mk/edit?tab=t.0#heading=h.kwsyc5wl8bzd)
+* [Day 2](https://docs.google.com/document/d/1vK-pKE0W5vBnucxgk3HD5ZHsDwee3TJi0qqJQwkJidE/edit?tab=t.0)
+* [Day 3](https://docs.google.com/document/d/1tN-Q0JTUXuplgT3OydbuzJGxjSDmI-Z0oh3FXk7SXZo/edit?tab=t.0#heading=h.kwsyc5wl8bzd)
+
+:::
+
+| OHI Goal | Link to slides |
+|----------|----------------|
+| Food Provisioning (FP) | [Click here](https://docs.google.com/presentation/d/1CYpFMOLGcqjNDC_11URTJ0xFxqUhvLCn4oXLiKRerjs/edit?usp=drive_link) |
+| Tourism & Recreation (TR) | [Click here](https://docs.google.com/presentation/d/1LVK5QcvnQ8TU-z3jx_GX_3cKrWBjTQASMj6AtgPQ0mo/edit?usp=drive_link) |
+| Biodiversity | [Click here](https://docs.google.com/presentation/d/15ksHpfWq9duDIg7FOAP40VHnjy5R3_AsE-nrTzuNX3g/edit?usp=drive_link) |
+| Habitat Services | [Click here](https://docs.google.com/presentation/d/1GMIScPTpUMDhlTmTa7EZSNapVBiOYToRhFSka8jwWmQ/edit?usp=drive_link) |
+| Access Opportunities | [Click here](https://docs.google.com/presentation/d/1TBDP0niiypVexpoEh0l2Pt4JfJULwPNm70a07DpB5gc/edit?usp=drive_link) |
+| Sense of Place | [Click here](https://docs.google.com/presentation/d/1fl4kmrNkpUrtNKhbvjzmaEB82R6bK4f30vTCpfro2uk/edit?usp=drive_link) |
+| Natural Products | [Click here](https://docs.google.com/presentation/d/1wLfI5LymlJHFyAxy2EE9UlRhSFDg_mJEQnrIGEEkZWg/edit?usp=drive_link) |
+| Clean Waters | [Click here](https://docs.google.com/presentation/d/1tZ-NOY5zUlKm5tYjbQq0U7wtUlUjkhWE3CjQVTrgqDQ/edit?usp=drive_link) |
+| Livelihoods & Economies | [Click here](https://docs.google.com/presentation/d/1eeBdWPzIhgnPMRyTr_c28q4iO204dq6w27MWfwBVuEY/edit?usp=drive_link) |
+| Safety & Security | [Click here](https://docs.google.com/presentation/d/1u7sp7RX9laoUO1-HdwB-fEculSI5nDnQ6XySn0WbrIk/edit?usp=drive_link) |
+| Pressures/Trend/Resilience | [Click here](https://docs.google.com/presentation/d/1beZx6xqcT4kq024AyqIaxOqdcL6Chvwf36rSOh08m5U/edit?usp=drive_link) |
+---
