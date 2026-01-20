@@ -151,5 +151,8 @@
   },
   "chapters/ewg_spanish.qmd": {
     "ewg_spanish.html": "ba6c10ec"
+  },
+  "chapters/tr_extra_materials.qmd": {
+    "tr_extra_materials.html": "ba9bbfb0"
   }
 }

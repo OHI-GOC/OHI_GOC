@@ -1,0 +1,635 @@
+---
+title: "Tourism & Recreation: Extra Materials"
+format: html
+---
+
+## Quantity
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| output: false
+#| results: hide
+
+library(magrittr)
+library(mapview)
+library(sf)
+library(tidyverse)
+library(here)
+library(plotly)
+
+## for plotting:
+rgn_colors <- c(
+  "Region_1" = "#C03729",
+  "Region_2" = "#E68C7C",
+  "Region_3" = "#FC8F24",
+  "Region_4" = "#dcaa38",
+  "Region_5" = "#cbd2a0",
+  "Region_6" = "#98a25a",
+  "Region_7" = "#747428",
+  "Region_8" = "#627391",
+  "Region_9" = "#8d61a9"
+)
+
+quantity_current_status_rgn <- read_csv(here::here("/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_quantity","int_dom_quantity_current_status_120925.csv"))
+
+int_quantity_current_status <- quantity_current_status_rgn %>% 
+  filter(arrival_type %in% "int") %>% 
+  arrange(year)
+
+dom_quantity_current_status <- quantity_current_status_rgn %>% 
+  filter(arrival_type %in% "dom") %>% 
+  arrange(year)
+```
+
+### Domestic
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+
+## plot the number of arrivals over time
+final_dom_arrivals_plotly <- plotly::plot_ly(
+  dom_quantity_current_status, 
+  x = ~year, 
+  y = ~agg_tourist_arrivals, 
+  color = ~rgn_id, 
+  colors = rgn_colors,
+  type = "scatter", 
+  mode = "lines+markers"
+) %>% 
+  layout(
+    title = "Llegadas de turistas nacionales por region",
+    xaxis = list(title = "Año // Year"),
+    yaxis = list(title = "Aggregated tourist arrivals // Llegadas turísticas agregadas")
+  ) 
+final_dom_arrivals_plotly
+```
+
+---
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+
+
+## plot the score over time
+final_dom_score_plotly <- plotly::plot_ly(
+  dom_quantity_current_status, 
+  x = ~year, 
+  y = ~current_status, 
+  color = ~rgn_id, 
+  colors = rgn_colors,
+  type = "scatter", 
+  mode = "lines+markers"
+) %>% 
+  layout(
+    title = "CURRENT STATUS: Llegadas de turistas nacionales por municipio",
+    xaxis = list(title = "Año // Year"),
+    yaxis = list(title = "Puntaje // Percent (out of 100)")
+  ) %>%
+  add_lines(
+    x = range(dom_quantity_current_status$year), 
+    y = c(100, 100),
+    line = list(color = "black", width = 2, dash = "dash"),
+    name = "Meta // Goal 2030 (100/100)",
+    inherit = FALSE
+  )
+final_dom_score_plotly
+```
+
+---
+
+### International
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+
+## plot the number of arrivals over time
+final_int_arrivals_plotly <- plotly::plot_ly(
+  int_quantity_current_status, 
+  x = ~year, 
+  y = ~agg_tourist_arrivals, 
+  color = ~rgn_id, 
+  colors = rgn_colors,
+  type = "scatter", 
+  mode = "lines+markers"
+) %>% 
+  layout(
+    title = "Llegadas de turistas internacionales por region",
+    xaxis = list(title = "Año // Year"),
+    yaxis = list(title = "Aggregated tourist arrivals // Llegadas turísticas agregadas")
+  ) 
+final_int_arrivals_plotly
+```
+
+
+---
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+
+## plot the score over time
+final_int_score_plotly <- plotly::plot_ly(
+  int_quantity_current_status, 
+  x = ~year, 
+  y = ~current_status, 
+  color = ~rgn_id, 
+  colors = rgn_colors,
+  type = "scatter", 
+  mode = "lines+markers"
+) %>% 
+  layout(
+    title = "CURRENT STATUS: Llegadas de turistas internacionales por region",
+    xaxis = list(title = "Año // Year"),
+    yaxis = list(title = "Puntaje // Percent (out of 100)")
+  ) %>%
+  add_lines(
+    x = range(int_quantity_current_status$year), 
+    y = c(100, 100),
+    line = list(color = "black", width = 2, dash = "dash"),
+    name = "Meta // Goal 2030 (100/100)",
+    inherit = FALSE
+  )
+final_int_score_plotly
+
+```
+
+
+---
+
+### Overall Quantity (Preliminary)
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+cs_quantity <- read_csv(here::here("/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_quantity","tr_quantity_current_status_121025.csv")) %>% 
+  rename(final_score = score) %>% 
+  select(rgn_id, year, final_score)
+
+quantity_plotly <- plotly::plot_ly(
+  cs_quantity, 
+  x = ~year, 
+  y = ~final_score, 
+  color = ~rgn_id, 
+  colors = rgn_colors,
+  type = "scatter", 
+  mode = "lines+markers"
+) %>% 
+  layout(
+    title = "CURRENT STATUS: Tourism & Recreation Quantity",
+    xaxis = list(title = "Año // Year"),
+    yaxis = list(title = "Puntaje // Percent (out of 100)")
+  ) %>%
+  add_lines(
+    x = range(cs_quantity$year), 
+    y = c(100, 100),
+    line = list(color = "black", width = 2, dash = "dash"),
+    name = "Meta // Goal 2030 (100/100)",
+    inherit = FALSE
+  )
+quantity_plotly
+```
+
+---
+
+
+## Quality
+
+### Availability of activities
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| output: false
+#| results: hide
+
+library(magrittr)
+library(mapview)
+library(sf)
+library(tidyverse)
+library(here)
+library(plotly)
+
+score_merge_activites <- read_csv(here::here("/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_quality","final_activity_avg_score_121625.csv"))
+```
+Current status = avg(2/5 * cultural & gulf-related employees / tourist arrivals +
+                                               2/5 * food & drink employees / tourist arrivals + 
+                                               1/5 * other_recreational employees / tourist arrivals) 
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+library(magrittr)
+library(mapview)
+library(sf)
+library(tidyverse)
+library(here)
+library(plotly)
+
+## plot the score over time
+score_merge_activites_plotly <- plotly::plot_ly(
+  score_merge_activites, 
+  x = ~year, 
+  y = ~final_score, 
+  color = ~rgn_id, 
+  colors = rgn_colors,
+  type = "scatter", 
+  mode = "lines+markers"
+) %>% 
+  layout(
+    title = "Merged activities, reference of 2019, pre-COVID",
+    xaxis = list(title = "Año // Year"),
+    yaxis = list(title = "Puntaje // Percent (out of 100)")
+  ) %>%
+  add_lines(
+    x = range(score_merge_activites$year), 
+    y = c(100, 100),
+    line = list(color = "black", width = 2, dash = "dash"),
+    name = "Meta // Goal (100/100)",
+    inherit = FALSE
+  )
+score_merge_activites_plotly
+```
+
+---
+
+### Crime risk
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| output: false
+#| results: hide
+
+
+tr_qual_crime_score_alt <- read_csv(here::here("/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_quality","tr_qual_crime_score_120925.csv"))
+```
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+## TR quality crime index score over time
+tr_qual_crime_plotly <- plotly::plot_ly(
+  tr_qual_crime_score_alt,
+  x = ~year,
+  y = ~score,
+  color = ~rgn_id,
+  colors = rgn_colors,
+  type = "scatter",
+  mode = "lines+markers"
+) %>%
+  layout(
+    title = "CURRENT STATUS: Índice de delitos per cápita residentes que afectan la calidad turística por región",
+    xaxis = list(title = "Año // Year"),
+    yaxis = list(title = "Puntaje // Score (out of 100)"),
+    legend = list(title = list(text = "Región"))
+  ) %>%
+  add_lines(
+    x = range(tr_qual_crime_score_alt$year),
+    y = c(100, 100),
+    line = list(color = "black", width = 2, dash = "dash"),
+    name = "Meta // Goal (0 crimes = 100/100)",
+    inherit = FALSE
+  )
+
+tr_qual_crime_plotly
+```
+
+---
+
+### Overall Quality (Preliminary)
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| output: false
+#| results: hide
+
+cs_quality <- read_csv(here::here("/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_quality","cs_quality_all_indicators_121625.csv"))
+```
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+quality_plotly <- plotly::plot_ly(
+  cs_quality, 
+  x = ~year, 
+  y = ~final_score, 
+  color = ~rgn_id, 
+  colors = rgn_colors,
+  type = "scatter", 
+  mode = "lines+markers"
+) %>% 
+  layout(
+    title = "CURRENT STATUS: Tourism & Recreation Quality",
+    xaxis = list(title = "Año // Year"),
+    yaxis = list(title = "Puntaje // Percent (out of 100)")
+  ) %>%
+  add_lines(
+    x = range(cs_quality$year), 
+    y = c(100, 100),
+    line = list(color = "black", width = 2, dash = "dash"),
+    name = "Meta // Goal (100/100)",
+    inherit = FALSE
+  )
+quality_plotly
+```
+
+
+## Sustainability
+
+### Distintivo S
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+
+cs_sust_dist_s <- read_csv(here::here("/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_sustainability","dist_S_current_status_final_interpolated_121625.csv")) %>% 
+  mutate(sust_type = "dist_s") %>% 
+  select(rgn_id, year = data_year, score = score_interpolated, sust_type) %>% 
+  filter(year %in% 2019:2024)
+
+dist_s_plotly <- plotly::plot_ly(
+  cs_sust_dist_s, 
+  x = ~year, 
+  y = ~score, 
+  color = ~rgn_id, 
+  colors = rgn_colors,
+  type = "scatter", 
+  mode = "lines+markers"
+) %>% 
+  layout(
+    title = "250+ employees: total dist. S hotels / total large hotels (interpolated)",
+    xaxis = list(title = "Año // Year"),
+    yaxis = list(title = "Puntaje // Percent (out of 100)")
+  ) %>%
+  add_lines(
+    x = range(cs_sust_dist_s$year), 
+    y = c(100, 100),
+    line = list(color = "black", width = 2, dash = "dash"),
+    name = "Meta // Goal (100/100)",
+    inherit = FALSE
+  )
+dist_s_plotly
+
+# ### table to visualize
+# library(gt)
+# library(dplyr)
+# 
+# region_levels <- paste0("Region_", 1:9)
+# 
+# cs_sust_dist_s %>%
+#   mutate(
+#     rgn_id = factor(rgn_id, levels = region_levels),
+#     current_status = current_status / 100
+#   ) %>%
+#   arrange(rgn_id) %>%
+#   gt() %>%
+#   cols_label(
+#     rgn_id = "Region",
+#     data_year = "Year",
+#     total_dist_s = "Certified Hotels (Distintivo S)",
+#     total_large_hotels = "Total Large Hotels (+250 employees)",
+#     current_status = "Certification Coverage"
+#   ) %>%
+#   fmt_percent(
+#     columns = current_status,
+#     decimals = 1
+#   ) %>%
+#   cols_align(
+#     align = "center",
+#     everything()
+#   ) %>%
+#   tab_header(
+#     title = "Distintivo S Certification Coverage",
+#     subtitle = "Certified hotels as a share of total large hotels (+250 employees)"
+#   ) %>%
+#   opt_table_outline() %>%
+#   opt_all_caps()
+
+```
+
+---
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+
+cs_sust_dist_s <- read_csv(here::here("/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_sustainability","dist_S_current_status_final_interpolated_175over_010726.csv")) %>% 
+  mutate(sust_type = "dist_s") %>% 
+  select(rgn_id, year = data_year, score = score_interpolated, sust_type) %>% 
+  filter(year %in% 2019:2024) 
+
+dist_s_plotly <- plotly::plot_ly(
+  cs_sust_dist_s, 
+  x = ~year, 
+  y = ~score, 
+  color = ~rgn_id, 
+  colors = rgn_colors,
+  type = "scatter", 
+  mode = "lines+markers"
+) %>% 
+  layout(
+    title = "100+ employees: total dist. S hotels / total large hotels (interpolated)",
+    xaxis = list(title = "Año // Year"),
+    yaxis = list(title = "Puntaje // Percent (out of 100)")
+  ) %>%
+  add_lines(
+    x = range(cs_sust_dist_s$year), 
+    y = c(100, 100),
+    line = list(color = "black", width = 2, dash = "dash"),
+    name = "Meta // Goal (100/100)",
+    inherit = FALSE
+  )
+dist_s_plotly
+
+
+```
+
+
+---
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+
+cs_sust_dist_s <- read_csv(here::here("/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_sustainability","dist_S_current_status_final_interpolated_75over_010726.csv")) %>% 
+  mutate(sust_type = "dist_s") %>% 
+  select(rgn_id, year = data_year, score = score_interpolated, sust_type) %>% 
+  filter(year %in% 2019:2024) 
+
+dist_s_plotly <- plotly::plot_ly(
+  cs_sust_dist_s, 
+  x = ~year, 
+  y = ~score, 
+  color = ~rgn_id, 
+  colors = rgn_colors,
+  type = "scatter", 
+  mode = "lines+markers"
+) %>% 
+  layout(
+    title = "50+ employees: total dist. S hotels / total large hotels (interpolated)",
+    xaxis = list(title = "Año // Year"),
+    yaxis = list(title = "Puntaje // Percent (out of 100)")
+  ) %>%
+  add_lines(
+    x = range(cs_sust_dist_s$year), 
+    y = c(100, 100),
+    line = list(color = "black", width = 2, dash = "dash"),
+    name = "Meta // Goal (100/100)",
+    inherit = FALSE
+  )
+dist_s_plotly
+```
+
+
+### CONANP fee retrieval from SHCP
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+
+cs_sust_conanp <- read_csv(here::here("/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_sustainability","conanp_fee_return_current_status_final_121625.csv")) %>% 
+  mutate(sust_type = "conanp",
+         score = score * 100) %>% 
+  filter(year %in% 2019:2024) 
+
+conanp_plotly <- plotly::plot_ly(
+  cs_sust_conanp, 
+  x = ~year, 
+  y = ~score, 
+  color = ~rgn_id, 
+  colors = rgn_colors,
+  type = "scatter", 
+  mode = "lines+markers"
+) %>% 
+  layout(
+    title = "TR Sustainability: conanp fee retrieval from SHCP",
+    xaxis = list(title = "Año // Year"),
+    yaxis = list(title = "Puntaje // Percent (out of 100)")
+  ) %>%
+  add_lines(
+    x = range(cs_sust_conanp$year), 
+    y = c(100, 100),
+    line = list(color = "black", width = 2, dash = "dash"),
+    name = "Meta // Goal (100/100)",
+    inherit = FALSE
+  )
+conanp_plotly
+```
+
+---
+
+
+### Overall Sustainability (Preliminary)
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+
+cs_sust <- read_csv(here::here("/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_sustainability","cs_sust_all_indicators_121625.csv"))
+
+sust_plotly <- plotly::plot_ly(
+  cs_sust, 
+  x = ~year, 
+  y = ~final_score, 
+  color = ~rgn_id,
+  colors = rgn_colors,
+  type = "scatter", 
+  mode = "lines+markers"
+) %>% 
+  layout(
+    title = "CURRENT STATUS: Tourism & Recreation Sustainability",
+    xaxis = list(title = "Año // Year"),
+    yaxis = list(title = "Puntaje // Percent (out of 100)")
+  ) %>%
+  add_lines(
+    x = range(cs_sust$year), 
+    y = c(100, 100),
+    line = list(color = "black", width = 2, dash = "dash"),
+    name = "Meta // Goal 2030 (100/100)",
+    inherit = FALSE
+  )
+sust_plotly
+```
+
+---
+
+## Overall Preliminary
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+
+all_cs_indicators <- read_csv(here::here("/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output","tr_current_status_final_121825.csv"))
+ 
+
+library(plotly)
+
+tr_score_plotly <- plotly::plot_ly(
+  all_cs_indicators, 
+  x = ~year, 
+  y = ~tr_current_status, 
+  color = ~rgn_id, 
+  colors = rgn_colors,
+  type = "scatter", 
+  mode = "lines+markers"
+) %>% 
+  layout(
+    title = "CURRENT STATUS: Tourism & Recreation",
+    xaxis = list(title = "Año // Year"),
+    yaxis = list(title = "Puntaje // Percent (out of 100)")
+  ) %>%
+  add_lines(
+    x = range(all_cs_indicators$year), 
+    y = c(100, 100),
+    line = list(color = "black", width = 2, dash = "dash"),
+    name = "Meta // Goal (100/100)",
+    inherit = FALSE
+  )
+tr_score_plotly
+```
+
