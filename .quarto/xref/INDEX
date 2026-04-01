@@ -154,5 +154,11 @@
   },
   "chapters/tr_extra_materials.qmd": {
     "tr_extra_materials.html": "ba9bbfb0"
+  },
+  "chapters/coastal_access_lapaz.qmd": {
+    "coastal_access_lapaz.html": "1a5c6b5a"
+  },
+  "chapters/coastal_access_lapaz_spanish.qmd": {
+    "coastal_access_lapaz_spanish.html": "cb617836"
   }
 }

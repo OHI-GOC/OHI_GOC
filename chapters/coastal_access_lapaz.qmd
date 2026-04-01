@@ -1,0 +1,163 @@
+---
+title: "Coastal Access Proposal: La Paz"
+format: html
+---
+
+<div class="button-container">
+  <a href="https://ohi-goc.github.io/OHI_GOC/chapters/coastal_access_lapaz_spanish.html" class="custom-button">
+    <i class="fas fa-globe"></i> en español
+  </a>
+</div>
+
+## Coastal Access: A test case in La Paz
+
+:::{.callout-tip} 
+# Goal
+
+We would like to quantify people’s access to local beaches along the Gulf of California. 
+
+As a test case, I estimated coastal beach access for La Paz urban area. If this approach looks reasonable, I will do this for each urban area and then average the scores within each OHI region (weighted by the coastal beach length).
+
+If you have concerns about the tentative scores or methods, please add comments to these sources:
+
+[Methods document](https://docs.google.com/document/d/1YfbEqEJISCOB_DlUDMDWX1fBtVaSZGpYT0rv8UfkkFI/edit?usp=sharing)
+[Data spreadsheet](https://docs.google.com/spreadsheets/d/136K_4wh66lva13tt41nHKp8HHL6CPMq2MS3YB2y_cGU/edit?usp=sharing)
+
+:::
+
+## Overview
+
+I estimated coastal beach access scores for La Paz (Table 1) based on three metrics: legal access (ZOFEMAT), equity of access, and the diversity of beach resources (i.e., Beach Portfolio Score): 
+
+Access = (Legal Access Score + Equitable Access Score + Beach Portfolio Score)/3
+
+
+**Table 1. Coastal access scores for La Paz**
+
+| Region | Legal access | Equitable access | Portfolio score | Access |
+|--------|--------------|------------------|-----------------|--------|
+| La Paz | 100          | 87               | 100             | 96     |
+
+>La Paz has decent public transportation that allows people to access beach areas within the city. Most urban beaches are not blocked by large developments and have formal or informal parking. A lively malecón runs alongside >10% of the urban beaches providing access. However, some beaches are difficult for the public to access due to private development, and this is likely to be an increasing pressure as tourism and development in region increases. There are excellent beaches located outside the city, but most of these are difficult to reach with a standard vehicle. There are also managed beaches located in protected areas such as, , which regulates visitors and requires a fee.
+
+<br>
+The following is a map of the equitable scores for each La Paz beach segment (please let me know if any of these look supsicious!). 
+
+<br>
+<iframe src="lapaz_beach_access_map.html" width="80%" height="400px"></iframe>
+
+### Legal Access Score 
+The ZOFEMAT guarantees that all beaches are public property. No developments can legally block or privatize the beach, and the public has the right to access and transit the federal coastal zone within 20 m of high-tide. There must be designated public access corridors to the beach and access cannot be denied without legal basis. Given this, each urban area was given the highest possible score of 100 for this metric.
+
+### Equitable Access Score 
+Despite federal public access protections under ZOFEMAT, land-based access to beaches can be restricted by built development that benefits select people at the expense of the general public. Although coastal frontage cannot legally prevent public access to the federal maritime zone, access may be functionally restricted by frontage walls, gated entries, private security, limited public parking, few visible entry points, or structures designed primarily for private users. This score measures the degree of access afforded to public relative to private use (e.g., hotel guests, residents of gated communities, or members of private clubs). If access is equal for public and private sectors the beach receives a high score of 10, even if the beach is not actually accessible. In this context, equity does not imply equal ease of access but rather the absence of development patterns that functionally exclude the public. This distinction allows identification of shoreline exclusion caused by built environments rather than natural remoteness.
+
+To assess this, each recreational beach segment was scored from 0-10 using structured expert assessments that considered the relative dominance of public access routes compared to privately mediated access options. Beaches received a score of 10 when there were few development-induced restrictions to public access. A score of 0 was assigned when shoreline access was effectively controlled or filtered through private development rendering the beach functionally inaccessible to the general public. Beaches identified as industrial/non-recreational or capacity managed/fee-based were excluded from this metric. For example, when access to a beach was fully restricted by public structures such as universities, schools, government agencies, and military facilities the beach was classified as a “industrial/non-recreational” and was not scored. In cases where a public institution limited access to part of a beach, but did not block the entire beach, the permeability score was not negatively impacted.  
+
+We determined the Equitable Access Scores for both urban and rural beaches by averaging the scores weighted by beach length (Table 2). We then averaged the rural and urban scores, with urban scores weighted twice as high as rural scores given that urban areas serve more people:  
+
+Equitable Access Score = (2*Urban + Rural)/3 * 10
+
+<br>
+
+**Table 2. Equitable Access scores of recreational beaches. For urban and rural beaches, we averaged the access scores of each beach segment, weighted by the length of the segment. To calculate the overall equitable access score, we averaged urban and rural access, with urban beach access weighted twice as much as rural access.**
+
+| Urban area | Urban access | Rural access | Access score |
+|------------|--------------|--------------|--------------|
+| La Paz     | 81           | 100          | 87           |
+
+
+
+
+### Beach Portfolio Score 
+
+Ideally an urban zone should have a balanced portfolio of beach resources (Table 3). For example, some beaches should be easy to access while others may be more difficult or impossible to access, at least from land (e.g., requiring a hike or 4WD vehicle) but offer a less crowded experience. Some beaches should also be set aside for conservation purposes, such that access is restricted or requires a fee. Additionally, areas may decide to set aside some beach area for industrial uses, food production, or other purposes. To assess the diversity of beach resources, we determined the % of shoreline beaches falling into each of the following categories: industrial; regulated: capacity managed / fee-based; recreational (no fees). 
+
+For recreational beaches, we further classified the beaches based on their equitable access scores (we considered an access score of 7 or higher, out of 10, to be fairly accessible) and how difficult the beach is to access (i.e., access friction, table xx). For urban beaches we considered access friction to be low if formal or informal parking was available or if a malecón was located along the beach. For rural beaches access friction was low if a road was located within 1km of the beach and it could be accessed by a standard vehicle. 
+Beaches received a perfect score, if the following conditions were met: a malecón is present; at least 75% of urban recreational beach length has an equitable access score of 7 or greater, and has informal or informal parking, or a malecón; at least 15% of rural beach length has an equitable access scores of 7 or greater and are within 1km of a road that can be accessed by a regular vehicle; less than 10% of beach length has population restrictions or requires a fees; and less than 5% of beaches are industrial.  
+
+**Table 3. Beach types with associated targets.**
+
+| Category                | Access score | Access friction                                      | Observed % | Goal %                          |
+|------------------------|--------------|------------------------------------------------------|------------|----------------------------------|
+| Recreational: Urban    | High (≥7)    | Low: malecón                                         | 11%        | >0% (of urban beach length)      |
+| Recreational: Urban    | High (≥7)    | Low: informal/formal parking and/or malecón          | 85%        | >75%                             |
+| Recreational: Rural    | High (>7)    | Low: road within 1 km; accessible by standard vehicle| 19%        | >15%                             |
+| Protected/fee based    | NA           | NA                                                   | 2%         | <10%                             |
+| Industrial             | NA           | NA                                                   | <1%        | <5%                              |
+
+
+## More details
+
+We evaluated public access to beaches in the La Paz coastal region, Baja California Sur, Mexico. The study area includes beach segments (as identified by INEGI) located in urban areas (INEGI “Urbano” designations) as well as within a 20 km buffer of these areas.
+
+### Areas included
+- The La Paz urban malecón  
+- The El Mogote peninsula (Gulf- and Bay-facing sides)  
+- The Pichilingue–Tecolote corridor  
+- Northern rural beaches beyond Tecolote  
+
+Each beach or shoreline segment was identified using the INEGI coastal classification dataset, selecting shoreline segments classified as:
+- **TIPO:** Continental  
+- **SUBTIPO:** Playa  
+
+This excludes rocky or cliff coastlines, even if they surround a beach, and focuses on sandy or mixed beach environments.
+
+---
+
+## Beach classification
+
+We classified beaches into three categories:
+
+- **Protected / capacity-managed**  
+  Beaches subject to formal regulation, such as protected areas with entry limits or fees.
+
+- **Industrial / non-recreational**  
+  Beaches dominated by infrastructure incompatible with recreational access (e.g., ferry terminals).
+
+- **Recreational**  
+  Beaches that could be used for recreational enjoyment.
+
+Recreational beaches were assigned equitable access scores based on best professional judgment after additional information (Table 4) from reviewing satellite imagery (e.g., Esri basemaps) and overlaying additional information from OpenStreetMap, INEGI, CONANP, Google Street View, TripAdvisor reviews, Google searches, and ChatGPT queries (Table xx).
+
+---
+
+**Table 4. Variables considered to assess coastal beach access**
+
+| Variable                    | Description                                                                                                                                         | Source                                                                 |
+|-----------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------|
+| Beach segments              | Beach segments. In most cases a segment represents a single beach; however, this is not always the case. A single beach can be split by structures (e.g., jetties) or grouped into one segment. | INEGI (TIPO: Continental; SUBTIPO: Playa)                              |
+| Urban/rural designations    | Polygons identifying urban areas; beaches within a 20 km buffer of these areas were also included.                                                 | INEGI localities (“Urbano” designations)                               |
+| Roads and condition         | For rural beaches, we assessed whether a primary road was within 1 km and what type of vehicle was required for access.                            | INEGI roads, OpenStreetMap, TripAdvisor, Google searches, ChatGPT      |
+| Entry points and blockages  | Identification of structural blockages (e.g., estates, hotels, fences) and potential entry points.                                                 | Google Satellite, Google Street View, INEGI, OpenStreetMap, searches   |
+| Parking                     | Identification of formal and informal parking.                                                                                                      | INEGI, OpenStreetMap, Google Street View, searches                     |
+| Protected and fee areas     | Identification of protected regions with visitation limits and/or fees.                                                                             | CONANP, Google searches                                                |
+---
+
+## Scoring approach
+
+Each recreational beach segment received a score based on the degree to which built development limits public access relative to private access. The score reflects **development-induced friction**, not geographic remoteness.
+
+### General scoring for equitable access
+- **10** – No development restriction; shoreline openly accessible  
+- **7–9** – Minor development friction; access corridors present but somewhat constrained  
+- **4–6** – Moderate restriction; limited entry points or visible obstruction  
+- **1–3** – Severe restriction; shoreline effectively filtered by private development  
+- **0** – No meaningful public access observable (e.g., fully gated peninsula)  
+
+Geographic remoteness (e.g., long drive, 4WD requirement) did not reduce the score unless development infrastructure was the limiting factor.
+
+---
+
+## Limitations and strengths
+
+One strength of this approach is that the level of documentation supports tracking changes in access over time.
+
+However, there are important limitations:
+
+- Access is ideally evaluated through systematic field surveys rather than remote sensing alone  
+- Satellite imagery and online sources may miss:
+  - informal access points  
+  - tolerated parking practices  
+  - subtle or temporary restrictions  
+- Industrial/non-recreational beaches are likely underestimated in the current dataset  
