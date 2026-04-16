@@ -210,8 +210,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a>
   <ul class="collapse">
   <li><a href="#legal-access-score" id="toc-legal-access-score" class="nav-link" data-scroll-target="#legal-access-score">Legal Access Score</a></li>
-  <li><a href="#equitable-access-score" id="toc-equitable-access-score" class="nav-link" data-scroll-target="#equitable-access-score">Equitable Access Score</a></li>
-  <li><a href="#beach-portfolio-score" id="toc-beach-portfolio-score" class="nav-link" data-scroll-target="#beach-portfolio-score">Beach Portfolio Score</a></li>
+  <li><a href="#public-access-score" id="toc-public-access-score" class="nav-link" data-scroll-target="#public-access-score">Public Access Score</a></li>
   </ul></li>
   <li><a href="#more-details" id="toc-more-details" class="nav-link" data-scroll-target="#more-details">More details</a>
   <ul class="collapse">
@@ -263,7 +262,7 @@ Goal
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>We would like to quantify people’s access to local beaches along the Gulf of California.</p>
+<p>As part of the coastal access score, we would like to quantify the public’s ability to access local beaches along the Gulf of California.</p>
 <p>As a test case, I estimated coastal beach access for La Paz urban area. If this approach looks reasonable, I will do this for each urban area and then average the scores within each OHI region (weighted by the coastal beach length).</p>
 <p>If you have concerns about the tentative scores or methods, please add comments to these sources:</p>
 <p><a href="https://docs.google.com/document/d/1YfbEqEJISCOB_DlUDMDWX1fBtVaSZGpYT0rv8UfkkFI/edit?usp=sharing">Methods document</a> <a href="https://docs.google.com/spreadsheets/d/136K_4wh66lva13tt41nHKp8HHL6CPMq2MS3YB2y_cGU/edit?usp=sharing">Data spreadsheet</a></p>
@@ -272,8 +271,8 @@ Goal
 </section>
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>I estimated coastal beach access scores for La Paz (Table 1) based on three metrics: legal access (ZOFEMAT), equity of access, and the diversity of beach resources (i.e., Beach Portfolio Score):</p>
-<p>Access = (Legal Access Score + Equitable Access Score + Beach Portfolio Score)/3</p>
+<p>I estimated coastal beach access scores for La Paz (Table 1) based on two metrics: legal access (ZOFEMAT) and public access:</p>
+<p>Access = (Legal Access Score + Public Access Score)/2</p>
 <p><strong>Table 1. Coastal access scores for La Paz</strong></p>
 <table class="table">
 <thead>
@@ -281,7 +280,6 @@ Goal
 <th>Region</th>
 <th>Legal access</th>
 <th>Equitable access</th>
-<th>Portfolio score</th>
 <th>Access</th>
 </tr>
 </thead>
@@ -290,25 +288,53 @@ Goal
 <td>La Paz</td>
 <td>100</td>
 <td>87</td>
-<td>100</td>
-<td>96</td>
+<td>93.5</td>
 </tr>
 </tbody>
 </table>
 <blockquote class="blockquote">
 <p>La Paz has decent public transportation that allows people to access beach areas within the city. Most urban beaches are not blocked by large developments and have formal or informal parking. A lively malecón runs alongside &gt;10% of the urban beaches providing access. However, some beaches are difficult for the public to access due to private development, and this is likely to be an increasing pressure as tourism and development in region increases. There are excellent beaches located outside the city, but most of these are difficult to reach with a standard vehicle. There are also managed beaches located in protected areas such as, , which regulates visitors and requires a fee.</p>
 </blockquote>
-<p><br> The following is a map of the equitable scores for each La Paz beach segment (please let me know if any of these look supsicious!).</p>
+<p><br> The following is a map of the Public Access scores for each La Paz beach segment (please let me know if any of these look supsicious!).</p>
 <p><br> <iframe src="lapaz_beach_access_map.html" width="80%" height="400px"></iframe></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Quick gut check
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Do these scores seem reasonable given this hypothetical scenario?</strong></p>
+<p>In a theoretical case where:</p>
+<ul>
+<li>Coastal access to <strong>all urban beaches is blocked</strong> to the public<br>
+</li>
+<li>Coastal access to <strong>exurban beaches is fully available</strong> to the public<br>
+</li>
+<li>The <strong>ZOFEMAT remains in place</strong></li>
+</ul>
+<p><em>The overall coastal access score would be 67</em></p>
+<p>If instead, <strong>50% of urban beaches were blocked</strong>, but everything else remained the same:</p>
+<p>Then the overall coastal access score would be 83.</p>
+<section id="question" class="level4">
+<h4 class="anchored" data-anchor-id="question">Question</h4>
+<p>Do these values seem too high or too low?</p>
+<p>If so, I can adjust the <strong>relative weighting of components</strong> so the scores make more sense.</p>
+</section>
+</div>
+</div>
 <section id="legal-access-score" class="level3">
 <h3 class="anchored" data-anchor-id="legal-access-score">Legal Access Score</h3>
 <p>The ZOFEMAT guarantees that all beaches are public property. No developments can legally block or privatize the beach, and the public has the right to access and transit the federal coastal zone within 20 m of high-tide. There must be designated public access corridors to the beach and access cannot be denied without legal basis. Given this, each urban area was given the highest possible score of 100 for this metric.</p>
 </section>
-<section id="equitable-access-score" class="level3">
-<h3 class="anchored" data-anchor-id="equitable-access-score">Equitable Access Score</h3>
+<section id="public-access-score" class="level3">
+<h3 class="anchored" data-anchor-id="public-access-score">Public Access Score</h3>
 <p>Despite federal public access protections under ZOFEMAT, land-based access to beaches can be restricted by built development that benefits select people at the expense of the general public. Although coastal frontage cannot legally prevent public access to the federal maritime zone, access may be functionally restricted by frontage walls, gated entries, private security, limited public parking, few visible entry points, or structures designed primarily for private users. This score measures the degree of access afforded to public relative to private use (e.g., hotel guests, residents of gated communities, or members of private clubs). If access is equal for public and private sectors the beach receives a high score of 10, even if the beach is not actually accessible. In this context, equity does not imply equal ease of access but rather the absence of development patterns that functionally exclude the public. This distinction allows identification of shoreline exclusion caused by built environments rather than natural remoteness.</p>
-<p>To assess this, each recreational beach segment was scored from 0-10 using structured expert assessments that considered the relative dominance of public access routes compared to privately mediated access options. Beaches received a score of 10 when there were few development-induced restrictions to public access. A score of 0 was assigned when shoreline access was effectively controlled or filtered through private development rendering the beach functionally inaccessible to the general public. Beaches identified as industrial/non-recreational or capacity managed/fee-based were excluded from this metric. For example, when access to a beach was fully restricted by public structures such as universities, schools, government agencies, and military facilities the beach was classified as a “industrial/non-recreational” and was not scored. In cases where a public institution limited access to part of a beach, but did not block the entire beach, the permeability score was not negatively impacted.</p>
-<p>We determined the Equitable Access Scores for both urban and rural beaches by averaging the scores weighted by beach length (Table 2). We then averaged the rural and urban scores, with urban scores weighted twice as high as rural scores given that urban areas serve more people:</p>
+<p>To assess this, each recreational beach segment was scored from 0-10 using structured expert assessments that considered the relative dominance of public access routes compared to privately mediated access options. Beaches received a score of 10 when there were few development-induced restrictions to public access. A score of 0 was assigned when public access to a beach was fully restricted by private development rendering the beach functionally inaccessible to the general public. Beaches identified as industrial/non-recreational or capacity managed/fee-based were excluded from this indicator. For example, when access to a beach was fully restricted by public structures such as universities, schools, government agencies, and military facilities the beach was classified as a “industrial/non-recreational” and was not scored. In cases where a public institution limited access to part of a beach, but did not block the entire beach, the public access score was not negatively impacted.</p>
+<p>We determined the Public Access Score for both urban and rural beaches by averaging the scores weighted by beach length (Table 2). We then averaged the rural and urban scores, with urban scores weighted twice as high as rural scores given that urban areas serve more people:</p>
 <p>Equitable Access Score = (2<em>Urban + Rural)/3 </em> 10</p>
 <p><br></p>
 <p><strong>Table 2. Equitable Access scores of recreational beaches. For urban and rural beaches, we averaged the access scores of each beach segment, weighted by the length of the segment. To calculate the overall equitable access score, we averaged urban and rural access, with urban beach access weighted twice as much as rural access.</strong></p>
@@ -318,7 +344,7 @@ Goal
 <th>Urban area</th>
 <th>Urban access</th>
 <th>Rural access</th>
-<th>Access score</th>
+<th>Public access score</th>
 </tr>
 </thead>
 <tbody>
@@ -327,67 +353,6 @@ Goal
 <td>81</td>
 <td>100</td>
 <td>87</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="beach-portfolio-score" class="level3">
-<h3 class="anchored" data-anchor-id="beach-portfolio-score">Beach Portfolio Score</h3>
-<p>Ideally an urban zone should have a balanced portfolio of beach resources (Table 3). For example, some beaches should be easy to access while others may be more difficult or impossible to access, at least from land (e.g., requiring a hike or 4WD vehicle) but offer a less crowded experience. Some beaches should also be set aside for conservation purposes, such that access is restricted or requires a fee. Additionally, areas may decide to set aside some beach area for industrial uses, food production, or other purposes. To assess the diversity of beach resources, we determined the % of shoreline beaches falling into each of the following categories: industrial; regulated: capacity managed / fee-based; recreational (no fees).</p>
-<p>For recreational beaches, we further classified the beaches based on their equitable access scores (we considered an access score of 7 or higher, out of 10, to be fairly accessible) and how difficult the beach is to access (i.e., access friction, table xx). For urban beaches we considered access friction to be low if formal or informal parking was available or if a malecón was located along the beach. For rural beaches access friction was low if a road was located within 1km of the beach and it could be accessed by a standard vehicle. Beaches received a perfect score, if the following conditions were met: a malecón is present; at least 75% of urban recreational beach length has an equitable access score of 7 or greater, and has informal or informal parking, or a malecón; at least 15% of rural beach length has an equitable access scores of 7 or greater and are within 1km of a road that can be accessed by a regular vehicle; less than 10% of beach length has population restrictions or requires a fees; and less than 5% of beaches are industrial.</p>
-<p><strong>Table 3. Beach types with associated targets.</strong></p>
-<table class="table">
-<colgroup>
-<col style="width: 17%">
-<col style="width: 10%">
-<col style="width: 39%">
-<col style="width: 8%">
-<col style="width: 24%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Category</th>
-<th>Access score</th>
-<th>Access friction</th>
-<th>Observed %</th>
-<th>Goal %</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Recreational: Urban</td>
-<td>High (≥7)</td>
-<td>Low: malecón</td>
-<td>11%</td>
-<td>&gt;0% (of urban beach length)</td>
-</tr>
-<tr class="even">
-<td>Recreational: Urban</td>
-<td>High (≥7)</td>
-<td>Low: informal/formal parking and/or malecón</td>
-<td>85%</td>
-<td>&gt;75%</td>
-</tr>
-<tr class="odd">
-<td>Recreational: Rural</td>
-<td>High (&gt;7)</td>
-<td>Low: road within 1 km; accessible by standard vehicle</td>
-<td>19%</td>
-<td>&gt;15%</td>
-</tr>
-<tr class="even">
-<td>Protected/fee based</td>
-<td>NA</td>
-<td>NA</td>
-<td>2%</td>
-<td>&lt;10%</td>
-</tr>
-<tr class="odd">
-<td>Industrial</td>
-<td>NA</td>
-<td>NA</td>
-<td>&lt;1%</td>
-<td>&lt;5%</td>
 </tr>
 </tbody>
 </table>
@@ -417,16 +382,16 @@ Goal
 <h2 class="anchored" data-anchor-id="beach-classification">Beach classification</h2>
 <p>We classified beaches into three categories:</p>
 <ul>
+<li><p><strong>Recreational</strong><br>
+Beaches that could be used for recreational enjoyment.</p></li>
 <li><p><strong>Protected / capacity-managed</strong><br>
 Beaches subject to formal regulation, such as protected areas with entry limits or fees.</p></li>
 <li><p><strong>Industrial / non-recreational</strong><br>
 Beaches dominated by infrastructure incompatible with recreational access (e.g., ferry terminals).</p></li>
-<li><p><strong>Recreational</strong><br>
-Beaches that could be used for recreational enjoyment.</p></li>
 </ul>
-<p>Recreational beaches were assigned equitable access scores based on best professional judgment after additional information (Table 4) from reviewing satellite imagery (e.g., Esri basemaps) and overlaying additional information from OpenStreetMap, INEGI, CONANP, Google Street View, TripAdvisor reviews, Google searches, and ChatGPT queries (Table xx).</p>
+<p>Recreational beaches were assigned public access scores based on best professional judgment after reviewing additional information (Table 3) from satellite imagery (e.g., Esri basemaps) and overlaying additional information from OpenStreetMap, INEGI, CONANP, Google Street View, TripAdvisor reviews, Google searches, and ChatGPT queries (Table xx).</p>
 <hr>
-<p><strong>Table 4. Variables considered to assess coastal beach access</strong></p>
+<p><strong>Table 3. Variables considered to assess coastal beach access</strong></p>
 <table class="table">
 <colgroup>
 <col style="width: 11%">
@@ -491,7 +456,7 @@ Beaches that could be used for recreational enjoyment.</p></li>
 </li>
 <li><strong>0</strong> – No meaningful public access observable (e.g., fully gated peninsula)</li>
 </ul>
-<p>Geographic remoteness (e.g., long drive, 4WD requirement) did not reduce the score unless development infrastructure was the limiting factor.</p>
+<p>Geographic remoteness or difficulty of accessing due to natural barriers (e.g., long drive, 4WD requirement) did not reduce the score unless development infrastructure was the limiting factor.</p>
 <hr>
 </section>
 </section>
