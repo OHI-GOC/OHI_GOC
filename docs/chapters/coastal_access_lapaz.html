@@ -272,15 +272,15 @@ Goal
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
 <p>I estimated coastal beach access scores for La Paz (Table 1) based on two metrics: legal access (ZOFEMAT) and public access:</p>
-<p>Access = (Legal Access Score + Public Access Score)/2</p>
-<p><strong>Table 1. Coastal access scores for La Paz</strong></p>
+<p>Access = 0.25 * Legal Access Score + 0.75 * Public Access Score</p>
+<p><strong>Table 1. Coastal access scores for La Paz</strong> NOTE: Public access accounts for 3/4 of the overall score whereas the legal access accounts for 1/4 of the score.</p>
 <table class="table">
 <thead>
 <tr class="header">
 <th>Region</th>
 <th>Legal access</th>
-<th>Equitable access</th>
-<th>Access</th>
+<th>Public access</th>
+<th>Overall Access</th>
 </tr>
 </thead>
 <tbody>
@@ -288,12 +288,12 @@ Goal
 <td>La Paz</td>
 <td>100</td>
 <td>87</td>
-<td>93.5</td>
+<td>90</td>
 </tr>
 </tbody>
 </table>
 <blockquote class="blockquote">
-<p>La Paz has decent public transportation that allows people to access beach areas within the city. Most urban beaches are not blocked by large developments and have formal or informal parking. A lively malecón runs alongside &gt;10% of the urban beaches providing access. However, some beaches are difficult for the public to access due to private development, and this is likely to be an increasing pressure as tourism and development in region increases. There are excellent beaches located outside the city, but most of these are difficult to reach with a standard vehicle. There are also managed beaches located in protected areas such as, , which regulates visitors and requires a fee.</p>
+<p>La Paz has decent public transportation that allows people to access beach areas within the city. Most urban beaches are not blocked by large developments and have formal or informal parking. A lively malecón runs alongside &gt;10% of the urban beaches providing access. However, some beaches are difficult for the public to access due to private development, and this is likely to be an increasing pressure as tourism and development in region increases. There are excellent beaches located outside the city, but most of these are difficult to reach with a standard vehicle. There are also managed beaches located in protected areas such as, Playa Balandra, which regulates visitors and requires a fee.</p>
 </blockquote>
 <p><br> The following is a map of the Public Access scores for each La Paz beach segment (please let me know if any of these look supsicious!).</p>
 <p><br> <iframe src="lapaz_beach_access_map.html" width="80%" height="400px"></iframe></p>
@@ -316,9 +316,9 @@ Quick gut check
 </li>
 <li>The <strong>ZOFEMAT remains in place</strong></li>
 </ul>
-<p><em>The overall coastal access score would be 67</em></p>
+<p><em>The overall coastal access score would be 50</em></p>
 <p>If instead, <strong>50% of urban beaches were blocked</strong>, but everything else remained the same:</p>
-<p>Then the overall coastal access score would be 83.</p>
+<p>Then the overall coastal access score would be 75.</p>
 <section id="question" class="level4">
 <h4 class="anchored" data-anchor-id="question">Question</h4>
 <p>Do these values seem too high or too low?</p>
@@ -478,6 +478,7 @@ Beaches dominated by infrastructure incompatible with recreational access (e.g.,
 </ul></li>
 <li>Industrial/non-recreational beaches are likely underestimated in the current dataset</li>
 </ul>
+<p>rural = 100 urban = c(0, 25, 50, 75, 100) legal = 100 public_access = (2<em>urban+rural)/3 score = (.25</em>legal+0.75*public_access)/1</p>
 
 
 </section>
