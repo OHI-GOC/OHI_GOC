@@ -4,127 +4,174 @@ format: html
 ---
 
 <div class="button-container">
-  <a href="https://ohi-goc.github.io/OHI_GOC/chapters/coastal_access_lapaz.html" class="custom-button">
-    <i class="fas fa-globe"></i> in English
+  <a href="https://ohi-goc.github.io/OHI_GOC/chapters/coastal_access_lapaz_spanish.html" class="custom-button">
+    <i class="fas fa-globe"></i> en español
   </a>
 </div>
 
-## Acceso costero: un caso de estudio en La Paz
+## Acceso Costero: Un caso de prueba en La Paz
 
 :::{.callout-tip} 
 # Objetivo
 
-Nos gustaría cuantificar el acceso de las personas a las playas locales a lo largo del Golfo de California. 
+Como parte del puntaje de acceso costero, nos gustaría cuantificar la capacidad del público para acceder a las playas locales a lo largo del Golfo de California. 
 
-Como caso de estudio, estimé el acceso a playas costeras para el área urbana de La Paz. Si este enfoque parece razonable, aplicaré este método a cada área urbana y luego promediaré los puntajes dentro de cada región OHI (ponderados por la longitud de la costa).
+Como caso de prueba, estimé el acceso costero a playas para el área urbana de La Paz. Si este enfoque parece razonable, haré esto para cada área urbana y luego promediaré los puntajes dentro de cada región del OHI (ponderados por la longitud de playa costera).
 
-Si tiene preocupaciones sobre los puntajes o métodos preliminares, por favor agregue comentarios en las siguientes fuentes:
+Si tiene inquietudes sobre los puntajes o métodos tentativos, por favor agregue comentarios a estas fuentes:
 
-[Documento de métodos](https://docs.google.com/document/d/1YfbEqEJISCOB_DlUDMDWX1fBtVaSZGpYT0rv8UfkkFI/edit?usp=sharing)  
-[Hoja de datos](https://docs.google.com/spreadsheets/d/136K_4wh66lva13tt41nHKp8HHL6CPMq2MS3YB2y_cGU/edit?usp=sharing)
+[Documento de métodos](https://docs.google.com/document/d/1YfbEqEJISCOB_DlUDMDWX1fBtVaSZGpYT0rv8UfkkFI/edit?usp=sharing)
+[Hoja de cálculo de datos](https://docs.google.com/spreadsheets/d/136K_4wh66lva13tt41nHKp8HHL6CPMq2MS3YB2y_cGU/edit?usp=sharing)
 
 :::
 
 ## Resumen
 
-Estimé los puntajes de acceso a playas costeras para La Paz (Tabla 1) basándome en tres métricas: acceso legal (ZOFEMAT), equidad en el acceso y diversidad de recursos de playa (es decir, puntaje de portafolio de playas):
+Estimé los puntajes de acceso costero a playas para La Paz (Tabla 1) con base en dos métricas: acceso legal (ZOFEMAT) y acceso público: 
 
-Acceso = (Puntaje de acceso legal + Puntaje de acceso equitativo + Puntaje de portafolio de playas)/3
+Acceso = 0.25 * Puntaje de Acceso Legal + 0.75 * Puntaje de Acceso Público
+
 
 **Tabla 1. Puntajes de acceso costero para La Paz**
+NOTA: El acceso público representa 3/4 del puntaje total, mientras que el acceso legal representa 1/4 del puntaje.  
 
-| Región | Acceso legal | Acceso equitativo | Puntaje de portafolio | Acceso |
-|--------|--------------|-------------------|------------------------|--------|
-| La Paz | 100          | 87                | 100                    | 96     |
+| Región | Acceso legal | Acceso público |  Acceso total |
+|--------|--------------|------------------|--------|
+| La Paz | 100          | 87               | 90     |
 
->La Paz cuenta con un transporte público razonable que permite a las personas acceder a las playas dentro de la ciudad. La mayoría de las playas urbanas no están bloqueadas por grandes desarrollos y cuentan con estacionamiento formal o informal. Un malecón activo se extiende a lo largo de >10% de las playas urbanas proporcionando acceso. Sin embargo, algunas playas son difíciles de acceder para el público debido al desarrollo privado, y es probable que esta presión aumente con el crecimiento del turismo y el desarrollo en la región. Existen excelentes playas fuera de la ciudad, pero la mayoría son difíciles de alcanzar con un vehículo estándar. También hay playas gestionadas dentro de áreas protegidas que regulan la visita y requieren el pago de una tarifa.
+>La Paz tiene un transporte público decente que permite a las personas acceder a las áreas de playa dentro de la ciudad. La mayoría de las playas urbanas no están bloqueadas por grandes desarrollos y cuentan con estacionamiento formal o informal. Un animado malecón corre junto a >10% de las playas urbanas, brindando acceso. Sin embargo, algunas playas son difíciles de acceder para el público debido al desarrollo privado, y es probable que esto se convierta en una presión creciente a medida que aumenten el turismo y el desarrollo en la región. Hay excelentes playas ubicadas fuera de la ciudad, pero la mayoría de ellas son difíciles de alcanzar con un vehículo estándar. También hay playas manejadas ubicadas en áreas protegidas como Playa Balandra, que regula a los visitantes y requiere una tarifa.
 
 <br>
-A continuación se muestra un mapa de los puntajes de acceso equitativo para cada segmento de playa en La Paz (¡por favor avísenme si algo parece sospechoso!). 
+Lo siguiente es un mapa de los puntajes de Acceso Público para cada segmento de playa de La Paz (¡por favor avíseme si alguno de estos parece sospechoso!). 
 
 <br>
 <iframe src="lapaz_beach_access_map.html" width="80%" height="400px"></iframe>
 
-### Puntaje de acceso legal 
-La ZOFEMAT garantiza que todas las playas son propiedad pública. Ningún desarrollo puede bloquear o privatizar legalmente la playa, y el público tiene derecho a acceder y transitar la zona federal marítimo-terrestre dentro de los 20 m de la línea de pleamar. Deben existir corredores públicos de acceso a la playa y el acceso no puede ser negado sin base legal. Dado esto, cada área urbana recibió el puntaje máximo de 100 para esta métrica.
 
-### Puntaje de acceso equitativo 
-A pesar de las protecciones federales de acceso público bajo la ZOFEMAT, el acceso terrestre a las playas puede verse restringido por el desarrollo construido que beneficia a ciertos grupos en detrimento del público en general. Aunque el frente costero no puede impedir legalmente el acceso a la zona federal, el acceso puede verse limitado funcionalmente por muros, accesos controlados, seguridad privada, estacionamiento público limitado, pocos puntos visibles de entrada o infraestructura diseñada principalmente para usuarios privados. Este puntaje mide el grado de acceso disponible para el público en relación con el acceso privado (por ejemplo, huéspedes de hoteles, residentes de comunidades cerradas o miembros de clubes privados). Si el acceso es equivalente entre el público y el sector privado, la playa recibe un puntaje alto de 10, incluso si no es fácilmente accesible. En este contexto, equidad no implica igual facilidad de acceso, sino la ausencia de patrones de desarrollo que excluyan funcionalmente al público.
+::: {.callout-note}
+## Comprobación rápida
 
-Para evaluar esto, cada segmento recreativo fue calificado de 0 a 10 mediante evaluaciones expertas estructuradas. Un puntaje de 10 indica pocas restricciones por desarrollo, mientras que un puntaje de 0 indica acceso controlado por desarrollo privado. Las playas clasificadas como industriales/no recreativas o gestionadas con restricciones fueron excluidas de esta métrica.
+**¿Estos puntajes parecen razonables dado este escenario hipotético?**
 
-Determinamos los puntajes de acceso equitativo para playas urbanas y rurales promediando los valores ponderados por longitud (Tabla 2). Posteriormente, promediamos ambos, dando doble peso a las playas urbanas:
+En un caso teórico en el que:
 
-Acceso equitativo = (2*Urbano + Rural)/3 * 10
+- El acceso costero a **todas las playas urbanas está bloqueado** para el público  
+- El acceso costero a **las playas exurbanas está totalmente disponible** para el público  
+- La **ZOFEMAT permanece en vigor**  
+
+*El puntaje general de acceso costero sería 50*  
+
+Si, en cambio, **50% de las playas urbanas estuvieran bloqueadas**, pero todo lo demás permaneciera igual:  
+
+Entonces el puntaje general de acceso costero sería 75.  
+
+#### Pregunta
+¿Estos valores parecen demasiado altos o demasiado bajos?
+
+Si es así, puedo ajustar la **ponderación relativa de los componentes** para que los puntajes tengan más sentido.  
+
+:::
+
+### Puntaje de Acceso Legal 
+La ZOFEMAT garantiza que todas las playas son propiedad pública. Ningún desarrollo puede bloquear o privatizar legalmente la playa, y el público tiene derecho a acceder y transitar por la zona federal costera dentro de los 20 m de la marea alta. Debe haber corredores de acceso público designados hacia la playa y el acceso no puede ser negado sin base legal. Dado esto, a cada área urbana se le asignó el puntaje más alto posible de 100 para esta métrica.
+
+### Puntaje de Acceso Público 
+A pesar de las protecciones federales de acceso público bajo la ZOFEMAT, el acceso terrestre a las playas puede verse restringido por desarrollos construidos que benefician a personas selectas a expensas del público en general. Aunque la franja costera no puede impedir legalmente el acceso público a la zona marítima federal, el acceso puede estar funcionalmente restringido por muros frente al mar, entradas cerradas, seguridad privada, estacionamiento público limitado, pocos puntos de acceso visibles, o estructuras diseñadas principalmente para usuarios privados. Este puntaje mide el grado de acceso otorgado al público en relación con el uso privado (por ejemplo, huéspedes de hoteles, residentes de comunidades cerradas o miembros de clubes privados). Si el acceso es igual para los sectores público y privado, la playa recibe un puntaje alto de 10, incluso si la playa no es realmente accesible. En este contexto, la equidad no implica igual facilidad de acceso, sino más bien la ausencia de patrones de desarrollo que excluyen funcionalmente al público. Esta distinción permite identificar la exclusión de la línea de costa causada por entornos construidos en lugar de la lejanía natural.
+
+Para evaluar esto, cada segmento de playa recreativa fue calificado de 0 a 10 usando evaluaciones estructuradas de expertos que consideraron el predominio relativo de las rutas de acceso público en comparación con las opciones de acceso mediadas privadamente. Las playas recibieron un puntaje de 10 cuando había pocas restricciones al acceso público inducidas por el desarrollo. Se asignó un puntaje de 0 cuando el acceso público a una playa estaba completamente restringido por el desarrollo privado, haciendo que la playa fuera funcionalmente inaccesible para el público en general. Las playas identificadas como industriales/no recreativas o manejadas por capacidad/con tarifa fueron excluidas de este indicador. Por ejemplo, cuando el acceso a una playa estaba completamente restringido por estructuras públicas como universidades, escuelas, agencias gubernamentales y instalaciones militares, la playa fue clasificada como “industrial/no recreativa” y no fue puntuada. En los casos en que una institución pública limitaba el acceso a parte de una playa, pero no bloqueaba toda la playa, el puntaje de acceso público no se veía afectado negativamente.  
+
+Determinamos el Puntaje de Acceso Público tanto para playas urbanas como rurales promediando los puntajes ponderados por la longitud de la playa (Tabla 2). Luego promediamos los puntajes rurales y urbanos, con los puntajes urbanos ponderados dos veces más que los rurales, dado que las áreas urbanas sirven a más personas:  
+
+Puntaje de Acceso Equitativo = (2*Urbano + Rural)/3 * 10
 
 <br>
 
-**Tabla 2. Puntajes de acceso equitativo de playas recreativas**
+**Tabla 2. Puntajes de Acceso Equitativo de playas recreativas. Para playas urbanas y rurales, promediamos los puntajes de acceso de cada segmento de playa, ponderados por la longitud del segmento. Para calcular el puntaje general de acceso equitativo, promediamos el acceso urbano y rural, con el acceso a playas urbanas ponderado dos veces más que el acceso rural.**
 
-| Área urbana | Acceso urbano | Acceso rural | Puntaje |
-|------------|--------------|--------------|---------|
-| La Paz     | 81           | 100          | 87      |
+| Área urbana | Acceso urbano | Acceso rural | Puntaje de acceso público |
+|------------|--------------|--------------|--------------|
+| La Paz     | 81           | 100          | 87           |
 
-### Puntaje de portafolio de playas 
 
-Idealmente, una zona urbana debería contar con un portafolio diverso de playas (Tabla 3). Evaluamos el porcentaje de playas en cada categoría: industrial, regulada o recreativa.
 
-Para playas recreativas, clasificamos según acceso equitativo (≥7 considerado accesible) y fricción de acceso.  
-
-Las condiciones para puntaje perfecto incluyen:
-- presencia de malecón  
-- ≥75% de playas urbanas accesibles  
-- ≥15% de playas rurales accesibles  
-- <10% playas con restricciones  
-- <5% playas industriales  
-
-**Tabla 3. Tipos de playa y metas**
-
-| Categoría              | Puntaje | Fricción | Observado | Meta |
-|-----------------------|--------|----------|----------|------|
-| Recreativa: urbana    | Alta   | Baja     | 11%      | >0%  |
-| Recreativa: urbana    | Alta   | Baja     | 85%      | >75% |
-| Recreativa: rural     | Alta   | Baja     | 19%      | >15% |
-| Protegida             | NA     | NA       | 2%       | <10% |
-| Industrial            | NA     | NA       | <1%      | <5%  |
-
----
 
 ## Más detalles
 
-Evaluamos el acceso público a playas en la región costera de La Paz, Baja California Sur, México.
+Evaluamos el acceso público a las playas en la región costera de La Paz, Baja California Sur, México. El área de estudio incluye segmentos de playa (según lo identificado por INEGI) ubicados en áreas urbanas (designaciones “Urbano” de INEGI), así como dentro de un buffer de 20 km de estas áreas.
 
 ### Áreas incluidas
-- Malecón de La Paz  
-- Península de El Mogote  
-- Corredor Pichilingue–Tecolote  
-- Playas rurales al norte de Tecolote  
+- El malecón urbano de La Paz  
+- La península de El Mogote (lados orientados al Golfo y a la Bahía)  
+- El corredor Pichilingue–Tecolote  
+- Playas rurales al norte más allá de Tecolote  
+
+Cada playa o segmento de línea de costa fue identificado usando el conjunto de datos de clasificación costera de INEGI, seleccionando segmentos de línea de costa clasificados como:
+- **TIPO:** Continental  
+- **SUBTIPO:** Playa  
+
+Esto excluye líneas de costa rocosas o acantiladas, incluso si rodean una playa, y se enfoca en ambientes de playa arenosos o mixtos.
 
 ---
 
 ## Clasificación de playas
 
-- **Protegidas**  
-- **Industriales**  
-- **Recreativas**
+Clasificamos las playas en tres categorías:
 
+- **Recreativa**  
+  Playas que podrían usarse para disfrute recreativo.
+
+- **Protegida / manejada por capacidad**  
+  Playas sujetas a regulación formal, como áreas protegidas con límites de entrada o tarifas.
+
+- **Industrial / no recreativa**  
+  Playas dominadas por infraestructura incompatible con el acceso recreativo (por ejemplo, terminales de ferry).
+
+A las playas recreativas se les asignaron puntajes de acceso público con base en el mejor juicio profesional después de revisar información adicional (Tabla 3) de imágenes satelitales (por ejemplo, mapas base de Esri) y superponer información adicional de OpenStreetMap, INEGI, CONANP, Google Street View, reseñas de TripAdvisor, búsquedas de Google y consultas a ChatGPT (Tabla xx).
+
+---
+
+**Tabla 3. Variables consideradas para evaluar el acceso costero a playas**
+
+| Variable                    | Descripción                                                                                                                                         | Fuente                                                                 |
+|-----------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------|
+| Segmentos de playa              | Segmentos de playa. En la mayoría de los casos un segmento representa una sola playa; sin embargo, esto no siempre es así. Una sola playa puede estar dividida por estructuras (por ejemplo, escolleras) o agrupada en un solo segmento. | INEGI (TIPO: Continental; SUBTIPO: Playa)                              |
+| Designaciones urbanas/rurales    | Polígonos que identifican áreas urbanas; también se incluyeron playas dentro de un buffer de 20 km de estas áreas.                                                 | Localidades INEGI (designaciones “Urbano”)                               |
+| Caminos y condición         | Para las playas rurales, evaluamos si había una carretera principal dentro de 1 km y qué tipo de vehículo se requería para el acceso.                            | Caminos INEGI, OpenStreetMap, TripAdvisor, búsquedas de Google, ChatGPT      |
+| Puntos de entrada y bloqueos  | Identificación de bloqueos estructurales (por ejemplo, propiedades, hoteles, cercas) y posibles puntos de entrada.                                                 | Google Satellite, Google Street View, INEGI, OpenStreetMap, búsquedas   |
+| Estacionamiento                     | Identificación de estacionamiento formal e informal.                                                                                                      | INEGI, OpenStreetMap, Google Street View, búsquedas                     |
+| Áreas protegidas y con tarifa     | Identificación de regiones protegidas con límites de visita y/o tarifas.                                                                             | CONANP, búsquedas de Google                                                |
 ---
 
 ## Enfoque de puntuación
 
-El puntaje refleja restricciones por desarrollo, no por aislamiento geográfico.
+Cada segmento de playa recreativa recibió un puntaje basado en el grado en que el desarrollo construido limita el acceso público en relación con el acceso privado. El puntaje refleja **fricción inducida por el desarrollo**, no lejanía geográfica.
 
-### Escala
-- 10: acceso libre  
-- 7–9: fricción menor  
-- 4–6: restricción moderada  
-- 1–3: restricción severa  
-- 0: sin acceso  
+### Puntuación general para el acceso equitativo
+- **10** – Sin restricción por desarrollo; línea de costa abiertamente accesible  
+- **7–9** – Fricción menor por desarrollo; corredores de acceso presentes pero algo restringidos  
+- **4–6** – Restricción moderada; puntos de entrada limitados u obstrucción visible  
+- **1–3** – Restricción severa; línea de costa efectivamente filtrada por desarrollo privado  
+- **0** – No se observa acceso público significativo (por ejemplo, península completamente cerrada)  
+
+La lejanía geográfica o la dificultad de acceso debida a barreras naturales (por ejemplo, trayecto largo, necesidad de 4WD) no redujeron el puntaje a menos que la infraestructura de desarrollo fuera el factor limitante.
 
 ---
 
-## Limitaciones
+## Limitaciones y fortalezas
 
-- Falta validación en campo  
-- Puede omitir acceso informal  
-- Subestima playas industriales  
+Una fortaleza de este enfoque es que el nivel de documentación permite hacer seguimiento de los cambios en el acceso a lo largo del tiempo.
+
+Sin embargo, existen limitaciones importantes:
+
+- Idealmente, el acceso se evalúa mediante estudios de campo sistemáticos en lugar de únicamente percepción remota  
+- Las imágenes satelitales y las fuentes en línea pueden omitir:
+  - puntos de acceso informales  
+  - prácticas de estacionamiento toleradas  
+  - restricciones sutiles o temporales  
+- Es probable que las playas industriales/no recreativas estén subestimadas en el conjunto de datos actual  
+
+rural = 100
+urban = c(0, 25, 50, 75, 100)
+legal = 100
+public_access = (2*urban+rural)/3
+score = (.25*legal+0.75*public_access)/1
