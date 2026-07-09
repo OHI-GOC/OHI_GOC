@@ -1,0 +1,538 @@
+---
+title: ""
+format: html
+---
+
+# ![](figs/livelihoods-and-economies.svg){width=8% height=8%} Medios de Vida y Economías EWG 3.1 {#ewg31-le-es}
+
+<div class="button-container">
+  <a href="ewg31_le.html" class="custom-button">
+    <i class="fas fa-globe"></i> English Translation
+  </a>
+</div>
+
+::: {.callout-tip collapse="true"}
+# <i class="fa-regular fa-star"></i> Sobre la Meta de LE
+
+**Esta meta mide empleos e ingresos de industrias marinas sostenibles.**
+
+::: {.custom-box}
+
+{{< fa lightbulb >}} **DEFINICIONES CENTRALES**
+
+- **Meta general**: Mide empleos e ingresos de industrias marinas sostenibles
+- **Dos submetas**:
+  - **Medios de Vida (LIV)**: Calidad y cantidad de empleos marinos
+  - **Economías (ECO)**: Ingresos de sectores marinos en las regiones costeras
+
+:::
+
+## Modelo de la meta
+
+**LE = promedio(LIV, ECO)**
+
+**LIV** es el promedio del número de empleos y la calidad del empleo:
+
+- **Número de empleos**: Empleos marinos escalados a población costera, comparados con una línea base histórica 2003 a 2013 (o metas gubernamentales cuando estén disponibles)
+- **Calidad del empleo**: Aportaciones patronales a seguridad social y otras prestaciones per empleo (J300A + J400A de Censos Económicos), comparadas con el cuantil 90 entre regiones y años
+
+**ECO** rastrea ingresos marinos (M000A de Censos Económicos), comparados con una línea base histórica 2003 a 2013.
+
+Los datos provienen de INEGI Censos Económicos (2003, 2008, 2013, 2018, 2023) con ajustes de población costera para regiones que abarcan costas del Golfo y del Pacífico.
+
+**Limitación de datos de la Región 2:** El LE general no se reporta (NA) para la Región 2 (Islas del Midriff Occidental). El municipio de San Quintín se incorporó el 12 de febrero de 2020; antes de esa fecha formaba parte de Ensenada. Tanto el Ensenada histórico como el San Quintín actual abarcan las costas del Pacífico y del Golfo de California, y la mayor parte de la población está en el lado del Pacífico. Como los Censos Económicos de INEGI se reportan a nivel municipal, los datos disponibles no fueron suficientes para estimar de manera confiable los empleos marinos del Golfo, la calidad del empleo o los ingresos para esta región.
+:::
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(tidyverse)
+library(ggplot2)
+library(plotly)
+library(sf)
+library(mapview)
+library(here)
+library(rnaturalearth)
+
+rgn_labels <- c(
+  "Region_1" = "Western Upper Gulf",
+  "Region_2" = "Western Midriff Islands",
+  "Region_3" = "Western Central Gulf",
+  "Region_4" = "Western Southern Gulf",
+  "Region_5" = "Eastern Upper Gulf",
+  "Region_6" = "Eastern Midriff Islands",
+  "Region_7" = "Southern Sonora Coast",
+  "Region_8" = "Sinaloa Coast",
+  "Region_9" = "Southeastern Gulf"
+)
+
+rgn_colors <- c(
+  "Region_1" = "#C03729",
+  "Region_2" = "#E68C7C",
+  "Region_3" = "#FC8F24",
+  "Region_4" = "#dcaa38",
+  "Region_5" = "#cbd2a0",
+  "Region_6" = "#98a25a",
+  "Region_7" = "#747428",
+  "Region_8" = "#627391",
+  "Region_9" = "#8d61a9"
+)
+
+region_levels <- paste0("Region_", 1:9)
+rgn_label_colors <- setNames(unname(rgn_colors[region_levels]), unname(rgn_labels[region_levels]))
+census_years <- c(2003, 2008, 2013, 2018, 2023)
+
+add_rgn_labels <- function(df) {
+  df %>%
+    mutate(
+      rgn_id = factor(as.character(rgn_id), levels = region_levels),
+      rgn_label = factor(
+        rgn_labels[as.character(rgn_id)],
+        levels = unname(rgn_labels[region_levels])
+      )
+    )
+}
+
+le_plotly_lines <- function(df, y_var, title, y_range = NULL) {
+  yr <- range(df$year, na.rm = TRUE)
+
+  plot_ly(
+    df,
+    x = ~year,
+    y = as.formula(paste0("~", y_var)),
+    color = ~rgn_label,
+    colors = rgn_label_colors,
+    type = "scatter",
+    mode = "lines+markers"
+  ) %>%
+    layout(
+      title = title,
+      xaxis = list(title = "Año censal // Census Year"),
+      yaxis = list(title = "Puntaje // Percent (out of 100)", range = y_range),
+      legend = list(title = list(text = "Region"))
+    ) %>%
+    add_lines(
+      x = yr,
+      y = c(100, 100),
+      line = list(color = "black", width = 2, dash = "dash"),
+      name = "Meta // Goal (100/100)",
+      inherit = FALSE
+    )
+}
+
+le_plotly_goc <- function(df, y_var, title, y_range = NULL) {
+  yr <- range(df$year, na.rm = TRUE)
+
+  plot_ly(
+    df,
+    x = ~year,
+    y = as.formula(paste0("~", y_var)),
+    type = "scatter",
+    mode = "lines+markers",
+    name = "GOC Average"
+  ) %>%
+    layout(
+      title = title,
+      xaxis = list(title = "Año censal // Census Year"),
+      yaxis = list(title = "Puntaje // Percent (out of 100)", range = y_range)
+    ) %>%
+    add_lines(
+      x = yr,
+      y = c(100, 100),
+      line = list(color = "black", width = 2, dash = "dash"),
+      name = "Meta // Goal (100/100)",
+      inherit = FALSE
+    )
+}
+
+le_plotly_raw <- function(df, y_var, title, y_axis_title = "Valor", y_range = NULL) {
+  plot_ly(
+    df,
+    x = ~year,
+    y = as.formula(paste0("~", y_var)),
+    color = ~rgn_label,
+    colors = rgn_label_colors,
+    type = "scatter",
+    mode = "lines+markers"
+  ) %>%
+    layout(
+      title = title,
+      xaxis = list(title = "Año censal // Census Year"),
+      yaxis = list(title = y_axis_title, range = y_range),
+      legend = list(title = list(text = "Region"))
+    )
+}
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+cs_jobs_raw <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/le/liv", "ce_jobs_current_status.csv"),
+  show_col_types = FALSE
+) %>%
+  rename(year = ce_ano_censal) %>%
+  mutate(year = as.numeric(year))
+
+cs_qual_raw <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/le/liv", "ce_qual_current_status.csv"),
+  show_col_types = FALSE
+) %>%
+  rename(year = ano_censal) %>%
+  mutate(year = as.numeric(year))
+
+cs_rev_raw <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/le/eco", "ce_rev_current_status.csv"),
+  show_col_types = FALSE
+) %>%
+  rename(year = ano_censal) %>%
+  mutate(year = as.numeric(year))
+
+all_cs_indicators <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/le", "final_le_current_status.csv"),
+  show_col_types = FALSE
+) %>%
+  rename(year = ano_censal, le_current_status = final_le_current_status_rgn) %>%
+  mutate(year = as.numeric(year))
+
+cs_jobs_clean <- cs_jobs_raw %>%
+  rename(score = current_status) %>%
+  mutate(score = ifelse(rgn_id == "Region_2", NA_real_, score)) %>%
+  dplyr::select(rgn_id, year, score)
+
+cs_qual_clean <- cs_qual_raw %>%
+  rename(score = current_status) %>%
+  mutate(score = ifelse(rgn_id == "Region_2", NA_real_, score)) %>%
+  dplyr::select(rgn_id, year, score)
+
+cs_eco_clean <- cs_rev_raw %>%
+  rename(score = current_status) %>%
+  mutate(score = ifelse(rgn_id == "Region_2", NA_real_, score)) %>%
+  dplyr::select(rgn_id, year, score)
+
+cs_liv_clean <- full_join(
+  cs_jobs_raw %>%
+    dplyr::select(rgn_id, year, job_current_status = current_status),
+  cs_qual_raw %>%
+    dplyr::select(rgn_id, year, qual_current_status = current_status)
+) %>%
+  mutate(
+    score = (job_current_status + qual_current_status) / 2,
+    score = ifelse(rgn_id == "Region_2", NA_real_, score)
+  ) %>%
+  dplyr::select(rgn_id, year, score)
+
+le_goc_avg <- all_cs_indicators %>%
+  dplyr::select(year, le_goc_current_status = final_le_current_status_goc) %>%
+  distinct()
+
+liv_plotly <- le_plotly_lines(
+  add_rgn_labels(cs_liv_clean),
+  y_var = "score",
+  title = "LE:LIV (Number of Jobs & Quality of Jobs merged)"
+)
+
+jobs_plotly <- le_plotly_lines(
+  add_rgn_labels(cs_jobs_clean),
+  y_var = "score",
+  title = "LE:LIV: Number of Jobs"
+)
+
+quality_plotly <- le_plotly_lines(
+  add_rgn_labels(cs_qual_clean),
+  y_var = "score",
+  title = "LE:LIV: Quality of Jobs"
+)
+
+eco_plotly <- le_plotly_lines(
+  add_rgn_labels(cs_eco_clean),
+  y_var = "score",
+  title = "LE:ECO"
+)
+
+le_score_plotly <- le_plotly_lines(
+  add_rgn_labels(all_cs_indicators),
+  y_var = "le_current_status",
+  title = "CURRENT STATUS: Livelihoods & Economies"
+)
+
+le_overall_rgn_plotly <- le_plotly_lines(
+  add_rgn_labels(all_cs_indicators),
+  y_var = "le_current_status",
+  title = "Overall LE current status by region",
+  y_range = c(0, 110)
+)
+
+le_overall_goc_plotly <- le_plotly_goc(
+  le_goc_avg,
+  y_var = "le_goc_current_status",
+  title = "Overall LE current status for the Gulf of California",
+  y_range = c(0, 110)
+)
+
+# Ingresos brutos (antes del puntaje de estado actual)
+rev_raw_path_sf <- here::here("/home/shares/ohi/OHI_GOC/goal_prep/le/eco/v2025/rev_by_rgn_SS_sf.shp")
+rev_raw_path_csv <- here::here("/home/shares/ohi/OHI_GOC/goal_prep/le/eco/ce_rev_current_status.csv")
+
+raw_rev_df <- tryCatch({
+  st_read(rev_raw_path_sf, quiet = TRUE) %>%
+    st_drop_geometry() %>%
+    mutate(
+      rgn_id = as.character(rgn_id),
+      year = as.numeric(ano_censal)
+    ) %>%
+    dplyr::select(rgn_id, year, total_rev)
+}, error = function(e) {
+  read_csv(rev_raw_path_csv, show_col_types = FALSE) %>%
+    mutate(
+      rgn_id = as.character(rgn_id),
+      year = as.numeric(ano_censal)
+    ) %>%
+    dplyr::select(rgn_id, year, total_rev)
+})
+
+raw_rev_plotly <- le_plotly_raw(
+  add_rgn_labels(raw_rev_df),
+  y_var = "total_rev",
+  title = "Ingresos marinos por región (MXN constantes 2023, antes del puntaje de estado actual)",
+  y_axis_title = "Ingresos (MXN constantes 2023)"
+)
+
+# Empleos brutos (antes del puntaje de estado actual)
+coastal_sectors <- c(
+  "coastal_recreation",
+  "travel_planners",
+  "accommodations_food_drink",
+  "environmental_research_consulting"
+)
+
+coastal_adj <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/le/coastal_adjustment_multiplier_2020.csv"),
+  show_col_types = FALSE
+)
+
+raw_jobs_df <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/le/ce_int/ce_cleaned_totals_per_yr_municipio_activity.csv"),
+  show_col_types = FALSE
+) %>%
+  filter(!(municipio == "MEXICALI" & ano_censal == "2023")) %>%
+  group_by(ano_censal, rgn_id, general_sector, specific_sector) %>%
+  summarize(jobs_per_act = sum(h000a, na.rm = TRUE), .groups = "drop") %>%
+  full_join(coastal_adj, by = "rgn_id") %>%
+  mutate(
+    coastal_pop_adjustment = ifelse(rgn_id == "Region_1" & ano_censal == "2023", 1, coastal_pop_adjustment),
+    first_adj_coastal_jobs_per_act = ifelse(
+      rgn_id %in% c("Region_3", "Region_4"),
+      jobs_per_act * coastal_pop_adjustment,
+      jobs_per_act
+    ),
+    coastal_jobs_per_act = ifelse(
+      specific_sector %in% coastal_sectors,
+      jobs_per_act * coastal_pop_adjustment,
+      first_adj_coastal_jobs_per_act
+    )
+  ) %>%
+  group_by(ano_censal, rgn_id) %>%
+  summarize(total_jobs = round(sum(coastal_jobs_per_act, na.rm = TRUE)), .groups = "drop") %>%
+  mutate(year = as.numeric(ano_censal))
+
+raw_jobs_plotly <- le_plotly_raw(
+  add_rgn_labels(raw_jobs_df),
+  y_var = "total_jobs",
+  title = "Empleos marinos por región (antes del puntaje de estado actual)",
+  y_axis_title = "Número de empleos"
+)
+```
+
+## Estado general de Medios de Vida y Economías
+
+El puntaje de estado actual de Medios de Vida y Economías (LE) mide qué tan bien cada región OHI del Golfo de California sustenta empleo e ingresos marinos. Combina dos submetas con igual peso: **Medios de Vida (LIV)**, que cubre cantidad y calidad del empleo, y **Economías (ECO)**, que cubre ingresos del sector marino. Los puntajes se calculan en cada año del Censo Económico INEGI (2003, 2008, 2013, 2018 y 2023) para ocho de las nueve regiones marinas OHI; la Región 2 se excluye por datos censales municipales insuficientes (véase abajo). Un puntaje de 100 representa el punto de referencia.
+
+**Qué significan los puntajes:** Puntajes LE más altos indican que los sectores marinos proporcionan más empleos e ingresos respecto a líneas base históricas, con calidad de empleo adecuada. Puntajes más bajos señalan menor intensidad de empleo, prestaciones más delgadas per empleo, o ingresos por debajo del promedio regional 2003 a 2013. Los responsables de política pueden comparar líneas regionales para identificar dónde las economías costeras se fortalecen o rezagan.
+
+**Sectores marinos incluidos:** pesca, maricultura, procesamiento y comercio de mariscos, construcción/manejo de puertos y muelles, construcción naval, energía mareomotriz, transporte marítimo de petróleo y gas, transporte marítimo de carga, transporte turístico marino, recreación costera, agencias de viaje, alojamiento y alimentos/bebidas, e investigación/consultoría ambiental.
+
+**Fuentes de datos:** INEGI Censos Económicos para unidades económicas marinas, con ajustes de población costera para regiones que abarcan costas del Golfo y del Pacífico.
+
+**Procesamiento de datos:** Los ingresos (M000A) y prestaciones laborales (J300A + J400A) se ajustan a MXN constantes de 2023 usando índices de precios nacionales. Los multiplicadores costeros de población 2020 escalan las Regiones 3 y 4 (y sectores turísticos) a la porción solo del Golfo. Mexicali se excluye de datos 2023 de Baja California; la Región 1 usa solo San Felipe.
+
+**Región 2:** El LE general es NA para la Región 2 (Islas del Midriff Occidental) porque los datos censales a nivel municipal no pueden separar de manera confiable el empleo e ingresos marinos del Golfo del contexto más amplio de los municipios de Ensenada y San Quintín, que abarcan ambas costas. Vea la nota de limitación de datos de la Región 2 arriba.
+
+**Método:** Para regiones con datos suficientes, LE es el promedio de LIV y ECO.
+
+$$
+\text{LE}_{r,t} = \begin{cases} \text{NA} & r = \text{Region\_2} \\ \frac{\text{LIV}_{r,t} + \text{ECO}_{r,t}}{2} & \text{en otro caso} \end{cases}
+$$
+
+Los puntajes superiores a 100 se limitan a 100 a nivel de componente.
+
+**Cómo leer las gráficas:** Cada línea de color es una región OHI a lo largo de años censales (no anuales). La línea punteada en 100 es la meta de referencia. Como los datos solo están disponibles en intervalos censales, las líneas conectan cinco puntos; cambios pronunciados entre puntos reflejan variaciones plurianuales, no volatilidad año a año.
+
+::: {.callout-note collapse="true"}
+### Trayectorias regionales del LE general
+
+**Qué mide:** Avance combinado en empleo e ingresos marinos respecto a condiciones históricas de referencia.
+
+**Fuente de datos:** INEGI Censos Económicos (2003 a 2023), salidas integradas de estado actual.
+
+**Método:** Promedio de las submetas LIV y ECO para regiones con datos suficientes. La Región 2 se excluye (NA).
+
+$$
+\text{LE}_{r,t} = \begin{cases} \text{NA} & r = \text{Region\_2} \\ \frac{\text{LIV}_{r,t} + \text{ECO}_{r,t}}{2} & \text{en otro caso} \end{cases}
+$$
+
+La gráfica siguiente muestra el estado actual del LE por región a lo largo de los años censales. La Región 2 no aparece porque los puntajes no se reportan. La línea punteada en 100 marca la meta de referencia.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+le_score_plotly
+```
+:::
+
+::: {.callout-note collapse="true"}
+### Trayectorias regionales y del Golfo para LE general
+
+**Qué mide:** El mismo puntaje general de LE a escala regional (izquierda) y como promedio del Golfo de California entre todas las regiones (derecha).
+
+**Fuente de datos:** Salidas integradas de Censos Económicos INEGI; el promedio del Golfo se calcula como la media de los puntajes regionales de LE en cada año censal, excluyendo la Región 2.
+
+**Método:** Los puntajes regionales siguen la fórmula de LE anterior. La línea del Golfo promedia las ocho regiones con puntajes reportados (Región 2 excluida):
+
+$$
+\text{LE}^{\text{GOC}}_{t} = \frac{1}{8}\sum_{r \neq \text{Region\_2}} \text{LE}_{r,t}
+$$
+
+La gráfica regional compara las regiones OHI con puntajes reportados. La gráfica del Golfo resume la trayectoria promedio entre regiones con datos suficientes, lo que ayuda a identificar si las condiciones generales de medios de vida y economía marina mejoran o declinan a escala del ecosistema.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+le_overall_rgn_plotly
+le_overall_goc_plotly
+```
+:::
+
+## Submeta LIV
+
+La submeta de Medios de Vida (LIV) integra el **número de empleos marinos** (escalado a población costera) y la **calidad de esos empleos** (aportaciones patronales a seguridad social y otras prestaciones por empleo). LIV no se reporta para la Región 2 porque los datos censales a nivel municipal de Ensenada y San Quintín no pueden aislar de manera confiable el empleo marino del Golfo (véase la limitación de datos de la Región 2 arriba).
+
+**Qué significan los puntajes:** Puntajes LIV más altos reflejan más empleos marinos per residente costero y/o mejores prestaciones patronales per empleo. Los trabajadores se benefician de puntajes de calidad en alza; las comunidades se benefician cuando crece la cantidad de empleos sin sacrificar niveles de prestaciones.
+
+**Fuentes de datos:** Variables de empleo y remuneración de Censos Económicos INEGI (H000A, J300A, J400A, etc.) para unidades económicas marinas; población INEGI interpolada a años censales con multiplicadores costeros.
+
+**Procesamiento de datos:** Los empleos se suman entre sectores marinos, se ajustan por porción costera, se dividen entre población costera interpolada, y se comparan con el promedio per cápita 2003 a 2013. La calidad del empleo suma J300A y J400A per empleo (MXN constantes 2023) y se compara con el cuantil 90 del Golfo entre todas las regiones y años censales.
+
+**Método:**
+
+$$
+\text{LIV}_{r,t} = \begin{cases} \text{NA} & r = \text{Region\_2} \\ \frac{\text{Empl}_{r,t} + \text{Cal}_{r,t}}{2} & \text{en otro caso} \end{cases}
+$$
+
+::: {.callout-tip collapse="true"}
+### Resultado integrado de LIV
+
+**Qué mide:** Avance combinado en cantidad y calidad del empleo marino.
+
+**Fuente de datos:** INEGI Censos Económicos (2003 a 2023).
+
+**Método:** Promedio de puntajes de número de empleos y calidad del empleo. La Región 2 se excluye (NA).
+
+$$
+\text{LIV}_{r,t} = \begin{cases} \text{NA} & r = \text{Region\_2} \\ \frac{\text{Empl}_{r,t} + \text{Cal}_{r,t}}{2} & \text{en otro caso} \end{cases}
+$$
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+liv_plotly
+```
+
+::: {.callout-note collapse="true"}
+#### Subcomponentes de LIV
+
+##### Número de empleos
+
+**Qué mide:** Empleos marinos per cápita costera respecto al promedio histórico 2003 a 2013 de cada región.
+
+**Qué significan los puntajes:** Un puntaje de 100 significa que los empleos per residente costero alcanzan o superan el promedio del período inicial. Puntajes más bajos indican que la intensidad de empleo marino ha declinado respecto a la población costera.
+
+**Fuente de datos:** Empleo total (H000A) en sectores marinos de Censos Económicos INEGI; población municipal INEGI interpolada a años censales y ajustada con multiplicadores de población costera.
+
+**Procesamiento de datos:** Empleos agregados por región y año censal siguiendo lógica de ajuste costero: Regiones 3 y 4 escaladas por porción costera del Golfo; sectores turísticos escalados en todas las regiones. Mexicali excluida de 2023; San Felipe representa la Región 1. La Región 2 no se puntúa porque San Quintín (incorporado el 12 de febrero de 2020) y el Ensenada histórico abarcan costas del Pacífico y del Golfo con la mayor parte de la población en el Pacífico, lo que impide estimaciones confiables de empleo del Golfo a partir de datos censales municipales.
+
+**Método:** Empleos per población costera en año $t$ divididos entre el promedio de empleos per población costera de 2003, 2008 y 2013, limitado a 100.
+
+$$
+\text{Empl}_{r,t} = \min\left(100,\ \frac{(J^{\text{marino}}_{r,t} / P^{\text{costera}}_{r,t})}{\overline{J^{\text{marino}}/P^{\text{costera}}}_{r,\,2003\text{-}2013}} \times 100\right)
+$$
+
+::: {.callout-note collapse="true"}
+#### Empleos marinos brutos por región
+
+Esta gráfica muestra conteos de empleo sin escalar (después de ajustes costeros) antes de convertirse a puntajes de estado actual. Úsela para ver niveles absolutos de empleo entre años censales. Los valores reflejan H000A total sumado entre todos los sectores marinos per región. Las líneas conectan solo los años censales 2003, 2008, 2013, 2018 y 2023. Los valores de la Región 2 no deben interpretarse porque los datos censales municipales no pueden separar de manera confiable el empleo del Golfo.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+raw_jobs_plotly
+```
+:::
+
+##### Calidad del empleo
+
+**Qué mide:** Aportaciones patronales a seguridad social y otras prestaciones sociales per empleo marino (J300A + J400A, en pesos constantes de 2023) respecto al cuantil 90 entre todas las regiones y años censales.
+
+**Qué significan los puntajes:** Puntajes más altos indican que los empleadores proporcionan más seguridad social y prestaciones en especie per trabajador, acercándose a las mejores regiones-año del Golfo. Puntajes más bajos sugieren paquetes de prestaciones más delgados.
+
+**Fuente de datos:** Variables J300A (aportaciones patronales a seguridad social) y J400A (otras prestaciones sociales) de Censos Económicos INEGI para unidades económicas marinas.
+
+**Procesamiento de datos:** J300A y J400A sumados y deflactados a MXN constantes 2023, divididos entre H000A por región y año censal, luego comparados con la referencia del cuantil 90 agrupado.
+
+**Método:** Prestaciones per empleo divididas entre la referencia del cuantil 90 del Golfo, limitado a 100.
+
+$$
+\text{Cal}_{r,t} = \min\left(100,\ \frac{(J300A_{r,t} + J400A_{r,t}) / H000A_{r,t}}{Q_{90}} \times 100\right)
+$$
+
+donde $Q_{90}$ es el cuantil 90 de $(J300A + J400A) / H000A$ entre todas las regiones y años censales.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+jobs_plotly
+quality_plotly
+```
+:::
+:::
+
+## Submeta ECO
+
+La submeta de Economías (ECO) rastrea los ingresos operativos totales del sector marino respecto a una línea base histórica. Refleja la escala económica de sectores marinos sin contar doblemente ingresos financieros o extraordinarios. ECO no se reporta para la Región 2 por las mismas limitaciones de datos municipales descritas arriba.
+
+**Qué significan los puntajes:** Puntajes ECO más altos indican que los ingresos marinos regionales alcanzan o superan el promedio 2003 a 2013. Puntajes más bajos señalan producción económica por debajo de la línea base inicial.
+
+**Fuentes de datos:** Variable M000A de Censos Económicos INEGI (ingresos totales por suministro de bienes y servicios, en pesos constantes de 2023) para unidades económicas marinas, con ajustes costeros.
+
+**Procesamiento de datos:** M000A deflactado a MXN constantes 2023; multiplicadores costeros aplicados a Regiones 3, 4 y sectores turísticos; agregado por región y año censal. La referencia es el promedio de ingresos de 2003, 2008 y 2013.
+
+**Método:** Ingresos actuales divididos entre el promedio 2003 a 2013, limitado a 100.
+
+$$
+\text{ECO}_{r,t} = \min\left(100,\ \frac{M000A_{r,t}}{\overline{M000A}_{r,\,2003\text{-}2013}} \times 100\right)
+$$
+
+::: {.callout-tip collapse="true"}
+### Resultado de ECO
+
+**Qué mide:** Ingresos operativos marinos respecto al promedio histórico 2003 a 2013 de cada región.
+
+**Fuente de datos:** M000A de Censos Económicos INEGI para sectores marinos (pesca, maricultura, procesamiento/comercio de mariscos, construcción de puertos/muelles, construcción naval, energía mareomotriz, transporte marítimo de petróleo/gas, transporte marítimo de carga, transporte turístico marino, recreación costera, agencias de viaje, alojamiento/alimentos/bebidas, investigación/consultoría ambiental), ajustado a pesos constantes de 2023.
+
+**Método:** Ingresos marinos totales en año $t$ divididos entre el promedio de ingresos de los años censales 2003, 2008 y 2013. Puntajes en o por encima del promedio histórico reciben 100; valores menores reflejan reducciones proporcionales.
+
+$$
+\text{ECO}_{r,t} = \min\left(100,\ \frac{M000A_{r,t}}{\overline{M000A}_{r,\,2003\text{-}2013}} \times 100\right)
+$$
+
+::: {.callout-note collapse="true"}
+#### Ingresos marinos brutos por región
+
+Esta gráfica muestra ingresos operativos totales en MXN constantes de 2023 antes del puntaje de estado actual. Úsela para comparar escala económica absoluta entre regiones y años censales. Los ingresos reflejan M000A sumado entre sectores marinos (pesca, maricultura, procesamiento/comercio de mariscos, construcción de puertos/muelles, construcción naval, energía mareomotriz, transporte marítimo de petróleo/gas, transporte marítimo de carga, transporte turístico marino, recreación costera, agencias de viaje, alojamiento/alimentos/bebidas, investigación/consultoría ambiental) después de ajustes costeros. Los valores de la Región 2 no deben interpretarse porque los datos censales municipales no pueden separar de manera confiable los ingresos del Golfo.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+raw_rev_plotly
+```
+:::
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+eco_plotly
+```
+:::
+

@@ -25,9 +25,19 @@ website:
       - href: index.qmd
         text: "🏠 Home"
       - href: chapters/OHIregions.qmd
-        text: "🌎️ Map of OHI regions"
-      - href: chapters/ewg.qmd
-        text: "📚 Expert Working Group Resources"
+        text: "🌎️ Map of OHI Regions"
+      - section: "👥 EWG 3.1"
+        contents:
+          - href: chapters/ewg31_agenda.qmd
+            text: "Agenda & Meeting Resources"
+          - href: chapters/ewg31_tr.qmd
+            text: "Tourism & Recreation"
+          - href: chapters/ewg31_fp.qmd
+            text: "Food Provisioning"
+          - href: chapters/ewg31_le.qmd
+            text: "Livelihoods & Economies"
+      - href: chapters/ewg2.qmd
+        text: "EWG 2"
       - section: Goalkeeper Resources
         contents:
           - href: chapters/ao.qmd

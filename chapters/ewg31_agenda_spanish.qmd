@@ -1,0 +1,85 @@
+---
+title: "EWG 3.1: Agenda y Recursos de la Reunión"
+format: html
+---
+
+<div class="button-container">
+  <a href="ewg31_agenda.html" class="custom-button">
+    <i class="fas fa-globe"></i> English Translation
+  </a>
+</div>
+
+## Grupo de Trabajo de Expertos 3.1
+
+**Jueves 16 de julio de 2026 | 9:00 AM a 1:00 PM (PST)**
+
+¡Bienvenidos al EWG 3.1! Este verano, presentaremos y analizaremos los resultados finales del Índice de Salud Oceánica del Golfo de California a un ritmo de aproximadamente tres objetivos por reunión. Nuestros objetivos para cada reunión son explicar claramente el modelo de objetivos, señalar las puntuaciones regionales que no tengan sentido y revisar cualquier inquietud importante que puedan tener, en lugar de discutir los detalles más específicos o las capas de datos asociadas con cada modelo.
+
+---
+
+::: {.callout-tip}
+# Enlaces clave
+
+| Recurso | Enlace |
+|---------|--------|
+| **Agenda de la reunión** | [OHI GOC EWG 3.1 Agenda (16 de julio)](https://docs.google.com/spreadsheets/d/1huRjetwhfuGDyfVCr7x82a6lVxe_yty3F3cnnQ_rQks/edit?gid=0#gid=0) |
+| **Asistencia y notas** | [OHI GOC EWG 3.1 Asistencia y Notas](https://docs.google.com/document/d/1wUw9c7JtcpR4tIUv2m4Dog6MhVmzD53d4jmzi078G4Q/edit?tab=t.nfspcrfad5zn#heading=h.hiwxizsktkp4) |
+| **Hoja informativa de introducción (español)** | [OHI GoC: Hoja informativa de introducción](https://docs.google.com/document/d/1GhLuecC2LLVxrOca8TqnjuOCXb5NHgfxX0oCVBeyH7s/edit?tab=t.0) |
+| **OHI Introduction Info Sheet (inglés)** | [OHI GoC: Introduction Info Sheet](https://docs.google.com/document/d/17Kiwk6Qelq_ph81plGCgIMDlZGAlS1b_0N9AvHZqE9Y/edit?tab=t.0) |
+:::
+
+---
+
+## Agenda del 16 de julio
+
+Cada meta recibe una **presentación de 20 minutos** seguida de **40 minutos para discusión y preguntas**. Buscamos una **pausa de 10 minutos** entre cada meta.
+
+| Hora | Punto de la agenda |
+|------|-------------------|
+| 9:00 a 9:25 AM | Inicio. Panorama general del proyecto, objetivos de la reunión y recursos. |
+| 9:25 a 10:25 AM | **Discusión de meta: Turismo y Recreación** (20 min presentación, 40 min discusión) |
+| 10:25 a 10:35 AM | Pausa |
+| 10:35 a 11:35 AM | **Discusión de meta: Provisión de Alimentos** (20 min presentación, 40 min discusión) |
+| 11:35 a 11:45 AM | Pausa |
+| 11:45 AM a 12:45 PM | **Discusión de meta: Medios de Vida y Economías** (20 min presentación, 40 min discusión) |
+| 12:45 a 1:00 PM | Cierre y próximos pasos |
+
+---
+
+## Metas para las reuniones EWG de este verano
+
+### EWG 3.1 (16 de julio de 2026)
+
+**Metas en revisión:** Turismo y Recreación, Provisión de Alimentos, Medios de Vida y Economías
+
+**Turismo y Recreación (TR)** captura la cantidad, calidad y sostenibilidad de las experiencias que las personas tienen al visitar áreas costeras y marinas. Se enfoca en el valor personal y cultural de la recreación costera, no en los ingresos o medios de vida generados por el turismo (esos se cubren en Medios de Vida y Economías). El modelo TR combina tres componentes: llegadas de turistas (cantidad), seguridad y disponibilidad de actividades (calidad), y certificaciones, calidad del empleo e inversión en gestión turística (sostenibilidad).
+
+**Provisión de Alimentos (FP)** mide la cantidad de mariscos producidos de manera sostenible por pesquerías de captura y operaciones de maricultura en el Golfo de California. Los materiales para esta meta se agregarán al sitio web cuando estén disponibles.
+
+**Medios de Vida y Economías (LE)** mide empleos e ingresos de industrias marinas relacionadas. Tiene dos submetas: Medios de Vida (cantidad y calidad de empleos marinos) y Economías (ingresos de sectores marinos). El modelo utiliza datos de los Censos Económicos del INEGI para rastrear empleo, calidad del empleo e ingresos sectoriales en las nueve regiones OHI.
+
+### EWG 3.2 (13 de agosto de 2026)
+
+**Metas en revisión (sujetas a cambio):** Servicios de Hábitat, Oportunidades de Acceso, Sentido de Lugar
+
+**Servicios de Hábitat** (consolidado de Almacenamiento de Carbono y Protección Costera) captura la capacidad de los hábitats costeros para amortiguar el cambio climático mediante el secuestro de carbono y para proteger las áreas costeras de inundaciones y erosión.
+
+**Oportunidades de Acceso** evalúa si los miembros de las comunidades costeras, incluidas las comunidades pesqueras de pequeña escala y los pueblos originarios, tienen acceso legal y regulado a los recursos marinos que les permiten prosperar.
+
+**Sentido de Lugar** evalúa el profundo sentido de identidad y pertenencia que proporcionan las conexiones con las comunidades marinas, incluidas especies icónicas y lugares especiales duraderos.
+
+### EWG 3.3 (10 de septiembre de 2026)
+
+**Metas en revisión (sujetas a cambio):** Biodiversidad, Aguas Limpias, Productos Naturales, Seguridad y Protección*
+
+*Biodiversidad* evalúa el estado de los hábitats locales y la biodiversidad como indicadores del funcionamiento de los ecosistemas marinos. *Aguas Limpias* evalúa el estado de las aguas marinas. *Productos Naturales* cuantifica los beneficios de la cosecha sostenible de recursos marinos no alimenticios de importancia comercial y cultural. *Seguridad y Protección* técnicamente no es una meta, pero actuará como una presión sobre todas las metas, reflejando cómo las preocupaciones de seguridad afectan la capacidad de las personas para beneficiarse de los recursos oceánicos.
+
+---
+
+## Recursos del sitio web para las metas del EWG 3.1
+
+| Meta | Página del sitio web |
+|------|---------------------|
+| Turismo y Recreación | [Ver modelo TR y visualizaciones](ewg31_tr_spanish.html) |
+| Provisión de Alimentos | [Ver página FP](ewg31_fp_spanish.html) *(materiales próximamente)* |
+| Medios de Vida y Economías | [Ver modelo LE y visualizaciones](ewg31_le_spanish.html) |

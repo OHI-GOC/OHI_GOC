@@ -1,0 +1,538 @@
+---
+title: ""
+format: html
+---
+
+# ![](figs/livelihoods-and-economies.svg){width=8% height=8%} Livelihoods and Economies EWG 3.1 {#ewg31-le}
+
+<div class="button-container">
+  <a href="ewg31_le_spanish.html" class="custom-button">
+    <i class="fas fa-globe"></i> en español
+  </a>
+</div>
+
+::: {.callout-tip collapse="true"}
+# <i class="fa-regular fa-star"></i> About the LE Goal
+
+**This goal measures jobs and revenue from sustainable marine related industries.**
+
+::: {.custom-box}
+
+{{< fa lightbulb >}} **CORE DEFINITIONS**
+
+- **Overall Goal**: Measures jobs and revenue from sustainable marine related industries
+- **Two Subgoals**:
+  - **Livelihoods (LIV)**: Quality and quantity of marine related jobs
+  - **Economies (ECO)**: Revenue from marine related sectors across coastal regions
+
+:::
+
+## Goal model
+
+**LE = average(LIV, ECO)**
+
+**LIV** is the average of number of jobs and quality of jobs:
+
+- **Number of jobs**: Marine related jobs scaled to coastal population, compared to a 2003 to 2013 historical baseline (or government targets where available)
+- **Quality of jobs**: Employer social security contributions and other benefits per job (J300A + J400A from Censos Económicos), compared to the 90th quantile across regions and years
+
+**ECO** tracks marine related revenue (M000A from Censos Económicos), compared to a 2003 to 2013 historical baseline.
+
+Data come from INEGI Censos Económicos (2003, 2008, 2013, 2018, 2023) with coastal population adjustments for regions spanning both Gulf and Pacific coasts.
+
+**Region 2 data limitation:** Overall LE is not reported (NA) for Region 2 (Western Midriff Islands). The municipality of San Quintín was incorporated on February 12, 2020; before that date it was part of Ensenada. Both historical Ensenada and current San Quintín span the Pacific and Gulf of California coasts, and most of the population is on the Pacific side. Because INEGI Censos Económicos are reported at the municipal level, the available data were not sufficient to reliably estimate Gulf-side marine jobs, job quality, or revenue for this region.
+:::
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(tidyverse)
+library(ggplot2)
+library(plotly)
+library(sf)
+library(mapview)
+library(here)
+library(rnaturalearth)
+
+rgn_labels <- c(
+  "Region_1" = "Western Upper Gulf",
+  "Region_2" = "Western Midriff Islands",
+  "Region_3" = "Western Central Gulf",
+  "Region_4" = "Western Southern Gulf",
+  "Region_5" = "Eastern Upper Gulf",
+  "Region_6" = "Eastern Midriff Islands",
+  "Region_7" = "Southern Sonora Coast",
+  "Region_8" = "Sinaloa Coast",
+  "Region_9" = "Southeastern Gulf"
+)
+
+rgn_colors <- c(
+  "Region_1" = "#C03729",
+  "Region_2" = "#E68C7C",
+  "Region_3" = "#FC8F24",
+  "Region_4" = "#dcaa38",
+  "Region_5" = "#cbd2a0",
+  "Region_6" = "#98a25a",
+  "Region_7" = "#747428",
+  "Region_8" = "#627391",
+  "Region_9" = "#8d61a9"
+)
+
+region_levels <- paste0("Region_", 1:9)
+rgn_label_colors <- setNames(unname(rgn_colors[region_levels]), unname(rgn_labels[region_levels]))
+census_years <- c(2003, 2008, 2013, 2018, 2023)
+
+add_rgn_labels <- function(df) {
+  df %>%
+    mutate(
+      rgn_id = factor(as.character(rgn_id), levels = region_levels),
+      rgn_label = factor(
+        rgn_labels[as.character(rgn_id)],
+        levels = unname(rgn_labels[region_levels])
+      )
+    )
+}
+
+le_plotly_lines <- function(df, y_var, title, y_range = NULL) {
+  yr <- range(df$year, na.rm = TRUE)
+
+  plot_ly(
+    df,
+    x = ~year,
+    y = as.formula(paste0("~", y_var)),
+    color = ~rgn_label,
+    colors = rgn_label_colors,
+    type = "scatter",
+    mode = "lines+markers"
+  ) %>%
+    layout(
+      title = title,
+      xaxis = list(title = "Año censal // Census Year"),
+      yaxis = list(title = "Puntaje // Percent (out of 100)", range = y_range),
+      legend = list(title = list(text = "Region"))
+    ) %>%
+    add_lines(
+      x = yr,
+      y = c(100, 100),
+      line = list(color = "black", width = 2, dash = "dash"),
+      name = "Meta // Goal (100/100)",
+      inherit = FALSE
+    )
+}
+
+le_plotly_goc <- function(df, y_var, title, y_range = NULL) {
+  yr <- range(df$year, na.rm = TRUE)
+
+  plot_ly(
+    df,
+    x = ~year,
+    y = as.formula(paste0("~", y_var)),
+    type = "scatter",
+    mode = "lines+markers",
+    name = "GOC Average"
+  ) %>%
+    layout(
+      title = title,
+      xaxis = list(title = "Año censal // Census Year"),
+      yaxis = list(title = "Puntaje // Percent (out of 100)", range = y_range)
+    ) %>%
+    add_lines(
+      x = yr,
+      y = c(100, 100),
+      line = list(color = "black", width = 2, dash = "dash"),
+      name = "Meta // Goal (100/100)",
+      inherit = FALSE
+    )
+}
+
+le_plotly_raw <- function(df, y_var, title, y_axis_title = "Value", y_range = NULL) {
+  plot_ly(
+    df,
+    x = ~year,
+    y = as.formula(paste0("~", y_var)),
+    color = ~rgn_label,
+    colors = rgn_label_colors,
+    type = "scatter",
+    mode = "lines+markers"
+  ) %>%
+    layout(
+      title = title,
+      xaxis = list(title = "Año censal // Census Year"),
+      yaxis = list(title = y_axis_title, range = y_range),
+      legend = list(title = list(text = "Region"))
+    )
+}
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+cs_jobs_raw <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/le/liv", "ce_jobs_current_status.csv"),
+  show_col_types = FALSE
+) %>%
+  rename(year = ce_ano_censal) %>%
+  mutate(year = as.numeric(year))
+
+cs_qual_raw <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/le/liv", "ce_qual_current_status.csv"),
+  show_col_types = FALSE
+) %>%
+  rename(year = ano_censal) %>%
+  mutate(year = as.numeric(year))
+
+cs_rev_raw <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/le/eco", "ce_rev_current_status.csv"),
+  show_col_types = FALSE
+) %>%
+  rename(year = ano_censal) %>%
+  mutate(year = as.numeric(year))
+
+all_cs_indicators <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/le", "final_le_current_status.csv"),
+  show_col_types = FALSE
+) %>%
+  rename(year = ano_censal, le_current_status = final_le_current_status_rgn) %>%
+  mutate(year = as.numeric(year))
+
+cs_jobs_clean <- cs_jobs_raw %>%
+  rename(score = current_status) %>%
+  mutate(score = ifelse(rgn_id == "Region_2", NA_real_, score)) %>%
+  dplyr::select(rgn_id, year, score)
+
+cs_qual_clean <- cs_qual_raw %>%
+  rename(score = current_status) %>%
+  mutate(score = ifelse(rgn_id == "Region_2", NA_real_, score)) %>%
+  dplyr::select(rgn_id, year, score)
+
+cs_eco_clean <- cs_rev_raw %>%
+  rename(score = current_status) %>%
+  mutate(score = ifelse(rgn_id == "Region_2", NA_real_, score)) %>%
+  dplyr::select(rgn_id, year, score)
+
+cs_liv_clean <- full_join(
+  cs_jobs_raw %>%
+    dplyr::select(rgn_id, year, job_current_status = current_status),
+  cs_qual_raw %>%
+    dplyr::select(rgn_id, year, qual_current_status = current_status)
+) %>%
+  mutate(
+    score = (job_current_status + qual_current_status) / 2,
+    score = ifelse(rgn_id == "Region_2", NA_real_, score)
+  ) %>%
+  dplyr::select(rgn_id, year, score)
+
+le_goc_avg <- all_cs_indicators %>%
+  dplyr::select(year, le_goc_current_status = final_le_current_status_goc) %>%
+  distinct()
+
+liv_plotly <- le_plotly_lines(
+  add_rgn_labels(cs_liv_clean),
+  y_var = "score",
+  title = "LE:LIV (Number of Jobs & Quality of Jobs merged)"
+)
+
+jobs_plotly <- le_plotly_lines(
+  add_rgn_labels(cs_jobs_clean),
+  y_var = "score",
+  title = "LE:LIV: Number of Jobs"
+)
+
+quality_plotly <- le_plotly_lines(
+  add_rgn_labels(cs_qual_clean),
+  y_var = "score",
+  title = "LE:LIV: Quality of Jobs"
+)
+
+eco_plotly <- le_plotly_lines(
+  add_rgn_labels(cs_eco_clean),
+  y_var = "score",
+  title = "LE:ECO"
+)
+
+le_score_plotly <- le_plotly_lines(
+  add_rgn_labels(all_cs_indicators),
+  y_var = "le_current_status",
+  title = "CURRENT STATUS: Livelihoods & Economies"
+)
+
+le_overall_rgn_plotly <- le_plotly_lines(
+  add_rgn_labels(all_cs_indicators),
+  y_var = "le_current_status",
+  title = "Overall LE current status by region",
+  y_range = c(0, 110)
+)
+
+le_overall_goc_plotly <- le_plotly_goc(
+  le_goc_avg,
+  y_var = "le_goc_current_status",
+  title = "Overall LE current status for the Gulf of California",
+  y_range = c(0, 110)
+)
+
+# Raw revenue (before current status scoring)
+rev_raw_path_sf <- here::here("/home/shares/ohi/OHI_GOC/goal_prep/le/eco/v2025/rev_by_rgn_SS_sf.shp")
+rev_raw_path_csv <- here::here("/home/shares/ohi/OHI_GOC/goal_prep/le/eco/ce_rev_current_status.csv")
+
+raw_rev_df <- tryCatch({
+  st_read(rev_raw_path_sf, quiet = TRUE) %>%
+    st_drop_geometry() %>%
+    mutate(
+      rgn_id = as.character(rgn_id),
+      year = as.numeric(ano_censal)
+    ) %>%
+    dplyr::select(rgn_id, year, total_rev)
+}, error = function(e) {
+  read_csv(rev_raw_path_csv, show_col_types = FALSE) %>%
+    mutate(
+      rgn_id = as.character(rgn_id),
+      year = as.numeric(ano_censal)
+    ) %>%
+    dplyr::select(rgn_id, year, total_rev)
+})
+
+raw_rev_plotly <- le_plotly_raw(
+  add_rgn_labels(raw_rev_df),
+  y_var = "total_rev",
+  title = "Marine-related revenue by region (constant 2023 MXN, before current status scoring)",
+  y_axis_title = "Revenue (constant 2023 MXN)"
+)
+
+# Raw jobs (before current status scoring)
+coastal_sectors <- c(
+  "coastal_recreation",
+  "travel_planners",
+  "accommodations_food_drink",
+  "environmental_research_consulting"
+)
+
+coastal_adj <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/le/coastal_adjustment_multiplier_2020.csv"),
+  show_col_types = FALSE
+)
+
+raw_jobs_df <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/le/ce_int/ce_cleaned_totals_per_yr_municipio_activity.csv"),
+  show_col_types = FALSE
+) %>%
+  filter(!(municipio == "MEXICALI" & ano_censal == "2023")) %>%
+  group_by(ano_censal, rgn_id, general_sector, specific_sector) %>%
+  summarize(jobs_per_act = sum(h000a, na.rm = TRUE), .groups = "drop") %>%
+  full_join(coastal_adj, by = "rgn_id") %>%
+  mutate(
+    coastal_pop_adjustment = ifelse(rgn_id == "Region_1" & ano_censal == "2023", 1, coastal_pop_adjustment),
+    first_adj_coastal_jobs_per_act = ifelse(
+      rgn_id %in% c("Region_3", "Region_4"),
+      jobs_per_act * coastal_pop_adjustment,
+      jobs_per_act
+    ),
+    coastal_jobs_per_act = ifelse(
+      specific_sector %in% coastal_sectors,
+      jobs_per_act * coastal_pop_adjustment,
+      first_adj_coastal_jobs_per_act
+    )
+  ) %>%
+  group_by(ano_censal, rgn_id) %>%
+  summarize(total_jobs = round(sum(coastal_jobs_per_act, na.rm = TRUE)), .groups = "drop") %>%
+  mutate(year = as.numeric(ano_censal))
+
+raw_jobs_plotly <- le_plotly_raw(
+  add_rgn_labels(raw_jobs_df),
+  y_var = "total_jobs",
+  title = "Marine-related jobs by region (before current status scoring)",
+  y_axis_title = "Number of jobs"
+)
+```
+
+## Overall Livelihoods and Economies status
+
+The overall Livelihoods and Economies (LE) current status score measures how well each OHI Gulf of California region supports marine-related employment and revenue. It combines two equally weighted subgoals: **Livelihoods (LIV)**, covering job quantity and quality, and **Economies (ECO)**, covering marine sector revenue. Scores are calculated at each INEGI Economic Census year (2003, 2008, 2013, 2018, and 2023) for eight of nine OHI marine regions; Region 2 is excluded due to insufficient municipal census data (see below). A score of 100 represents the reference point.
+
+**What scores mean:** Higher LE scores indicate marine sectors are providing more jobs and revenue relative to historical baselines, with adequate job quality. Lower scores signal declining employment intensity, weaker benefits per job, or revenue below the 2003 to 2013 regional average. Policymakers can compare regional lines to identify where coastal economies are strengthening or lagging.
+
+**Marine-related sectors included:** fishing, mariculture, seafood processing and trade, port and dock construction/management, boat building, tidal energy, oil and gas maritime transport, cargo maritime transport, marine tourist transport, coastal recreation, travel planners, accommodations and food/drink, and environmental research/consulting.
+
+**Data sources:** INEGI Censos Economicos (Economic Census) for marine-related economic units, with coastal population adjustments for regions spanning both Gulf and Pacific coasts.
+
+**Data processing:** Revenue (M000A) and job benefits (J300A + J400A) are adjusted to constant 2023 MXN using national price indices. Coastal multipliers from 2020 population data scale Regions 3 and 4 (and tourism-related sectors) to Gulf-only shares. Mexicali is excluded from 2023 Baja California data; Region 1 uses San Felipe only.
+
+**Region 2:** Overall LE is NA for Region 2 (Western Midriff Islands) because municipal-level Censos Económicos data cannot reliably separate Gulf-side marine employment and revenue from the broader Ensenada and San Quintín municipalities, which span both coasts. See the Region 2 data limitation note above.
+
+**Method:** For regions with sufficient data, LE is the average of LIV and ECO.
+
+$$
+\text{LE}_{r,t} = \begin{cases} \text{NA} & r = \text{Region\_2} \\ \frac{\text{LIV}_{r,t} + \text{ECO}_{r,t}}{2} & \text{otherwise} \end{cases}
+$$
+
+Scores above 100 are capped at 100 at the component level.
+
+**How to read the charts:** Each colored line is one OHI region across census years (not annual). The dashed line at 100 is the reference goal. Because data are available only at census intervals, lines connect five points; steep changes between points reflect multi-year shifts rather than year-to-year volatility.
+
+::: {.callout-note collapse="true"}
+### Regional trajectories for overall LE
+
+**What it measures:** Combined progress on marine-related jobs and revenue relative to historical reference conditions.
+
+**Data source:** INEGI Censos Economicos (2003 to 2023), merged current status outputs.
+
+**Method:** Average of LIV and ECO subgoals for regions with sufficient data. Region 2 is excluded (NA).
+
+$$
+\text{LE}_{r,t} = \begin{cases} \text{NA} & r = \text{Region\_2} \\ \frac{\text{LIV}_{r,t} + \text{ECO}_{r,t}}{2} & \text{otherwise} \end{cases}
+$$
+
+The chart below shows overall LE current status by region across census years. Region 2 does not appear because scores are not reported. The dashed line at 100 marks the reference goal.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+le_score_plotly
+```
+:::
+
+::: {.callout-note collapse="true"}
+### Regional and Gulf-wide trajectories for overall LE
+
+**What it measures:** The same overall LE score shown at regional scale (left) and as a Gulf of California-wide average across all regions (right).
+
+**Data source:** INEGI Censos Economicos merged outputs; Gulf average computed as the mean of regional LE scores at each census year, excluding Region 2.
+
+**Method:** Regional scores follow the LE formula above. The Gulf-wide line averages the eight regions with reported LE scores (Region 2 excluded):
+
+$$
+\text{LE}^{\text{GOC}}_{t} = \frac{1}{8}\sum_{r \neq \text{Region\_2}} \text{LE}_{r,t}
+$$
+
+The regional chart compares OHI regions with reported scores. The Gulf-wide chart summarizes the average trajectory across regions with sufficient data, helping identify whether overall marine livelihood and economy conditions are improving or declining at the ecosystem scale.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+le_overall_rgn_plotly
+le_overall_goc_plotly
+```
+:::
+
+## LIV subgoal
+
+The Livelihoods (LIV) subgoal integrates the **number of marine-related jobs** (scaled to coastal population) and the **quality of those jobs** (employer social security contributions and other benefits per job). LIV is not reported for Region 2 because municipal-level census data for Ensenada and San Quintín cannot reliably isolate Gulf-side marine employment (see Region 2 data limitation above).
+
+**What scores mean:** Higher LIV scores reflect more marine jobs per coastal resident and/or better employer-provided benefits per job. Workers benefit from rising quality scores; communities benefit when job quantity grows without sacrificing benefit levels.
+
+**Data sources:** INEGI Censos Economicos employment and remuneration variables (H000A, J300A, J400A, etc.) for marine-related economic units; INEGI population interpolated to census years with coastal multipliers.
+
+**Data processing:** Jobs are summed across marine sectors, adjusted for coastal share, divided by interpolated coastal population, and compared to the 2003 to 2013 per-capita average. Job quality sums J300A and J400A per job (constant 2023 MXN) and compares to the Gulf-wide 90th quantile across all regions and census years.
+
+**Method:**
+
+$$
+\text{LIV}_{r,t} = \begin{cases} \text{NA} & r = \text{Region\_2} \\ \frac{\text{Jobs}_{r,t} + \text{Qual}_{r,t}}{2} & \text{otherwise} \end{cases}
+$$
+
+::: {.callout-tip collapse="true"}
+### LIV merged result
+
+**What it measures:** Combined progress on the quantity and quality of marine-related employment.
+
+**Data source:** INEGI Censos Economicos (2003 to 2023).
+
+**Method:** Average of number-of-jobs and quality-of-jobs scores. Region 2 is excluded (NA).
+
+$$
+\text{LIV}_{r,t} = \begin{cases} \text{NA} & r = \text{Region\_2} \\ \frac{\text{Jobs}_{r,t} + \text{Qual}_{r,t}}{2} & \text{otherwise} \end{cases}
+$$
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+liv_plotly
+```
+
+::: {.callout-note collapse="true"}
+#### LIV subcomponents
+
+##### Number of jobs
+
+**What it measures:** Marine-related jobs per coastal inhabitant relative to the 2003 to 2013 historical average for each region.
+
+**What scores mean:** A score of 100 means jobs per coastal resident meet or exceed the early-period average. Lower scores indicate marine employment intensity has declined relative to coastal population, which may signal economic contraction or demographic growth outpacing job creation.
+
+**Data source:** INEGI Censos Economicos total employment (H000A) in marine-related sectors; INEGI municipal population interpolated to census years and adjusted with coastal population multipliers for regions spanning Gulf and Pacific coasts.
+
+**Data processing:** Jobs aggregated by region and census year following coastal adjustment logic: Regions 3 and 4 scaled by Gulf coastal population share; tourism sectors (coastal recreation, travel planners, accommodations/food/drink, environmental research) scaled in all regions. Mexicali excluded from 2023; San Felipe represents Region 1. Region 2 is not scored because San Quintín (incorporated February 12, 2020) and historical Ensenada span both Pacific and Gulf coasts with most population on the Pacific side, preventing reliable Gulf-side job estimates from municipal census data.
+
+**Method:** Jobs per coastal population in year $t$ divided by the average jobs per coastal population from 2003, 2008, and 2013, capped at 100.
+
+$$
+\text{Jobs}_{r,t} = \min\left(100,\ \frac{(J^{\text{marine}}_{r,t} / P^{\text{coastal}}_{r,t})}{\overline{J^{\text{marine}}/P^{\text{coastal}}}_{r,\,2003\text{-}2013}} \times 100\right)
+$$
+
+::: {.callout-note collapse="true"}
+#### Raw marine-related jobs by region
+
+This chart shows unscaled job counts (after coastal adjustments) before conversion to current status scores. Use it to see absolute employment levels across census years. Values reflect total H000A summed across all marine sectors per region. Lines connect census years 2003, 2008, 2013, 2018, and 2023 only. Region 2 values should not be interpreted because municipal census data cannot reliably separate Gulf-side employment.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+raw_jobs_plotly
+```
+:::
+
+##### Quality of jobs
+
+**What it measures:** Employer social security contributions and other social benefits per marine-related job (J300A + J400A, in constant 2023 pesos) relative to the 90th quantile across all regions and census years.
+
+**What scores mean:** Higher scores indicate employers provide more social security and in-kind benefits per worker, approaching the best-performing region-years in the Gulf. Lower scores suggest thinner benefit packages, which may affect worker welfare and job attractiveness.
+
+**Data source:** INEGI Censos Economicos remuneration variables J300A (employer social security contributions) and J400A (other social benefits) for marine-related economic units.
+
+**Data processing:** J300A and J400A summed and deflated to constant 2023 MXN, divided by H000A per region and census year, then compared to the pooled 90th quantile reference.
+
+**Method:** Benefits per job divided by the Gulf-wide 90th quantile reference, capped at 100.
+
+$$
+\text{Qual}_{r,t} = \min\left(100,\ \frac{(J300A_{r,t} + J400A_{r,t}) / H000A_{r,t}}{Q_{90}} \times 100\right)
+$$
+
+where $Q_{90}$ is the 90th quantile of $(J300A + J400A) / H000A$ across all regions and census years.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+jobs_plotly
+quality_plotly
+```
+:::
+:::
+
+## ECO subgoal
+
+The Economies (ECO) subgoal tracks total marine-related operating revenue relative to a historical baseline. It reflects the economic scale of marine sectors without double-counting financial or extraordinary income. ECO is not reported for Region 2 for the same municipal data limitations described above.
+
+**What scores mean:** Higher ECO scores indicate regional marine revenue meets or exceeds the 2003 to 2013 average. Lower scores signal economic output below the early-period baseline, which may affect tax bases, business investment, and coastal community prosperity.
+
+**Data sources:** INEGI Censos Economicos variable M000A (total revenue from supply of goods and services, in constant 2023 pesos) for marine-related economic units, with coastal adjustments.
+
+**Data processing:** M000A deflated to constant 2023 MXN; coastal multipliers applied to Regions 3, 4, and tourism-related sectors; aggregated by region and census year. Reference is the mean revenue from 2003, 2008, and 2013.
+
+**Method:** Current revenue divided by the 2003 to 2013 average, capped at 100.
+
+$$
+\text{ECO}_{r,t} = \min\left(100,\ \frac{M000A_{r,t}}{\overline{M000A}_{r,\,2003\text{-}2013}} \times 100\right)
+$$
+
+::: {.callout-tip collapse="true"}
+### ECO result
+
+**What it measures:** Marine-related operating revenue relative to the 2003 to 2013 historical average for each region.
+
+**Data source:** INEGI Censos Economicos M000A for marine-related sectors (fishing, mariculture, seafood processing/trade, port/dock construction, boat building, tidal energy, oil/gas maritime transport, cargo maritime transport, marine tourist transport, coastal recreation, travel planners, accommodations/food/drink, environmental research/consulting), adjusted to constant 2023 pesos.
+
+**Method:** Total marine revenue in year $t$ divided by the average revenue from census years 2003, 2008, and 2013. Scores at or above the historical average receive 100; lower values reflect proportional reductions.
+
+$$
+\text{ECO}_{r,t} = \min\left(100,\ \frac{M000A_{r,t}}{\overline{M000A}_{r,\,2003\text{-}2013}} \times 100\right)
+$$
+
+::: {.callout-note collapse="true"}
+#### Raw marine-related revenue by region
+
+This chart shows total operating revenue in constant 2023 MXN before current status scoring. Use it to compare absolute economic scale across regions and census years. Revenue reflects M000A summed across marine-related sectors (fishing, mariculture, seafood processing/trade, port/dock construction, boat building, tidal energy, oil/gas maritime transport, cargo maritime transport, marine tourist transport, coastal recreation, travel planners, accommodations/food/drink, environmental research/consulting) after coastal adjustments. Region 2 values should not be interpreted because municipal census data cannot reliably separate Gulf-side revenue.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+raw_rev_plotly
+```
+:::
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+eco_plotly
+```
+:::
+

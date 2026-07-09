@@ -1,0 +1,20 @@
+---
+title: "EWG 3.1: Provisión de Alimentos"
+format: html
+---
+
+<div class="button-container">
+  <a href="ewg31_fp.html" class="custom-button">
+    <i class="fas fa-globe"></i> English Translation
+  </a>
+</div>
+
+# ![](figs/food-provisioning.svg){width=8% height=8%} Provisión de Alimentos
+
+::: {.callout-note}
+## Materiales próximamente
+
+El modelo y las visualizaciones de la meta de Provisión de Alimentos (FP) aún no están disponibles. Esta página se actualizará con el contexto de la meta, las descripciones de los componentes y las gráficas interactivas antes de la reunión del EWG 3.1 del 16 de julio de 2026.
+
+Mientras tanto, puede revisar los Recursos para Responsables de Meta y el contexto de la meta FP en la [página de Provisión de Alimentos](https://ohi-goc.github.io/OHI_GOC/chapters/fp_spanish.html).
+:::

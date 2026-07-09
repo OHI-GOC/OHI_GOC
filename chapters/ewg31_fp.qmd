@@ -1,0 +1,20 @@
+---
+title: "EWG 3.1: Food Provisioning"
+format: html
+---
+
+<div class="button-container">
+  <a href="ewg31_fp_spanish.html" class="custom-button">
+    <i class="fas fa-globe"></i> en español
+  </a>
+</div>
+
+# ![](figs/food-provisioning.svg){width=8% height=8%} Food Provisioning
+
+::: {.callout-note}
+## Materials forthcoming
+
+The Food Provisioning (FP) goal model and visualizations are not yet available. This page will be updated with the goal background, component descriptions, and interactive plots before the July 16, 2026 EWG 3.1 meeting.
+
+In the meantime, you can review Goalkeeper Resources and background on the FP goal on the [Food Provisioning Goalkeeper page](https://ohi-goc.github.io/OHI_GOC/chapters/fp.html).
+:::

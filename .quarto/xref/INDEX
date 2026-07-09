@@ -160,5 +160,35 @@
   },
   "chapters/coastal_access_lapaz_spanish.qmd": {
     "coastal_access_lapaz_spanish.html": "cb617836"
+  },
+  "chapters/ewg31_le.qmd": {
+    "ewg31_le.html": "9a926f61"
+  },
+  "chapters/ewg31_fp_spanish.qmd": {
+    "ewg31_fp_spanish.html": "261657f6"
+  },
+  "chapters/ewg31_le_spanish.qmd": {
+    "ewg31_le_spanish.html": "48b7cfd7"
+  },
+  "chapters/ewg31_agenda_spanish.qmd": {
+    "ewg31_agenda_spanish.html": "91dc0b31"
+  },
+  "chapters/ewg2.qmd": {
+    "ewg2.html": "9d04de43"
+  },
+  "chapters/ewg2_spanish.qmd": {
+    "ewg2_spanish.html": "c31f289f"
+  },
+  "chapters/ewg31_tr.qmd": {
+    "ewg31_tr.html": "a9826115"
+  },
+  "chapters/ewg31_agenda.qmd": {
+    "ewg31_agenda.html": "9c4fa2f4"
+  },
+  "chapters/ewg31_fp.qmd": {
+    "ewg31_fp.html": "a0165769"
+  },
+  "chapters/ewg31_tr_spanish.qmd": {
+    "ewg31_tr_spanish.html": "e7f76959"
   }
 }
