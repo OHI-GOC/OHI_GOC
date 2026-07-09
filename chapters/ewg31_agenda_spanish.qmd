@@ -13,7 +13,7 @@ format: html
 
 **Jueves 16 de julio de 2026 | 9:00 AM a 1:00 PM (PST)**
 
-¡Bienvenidos al EWG 3.1! Este verano, presentaremos y analizaremos los resultados finales del Índice de Salud Oceánica del Golfo de California a un ritmo de aproximadamente tres objetivos por reunión. Nuestros objetivos para cada reunión son explicar claramente el modelo de objetivos, señalar las puntuaciones regionales que no tengan sentido y revisar cualquier inquietud importante que puedan tener, en lugar de discutir los detalles más específicos o las capas de datos asociadas con cada modelo.
+¡Bienvenidos al EWG 3.1! Durante esta reunión, presentaremos y analizaremos los resultados finales del Índice de Salud Oceánica del Golfo de California (OHI) para los objetivos de turismo y recreación, abastecimiento de alimentos y medios de vida y economía. Nuestros objetivos son explicar claramente el modelo de objetivos, señalar las puntuaciones regionales que no tengan sentido y revisar cualquier inquietud importante que puedan tener. Debido a limitaciones de tiempo, intentaremos no discutir en profundidad los detalles más específicos ni las capas de datos asociadas a cada modelo.
 
 ---
 

@@ -13,7 +13,7 @@ format: html
 
 **Thursday, July 16, 2026 | 9:00 AM to 1:00 PM (PST)**
 
-Welcome to EWG 3.1! This summer, we are presenting and discussing final results for the Gulf of California Ocean Health Index at a rate of roughly three goals per meeting. Our objectives for each meeting are to clearly explain the goal model, flag regional scores that do not make sense, and review any major concerns you might have, as opposed to discussing the finer details or data layers associated with each model.
+Welcome to EWG 3.1! During this meeting, we are presenting and discussing final results for the Gulf of California Ocean Health Index for the OHI goals Tourism & Recreation, Food Provisioning, and Livelihoods & Economies. Our objectives are to clearly explain the goal model, flag regional scores that do not make sense, and review any major concerns you might have.  Due to time constraints, we will try not to discuss the finer details or data layers associated with each model extensively.
 
 ---
 
