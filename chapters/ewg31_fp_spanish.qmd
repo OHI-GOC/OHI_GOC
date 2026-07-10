@@ -1,20 +1,21 @@
 ---
-title: "EWG 3.1: Provisión de Alimentos"
+title: "EWG 3.1: Food Provisioning"
 format: html
 ---
 
 <div class="button-container">
-  <a href="ewg31_fp.html" class="custom-button">
-    <i class="fas fa-globe"></i> English Translation
+  <a href="ewg31_fp_spanish.html" class="custom-button">
+    <i class="fas fa-globe"></i> en español
   </a>
 </div>
 
-# ![](figs/food-provisioning.svg){width=8% height=8%} Provisión de Alimentos
+# ![](figs/food-provisioning.svg){width=8% height=8%} Food Provisioning
 
-::: {.callout-note}
-## Materiales próximamente
+## Executive summary
 
-El modelo y las visualizaciones de la meta de Provisión de Alimentos (FP) aún no están disponibles. Esta página se actualizará con el contexto de la meta, las descripciones de los componentes y las gráficas interactivas antes de la reunión del EWG 3.1 del 16 de julio de 2026.
+The Food Provisioning (FP) goal executive summary is available for expert review in the documents below. These materials summarize the goal model, key decisions, and early results for discussion with the EWG 3.1 expert working group.
 
-Mientras tanto, puede revisar los Recursos para Responsables de Meta y el contexto de la meta FP en la [página de Provisión de Alimentos](https://ohi-goc.github.io/OHI_GOC/chapters/fp_spanish.html).
-:::
+- **English:** [FP Executive Summary (July 2026)](https://docs.google.com/document/d/1sYug__6lxXjE_Vg3zW0etdAqZKKU3eJZtiX4bzd7UZA/edit?usp=drive_link)
+- **Español:** [FP Resumen Ejecutivo (Julio 2026)](https://docs.google.com/document/d/1uvmC99z4ZNi7pv5NdgYGATG8WRFpqUipA0c1H4NqPiw/edit?usp=drive_link)
+
+For additional background on the FP goal, see the [Food Provisioning Goalkeeper page](https://ohi-goc.github.io/OHI_GOC/chapters/fp.html).

@@ -11,10 +11,11 @@ format: html
 
 # ![](figs/food-provisioning.svg){width=8% height=8%} Food Provisioning
 
-::: {.callout-note}
-## Materials forthcoming
+## Executive summary
 
-The Food Provisioning (FP) goal model and visualizations are not yet available. This page will be updated with the goal background, component descriptions, and interactive plots before the July 16, 2026 EWG 3.1 meeting.
+The Food Provisioning (FP) goal executive summary is available for expert review in the documents below. These materials summarize the goal model, key decisions, and early results for discussion with the EWG 3.1 expert working group.
 
-In the meantime, you can review Goalkeeper Resources and background on the FP goal on the [Food Provisioning Goalkeeper page](https://ohi-goc.github.io/OHI_GOC/chapters/fp.html).
-:::
+- **English:** [FP Executive Summary (July 2026)](https://docs.google.com/document/d/1sYug__6lxXjE_Vg3zW0etdAqZKKU3eJZtiX4bzd7UZA/edit?usp=drive_link)
+- **Español:** [FP Resumen Ejecutivo (Julio 2026)](https://docs.google.com/document/d/1uvmC99z4ZNi7pv5NdgYGATG8WRFpqUipA0c1H4NqPiw/edit?usp=drive_link)
+
+For additional background on the FP goal, see the [Food Provisioning Goalkeeper page](https://ohi-goc.github.io/OHI_GOC/chapters/fp.html).

@@ -190,5 +190,23 @@
   },
   "chapters/ewg31_tr_spanish.qmd": {
     "ewg31_tr_spanish.html": "e7f76959"
+  },
+  "chapters/ewg31_tr_pdf.qmd": {
+    "ewg31_tr_pdf.tex": "78777539"
+  },
+  "chapters/ewg31_tr_docx.qmd": {
+    "ewg31_tr_docx.docx": "28a8bbe1"
+  },
+  "chapters/ewg31_le_w2019ref.qmd": {
+    "ewg31_le_w2019ref.html": "dcb27290"
+  },
+  "chapters/ewg31_le_docx.qmd": {
+    "ewg31_le_docx.docx": "ae2c5550"
+  },
+  "chapters/ewg31_tr_docx_spanish.qmd": {
+    "ewg31_tr_docx_spanish.docx": "987a08a5"
+  },
+  "chapters/ewg31_le_docx_spanish.qmd": {
+    "ewg31_le_docx_spanish.docx": "a521f500"
   }
 }

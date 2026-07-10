@@ -11,8 +11,24 @@ format: html
   </a>
 </div>
 
+::: {.callout-important}
+## Early Look: Tourism & Recreation (TR)
+
+We plan to review our current estimates of TR scores at the Expert Working Group meeting 3.1 on July 16, 2026. This document is intended to provide attendees with an overview of the goal model and its inputs, and an early look at its outputs, leading up to the meeting. If you read through this and have minor methodological concerns, please flag them and bring them to the meeting. If you have major methodological concerns, please share them with me ahead of time (my email is [smanos@nceas.ucsb.edu](mailto:smanos@nceas.ucsb.edu)). If you cannot make it to the meeting but would like to discuss, I am happy to meet 1:1 before or after.
+
+Please be advised that this document is intended for internal use only and informational purposes. It should not be interpreted as the final word or of peer-review quality.
+
+Thank you for your continued engagement with this work. We look forward to discussing these scores with you on July 16th!
+:::
+
 ::: {.callout-tip collapse="true"}
 # <i class="fa-regular fa-star"></i> About the TR Goal
+
+The Tourism & Recreation (TR) goal measures the quantity, quality, and sustainability of experiences that people have when visiting coastal and marine areas.
+
+To start, we must first acknowledge why Tourism & Recreation is an important benefit that we obtain through a healthy ocean. The Ocean Health Index acknowledges the reality that people are part of the ecosystem: we cannot eliminate contact, direct or indirect, between people and the ocean, nor do we want to. Ergo, the basic philosophy of the Ocean Health Index is that it measures how well ocean systems are sustainably providing people with the benefits and services they both need and desire from marine systems.
+
+And the reality is that while there are real harms of excessive, unmanaged visitation and recreation, there are also massive benefits to having opportunities for people to connect with the Gulf, its wildlife, and local culture. These opportunities, in addition to pure enjoyment, can create a deep appreciation for marine systems and even promote conservation ideologies. Additionally, local inhabitants of the Gulf can benefit from an increase in job opportunities and the associated earned income.
 
 **This goal captures the quantity, quality, and sustainability of experiences that people have when visiting coastal and marine areas.**
 
@@ -73,8 +89,29 @@ rgn_colors <- c(
   "Region_9" = "#8d61a9"
 )
 
+state_colors <- c(
+  "sinaloa" = "#627391",
+  "sonora" = "#98a25a",
+  "baja_california_sur" = "#dcaa38",
+  "baja_california" = "#E68C7C",
+  "jalisco" = "#8d61a9"
+)
+
+state_labels <- c(
+  "sinaloa" = "Sinaloa",
+  "sonora" = "Sonora",
+  "baja_california_sur" = "Baja California Sur",
+  "baja_california" = "Baja California",
+  "jalisco" = "Jalisco"
+)
+
 region_levels <- paste0("Region_", 1:9)
 rgn_label_colors <- setNames(unname(rgn_colors[region_levels]), unname(rgn_labels[region_levels]))
+state_levels <- names(state_colors)
+state_label_colors <- setNames(
+  unname(state_colors[state_levels]),
+  unname(state_labels[state_levels])
+)
 component_levels <- c("Quantity", "Quality", "Sustainability", "Overall TR")
 
 add_rgn_labels <- function(df) {
@@ -84,6 +121,17 @@ add_rgn_labels <- function(df) {
       rgn_label = factor(
         rgn_labels[as.character(rgn_id)],
         levels = unname(rgn_labels[region_levels])
+      )
+    )
+}
+
+add_state_labels <- function(df) {
+  df %>%
+    mutate(
+      estado = factor(as.character(estado), levels = state_levels),
+      state_label = factor(
+        state_labels[as.character(estado)],
+        levels = unname(state_labels[state_levels])
       )
     )
 }
@@ -112,6 +160,49 @@ tr_plotly_lines <- function(df, y_var, title, y_range = NULL) {
       line = list(color = "black", width = 2, dash = "dash"),
       name = "Meta // Goal 2030 (100/100)",
       inherit = FALSE
+    )
+}
+
+tr_plotly_goc <- function(df, y_var, title, y_range = NULL) {
+  yr <- range(df$year, na.rm = TRUE)
+
+  plot_ly(
+    df,
+    x = ~year,
+    y = as.formula(paste0("~", y_var)),
+    type = "scatter",
+    mode = "lines+markers",
+    name = "GOC Average"
+  ) %>%
+    layout(
+      title = title,
+      xaxis = list(title = "Año // Year"),
+      yaxis = list(title = "Puntaje // Percent (out of 100)", range = y_range)
+    ) %>%
+    add_lines(
+      x = yr,
+      y = c(100, 100),
+      line = list(color = "black", width = 2, dash = "dash"),
+      name = "Meta // Goal 2030 (100/100)",
+      inherit = FALSE
+    )
+}
+
+tr_plotly_arrivals <- function(df, title, y_range = NULL) {
+  plot_ly(
+    df,
+    x = ~year,
+    y = ~total_arrivals,
+    color = ~state_label,
+    colors = state_label_colors,
+    type = "scatter",
+    mode = "lines+markers"
+  ) %>%
+    layout(
+      title = title,
+      xaxis = list(title = "Año // Year"),
+      yaxis = list(title = "Arrivals", range = y_range),
+      legend = list(title = list(text = "State"))
     )
 }
 ```
@@ -218,40 +309,53 @@ cs_sust_jobqual_gender_clean <- read_csv(
   dplyr::select(rgn_id, year = ano_censal, final_score = prop_eq_cs)
 
 cs_sust_invest_clean <- read_csv(
-  here::here("/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_sustainability/investment_tourism_management_final_033026.csv")) %>% 
-ungroup() %>% 
-mutate(year = as.numeric(year)) %>% 
-arrange(year) %>%
-  dplyr::select(rgn_id, year, final_score = current_status_all) %>% 
-  distinct(rgn_id, year, .keep_all = TRUE) 
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_sustainability/investment_tourism_management_final_033026.csv"),
+  show_col_types = FALSE
+) %>%
+  mutate(year = as.numeric(year)) %>%
+  dplyr::select(rgn_id, year, final_score = current_status_all) %>%
+  distinct(rgn_id, year, .keep_all = TRUE) %>%
+  arrange(rgn_id, year)
 
 cs_sust_invest_v003_anp_management_clean <- read_csv(
   here::here("/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_sustainability/investment_tourism_management_final_033026.csv"),
   show_col_types = FALSE
-) %>% 
-  filter(programas %in% "v003_anp_management") %>% 
-  dplyr::select(rgn_id, year, final_score = current_status)
+) %>%
+  mutate(year = as.numeric(year)) %>%
+  filter(programas %in% "v003_anp_management") %>%
+  dplyr::select(rgn_id, year, final_score = current_status) %>%
+  distinct(rgn_id, year, .keep_all = TRUE) %>%
+  arrange(rgn_id, year)
 
 cs_sust_invest_s046_sustainable_conservation_clean <- read_csv(
   here::here("/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_sustainability/investment_tourism_management_final_033026.csv"),
   show_col_types = FALSE
-) %>% 
-  filter(programas %in% "s046_sustainable_conservation") %>% 
-  dplyr::select(rgn_id, year, final_score = current_status)
+) %>%
+  mutate(year = as.numeric(year)) %>%
+  filter(programas %in% "s046_sustainable_conservation") %>%
+  dplyr::select(rgn_id, year, final_score = current_status) %>%
+  distinct(rgn_id, year, .keep_all = TRUE) %>%
+  arrange(rgn_id, year)
 
 cs_sust_invest_v005_protection_restoration_clean <- read_csv(
   here::here("/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_sustainability/investment_tourism_management_final_033026.csv"),
   show_col_types = FALSE
-) %>% 
-  filter(programas %in% "v005_protection_restoration") %>% 
-  dplyr::select(rgn_id, year, final_score = current_status)
+) %>%
+  mutate(year = as.numeric(year)) %>%
+  filter(programas %in% "v005_protection_restoration") %>%
+  dplyr::select(rgn_id, year, final_score = current_status) %>%
+  distinct(rgn_id, year, .keep_all = TRUE) %>%
+  arrange(rgn_id, year)
 
 cs_sust_invest_return_cobros_from_shcp_clean <- read_csv(
   here::here("/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_sustainability/investment_tourism_management_final_033026.csv"),
   show_col_types = FALSE
-) %>% 
-  filter(programas %in% "return_cobros_from_shcp") %>% 
-  dplyr::select(rgn_id, year, final_score = current_status)
+) %>%
+  mutate(year = as.numeric(year)) %>%
+  filter(programas %in% "return_cobros_from_shcp") %>%
+  dplyr::select(rgn_id, year, final_score = current_status) %>%
+  distinct(rgn_id, year, .keep_all = TRUE) %>%
+  arrange(rgn_id, year)
 
 all_cs_indicators <- read_csv(
   here::here("/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output", "tr_current_status_final_070126.csv"),
@@ -262,6 +366,46 @@ tr_score_plotly <- tr_plotly_lines(
   add_rgn_labels(all_cs_indicators),
   y_var = "tr_current_status",
   title = "CURRENT STATUS: Tourism & Recreation"
+)
+
+tr_goc_df <- all_cs_indicators %>%
+  group_by(year) %>%
+  summarize(
+    tr_goc_current_status = mean(tr_current_status, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+tr_overall_goc_plotly <- tr_plotly_goc(
+  tr_goc_df,
+  y_var = "tr_goc_current_status",
+  title = "Overall TR current status for the Gulf of California",
+  y_range = c(0, 110)
+)
+
+tr_arrivals_paths <- c(
+  here::here(
+    "/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/gapfilled_int",
+    "arrivals_filled_by_DENUE_accommodation_employees_2019_2024_UPDATED_031026.csv"
+  ),
+  here::here(
+    "..",
+    "TR",
+    "arrivals_filled_by_DENUE_accommodation_employees_2019_2024_UPDATED_031026.csv"
+  )
+)
+tr_arrivals_path <- tr_arrivals_paths[file.exists(tr_arrivals_paths)][1]
+
+arrivals_by_state <- read_csv(tr_arrivals_path, show_col_types = FALSE) %>%
+  mutate(year = as.numeric(data_year)) %>%
+  group_by(estado, year) %>%
+  summarize(
+    total_arrivals = sum(arrivals_merged_no_neg, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+arrivals_plotly <- tr_plotly_arrivals(
+  add_state_labels(arrivals_by_state),
+  title = "Total tourist arrivals by state (merged SECTUR and DENUE gap-filled)"
 )
 
 quantity_plotly <- tr_plotly_lines(
@@ -401,7 +545,7 @@ sust_invest_return_cobros_from_shcp_plotly <- tr_plotly_lines(
 
 The overall Tourism and Recreation (TR) current status score summarizes how close each OHI Gulf of California region is to sustainable coastal recreation experiences. It integrates three equally weighted components: **Quantity** (visitor arrivals), **Quality** (safety and activity availability), and **Sustainability** (certifications, beach management, job quality, and public investment). Scores are calculated annually from 2019 to 2024 for all nine marine regions. A score of 100 represents the reference point (ideal sustainable state).
 
-**What scores mean:** Higher TR scores signal that a region is closer to improved recreation conditions across visitation levels according to government targets, visitor experience quality, and long-term ability to manage tourism sustainably. Lower scores highlight where arrivals, safety, activity availability, certifications, employment quality, or public investment still fall short of reference targets. Managers can use regional lines to compare trajectories; communities can see whether gains in visitor arrivals are matched by improvements in safety and sustainability.
+**What scores mean for expert review:** Higher TR scores signal that a region is closer to improved recreation conditions across visitation levels according to government targets, visitor experience quality, and long-term ability to manage tourism sustainably. Lower scores highlight where arrivals, safety, activity availability, certifications, employment quality, or public investment still fall short of reference targets. As friendly reviewers, you can use regional lines to compare trajectories and note whether gains in visitor arrivals are matched by improvements in safety and sustainability.
 
 **Data sources:** Merged current status outputs from SECTUR DataTur (quantity), SESNSP and INEGI DENUE (quality), and CONANP, FEE Blue Flag, SECTUR certifications, and INEGI Censos Economicos (sustainability).
 
@@ -413,7 +557,7 @@ $$
 
 where $Q$ = Quantity, $Ql$ = Quality, and $S$ = Sustainability (each already expressed on a 0 to 100 scale, so TR is also on a 0 to 100 scale). Scores above 100 are not applied at this level because component scores are capped where noted below.
 
-**Things to note:** Crime-based quality indicators have limited SESNSP coverage for Regions 2 and 6 (Western and Eastern Midriff Islands). Activity availability depends on DENUE establishment counts within 50 km of the coast and SECTUR/DENUE gap-filled arrivals. Sustainability job-quality scores use INEGI census years (2003 to 2023) interpolated to annual values for 2019 to 2024.
+**Things to note:** Safety-based quality indicators have limited SESNSP coverage for Regions 2 and 6 (Western and Eastern Midriff Islands). Activity availability depends on DENUE establishment counts within 50 km of the coast and SECTUR/DENUE gap-filled arrivals. Sustainability job-quality scores use INEGI census years (2003 to 2023) interpolated to annual values for 2019 to 2024.
 
 ::: {.callout-note collapse="true"}
 ### Regional trajectories for overall TR
@@ -425,11 +569,31 @@ tr_score_plotly
 ```
 :::
 
+::: {.callout-note collapse="true"}
+### Gulf-wide average TR current status
+
+**What it measures:** The same overall TR score averaged across all nine OHI Gulf of California regions for each year.
+
+**Data source:** Merged TR current status outputs.
+
+**Method:** For each year, the Gulf-wide line is the simple mean of regional TR scores:
+
+$$
+\text{TR}^{\text{GOC}}_{t} = \frac{1}{9}\sum_{r=1}^{9} \text{TR}_{r,t}
+$$
+
+The chart below summarizes the average trajectory across all regions. Compare it with the regional chart above to see whether Gulf-wide patterns are driven by a few regions or shared across the coast.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+tr_overall_goc_plotly
+```
+:::
+
 ## Quantity
 
 The Quantity component measures the scale of coastal and marine visitor activity relative to Plan Mexico 2030 tourism growth targets. It reflects how close regional tourist arrivals are to planned increases in domestic and international visitation, rather than measuring revenue or economic impact (those are covered under Livelihoods and Economies).
 
-**What scores mean:** A score of 100 means arrivals have reached or exceeded the 2030 Plan Mexico target for that arrival type. Scores below 100 indicate visitation still below target; stakeholders planning infrastructure or marketing can use these gaps to prioritize regions where growth lags policy goals.
+**What scores mean for expert review:** A score of 100 means arrivals have reached or exceeded the 2030 Plan Mexico target for that arrival type. Scores below 100 indicate visitation still below target, gaps worth discussing as you review regional trajectories against policy goals.
 
 **Data sources:** SECTUR DataTur hotel monitoring reports (`llegadas de turistas residentes` for domestic arrivals and `llegadas de turistas no residentes` for international arrivals), aggregated to OHI regions. Missing municipal arrival data are gap-filled using DENUE accommodation employee models and state-level domestic/international arrival proportions.
 
@@ -461,6 +625,16 @@ where $A^{\text{dom}}$ and $A^{\text{int}}$ are regional domestic and internatio
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 quantity_plotly
 ```
+
+::: {.callout-note collapse="true"}
+#### Total arrivals by state (raw counts)
+
+This chart shows total state-level tourist arrivals after merging SECTUR DataTur reporting with DENUE gap-filled values. Use it to see absolute visitation levels underlying the Quantity current status scores.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+arrivals_plotly
+```
+:::
 
 ::: {.callout-note collapse="true"}
 #### Quantity subcomponents
@@ -508,16 +682,16 @@ quantity_int_plotly
 
 The Quality component captures how safe and enriching coastal visits are for tourists. It combines two equally weighted sub-indicators: **safety of tourists** (inverse crime index) and **availability of activities** (food and beverage, culture and Gulf-related, and other recreation services relative to tourist arrivals).
 
-**What scores mean:** Higher Quality scores indicate safer destinations with more recreation services per visitor. Lower scores may reflect elevated crime rates, fewer dining and cultural options relative to arrivals, or both. Destination managers can use sub-indicator charts to see whether safety or activity availability drives regional differences.
+**What scores mean for expert review:** Higher Quality scores indicate safer destinations with more recreation services per visitor. Lower scores may reflect elevated crime rates, fewer dining and cultural options relative to arrivals, or both. Sub-indicator charts help you see whether safety or activity availability drives regional differences.
 
 **Data sources:** SESNSP municipal crime statistics (weighted by crime type), INEGI municipal population (interpolated), INEGI DENUE economic units within 50 km of the coast, and SECTUR/DENUE gap-filled tourist arrivals.
 
 **Data processing:** Crime counts are filtered to tourism-relevant subtypes, weighted, and divided by interpolated coastal municipal population. DENUE establishments are classified into three activity categories; employee counts are estimated from establishment size classes and divided by regional tourist arrivals. Activity scores use the 90th quantile of employees-per-arrival across all region-year observations as the reference (cross-regional comparison, not within-region).
 
-**Method:** Quality is the average of the crime safety score and the weighted activities score.
+**Method:** Quality is the average of the safety score and the weighted activities score.
 
 $$
-\text{Quality}_{r,t} = \frac{\text{Crime}_{r,t} + \text{Activities}_{r,t}}{2}
+\text{Quality}_{r,t} = \frac{\text{Safety}_{r,t} + \text{Activities}_{r,t}}{2}
 $$
 
 ::: {.callout-tip collapse="true"}
@@ -527,7 +701,7 @@ $$
 
 **Data source:** SESNSP, INEGI population, INEGI DENUE, and SECTUR arrivals.
 
-**Method:** Simple average of crime safety and activities scores.
+**Method:** Simple average of safety and activities scores.
 
 $$
 \text{Quality}_{r,t} = \frac{\text{Safety}_{r,t} + \text{Activities}_{r,t}}{2}
@@ -544,7 +718,7 @@ quality_plotly
 
 **What it measures:** Relative safety from crimes that plausibly alter safety, cleanliness, aesthetics, or atmosphere in spaces tourists visit, which in turn affects visit quality.
 
-**What scores mean:** A score of 100 means zero weighted crimes per coastal inhabitant (the best possible outcome). A score of 0 means the region-year has the highest weighted crime rate observed across all Gulf regions and years. Intermediate values reflect proportional distance from the worst-case rate. For visitors and operators, higher scores indicate lower risk environments for tourists because of a lower crime rate.
+**What scores mean for expert review:** A score of 100 means zero weighted crimes per coastal inhabitant (the best possible outcome). A score of 0 means the region-year has the highest weighted crime rate observed across all Gulf regions and years. Intermediate values reflect proportional distance from the worst-case rate. Higher scores indicate lower weighted crime rates per coastal inhabitant.
 
 **Data source:** SESNSP (Secretariado Ejecutivo del Sistema Nacional de Seguridad Publica) annual municipal crime incidence by crime subtype; INEGI population interpolated to annual estimates for Gulf-bordering municipalities. **Mexicali is excluded** from crime calculations because its crime profile reflects border dynamics rather than Gulf coastal tourism.
 
@@ -581,7 +755,7 @@ where $n_{i,r,t}$ is the count of crime subtype $i$ in region $r$ and year $t$, 
 **Method:** Weighted crimes per capita are converted to a safety score where the region-year with the highest per capita crime rate receives 0 and zero crimes receives 100. Scores above 100 are capped at 100.
 
 $$
-\text{Crime}_{r,t} = \min\left(100,\ \left(1 - \frac{C_{r,t}}{C_{\max}}\right) \times 100\right)
+\text{Safety}_{r,t} = \min\left(100,\ \left(1 - \frac{C_{r,t}}{C_{\max}}\right) \times 100\right)
 $$
 
 where $C_{\max}$ is the maximum weighted crimes per coastal inhabitant across all regions and years.
@@ -683,7 +857,7 @@ The Sustainability component evaluates whether tourism growth is supported by ce
 
 **Data sources:** SECTUR Distintivo S, Green Key, and Green Globe certification records matched to INEGI DENUE hotels; FEE Blue Flag Mexico beach registry; INEGI Censos Economicos (marine tourism employment, census years 2003, 2008, 2013, 2018, 2023); CONANP federal budget program data and SHCP fee return records (NOSSA).
 
-**Data processing:** Hotel certifications are crosswalked to DENUE accommodation units with 100+ employees within 50 km. Blue Flag beach length is measured against total urban tourist beach length per region. Job quality metrics use constant 2023 pesos and coastal population multipliers, then interpolate census-year scores to annual values for 2019 to 2024. Investment programs compare current CONANP budgets to 2012 to 2018 averages in constant 2026 pesos.
+**Data processing:** Hotel certifications are manually matched to DENUE accommodation units with 100+ employees within 50 km of the Gulf coast, because sustainability certification programs primarily target established large hotels. Blue Flag beach length is measured against total **highly-visited** beach length per region (see Blue Flag details below). Job quality metrics use constant 2023 pesos and coastal population multipliers, then interpolate census-year scores to annual values for 2019 to 2024. Investment programs compare current CONANP budgets to 2012 to 2018 averages in constant 2026 pesos.
 
 **Method:** Sustainability is the average of four sub-components: certifications (hotel and Blue Flag), job quality, and tourism management investment.
 
@@ -715,13 +889,13 @@ sustainability_plotly
 
 ##### Certifications (hotel and Blue Flag combined)
 
-**What it measures:** Share of large coastal hotels with sustainability certifications (Distintivo S, Green Key, or Green Globe) and share of urban tourist beach length under Blue Flag management.
+**What it measures:** Share of large coastal hotels with sustainability certifications (Distintivo S, Green Key, or Green Globe) and share of highly-visited beach length under Blue Flag management.
 
-**What scores mean:** Higher scores reflect greater adoption of recognized sustainability standards. For hoteliers and beach managers, rising scores indicate progress toward industry best practices; flat lines may signal certification barriers or limited program uptake.
+**What scores mean for expert review:** Higher scores reflect greater adoption of recognized sustainability standards. Rising scores indicate progress toward industry best practices; flat lines may signal certification barriers or limited program uptake worth discussing with the expert working group.
 
-**Data source:** SECTUR certification databases, Green Key and Green Globe member lists, INEGI DENUE accommodation units; FEE Blue Flag Mexico and INEGI urban beach linework.
+**Data source:** SECTUR certification databases, Green Key and Green Globe member lists, INEGI DENUE accommodation units; FEE Blue Flag Mexico and INEGI coastline beach and cliff linework.
 
-**Data processing:** Hotels matched to DENUE by name/location; Blue Flag sites intersected with urban tourist beach buffers around Gulf centers.
+**Data processing:** Hotels matched to DENUE by name/location. Blue Flag sites are intersected with the highly-visited beach network described below; a beach segment counts as certified if it hosts at least one active Blue Flag site.
 
 **Method:** Hotel and Blue Flag scores are averaged for each region and year.
 
@@ -733,7 +907,7 @@ $$
 
 **What it measures:** Quality of formal employment in marine tourism sectors across maintained compensation, job formalization, and gender pay equity in formalization rates.
 
-**What scores mean:** Higher scores indicate better-paid, more formalized, and more gender-equitable tourism jobs. Workers and employers can interpret sub-metrics separately: salary tracks compensation trends, formalization tracks contract coverage, and gender equity tracks whether women receive equal formalization rates as men.
+**What scores mean for expert review:** Higher scores indicate better-paid, more formalized, and more gender-equitable tourism jobs. You can interpret sub-metrics separately: salary tracks compensation trends, formalization tracks contract coverage, and gender equity tracks whether women receive equal formalization rates as men.
 
 **Data source:** INEGI Censos Economicos (2003, 2008, 2013, 2018, 2023), limited to marine tourism economic units, adjusted to constant 2023 pesos and coastal population multipliers.
 
@@ -774,7 +948,7 @@ sust_invest_plotly
 
 **What it measures:** Percentage of large hotels (100+ employees within 50 km of the Gulf coast) holding at least one sustainability certification (Distintivo S, Green Key, or Green Globe).
 
-**Data source:** SECTUR Distintivo S registry, Green Key Mexico, Green Globe Americas member list, crosswalked to INEGI DENUE accommodation economic units.
+**Data source:** SECTUR Distintivo S registry, Green Key Mexico, Green Globe Americas member list, manually matched to INEGI DENUE accommodation economic units.
 
 **Method:** Certified large hotels divided by total large hotels, expressed as a percentage. Scores above 100 are capped at 100.
 
@@ -784,11 +958,15 @@ $$
 
 ###### Blue Flag beach certifications
 
-**What it measures:** Share of urban/tourist beach length in each region that holds an active Blue Flag certification.
+**What it measures:** Share of highly-visited beach length in each region that holds an active Blue Flag certification.
 
-**Data source:** FEE Foundation for Environmental Education Blue Flag Mexico registry; INEGI coastline beach linework cropped to urban buffers around Gulf tourist centers.
+**What scores mean:** Higher scores indicate that a larger share of beaches where tourists actually concentrate are managed under the Blue Flag standard (water quality, safety, access, waste management, environmental education, and related criteria). Lower scores highlight gaps in certified management at heavily used shorelines.
 
-**Method:** Length of Blue Flag certified tourist beaches divided by total tourist beach length, expressed as a percentage.
+**Data source:** FEE Foundation for Environmental Education Blue Flag Mexico registry; INEGI coastline beach and cliff linework; INEGI locality boundaries; DENUE hotel employment; and manually reviewed beach segments for large coastal hotels.
+
+**Defining highly-visited beaches:** The denominator is not all Gulf shoreline. Instead, highly-visited beaches are beach/cliff segments within 400 m of INEGI locality polygons where summed hotel employees total at least 100 (the threshold was set using the lowest employee total among localities with an existing Blue Flag site at the time of analysis, 56 employees, rounded up for consistency). Beach segments in front of large hotels (56+ employees) that are not already captured by a locality polygon were added manually after map review. Gulf-side port areas used by tourists were also included. Beaches associated with the federal *Playas Limpias* program were added to the highly-visited network because they represent regularly managed public beaches even when hotel density is lower. Beach linework is cropped to these 400 m buffers so the indicator compares certified length to the shoreline segments tourists are most likely to use, rather than entire uninterrupted INEGI beach units that may extend beyond visitation areas.
+
+**Method:** Length of highly-visited beach segments with at least one active Blue Flag certification divided by total highly-visited beach length, expressed as a percentage. A beach counts as certified if it has one or more active Blue Flag sites.
 
 $$
 \text{BlueFlag}_{r,t} = \frac{L^{\text{blue flag}}_{r,t}}{L^{\text{tourist beaches}}_{r,t}} \times 100
@@ -853,7 +1031,7 @@ sust_jobqual_gender_plotly
 
 **What it measures:** CONANP federal budget for Area Natural Protegida management (program v003) relative to the 2012 to 2018 historical average (constant 2026 pesos).
 
-**Data source:** CONANP federal budget program data (`fed_budget_programas_importantes_2012_2026`).
+**Data source:** CONANP federal budget program data.
 
 **Method:** Current year budget divided by the 2012 to 2018 average, capped at 100. This score applies uniformly across all regions because federal budget is national.
 
@@ -889,7 +1067,7 @@ $$
 
 **What it measures:** Percentage of protected area entrance fees (cobro de derechos) collected by CONANP that are returned from the federal treasury (SHCP) for reinvestment in protected areas.
 
-**Data source:** NOSSA/CONANP fee return records (`CONANP_fees_returned_2007_2026`).
+**Data source:** NOSSA/CONANP fee return records.
 
 **Method:** The reported percentage returned is used directly as the current status score (100 = full return).
 

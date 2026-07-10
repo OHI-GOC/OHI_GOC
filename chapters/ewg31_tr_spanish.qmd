@@ -11,8 +11,24 @@ format: html
   </a>
 </div>
 
+::: {.callout-important}
+## Vista previa: Turismo y Recreación (TR)
+
+Planeamos revisar nuestras estimaciones actuales de los puntajes de TR en la reunión del Grupo de Trabajo de Expertos 3.1 el 16 de julio de 2026. Este documento tiene como objetivo ofrecer a los asistentes una visión general del modelo de la meta y sus insumos, y una vista previa de sus resultados, como preparación para la reunión. Si lo lee y tiene inquietudes metodológicas menores, señálelas y tráigalas a la reunión. Si tiene inquietudes metodológicas mayores, compártalas conmigo con anticipación (mi correo es [smanos@nceas.ucsb.edu](mailto:smanos@nceas.ucsb.edu)). Si no puede asistir a la reunión pero le gustaría conversar, con gusto podemos reunirnos uno a uno antes o después.
+
+Le informamos que este documento está destinado únicamente a uso interno y con fines informativos. No debe interpretarse como la palabra final ni como material de calidad de revisión por pares.
+
+Gracias por su continuo compromiso con este trabajo. ¡Esperamos conversar sobre estos puntajes con ustedes el 16 de julio!
+:::
+
 ::: {.callout-tip collapse="true"}
 # <i class="fa-regular fa-star"></i> Sobre la Meta de TR
+
+La meta de Turismo y Recreación (TR) mide la cantidad, calidad y sostenibilidad de las experiencias que las personas tienen al visitar áreas costeras y marinas.
+
+Para comenzar, debemos reconocer por qué Turismo y Recreación es un beneficio importante que obtenemos a través de un océano saludable. El Índice de Salud Oceánica reconoce la realidad de que las personas forman parte del ecosistema: no podemos eliminar el contacto, directo o indirecto, entre las personas y el océano, ni queremos hacerlo. Por lo tanto, la filosofía básica del Índice de Salud Oceánica es que mide qué tan bien los sistemas oceánicos están proporcionando de manera sostenible a las personas los beneficios y servicios que tanto necesitan como desean de los sistemas marinos.
+
+Y la realidad es que, si bien existen daños reales por una visitación y recreación excesivas y no gestionadas, también hay beneficios enormes en tener oportunidades para que las personas se conecten con el Golfo, su vida silvestre y la cultura local. Estas oportunidades, además del disfrute puro, pueden crear una profunda apreciación por los sistemas marinos e incluso promover ideologías de conservación. Además, los habitantes locales del Golfo pueden beneficiarse del aumento de oportunidades de empleo y los ingresos asociados.
 
 **Esta meta captura la cantidad, calidad y sostenibilidad de las experiencias que las personas tienen al visitar áreas costeras y marinas.**
 
@@ -73,8 +89,29 @@ rgn_colors <- c(
   "Region_9" = "#8d61a9"
 )
 
+state_colors <- c(
+  "sinaloa" = "#627391",
+  "sonora" = "#98a25a",
+  "baja_california_sur" = "#dcaa38",
+  "baja_california" = "#E68C7C",
+  "jalisco" = "#8d61a9"
+)
+
+state_labels <- c(
+  "sinaloa" = "Sinaloa",
+  "sonora" = "Sonora",
+  "baja_california_sur" = "Baja California Sur",
+  "baja_california" = "Baja California",
+  "jalisco" = "Jalisco"
+)
+
 region_levels <- paste0("Region_", 1:9)
 rgn_label_colors <- setNames(unname(rgn_colors[region_levels]), unname(rgn_labels[region_levels]))
+state_levels <- names(state_colors)
+state_label_colors <- setNames(
+  unname(state_colors[state_levels]),
+  unname(state_labels[state_levels])
+)
 component_levels <- c("Quantity", "Quality", "Sustainability", "Overall TR")
 
 add_rgn_labels <- function(df) {
@@ -84,6 +121,17 @@ add_rgn_labels <- function(df) {
       rgn_label = factor(
         rgn_labels[as.character(rgn_id)],
         levels = unname(rgn_labels[region_levels])
+      )
+    )
+}
+
+add_state_labels <- function(df) {
+  df %>%
+    mutate(
+      estado = factor(as.character(estado), levels = state_levels),
+      state_label = factor(
+        state_labels[as.character(estado)],
+        levels = unname(state_labels[state_levels])
       )
     )
 }
@@ -112,6 +160,49 @@ tr_plotly_lines <- function(df, y_var, title, y_range = NULL) {
       line = list(color = "black", width = 2, dash = "dash"),
       name = "Meta // Goal 2030 (100/100)",
       inherit = FALSE
+    )
+}
+
+tr_plotly_goc <- function(df, y_var, title, y_range = NULL) {
+  yr <- range(df$year, na.rm = TRUE)
+
+  plot_ly(
+    df,
+    x = ~year,
+    y = as.formula(paste0("~", y_var)),
+    type = "scatter",
+    mode = "lines+markers",
+    name = "GOC Average"
+  ) %>%
+    layout(
+      title = title,
+      xaxis = list(title = "Año // Year"),
+      yaxis = list(title = "Puntaje // Percent (out of 100)", range = y_range)
+    ) %>%
+    add_lines(
+      x = yr,
+      y = c(100, 100),
+      line = list(color = "black", width = 2, dash = "dash"),
+      name = "Meta // Goal 2030 (100/100)",
+      inherit = FALSE
+    )
+}
+
+tr_plotly_arrivals <- function(df, title, y_range = NULL) {
+  plot_ly(
+    df,
+    x = ~year,
+    y = ~total_arrivals,
+    color = ~state_label,
+    colors = state_label_colors,
+    type = "scatter",
+    mode = "lines+markers"
+  ) %>%
+    layout(
+      title = title,
+      xaxis = list(title = "Año // Year"),
+      yaxis = list(title = "Arrivals", range = y_range),
+      legend = list(title = list(text = "State"))
     )
 }
 ```
@@ -218,40 +309,53 @@ cs_sust_jobqual_gender_clean <- read_csv(
   dplyr::select(rgn_id, year = ano_censal, final_score = prop_eq_cs)
 
 cs_sust_invest_clean <- read_csv(
-  here::here("/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_sustainability/investment_tourism_management_final_033026.csv")) %>% 
-ungroup() %>% 
-mutate(year = as.numeric(year)) %>% 
-arrange(year) %>%
-  dplyr::select(rgn_id, year, final_score = current_status_all) %>% 
-  distinct(rgn_id, year, .keep_all = TRUE) 
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_sustainability/investment_tourism_management_final_033026.csv"),
+  show_col_types = FALSE
+) %>%
+  mutate(year = as.numeric(year)) %>%
+  dplyr::select(rgn_id, year, final_score = current_status_all) %>%
+  distinct(rgn_id, year, .keep_all = TRUE) %>%
+  arrange(rgn_id, year)
 
 cs_sust_invest_v003_anp_management_clean <- read_csv(
   here::here("/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_sustainability/investment_tourism_management_final_033026.csv"),
   show_col_types = FALSE
-) %>% 
-  filter(programas %in% "v003_anp_management") %>% 
-  dplyr::select(rgn_id, year, final_score = current_status)
+) %>%
+  mutate(year = as.numeric(year)) %>%
+  filter(programas %in% "v003_anp_management") %>%
+  dplyr::select(rgn_id, year, final_score = current_status) %>%
+  distinct(rgn_id, year, .keep_all = TRUE) %>%
+  arrange(rgn_id, year)
 
 cs_sust_invest_s046_sustainable_conservation_clean <- read_csv(
   here::here("/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_sustainability/investment_tourism_management_final_033026.csv"),
   show_col_types = FALSE
-) %>% 
-  filter(programas %in% "s046_sustainable_conservation") %>% 
-  dplyr::select(rgn_id, year, final_score = current_status)
+) %>%
+  mutate(year = as.numeric(year)) %>%
+  filter(programas %in% "s046_sustainable_conservation") %>%
+  dplyr::select(rgn_id, year, final_score = current_status) %>%
+  distinct(rgn_id, year, .keep_all = TRUE) %>%
+  arrange(rgn_id, year)
 
 cs_sust_invest_v005_protection_restoration_clean <- read_csv(
   here::here("/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_sustainability/investment_tourism_management_final_033026.csv"),
   show_col_types = FALSE
-) %>% 
-  filter(programas %in% "v005_protection_restoration") %>% 
-  dplyr::select(rgn_id, year, final_score = current_status)
+) %>%
+  mutate(year = as.numeric(year)) %>%
+  filter(programas %in% "v005_protection_restoration") %>%
+  dplyr::select(rgn_id, year, final_score = current_status) %>%
+  distinct(rgn_id, year, .keep_all = TRUE) %>%
+  arrange(rgn_id, year)
 
 cs_sust_invest_return_cobros_from_shcp_clean <- read_csv(
   here::here("/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_sustainability/investment_tourism_management_final_033026.csv"),
   show_col_types = FALSE
-) %>% 
-  filter(programas %in% "return_cobros_from_shcp") %>% 
-  dplyr::select(rgn_id, year, final_score = current_status)
+) %>%
+  mutate(year = as.numeric(year)) %>%
+  filter(programas %in% "return_cobros_from_shcp") %>%
+  dplyr::select(rgn_id, year, final_score = current_status) %>%
+  distinct(rgn_id, year, .keep_all = TRUE) %>%
+  arrange(rgn_id, year)
 
 all_cs_indicators <- read_csv(
   here::here("/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output", "tr_current_status_final_070126.csv"),
@@ -262,6 +366,46 @@ tr_score_plotly <- tr_plotly_lines(
   add_rgn_labels(all_cs_indicators),
   y_var = "tr_current_status",
   title = "CURRENT STATUS: Tourism & Recreation"
+)
+
+tr_goc_df <- all_cs_indicators %>%
+  group_by(year) %>%
+  summarize(
+    tr_goc_current_status = mean(tr_current_status, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+tr_overall_goc_plotly <- tr_plotly_goc(
+  tr_goc_df,
+  y_var = "tr_goc_current_status",
+  title = "Overall TR current status for the Gulf of California",
+  y_range = c(0, 110)
+)
+
+tr_arrivals_paths <- c(
+  here::here(
+    "/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/gapfilled_int",
+    "arrivals_filled_by_DENUE_accommodation_employees_2019_2024_UPDATED_031026.csv"
+  ),
+  here::here(
+    "..",
+    "TR",
+    "arrivals_filled_by_DENUE_accommodation_employees_2019_2024_UPDATED_031026.csv"
+  )
+)
+tr_arrivals_path <- tr_arrivals_paths[file.exists(tr_arrivals_paths)][1]
+
+arrivals_by_state <- read_csv(tr_arrivals_path, show_col_types = FALSE) %>%
+  mutate(year = as.numeric(data_year)) %>%
+  group_by(estado, year) %>%
+  summarize(
+    total_arrivals = sum(arrivals_merged_no_neg, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+arrivals_plotly <- tr_plotly_arrivals(
+  add_state_labels(arrivals_by_state),
+  title = "Total tourist arrivals by state (merged SECTUR and DENUE gap-filled)"
 )
 
 quantity_plotly <- tr_plotly_lines(
@@ -401,7 +545,7 @@ sust_invest_return_cobros_from_shcp_plotly <- tr_plotly_lines(
 
 El puntaje de estado actual de Turismo y Recreación (TR) resume qué tan cerca está cada región OHI del Golfo de California de experiencias costeras y marinas sostenibles. Integra tres componentes con igual peso: **Cantidad** (llegadas de visitantes), **Calidad** (seguridad y disponibilidad de actividades) y **Sostenibilidad** (certificaciones, manejo de playas, calidad del empleo e inversión pública). Los puntajes se calculan anualmente de 2019 a 2024 para las nueve regiones marinas. Un puntaje de 100 representa el punto de referencia (estado ideal sostenible).
 
-**Qué significan los puntajes para actores clave:** Puntajes TR más altos indican que una región está más cerca de condiciones recreativas sostenibles en visitación, experiencia del visitante y manejo turístico a largo plazo. Puntajes más bajos señalan brechas en llegadas, seguridad, disponibilidad de actividades, certificaciones, calidad del empleo o inversión pública. Las líneas regionales permiten comparar trayectorias; las comunidades pueden ver si el crecimiento en visitantes va acompañado de mejoras en seguridad y sostenibilidad.
+**Qué significan los puntajes para revisión entre expertos:** Puntajes TR más altos indican que una región está más cerca de condiciones recreativas mejoradas en niveles de visitación según metas gubernamentales, calidad de la experiencia del visitante y capacidad a largo plazo para gestionar el turismo de manera sostenible. Puntajes más bajos señalan brechas donde las llegadas, la seguridad, la disponibilidad de actividades, las certificaciones, la calidad del empleo o la inversión pública aún no alcanzan las metas de referencia. Como revisores amigables, pueden usar las líneas regionales para comparar trayectorias y observar si las ganancias en llegadas de visitantes van acompañadas de mejoras en seguridad y sostenibilidad.
 
 **Fuentes de datos:** Salidas de estado actual integradas de SECTUR DataTur (cantidad), SESNSP e INEGI DENUE (calidad), y CONANP, FEE Bandera Azul, certificaciones SECTUR e INEGI Censos Económicos (sostenibilidad).
 
@@ -413,7 +557,7 @@ $$
 
 donde $Q$ = Cantidad, $Ql$ = Calidad y $S$ = Sostenibilidad (cada uno ya expresado en escala de 0 a 100, por lo que TR también está en escala de 0 a 100). No se aplican puntajes superiores a 100 en este nivel porque los componentes se limitan donde se indica abajo.
 
-**Limitaciones de datos:** Los indicadores de calidad basados en delitos tienen cobertura SESNSP limitada para las Regiones 2 y 6 (Islas del Midriff Occidental y Oriental). La disponibilidad de actividades depende de conteos DENUE dentro de 50 km de la costa y llegadas SECTUR/DENUE completadas. La calidad del empleo en sostenibilidad usa años censales INEGI (2003 a 2023) interpolados a valores anuales para 2019 a 2024.
+**Cosas a tener en cuenta:** Los indicadores de calidad basados en delitos tienen cobertura SESNSP limitada para las Regiones 2 y 6 (Islas del Midriff Occidental y Oriental). La disponibilidad de actividades depende de conteos DENUE dentro de 50 km de la costa y llegadas SECTUR/DENUE completadas. La calidad del empleo en sostenibilidad usa años censales INEGI (2003 a 2023) interpolados a valores anuales para 2019 a 2024.
 
 ::: {.callout-note collapse="true"}
 ### Trayectorias regionales del TR general
@@ -425,11 +569,31 @@ tr_score_plotly
 ```
 :::
 
+::: {.callout-note collapse="true"}
+### Promedio del Golfo del TR general
+
+**Qué mide:** El mismo puntaje general de TR promediado entre las nueve regiones OHI del Golfo de California para cada año.
+
+**Fuente de datos:** Salidas integradas de estado actual de TR.
+
+**Método:** Para cada año, la línea del Golfo es el promedio simple de los puntajes regionales de TR:
+
+$$
+\text{TR}^{\text{GOC}}_{t} = \frac{1}{9}\sum_{r=1}^{9} \text{TR}_{r,t}
+$$
+
+La gráfica siguiente resume la trayectoria promedio en todas las regiones. Compárela con la gráfica regional anterior para ver si los patrones a escala del Golfo están impulsados por unas pocas regiones o se comparten a lo largo de la costa.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+tr_overall_goc_plotly
+```
+:::
+
 ## Componente de Cantidad
 
 El componente de Cantidad mide la escala de actividad de visitantes en zonas costeras y marinas en relación con las metas de crecimiento turístico del Plan México 2030. Refleja qué tan cerca están las llegadas regionales de los incrementos planeados en visitación doméstica e internacional, y no mide ingresos ni impacto económico (eso corresponde a Medios de Vida y Economías).
 
-**Qué significan los puntajes:** Un puntaje de 100 significa que las llegadas alcanzaron o superaron la meta del Plan México 2030 para ese tipo de visitante. Puntajes por debajo de 100 indican visitación aún por debajo de la meta; gestores de infraestructura o promoción pueden usar estas brechas para priorizar regiones donde el crecimiento rezaga las metas de política.
+**Qué significan los puntajes para revisión entre expertos:** Un puntaje de 100 significa que las llegadas alcanzaron o superaron la meta del Plan México 2030 para ese tipo de visitante. Puntajes por debajo de 100 indican visitación aún por debajo de la meta; brechas que vale la pena discutir al revisar las trayectorias regionales frente a las metas de política.
 
 **Fuentes de datos:** Reportes de monitoreo hotelero SECTUR DataTur (`llegadas de turistas residentes` para domésticas y `llegadas de turistas no residentes` para internacionales), agregados a regiones OHI. Datos faltantes por municipio se completan con modelos DENUE de empleo en alojamiento y proporciones estatales doméstica/internacional.
 
@@ -461,6 +625,16 @@ donde $A^{\text{dom}}$ y $A^{\text{int}}$ son llegadas domésticas e internacion
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 quantity_plotly
 ```
+
+::: {.callout-note collapse="true"}
+#### Llegadas totales por estado (conteos brutos)
+
+Esta gráfica muestra las llegadas turísticas totales a nivel estatal después de combinar los reportes de SECTUR DataTur con valores completados con DENUE. Úsela para ver los niveles absolutos de visitación que sustentan los puntajes de estado actual del componente de Cantidad.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+arrivals_plotly
+```
+:::
 
 ::: {.callout-note collapse="true"}
 #### Subcomponentes de Cantidad
@@ -508,13 +682,13 @@ quantity_int_plotly
 
 El componente de Calidad captura qué tan seguras y enriquecedoras son las visitas costeras. Combina dos subindicadores con igual peso: **seguridad de turistas** (índice inverso de delitos) y **disponibilidad de actividades** (alimentos y bebidas, cultura y Golfo, y otra recreación en relación con llegadas turísticas).
 
-**Qué significan los puntajes:** Puntajes de Calidad más altos indican destinos más seguros con más servicios recreativos por visitante. Puntajes más bajos pueden reflejar tasas elevadas de delitos, menos opciones gastronómicas y culturales respecto a las llegadas, o ambos. Los gestores pueden usar las gráficas de subindicadores para ver si la seguridad o la disponibilidad de actividades explican las diferencias regionales.
+**Qué significan los puntajes para revisión entre expertos:** Puntajes de Calidad más altos indican destinos más seguros con más servicios recreativos por visitante. Puntajes más bajos pueden reflejar tasas elevadas de delitos, menos opciones gastronómicas y culturales respecto a las llegadas, o ambos. Las gráficas de subindicadores ayudan a ver si la seguridad o la disponibilidad de actividades explican las diferencias regionales.
 
 **Fuentes de datos:** Estadísticas municipales de delitos SESNSP (ponderadas por tipo), población municipal INEGI (interpolada), unidades económicas INEGI DENUE dentro de 50 km de la costa, y llegadas turísticas SECTUR/DENUE completadas.
 
 **Procesamiento de datos:** Los conteos de delitos se filtran a subtipos relevantes para turismo, se ponderan y dividen entre población costera municipal interpolada. Los establecimientos DENUE se clasifican en tres categorías de actividad; los empleados se estiman a partir de clases de tamaño y se dividen entre llegadas turísticas regionales. Los puntajes de actividades usan el cuantil 90 de empleados por llegada entre todas las observaciones región-año como referencia (comparación interregional, no dentro de la región).
 
-**Método:** La Calidad es el promedio del puntaje de seguridad por delitos y el puntaje ponderado de actividades.
+**Método:** La Calidad es el promedio del puntaje de seguridad y el puntaje ponderado de actividades.
 
 $$
 \text{Calidad}_{r,t} = \frac{\text{Seguridad}_{r,t} + \text{Actividades}_{r,t}}{2}
@@ -527,10 +701,10 @@ $$
 
 **Fuente de datos:** SESNSP, población INEGI, DENUE INEGI y llegadas SECTUR.
 
-**Método:** Promedio simple de puntajes de delitos y actividades.
+**Método:** Promedio simple de puntajes de seguridad y actividades.
 
 $$
-\text{Calidad}_{r,t} = \frac{\text{Delitos}_{r,t} + \text{Actividades}_{r,t}}{2}
+\text{Calidad}_{r,t} = \frac{\text{Seguridad}_{r,t} + \text{Actividades}_{r,t}}{2}
 $$
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
@@ -544,7 +718,7 @@ quality_plotly
 
 **Qué mide:** Seguridad relativa ante delitos que plausiblemente alteran la seguridad, limpieza, estética o atmósfera en espacios que visitan los turistas, lo que a su vez afecta la calidad de la visita.
 
-**Qué significan los puntajes:** Un puntaje de 100 significa cero delitos ponderados per habitante costero (el mejor resultado posible). Un puntaje de 0 significa que la región-año tiene la tasa ponderada más alta observada entre todas las regiones y años del Golfo. Valores intermedios reflejan la distancia proporcional respecto al peor caso. Para visitantes y operadores, puntajes más altos indican entornos de menor riesgo percibido.
+**Qué significan los puntajes para revisión entre expertos:** Un puntaje de 100 significa cero delitos ponderados per habitante costero (el mejor resultado posible). Un puntaje de 0 significa que la región-año tiene la tasa ponderada más alta observada entre todas las regiones y años del Golfo. Valores intermedios reflejan la distancia proporcional respecto al peor caso. Puntajes más altos indican menores tasas ponderadas de delitos per habitante costero.
 
 **Fuente de datos:** Incidencia anual de delitos SESNSP (Secretariado Ejecutivo del Sistema Nacional de Seguridad Pública) por municipio y subtipo; población INEGI interpolada a estimaciones anuales para municipios del Golfo. **Mexicali se excluye** de los cálculos de delitos porque su perfil delictivo refleja dinámicas fronterizas y no turismo costero del Golfo.
 
@@ -581,7 +755,7 @@ donde $n_{i,r,t}$ es el conteo del subtipo de delito $i$ en región $r$ y año $
 **Método:** Los delitos ponderados per cápita se convierten en un puntaje de seguridad donde la región-año con mayor tasa per cápita recibe 0 y cero delitos recibe 100. Puntajes superiores a 100 se limitan a 100.
 
 $$
-\text{Delitos}_{r,t} = \min\left(100,\ \left(1 - \frac{C_{r,t}}{C_{\max}}\right) \times 100\right)
+\text{Seguridad}_{r,t} = \min\left(100,\ \left(1 - \frac{C_{r,t}}{C_{\max}}\right) \times 100\right)
 $$
 
 donde $C_{\max}$ es el máximo de delitos ponderados per habitante costero entre todas las regiones y años.
@@ -683,7 +857,7 @@ El componente de Sostenibilidad evalúa si el crecimiento turístico se apoya en
 
 **Fuentes de datos:** Registros de certificación SECTUR Distintivo S, Green Key y Green Globe vinculados a hoteles DENUE INEGI; registro FEE Bandera Azul México; INEGI Censos Económicos (empleo en turismo marino, años censales 2003, 2008, 2013, 2018, 2023); presupuesto federal CONANP y registros de devolución de derechos SHCP (NOSSA).
 
-**Procesamiento de datos:** Las certificaciones hoteleras se vinculan a unidades DENUE de alojamiento con 100+ empleados dentro de 50 km. La longitud de playas Bandera Azul se mide contra la longitud total de playas turísticas urbanas por región. Las métricas de calidad del empleo usan pesos constantes de 2023 y multiplicadores de población costera, luego interpolan puntajes censales a valores anuales para 2019 a 2024. Los programas de inversión comparan presupuestos CONANP actuales con promedios 2012 a 2018 en pesos constantes de 2026.
+**Procesamiento de datos:** Las certificaciones hoteleras se emparejan manualmente con unidades DENUE de alojamiento con 100+ empleados dentro de 50 km, porque los programas de certificación de sostenibilidad se orientan principalmente a hoteles grandes establecidos. La longitud de playas Bandera Azul se mide contra la longitud total de playas **altamente visitadas** por región (véase detalles de Bandera Azul abajo). Las métricas de calidad del empleo usan pesos constantes de 2023 y multiplicadores de población costera, luego interpolan puntajes censales a valores anuales para 2019 a 2024. Los programas de inversión comparan presupuestos CONANP actuales con promedios 2012 a 2018 en pesos constantes de 2026.
 
 **Método:** La Sostenibilidad es el promedio de cuatro subcomponentes: certificaciones (hoteles y Bandera Azul), calidad del empleo e inversión en manejo turístico.
 
@@ -715,13 +889,13 @@ sustainability_plotly
 
 ##### Certificaciones (hoteles y Bandera Azul combinadas)
 
-**Qué mide:** Proporción de hoteles costeros grandes con certificación de sostenibilidad (Distintivo S, Green Key o Green Globe) y proporción de longitud de playas turísticas urbanas bajo manejo Bandera Azul.
+**Qué mide:** Proporción de hoteles costeros grandes con certificación de sostenibilidad (Distintivo S, Green Key o Green Globe) y proporción de longitud de playas altamente visitadas bajo manejo Bandera Azul.
 
-**Qué significan los puntajes:** Puntajes más altos reflejan mayor adopción de estándares de sostenibilidad reconocidos. Para hoteleros y gestores de playas, líneas en alza indican avance hacia mejores prácticas.
+**Qué significan los puntajes para revisión entre expertos:** Puntajes más altos reflejan mayor adopción de estándares de sostenibilidad reconocidos. Líneas en alza indican avance hacia mejores prácticas de la industria; líneas planas pueden señalar barreras de certificación o adopción limitada del programa que vale la pena discutir con el grupo de trabajo experto.
 
-**Fuente de datos:** Bases SECTUR, listas Green Key y Green Globe, DENUE INEGI; FEE Bandera Azul México y linework de playas urbanas INEGI.
+**Fuente de datos:** Bases de certificación SECTUR, listas Green Key y Green Globe, unidades DENUE INEGI de alojamiento; FEE Bandera Azul México y linework de playas y acantilados de la costa INEGI.
 
-**Procesamiento de datos:** Hoteles vinculados a DENUE por nombre/ubicación; sitios Bandera Azul intersectados con buffers de playas turísticas urbanas.
+**Procesamiento de datos:** Hoteles emparejados a DENUE por nombre/ubicación. Los sitios Bandera Azul se intersectan con la red de playas altamente visitadas descrita abajo; un segmento de playa cuenta como certificado si alberga al menos un sitio Bandera Azul activo.
 
 **Método:** Se promedian los puntajes hoteleros y de Bandera Azul por región y año.
 
@@ -733,7 +907,7 @@ $$
 
 **Qué mide:** Calidad del empleo formal en sectores de turismo marino: compensación mantenida, formalización y equidad de género en tasas de formalización.
 
-**Qué significan los puntajes:** Puntajes más altos indican empleos turísticos mejor pagados, más formalizados y con mayor equidad de género. Los subindicadores pueden leerse por separado: salario, formalización y equidad de género.
+**Qué significan los puntajes para revisión entre expertos:** Puntajes más altos indican empleos turísticos mejor pagados, más formalizados y con mayor equidad de género. Pueden interpretar las submétricas por separado: salario rastrea tendencias de compensación, formalización rastrea cobertura contractual, y equidad de género rastrea si las mujeres reciben tasas de formalización iguales a las de los hombres.
 
 **Fuente de datos:** INEGI Censos Económicos (2003, 2008, 2013, 2018, 2023), unidades de turismo marino, en pesos constantes de 2023 y multiplicadores de población costera.
 
@@ -774,7 +948,7 @@ sust_invest_plotly
 
 **Qué mide:** Porcentaje de hoteles grandes (100+ empleados dentro de 50 km del Golfo) con al menos una certificación de sostenibilidad (Distintivo S, Green Key o Green Globe).
 
-**Fuente de datos:** Registro SECTUR Distintivo S, Green Key México, lista Green Globe Américas, vinculados a unidades económicas DENUE INEGI de alojamiento.
+**Fuente de datos:** Registro SECTUR Distintivo S, Green Key México, lista Green Globe Américas, emparejados manualmente con unidades económicas DENUE INEGI de alojamiento.
 
 **Método:** Hoteles grandes certificados entre total de hoteles grandes, como porcentaje. Puntajes superiores a 100 se limitan a 100.
 
@@ -784,11 +958,15 @@ $$
 
 ###### Certificaciones Bandera Azul
 
-**Qué mide:** Proporción de longitud de playas urbanas/turísticas en cada región con certificación Bandera Azul activa.
+**Qué mide:** Proporción de longitud de playas altamente visitadas en cada región que cuenta con una certificación Bandera Azul activa.
 
-**Fuente de datos:** Registro FEE Bandera Azul México; linework de playas INEGI recortado a buffers urbanos de centros turísticos del Golfo.
+**Qué significan los puntajes:** Puntajes más altos indican que una mayor proporción de playas donde los turistas realmente se concentran se gestionan bajo el estándar Bandera Azul (calidad del agua, seguridad, acceso, manejo de residuos, educación ambiental y criterios relacionados). Puntajes más bajos señalan brechas en el manejo certificado en costas muy utilizadas.
 
-**Método:** Longitud de playas turísticas certificadas dividida entre longitud total de playas turísticas, como porcentaje.
+**Fuente de datos:** Registro FEE Fundación para la Educación Ambiental Bandera Azul México; linework de playas y acantilados de la costa INEGI; límites de localidades INEGI; empleo hotelero DENUE; y segmentos de playa revisados manualmente para hoteles costeros grandes.
+
+**Definición de playas altamente visitadas:** El denominador no es toda la costa del Golfo. En su lugar, las playas altamente visitadas son segmentos de playa/acantilado dentro de 400 m de polígonos de localidades INEGI donde la suma de empleados hoteleros es de al menos 100 (el umbral se estableció usando el total de empleados más bajo entre localidades con un sitio Bandera Azul existente al momento del análisis, 56 empleados, redondeado hacia arriba por consistencia). Los segmentos de playa frente a hoteles grandes (56+ empleados) que no quedaban capturados por un polígono de localidad se agregaron manualmente después de revisión cartográfica. También se incluyeron áreas portuarias del lado del Golfo utilizadas por turistas. Las playas asociadas al programa federal *Playas Limpias* se agregaron a la red altamente visitada porque representan playas públicas gestionadas regularmente incluso cuando la densidad hotelera es menor. El linework de playas se recorta a estos buffers de 400 m para que el indicador compare longitud certificada con los segmentos de costa que los turistas tienen más probabilidades de usar, en lugar de unidades completas e ininterrumpidas de playa INEGI que pueden extenderse más allá de las áreas de visitación.
+
+**Método:** Longitud de segmentos de playa altamente visitados con al menos una certificación Bandera Azul activa dividida entre la longitud total de playas altamente visitadas, expresada como porcentaje. Una playa cuenta como certificada si tiene uno o más sitios Bandera Azul activos.
 
 $$
 \text{BanderaAzul}_{r,t} = \frac{L^{\text{bandera azul}}_{r,t}}{L^{\text{playas turísticas}}_{r,t}} \times 100
@@ -853,7 +1031,7 @@ sust_jobqual_gender_plotly
 
 **Qué mide:** Presupuesto federal CONANP para manejo de Áreas Naturales Protegidas (programa v003) respecto al promedio histórico 2012 a 2018 (pesos constantes de 2026).
 
-**Fuente de datos:** Datos de presupuesto federal CONANP (`fed_budget_programas_importantes_2012_2026`).
+**Fuente de datos:** Datos de presupuesto federal CONANP por programa.
 
 **Método:** Presupuesto del año actual dividido entre el promedio 2012 a 2018, limitado a 100. Este puntaje aplica uniformemente a todas las regiones porque el presupuesto federal es nacional.
 
@@ -889,7 +1067,7 @@ $$
 
 **Qué mide:** Porcentaje de derechos de acceso a áreas protegidas (cobro de derechos) cobrados por CONANP que son devueltos por la tesorería federal (SHCP) para reinversión.
 
-**Fuente de datos:** Registros NOSSA/CONANP de devolución de derechos (`CONANP_fees_returned_2007_2026`).
+**Fuente de datos:** Registros NOSSA/CONANP de devolución de derechos.
 
 **Método:** El porcentaje reportado de devolución se usa directamente como puntaje de estado actual (100 = devolución completa).
 
