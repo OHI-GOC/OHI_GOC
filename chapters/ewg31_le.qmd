@@ -493,23 +493,21 @@ le_score_plotly$cen2019
 :::
 
 ::: {.callout-note collapse="true"}
-### Regional and Gulf-wide trajectories for overall LE
+### Gulf-wide trajectories for overall LE
 
-**What it measures:** The same overall LE score shown at regional scale (charts above) and as a Gulf of California-wide average across all regions (charts below).
+**What it measures:** The overall LE score averaged across all OHI GoC Regions and years.
 
-**Data source:** INEGI Censos Economicos merged outputs; Gulf average computed as the mean of regional LE scores at each census year, excluding Region 2.
+**Data source:** INEGI Censos Economicos merged outputs; Gulf average computed as the mean of regional LE scores at each census year, excluding Region 2 due to data quality issues.
 
-**Method:** Regional scores follow the LE formula above. The Gulf-wide line averages the eight regions with reported LE scores (Region 2 excluded):
+**Method:** The Gulf-wide line averages the eight regions with reported LE scores (Region 2 excluded):
 
 $$
 \text{LE}^{\text{GOC}}_{t} = \frac{1}{8}\sum_{r \neq \text{Region\_2}} \text{LE}_{r,t}
 $$
 
-The regional charts compare OHI regions with reported scores. The Gulf-wide charts summarize the average trajectory across regions with sufficient data. For each view, the historical reference chart appears above the 2019 reference chart.
+The Gulf-wide charts summarize the average trajectory across regions with sufficient data. The historical reference chart appears above the 2019 reference chart.
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
-le_overall_rgn_plotly$hist
-le_overall_rgn_plotly$cen2019
 le_overall_goc_plotly$hist
 le_overall_goc_plotly$cen2019
 ```

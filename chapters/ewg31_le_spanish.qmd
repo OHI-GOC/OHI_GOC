@@ -492,23 +492,21 @@ le_score_plotly$cen2019
 :::
 
 ::: {.callout-note collapse="true"}
-### Trayectorias regionales y del Golfo para LE general
+### Trayectorias del Golfo para LE general
 
-**Qué mide:** El mismo puntaje general de LE mostrado a escala regional (gráficas arriba) y como promedio del Golfo de California entre todas las regiones (gráficas abajo).
+**Qué mide:** El puntaje general de LE, calculado como promedio de todas las regiones del OHI GoC y de todos los años.
 
-**Fuente de datos:** Salidas integradas de Censos Económicos INEGI; el promedio del Golfo se calcula como la media de los puntajes regionales de LE en cada año censal, excluyendo la Región 2.
+**Fuente de datos:** Resultados combinados de los Censos Económicos del INEGI; el promedio del Golfo se calculó como la media de los índices de nivel de vida (LE) regionales en cada año censal, excluyendo la Región 2 debido a problemas de calidad de los datos.
 
-**Método:** Los puntajes regionales siguen la fórmula de LE anterior. La línea del Golfo promedia las ocho regiones con puntajes reportados de LE (Región 2 excluida):
+**Método:** La línea del Golfo promedia las ocho regiones con puntajes reportados de LE (Región 2 excluida):
 
 $$
 \text{LE}^{\text{GOC}}_{t} = \frac{1}{8}\sum_{r \neq \text{Region\_2}} \text{LE}_{r,t}
 $$
 
-Las gráficas regionales comparan las regiones OHI con puntajes reportados. Las gráficas del Golfo resumen la trayectoria promedio entre regiones con datos suficientes. Para cada vista, la gráfica de referencia histórica aparece arriba de la gráfica de referencia 2019.
+Las gráficas del Golfo resumen la trayectoria promedio entre regiones con datos suficientes. Para cada vista, la gráfica de referencia histórica aparece arriba de la gráfica de referencia 2019.
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
-le_overall_rgn_plotly$hist
-le_overall_rgn_plotly$cen2019
 le_overall_goc_plotly$hist
 le_overall_goc_plotly$cen2019
 ```

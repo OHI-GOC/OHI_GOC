@@ -1,0 +1,93 @@
+---
+title: "EWG 3.1 Acronym Cheat Sheet"
+format:
+  docx:
+    toc: false
+    number-sections: false
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+# EWG 3.1 Acronym Cheat Sheet
+
+This cheat sheet lists acronyms and short labels used in the Tourism & Recreation (TR) and Livelihoods & Economies (LE) EWG 3.1 materials. Expansions are given in English, with the original Spanish name where that is the official form.
+
+**Related pages:** [Tourism & Recreation](https://ohi-goc.github.io/OHI_GOC/chapters/ewg31_tr.html) · [Livelihoods & Economies](https://ohi-goc.github.io/OHI_GOC/chapters/ewg31_le.html)
+
+## Project and goal terms
+
+| Acronym | Stands for | Notes |
+|---------|------------|-------|
+| **OHI** | Ocean Health Index | Global framework adapted for the Gulf of California |
+| **EWG** | Expert Working Group | Expert review meetings for OHI Gulf of California goals |
+| **GoC / GOC** | Gulf of California | Also written as Golfo de California |
+| **TR** | Tourism & Recreation | OHI goal measuring quantity, quality, and sustainability of coastal/marine visitor experiences |
+| **LE** | Livelihoods & Economies | OHI goal measuring marine-related jobs and revenue |
+| **LIV** | Livelihoods | LE subgoal: quantity and quality of marine-related jobs |
+| **ECO** | Economies | LE subgoal: revenue from marine-related sectors |
+
+## Mexican government agencies and data systems
+
+| Acronym | Stands for | Notes |
+|---------|------------|-------|
+| **SECTUR** | Secretaría de Turismo | Mexico's federal Ministry of Tourism |
+| **DataTur** | DataTur (SECTUR hotel monitoring system) | SECTUR portal/reports on hotel occupancy and tourist arrivals by tourist center |
+| **SESNSP** | Secretariado Ejecutivo del Sistema Nacional de Seguridad Pública | Executive Secretariat of the National Public Security System; source of municipal crime incidence statistics |
+| **INEGI** | Instituto Nacional de Estadística y Geografía | Mexico's national statistics and geography institute |
+| **DENUE** | Directorio Estadístico Nacional de Unidades Económicas | INEGI directory of economic units (businesses/establishments) |
+| **CE** | Censos Económicos | INEGI Economic Censuses (establishment-level employment, benefits, and revenue) |
+| **CONANP** | Comisión Nacional de Áreas Naturales Protegidas | National Commission of Natural Protected Areas |
+| **ANP** | Área(s) Natural(es) Protegida(s) | Natural Protected Area(s) managed by CONANP |
+| **SHCP** | Secretaría de Hacienda y Crédito Público | Mexico's Ministry of Finance; returns a share of protected-area entrance fees (*cobro de derechos*) to CONANP |
+| **IMSS** | Instituto Mexicano del Seguro Social | Mexican Social Security Institute (employer contributions captured in CE variable J300A) |
+| **ISSSTE** | Instituto de Seguridad y Servicios Sociales de los Trabajadores del Estado | Social security institute for public-sector workers (also covered under J300A-type contributions) |
+| **ENOE** | Encuesta Nacional de Ocupación y Empleo | National Survey of Occupation and Employment (considered but not used as the LE primary source) |
+| **ILMM** | Indicadores Laborales para los Municipios de México | Labor indicators for Mexican municipalities (considered but not used as the LE primary source) |
+
+## Certifications, beach programs, and civil society sources
+
+| Acronym / name | Stands for | Notes |
+|----------------|------------|-------|
+| **FEE** | Foundation for Environmental Education | International organization that administers the Blue Flag program |
+| **Blue Flag** | Blue Flag beach certification (Bandera Azul) | FEE eco-label for beaches meeting environmental management and quality criteria |
+| **Distintivo S** | Distintivo S (SECTUR sustainability distinction) | SECTUR sustainability certification for tourism establishments |
+| **Green Key** | Green Key | International eco-label for tourism establishments (used alongside Distintivo S and Green Globe) |
+| **Green Globe** | Green Globe | International sustainability certification for travel and tourism businesses |
+| **Playas Limpias** | Playas Limpias (federal clean beaches program) | Federal program for regularly managed public beaches; used when defining highly-visited beach shoreline |
+| **NOSSA** | Noroeste Sociedad Civil para la Sustentabilidad Ambiental | Civil society coalition that publishes the *Cuidar lo que importa* series on federal environmental / ANP budgets and fee returns |
+| **PPEF** | Proyecto de Presupuesto de Egresos de la Federación | Proposed Federal Expenditure Budget; NOSSA *Cuidar lo que importa* PPEF reports (e.g. PPEF 2025, PPEF 2026) are the source for TR CONANP budget figures and SHCP fee-return percentages (*cobro de derechos*) |
+
+## INEGI Economic Census (CE) variable codes
+
+These codes appear mainly in the LE materials (and in TR job-quality sustainability where CE tourism employment is used).
+
+| Code | Stands for / meaning | Notes |
+|------|----------------------|-------|
+| **J300A** | Employer contributions to social security | Mandatory employer payments to social security institutions (e.g. IMSS, ISSSTE) for paid workers |
+| **J400A** | Other social benefits | Voluntary/in-kind benefits beyond mandatory social security (e.g. private health, food, education, childcare) |
+| **H000A** | Total personnel employed | Total workers (paid and unpaid) under the economic unit's control |
+| **H010A** | Total paid personnel | Contractually paid workers only; noted for expert discussion, not used in current LE scores |
+| **H020A** | Unpaid workers | Owners, family members, and other unpaid workers; context only |
+| **M000A** | Revenue from goods and services | Operating revenue used for ECO scoring (excludes financial/extraordinary income) |
+| **A800A** | Total revenue including financial and extraordinary income | Broader revenue measure available in CE but not used in LE scoring |
+| **UE** | Unidades Económicas | Count of economic units (establishments); exploratory only |
+| **SBC** | Salario Base de Cotización | Base Contribution Salary used to calculate Mexican social security contributions |
+| **MXN** | Mexican peso | Currency; LE values are often shown in constant 2023 MXN |
+
+## CONANP federal budget program codes (TR investment)
+
+| Code | Program focus | Notes |
+|------|---------------|-------|
+| **v003** | ANP management | CONANP federal budget program for protected area management |
+| **s046** | Sustainable conservation | CONANP federal budget program for sustainable conservation |
+| **v005** | Protection and restoration | CONANP federal budget program for ecosystem protection and species-at-risk restoration |
+
+## Where each mainly appears
+
+| Acronym group | Mainly in |
+|---------------|-----------|
+| TR, Quantity/Quality/Sustainability, SECTUR, DataTur, SESNSP, DENUE, FEE, Blue Flag, Distintivo S, Green Key, Green Globe, CONANP, ANP, SHCP, NOSSA, PPEF, v003/s046/v005 | Tourism & Recreation (TR) |
+| LE, LIV, ECO, CE, ENOE, ILMM, IMSS, ISSSTE, SBC, MXN, J300A, J400A, H000A, H010A, H020A, M000A, A800A, UE | Livelihoods & Economies (LE) |
+| OHI, EWG, GoC/GOC, INEGI | Both |
