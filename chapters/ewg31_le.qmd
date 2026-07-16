@@ -45,10 +45,10 @@ Thank you for your continued engagement with this work. We look forward to discu
 
 - **Number of jobs**: Marine related jobs scaled to coastal population, compared to a reference point. Two reference options are shown for expert discussion:
   - **Option A (historical average):** mean jobs per coastal resident across census years 2003, 2008, and 2013 for each region
-  - **Option B (2019 census):** each region's 2019 Economic Census value (2018 in the adjusted census-year series)
+  - **Option B (2018 value):** each region's 2018 value
 - **Quality of jobs**: Employer social security contributions and other benefits per job (J300A + J400A from Censos Económicos), compared to the 90th quantile across regions and years (same in both scenarios)
 
-**ECO** tracks marine related revenue (M000A from Censos Económicos), compared to either Option A (2003–2013 historical average revenue) or Option B (2019 Economic Census revenue).
+**ECO** tracks marine related revenue (M000A from Censos Económicos), compared to either Option A (2003–2013 historical average revenue) or Option B (2018 revenue).
 
 Data come from INEGI Censos Económicos (2003, 2008, 2013, 2018, 2023) with coastal population adjustments for regions spanning both Gulf and Pacific coasts.
 
@@ -225,7 +225,7 @@ le_plotly_ref_pair <- function(df_hist, df_2019, y_var, base_title, plot_fn = le
     cen2019 = plot_fn(
       df_2019,
       y_var = y_var,
-      title = paste0(base_title, " (2019 Reference)"),
+      title = paste0(base_title, " (2018 Reference)"),
       y_range = y_range
     )
   )
@@ -342,14 +342,6 @@ le_score_plotly <- le_plotly_ref_pair(
   base_title = "CURRENT STATUS: Livelihoods & Economies"
 )
 
-le_overall_rgn_plotly <- le_plotly_ref_pair(
-  add_rgn_labels(le_hist$le),
-  add_rgn_labels(le_2019$le),
-  y_var = "le_current_status",
-  base_title = "Overall LE current status by region",
-  y_range = c(0, 110)
-)
-
 le_overall_goc_plotly <- le_plotly_ref_pair(
   le_hist$le_goc,
   le_2019$le_goc,
@@ -438,12 +430,12 @@ raw_jobs_plotly <- le_plotly_raw(
 ::: {.callout-important collapse="true"}
 ### Reference scenarios for expert discussion
 
-For **number of jobs** and **ECO revenue**, the charts below show two reference options in separate figures (historical reference above, 2019 reference below). **Job quality** uses the same Gulf-wide 90th-quantile reference in both scenarios.
+For **number of jobs** and **ECO revenue**, the charts below show two reference options in separate figures (historical reference above, 2018 reference below). **Job quality** uses the same Gulf-wide 90th-quantile reference in both scenarios. The Option B **2018 value** is the 2018 data collection year from the 2019 Economic Census release.
 
-| Component | Option A: 2003–2013 historical average | Option B: 2019 Economic Census |
-|-----------|----------------------------------------|--------------------------------|
-| Number of jobs | Mean jobs per coastal resident across 2003, 2008, and 2013 | Jobs per coastal resident in the 2019 census wave (2018 in adjusted series) |
-| ECO revenue | Mean marine revenue across 2003, 2008, and 2013 | Total marine revenue in the 2019 census wave (2018 in adjusted series) |
+| Component | Option A: 2003–2013 historical average | Option B: 2018 value |
+|-----------|----------------------------------------|----------------------|
+| Number of jobs | Mean jobs per coastal resident across 2003, 2008, and 2013 | Jobs per coastal resident in 2018 |
+| ECO revenue | Mean marine revenue across 2003, 2008, and 2013 | Total marine revenue in 2018 |
 | Quality of jobs | 90th quantile across all regions and years (both scenarios) | Same |
 
 The expert working group can compare how regional trajectories change under each reference and decide which baseline better reflects management expectations for stable or improving marine livelihoods and economies.
@@ -469,7 +461,7 @@ $$
 
 Scores above 100 are capped at 100 at the component level.
 
-**How to read the charts:** Each colored line is one OHI region across census years (not annual). The dashed line at 100 is the reference goal. Charts that depend on the jobs or revenue reference show **two separate figures** for each metric (historical reference above, 2019 reference below). Because data are available only at census intervals, lines connect five points; steep changes between points reflect multi-year shifts rather than year-to-year volatility.
+**How to read the charts:** Each colored line is one OHI region across census years (not annual). The dashed line at 100 is the reference goal. Charts that depend on the jobs or revenue reference show **two separate figures** for each metric (historical reference above, 2018 reference below). Because data are available only at census intervals, lines connect five points; steep changes between points reflect multi-year shifts rather than year-to-year volatility.
 
 ::: {.callout-note collapse="true"}
 ### Regional trajectories for overall LE
@@ -495,7 +487,7 @@ le_score_plotly$cen2019
 ::: {.callout-note collapse="true"}
 ### Gulf-wide trajectories for overall LE
 
-**What it measures:** The overall LE score averaged across all OHI GoC Regions and years.
+**What it measures:** The overall LE score averaged across all OHI GoC regions at each census year.
 
 **Data source:** INEGI Censos Economicos merged outputs; Gulf average computed as the mean of regional LE scores at each census year, excluding Region 2 due to data quality issues.
 
@@ -505,7 +497,7 @@ $$
 \text{LE}^{\text{GOC}}_{t} = \frac{1}{8}\sum_{r \neq \text{Region\_2}} \text{LE}_{r,t}
 $$
 
-The Gulf-wide charts summarize the average trajectory across regions with sufficient data. The historical reference chart appears above the 2019 reference chart.
+The Gulf-wide charts summarize the average trajectory across regions with sufficient data. The historical reference chart appears above the 2018 reference chart.
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 le_overall_goc_plotly$hist
@@ -521,7 +513,7 @@ The Livelihoods (LIV) subgoal integrates the **number of marine-related jobs** (
 
 **Data sources:** INEGI Censos Economicos employment and remuneration variables (H000A, J300A, J400A, etc.) for marine-related economic units; INEGI population interpolated to census years with coastal multipliers.
 
-**Data processing:** Jobs are summed across marine sectors, adjusted for coastal share, divided by interpolated coastal population, and compared to either the 2003–2013 per-capita average (Option A) or the 2019 Economic Census value (Option B). Job quality sums J300A and J400A per job (constant 2023 MXN) and compares to the Gulf-wide 90th quantile across all regions and census years (unchanged across scenarios).
+**Data processing:** Jobs are summed across marine sectors, adjusted for coastal share, divided by interpolated coastal population, and compared to either the 2003–2013 per-capita average (Option A) or the 2018 value (Option B). Job quality sums J300A and J400A per job (constant 2023 MXN) and compares to the Gulf-wide 90th quantile across all regions and census years (unchanged across scenarios).
 
 **Method:**
 
@@ -566,10 +558,10 @@ $$
 \text{Jobs}^{A}_{r,t} = \min\left(100,\ \frac{(J^{\text{marine}}_{r,t} / P^{\text{coastal}}_{r,t})}{\overline{J^{\text{marine}}/P^{\text{coastal}}}_{r,\,2003\text{-}2013}} \times 100\right)
 $$
 
-**Method (Option B, 2019 census):** Jobs per coastal population in year $t$ divided by the 2019 Economic Census value for that region (census year 2018 in the adjusted series), capped at 100.
+**Method (Option B, 2018 value):** Jobs per coastal population in year $t$ divided by the 2018 value for that region, capped at 100.
 
 $$
-\text{Jobs}^{B}_{r,t} = \min\left(100,\ \frac{(J^{\text{marine}}_{r,t} / P^{\text{coastal}}_{r,t})}{(J^{\text{marine}}/P^{\text{coastal}})_{r,2019}} \times 100\right)
+\text{Jobs}^{B}_{r,t} = \min\left(100,\ \frac{(J^{\text{marine}}_{r,t} / P^{\text{coastal}}_{r,t})}{(J^{\text{marine}}/P^{\text{coastal}})_{r,2018}} \times 100\right)
 $$
 
 ::: {.callout-note collapse="true"}
@@ -655,16 +647,16 @@ $$
 \text{ECO}^{A}_{r,t} = \min\left(100,\ \frac{M000A_{r,t}}{\overline{M000A}_{r,\,2003\text{-}2013}} \times 100\right)
 $$
 
-**Method (Option B, 2019 census):** Current revenue divided by the 2019 Economic Census revenue for that region (census year 2018), capped at 100.
+**Method (Option B, 2018 value):** Current revenue divided by the 2018 revenue for that region, capped at 100.
 
 $$
-\text{ECO}^{B}_{r,t} = \min\left(100,\ \frac{M000A_{r,t}}{M000A_{r,2019}} \times 100\right)
+\text{ECO}^{B}_{r,t} = \min\left(100,\ \frac{M000A_{r,t}}{M000A_{r,2018}} \times 100\right)
 $$
 
 ::: {.callout-tip collapse="true"}
 ### ECO result
 
-**What it measures:** Marine-related operating revenue relative to the regional reference (historical average or 2019 census, depending on figure).
+**What it measures:** Marine-related operating revenue relative to the regional reference (historical average or 2018 value, depending on figure).
 
 **Data source:** INEGI Censos Economicos M000A for marine-related sectors (fishing, mariculture, seafood processing/trade, port/dock construction, boat building, tidal energy, oil/gas maritime transport, cargo maritime transport, marine tourist transport, coastal recreation, travel planners, accommodations/food/drink, environmental research/consulting), adjusted to constant 2023 pesos.
 
@@ -688,7 +680,7 @@ eco_plotly$cen2019
 
 ## Gulf-wide marine sector trends {#le-sector-trends}
 
-These plots use the cleaned CE activity file from script 1, with the same coastal population adjustments applied in scripts 2 to 4. **Jobs** are coastal-adjusted H000A totals summed across all OHI regions. **Job quality** is (J300A + J400A) in constant 2023 MXN per job. **Revenue** is coastal-adjusted M000A in constant 2023 MXN. Lines are colored by marine sector.
+These plots use the cleaned CE activity file from script 1, with the same coastal population adjustments applied in scripts 2 to 4. **Jobs** are coastal-adjusted totals (formal and informal) summed across all OHI regions. **Job quality** is pesos of social benefits per job in constant 2023 MXN. **Revenue** is coastal-adjusted operating revenue in constant 2023 MXN. Lines are colored by marine sector.
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 sector_labels <- c(
@@ -708,6 +700,22 @@ sector_labels <- c(
 )
 
 sector_levels <- unname(sector_labels)
+
+sector_colors <- c(
+  "Fishing"                        = "#0091FF",
+  "Mariculture"                    = "#FF9E1B",
+  "Seafood processing & trade"     = "#00C781",
+  "Port & dock construction"       = "#B98B4E",
+  "Boat building"                  = "#FF4FA0",
+  "Tidal energy"                   = "#5FD4E3",
+  "Oil & gas maritime transport"   = "#E8590C",
+  "Cargo maritime transport"       = "#FFD500",
+  "Marine tourist transport"       = "#7C6FF0",
+  "Coastal recreation"             = "#9ED60B",
+  "Travel planners"                = "#C061E8",
+  "Accommodations & food/drink"    = "#FF2255",
+  "Environmental research"         = "#A8A8A8"
+)
 
 quiet_inflation_factor_2023 <- function(year) {
   result <- NA_real_
@@ -819,49 +827,75 @@ sector_goc <- ce_sector_coastal %>%
     quality_per_job = ifelse(total_jobs > 0, total_benefits / total_jobs, NA_real_)
   )
 
-sector_goc_long <- sector_goc %>%
-  pivot_longer(
-    c(total_jobs, quality_per_job, total_revenue),
-    names_to = "metric",
-    values_to = "value"
-  ) %>%
-  mutate(
-    metric = factor(
-      metric,
-      levels = c("total_jobs", "quality_per_job", "total_revenue"),
-      labels = c(
-        "Total jobs (coastal-adjusted H000A)",
-        "Job quality (J300A + J400A per job, 2023 MXN)",
-        "Total revenue (M000A, 2023 MXN)"
-      )
-    )
-  )
-
-gg_sector_theme <- function() {
-  theme_minimal() +
+gg_sector_theme <- function(show_legend = FALSE) {
+  theme_minimal(base_size = 13) +
     theme(
-      plot.title = element_text(face = "bold", size = 13),
-      strip.text = element_text(face = "bold", size = 9),
-      legend.position = "none"
+      plot.title = element_text(face = "bold", size = 16),
+      plot.subtitle = element_text(size = 11, color = "grey30"),
+      legend.position = if (show_legend) "right" else "none",
+      panel.grid.minor = element_blank()
     )
 }
 
-gg_sector_goc_three_metrics <- ggplot(
-  sector_goc_long,
-  aes(x = year, y = value, color = sector_label, group = sector_label)
-) +
-  geom_line(linewidth = 0.7) +
-  geom_point(size = 1.4) +
-  facet_wrap(~ metric, ncol = 1, scales = "free_y") +
-  scale_color_viridis_d(option = "turbo", name = "Sector") +
-  scale_x_continuous(breaks = census_years) +
-  labs(
-    title = "Gulf-wide marine sector trends by census year",
-    subtitle = "Totals aggregated across all OHI regions; coastal adjustments applied",
-    x = "Census year",
-    y = NULL
+add_sector_scales <- function(p) {
+  p +
+    scale_color_manual(
+      values = sector_colors,
+      name = "Sector",
+      breaks = sector_levels,
+      drop = FALSE
+    ) +
+    guides(
+      color = guide_legend(override.aes = list(linewidth = 1.6))
+    )
+}
+
+make_sector_panel <- function(df, y_var, title, y_lab) {
+  y_col <- rlang::sym(y_var)
+  p <- ggplot(
+    df,
+    aes(
+      x = year,
+      y = !!y_col,
+      color = sector_label,
+      group = sector_label
+    )
   ) +
-  gg_sector_theme()
+    geom_line(linewidth = 0.95, lineend = "round") +
+    geom_point(size = 2) +
+    scale_x_continuous(breaks = census_years) +
+    scale_y_continuous(labels = label_comma()) +
+    labs(
+      title = title,
+      subtitle = "Gulf-wide totals; coastal adjustments applied.",
+      x = "Census year",
+      y = y_lab
+    ) +
+    gg_sector_theme(show_legend = TRUE)
+
+  add_sector_scales(p)
+}
+
+gg_sector_jobs <- make_sector_panel(
+  sector_goc,
+  "total_jobs",
+  "Gulf-wide marine sector trends: Total jobs",
+  "Coastal-adjusted jobs (formal and informal)"
+)
+
+gg_sector_quality <- make_sector_panel(
+  sector_goc,
+  "quality_per_job",
+  "Gulf-wide marine sector trends: Job quality",
+  "contributed social benefits per job (2023 MXN)"
+)
+
+gg_sector_revenue <- make_sector_panel(
+  sector_goc,
+  "total_revenue",
+  "Gulf-wide marine sector trends: Total revenue",
+  "Coastal-adjusted revenue (2023 MXN)"
+)
 
 sector_legend_lines <- tibble(
   sector_label = factor(rep(sector_levels, each = 2), levels = sector_levels),
@@ -874,7 +908,12 @@ gg_sector_legend <- ggplot(
   aes(x = x, y = y, color = sector_label, group = sector_label)
 ) +
   geom_line(linewidth = 2, alpha = 0) +
-  scale_color_viridis_d(option = "turbo", name = "Sector", limits = sector_levels) +
+  scale_color_manual(
+    values = sector_colors,
+    name = "Sector",
+    breaks = sector_levels,
+    drop = FALSE
+  ) +
   guides(
     color = guide_legend(
       nrow = 4,
@@ -902,12 +941,15 @@ gg_sector_legend <- ggplot(
 
 ### Sector color key
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.height=1, fig.width=10, dpi=200, fig.bg='transparent'}
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.height=2, fig.width=10, dpi=200, fig.bg='transparent'}
 gg_sector_legend
 ```
 
-One figure with three panels: total jobs, benefits per job, and total revenue, each summed across all OHI regions. Use the sector color key above to read the lines in each panel.
+Three separate figures: total jobs, job quality (social benefits per job), and total revenue, each summed across all OHI regions. Use the sector color key above (or the legend beside each plot) to read the lines.
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.height=10, fig.width=10}
-gg_sector_goc_three_metrics
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.height=5, fig.width=10}
+gg_sector_jobs
+gg_sector_quality
+gg_sector_revenue
 ```
+
