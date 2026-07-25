@@ -1,0 +1,73 @@
+---
+title: "EWG 3.2: Agenda & Meeting Resources"
+format: html
+---
+
+## Expert Working Group 3.2
+
+**Thursday, August 13, 2026 | 9:00 AM to 1:00 PM (PST)**
+
+Welcome to EWG 3.2! During this meeting, we are presenting and discussing current results for the Gulf of California Ocean Health Index for the OHI goals Sense of Place (Sentido de Pertenencia), Access Opportunities, and Habitat Services. Our objectives are to clearly explain the goal model, flag regional scores that do not make sense, and review any major concerns you might have. Due to time constraints, we will try not to discuss the finer details or data layers associated with each model extensively.
+
+---
+
+::: {.callout-tip}
+# Key links
+
+| Resource | Link |
+|----------|------|
+| **Shared Notes** | [EWG 3.2 Shared Notes](https://docs.google.com/document/d/1rYZgT173UREE8NKX5vzmIbGkF7QgI9xe6yqEaWEVZ78/edit?tab=t.x02j1n7qhxzr#heading=h.tj7j1ljrf0t9) |
+| **Meeting Agenda** | [EWG 3.2 Agenda (August 13)](https://docs.google.com/spreadsheets/d/1Wl0pdtfkURQg7Nn3XhKv_wupiDN-YYDRz3hM-zJ7M7k/edit?gid=0#gid=0) |
+| **List of Acronyms** | [EWG Relevant Acronyms](https://docs.google.com/document/d/1_6KV3-w8HQ695N8L59X5y05kG4pHR5z2Vww2XdGI9mg/edit?tab=t.0) |
+| **OHI Introduction Info Sheet** | [OHI GoC: Introduction Info Sheet](https://docs.google.com/document/d/17Kiwk6Qelq_ph81plGCgIMDlZGAlS1b_0N9AvHZqE9Y/edit?tab=t.0) |
+:::
+
+---
+
+## August 13 meeting schedule
+
+Each goal receives a **20 minute presentation** followed by **40 minutes for discussion and questions**. We aim for a **10 minute break** between each goal.
+
+| Time | Agenda item |
+|------|-------------|
+| 9:00 to 9:25 AM | Getting started. Big picture overview of project, meeting objectives, and resources. |
+| 9:25 to 10:25 AM | **Goal Discussion: Sense of Place** (20 min presentation, 40 min discussion) |
+| 10:25 to 10:35 AM | Break |
+| 10:35 to 11:35 AM | **Goal Discussion: Access Opportunities** (20 min presentation, 40 min discussion) |
+| 11:35 to 11:45 AM | Break |
+| 11:45 AM to 12:45 PM | **Goal Discussion: Habitat Services** (20 min presentation, 40 min discussion) |
+| 12:45 to 1:00 PM | Wrap up and next steps |
+
+---
+
+## Overview of this summer's EWG meetings
+
+### EWG 3.1 (July 16, 2026)
+
+**Goals under review:** Tourism & Recreation, Food Provisioning, Livelihoods & Economies
+
+### EWG 3.2 (August 13, 2026)
+
+**Goals under review:** Sense of Place, Access Opportunities, Habitat Services
+
+**Sense of Place (SP / Sentido de Pertenencia)** measures how well we are sustainably caring for the marine and coastal places and species that provide heritage, shared memory, and identity for Gulf communities. The current model combines three equally weighted subgoals: Coastal Community Engagement (CCE), Lasting Special Places (LSP), and Iconic Species (ICO).
+
+**Access Opportunities (AO)** is the renaming of the former Artisanal Opportunities goal. It evaluates the conditions that allow members of coastal communities, including small-scale fishing communities and pueblos originarios, to access marine resources in ways that support thriving, sustainable, and equitable use over the long term.
+
+**Habitat Services (HS)** combines Coastal Protection and Carbon Storage into one goal, following expert recommendation. It captures the capacity of coastal habitats to protect shorelines from flooding and erosion and to sequester and store atmospheric carbon.
+
+### EWG 3.3 (September 10, 2026)
+
+**Goals under review (subject to change):** Biodiversity, Clean Waters, Natural Products, Safety & Security*
+
+* *Safety & Security* is technically not a goal but will act as a pressure on all goals, reflecting how safety concerns affect people's ability to benefit from ocean resources.
+
+---
+
+## Website resources for EWG 3.2 goals
+
+| Goal | Website page |
+|------|--------------|
+| Sense of Place | [View SP model and visualizations](ewg32_sp.html) |
+| Access Opportunities | [View AO page](ewg32_ao.html) |
+| Habitat Services | [View HS page](ewg32_hs.html) |

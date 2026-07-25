@@ -1,0 +1,1131 @@
+---
+title: ""
+format:
+  html:
+    toc: true
+---
+
+# ![](figs/sense-of-place.svg){width=8% height=8%} Sense of Place EWG 3.2 {#ewg32-sp}
+
+::: {.callout-important}
+## Early Look: Sense of Place (SP)
+
+We plan to review our current estimates of SP scores at the Expert Working Group meeting 3.2 on August 13, 2026. This document is intended to provide attendees with an overview of the goal model and its inputs, and an early look at its outputs, leading up to the meeting. If you read through this and have minor methodological concerns, please flag them and bring them to the meeting. If you have major methodological concerns, please share them ahead of time (email [smanos@nceas.ucsb.edu](mailto:smanos@nceas.ucsb.edu)). If you cannot make it to the meeting but would like to discuss, I am happy to meet 1:1 before or after.
+
+Please be advised that this document is intended for internal use only and informational purposes. It should not be interpreted as the final word or of peer-review quality.
+
+Thank you for your continued engagement with this work. We look forward to discussing these scores with you on August 13th!
+:::
+
+::: {.callout-tip collapse="true"}
+# <i class="fa-regular fa-star"></i> About the SP Goal
+
+The Sense of Place goal (in Spanish, **Sentido de Pertenencia**) measures how well we are sustainably caring for the marine and coastal places and species that provide heritage, shared memory, and identity for Gulf communities.
+
+The Ocean Health Index treats people as part of the ecosystem. Sense of Place focuses on cultural identity and belonging connected to the Gulf, not on tourism revenue (Tourism and Recreation; Livelihoods and Economies) and not on food tonnage (Food Provisioning).
+
+::: {.custom-box}
+
+{{< fa lightbulb >}} **CORE DEFINITION**
+
+- **_Focus:_** Sustainable care of places and species that sustain cultural identity and belonging
+- **_Not about:_** Tourism revenue, commercial catch volume, or generic biodiversity alone
+- **_Emphasis:_** Iconic species condition, lasting special places, and coastal community engagement
+
+:::
+
+## Goal model
+
+The overall Sense of Place score is the equal weight arithmetic mean of three subgoals:
+
+**SP = average(CCE, LSP, ICO)**
+
+$$
+SP_{r,t} = \frac{CCE_{r,t} + LSP_{r,t} + ICO_{r,t}}{3}
+$$
+
+where:
+
+- $SP_{r,t}$ is the Sense of Place score for region $r$ in year $t$
+- $CCE_{r,t}$ is the Coastal Community Engagement score (beach adoptions and non-natural cultural places)
+- $LSP_{r,t}$ is the Lasting Special Places score
+- $ICO_{r,t}$ is the Iconic Species score
+
+| Subgoal | What it measures |
+|---------|------------------|
+| **CCE** | Coastal Community Engagement: beach adoptions (Ama tu Playa beach adoption program) and non-natural cultural places scaled to coastal population |
+| **LSP** | Lasting Special Places: condition of EWG identified special places (protected areas, dive sites, fishing spots, archaeology, habitats, and other places) |
+| **ICO** | Iconic Species: mean risk status of culturally iconic species occurring in each region |
+
+Scores are calculated for each of the nine OHI Gulf of California regions. A score of 100 represents the reference point (ideal sustainable state). Where a subgoal has no value for a region year, the arithmetic mean uses the available subgoals (`na.rm = TRUE`).
+
+Equal weights for CCE, LSP, and ICO are the current working choice. See [Topics for discussion](#topics-for-discussion) for confirmation with the group.
+:::
+
+::: {.callout-note collapse="true"}
+## A note on English and Spanish naming
+
+You may have noticed that we use **Sense of Place** and **Sentido de Pertenencia** together, even though *pertenencia* typically translates as "belonging."
+
+Early in a Goalkeeper meeting, we found a regional difference in what "Sense of Place" and "Sense of Belonging" convey. Historically, the Global Ocean Health Index has used **Sense of Place** for maintaining and promoting local communities' identity and connection to the ocean. Based on feedback from the group, **Sense of Belonging** better reflected that same concept in Mexico.
+
+We considered renaming the goal to Sense of Belonging to match the regional definition, but decided against it. In U.S. literature, Sense of Belonging usually describes the connection of individuals to their community, not the community's connection to a place. Using that English goal name would risk losing the link to the ocean, which is what we want to evaluate.
+
+With that in mind, the Goalkeeper group decided:
+
+- In **English**, we still call it **Sense of Place**, to match the literature and English language understanding of the phrase.
+- In **Spanish**, we call it **Sentido de Pertenencia**, to reflect the connection between a community and its *lugar*.
+
+This naming choice was developed and supported by the Goalkeeper Group and was confirmed at the Expert Working Group meeting in January.
+:::
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(tidyverse)
+library(plotly)
+library(here)
+library(sf)
+library(mapview)
+
+# mapview + Quarto: avoid flatgeobuf path that can fail in some renders
+mapviewOptions(fgb = FALSE)
+
+rgn_labels <- c(
+  "Region_1" = "Western Upper Gulf",
+  "Region_2" = "Western Midriff Islands",
+  "Region_3" = "Western Central Gulf",
+  "Region_4" = "Western Southern Gulf",
+  "Region_5" = "Eastern Upper Gulf",
+  "Region_6" = "Eastern Midriff Islands",
+  "Region_7" = "Southern Sonora Coast",
+  "Region_8" = "Sinaloa Coast",
+  "Region_9" = "Southeastern Gulf"
+)
+
+rgn_colors <- c(
+  "Region_1" = "#C03729",
+  "Region_2" = "#E68C7C",
+  "Region_3" = "#FC8F24",
+  "Region_4" = "#dcaa38",
+  "Region_5" = "#cbd2a0",
+  "Region_6" = "#98a25a",
+  "Region_7" = "#747428",
+  "Region_8" = "#627391",
+  "Region_9" = "#8d61a9"
+)
+
+region_levels <- paste0("Region_", 1:9)
+rgn_label_colors <- setNames(unname(rgn_colors[region_levels]), unname(rgn_labels[region_levels]))
+
+add_rgn_labels <- function(df) {
+  df %>%
+    mutate(
+      rgn_id = factor(as.character(rgn_id), levels = region_levels),
+      rgn_label = factor(
+        rgn_labels[as.character(rgn_id)],
+        levels = unname(rgn_labels[region_levels])
+      )
+    )
+}
+
+sp_plotly_lines <- function(df, y_var, title, y_range = c(0, 105)) {
+  yr <- range(df$year, na.rm = TRUE)
+  plot_ly(
+    df,
+    x = ~year,
+    y = as.formula(paste0("~", y_var)),
+    color = ~rgn_label,
+    colors = rgn_label_colors,
+    type = "scatter",
+    mode = "lines+markers"
+  ) %>%
+    layout(
+      title = title,
+      xaxis = list(title = "Año and Year"),
+      yaxis = list(title = "Puntaje and Percent (out of 100)", range = y_range),
+      legend = list(title = list(text = "Region"))
+    ) %>%
+    add_lines(
+      x = yr,
+      y = c(100, 100),
+      line = list(color = "black", width = 2, dash = "dash"),
+      name = "Meta and Goal (100 out of 100)",
+      inherit = FALSE
+    )
+}
+
+sp_plotly_bars <- function(df, y_var, title, y_range = c(0, 105)) {
+  plot_ly(
+    df,
+    x = ~rgn_label,
+    y = as.formula(paste0("~", y_var)),
+    color = ~rgn_label,
+    colors = rgn_label_colors,
+    type = "bar",
+    showlegend = FALSE
+  ) %>%
+    layout(
+      title = title,
+      xaxis = list(title = "Region", tickangle = -35),
+      yaxis = list(title = "Puntaje and Percent (out of 100)", range = y_range),
+      shapes = list(list(
+        type = "line",
+        x0 = 0, x1 = 1, xref = "paper",
+        y0 = 100, y1 = 100,
+        line = list(color = "black", width = 2, dash = "dash")
+      ))
+    )
+}
+
+sp_plotly_goc <- function(df, y_var, title, y_range = c(0, 105)) {
+  yr <- range(df$year, na.rm = TRUE)
+  plot_ly(
+    df,
+    x = ~year,
+    y = as.formula(paste0("~", y_var)),
+    type = "scatter",
+    mode = "lines+markers",
+    name = "Gulf-wide average",
+    line = list(color = "#333333"),
+    marker = list(color = "#333333")
+  ) %>%
+    layout(
+      title = title,
+      xaxis = list(title = "Año and Year"),
+      yaxis = list(title = "Puntaje and Percent (out of 100)", range = y_range),
+      showlegend = FALSE
+    ) %>%
+    add_lines(
+      x = yr,
+      y = c(100, 100),
+      line = list(color = "black", width = 2, dash = "dash"),
+      name = "Meta and Goal (100 out of 100)",
+      inherit = FALSE
+    )
+}
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+sp_cs <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/sp", "sp_current_status.csv"),
+  show_col_types = FALSE
+) %>% add_rgn_labels()
+
+cce_cs <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/sp/cce/v2026/output", "cce_current_status.csv"),
+  show_col_types = FALSE
+) %>% add_rgn_labels()
+
+ama_cs <- read_csv(
+  here::here(
+    "/home/shares/ohi/OHI_GOC/goal_prep/sp/cce/v2026/output",
+    "current_status_ama_tu_playa_progress_072326.csv"
+  ),
+  show_col_types = FALSE
+) %>% add_rgn_labels()
+
+cult_cs <- read_csv(
+  here::here(
+    "/home/shares/ohi/OHI_GOC/goal_prep/sp/cce/v2026/output",
+    "cultural_places_employees_per_pop_current_status_75th_quantile_gapfill2025.csv"
+  ),
+  show_col_types = FALSE
+) %>%
+  rename(year = data_year, final_score = score) %>%
+  add_rgn_labels()
+
+lsp_cs <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/sp/lsp/v2025/output", "lsp_current_status.csv"),
+  show_col_types = FALSE
+) %>% add_rgn_labels()
+
+lsp_pa <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/sp/lsp/v2025/output", "rgn_protected_area_condition.csv"),
+  show_col_types = FALSE
+) %>%
+  mutate(rgn_id = str_replace_all(rgn_id, " ", "_"), category = "Special Protected Areas") %>%
+  add_rgn_labels()
+
+lsp_dive <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/sp/lsp/v2025/output", "rgn_dive_sites_condition.csv"),
+  show_col_types = FALSE
+) %>%
+  mutate(rgn_id = str_replace_all(rgn_id, " ", "_"), category = "Priority Dive Sites") %>%
+  add_rgn_labels()
+
+lsp_fish <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/sp/lsp/v2025/output", "rgn_fishing_sites_condition.csv"),
+  show_col_types = FALSE
+) %>%
+  mutate(rgn_id = str_replace_all(rgn_id, " ", "_"), category = "Iconic Fishing Spots") %>%
+  add_rgn_labels()
+
+lsp_arch <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/sp/lsp/v2025/output", "rgn_ewg_archaeological_sites_condition.csv"),
+  show_col_types = FALSE
+) %>%
+  mutate(rgn_id = str_replace_all(rgn_id, " ", "_"), category = "Archaeological Sites") %>%
+  add_rgn_labels()
+
+lsp_hab <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/sp/lsp/v2025/output", "rgn_special_habitats_condition.csv"),
+  show_col_types = FALSE
+) %>%
+  mutate(rgn_id = str_replace_all(rgn_id, " ", "_"), category = "Special Habitats") %>%
+  add_rgn_labels()
+
+lsp_other <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/sp/lsp/v2025/output", "rgn_final_other_protections_condition.csv"),
+  show_col_types = FALSE
+) %>%
+  mutate(rgn_id = str_replace_all(rgn_id, " ", "_"), category = "All other Special Places") %>%
+  add_rgn_labels()
+
+ico_cs <- read_csv(
+  here::here(
+    "/home/shares/ohi/OHI_GOC/goal_prep/sp/ico/output",
+    "ico_mean_risk_status_per_region_041326.csv"
+  ),
+  show_col_types = FALSE
+) %>% add_rgn_labels()
+
+sp_goc_df <- sp_cs %>%
+  group_by(year) %>%
+  summarize(
+    sp_goc_current_status = mean(current_status, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+lsp_list_markdown <- function(names_vec) {
+  names_vec <- names_vec %>%
+    as.character() %>%
+    str_squish() %>%
+    discard(~ is.na(.x) || .x == "") %>%
+    unique() %>%
+    sort()
+
+  if (length(names_vec) == 0) {
+    return("*(none in the current cleaned inventory)*\n")
+  }
+  paste0("- ", names_vec, collapse = "\n")
+}
+
+# cleaned feature-level inventories from LSP prep outputs on Mazu
+# (same folder as the regional condition tables already used above)
+lsp_output_dir <- "/home/shares/ohi/OHI_GOC/goal_prep/sp/lsp/v2025/output"
+
+lsp_pa_names <- read_csv(
+  here::here(lsp_output_dir, "protected_area_condition.csv"),
+  show_col_types = FALSE
+) %>%
+  mutate(
+    lsp_name = coalesce(
+      na_if(str_squish(wdpa_orig_name), ""),
+      na_if(str_squish(i_efectividad_name), ""),
+      str_squish(lasting_special_place_description)
+    ),
+    lsp_name = str_to_title(lsp_name),
+    lsp_name = str_replace_all(lsp_name, "\\*", ""),
+    lsp_name = str_remove_all(lsp_name, " - Ahw , Bw")
+  ) %>%
+  pull(lsp_name)
+
+lsp_dive_names <- read_csv(
+  here::here(lsp_output_dir, "dive_sites_condition.csv"),
+  show_col_types = FALSE
+) %>%
+  mutate(
+    nombre_sitio_de_buceo_wcoord = paste0(
+      nombre_sitio_de_buceo, " (", latitud, ", ", longitud, ")"
+    )
+  ) %>%
+  pull(nombre_sitio_de_buceo_wcoord)
+
+lsp_fish_names <- read_csv(
+  here::here(lsp_output_dir, "fishing_sites_condition.csv"),
+  show_col_types = FALSE
+) %>%
+  mutate(
+    rgn_id = str_replace_all(as.character(rgn_id), " ", "_"),
+    lasting_special_place_lsp = paste0(
+      lasting_special_place_lsp, " (", unname(rgn_labels[rgn_id]), ")"
+    )
+  ) %>%
+  pull(lasting_special_place_lsp)
+
+lsp_arch_names <- read_csv(
+  here::here(lsp_output_dir, "ewg_archaeological_sites_condition.csv"),
+  show_col_types = FALSE
+) %>%
+  mutate(
+    rgn_id = str_replace_all(as.character(rgn_id), " ", "_"),
+    lasting_special_place_lsp = case_when(
+      # Puerto Peñasco Archaeology and Paleoenvironment Project sites
+      # (RCB recommendation: large ancestral O'odham coastal cultural deposits / shell middens)
+      str_detect(lasting_special_place_lsp, "^Site\\s+\\d+") ~
+        paste0(
+          "Puerto Peñasco shell midden (ancestral O'odham coastal deposit): ",
+          str_replace(lasting_special_place_lsp, "^Site\\s+\\d+:\\s*", ""),
+          " (", unname(rgn_labels[rgn_id]), ")"
+        ),
+      TRUE ~
+        paste0(
+          lasting_special_place_lsp, " (", unname(rgn_labels[rgn_id]), ")"
+        )
+    )
+  ) %>%
+  pull(lasting_special_place_lsp)
+
+lsp_other_names <- read_csv(
+  here::here(lsp_output_dir, "final_other_protections_condition.csv"),
+  show_col_types = FALSE
+) %>%
+  pull(lsp_name)
+
+# habitat feature names in the prep file are repeated polygon IDs with long boilerplate text.
+# for the website list, show presence by habitat type and OHI region only (not feature counts or area).
+lsp_hab_summary <- tryCatch(
+  read_csv(
+    here::here(lsp_output_dir, "special_habitats_features_condition.csv"),
+    show_col_types = FALSE
+  ) %>%
+    mutate(
+      rgn_id = str_replace_all(as.character(rgn_id), " ", "_"),
+      rgn_label = unname(rgn_labels[rgn_id]),
+      habitat_type = str_squish(habitat_type)
+    ) %>%
+    distinct(habitat_type, rgn_id, rgn_label) %>%
+    arrange(habitat_type, rgn_id) %>%
+    mutate(list_label = paste0(habitat_type, " in ", rgn_label)),
+  error = function(e) tibble()
+)
+
+lsp_hab_names <- if (nrow(lsp_hab_summary) > 0) {
+  lsp_hab_summary$list_label
+} else {
+  character(0)
+}
+
+lsp_inventory_groups <- list(
+  list(
+    title = "Special Protected Areas",
+    note = "Cleaned protected-area features used in the LSP current status (preferring WDPA or SIMEC names when available).",
+    names = lsp_pa_names
+  ),
+  list(
+    title = "Priority Dive Sites",
+    note = "Cleaned dive-site names used in the LSP current status, with coordinates.",
+    names = lsp_dive_names
+  ),
+  list(
+    title = "Iconic Fishing Spots",
+    note = "Cleaned fishing-spot features used in the LSP current status, with OHI region labels.",
+    names = lsp_fish_names
+  ),
+  list(
+    title = "Archaeological Sites",
+    note = paste(
+      "Cleaned archaeological and coastal cultural features used in the LSP current status, with OHI region labels.",
+      "Sites labeled as Puerto Peñasco shell middens follow Rick Brusca's recommendation to include the large ancestral O'odham coastal cultural deposits near Puerto Peñasco",
+      "(among the largest Native American coastal cultural material deposits in Sonora, dating to at least about 6,000 bp).",
+      "Context:",
+      "[ResearchGate figure set](https://www.researchgate.net/publication/347080271_Prehistoric_Adaptation_Identity_and_Interaction_Along_the_Northern_Gulf_of_California/figures?lo=1),",
+      "[Puerto Peñasco Archaeology and Paleoenvironment Project](https://nextgensd.com/the-puerto-penasco-archaeology-and-paleoenvironment-project-ppapp-exploring-prehistoric-shell-middens/),",
+      "and [related University of Arizona Press material](https://open.uapress.arizona.edu/read/cfc81084-f110-4c08-8b30-d4292cd1dfef/section/385f1d01-0f21-45e7-b20a-2c46c14f8547#fig73)."
+    ),
+    names = lsp_arch_names
+  ),
+  list(
+    title = "All other Special Places",
+    note = "Cleaned marine locations of importance and other special places used in the LSP current status.",
+    names = lsp_other_names
+  ),
+  list(
+    title = "Special Habitats",
+    note = "Summarized by habitat type and OHI region (presence only, not individual polygon IDs, feature counts, or area). Regional habitat condition in the score is an unweighted mean across features. See the static chart below for a visual overview.",
+    names = lsp_hab_names
+  )
+)
+
+# ---------------------------------------------------------------------------
+# One website map example: special protected areas as full polygons
+# colored by condition (SIMEC i-efectividad / Ramsar rules).
+# Embedding many Leaflet maps (especially mangroves and other detailed
+# habitat polygons) previously crashed Quarto with a JavaScript out-of-memory
+# error, so we keep a single simplified protected-area map here.
+# ---------------------------------------------------------------------------
+
+lsp_pa_map_sf <- tryCatch(
+  {
+    pa_tbl <- read_csv(
+      here::here(lsp_output_dir, "protected_area_condition.csv"),
+      show_col_types = FALSE
+    ) %>%
+      mutate(
+        name_join = str_squish(wdpa_orig_name),
+        rgn_id = str_replace_all(as.character(rgn_id), " ", "_"),
+        overall_condition = suppressWarnings(as.numeric(overall_condition)),
+        i_efectividad_name = str_squish(i_efectividad_name),
+        protected_area_name = coalesce(
+          na_if(str_squish(wdpa_orig_name), ""),
+          na_if(str_squish(i_efectividad_name), ""),
+          str_squish(lasting_special_place_description)
+        )
+      ) %>%
+      filter(!is.na(name_join), name_join != "")
+
+    all_protected_map <- st_read(
+      here::here(
+        "/home/shares/ohi/OHI_GOC/spatial/protected _areas_wdpa_and_hem",
+        "all_goc_protected_areas_dissolved_2025.shp"
+      ),
+      quiet = TRUE
+    ) %>%
+      mutate(name_join = str_squish(name)) %>%
+      dplyr::select(name_join, geometry)
+
+    matched <- all_protected_map %>%
+      inner_join(
+        pa_tbl %>%
+          dplyr::select(
+            name_join, rgn_id, overall_condition,
+            protected_area_name, i_efectividad_name
+          ),
+        by = "name_join",
+        relationship = "many-to-many"
+      ) %>%
+      st_make_valid()
+
+    # simplify vertices so the Leaflet widget stays website-sized
+    st_simplify(matched, dTolerance = 0.002, preserveTopology = TRUE)
+  },
+  error = function(e) NULL
+)
+```
+
+# Overall Sense of Place scores
+
+The overall SP current status score for each region and year is the arithmetic mean of that region's CCE, LSP, and ICO scores.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+sp_plotly_lines(
+  sp_cs,
+  "current_status",
+  "CURRENT STATUS: Sense of Place (arithmetic mean of CCE, LSP, and ICO)"
+)
+```
+
+## Gulf-wide average SP current status
+
+The same overall SP score averaged across all nine OHI Gulf of California regions for each year:
+
+$$
+\text{SP}^{\text{GOC}}_{t} = \frac{1}{9}\sum_{r=1}^{9} SP_{r,t}
+$$
+
+where $SP_{r,t}$ is the regional Sense of Place score and the Gulf-wide line is their simple mean for year $t$. Compare this with the regional chart above to see whether Gulf-wide patterns are driven by a few regions or shared across the coast.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+sp_plotly_goc(
+  sp_goc_df,
+  "sp_goc_current_status",
+  "Overall SP current status for the Gulf of California"
+)
+```
+
+---
+
+# Coastal Community Engagement (CCE)
+
+CCE captures coastal community engagement with beaches and non-natural cultural places that help people connect to the Gulf.
+
+In the most recent Expert Working Group discussion, beach cleanups and adoption and the continued presence of non-natural cultural places were affirmed as appropriate CCE components. Indicators of support for coastal indigenous communities were also considered, but are **not** included in the current score. See [Acknowledgment: Pueblos originarios](#acknowledgment-pueblos-originarios) below.
+
+$$
+CCE_{r,t} = \mathrm{average}\big(Ama_{r,t},\; Cult_{r,t}\big)
+$$
+
+where:
+
+- $CCE_{r,t}$ is the Coastal Community Engagement score for region $r$ in year $t$
+- $Ama_{r,t}$ is the beach adoptions score (Ama tu Playa beach adoption program)
+- $Cult_{r,t}$ is the non-natural cultural places score
+
+Missing values are ignored in the average. For example, Region 2 has no Ama tu Playa inventory beaches, so its CCE is driven by the cultural places layer alone.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+sp_plotly_lines(
+  cce_cs,
+  "current_status",
+  "CURRENT STATUS: Coastal Community Engagement (CCE)"
+)
+```
+
+## Beach adoptions
+
+The **Ama tu Playa beach adoption program** is part of Mexico's *Estrategia Nacional de Limpieza y Conservación de Playas y Costas de México 2025-2030*, coordinated with SEMARNAT and partners. Organizations adopt a beach or coastal stretch and commit to keeping it clean through 2030, with the national goal of beaches free of plastic waste.
+
+**What we score:** percent of SEMARNAT program inventory beaches that are already adopted in each OHI region (not kilograms of trash collected). More trash collected can mean either dirtier beaches or stronger cleanup effort, so adoption share is closer to the program's own stewardship target.
+
+$$
+Ama_{r,2025} = 100 \times \frac{\text{adopted beaches}_{r}}{\text{total inventory beaches}_{r}}
+$$
+
+where:
+
+- $Ama_{r,2025}$ is the beach adoptions score for region $r$ in 2025
+- $\text{adopted beaches}_{r}$ is the number of inventory beaches in that region that are already adopted
+- $\text{total inventory beaches}_{r}$ is the number of inventory beaches in that region
+
+For 2019-2024, $Ama_{r,t} = 0$ because the campaign begins with the 2025-2030 strategy. Region 2 has **no beaches in the program inventory** after the spatial join to OHI regions and the inland 10 km buffer. That is **not** treated as a perfect score of 100 (absence from the inventory is not the same as plastic free). It is stored as `NA` with reason `"no beaches in program inventory"`.
+
+**Data sources**
+
+- SEMARNAT Ama tu Playa beach inventory and adoption status from the national beach cleanup and conservation strategy catalog; adoption percent by OHI region
+- Platform: [adoptaunaplaya.com](https://www.adoptaunaplaya.com/playas/)
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+sp_plotly_lines(
+  ama_cs %>% filter(!is.na(current_status) | rgn_id == "Region_2"),
+  "current_status",
+  "CURRENT STATUS: Beach adoptions (percent of inventory beaches adopted)"
+)
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+ama_2025 <- ama_cs %>% filter(year == 2025, !is.na(current_status))
+sp_plotly_bars(
+  ama_2025,
+  "current_status",
+  "CURRENT STATUS 2025: Beach adoptions by region"
+)
+```
+
+## Non-natural cultural places
+
+This CCE layer measures human-made cultural establishments near the Gulf coast that support community connection to place.
+
+::: {.callout-note collapse="true"}
+## Which cultural establishments are included?
+
+We start from INEGI DENUE sector 71 (*servicios de esparcimiento culturales y deportivos, y otros servicios recreativos*) and keep establishments that function as cultural economic units with a meaningful coastal connection, within the inland 10 km coastal buffer of the six Gulf of California states.
+
+**Examples of establishment types retained**
+
+- Theaters and other performing arts venues
+- Museums and cultural exhibition spaces
+- Historic sites and related heritage establishments
+- Botanical gardens and similar nature-culture venues
+- Public parks and recreation spaces with cultural connection
+- Marinas and related coastal recreation establishments that support place-based coastal use
+
+**Examples excluded**
+
+- Charreadas (for example establishments named LIENZO CHARRO)
+- Cockfighting venues (for example GALLERA)
+- Selected administrative businesses identified by name that do not represent community cultural engagement with the coast
+
+The intent is to count places where people gather around coastal culture, heritage, and recreation, not every establishment that happens to fall under the broad DENUE recreation sector.
+:::
+
+**How the layer was built**
+
+1. Start with INEGI DENUE sector 71 for 2019-2024.
+2. Restrict to the six GoC states and keep only establishments inside the inland 10 km coastal buffer.
+3. Curate to cultural economic units with a meaningful coastal connection (see dropdown above for what is included and excluded).
+4. Estimate employees from DENUE employment size classes, aggregate by region and year, and divide by coastal locality population within the same 10 km buffer.
+5. Convert the per capita rate to a 0 to 100 status using the **75th quantile** of employees per capita across all regions and years as the reference:
+
+$$
+Cult_{r,t} = \min\left(100,\; 100 \times \frac{\text{employees per coastal pop}_{r,t}}{Q_{0.75}(\text{employees per coastal pop})}\right)
+$$
+
+where:
+
+- $Cult_{r,t}$ is the non-natural cultural places score for region $r$ in year $t$
+- $\text{employees per coastal pop}_{r,t}$ is estimated cultural-establishment employees divided by coastal locality population in the inland 10 km buffer
+- $Q_{0.75}(\text{employees per coastal pop})$ is the 75th quantile of that rate across all regions and years
+- Scores above 100 are capped at 100
+
+**Yes, both the establishments and the population are coastal.** Establishments are restricted to the inland 10 km coastal buffer, and population is from localities intersecting that same buffer (not whole municipalities inland of the Gulf).
+
+**Temporary 2025 gapfill:** DENUE 2025 is not yet available. For the SP merge, 2025 is temporarily copied from 2024 until DENUE 2025 is released. The observed 2019-2024 series remains unchanged so this can be reversed later.
+
+**Data sources**
+
+- INEGI DENUE sector 71 cultural and recreation establishments within the inland 10 km coastal buffer; employees estimated from DENUE size classes, scaled to coastal locality population, referenced to the 75th quantile; 2025 temporarily copied from 2024 until DENUE 2025 is released
+
+### Why the 75th quantile (not the 90th)?
+
+Before converting to a current status score, the raw employees-per-coastal-resident rates already show that the **Western Midriff Islands (Region 2)** sit far above the other regions. Using a high reference like the 90th quantile would make that outlier dominate the benchmark and pull most other regions toward very low scores. The 75th quantile still rewards higher cultural employment density, but is less driven by Region 2 alone.
+
+The plot below shows the raw rate (not yet scaled to 0-100). Horizontal lines mark the pooled 75th and 90th quantiles across all region-year observations.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+cult_emp_refs <- cult_cs %>%
+  filter(!is.na(culture_emp_per_local_pop)) %>%
+  summarize(
+    q75 = quantile(culture_emp_per_local_pop, probs = 0.75, na.rm = TRUE),
+    q90 = quantile(culture_emp_per_local_pop, probs = 0.9, na.rm = TRUE),
+    ymax = max(culture_emp_per_local_pop, na.rm = TRUE)
+  )
+
+cult_emp_plotly <- plot_ly(
+  cult_cs %>% filter(!is.na(culture_emp_per_local_pop)),
+  x = ~year,
+  y = ~culture_emp_per_local_pop,
+  color = ~rgn_label,
+  colors = rgn_label_colors,
+  type = "scatter",
+  mode = "lines+markers"
+) %>%
+  layout(
+    title = "Non-natural cultural places: employees per coastal resident (raw rate)",
+    xaxis = list(title = "Año and Year"),
+    yaxis = list(
+      title = "Employees per coastal resident",
+      range = c(0, cult_emp_refs$ymax * 1.05)
+    ),
+    legend = list(title = list(text = "Region")),
+    shapes = list(
+      list(
+        type = "line",
+        x0 = 0, x1 = 1, xref = "paper",
+        y0 = cult_emp_refs$q75, y1 = cult_emp_refs$q75,
+        line = list(color = "#747428", width = 2, dash = "dash")
+      ),
+      list(
+        type = "line",
+        x0 = 0, x1 = 1, xref = "paper",
+        y0 = cult_emp_refs$q90, y1 = cult_emp_refs$q90,
+        line = list(color = "#C03729", width = 2, dash = "dot")
+      )
+    ),
+    annotations = list(
+      list(
+        x = 1, xref = "paper", xanchor = "left",
+        y = cult_emp_refs$q75, yanchor = "bottom",
+        text = "75th quantile",
+        showarrow = FALSE,
+        font = list(size = 11, color = "#747428")
+      ),
+      list(
+        x = 1, xref = "paper", xanchor = "left",
+        y = cult_emp_refs$q90, yanchor = "bottom",
+        text = "90th quantile",
+        showarrow = FALSE,
+        font = list(size = 11, color = "#C03729")
+      )
+    )
+  )
+
+cult_emp_plotly
+```
+
+The 75th quantile reference is still an open discussion item. See [Topics for discussion](#topics-for-discussion).
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+sp_plotly_lines(
+  cult_cs,
+  "final_score",
+  "CURRENT STATUS: Non-natural cultural places (employees per coastal pop, 75th quantile; 2025 gapfilled)"
+)
+```
+
+---
+
+# Acknowledgment: Pueblos originarios {#acknowledgment-pueblos-originarios}
+
+::: {.callout-important}
+## Why this section exists
+
+This section records a methodological and ethical decision: coastal indigenous communities are central to the Gulf of California, but we did **not** feel comfortable scoring their Sense of Place and connection to the ocean with indicators we designed without sustained partnership with community representatives.
+:::
+
+Pueblos originarios and other First Nations communities of the Gulf of California hold deep, living relationships with coastal and marine places. Those relationships are not a side note to Sense of Place. They are part of what Sense of Place means in this region.
+
+At the same time, indigenous peoples are not a single box. They are also coastal residents, fishers, knowledge holders, and neighbors within the same seascapes that the Index tries to describe. We do not want to isolate them from the Index, and we also do not want to impose an outside framework for assessing the condition of their connection to the ocean.
+
+## What we considered for CCE
+
+During goal development, we explored indicators of support for coastal indigenous communities, including ideas such as:
+
+1. **Recognition**, for example whether there are government documents that provide translations between coastal pueblo originario languages and español (as a possible signal of recognition).
+2. **Planes de justicia and Justice and Integral Development Plans** from INPI for coastal pueblos originarios, described by INPI as planning exercises carried out by Traditional Authorities through their own forms of government and decision making, with INPI support for regional diagnoses, proposals from community visions of well being and justice, and follow up on agreements with government agencies.
+3. **Indigenous development centers** that receive federal funding, compared with the population size of First Nations (INEGI), as a possible signal of institutional support.
+
+Dr. Ben Wilder also proposed framing support around two practical questions: (1) is the community recognized by the government, and (2) do they have funding support and centers?
+
+## Why these indicators are not in the current score
+
+After discussion, we decided **not** to include these indicators in the published CCE score for this assessment cycle.
+
+The reasons are about consent, nuance, and capacity, not about importance:
+
+- We did not have the time and resources to keep indigenous groups in continuous conversation throughout Index development in the way this topic requires.
+- We do not want to presuppose community condition, or publish a score that implies a community "should" want a particular form of recognition (for example language policy) when we have not heard that from their representatives.
+- There are important nuances. For example, the Tohono O'odham has decided internally that it does not want to be considered a pueblo originario. Any indicator built only on official categories would miss that kind of self determination.
+- We received pushback against counting the number of indigenous resource centers. That framing would treat government financial support for a community meeting and resource location as automatically "positive," but we do not know whether that is a good thing unless we speak with the pueblos originarios themselves. Expert Working Group discussion confirmed beach cleanups and continued presence of non-natural cultural places for CCE, while use of indigenous development centers remained in question.
+
+Because of this, language recognition, justice plans, and indigenous development centers were moved to **Tier 2**: ideas we want group input on, not indicators we are ready to score as if they represent community values.
+
+## What we are doing instead
+
+For this assessment:
+
+- The current CCE model focuses on **beach adoptions** (Ama tu Playa beach adoption program) and **non-natural cultural places** scaled to coastal population.
+- We are asking the funder to invite community representatives to the stakeholder meeting, as we will for other coastal communities such as fishers, and to learn from that conversation before designing any indigenous specific scoring approach.
+- We hope that future iterations of the Gulf of California Ocean Health Index can incorporate co developed indicators if communities choose to participate. The Index is meant to be reassessed over time, and methods should keep improving as relationships and capacity grow.
+
+## Invitation for EWG 3.2
+
+We welcome guidance from the Expert Working Group on:
+
+1. Whether a future Tier 2 track on community defined indicators of support and recognition is the right path.
+2. How to keep acknowledging pueblos originarios clearly on the website and in communications without extracting or scoring what we have not been invited to score.
+3. How stakeholder invitations can be respectful, practical, and community led.
+
+If you have contacts, cautions, or preferred language for this acknowledgment, please bring them to the meeting or share them ahead of time.
+
+---
+
+# Lasting Special Places (LSP)
+
+LSP measures how well we are protecting places that the Expert Working Group identified as lasting special places for ecological, cultural, recreational, spiritual, or aesthetic reasons.
+
+## How LSP was built
+
+1. **Experts identified special places.** The Expert Working Group identified lasting special places across the Gulf. We then grouped those places into types (special protected areas, priority dive sites, iconic fishing spots, archaeological sites, special habitats, and all other special places).
+
+2. **We overlaid protections.** We overlaid the coordinates of those special places with the potential protections that would keep them preserved, available, and well managed for future generations to continue to enjoy them (for example CONANP and Ramsar protected areas, ZRP, TURF, INAH regulation, and other legal protections).
+
+3. **Not all protections are equal.** Legal protections alone were generally given lower protection condition scores than more direct forms of management. Protected areas were scored using SIMEC i-efectividad (and Ramsar management plan presence where relevant). In other words, the score reflects how well a place is protected, not only whether a protection label exists on paper.
+
+$$
+LSP_{r} = \mathrm{average}\big(\text{condition of LSP categories present in region } r\big)
+$$
+
+where:
+
+- $LSP_{r}$ is the Lasting Special Places score for region $r$
+- Each category condition is the protection condition assigned to that category's special places in the region (protected areas, dive sites, fishing spots, archaeological sites, special habitats, and all other special places)
+- The region score is the unweighted arithmetic mean across the LSP categories that have features in that region
+
+**Assessment year:** 2025 snapshot (shown as bars because there is a single year)
+
+For preliminary scores by region and category, and an overview of the decision making used to obtain each score, see this Google Sheet: [LSP preliminary scores and decision overview](https://docs.google.com/spreadsheets/d/1RwNTzRZdBIDtzi7d1ceFxhNmVghN47NxTgrhZV8O2SM/edit?gid=1057003520#gid=1057003520).
+
+## Expert-identified lasting special places
+
+Below are the **cleaned** place lists used to calculate LSP current status (from the processed condition tables), grouped by type. These are preferred over the raw EWG inventory sheet, which still contains duplicates and superseded entries. Expand a dropdown to see the unique names in that group.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, results='asis'}
+for (group in lsp_inventory_groups) {
+  names_clean <- group$names %>%
+    as.character() %>%
+    str_squish() %>%
+    discard(~ is.na(.x) || .x == "") %>%
+    unique() %>%
+    sort()
+  n_places <- length(names_clean)
+
+  cat("\n\n")
+  cat("::: {.callout-note collapse=\"true\"}\n")
+  cat("## ", group$title, " (", n_places, ")\n\n", sep = "")
+  cat(group$note, "\n\n", sep = "")
+  cat(lsp_list_markdown(names_clean))
+  cat("\n:::\n")
+}
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.width=9, fig.height=5}
+# static presence overview of special habitats by region (avoids heavy interactive habitat polygons)
+if (nrow(lsp_hab_summary) > 0) {
+  lsp_hab_summary %>%
+    mutate(
+      rgn_label = factor(rgn_label, levels = unname(rgn_labels[region_levels])),
+      habitat_type = factor(habitat_type),
+      present = "Present"
+    ) %>%
+    ggplot(aes(x = habitat_type, y = rgn_label, fill = present)) +
+    geom_tile(color = "white", linewidth = 0.6) +
+    scale_fill_manual(values = c("Present" = "#747428")) +
+    labs(
+      title = "Special habitats scored in LSP: presence by OHI region",
+      x = NULL,
+      y = NULL,
+      fill = NULL
+    ) +
+    theme_minimal(base_size = 12) +
+    theme(
+      panel.grid = element_blank(),
+      legend.position = "none",
+      axis.text.x = element_text(angle = 25, hjust = 1)
+    )
+}
+```
+
+## Example map: special protected areas
+
+We include **one** interactive map as an example: the special protected areas used in LSP, shown as full polygons and colored by their protection condition. That condition is primarily SIMEC **i-efectividad**, with Ramsar management-plan rules applied where relevant (see the protected-area condition approach below).
+
+We do **not** host a separate full-polygon map for every LSP type on this page. Embedding several detailed Leaflet layers (especially large habitat footprints such as mangroves) previously exhausted the website build’s JavaScript memory. The cleaned name lists above remain the inventory reference for dive sites, fishing spots, archaeological sites, other special places, and habitats; spatial review of those layers is better done in the prep scripts or GIS, not as many heavy widgets here.
+
+::: {.callout-tip collapse="true"}
+## Map: Special Protected Areas (polygons by protection condition)
+
+Polygons are lightly simplified for the website. Click a polygon for the protected-area name and condition score.
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+if (!is.null(lsp_pa_map_sf) && nrow(lsp_pa_map_sf) > 0) {
+  mapview(
+    lsp_pa_map_sf,
+    zcol = "overall_condition",
+    layer.name = "Protected area condition",
+    legend = TRUE,
+    homebutton = FALSE,
+    alpha.regions = 0.55,
+    label = lsp_pa_map_sf$protected_area_name
+  )
+} else {
+  knitr::asis_output("*Protected-area map unavailable here (needs the dissolved GoC protected-area shapefile on Mazu at render time).*\n")
+}
+```
+:::
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+sp_plotly_bars(
+  lsp_cs,
+  "current_status",
+  "CURRENT STATUS 2025: Lasting Special Places (LSP) by region"
+)
+```
+
+## Condition approach by LSP category
+
+Below is a simplified version of how condition was assigned within each category. Within a category, we generally check for the strongest applicable protection first, then move to weaker or more general protections if needed.
+
+### Special Protected Areas
+
+These are CONANP and Ramsar areas that experts indicated are special for ecological reasons.
+
+1. Prefer SIMEC i-efectividad (48 indicators in 5 components) when available.
+2. For Ramsar sites, also account for management plan presence (RMPP):
+   - Plan exists: use the maximum i-efectividad value used for this comparison
+   - Plan in progress: score = 60
+   - No plan: use the minimum i-efectividad value used for this comparison
+
+### Priority Dive Sites
+
+These are dive spots identified in Arcos-Aguilar et al. 2021 and GCMP that would benefit most from protection.
+
+1. If the dive site falls in a CONANP and/or Ramsar protected area, use SIMEC and RMPP condition for that area.
+2. If it falls in both CONANP and Ramsar, take the maximum of the two condition scores.
+3. If it is outside protected areas, assign the minimum i-efectividad observed across dive sites that do have a protected-area score (currently 58). This is a proxy default for unprotected sites, not a claim that unprotected dive sites are 58% "managed." See [Topics for discussion](#topics-for-discussion).
+4. Note: NOM-012-TUR-2016 section 6.11 requires dive operators to brief clients on environmental protection.
+
+### Iconic Fishing Spots
+
+These are historically important fishing coordinates indicated by experts.
+
+1. If the site is in a zona de refugio pesquero (ZRP): score = 100.
+2. Else if the site is in a TURF: score = 100.
+3. Else use SIMEC and RMPP if the site overlaps a relevant protected area.
+4. In the current table logic, a no-take setting without the protections above is treated as 0.
+
+### Archaeological Sites
+
+These are places where remains make the surrounding natural area culturally and spiritually special.
+
+1. If regulated by INAH: score = 100.
+2. Else if overlapping SIMEC and RMPP protections apply: use those scores.
+3. Else if only "codified protection" applies: score = 30.
+4. Legal reference: *Ley Federal sobre Monumentos y Zonas Arqueológicos, Artísticos e Históricos (1972)*.
+
+### Special Habitats
+
+These include seagrasses, mangroves, coquina reefs, and coral reefs.
+
+1. Prefer SIMEC and RMPP when the habitat overlaps managed protected areas.
+2. Else use codified legal protections.
+3. Most legal protections currently score around 70 (for example coral, with stronger dedicated legal hooks).
+4. Coquina currently scores 30 as a legal-floor default when it is outside stronger site-based management, because there is no dedicated coquina habitat statute (only weaker, more indirect legal coverage). See [Topics for discussion](#topics-for-discussion).
+5. Relevant references include NOM-022-SEMARNAT-2003, Código Penal Art. 420bis, Ley General de Vida Silvestre, NOM-059, LGEEPA, LFRA, and CITES.
+
+### All other Special Places
+
+These are expert-identified places that did not fit cleanly into the categories above (often recreational, ecological, and aesthetic places).
+
+1. Prefer SIMEC and RMPP when available.
+2. Else use codified protections.
+3. These were reviewed individually and may still benefit from further expert feedback.
+
+The dive site unprotected default of 58 and the coquina legal-floor score of 30 are open discussion items. See [Topics for discussion](#topics-for-discussion).
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+lsp_cats <- bind_rows(
+  lsp_pa %>% dplyr::select(rgn_id, rgn_label, category, condition),
+  lsp_dive %>% dplyr::select(rgn_id, rgn_label, category, condition),
+  lsp_fish %>% dplyr::select(rgn_id, rgn_label, category, condition),
+  lsp_arch %>% dplyr::select(rgn_id, rgn_label, category, condition),
+  lsp_hab %>% dplyr::select(rgn_id, rgn_label, category, condition),
+  lsp_other %>% dplyr::select(rgn_id, rgn_label, category, condition)
+)
+
+lsp_cat_plotly <- plot_ly(
+  lsp_cats,
+  x = ~rgn_label,
+  y = ~condition,
+  color = ~category,
+  type = "bar"
+) %>%
+  layout(
+    barmode = "group",
+    title = "LSP category condition by region (single assessment year)",
+    xaxis = list(title = "Region", tickangle = -35),
+    yaxis = list(title = "Condition and Percent (out of 100)", range = c(0, 105)),
+    legend = list(title = list(text = "LSP category")),
+    shapes = list(list(
+      type = "line",
+      x0 = 0, x1 = 1, xref = "paper",
+      y0 = 100, y1 = 100,
+      line = list(color = "black", width = 2, dash = "dash")
+    ))
+  )
+
+lsp_cat_plotly
+```
+
+---
+
+# Iconic Species (ICO)
+
+ICO measures the condition of species that are culturally iconic for Gulf communities.
+
+## What experts were asked to do
+
+When building the iconic species list, experts were asked to review the **"Iconic Species List"** tab and consider three things:
+
+1. Are all "iconic species" in the Gulf of California listed?
+2. If not, please add the species name, common name, and reason for being iconic.
+3. Please write any notes about the species that can help rationalize its inclusion as an iconic species when the final report is written.
+
+**Reasons for being iconic**
+
+- Local ethnic or religious practices (could include traditional activities such as fishing, hunting, or commerce)
+- Existence value
+- Locally recognized aesthetic value (for example touristic attractions or common subjects for art such as whales)
+
+Habitat forming species and species harvested only for utilitarian commerce are outside this definition.
+
+## How ICO risk weights are assigned
+
+For each species $s$ in region $r$ and year $t$, assign one risk weight $w_{s,r,t}$ using this hierarchical decision:
+
+1. Prefer NOM-059 when the species is listed under a risk category.
+2. If NOM-059 treats the species as not listed (weight 1.0), then prefer IUCN when available.
+3. If IUCN is not available, use CITES.
+4. Special cases were reviewed when lists conflicted (especially Pacific vs Atlantic IUCN assessments, or when NOM-059 says not listed but IUCN or CITES indicate elevated risk for Gulf-relevant populations).
+
+Then:
+
+$$
+ICO_{r,t} = 100 \times \mathrm{mean}_{s \in r}\big(w_{s,r,t}\big)
+$$
+
+where:
+
+- $ICO_{r,t}$ is the Iconic Species score for region $r$ in year $t$
+- $w_{s,r,t}$ is the risk weight for species $s$ in that region and year (from NOM-059, IUCN, or CITES as above)
+- The mean is taken across iconic species occurring in the region, then multiplied by 100 so the score is on a 0 to 100 scale
+
+### NOM-059 weights
+
+| Category | Meaning | Weight |
+|----------|---------|--------|
+| Not listed | Species not listed under NOM-059 risk categories | 1.00 |
+| Pr | Special protection | 0.75 |
+| A | Threatened | 0.50 |
+| P | Endangered | 0.25 |
+| E | Probably extinct in the wild | 0.00 |
+
+### IUCN Red List weights
+
+| Category | Meaning | Weight |
+|----------|---------|--------|
+| LC (and former LR/lc) | Least Concern | 1.00 |
+| NT (and former LR/nt) | Near Threatened | 0.75 |
+| VU | Vulnerable | 0.50 |
+| EN | Endangered | 0.25 |
+| CR | Critically Endangered | 0.12 |
+| EX | Extinct | 0.00 |
+| DD | Data Deficient | Not assigned a weight in the current prep (treated as missing for weighting) |
+
+### CITES Appendix weights
+
+| Appendix | Meaning | Weight |
+|----------|---------|--------|
+| Not listed | Species not listed under a CITES Appendix | 1.00 |
+| III | Species protected in at least one country that has asked other CITES Parties for assistance in controlling trade | 0.75 |
+| II | Species not necessarily threatened with extinction now, but that may become so unless trade is closely controlled | 0.50 |
+| I | Species threatened with extinction; international trade is generally prohibited except in exceptional circumstances | 0.25 |
+
+Species occurrence points (presence and absence with coordinates from Dr. Hem Nalini Morzaria-Luna) were intersected with OHI marine regions and the inland 10 km buffer to assign regions. Risk status time series were assembled from NOM-059 (2010, 2019, 2021, 2025 draft), IUCN, and CITES.
+
+**Data source:** Expert Working Group iconic species list; species occurrence from Dr. Hem Nalini Morzaria-Luna; risk status from NOM-059-SEMARNAT, IUCN Red List, and CITES. Hierarchical decision as above; then mean risk weight across species in each region times 100.  
+**Years:** 2010-2025 (plot below focuses on the CCE overlapping window used in the SP merge, plus the full series for context)
+
+Version 2 iconic species list edits are done for now. If anyone feels strongly about big changes, please tell me (Sophia); feedback can be incorporated after EWG 3.2.
+
+Review materials:
+
+- [Iconic Species List](https://docs.google.com/spreadsheets/d/1D6VWMVoEhhkJf7aqx0DaqKFaP6XKi8OW1fAR9l_XfhA/edit?gid=1004292496#gid=1004292496)
+- [Special Cases within IUCN](https://docs.google.com/spreadsheets/d/1D6VWMVoEhhkJf7aqx0DaqKFaP6XKi8OW1fAR9l_XfhA/edit?gid=2131308524#gid=2131308524)
+- [Special Cases within CITES](https://docs.google.com/spreadsheets/d/1D6VWMVoEhhkJf7aqx0DaqKFaP6XKi8OW1fAR9l_XfhA/edit?gid=2124372570#gid=2124372570)
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+sp_plotly_lines(
+  ico_cs %>% filter(year >= 2019),
+  "current_status",
+  "CURRENT STATUS: Iconic Species (ICO), 2019-2025"
+)
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+sp_plotly_lines(
+  ico_cs,
+  "current_status",
+  "CURRENT STATUS: Iconic Species (ICO), full series 2010-2025"
+)
+```
+
+---
+
+# Topics for discussion {#topics-for-discussion}
+
+Please discuss these items with the group at EWG 3.2:
+
+1. **Equal weights for CCE, LSP, and ICO.** Confirm whether equal weights are the final intended policy choice, or whether any subgoal should be weighted differently.
+
+2. **75th quantile rationale for cultural employees.** Discuss whether the 75th quantile remains the preferred reference for cultural employees per coastal resident, given that the Western Midriff Islands (Region 2) have a much higher raw rate than other regions and would dominate a 90th quantile benchmark. Alternatives explored include the 80th quantile, 90th quantile, and a 2019 regional baseline.
+
+3. **Dive site unprotected default (58) and coquina legal floor (30).**
+
+   - **Dive sites outside protected areas** currently receive 58, which is the minimum SIMEC i-efectividad among dive sites that do fall in scored protected areas. In plain terms: if a priority dive site is not inside a managed protected area, we are temporarily assigning it the lowest protected-area effectiveness score observed among protected dive sites, rather than 0 or 100. NOM-012-TUR-2016 requires dive operators to brief clients on environmental protection, but that briefing requirement is not treated as equivalent to site management effectiveness. Please confirm whether 58 is still the intended unprotected default, or whether EWG 3.2 prefers a different rule (for example a lower legal-floor score, NA, or another fixed value).
+   - **Coquina reefs** currently receive a legal-floor condition of 30 when they lack stronger site-based management. That score reflects the judgment that coquina has no dedicated habitat statute and only weak or indirect legal coverage, in contrast with stronger floors used for habitats with clearer dedicated protections (for example mangroves and coral). Please confirm whether 30 is still the intended coquina floor, or whether it should be revised.
+
+4. **Iconic species list.** Version 2 list edits are done for now. If anyone feels strongly about big changes, please tell me (Sophia); feedback can be incorporated after EWG 3.2. Review:
+
+   - [Iconic Species List](https://docs.google.com/spreadsheets/d/1D6VWMVoEhhkJf7aqx0DaqKFaP6XKi8OW1fAR9l_XfhA/edit?gid=1004292496#gid=1004292496)
+   - [Special Cases within IUCN](https://docs.google.com/spreadsheets/d/1D6VWMVoEhhkJf7aqx0DaqKFaP6XKi8OW1fAR9l_XfhA/edit?gid=2131308524#gid=2131308524)
+   - [Special Cases within CITES](https://docs.google.com/spreadsheets/d/1D6VWMVoEhhkJf7aqx0DaqKFaP6XKi8OW1fAR9l_XfhA/edit?gid=2124372570#gid=2124372570)
+
+5. Discuss the questions raised within the [Acknowledgment: Pueblos originarios](#acknowledgment-pueblos-originarios) section.
+
+---
+
+# Related Goalkeeper page
+
+For earlier Goalkeeper process notes, see the [Sense of Place Goalkeeper page](https://ohi-goc.github.io/OHI_GOC/chapters/sp.html).

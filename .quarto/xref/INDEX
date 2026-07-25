@@ -211,5 +211,17 @@
   },
   "chapters/ewg31_acronyms_docx.qmd": {
     "ewg31_acronyms_docx.docx": "7e44b1a1"
+  },
+  "chapters/ewg32_sp.qmd": {
+    "ewg32_sp.html": "8e9a80f3"
+  },
+  "chapters/ewg32_hs.qmd": {
+    "ewg32_hs.html": "5e408da5"
+  },
+  "chapters/ewg32_ao.qmd": {
+    "ewg32_ao.html": "44781d15"
+  },
+  "chapters/ewg32_agenda.qmd": {
+    "ewg32_agenda.html": "c91b376f"
   }
 }

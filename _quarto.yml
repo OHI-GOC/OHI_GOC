@@ -26,7 +26,7 @@ website:
         text: "🏠 Home"
       - href: chapters/OHIregions.qmd
         text: "🌎️ Map of OHI Regions"
-      - section: "👥 EWG 3.1"
+      - section: "EWG 3.1"
         contents:
           - href: chapters/ewg31_agenda.qmd
             text: "Agenda & Meeting Resources"
@@ -36,16 +36,26 @@ website:
             text: "Food Provisioning"
           - href: chapters/ewg31_le.qmd
             text: "Livelihoods & Economies"
+      - section: "👥 EWG 3.2"
+        contents:
+          - href: chapters/ewg32_agenda.qmd
+            text: "Agenda & Meeting Resources"
+          - href: chapters/ewg32_sp.qmd
+            text: "Sense of Place"
+          - href: chapters/ewg32_ao.qmd
+            text: "Access Opportunities"
+          - href: chapters/ewg32_hs.qmd
+            text: "Habitat Services"
       - href: chapters/ewg2.qmd
         text: "EWG 2"
       - section: Goalkeeper Resources
         contents:
           - href: chapters/ao.qmd
-            text: Artisanal opportunities
+            text: Access opportunities
           - href: chapters/bd.qmd
             text: Biodiversity
           - href: chapters/cp_cs.qmd
-            text: Coastal protection & Carbon storage
+            text: Habitat services (CP & CS)
           - href: chapters/cw.qmd
             text: Clean waters
           - href: chapters/fp.qmd

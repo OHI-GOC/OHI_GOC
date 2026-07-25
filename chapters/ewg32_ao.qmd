@@ -1,0 +1,17 @@
+---
+title: "EWG 3.2: Access Opportunities"
+format: html
+---
+
+# ![](figs/artisanal-fishing-opportunities.svg){width=8% height=8%} Access Opportunities (AO)
+
+## Executive summary
+
+The Access Opportunities (AO) goal executive summary is available for expert review in the document below. These materials summarize the goal model, key decisions, and early results for discussion with the EWG 3.2 expert working group.
+
+**Note on naming:** Access Opportunities is the renaming of the former Artisanal Opportunities goal. Both use the acronym **AO**.
+
+- **English:** [AO Executive Summary](https://docs.google.com/document/d/1RyoGspGrQRQ4deif7Ybm3k3e39EG2X9dBnpket8ITtk/edit?usp=drive_link)
+- **Slides:** forthcoming
+
+For additional background on the AO goal, see the [Access Opportunities Goalkeeper page](https://ohi-goc.github.io/OHI_GOC/chapters/ao.html).
