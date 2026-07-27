@@ -1,13 +1,19 @@
 ---
-title: "EWG 3.2: Agenda & Meeting Resources"
+title: ""
 format: html
 ---
 
-## Expert Working Group 3.2
+# Expert Working Group 3.2: Agenda & Meeting Resources
+
+<div class="button-container">
+  <a href="ewg32_agenda_spanish.html" class="custom-button">
+    <i class="fa fa-globe"></i> en español
+  </a>
+</div>
 
 **Thursday, August 13, 2026 | 9:00 AM to 1:00 PM (PST)**
 
-Welcome to EWG 3.2! During this meeting, we are presenting and discussing current results for the Gulf of California Ocean Health Index for the OHI goals Sense of Place (Sentido de Pertenencia), Access Opportunities, and Habitat Services. Our objectives are to clearly explain the goal model, flag regional scores that do not make sense, and review any major concerns you might have. Due to time constraints, we will try not to discuss the finer details or data layers associated with each model extensively.
+Welcome to EWG 3.2! During this meeting, we are presenting and discussing current results for the Gulf of California Ocean Health Index for the OHI goals **Sense of Place (Sentido de Pertenencia)**, **Access Opportunities**, and **Habitat Services**. Our objectives are to clearly explain the goal model, flag regional scores that do not make sense, and review any major concerns you might have. Due to time constraints, we will try not to discuss the finer details or data layers associated with each model extensively.
 
 ---
 
@@ -42,9 +48,9 @@ Each goal receives a **20 minute presentation** followed by **40 minutes for dis
 
 ## Overview of this summer's EWG meetings
 
-### EWG 3.1 (July 16, 2026)
+### EWG 3.1 (July 16, 2026) - *completed*
 
-**Goals under review:** Tourism & Recreation, Food Provisioning, Livelihoods & Economies
+**Goals that were reviewed:** Tourism & Recreation, Food Provisioning, Livelihoods & Economies
 
 ### EWG 3.2 (August 13, 2026)
 

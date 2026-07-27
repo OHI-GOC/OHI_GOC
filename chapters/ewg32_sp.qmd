@@ -5,7 +5,13 @@ format:
     toc: true
 ---
 
-# ![](figs/sense-of-place.svg){width=8% height=8%} Sense of Place EWG 3.2 {#ewg32-sp}
+# ![](figs/sense-of-place.svg){width=8% height=8%} DRAFT: Sense of Place EWG 3.2 {#ewg32-sp}
+
+<div class="button-container">
+  <a href="ewg32_sp_spanish.html" class="custom-button">
+    <i class="fas fa-globe"></i> en español
+  </a>
+</div>
 
 ::: {.callout-important}
 ## Early Look: Sense of Place (SP)
@@ -757,16 +763,14 @@ Dr. Ben Wilder also proposed framing support around two practical questions: (1)
 
 ## Why these indicators are not in the current score
 
-After discussion, we decided **not** to include these indicators in the published CCE score for this assessment cycle.
-
-The reasons are about consent, nuance, and capacity, not about importance:
+After discussion, we decided **not** to include these indicators in the published CCE score for this assessment cycle, because:
 
 - We did not have the time and resources to keep indigenous groups in continuous conversation throughout Index development in the way this topic requires.
 - We do not want to presuppose community condition, or publish a score that implies a community "should" want a particular form of recognition (for example language policy) when we have not heard that from their representatives.
-- There are important nuances. For example, the Tohono O'odham has decided internally that it does not want to be considered a pueblo originario. Any indicator built only on official categories would miss that kind of self determination.
+- There are important nuances. For example, the Tohono O'odham communicated to one of the experts in our working group, as part of a separate project, that it does not want to be considered a pueblo originario. Any indicator built only on official categories would miss that kind of self determination.
 - We received pushback against counting the number of indigenous resource centers. That framing would treat government financial support for a community meeting and resource location as automatically "positive," but we do not know whether that is a good thing unless we speak with the pueblos originarios themselves. Expert Working Group discussion confirmed beach cleanups and continued presence of non-natural cultural places for CCE, while use of indigenous development centers remained in question.
 
-Because of this, language recognition, justice plans, and indigenous development centers were moved to **Tier 2**: ideas we want group input on, not indicators we are ready to score as if they represent community values.
+Because of this, the language recognition, justice plans, and indigenous development center components were moved to **Tier 3**: ideas that would ideally be incorporated in the next time the assessment is run, but currently are not indicators we are ready to score as if they represent community values.
 
 ## What we are doing instead
 
@@ -780,11 +784,10 @@ For this assessment:
 
 We welcome guidance from the Expert Working Group on:
 
-1. Whether a future Tier 2 track on community defined indicators of support and recognition is the right path.
-2. How to keep acknowledging pueblos originarios clearly on the website and in communications without extracting or scoring what we have not been invited to score.
-3. How stakeholder invitations can be respectful, practical, and community led.
+1. How to keep acknowledging pueblos originarios clearly on the website and in communications without extracting or scoring what we have not been invited to score.
+2. How stakeholder invitations can be respectful, practical, and community led.
 
-If you have contacts, cautions, or preferred language for this acknowledgment, please bring them to the meeting or share them ahead of time.
+If you have contacts, cautions, or preferred language for this acknowledgment, please email me.
 
 ---
 
@@ -816,7 +819,9 @@ For preliminary scores by region and category, and an overview of the decision m
 
 ## Expert-identified lasting special places
 
-Below are the **cleaned** place lists used to calculate LSP current status (from the processed condition tables), grouped by type. These are preferred over the raw EWG inventory sheet, which still contains duplicates and superseded entries. Expand a dropdown to see the unique names in that group.
+Below are the *cleaned* place lists used to calculate LSP current status (from the processed condition tables), grouped by type. These are preferred over the raw EWG inventory sheet, which still contains duplicates and superseded entries. Expand a dropdown to see the unique names in that group.
+
+(NOTE: draft in progress, will be updated.)
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, results='asis'}
 for (group in lsp_inventory_groups) {
@@ -868,7 +873,7 @@ if (nrow(lsp_hab_summary) > 0) {
 
 We include **one** interactive map as an example: the special protected areas used in LSP, shown as full polygons and colored by their protection condition. That condition is primarily SIMEC **i-efectividad**, with Ramsar management-plan rules applied where relevant (see the protected-area condition approach below).
 
-We do **not** host a separate full-polygon map for every LSP type on this page. Embedding several detailed Leaflet layers (especially large habitat footprints such as mangroves) previously exhausted the website build’s JavaScript memory. The cleaned name lists above remain the inventory reference for dive sites, fishing spots, archaeological sites, other special places, and habitats; spatial review of those layers is better done in the prep scripts or GIS, not as many heavy widgets here.
+We are not hosting a separate full-polygon map for every LSP type on this page, at least not as of now. Embedding several detailed Leaflet layers (especially large habitat footprints such as mangroves) exhausted the website build’s JavaScript memory.  For now, you can refer to the lists above that detail the dive sites, fishing spots, archaeological sites, other special places, and habitats; spatial review of those layers is better done in the prep scripts.  If you are interested, we are happy to meet 1:1 and walk through this.  
 
 ::: {.callout-tip collapse="true"}
 ## Map: Special Protected Areas (polygons by protection condition)
@@ -890,7 +895,7 @@ if (!is.null(lsp_pa_map_sf) && nrow(lsp_pa_map_sf) > 0) {
     label = lsp_pa_map_sf$protected_area_name
   )
 } else {
-  knitr::asis_output("*Protected-area map unavailable here (needs the dissolved GoC protected-area shapefile on Mazu at render time).*\n")
+  knitr::asis_output("*IN PROGRESS! (needs the dissolved GoC protected-area shapefile on Mazu at render time).*\n")
 }
 ```
 :::
@@ -1011,6 +1016,8 @@ When building the iconic species list, experts were asked to review the **"Iconi
 1. Are all "iconic species" in the Gulf of California listed?
 2. If not, please add the species name, common name, and reason for being iconic.
 3. Please write any notes about the species that can help rationalize its inclusion as an iconic species when the final report is written.
+
+This was then reviewed and edited by the Expert Working Group in our Meeting #2 in January, 2026, and confirmed by those experts asynchronously in April 2026.
 
 **Reasons for being iconic**
 

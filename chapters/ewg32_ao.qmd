@@ -3,7 +3,13 @@ title: "EWG 3.2: Access Opportunities"
 format: html
 ---
 
-# ![](figs/artisanal-fishing-opportunities.svg){width=8% height=8%} Access Opportunities (AO)
+<div class="button-container">
+  <a href="ewg32_ao_spanish.html" class="custom-button">
+    <i class="fas fa-globe"></i> en español
+  </a>
+</div>
+
+# ![](figs/artisanal-fishing-opportunities.svg){width=8% height=8%}  DRAFT: Access Opportunities (AO)
 
 ## Executive summary
 

@@ -1,0 +1,79 @@
+---
+title: ""
+format: html
+---
+
+# Grupo de Trabajo de Expertos 3.2: Agenda y Recursos de la Reunión
+
+<div class="button-container">
+  <a href="ewg32_agenda.html" class="custom-button">
+    <i class="fas fa-globe"></i> in English
+  </a>
+</div>
+
+**Jueves, 13 de agosto de 2026 | 9:00 AM a 1:00 PM (PST)**
+
+¡Bienvenidos al EWG 3.2! Durante esta reunión, presentaremos y discutiremos los resultados actuales del Índice de Salud Oceánica del Golfo de California para las metas de OHI **Sentido de Pertenencia (Sense of Place)**, **Oportunidades de Acceso** y **Servicios de Hábitat**. Nuestros objetivos son explicar claramente el modelo de cada meta, señalar puntuaciones regionales que no tengan sentido y revisar cualquier inquietud importante que puedan tener. Debido a las limitaciones de tiempo, trataremos de no profundizar demasiado en los detalles finos o las capas de datos asociadas con cada modelo.
+
+---
+
+::: {.callout-tip}
+# Enlaces clave
+
+| Recurso | Enlace |
+|----------|------|
+| **Notas compartidas** | [Notas compartidas del EWG 3.2](https://docs.google.com/document/d/1rYZgT173UREE8NKX5vzmIbGkF7QgI9xe6yqEaWEVZ78/edit?tab=t.x02j1n7qhxzr#heading=h.tj7j1ljrf0t9) |
+| **Agenda de la reunión** | [Agenda del EWG 3.2 (13 de agosto)](https://docs.google.com/spreadsheets/d/1Wl0pdtfkURQg7Nn3XhKv_wupiDN-YYDRz3hM-zJ7M7k/edit?gid=0#gid=0) |
+| **Lista de acrónimos** | [Acrónimos relevantes del EWG](https://docs.google.com/document/d/1_6KV3-w8HQ695N8L59X5y05kG4pHR5z2Vww2XdGI9mg/edit?tab=t.0) |
+| **Hoja informativa de introducción a OHI** | [OHI GoC: Hoja informativa de introducción](https://docs.google.com/document/d/17Kiwk6Qelq_ph81plGCgIMDlZGAlS1b_0N9AvHZqE9Y/edit?tab=t.0) |
+:::
+
+---
+
+## Horario de la reunión del 13 de agosto
+
+Cada meta recibe una **presentación de 20 minutos** seguida de **40 minutos de discusión y preguntas**. Buscamos tener un **descanso de 10 minutos** entre cada meta.
+
+| Hora | Punto de la agenda |
+|------|-------------|
+| 9:00 a 9:25 AM | Inicio. Panorama general del proyecto, objetivos de la reunión y recursos. |
+| 9:25 a 10:25 AM | **Discusión de meta: Sentido de Pertenencia** (20 min presentación, 40 min discusión) |
+| 10:25 a 10:35 AM | Descanso |
+| 10:35 a 11:35 AM | **Discusión de meta: Oportunidades de Acceso** (20 min presentación, 40 min discusión) |
+| 11:35 a 11:45 AM | Descanso |
+| 11:45 AM a 12:45 PM | **Discusión de meta: Servicios de Hábitat** (20 min presentación, 40 min discusión) |
+| 12:45 a 1:00 PM | Cierre y próximos pasos |
+
+---
+
+## Panorama general de las reuniones del EWG de este verano
+
+### EWG 3.1 (16 de julio de 2026) - *completado*
+
+**Metas que se revisaron:** Turismo y Recreación, Provisión de Alimentos, Medios de Vida y Economías
+
+### EWG 3.2 (13 de agosto de 2026)
+
+**Metas en revisión:** Sentido de Pertenencia, Oportunidades de Acceso, Servicios de Hábitat
+
+**Sentido de Pertenencia (SP / Sense of Place)** mide qué tan bien estamos cuidando de manera sostenible los lugares y especies marinos y costeros que aportan herencia, memoria compartida e identidad a las comunidades del Golfo. El modelo actual combina tres submetas con pesos iguales: Participación Comunitaria Costera (CCE), Lugares Especiales Duraderos (LSP) y Especies Icónicas (ICO).
+
+**Oportunidades de Acceso (AO)** es el nuevo nombre de la antigua meta Oportunidades Artesanales. Evalúa las condiciones que permiten a miembros de comunidades costeras, incluyendo comunidades de pesca de pequeña escala y pueblos originarios, acceder a los recursos marinos de maneras que apoyen un uso próspero, sostenible y equitativo a largo plazo.
+
+**Servicios de Hábitat (HS)** combina Protección Costera y Almacenamiento de Carbono en una sola meta, siguiendo la recomendación de expertas y expertos. Captura la capacidad de los hábitats costeros para proteger las costas de inundaciones y erosión y para secuestrar y almacenar carbono atmosférico.
+
+### EWG 3.3 (10 de septiembre de 2026)
+
+**Metas en revisión (sujetas a cambios):** Biodiversidad, Aguas Limpias, Productos Naturales, Seguridad y Percepción de seguridad*
+
+* *Seguridad y Percepción de seguridad* técnicamente no es una meta, pero funcionará como una presión sobre todas las metas, reflejando cómo las preocupaciones de seguridad afectan la capacidad de las personas para beneficiarse de los recursos oceánicos.
+
+---
+
+## Recursos del sitio web para las metas del EWG 3.2
+
+| Meta | Página del sitio web |
+|------|--------------|
+| Sentido de Pertenencia | [Ver modelo y visualizaciones de SP](ewg32_sp_spanish.html) |
+| Oportunidades de Acceso | [Ver página de AO](ewg32_ao_spanish.html) |
+| Servicios de Hábitat | [Ver página de HS](ewg32_hs_spanish.html) |

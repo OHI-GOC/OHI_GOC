@@ -1,0 +1,1134 @@
+---
+title: ""
+format:
+  html:
+    toc: true
+---
+
+# ![](figs/sense-of-place.svg){width=8% height=8%} BORRADOR: Sentido de Pertenencia EWG 3.2 {#ewg32-sp-es}
+
+<div class="button-container">
+  <a href="ewg32_sp.html" class="custom-button">
+    <i class="fas fa-globe"></i> in English
+  </a>
+</div>
+
+::: {.callout-important}
+## Vista previa: Sentido de Pertenencia (SP)
+
+Planeamos revisar nuestras estimaciones actuales de los puntajes de SP en la reunión del Grupo de Trabajo de Expertos 3.2 el 13 de agosto de 2026. Este documento tiene como objetivo ofrecer a los asistentes una visión general del modelo de la meta y sus insumos, y una vista previa de sus resultados, como preparación para la reunión. Si lo lee y tiene inquietudes metodológicas menores, señálelas y tráigalas a la reunión. Si tiene inquietudes metodológicas mayores, compártalas con anticipación (correo [smanos@nceas.ucsb.edu](mailto:smanos@nceas.ucsb.edu)). Si no puede asistir a la reunión pero le gustaría conversar, con gusto podemos reunirnos uno a uno antes o después.
+
+Le informamos que este documento está destinado únicamente a uso interno y con fines informativos. No debe interpretarse como la palabra final ni como material de calidad de revisión por pares.
+
+Gracias por su continuo compromiso con este trabajo. ¡Esperamos conversar sobre estos puntajes con ustedes el 13 de agosto!
+:::
+
+::: {.callout-tip collapse="true"}
+# <i class="fa-regular fa-star"></i> Sobre la meta SP
+
+La meta Sentido de Pertenencia (en inglés, **Sense of Place**) mide qué tan bien estamos cuidando de manera sostenible los lugares y especies marinos y costeros que aportan herencia, memoria compartida e identidad a las comunidades del Golfo.
+
+El Índice de Salud Oceánica trata a las personas como parte del ecosistema. Sentido de Pertenencia se centra en la identidad cultural y la pertenencia vinculadas al Golfo, no en los ingresos del turismo (Turismo y Recreación; Medios de Vida y Economías) ni en el tonelaje de alimentos (Provisión de Alimentos).
+
+::: {.custom-box}
+
+{{< fa lightbulb >}} **DEFINICIÓN CENTRAL**
+
+- **_Enfoque:_** Cuidado sostenible de lugares y especies que sostienen la identidad cultural y la pertenencia
+- **_No trata de:_** Ingresos del turismo, volumen de captura comercial ni biodiversidad genérica por sí sola
+- **_Énfasis:_** Condición de especies icónicas, lugares especiales duraderos y participación comunitaria costera
+
+:::
+
+## Modelo de la meta
+
+El puntaje general de Sentido de Pertenencia es la media aritmética con pesos iguales de tres submetas:
+
+**SP = promedio(CCE, LSP, ICO)**
+
+$$
+SP_{r,t} = \frac{CCE_{r,t} + LSP_{r,t} + ICO_{r,t}}{3}
+$$
+
+donde:
+
+- $SP_{r,t}$ es el puntaje de Sentido de Pertenencia para la región $r$ en el año $t$
+- $CCE_{r,t}$ es el puntaje de Participación Comunitaria Costera (adopciones de playas y lugares culturales no naturales)
+- $LSP_{r,t}$ es el puntaje de Lugares Especiales Duraderos
+- $ICO_{r,t}$ es el puntaje de Especies Icónicas
+
+| Submeta | Qué mide |
+|---------|------------------|
+| **CCE** | Participación Comunitaria Costera: adopciones de playas (programa de adopción Ama tu Playa) y lugares culturales no naturales escalados a la población costera |
+| **LSP** | Lugares Especiales Duraderos: condición de los lugares especiales identificados por el EWG (áreas protegidas, sitios de buceo, sitios de pesca, arqueología, hábitats y otros lugares) |
+| **ICO** | Especies Icónicas: estado de riesgo medio de las especies culturalmente icónicas presentes en cada región |
+
+Los puntajes se calculan para cada una de las nueve regiones OHI del Golfo de California. Un puntaje de 100 representa el punto de referencia (estado sostenible ideal). Cuando una submeta no tiene valor para una región-año, la media aritmética usa las submetas disponibles (`na.rm = TRUE`).
+
+Los pesos iguales para CCE, LSP e ICO son la elección de trabajo actual. Consulte [Temas para discusión](#topics-for-discussion) para confirmarlo con el grupo.
+:::
+
+::: {.callout-note collapse="true"}
+## Nota sobre los nombres en inglés y en español
+
+Quizá haya notado que usamos **Sense of Place** y **Sentido de Pertenencia** juntos, aunque *pertenencia* suele traducirse como "belonging".
+
+Al inicio de una reunión de Goalkeeper, encontramos una diferencia regional en lo que transmiten "Sense of Place" y "Sense of Belonging". Históricamente, el Índice de Salud Oceánica Global ha usado **Sense of Place** para mantener y promover la identidad y la conexión de las comunidades locales con el océano. Con base en la retroalimentación del grupo, **Sense of Belonging** reflejaba mejor ese mismo concepto en México.
+
+Consideramos renombrar la meta a Sense of Belonging para coincidir con la definición regional, pero decidimos no hacerlo. En la literatura de Estados Unidos, Sense of Belonging suele describir la conexión de las personas con su comunidad, no la conexión de la comunidad con un lugar. Usar ese nombre en inglés arriesgaría perder el vínculo con el océano, que es lo que queremos evaluar.
+
+Con eso en mente, el grupo Goalkeeper decidió:
+
+- En **inglés**, seguimos llamándola **Sense of Place**, para coincidir con la literatura y la comprensión en inglés de la frase.
+- En **español**, la llamamos **Sentido de Pertenencia**, para reflejar la conexión entre una comunidad y su *lugar*.
+
+Esta elección de nombre fue desarrollada y respaldada por el Grupo Goalkeeper y se confirmó en la reunión del Grupo de Trabajo de Expertos en enero.
+:::
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(tidyverse)
+library(plotly)
+library(here)
+library(sf)
+library(mapview)
+
+# mapview + Quarto: avoid flatgeobuf path that can fail in some renders
+mapviewOptions(fgb = FALSE)
+
+rgn_labels <- c(
+  "Region_1" = "Western Upper Gulf",
+  "Region_2" = "Western Midriff Islands",
+  "Region_3" = "Western Central Gulf",
+  "Region_4" = "Western Southern Gulf",
+  "Region_5" = "Eastern Upper Gulf",
+  "Region_6" = "Eastern Midriff Islands",
+  "Region_7" = "Southern Sonora Coast",
+  "Region_8" = "Sinaloa Coast",
+  "Region_9" = "Southeastern Gulf"
+)
+
+rgn_colors <- c(
+  "Region_1" = "#C03729",
+  "Region_2" = "#E68C7C",
+  "Region_3" = "#FC8F24",
+  "Region_4" = "#dcaa38",
+  "Region_5" = "#cbd2a0",
+  "Region_6" = "#98a25a",
+  "Region_7" = "#747428",
+  "Region_8" = "#627391",
+  "Region_9" = "#8d61a9"
+)
+
+region_levels <- paste0("Region_", 1:9)
+rgn_label_colors <- setNames(unname(rgn_colors[region_levels]), unname(rgn_labels[region_levels]))
+
+add_rgn_labels <- function(df) {
+  df %>%
+    mutate(
+      rgn_id = factor(as.character(rgn_id), levels = region_levels),
+      rgn_label = factor(
+        rgn_labels[as.character(rgn_id)],
+        levels = unname(rgn_labels[region_levels])
+      )
+    )
+}
+
+sp_plotly_lines <- function(df, y_var, title, y_range = c(0, 105)) {
+  yr <- range(df$year, na.rm = TRUE)
+  plot_ly(
+    df,
+    x = ~year,
+    y = as.formula(paste0("~", y_var)),
+    color = ~rgn_label,
+    colors = rgn_label_colors,
+    type = "scatter",
+    mode = "lines+markers"
+  ) %>%
+    layout(
+      title = title,
+      xaxis = list(title = "Año"),
+      yaxis = list(title = "Puntaje (de 100)", range = y_range),
+      legend = list(title = list(text = "Región"))
+    ) %>%
+    add_lines(
+      x = yr,
+      y = c(100, 100),
+      line = list(color = "black", width = 2, dash = "dash"),
+      name = "Meta (100 de 100)",
+      inherit = FALSE
+    )
+}
+
+sp_plotly_bars <- function(df, y_var, title, y_range = c(0, 105)) {
+  plot_ly(
+    df,
+    x = ~rgn_label,
+    y = as.formula(paste0("~", y_var)),
+    color = ~rgn_label,
+    colors = rgn_label_colors,
+    type = "bar",
+    showlegend = FALSE
+  ) %>%
+    layout(
+      title = title,
+      xaxis = list(title = "Región", tickangle = -35),
+      yaxis = list(title = "Puntaje (de 100)", range = y_range),
+      shapes = list(list(
+        type = "line",
+        x0 = 0, x1 = 1, xref = "paper",
+        y0 = 100, y1 = 100,
+        line = list(color = "black", width = 2, dash = "dash")
+      ))
+    )
+}
+
+sp_plotly_goc <- function(df, y_var, title, y_range = c(0, 105)) {
+  yr <- range(df$year, na.rm = TRUE)
+  plot_ly(
+    df,
+    x = ~year,
+    y = as.formula(paste0("~", y_var)),
+    type = "scatter",
+    mode = "lines+markers",
+    name = "Promedio del Golfo",
+    line = list(color = "#333333"),
+    marker = list(color = "#333333")
+  ) %>%
+    layout(
+      title = title,
+      xaxis = list(title = "Año"),
+      yaxis = list(title = "Puntaje (de 100)", range = y_range),
+      showlegend = FALSE
+    ) %>%
+    add_lines(
+      x = yr,
+      y = c(100, 100),
+      line = list(color = "black", width = 2, dash = "dash"),
+      name = "Meta (100 de 100)",
+      inherit = FALSE
+    )
+}
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+sp_cs <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/sp", "sp_current_status.csv"),
+  show_col_types = FALSE
+) %>% add_rgn_labels()
+
+cce_cs <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/sp/cce/v2026/output", "cce_current_status.csv"),
+  show_col_types = FALSE
+) %>% add_rgn_labels()
+
+ama_cs <- read_csv(
+  here::here(
+    "/home/shares/ohi/OHI_GOC/goal_prep/sp/cce/v2026/output",
+    "current_status_ama_tu_playa_progress_072326.csv"
+  ),
+  show_col_types = FALSE
+) %>% add_rgn_labels()
+
+cult_cs <- read_csv(
+  here::here(
+    "/home/shares/ohi/OHI_GOC/goal_prep/sp/cce/v2026/output",
+    "cultural_places_employees_per_pop_current_status_75th_quantile_gapfill2025.csv"
+  ),
+  show_col_types = FALSE
+) %>%
+  rename(year = data_year, final_score = score) %>%
+  add_rgn_labels()
+
+lsp_cs <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/sp/lsp/v2025/output", "lsp_current_status.csv"),
+  show_col_types = FALSE
+) %>% add_rgn_labels()
+
+lsp_pa <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/sp/lsp/v2025/output", "rgn_protected_area_condition.csv"),
+  show_col_types = FALSE
+) %>%
+  mutate(rgn_id = str_replace_all(rgn_id, " ", "_"), category = "Áreas Protegidas Especiales") %>%
+  add_rgn_labels()
+
+lsp_dive <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/sp/lsp/v2025/output", "rgn_dive_sites_condition.csv"),
+  show_col_types = FALSE
+) %>%
+  mutate(rgn_id = str_replace_all(rgn_id, " ", "_"), category = "Sitios Prioritarios de Buceo") %>%
+  add_rgn_labels()
+
+lsp_fish <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/sp/lsp/v2025/output", "rgn_fishing_sites_condition.csv"),
+  show_col_types = FALSE
+) %>%
+  mutate(rgn_id = str_replace_all(rgn_id, " ", "_"), category = "Sitios Icónicos de Pesca") %>%
+  add_rgn_labels()
+
+lsp_arch <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/sp/lsp/v2025/output", "rgn_ewg_archaeological_sites_condition.csv"),
+  show_col_types = FALSE
+) %>%
+  mutate(rgn_id = str_replace_all(rgn_id, " ", "_"), category = "Sitios Arqueológicos") %>%
+  add_rgn_labels()
+
+lsp_hab <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/sp/lsp/v2025/output", "rgn_special_habitats_condition.csv"),
+  show_col_types = FALSE
+) %>%
+  mutate(rgn_id = str_replace_all(rgn_id, " ", "_"), category = "Hábitats Especiales") %>%
+  add_rgn_labels()
+
+lsp_other <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/sp/lsp/v2025/output", "rgn_final_other_protections_condition.csv"),
+  show_col_types = FALSE
+) %>%
+  mutate(rgn_id = str_replace_all(rgn_id, " ", "_"), category = "Todos los demás Lugares Especiales") %>%
+  add_rgn_labels()
+
+ico_cs <- read_csv(
+  here::here(
+    "/home/shares/ohi/OHI_GOC/goal_prep/sp/ico/output",
+    "ico_mean_risk_status_per_region_041326.csv"
+  ),
+  show_col_types = FALSE
+) %>% add_rgn_labels()
+
+sp_goc_df <- sp_cs %>%
+  group_by(year) %>%
+  summarize(
+    sp_goc_current_status = mean(current_status, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+lsp_list_markdown <- function(names_vec) {
+  names_vec <- names_vec %>%
+    as.character() %>%
+    str_squish() %>%
+    discard(~ is.na(.x) || .x == "") %>%
+    unique() %>%
+    sort()
+
+  if (length(names_vec) == 0) {
+    return("*(ninguno en el inventario limpio actual)*\n")
+  }
+  paste0("- ", names_vec, collapse = "\n")
+}
+
+# cleaned feature-level inventories from LSP prep outputs on Mazu
+# (same folder as the regional condition tables already used above)
+lsp_output_dir <- "/home/shares/ohi/OHI_GOC/goal_prep/sp/lsp/v2025/output"
+
+lsp_pa_names <- read_csv(
+  here::here(lsp_output_dir, "protected_area_condition.csv"),
+  show_col_types = FALSE
+) %>%
+  mutate(
+    lsp_name = coalesce(
+      na_if(str_squish(wdpa_orig_name), ""),
+      na_if(str_squish(i_efectividad_name), ""),
+      str_squish(lasting_special_place_description)
+    ),
+    lsp_name = str_to_title(lsp_name),
+    lsp_name = str_replace_all(lsp_name, "\\*", ""),
+    lsp_name = str_remove_all(lsp_name, " - Ahw , Bw")
+  ) %>%
+  pull(lsp_name)
+
+lsp_dive_names <- read_csv(
+  here::here(lsp_output_dir, "dive_sites_condition.csv"),
+  show_col_types = FALSE
+) %>%
+  mutate(
+    nombre_sitio_de_buceo_wcoord = paste0(
+      nombre_sitio_de_buceo, " (", latitud, ", ", longitud, ")"
+    )
+  ) %>%
+  pull(nombre_sitio_de_buceo_wcoord)
+
+lsp_fish_names <- read_csv(
+  here::here(lsp_output_dir, "fishing_sites_condition.csv"),
+  show_col_types = FALSE
+) %>%
+  mutate(
+    rgn_id = str_replace_all(as.character(rgn_id), " ", "_"),
+    lasting_special_place_lsp = paste0(
+      lasting_special_place_lsp, " (", unname(rgn_labels[rgn_id]), ")"
+    )
+  ) %>%
+  pull(lasting_special_place_lsp)
+
+lsp_arch_names <- read_csv(
+  here::here(lsp_output_dir, "ewg_archaeological_sites_condition.csv"),
+  show_col_types = FALSE
+) %>%
+  mutate(
+    rgn_id = str_replace_all(as.character(rgn_id), " ", "_"),
+    lasting_special_place_lsp = case_when(
+      # Puerto Peñasco Archaeology and Paleoenvironment Project sites
+      # (RCB recommendation: large ancestral O'odham coastal cultural deposits / shell middens)
+      str_detect(lasting_special_place_lsp, "^Site\\s+\\d+") ~
+        paste0(
+          "Conchero de Puerto Peñasco (depósito costero ancestral O'odham): ",
+          str_replace(lasting_special_place_lsp, "^Site\\s+\\d+:\\s*", ""),
+          " (", unname(rgn_labels[rgn_id]), ")"
+        ),
+      TRUE ~
+        paste0(
+          lasting_special_place_lsp, " (", unname(rgn_labels[rgn_id]), ")"
+        )
+    )
+  ) %>%
+  pull(lasting_special_place_lsp)
+
+lsp_other_names <- read_csv(
+  here::here(lsp_output_dir, "final_other_protections_condition.csv"),
+  show_col_types = FALSE
+) %>%
+  pull(lsp_name)
+
+# habitat feature names in the prep file are repeated polygon IDs with long boilerplate text.
+# for the website list, show presence by habitat type and OHI region only (not feature counts or area).
+lsp_hab_summary <- tryCatch(
+  read_csv(
+    here::here(lsp_output_dir, "special_habitats_features_condition.csv"),
+    show_col_types = FALSE
+  ) %>%
+    mutate(
+      rgn_id = str_replace_all(as.character(rgn_id), " ", "_"),
+      rgn_label = unname(rgn_labels[rgn_id]),
+      habitat_type = str_squish(habitat_type)
+    ) %>%
+    distinct(habitat_type, rgn_id, rgn_label) %>%
+    arrange(habitat_type, rgn_id) %>%
+    mutate(list_label = paste0(habitat_type, " en ", rgn_label)),
+  error = function(e) tibble()
+)
+
+lsp_hab_names <- if (nrow(lsp_hab_summary) > 0) {
+  lsp_hab_summary$list_label
+} else {
+  character(0)
+}
+
+lsp_inventory_groups <- list(
+  list(
+    title = "Áreas Protegidas Especiales",
+    note = "Elementos de áreas protegidas limpios usados en el estatus actual de LSP (priorizando nombres WDPA o SIMEC cuando están disponibles).",
+    names = lsp_pa_names
+  ),
+  list(
+    title = "Sitios Prioritarios de Buceo",
+    note = "Nombres limpios de sitios de buceo usados en el estatus actual de LSP, con coordenadas.",
+    names = lsp_dive_names
+  ),
+  list(
+    title = "Sitios Icónicos de Pesca",
+    note = "Elementos limpios de sitios de pesca usados en el estatus actual de LSP, con etiquetas de región OHI.",
+    names = lsp_fish_names
+  ),
+  list(
+    title = "Sitios Arqueológicos",
+    note = paste(
+      "Elementos arqueológicos y culturales costeros limpios usados en el estatus actual de LSP, con etiquetas de región OHI.",
+      "Los sitios etiquetados como concheros de Puerto Peñasco siguen la recomendación de Rick Brusca de incluir los grandes depósitos culturales costeros ancestrales O'odham cerca de Puerto Peñasco",
+      "(entre los depósitos de material cultural costero indígena más grandes de Sonora, con datación de al menos unos 6,000 a.p.).",
+      "Contexto:",
+      "[conjunto de figuras en ResearchGate](https://www.researchgate.net/publication/347080271_Prehistoric_Adaptation_Identity_and_Interaction_Along_the_Northern_Gulf_of_California/figures?lo=1),",
+      "[Proyecto de Arqueología y Paleoambiente de Puerto Peñasco](https://nextgensd.com/the-puerto-penasco-archaeology-and-paleoenvironment-project-ppapp-exploring-prehistoric-shell-middens/),",
+      "y [material relacionado de University of Arizona Press](https://open.uapress.arizona.edu/read/cfc81084-f110-4c08-8b30-d4292cd1dfef/section/385f1d01-0f21-45e7-b20a-2c46c14f8547#fig73)."
+    ),
+    names = lsp_arch_names
+  ),
+  list(
+    title = "Todos los demás Lugares Especiales",
+    note = "Ubicaciones marinas de importancia y otros lugares especiales limpios usados en el estatus actual de LSP.",
+    names = lsp_other_names
+  ),
+  list(
+    title = "Hábitats Especiales",
+    note = "Resumidos por tipo de hábitat y región OHI (solo presencia, no IDs de polígonos individuales, conteos de elementos ni área). La condición regional de hábitat en el puntaje es una media no ponderada entre elementos. Consulte la gráfica estática abajo para una visión general.",
+    names = lsp_hab_names
+  )
+)
+
+# ---------------------------------------------------------------------------
+# One website map example: special protected areas as full polygons
+# colored by condition (SIMEC i-efectividad / Ramsar rules).
+# Embedding many Leaflet maps (especially mangroves and other detailed
+# habitat polygons) previously crashed Quarto with a JavaScript out-of-memory
+# error, so we keep a single simplified protected-area map here.
+# ---------------------------------------------------------------------------
+
+lsp_pa_map_sf <- tryCatch(
+  {
+    pa_tbl <- read_csv(
+      here::here(lsp_output_dir, "protected_area_condition.csv"),
+      show_col_types = FALSE
+    ) %>%
+      mutate(
+        name_join = str_squish(wdpa_orig_name),
+        rgn_id = str_replace_all(as.character(rgn_id), " ", "_"),
+        overall_condition = suppressWarnings(as.numeric(overall_condition)),
+        i_efectividad_name = str_squish(i_efectividad_name),
+        protected_area_name = coalesce(
+          na_if(str_squish(wdpa_orig_name), ""),
+          na_if(str_squish(i_efectividad_name), ""),
+          str_squish(lasting_special_place_description)
+        )
+      ) %>%
+      filter(!is.na(name_join), name_join != "")
+
+    all_protected_map <- st_read(
+      here::here(
+        "/home/shares/ohi/OHI_GOC/spatial/protected _areas_wdpa_and_hem",
+        "all_goc_protected_areas_dissolved_2025.shp"
+      ),
+      quiet = TRUE
+    ) %>%
+      mutate(name_join = str_squish(name)) %>%
+      dplyr::select(name_join, geometry)
+
+    matched <- all_protected_map %>%
+      inner_join(
+        pa_tbl %>%
+          dplyr::select(
+            name_join, rgn_id, overall_condition,
+            protected_area_name, i_efectividad_name
+          ),
+        by = "name_join",
+        relationship = "many-to-many"
+      ) %>%
+      st_make_valid()
+
+    # simplify vertices so the Leaflet widget stays website-sized
+    st_simplify(matched, dTolerance = 0.002, preserveTopology = TRUE)
+  },
+  error = function(e) NULL
+)
+```
+
+# Puntajes generales de Sentido de Pertenencia
+
+El puntaje de estatus actual general de SP para cada región y año es la media aritmética de los puntajes CCE, LSP e ICO de esa región.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+sp_plotly_lines(
+  sp_cs,
+  "current_status",
+  "ESTATUS ACTUAL: Sentido de Pertenencia (media aritmética de CCE, LSP e ICO)"
+)
+```
+
+## Promedio del Golfo del estatus actual de SP
+
+El mismo puntaje general de SP promediado entre las nueve regiones OHI del Golfo de California para cada año:
+
+$$
+\text{SP}^{\text{GOC}}_{t} = \frac{1}{9}\sum_{r=1}^{9} SP_{r,t}
+$$
+
+donde $SP_{r,t}$ es el puntaje regional de Sentido de Pertenencia y la línea del Golfo es su media simple para el año $t$. Compárela con la gráfica regional de arriba para ver si los patrones del Golfo están impulsados por pocas regiones o se comparten a lo largo de la costa.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+sp_plotly_goc(
+  sp_goc_df,
+  "sp_goc_current_status",
+  "Estatus actual general de SP para el Golfo de California"
+)
+```
+
+---
+
+# Participación Comunitaria Costera (CCE)
+
+CCE captura la participación comunitaria costera con playas y lugares culturales no naturales que ayudan a las personas a conectarse con el Golfo.
+
+En la discusión más reciente del Grupo de Trabajo de Expertos, las limpiezas y adopciones de playas y la presencia continua de lugares culturales no naturales se afirmaron como componentes apropiados de CCE. También se consideraron indicadores de apoyo a comunidades indígenas costeras, pero **no** se incluyen en el puntaje actual. Consulte [Reconocimiento: Pueblos originarios](#acknowledgment-pueblos-originarios) abajo.
+
+$$
+CCE_{r,t} = \mathrm{average}\big(Ama_{r,t},\; Cult_{r,t}\big)
+$$
+
+donde:
+
+- $CCE_{r,t}$ es el puntaje de Participación Comunitaria Costera para la región $r$ en el año $t$
+- $Ama_{r,t}$ es el puntaje de adopciones de playas (programa de adopción Ama tu Playa)
+- $Cult_{r,t}$ es el puntaje de lugares culturales no naturales
+
+Los valores faltantes se ignoran en el promedio. Por ejemplo, la Región 2 no tiene playas en el inventario de Ama tu Playa, así que su CCE se basa solo en la capa de lugares culturales.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+sp_plotly_lines(
+  cce_cs,
+  "current_status",
+  "ESTATUS ACTUAL: Participación Comunitaria Costera (CCE)"
+)
+```
+
+## Adopciones de playas
+
+El **programa de adopción Ama tu Playa** forma parte de la *Estrategia Nacional de Limpieza y Conservación de Playas y Costas de México 2025-2030*, coordinada con SEMARNAT y socios. Las organizaciones adoptan una playa o tramo costero y se comprometen a mantenerlo limpio hasta 2030, con la meta nacional de playas libres de residuos plásticos.
+
+**Qué puntamos:** porcentaje de playas del inventario del programa SEMARNAT que ya están adoptadas en cada región OHI (no kilogramos de basura recolectada). Más basura recolectada puede significar playas más sucias o un esfuerzo de limpieza más fuerte, así que la proporción adoptada se acerca mejor a la propia meta de custodia del programa.
+
+$$
+Ama_{r,2025} = 100 \times \frac{\text{adopted beaches}_{r}}{\text{total inventory beaches}_{r}}
+$$
+
+donde:
+
+- $Ama_{r,2025}$ es el puntaje de adopciones de playas para la región $r$ en 2025
+- $\text{adopted beaches}_{r}$ es el número de playas del inventario en esa región que ya están adoptadas
+- $\text{total inventory beaches}_{r}$ es el número de playas del inventario en esa región
+
+Para 2019-2024, $Ama_{r,t} = 0$ porque la campaña comienza con la estrategia 2025-2030. La Región 2 **no tiene playas en el inventario del programa** después de la unión espacial con las regiones OHI y el búfer costero interior de 10 km. Eso **no** se trata como un puntaje perfecto de 100 (la ausencia del inventario no es lo mismo que estar libre de plástico). Se almacena como `NA` con la razón `"no beaches in program inventory"`.
+
+**Fuentes de datos**
+
+- Inventario de playas Ama tu Playa de SEMARNAT y estatus de adopción del catálogo de la estrategia nacional de limpieza y conservación de playas; porcentaje de adopción por región OHI
+- Plataforma: [adoptaunaplaya.com](https://www.adoptaunaplaya.com/playas/)
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+sp_plotly_lines(
+  ama_cs %>% filter(!is.na(current_status) | rgn_id == "Region_2"),
+  "current_status",
+  "ESTATUS ACTUAL: Adopciones de playas (porcentaje de playas del inventario adoptadas)"
+)
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+ama_2025 <- ama_cs %>% filter(year == 2025, !is.na(current_status))
+sp_plotly_bars(
+  ama_2025,
+  "current_status",
+  "ESTATUS ACTUAL 2025: Adopciones de playas por región"
+)
+```
+
+## Lugares culturales no naturales
+
+Esta capa de CCE mide establecimientos culturales hechos por personas cerca de la costa del Golfo que apoyan la conexión comunitaria con el lugar.
+
+::: {.callout-note collapse="true"}
+## ¿Qué establecimientos culturales se incluyen?
+
+Partimos del sector 71 de INEGI DENUE (*servicios de esparcimiento culturales y deportivos, y otros servicios recreativos*) y conservamos establecimientos que funcionan como unidades económicas culturales con una conexión costera significativa, dentro del búfer costero interior de 10 km de los seis estados del Golfo de California.
+
+**Ejemplos de tipos de establecimientos retenidos**
+
+- Teatros y otros espacios de artes escénicas
+- Museos y espacios de exhibición cultural
+- Sitios históricos y establecimientos patrimoniales relacionados
+- Jardines botánicos y espacios similares de naturaleza y cultura
+- Parques públicos y espacios de recreación con conexión cultural
+- Marinas y establecimientos recreativos costeros relacionados que apoyan el uso costero basado en el lugar
+
+**Ejemplos excluidos**
+
+- Charreadas (por ejemplo establecimientos llamados LIENZO CHARRO)
+- Galleras (por ejemplo GALLERA)
+- Negocios administrativos seleccionados identificados por nombre que no representan participación cultural comunitaria con la costa
+
+La intención es contar lugares donde las personas se reúnen en torno a la cultura costera, el patrimonio y la recreación, no todo establecimiento que caiga bajo el amplio sector recreativo de DENUE.
+:::
+
+**Cómo se construyó la capa**
+
+1. Partir del sector 71 de INEGI DENUE para 2019-2024.
+2. Restringir a los seis estados del GoC y conservar solo establecimientos dentro del búfer costero interior de 10 km.
+3. Curar a unidades económicas culturales con una conexión costera significativa (vea el desplegable de arriba para lo incluido y lo excluido).
+4. Estimar empleados a partir de las clases de tamaño de empleo de DENUE, agregar por región y año, y dividir entre la población de localidades costeras dentro del mismo búfer de 10 km.
+5. Convertir la tasa per cápita a un estatus de 0 a 100 usando el **cuantil 75** de empleados per cápita entre todas las regiones y años como referencia:
+
+$$
+Cult_{r,t} = \min\left(100,\; 100 \times \frac{\text{employees per coastal pop}_{r,t}}{Q_{0.75}(\text{employees per coastal pop})}\right)
+$$
+
+donde:
+
+- $Cult_{r,t}$ es el puntaje de lugares culturales no naturales para la región $r$ en el año $t$
+- $\text{employees per coastal pop}_{r,t}$ son los empleados estimados de establecimientos culturales divididos entre la población de localidades costeras en el búfer costero interior de 10 km
+- $Q_{0.75}(\text{employees per coastal pop})$ es el cuantil 75 de esa tasa entre todas las regiones y años
+- Los puntajes por encima de 100 se limitan a 100
+
+**Sí, tanto los establecimientos como la población son costeros.** Los establecimientos se restringen al búfer costero interior de 10 km, y la población proviene de localidades que intersectan ese mismo búfer (no municipios enteros tierra adentro del Golfo).
+
+**Relleno temporal de 2025:** DENUE 2025 aún no está disponible. Para la fusión de SP, 2025 se copia temporalmente de 2024 hasta que se publique DENUE 2025. La serie observada 2019-2024 permanece sin cambios para poder revertir esto después.
+
+**Fuentes de datos**
+
+- Establecimientos culturales y recreativos del sector 71 de INEGI DENUE dentro del búfer costero interior de 10 km; empleados estimados a partir de clases de tamaño DENUE, escalados a la población de localidades costeras, referenciados al cuantil 75; 2025 copiado temporalmente de 2024 hasta que se publique DENUE 2025
+
+### ¿Por qué el cuantil 75 (y no el 90)?
+
+Antes de convertir a un puntaje de estatus actual, las tasas crudas de empleados por residente costero ya muestran que las **Western Midriff Islands (Región 2)** están muy por encima de las demás regiones. Usar una referencia alta como el cuantil 90 haría que ese valor atípico domine el punto de referencia y empuje a la mayoría de las demás regiones hacia puntajes muy bajos. El cuantil 75 sigue recompensando una mayor densidad de empleo cultural, pero está menos impulsado solo por la Región 2.
+
+La gráfica de abajo muestra la tasa cruda (aún no escalada a 0-100). Las líneas horizontales marcan los cuantiles 75 y 90 agrupados entre todas las observaciones región-año.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+cult_emp_refs <- cult_cs %>%
+  filter(!is.na(culture_emp_per_local_pop)) %>%
+  summarize(
+    q75 = quantile(culture_emp_per_local_pop, probs = 0.75, na.rm = TRUE),
+    q90 = quantile(culture_emp_per_local_pop, probs = 0.9, na.rm = TRUE),
+    ymax = max(culture_emp_per_local_pop, na.rm = TRUE)
+  )
+
+cult_emp_plotly <- plot_ly(
+  cult_cs %>% filter(!is.na(culture_emp_per_local_pop)),
+  x = ~year,
+  y = ~culture_emp_per_local_pop,
+  color = ~rgn_label,
+  colors = rgn_label_colors,
+  type = "scatter",
+  mode = "lines+markers"
+) %>%
+  layout(
+    title = "Lugares culturales no naturales: empleados por residente costero (tasa cruda)",
+    xaxis = list(title = "Año"),
+    yaxis = list(
+      title = "Empleados por residente costero",
+      range = c(0, cult_emp_refs$ymax * 1.05)
+    ),
+    legend = list(title = list(text = "Región")),
+    shapes = list(
+      list(
+        type = "line",
+        x0 = 0, x1 = 1, xref = "paper",
+        y0 = cult_emp_refs$q75, y1 = cult_emp_refs$q75,
+        line = list(color = "#747428", width = 2, dash = "dash")
+      ),
+      list(
+        type = "line",
+        x0 = 0, x1 = 1, xref = "paper",
+        y0 = cult_emp_refs$q90, y1 = cult_emp_refs$q90,
+        line = list(color = "#C03729", width = 2, dash = "dot")
+      )
+    ),
+    annotations = list(
+      list(
+        x = 1, xref = "paper", xanchor = "left",
+        y = cult_emp_refs$q75, yanchor = "bottom",
+        text = "Cuantil 75",
+        showarrow = FALSE,
+        font = list(size = 11, color = "#747428")
+      ),
+      list(
+        x = 1, xref = "paper", xanchor = "left",
+        y = cult_emp_refs$q90, yanchor = "bottom",
+        text = "Cuantil 90",
+        showarrow = FALSE,
+        font = list(size = 11, color = "#C03729")
+      )
+    )
+  )
+
+cult_emp_plotly
+```
+
+La referencia del cuantil 75 sigue siendo un tema abierto de discusión. Consulte [Temas para discusión](#topics-for-discussion).
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+sp_plotly_lines(
+  cult_cs,
+  "final_score",
+  "ESTATUS ACTUAL: Lugares culturales no naturales (empleados por población costera, cuantil 75; 2025 rellenado)"
+)
+```
+
+---
+
+# Reconocimiento: Pueblos originarios {#acknowledgment-pueblos-originarios}
+
+::: {.callout-important}
+## Por qué existe esta sección
+
+Esta sección documenta una decisión metodológica y ética: las comunidades indígenas costeras son centrales para el Golfo de California, pero **no** nos sentimos cómodos puntuar su Sentido de Pertenencia y su conexión con el océano con indicadores que diseñamos sin una colaboración sostenida con representantes comunitarios.
+:::
+
+Los pueblos originarios y otras comunidades de Primeras Naciones del Golfo de California mantienen relaciones profundas y vivas con lugares costeros y marinos. Esas relaciones no son una nota al margen del Sentido de Pertenencia. Forman parte de lo que Sentido de Pertenencia significa en esta región.
+
+Al mismo tiempo, los pueblos indígenas no son una sola casilla. También son residentes costeros, pescadores, portadores de conocimiento y vecinos dentro de los mismos paisajes marinos que el Índice intenta describir. No queremos aislarlos del Índice, y tampoco queremos imponer un marco externo para evaluar la condición de su conexión con el océano.
+
+## Qué consideramos para CCE
+
+Durante el desarrollo de la meta, exploramos indicadores de apoyo a comunidades indígenas costeras, incluyendo ideas como:
+
+1. **Reconocimiento**, por ejemplo si existen documentos gubernamentales que ofrezcan traducciones entre lenguas de pueblos originarios costeros y español (como posible señal de reconocimiento).
+2. **Planes de justicia y Planes de Justicia y Desarrollo Integral** del INPI para pueblos originarios costeros, descritos por el INPI como ejercicios de planeación realizados por Autoridades Tradicionales a través de sus propias formas de gobierno y toma de decisiones, con apoyo del INPI para diagnósticos regionales, propuestas desde visiones comunitarias de bienestar y justicia, y seguimiento de acuerdos con dependencias gubernamentales.
+3. **Centros de desarrollo indígena** que reciben financiamiento federal, comparados con el tamaño poblacional de las Primeras Naciones (INEGI), como posible señal de apoyo institucional.
+
+El Dr. Ben Wilder también propuso enmarcar el apoyo alrededor de dos preguntas prácticas: (1) ¿la comunidad está reconocida por el gobierno?, y (2) ¿tienen apoyo de financiamiento y centros?
+
+## Por qué estos indicadores no están en el puntaje actual
+
+Después de la discusión, decidimos **no** incluir estos indicadores en el puntaje CCE publicado para este ciclo de evaluación, porque:
+
+- No tuvimos el tiempo ni los recursos para mantener a los grupos indígenas en conversación continua a lo largo del desarrollo del Índice de la manera que este tema requiere.
+- No queremos presuponer la condición de una comunidad, ni publicar un puntaje que implique que una comunidad "debería" querer una forma particular de reconocimiento (por ejemplo política lingüística) cuando no lo hemos escuchado de sus representantes.
+- Hay matices importantes. Por ejemplo, los Tohono O'odham comunicaron a uno de los expertos de nuestro grupo de trabajo, como parte de un proyecto separado, que no desean ser considerados un pueblo originario. Cualquier indicador construido solo sobre categorías oficiales perdería ese tipo de autodeterminación.
+- Recibimos oposición a contar el número de centros de recursos indígenas. Ese enfoque trataría el apoyo financiero gubernamental a un lugar de reunión y recursos comunitarios como automáticamente "positivo," pero no sabemos si eso es bueno a menos que hablemos con los pueblos originarios mismos. La discusión del Grupo de Trabajo de Expertos confirmó las limpiezas de playas y la presencia continua de lugares culturales no naturales para CCE, mientras que el uso de centros de desarrollo indígena quedó en duda.
+
+Por ello, los componentes de reconocimiento lingüístico, planes de justicia y centros de desarrollo indígena se movieron a **Nivel 3**: ideas que idealmente se incorporarían la próxima vez que se realice la evaluación, pero que actualmente no son indicadores que estemos listos para puntuar como si representaran valores comunitarios.
+
+## Qué estamos haciendo en su lugar
+
+Para esta evaluación:
+
+- El modelo CCE actual se centra en **adopciones de playas** (programa de adopción Ama tu Playa) y **lugares culturales no naturales** escalados a la población costera.
+- Estamos pidiendo al financiador que invite a representantes comunitarios a la reunión de actores interesados, como lo haremos con otras comunidades costeras como pescadores, y que aprendamos de esa conversación antes de diseñar cualquier enfoque de puntuación específico para pueblos indígenas.
+- Esperamos que futuras iteraciones del Índice de Salud Oceánica del Golfo de California puedan incorporar indicadores co-desarrollados si las comunidades eligen participar. El Índice está pensado para reevaluarse a lo largo del tiempo, y los métodos deben seguir mejorando a medida que crecen las relaciones y la capacidad.
+
+## Invitación para EWG 3.2
+
+Agradecemos la orientación del Grupo de Trabajo de Expertos sobre:
+
+1. Cómo seguir reconociendo claramente a los pueblos originarios en el sitio web y en las comunicaciones sin extraer ni puntuar lo que no se nos ha invitado a puntuar.
+2. Cómo las invitaciones a actores interesados pueden ser respetuosas, prácticas y lideradas por la comunidad.
+
+Si tienen contactos, advertencias o lenguaje preferido para este reconocimiento, por favor escríbanme.
+
+---
+
+# Lugares Especiales Duraderos (LSP)
+
+LSP mide qué tan bien estamos protegiendo los lugares que el Grupo de Trabajo de Expertos identificó como lugares especiales duraderos por razones ecológicas, culturales, recreativas, espirituales o estéticas.
+
+## Cómo se construyó LSP
+
+1. **Los expertos identificaron lugares especiales.** El Grupo de Trabajo de Expertos identificó lugares especiales duraderos a lo largo del Golfo. Luego agrupamos esos lugares por tipo (áreas protegidas especiales, sitios prioritarios de buceo, sitios icónicos de pesca, sitios arqueológicos, hábitats especiales y todos los demás lugares especiales).
+
+2. **Sobrepusimos protecciones.** Sobrepusimos las coordenadas de esos lugares especiales con las protecciones potenciales que los mantendrían preservados, disponibles y bien gestionados para que las generaciones futuras puedan seguir disfrutándolos (por ejemplo áreas protegidas CONANP y Ramsar, ZRP, TURF, regulación del INAH y otras protecciones legales).
+
+3. **No todas las protecciones son iguales.** Las protecciones legales por sí solas generalmente recibieron puntajes de condición de protección más bajos que formas más directas de gestión. Las áreas protegidas se puntuaron usando SIMEC i-efectividad (y la presencia de plan de manejo Ramsar cuando correspondía). En otras palabras, el puntaje refleja qué tan bien está protegido un lugar, no solo si existe una etiqueta de protección en el papel.
+
+$$
+LSP_{r} = \mathrm{average}\big(\text{condition of LSP categories present in region } r\big)
+$$
+
+donde:
+
+- $LSP_{r}$ es el puntaje de Lugares Especiales Duraderos para la región $r$
+- La condición de cada categoría es la condición de protección asignada a los lugares especiales de esa categoría en la región (áreas protegidas, sitios de buceo, sitios de pesca, sitios arqueológicos, hábitats especiales y todos los demás lugares especiales)
+- El puntaje regional es la media aritmética no ponderada entre las categorías LSP que tienen elementos en esa región
+
+**Año de evaluación:** instantánea 2025 (se muestra en barras porque hay un solo año)
+
+Para puntajes preliminares por región y categoría, y una visión general de la toma de decisiones usada para obtener cada puntaje, consulte esta hoja de Google: [Puntajes preliminares LSP y visión general de decisiones](https://docs.google.com/spreadsheets/d/1RwNTzRZdBIDtzi7d1ceFxhNmVghN47NxTgrhZV8O2SM/edit?gid=1057003520#gid=1057003520).
+
+## Lugares especiales duraderos identificados por expertos
+
+Abajo están las listas de lugares **limpias** usadas para calcular el estatus actual de LSP (a partir de las tablas de condición procesadas), agrupadas por tipo. Se prefieren sobre la hoja cruda del inventario EWG, que aún contiene duplicados y entradas superadas. Expanda un desplegable para ver los nombres únicos de ese grupo.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, results='asis'}
+for (group in lsp_inventory_groups) {
+  names_clean <- group$names %>%
+    as.character() %>%
+    str_squish() %>%
+    discard(~ is.na(.x) || .x == "") %>%
+    unique() %>%
+    sort()
+  n_places <- length(names_clean)
+
+  cat("\n\n")
+  cat("::: {.callout-note collapse=\"true\"}\n")
+  cat("## ", group$title, " (", n_places, ")\n\n", sep = "")
+  cat(group$note, "\n\n", sep = "")
+  cat(lsp_list_markdown(names_clean))
+  cat("\n:::\n")
+}
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.width=9, fig.height=5}
+# static presence overview of special habitats by region (avoids heavy interactive habitat polygons)
+if (nrow(lsp_hab_summary) > 0) {
+  lsp_hab_summary %>%
+    mutate(
+      rgn_label = factor(rgn_label, levels = unname(rgn_labels[region_levels])),
+      habitat_type = factor(habitat_type),
+      present = "Presente"
+    ) %>%
+    ggplot(aes(x = habitat_type, y = rgn_label, fill = present)) +
+    geom_tile(color = "white", linewidth = 0.6) +
+    scale_fill_manual(values = c("Presente" = "#747428")) +
+    labs(
+      title = "Hábitats especiales puntuados en LSP: presencia por región OHI",
+      x = NULL,
+      y = NULL,
+      fill = NULL
+    ) +
+    theme_minimal(base_size = 12) +
+    theme(
+      panel.grid = element_blank(),
+      legend.position = "none",
+      axis.text.x = element_text(angle = 25, hjust = 1)
+    )
+}
+```
+
+## Mapa de ejemplo: áreas protegidas especiales
+
+Incluimos **un** mapa interactivo como ejemplo: las áreas protegidas especiales usadas en LSP, mostradas como polígonos completos y coloreadas por su condición de protección. Esa condición se basa principalmente en SIMEC **i-efectividad**, con reglas de plan de manejo Ramsar aplicadas cuando corresponde (vea el enfoque de condición de áreas protegidas abajo).
+
+**No** hospedamos un mapa separado de polígonos completos para cada tipo de LSP en esta página. Insertar varias capas detalladas de Leaflet (especialmente huellas grandes de hábitat como manglares) agotó previamente la memoria de JavaScript de la compilación del sitio. Las listas de nombres limpios de arriba siguen siendo la referencia de inventario para sitios de buceo, sitios de pesca, sitios arqueológicos, otros lugares especiales y hábitats; la revisión espacial de esas capas se hace mejor en los scripts de preparación o en GIS, no como muchos widgets pesados aquí.
+
+::: {.callout-tip collapse="true"}
+## Mapa: Áreas Protegidas Especiales (polígonos por condición de protección)
+
+Los polígonos están ligeramente simplificados para el sitio web. Haga clic en un polígono para ver el nombre del área protegida y el puntaje de condición.
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+if (!is.null(lsp_pa_map_sf) && nrow(lsp_pa_map_sf) > 0) {
+  mapview(
+    lsp_pa_map_sf,
+    zcol = "overall_condition",
+    layer.name = "Condición del área protegida",
+    legend = TRUE,
+    homebutton = FALSE,
+    alpha.regions = 0.55,
+    label = lsp_pa_map_sf$protected_area_name
+  )
+} else {
+  knitr::asis_output("*Mapa de áreas protegidas no disponible aquí (requiere el shapefile disuelto de áreas protegidas del GoC en Mazu al momento del render).*\n")
+}
+```
+:::
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+sp_plotly_bars(
+  lsp_cs,
+  "current_status",
+  "ESTATUS ACTUAL 2025: Lugares Especiales Duraderos (LSP) por región"
+)
+```
+
+## Enfoque de condición por categoría LSP
+
+Abajo hay una versión simplificada de cómo se asignó la condición dentro de cada categoría. Dentro de una categoría, generalmente buscamos primero la protección aplicable más fuerte y luego pasamos a protecciones más débiles o generales si hace falta.
+
+### Áreas Protegidas Especiales
+
+Estas son áreas CONANP y Ramsar que los expertos indicaron como especiales por razones ecológicas.
+
+1. Preferir SIMEC i-efectividad (48 indicadores en 5 componentes) cuando esté disponible.
+2. Para sitios Ramsar, también tomar en cuenta la presencia de plan de manejo (RMPP):
+   - Existe plan: usar el valor máximo de i-efectividad usado para esta comparación
+   - Plan en progreso: puntaje = 60
+   - Sin plan: usar el valor mínimo de i-efectividad usado para esta comparación
+
+### Sitios Prioritarios de Buceo
+
+Estos son sitios de buceo identificados en Arcos-Aguilar et al. 2021 y GCMP que más se beneficiarían de protección.
+
+1. Si el sitio de buceo cae en un área protegida CONANP y/o Ramsar, usar la condición SIMEC y RMPP de esa área.
+2. Si cae en ambas CONANP y Ramsar, tomar el máximo de los dos puntajes de condición.
+3. Si está fuera de áreas protegidas, asignar el mínimo de i-efectividad observado entre sitios de buceo que sí tienen puntaje de área protegida (actualmente 58). Este es un valor proxy por defecto para sitios no protegidos, no una afirmación de que los sitios de buceo no protegidos estén 58% "gestionados." Consulte [Temas para discusión](#topics-for-discussion).
+4. Nota: la NOM-012-TUR-2016 sección 6.11 requiere que los operadores de buceo informen a los clientes sobre protección ambiental.
+
+### Sitios Icónicos de Pesca
+
+Estas son coordenadas de pesca históricamente importantes indicadas por expertos.
+
+1. Si el sitio está en una zona de refugio pesquero (ZRP): puntaje = 100.
+2. Si no, si el sitio está en un TURF: puntaje = 100.
+3. Si no, usar SIMEC y RMPP si el sitio se traslapa con un área protegida relevante.
+4. En la lógica actual de la tabla, un entorno de no captura sin las protecciones anteriores se trata como 0.
+
+### Sitios Arqueológicos
+
+Estos son lugares donde los vestigios hacen que el área natural circundante sea cultural y espiritualmente especial.
+
+1. Si está regulado por el INAH: puntaje = 100.
+2. Si no, si aplican protecciones traslapadas SIMEC y RMPP: usar esos puntajes.
+3. Si no, si solo aplica "protección codificada": puntaje = 30.
+4. Referencia legal: *Ley Federal sobre Monumentos y Zonas Arqueológicos, Artísticos e Históricos (1972)*.
+
+### Hábitats Especiales
+
+Estos incluyen pastos marinos, manglares, arrecifes de coquina y arrecifes de coral.
+
+1. Preferir SIMEC y RMPP cuando el hábitat se traslapa con áreas protegidas gestionadas.
+2. Si no, usar protecciones legales codificadas.
+3. La mayoría de las protecciones legales actualmente puntúan alrededor de 70 (por ejemplo coral, con anclajes legales dedicados más fuertes).
+4. La coquina actualmente puntúa 30 como piso legal por defecto cuando está fuera de una gestión más fuerte basada en el sitio, porque no hay un estatuto dedicado de hábitat de coquina (solo cobertura legal más débil e indirecta). Consulte [Temas para discusión](#topics-for-discussion).
+5. Las referencias relevantes incluyen NOM-022-SEMARNAT-2003, Código Penal Art. 420bis, Ley General de Vida Silvestre, NOM-059, LGEEPA, LFRA y CITES.
+
+### Todos los demás Lugares Especiales
+
+Estos son lugares identificados por expertos que no encajaron limpiamente en las categorías anteriores (a menudo lugares recreativos, ecológicos y estéticos).
+
+1. Preferir SIMEC y RMPP cuando estén disponibles.
+2. Si no, usar protecciones codificadas.
+3. Estos se revisaron individualmente y aún pueden beneficiarse de más retroalimentación de expertos.
+
+El valor por defecto de 58 para sitios de buceo no protegidos y el piso legal de 30 para coquina son temas abiertos de discusión. Consulte [Temas para discusión](#topics-for-discussion).
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+lsp_cats <- bind_rows(
+  lsp_pa %>% dplyr::select(rgn_id, rgn_label, category, condition),
+  lsp_dive %>% dplyr::select(rgn_id, rgn_label, category, condition),
+  lsp_fish %>% dplyr::select(rgn_id, rgn_label, category, condition),
+  lsp_arch %>% dplyr::select(rgn_id, rgn_label, category, condition),
+  lsp_hab %>% dplyr::select(rgn_id, rgn_label, category, condition),
+  lsp_other %>% dplyr::select(rgn_id, rgn_label, category, condition)
+)
+
+lsp_cat_plotly <- plot_ly(
+  lsp_cats,
+  x = ~rgn_label,
+  y = ~condition,
+  color = ~category,
+  type = "bar"
+) %>%
+  layout(
+    barmode = "group",
+    title = "Condición por categoría LSP por región (un solo año de evaluación)",
+    xaxis = list(title = "Región", tickangle = -35),
+    yaxis = list(title = "Condición (de 100)", range = c(0, 105)),
+    legend = list(title = list(text = "Categoría LSP")),
+    shapes = list(list(
+      type = "line",
+      x0 = 0, x1 = 1, xref = "paper",
+      y0 = 100, y1 = 100,
+      line = list(color = "black", width = 2, dash = "dash")
+    ))
+  )
+
+lsp_cat_plotly
+```
+
+---
+
+# Especies Icónicas (ICO)
+
+ICO mide la condición de especies que son culturalmente icónicas para las comunidades del Golfo.
+
+## Qué se pidió a los expertos
+
+Al construir la lista de especies icónicas, se pidió a los expertos revisar la pestaña **"Iconic Species List"** y considerar tres cosas:
+
+1. ¿Están listadas todas las "especies icónicas" del Golfo de California?
+2. Si no, por favor agregue el nombre de la especie, el nombre común y la razón por la que es icónica.
+3. Por favor escriba cualquier nota sobre la especie que ayude a justificar su inclusión como especie icónica cuando se redacte el informe final.
+
+**Razones para ser icónica**
+
+- Prácticas étnicas o religiosas locales (pueden incluir actividades tradicionales como pesca, caza o comercio)
+- Valor de existencia
+- Valor estético reconocido localmente (por ejemplo atracciones turísticas o temas comunes del arte como las ballenas)
+
+Las especies formadoras de hábitat y las especies cosechadas solo por comercio utilitario quedan fuera de esta definición.
+
+## Cómo se asignan los pesos de riesgo de ICO
+
+Para cada especie $s$ en la región $r$ y el año $t$, asigne un peso de riesgo $w_{s,r,t}$ usando esta decisión jerárquica:
+
+1. Preferir NOM-059 cuando la especie está listada bajo una categoría de riesgo.
+2. Si NOM-059 trata la especie como no listada (peso 1.0), entonces preferir IUCN cuando esté disponible.
+3. Si IUCN no está disponible, usar CITES.
+4. Se revisaron casos especiales cuando las listas entraban en conflicto (especialmente evaluaciones IUCN del Pacífico vs Atlántico, o cuando NOM-059 dice no listada pero IUCN o CITES indican riesgo elevado para poblaciones relevantes del Golfo).
+
+Luego:
+
+$$
+ICO_{r,t} = 100 \times \mathrm{mean}_{s \in r}\big(w_{s,r,t}\big)
+$$
+
+donde:
+
+- $ICO_{r,t}$ es el puntaje de Especies Icónicas para la región $r$ en el año $t$
+- $w_{s,r,t}$ es el peso de riesgo para la especie $s$ en esa región y año (de NOM-059, IUCN o CITES como arriba)
+- La media se toma entre las especies icónicas presentes en la región y luego se multiplica por 100 para que el puntaje esté en una escala de 0 a 100
+
+### Pesos NOM-059
+
+| Categoría | Significado | Peso |
+|----------|---------|--------|
+| No listada | Especie no listada bajo categorías de riesgo de NOM-059 | 1.00 |
+| Pr | Protección especial | 0.75 |
+| A | Amenazada | 0.50 |
+| P | En peligro de extinción | 0.25 |
+| E | Probablemente extinta en el medio silvestre | 0.00 |
+
+### Pesos de la Lista Roja IUCN
+
+| Categoría | Significado | Peso |
+|----------|---------|--------|
+| LC (y antigua LR/lc) | Preocupación menor | 1.00 |
+| NT (y antigua LR/nt) | Casi amenazada | 0.75 |
+| VU | Vulnerable | 0.50 |
+| EN | En peligro | 0.25 |
+| CR | En peligro crítico | 0.12 |
+| EX | Extinta | 0.00 |
+| DD | Datos insuficientes | No se asigna peso en la preparación actual (se trata como faltante para la ponderación) |
+
+### Pesos de Apéndices CITES
+
+| Apéndice | Significado | Peso |
+|----------|---------|--------|
+| No listada | Especie no listada bajo un Apéndice CITES | 1.00 |
+| III | Especies protegidas en al menos un país que ha pedido a otras Partes CITES asistencia para controlar el comercio | 0.75 |
+| II | Especies no necesariamente amenazadas de extinción ahora, pero que pueden llegar a estarlo a menos que el comercio se controle de cerca | 0.50 |
+| I | Especies amenazadas de extinción; el comercio internacional generalmente está prohibido excepto en circunstancias excepcionales | 0.25 |
+
+Los puntos de ocurrencia de especies (presencia y ausencia con coordenadas de la Dra. Hem Nalini Morzaria-Luna) se intersectaron con las regiones marinas OHI y el búfer costero interior de 10 km para asignar regiones. Las series temporales de estatus de riesgo se armaron a partir de NOM-059 (2010, 2019, 2021, borrador 2025), IUCN y CITES.
+
+**Fuente de datos:** lista de especies icónicas del Grupo de Trabajo de Expertos; ocurrencia de especies de la Dra. Hem Nalini Morzaria-Luna; estatus de riesgo de NOM-059-SEMARNAT, Lista Roja IUCN y CITES. Decisión jerárquica como arriba; luego media del peso de riesgo entre especies en cada región multiplicada por 100.  
+**Años:** 2010-2025 (la gráfica de abajo se centra en la ventana que se traslapa con CCE usada en la fusión de SP, más la serie completa para contexto)
+
+Las ediciones de la versión 2 de la lista de especies icónicas están listas por ahora. Si alguien tiene opiniones fuertes sobre cambios grandes, por favor díganme (Sophia); la retroalimentación se puede incorporar después de EWG 3.2.
+
+Materiales de revisión:
+
+- [Lista de Especies Icónicas](https://docs.google.com/spreadsheets/d/1D6VWMVoEhhkJf7aqx0DaqKFaP6XKi8OW1fAR9l_XfhA/edit?gid=1004292496#gid=1004292496)
+- [Casos especiales dentro de IUCN](https://docs.google.com/spreadsheets/d/1D6VWMVoEhhkJf7aqx0DaqKFaP6XKi8OW1fAR9l_XfhA/edit?gid=2131308524#gid=2131308524)
+- [Casos especiales dentro de CITES](https://docs.google.com/spreadsheets/d/1D6VWMVoEhhkJf7aqx0DaqKFaP6XKi8OW1fAR9l_XfhA/edit?gid=2124372570#gid=2124372570)
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+sp_plotly_lines(
+  ico_cs %>% filter(year >= 2019),
+  "current_status",
+  "ESTATUS ACTUAL: Especies Icónicas (ICO), 2019-2025"
+)
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+sp_plotly_lines(
+  ico_cs,
+  "current_status",
+  "ESTATUS ACTUAL: Especies Icónicas (ICO), serie completa 2010-2025"
+)
+```
+
+---
+
+# Temas para discusión {#topics-for-discussion}
+
+Por favor discutan estos puntos con el grupo en EWG 3.2:
+
+1. **Pesos iguales para CCE, LSP e ICO.** Confirmar si los pesos iguales son la elección de política final pretendida, o si alguna submeta debería ponderarse de manera distinta.
+
+2. **Justificación del cuantil 75 para empleados culturales.** Discutir si el cuantil 75 sigue siendo la referencia preferida para empleados culturales por residente costero, dado que las Western Midriff Islands (Región 2) tienen una tasa cruda mucho más alta que otras regiones y dominarían un punto de referencia del cuantil 90. Las alternativas exploradas incluyen el cuantil 80, el cuantil 90 y una línea base regional de 2019.
+
+3. **Valor por defecto de sitios de buceo no protegidos (58) y piso legal de coquina (30).**
+
+   - **Los sitios de buceo fuera de áreas protegidas** actualmente reciben 58, que es el mínimo de SIMEC i-efectividad entre sitios de buceo que sí caen en áreas protegidas puntuadas. En términos simples: si un sitio prioritario de buceo no está dentro de un área protegida gestionada, temporalmente le asignamos el puntaje de efectividad de área protegida más bajo observado entre sitios de buceo protegidos, en lugar de 0 o 100. La NOM-012-TUR-2016 requiere que los operadores de buceo informen a los clientes sobre protección ambiental, pero ese requisito de información no se trata como equivalente a la efectividad de gestión del sitio. Por favor confirmen si 58 sigue siendo el valor por defecto pretendido para no protegidos, o si EWG 3.2 prefiere una regla distinta (por ejemplo un piso legal más bajo, NA u otro valor fijo).
+   - **Los arrecifes de coquina** actualmente reciben una condición de piso legal de 30 cuando carecen de una gestión más fuerte basada en el sitio. Ese puntaje refleja el juicio de que la coquina no tiene un estatuto dedicado de hábitat y solo cobertura legal débil o indirecta, en contraste con pisos más fuertes usados para hábitats con protecciones dedicadas más claras (por ejemplo manglares y coral). Por favor confirmen si 30 sigue siendo el piso pretendido para coquina, o si debería revisarse.
+
+4. **Lista de especies icónicas.** Las ediciones de la versión 2 de la lista están listas por ahora. Si alguien tiene opiniones fuertes sobre cambios grandes, por favor díganme (Sophia); la retroalimentación se puede incorporar después de EWG 3.2. Revisar:
+
+   - [Lista de Especies Icónicas](https://docs.google.com/spreadsheets/d/1D6VWMVoEhhkJf7aqx0DaqKFaP6XKi8OW1fAR9l_XfhA/edit?gid=1004292496#gid=1004292496)
+   - [Casos especiales dentro de IUCN](https://docs.google.com/spreadsheets/d/1D6VWMVoEhhkJf7aqx0DaqKFaP6XKi8OW1fAR9l_XfhA/edit?gid=2131308524#gid=2131308524)
+   - [Casos especiales dentro de CITES](https://docs.google.com/spreadsheets/d/1D6VWMVoEhhkJf7aqx0DaqKFaP6XKi8OW1fAR9l_XfhA/edit?gid=2124372570#gid=2124372570)
+
+5. Discutir las preguntas planteadas en la sección [Reconocimiento: Pueblos originarios](#acknowledgment-pueblos-originarios).
+
+---
+
+# Página relacionada de Goalkeeper
+
+Para notas anteriores del proceso Goalkeeper, consulte la [página Goalkeeper de Sentido de Pertenencia](https://ohi-goc.github.io/OHI_GOC/chapters/sp_spanish.html).

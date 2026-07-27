@@ -1,0 +1,23 @@
+---
+title: "EWG 3.2: Oportunidades de Acceso"
+format: html
+---
+
+<div class="button-container">
+  <a href="ewg32_ao.html" class="custom-button">
+    <i class="fas fa-globe"></i> in English
+  </a>
+</div>
+
+# ![](figs/artisanal-fishing-opportunities.svg){width=8% height=8%} BORRADOR: Oportunidades de Acceso (AO)
+
+## Resumen ejecutivo
+
+El resumen ejecutivo de la meta Oportunidades de Acceso (AO) está disponible para revisión de expertas y expertos en el documento siguiente. Estos materiales resumen el modelo de la meta, las decisiones clave y los resultados preliminares para discusión con el grupo de trabajo de expertas y expertos EWG 3.2.
+
+**Nota sobre el nombre:** Oportunidades de Acceso es el nuevo nombre de la antigua meta Oportunidades Artesanales. Ambas usan el acrónimo **AO**.
+
+- **Inglés:** [AO Executive Summary](https://docs.google.com/document/d/1RyoGspGrQRQ4deif7Ybm3k3e39EG2X9dBnpket8ITtk/edit?usp=drive_link)
+- **Diapositivas:** próximamente
+
+Para más contexto sobre la meta AO, consulte la [página de Goalkeeper de Oportunidades de Acceso](https://ohi-goc.github.io/OHI_GOC/chapters/ao.html).

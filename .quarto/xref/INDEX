@@ -223,5 +223,20 @@
   },
   "chapters/ewg32_agenda.qmd": {
     "ewg32_agenda.html": "c91b376f"
+  },
+  "chapters/ewg32_sp_docx.qmd": {
+    "ewg32_sp_docx.docx": "44fb9123"
+  },
+  "chapters/ewg32_hs_spanish.qmd": {
+    "ewg32_hs_spanish.html": "d190c1d8"
+  },
+  "chapters/ewg32_sp_spanish.qmd": {
+    "ewg32_sp_spanish.html": "49ba4ab0"
+  },
+  "chapters/ewg32_ao_spanish.qmd": {
+    "ewg32_ao_spanish.html": "9bf6eea0"
+  },
+  "chapters/ewg32_agenda_spanish.qmd": {
+    "ewg32_agenda_spanish.html": "fb1bdee5"
   }
 }

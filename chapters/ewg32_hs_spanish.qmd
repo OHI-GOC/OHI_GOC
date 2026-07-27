@@ -1,0 +1,23 @@
+---
+title: "EWG 3.2: Servicios de Hábitat"
+format: html
+---
+
+<div class="button-container">
+  <a href="ewg32_hs.html" class="custom-button">
+    <i class="fas fa-globe"></i> in English
+  </a>
+</div>
+
+# ![](figs/coastal-protection.svg){width=8% height=8%} BORRADOR: Servicios de Hábitat (HS)
+
+## Resumen ejecutivo
+
+El resumen ejecutivo de la meta Servicios de Hábitat (HS) está disponible para revisión de expertas y expertos en el documento siguiente. Estos materiales resumen el modelo de la meta, las decisiones clave y los resultados preliminares para discusión con el grupo de trabajo de expertas y expertos EWG 3.2.
+
+**Nota sobre el nombre:** Servicios de Hábitat combina **Protección Costera** y **Almacenamiento de Carbono** en una sola meta, siguiendo la recomendación de expertas y expertos.
+
+- **Inglés:** [HS Executive Summary](https://docs.google.com/document/d/1mro2xQ3Q1TRTs5apmPCkJcBdkZCdjq8U3asCaNsrY9k/edit?usp=drive_link)
+- **Diapositivas:** próximamente
+
+Para más contexto, consulte la [página de Goalkeeper de Protección costera y Almacenamiento de carbono](https://ohi-goc.github.io/OHI_GOC/chapters/cp_cs.html).

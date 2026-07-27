@@ -3,7 +3,13 @@ title: "EWG 3.2: Habitat Services"
 format: html
 ---
 
-# ![](figs/coastal-protection.svg){width=8% height=8%} Habitat Services (HS)
+<div class="button-container">
+  <a href="ewg32_hs_spanish.html" class="custom-button">
+    <i class="fas fa-globe"></i> en español
+  </a>
+</div>
+
+# ![](figs/coastal-protection.svg){width=8% height=8%} DRAFT: Habitat Services (HS)
 
 ## Executive summary
 
