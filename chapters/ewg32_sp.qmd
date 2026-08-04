@@ -5,7 +5,7 @@ format:
     toc: true
 ---
 
-# ![](figs/sense-of-place.svg){width=8% height=8%} DRAFT: Sense of Place EWG 3.2 {#ewg32-sp}
+# ![](figs/sense-of-place.svg){width=8% height=8%} Sense of Place EWG 3.2 {#ewg32-sp}
 
 <div class="button-container">
   <a href="ewg32_sp_spanish.html" class="custom-button">
@@ -90,10 +90,7 @@ library(tidyverse)
 library(plotly)
 library(here)
 library(sf)
-library(mapview)
-
-# mapview + Quarto: avoid flatgeobuf path that can fail in some renders
-mapviewOptions(fgb = FALSE)
+library(ggplot2)
 
 rgn_labels <- c(
   "Region_1" = "Western Upper Gulf",
@@ -214,12 +211,18 @@ sp_plotly_goc <- function(df, y_var, title, y_range = c(0, 105)) {
 sp_cs <- read_csv(
   here::here("/home/shares/ohi/OHI_GOC/goal_prep/sp", "sp_current_status.csv"),
   show_col_types = FALSE
-) %>% add_rgn_labels()
+) %>%
+  add_rgn_labels() %>%
+  # hold overall SP at complete-method years until Ama tu Playa 2026 inventory is current
+  filter(year >= 2019, year <= 2025)
 
 cce_cs <- read_csv(
   here::here("/home/shares/ohi/OHI_GOC/goal_prep/sp/cce/v2026/output", "cce_current_status.csv"),
   show_col_types = FALSE
-) %>% add_rgn_labels()
+) %>%
+  add_rgn_labels() %>%
+  # same reporting window as overall SP (full CCE needs both Ama and cultural layers)
+  filter(year >= 2019, year <= 2025)
 
 ama_cs <- read_csv(
   here::here(
@@ -227,17 +230,21 @@ ama_cs <- read_csv(
     "current_status_ama_tu_playa_progress_072326.csv"
   ),
   show_col_types = FALSE
-) %>% add_rgn_labels()
+) %>%
+  add_rgn_labels() %>%
+  filter(year >= 2019, year <= 2025)
 
 cult_cs <- read_csv(
   here::here(
     "/home/shares/ohi/OHI_GOC/goal_prep/sp/cce/v2026/output",
-    "cultural_places_employees_per_pop_current_status_75th_quantile_gapfill2025.csv"
+    "cultural_places_employees_per_pop_current_status_75th_quantile.csv"
   ),
   show_col_types = FALSE
 ) %>%
   rename(year = data_year, final_score = score) %>%
   add_rgn_labels()
+  # cultural places intentionally keep 2026 so subcomponent trajectory is visible;
+  # 2026 is not yet folded into CCE/SP overall (see note under that section)
 
 lsp_cs <- read_csv(
   here::here("/home/shares/ohi/OHI_GOC/goal_prep/sp/lsp/v2025/output", "lsp_current_status.csv"),
@@ -414,23 +421,23 @@ lsp_hab_names <- if (nrow(lsp_hab_summary) > 0) {
 lsp_inventory_groups <- list(
   list(
     title = "Special Protected Areas",
-    note = "Cleaned protected-area features used in the LSP current status (preferring WDPA or SIMEC names when available).",
+    note = "Expert identified protected area features used in the LSP current status.",
     names = lsp_pa_names
   ),
   list(
     title = "Priority Dive Sites",
-    note = "Cleaned dive-site names used in the LSP current status, with coordinates.",
+    note = "Dive site names from Arcos-Aguilar et al. 2021 used in the LSP current status, with coordinates.",
     names = lsp_dive_names
   ),
   list(
     title = "Iconic Fishing Spots",
-    note = "Cleaned fishing-spot features used in the LSP current status, with OHI region labels.",
+    note = "Expert identified fishing spot features used in the LSP current status, with OHI region labels.",
     names = lsp_fish_names
   ),
   list(
     title = "Archaeological Sites",
     note = paste(
-      "Cleaned archaeological and coastal cultural features used in the LSP current status, with OHI region labels.",
+      "Expert identified archaeological and coastal cultural features used in the LSP current status, with OHI region labels.",
       "Sites labeled as Puerto Peñasco shell middens follow Rick Brusca's recommendation to include the large ancestral O'odham coastal cultural deposits near Puerto Peñasco",
       "(among the largest Native American coastal cultural material deposits in Sonora, dating to at least about 6,000 bp).",
       "Context:",
@@ -442,7 +449,7 @@ lsp_inventory_groups <- list(
   ),
   list(
     title = "All other Special Places",
-    note = "Cleaned marine locations of importance and other special places used in the LSP current status.",
+    note = "Expert identified marine locations of importance and other special places used in the LSP current status.",
     names = lsp_other_names
   ),
   list(
@@ -453,56 +460,83 @@ lsp_inventory_groups <- list(
 )
 
 # ---------------------------------------------------------------------------
-# One website map example: special protected areas as full polygons
-# colored by condition (SIMEC i-efectividad / Ramsar rules).
-# Embedding many Leaflet maps (especially mangroves and other detailed
-# habitat polygons) previously crashed Quarto with a JavaScript out-of-memory
-# error, so we keep a single simplified protected-area map here.
+# Static process maps only (dive points + non dissolved ANP polygons).
+# Interactive Leaflet/mapview PA maps were removed to avoid JS memory issues.
 # ---------------------------------------------------------------------------
 
-lsp_pa_map_sf <- tryCatch(
+# Process-map ANPs: Hem/POEM ANP polygons that are not dissolved (for dive illustration)
+process_anp_sf <- tryCatch(
   {
-    pa_tbl <- read_csv(
-      here::here(lsp_output_dir, "protected_area_condition.csv"),
-      show_col_types = FALSE
-    ) %>%
-      mutate(
-        name_join = str_squish(wdpa_orig_name),
-        rgn_id = str_replace_all(as.character(rgn_id), " ", "_"),
-        overall_condition = suppressWarnings(as.numeric(overall_condition)),
-        i_efectividad_name = str_squish(i_efectividad_name),
-        protected_area_name = coalesce(
-          na_if(str_squish(wdpa_orig_name), ""),
-          na_if(str_squish(i_efectividad_name), ""),
-          str_squish(lasting_special_place_description)
-        )
-      ) %>%
-      filter(!is.na(name_join), name_join != "")
-
-    all_protected_map <- st_read(
+    anp <- st_read(
       here::here(
-        "/home/shares/ohi/OHI_GOC/spatial/protected _areas_wdpa_and_hem",
-        "all_goc_protected_areas_dissolved_2025.shp"
+        "/home/shares/ohi/OHI_GOC/spatial/from_hem_POEM_ANP/232_ANP-ITRF08_16062025",
+        "232_ANP-ITRF08_16062025.shp"
       ),
       quiet = TRUE
     ) %>%
-      mutate(name_join = str_squish(name)) %>%
-      dplyr::select(name_join, geometry)
-
-    matched <- all_protected_map %>%
-      inner_join(
-        pa_tbl %>%
-          dplyr::select(
-            name_join, rgn_id, overall_condition,
-            protected_area_name, i_efectividad_name
-          ),
-        by = "name_join",
-        relationship = "many-to-many"
-      ) %>%
+      st_zm(drop = TRUE, what = "ZM") %>%
       st_make_valid()
 
-    # simplify vertices so the Leaflet widget stays website-sized
-    st_simplify(matched, dTolerance = 0.002, preserveTopology = TRUE)
+    # keep a name column when available for tooltips/labels
+    nm <- names(anp)
+    name_col <- nm[tolower(nm) %in% c("nombre", "name", "nom_anp", "anp")][1]
+    if (!is.na(name_col)) {
+      anp <- anp %>%
+        mutate(anp_name = str_squish(as.character(.data[[name_col]])))
+    } else {
+      anp <- anp %>% mutate(anp_name = NA_character_)
+    }
+
+    anp %>%
+      st_transform(4326) %>%
+      st_simplify(dTolerance = 0.002, preserveTopology = TRUE)
+  },
+  error = function(e) NULL
+)
+
+# Dive sites for process maps: gpkg points + condition scores from prep CSV
+dive_sites_sf <- tryCatch(
+  {
+    cond <- read_csv(
+      here::here(lsp_output_dir, "dive_sites_condition.csv"),
+      show_col_types = FALSE
+    ) %>%
+      mutate(
+        overall_condition = suppressWarnings(as.numeric(overall_condition)),
+        pa_condition = suppressWarnings(as.numeric(protected_area_condition)),
+        in_scored_pa = !is.na(pa_condition),
+        scoring_rule = if_else(
+          in_scored_pa,
+          "Inside scored protected area (SIMEC or RMPP)",
+          "Outside scored protected area (default 58)"
+        ),
+        nombre_sitio_de_buceo = str_squish(as.character(nombre_sitio_de_buceo))
+      ) %>%
+      dplyr::select(
+        nombre_sitio_de_buceo, overall_condition, pa_condition,
+        in_scored_pa, scoring_rule
+      ) %>%
+      distinct(nombre_sitio_de_buceo, .keep_all = TRUE)
+
+    dives <- st_read(
+      here::here(
+        "/home/shares/ohi/OHI_GOC/goal_prep/sp/lsp/v2025/int",
+        "dive_sites_w_priority_goc_rgnid.gpkg"
+      ),
+      quiet = TRUE
+    ) %>%
+      mutate(nombre_sitio_de_buceo = str_squish(as.character(nombre_sitio_de_buceo))) %>%
+      left_join(cond, by = "nombre_sitio_de_buceo") %>%
+      st_transform(4326)
+
+    coords <- st_coordinates(dives)
+    if (!"longitud" %in% names(dives)) dives$longitud <- coords[, 1]
+    if (!"latitud" %in% names(dives)) dives$latitud <- coords[, 2]
+    dives %>%
+      mutate(
+        longitud = suppressWarnings(as.numeric(longitud)),
+        latitud = suppressWarnings(as.numeric(latitud))
+      )
   },
   error = function(e) NULL
 )
@@ -512,11 +546,13 @@ lsp_pa_map_sf <- tryCatch(
 
 The overall SP current status score for each region and year is the arithmetic mean of that region's CCE, LSP, and ICO scores.
 
+**Reporting years for overall SP and CCE:** **2019-2025**. We hold overall scores at 2025 until the Ama tu Playa beach adoption inventory is current for 2026. The program website list has not shown updated adoption counts for many months into 2026, so a 2026 Ama score (or a silent copy of 2025 into 2026) would not yet be representative. Extending overall CCE or SP into 2026 with only cultural places would also break comparability from year to year, because CCE would no longer average both layers the way it does through 2025. Non natural cultural places plots below still show **2019-2026** as a subcomponent trajectory for discussion, not as the years used in the composite scores.
+
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 sp_plotly_lines(
   sp_cs,
   "current_status",
-  "CURRENT STATUS: Sense of Place (arithmetic mean of CCE, LSP, and ICO)"
+  "CURRENT STATUS: Sense of Place (arithmetic mean of CCE, LSP, and ICO), 2019-2025"
 )
 ```
 
@@ -534,7 +570,7 @@ where $SP_{r,t}$ is the regional Sense of Place score and the Gulf-wide line is 
 sp_plotly_goc(
   sp_goc_df,
   "sp_goc_current_status",
-  "Overall SP current status for the Gulf of California"
+  "Overall SP current status for the Gulf of California, 2019-2025"
 )
 ```
 
@@ -558,11 +594,13 @@ where:
 
 Missing values are ignored in the average. For example, Region 2 has no Ama tu Playa inventory beaches, so its CCE is driven by the cultural places layer alone.
 
+Overall CCE current status is shown for **2019-2025** only (see the note under [Overall Sense of Place scores](#overall-sense-of-place-scores)). The cultural places layer still plots through 2026 below so the group can see recent DENUE based change without folding incomplete beach adoption coverage into the composite.
+
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 sp_plotly_lines(
   cce_cs,
   "current_status",
-  "CURRENT STATUS: Coastal Community Engagement (CCE)"
+  "CURRENT STATUS: Coastal Community Engagement (CCE), 2019-2025"
 )
 ```
 
@@ -635,7 +673,7 @@ The intent is to count places where people gather around coastal culture, herita
 
 **How the layer was built**
 
-1. Start with INEGI DENUE sector 71 for 2019-2024.
+1. Start with INEGI DENUE sector 71 for **2019-2026**.
 2. Restrict to the six GoC states and keep only establishments inside the inland 10 km coastal buffer.
 3. Curate to cultural economic units with a meaningful coastal connection (see dropdown above for what is included and excluded).
 4. Estimate employees from DENUE employment size classes, aggregate by region and year, and divide by coastal locality population within the same 10 km buffer.
@@ -654,15 +692,15 @@ where:
 
 **Yes, both the establishments and the population are coastal.** Establishments are restricted to the inland 10 km coastal buffer, and population is from localities intersecting that same buffer (not whole municipalities inland of the Gulf).
 
-**Temporary 2025 gapfill:** DENUE 2025 is not yet available. For the SP merge, 2025 is temporarily copied from 2024 until DENUE 2025 is released. The observed 2019-2024 series remains unchanged so this can be reversed later.
+**Years:** The full cultural places series is **2019-2026** (updated DENUE prep: `non_natural_cultural_places_2019_2026_goc_10km.shp`). We show 2026 here on purpose so the group can see recent direction of change for this subcomponent. **2026 is not yet included in overall CCE or SP**, because Ama tu Playa adoption inventory is not yet a reliable 2026 observation (see the note under overall scores). 
 
 **Data sources**
 
-- INEGI DENUE sector 71 cultural and recreation establishments within the inland 10 km coastal buffer; employees estimated from DENUE size classes, scaled to coastal locality population, referenced to the 75th quantile; 2025 temporarily copied from 2024 until DENUE 2025 is released
+- INEGI DENUE sector 71 cultural and recreation establishments within the inland 10 km coastal buffer; employees estimated from DENUE size classes, scaled to coastal locality population, referenced to the 75th quantile; series through 2026
 
 ### Why the 75th quantile (not the 90th)?
 
-Before converting to a current status score, the raw employees-per-coastal-resident rates already show that the **Western Midriff Islands (Region 2)** sit far above the other regions. Using a high reference like the 90th quantile would make that outlier dominate the benchmark and pull most other regions toward very low scores. The 75th quantile still rewards higher cultural employment density, but is less driven by Region 2 alone.
+Before converting to a current status score, the raw rates of employees per coastal resident already show that the **Western Midriff Islands (Region 2)** sit far above the other regions. Using a high reference like the 90th quantile would make that outlier dominate the benchmark and pull most other regions toward very low scores. The 75th quantile still rewards higher cultural employment density, but is less driven by Region 2 alone.
 
 The plot below shows the raw rate (not yet scaled to 0-100). Horizontal lines mark the pooled 75th and 90th quantiles across all region-year observations.
 
@@ -733,7 +771,7 @@ The 75th quantile reference is still an open discussion item. See [Topics for di
 sp_plotly_lines(
   cult_cs,
   "final_score",
-  "CURRENT STATUS: Non-natural cultural places (employees per coastal pop, 75th quantile; 2025 gapfilled)"
+  "CURRENT STATUS: Non-natural cultural places (employees per coastal pop, 75th quantile; 2019-2026, not yet in overall SP)"
 )
 ```
 
@@ -819,23 +857,20 @@ For preliminary scores by region and category, and an overview of the decision m
 
 ## Expert-identified lasting special places
 
-Below are the *cleaned* place lists used to calculate LSP current status (from the processed condition tables), grouped by type. These are preferred over the raw EWG inventory sheet, which still contains duplicates and superseded entries. Expand a dropdown to see the unique names in that group.
-
-(NOTE: draft in progress, will be updated.)
+Below are the **cleaned** place lists used to calculate LSP current status (from the processed condition tables), grouped by type. These are preferred over the raw EWG inventory sheet, which still contains duplicates and superseded entries. Expand a dropdown to see the unique names in that group.
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, results='asis'}
 for (group in lsp_inventory_groups) {
   names_clean <- group$names %>%
     as.character() %>%
     str_squish() %>%
-    discard(~ is.na(.x) || .x == "") %>%
+    purrr::discard(~ is.na(.x) || .x == "") %>%
     unique() %>%
     sort()
-  n_places <- length(names_clean)
 
   cat("\n\n")
   cat("::: {.callout-note collapse=\"true\"}\n")
-  cat("## ", group$title, " (", n_places, ")\n\n", sep = "")
+  cat("## ", group$title, "\n\n", sep = "")
   cat(group$note, "\n\n", sep = "")
   cat(lsp_list_markdown(names_clean))
   cat("\n:::\n")
@@ -853,7 +888,7 @@ if (nrow(lsp_hab_summary) > 0) {
     ) %>%
     ggplot(aes(x = habitat_type, y = rgn_label, fill = present)) +
     geom_tile(color = "white", linewidth = 0.6) +
-    scale_fill_manual(values = c("Present" = "#747428")) +
+    scale_fill_manual(values = c("Present" = "darkorchid4")) +
     labs(
       title = "Special habitats scored in LSP: presence by OHI region",
       x = NULL,
@@ -869,36 +904,134 @@ if (nrow(lsp_hab_summary) > 0) {
 }
 ```
 
-## Example map: special protected areas
+## Example process map: scoring priority dive sites
 
-We include **one** interactive map as an example: the special protected areas used in LSP, shown as full polygons and colored by their protection condition. That condition is primarily SIMEC **i-efectividad**, with Ramsar management-plan rules applied where relevant (see the protected-area condition approach below).
+### Priority dive sites (source and scoring)
 
-We are not hosting a separate full-polygon map for every LSP type on this page, at least not as of now. Embedding several detailed Leaflet layers (especially large habitat footprints such as mangroves) exhausted the website build’s JavaScript memory.  For now, you can refer to the lists above that detail the dive sites, fishing spots, archaeological sites, other special places, and habitats; spatial review of those layers is better done in the prep scripts.  If you are interested, we are happy to meet 1:1 and walk through this.  
+**Priority dive sites** come from Arcos-Aguilar et al. 2021 and the GCMP, which identified dive spots across the Gulf of California and then those that would benefit most from being within a protected area.
 
-::: {.callout-tip collapse="true"}
-## Map: Special Protected Areas (polygons by protection condition)
+**Do they fall into a protected area?**
 
-Polygons are lightly simplified for the website. Click a polygon for the protected-area name and condition score.
+- **If yes:** the site condition is based on SIMEC **i-efectividad** and/or Ramsar management plan (RMPP) rules applied to that protected area. If the LSP lands within both a CONANP and a Ramsar protected area, it receives the **maximum** condition score between the two.
+- **If no:** sites that are not within a scored protected area receive  
+  $\min(\text{i-efectividad among dive sites that do fall in scored protected areas})$.  
+  With the current SIMEC joins, that value is **58** (same rule as in the dive-site prep: assign `nom_condition` from the minimum protected-area condition, then use that when there is no site-level protected-area score).
 
-```{r}
-#| echo: false
-#| warning: false
-#| message: false
-if (!is.null(lsp_pa_map_sf) && nrow(lsp_pa_map_sf) > 0) {
-  mapview(
-    lsp_pa_map_sf,
-    zcol = "overall_condition",
-    layer.name = "Protected area condition",
-    legend = TRUE,
-    homebutton = FALSE,
-    alpha.regions = 0.55,
-    label = lsp_pa_map_sf$protected_area_name
+Why not zero outside protected areas? **NOM-012-TUR-2016 §6.11** requires that for diving activities, both **within and outside** protected natural areas, dive tourism operators must inform participants that diving must not damage or remove aquatic wildlife (living or dead), and must not interfere with, alter, or remove archaeological, historical, and artistic monuments and remains (including prehistoric and paleontological artifacts as well as shipwrecks). Near underwater cultural heritage, a minimum distance of one meter must be maintained; equipment must be secured so it does not drag or damage cultural heritage or coral; and the same care applies in natural cavities to protect geological formations.
+
+In short: there are legal limits on divers' actions that protect marine areas regardless of ANP status. Enforcement can be difficult, so codified management is not perfect protection by itself. Sites inside managed protected areas can score higher when management effectiveness (SIMEC) is stronger. For broader context on marine tourism pressure in Mexico, see [Inside Climate News (2 August 2025)](https://insideclimatenews.org/news/02082025/mexico-marine-tourism-damaging-wildlife/).
+
+As a visual example of the scoring process, here is a static map of **Espíritu Santo near La Paz**. You can see dive sites that fall within the protected area polygons (red circles; condition follows SIMEC or RMPP for that reserve) and sites outside those scored protected areas (black triangles; currently the unprotected default of **58**). A few labeled sites (Mogote, Ferry Salvatierra, Fang Ming, Islote Gallo) make the two outcomes easy to compare. This is only an illustration of the decision rule; it is not a second inventory.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.width=9, fig.height=6.5}
+# static dive points over ANP polygons that are not dissolved (process illustration)
+if (
+  !is.null(process_anp_sf) && nrow(process_anp_sf) > 0 &&
+  !is.null(dive_sites_sf) && nrow(dive_sites_sf) > 0
+) {
+  # focused coastal window with both inside-PA (SIMEC) and outside-PA (default 58) sites
+  # near La Paz / Bahía de La Paz (Espíritu Santo) on the Baja Sur Gulf coast
+  focus_bbox <- st_bbox(
+    c(xmin = -110.50, xmax = -110.15, ymin = 24.10, ymax = 24.55),
+    crs = st_crs(4326)
   )
+
+  pa_focus <- tryCatch(
+    suppressWarnings(st_crop(process_anp_sf, focus_bbox)),
+    error = function(e) process_anp_sf
+  )
+
+  dive_focus <- dive_sites_sf %>%
+    filter(
+      longitud >= focus_bbox["xmin"],
+      longitud <= focus_bbox["xmax"],
+      latitud >= focus_bbox["ymin"],
+      latitud <= focus_bbox["ymax"]
+    )
+
+  label_sites <- dive_sites_sf %>%
+    filter(nombre_sitio_de_buceo %in% c("Mogote", "Ferry Salvatierra", "Fang Ming", "Islote Gallo")) %>%
+    mutate(
+      label = paste0(
+        nombre_sitio_de_buceo, "\n",
+        if_else(
+          !is.na(in_scored_pa) & in_scored_pa,
+          paste0("SIMEC based: ", round(overall_condition, 1)),
+          "default 58"
+        )
+      )
+    )
+
+  ggplot() +
+    geom_sf(
+      data = pa_focus,
+      fill = "#98a25a",
+      color = "gray30",
+      linewidth = 0.2,
+      alpha = 0.45
+    ) +
+    geom_sf(
+      data = dive_focus,
+      aes(color = scoring_rule, shape = scoring_rule),
+      size = 2.4,
+      alpha = 0.95
+    ) +
+    geom_sf_text(
+      data = label_sites %>% filter(
+        longitud >= focus_bbox["xmin"],
+        longitud <= focus_bbox["xmax"],
+        latitud >= focus_bbox["ymin"],
+        latitud <= focus_bbox["ymax"]
+      ),
+      aes(label = label),
+      size = 2.6,
+      fontface = "bold",
+      nudge_y = 0.03,
+      check_overlap = TRUE
+    ) +
+    scale_color_manual(
+      name = "Dive site scoring rule",
+      values = c(
+        "Inside scored protected area (SIMEC or RMPP)" = "#C03729",
+        "Outside scored protected area (default 58)" = "#333333"
+      ),
+      na.value = "gray50"
+    ) +
+    scale_shape_manual(
+      name = "Dive site scoring rule",
+      values = c(
+        "Inside scored protected area (SIMEC or RMPP)" = 16,
+        "Outside scored protected area (default 58)" = 17
+      ),
+      na.value = 4
+    ) +
+    coord_sf(
+      xlim = c(focus_bbox["xmin"], focus_bbox["xmax"]),
+      ylim = c(focus_bbox["ymin"], focus_bbox["ymax"]),
+      expand = FALSE
+    ) +
+    labs(title = NULL, subtitle = NULL, x = NULL, y = NULL, caption = NULL) +
+    theme_minimal(base_size = 11) +
+    theme(
+      legend.position = "bottom",
+      legend.box = "vertical",
+      panel.grid.minor = element_blank(),
+      axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1)
+    ) +
+    guides(
+      color = guide_legend(nrow = 2),
+      shape = guide_legend(nrow = 2)
+    )
 } else {
-  knitr::asis_output("*IN PROGRESS! (needs the dissolved GoC protected-area shapefile on Mazu at render time).*\n")
+  knitr::asis_output(
+    paste0(
+      "*Static process map unavailable here (needs the dive geopackage at ",
+      "`goal_prep/sp/lsp/v2025/int/dive_sites_w_priority_goc_rgnid.gpkg` and the ANP shapefile ",
+      "`spatial/from_hem_POEM_ANP/232_ANP-ITRF08_16062025` on Mazu at render time).*\n"
+    )
+  )
 }
 ```
-:::
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 sp_plotly_bars(
@@ -924,12 +1057,11 @@ These are CONANP and Ramsar areas that experts indicated are special for ecologi
 
 ### Priority Dive Sites
 
-These are dive spots identified in Arcos-Aguilar et al. 2021 and GCMP that would benefit most from protection.
+These are dive spots identified in Arcos-Aguilar et al. 2021 and GCMP that would benefit most from protection. See also the expanded rationale under [Example process map: scoring priority dive sites](#example-process-map-scoring-priority-dive-sites).
 
 1. If the dive site falls in a CONANP and/or Ramsar protected area, use SIMEC and RMPP condition for that area.
 2. If it falls in both CONANP and Ramsar, take the maximum of the two condition scores.
-3. If it is outside protected areas, assign the minimum i-efectividad observed across dive sites that do have a protected-area score (currently 58). This is a proxy default for unprotected sites, not a claim that unprotected dive sites are 58% "managed." See [Topics for discussion](#topics-for-discussion).
-4. Note: NOM-012-TUR-2016 section 6.11 requires dive operators to brief clients on environmental protection.
+3. If it is outside protected areas, assign the minimum i-efectividad observed across dive sites that do have a protected-area score (the prep rule `nom_condition = min(protected_area_condition)`; currently **58**). That non-zero floor reflects legal limits on divers under NOM-012-TUR-2016 §6.11 (briefing and conduct rules that apply both inside and outside protected natural areas), not full management effectiveness. Enforcement can be weak, so sites inside managed reserves can still score higher when SIMEC i-efectividad is stronger. See [Topics for discussion](#topics-for-discussion).
 
 ### Iconic Fishing Spots
 
@@ -956,7 +1088,7 @@ These include seagrasses, mangroves, coquina reefs, and coral reefs.
 1. Prefer SIMEC and RMPP when the habitat overlaps managed protected areas.
 2. Else use codified legal protections.
 3. Most legal protections currently score around 70 (for example coral, with stronger dedicated legal hooks).
-4. Coquina currently scores 30 as a legal-floor default when it is outside stronger site-based management, because there is no dedicated coquina habitat statute (only weaker, more indirect legal coverage). See [Topics for discussion](#topics-for-discussion).
+4. Coquina currently scores 30 as a legal floor default when it is outside stronger management tied to the site, because there is no dedicated coquina habitat statute (only weaker, more indirect legal coverage). See [Topics for discussion](#topics-for-discussion).
 5. Relevant references include NOM-022-SEMARNAT-2003, Código Penal Art. 420bis, Ley General de Vida Silvestre, NOM-059, LGEEPA, LFRA, and CITES.
 
 ### All other Special Places
@@ -967,7 +1099,7 @@ These are expert-identified places that did not fit cleanly into the categories 
 2. Else use codified protections.
 3. These were reviewed individually and may still benefit from further expert feedback.
 
-The dive site unprotected default of 58 and the coquina legal-floor score of 30 are open discussion items. See [Topics for discussion](#topics-for-discussion).
+The dive site unprotected default of 58 and the coquina legal floor score of 30 are open discussion items. See [Topics for discussion](#topics-for-discussion).
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 lsp_cats <- bind_rows(
@@ -1016,8 +1148,6 @@ When building the iconic species list, experts were asked to review the **"Iconi
 1. Are all "iconic species" in the Gulf of California listed?
 2. If not, please add the species name, common name, and reason for being iconic.
 3. Please write any notes about the species that can help rationalize its inclusion as an iconic species when the final report is written.
-
-This was then reviewed and edited by the Expert Working Group in our Meeting #2 in January, 2026, and confirmed by those experts asynchronously in April 2026.
 
 **Reasons for being iconic**
 
@@ -1120,8 +1250,8 @@ Please discuss these items with the group at EWG 3.2:
 
 3. **Dive site unprotected default (58) and coquina legal floor (30).**
 
-   - **Dive sites outside protected areas** currently receive 58, which is the minimum SIMEC i-efectividad among dive sites that do fall in scored protected areas. In plain terms: if a priority dive site is not inside a managed protected area, we are temporarily assigning it the lowest protected-area effectiveness score observed among protected dive sites, rather than 0 or 100. NOM-012-TUR-2016 requires dive operators to brief clients on environmental protection, but that briefing requirement is not treated as equivalent to site management effectiveness. Please confirm whether 58 is still the intended unprotected default, or whether EWG 3.2 prefers a different rule (for example a lower legal-floor score, NA, or another fixed value).
-   - **Coquina reefs** currently receive a legal-floor condition of 30 when they lack stronger site-based management. That score reflects the judgment that coquina has no dedicated habitat statute and only weak or indirect legal coverage, in contrast with stronger floors used for habitats with clearer dedicated protections (for example mangroves and coral). Please confirm whether 30 is still the intended coquina floor, or whether it should be revised.
+   - **Dive sites outside protected areas** currently receive **58**, following the dive-site prep script: `nom_condition = min(protected_area_condition, na.rm = TRUE)`, used when a site has no protected-area score. That is intentionally not zero because NOM-012-TUR-2016 §6.11 places legal limits on diving both inside and outside protected natural areas, but that codified briefing and conduct rule is not the same as on-site management effectiveness. Please confirm whether the min-i-efectividad default remains the intended rule, or whether EWG 3.2 prefers a different approach (for example NA or another fixed value).
+   - **Coquina reefs** currently receive a legal floor condition of 30 when they lack stronger management tied to the site. That score reflects the judgment that coquina has no dedicated habitat statute and only weak or indirect legal coverage, in contrast with stronger floors used for habitats with clearer dedicated protections (for example mangroves and coral). Please confirm whether 30 is still the intended coquina floor, or whether it should be revised.
 
 4. **Iconic species list.** Version 2 list edits are done for now. If anyone feels strongly about big changes, please tell me (Sophia); feedback can be incorporated after EWG 3.2. Review:
 

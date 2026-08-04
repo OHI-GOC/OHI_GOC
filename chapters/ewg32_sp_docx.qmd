@@ -202,12 +202,18 @@ sp_plotly_goc <- function(df, y_var, title, y_range = c(0, 105)) {
 sp_cs <- read_csv(
   here::here("/home/shares/ohi/OHI_GOC/goal_prep/sp", "sp_current_status.csv"),
   show_col_types = FALSE
-) %>% add_rgn_labels()
+) %>%
+  add_rgn_labels() %>%
+  # hold overall SP at complete-method years until Ama tu Playa 2026 inventory is current
+  filter(year >= 2019, year <= 2025)
 
 cce_cs <- read_csv(
   here::here("/home/shares/ohi/OHI_GOC/goal_prep/sp/cce/v2026/output", "cce_current_status.csv"),
   show_col_types = FALSE
-) %>% add_rgn_labels()
+) %>%
+  add_rgn_labels() %>%
+  # same reporting window as overall SP (full CCE needs both Ama and cultural layers)
+  filter(year >= 2019, year <= 2025)
 
 ama_cs <- read_csv(
   here::here(
@@ -215,17 +221,21 @@ ama_cs <- read_csv(
     "current_status_ama_tu_playa_progress_072326.csv"
   ),
   show_col_types = FALSE
-) %>% add_rgn_labels()
+) %>%
+  add_rgn_labels() %>%
+  filter(year >= 2019, year <= 2025)
 
 cult_cs <- read_csv(
   here::here(
     "/home/shares/ohi/OHI_GOC/goal_prep/sp/cce/v2026/output",
-    "cultural_places_employees_per_pop_current_status_75th_quantile_gapfill2025.csv"
+    "cultural_places_employees_per_pop_current_status_75th_quantile.csv"
   ),
   show_col_types = FALSE
 ) %>%
   rename(year = data_year, final_score = score) %>%
   add_rgn_labels()
+  # cultural places intentionally keep 2026 so subcomponent trajectory is visible;
+  # 2026 is not yet folded into CCE/SP overall (see note under that section)
 
 lsp_cs <- read_csv(
   here::here("/home/shares/ohi/OHI_GOC/goal_prep/sp/lsp/v2025/output", "lsp_current_status.csv"),
@@ -445,11 +455,13 @@ lsp_inventory_groups <- list(
 
 The overall SP current status score for each region and year is the arithmetic mean of that region's CCE, LSP, and ICO scores.
 
+**Reporting years for overall SP and CCE:** **2019-2025**. We hold overall scores at 2025 until the Ama tu Playa beach-adoption inventory is current for 2026. The program website list has not shown updated adoption counts for many months into 2026, so a 2026 Ama score (or a silent copy of 2025 into 2026) would not yet be representative. Extending overall CCE or SP into 2026 with only cultural places would also break year-to-year comparability, because CCE would no longer average both layers the way it does through 2025. Non-natural cultural places plots below still show **2019-2026** as a subcomponent trajectory for discussion, not as the years used in the composite scores.
+
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 sp_plotly_lines(
   sp_cs,
   "current_status",
-  "CURRENT STATUS: Sense of Place (arithmetic mean of CCE, LSP, and ICO)"
+  "CURRENT STATUS: Sense of Place (arithmetic mean of CCE, LSP, and ICO), 2019-2025"
 )
 ```
 
@@ -467,7 +479,7 @@ where $SP_{r,t}$ is the regional Sense of Place score and the Gulf-wide line is 
 sp_plotly_goc(
   sp_goc_df,
   "sp_goc_current_status",
-  "Overall SP current status for the Gulf of California"
+  "Overall SP current status for the Gulf of California, 2019-2025"
 )
 ```
 
@@ -491,11 +503,13 @@ where:
 
 Missing values are ignored in the average. For example, Region 2 has no Ama tu Playa inventory beaches, so its CCE is driven by the cultural places layer alone.
 
+Overall CCE current status is shown for **2019-2025** only (see the note under Overall Sense of Place scores). The cultural places layer still plots through 2026 below so the group can see recent DENUE-based change without folding incomplete beach-adoption coverage into the composite.
+
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 sp_plotly_lines(
   cce_cs,
   "current_status",
-  "CURRENT STATUS: Coastal Community Engagement (CCE)"
+  "CURRENT STATUS: Coastal Community Engagement (CCE), 2019-2025"
 )
 ```
 
@@ -566,7 +580,7 @@ The intent is to count places where people gather around coastal culture, herita
 
 **How the layer was built**
 
-1. Start with INEGI DENUE sector 71 for 2019-2024.
+1. Start with INEGI DENUE sector 71 for **2019-2026**.
 2. Restrict to the six GoC states and keep only establishments inside the inland 10 km coastal buffer.
 3. Curate to cultural economic units with a meaningful coastal connection (see above for what is included and excluded).
 4. Estimate employees from DENUE employment size classes, aggregate by region and year, and divide by coastal locality population within the same 10 km buffer.
@@ -585,11 +599,11 @@ where:
 
 **Yes, both the establishments and the population are coastal.** Establishments are restricted to the inland 10 km coastal buffer, and population is from localities intersecting that same buffer (not whole municipalities inland of the Gulf).
 
-**Temporary 2025 gapfill:** DENUE 2025 is not yet available. For the SP merge, 2025 is temporarily copied from 2024 until DENUE 2025 is released. The observed 2019-2024 series remains unchanged so this can be reversed later.
+**Years:** The full cultural places series is **2019-2026** (updated DENUE prep: `non_natural_cultural_places_2019_2026_goc_10km.shp`). We show 2026 here on purpose so the group can see recent direction of change for this subcomponent. **2026 is not yet included in overall CCE or SP**, because Ama tu Playa adoption inventory is not yet a reliable 2026 observation (see the note under overall scores). The temporary 2025-from-2024 gapfill is no longer used.
 
 **Data sources**
 
-- INEGI DENUE sector 71 cultural and recreation establishments within the inland 10 km coastal buffer; employees estimated from DENUE size classes, scaled to coastal locality population, referenced to the 75th quantile; 2025 temporarily copied from 2024 until DENUE 2025 is released
+- INEGI DENUE sector 71 cultural and recreation establishments within the inland 10 km coastal buffer; employees estimated from DENUE size classes, scaled to coastal locality population, referenced to the 75th quantile; series through 2026
 
 ### Why the 75th quantile (not the 90th)?
 
@@ -664,7 +678,7 @@ The 75th quantile reference is still an open discussion item. See [Topics for di
 sp_plotly_lines(
   cult_cs,
   "final_score",
-  "CURRENT STATUS: Non-natural cultural places (employees per coastal pop, 75th quantile; 2025 gapfilled)"
+  "CURRENT STATUS: Non-natural cultural places (employees per coastal pop, 75th quantile; 2019-2026, not yet in overall SP)"
 )
 ```
 
@@ -1025,4 +1039,3 @@ Please discuss these items with the group at EWG 3.2:
 # Related Goalkeeper page
 
 For earlier Goalkeeper process notes, see the [Sense of Place Goalkeeper page](https://ohi-goc.github.io/OHI_GOC/chapters/sp.html).
-
