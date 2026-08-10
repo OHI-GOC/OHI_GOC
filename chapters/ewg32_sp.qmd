@@ -822,22 +822,26 @@ geom_goc_basemap <- function() {
   }
 }
 
-# Pre-built LSP figures from the website images folder (and goal_prep fallbacks).
-# Prefer PNG for HTML / Word; if only PDF exists, convert once to a local cache PNG.
+# Pre-built LSP figures: Mazu/goal_prep viz exports + optional website package copies.
+# Always prefer an existing PNG (newest by mtime if several copies). Only convert PDF → PNG
+# when no PNG is found at all (never discard a real PNG if PDF conversion fails).
 lsp_viz_dirs <- unique(c(
-  here("images/sp_lsp_figs"),
-  here("../images/sp_lsp_figs"),
-  file.path(Sys.getenv("HOME", ""), "OHI_Intro/OHI_GOC/images/sp_lsp_figs"),
   "/home/shares/ohi/OHI_GOC/goal_prep/sp/lsp/v2025/viz",
   here("goal_prep/sp/lsp/v2025/viz"),
-  here("../goal_prep/sp/lsp/v2025/viz")
+  here("../goal_prep/sp/lsp/v2025/viz"),
+  here("images/sp_lsp_figs"),
+  here("../images/sp_lsp_figs"),
+  file.path(Sys.getenv("HOME", ""), "OHI_Intro/OHI_GOC/images/sp_lsp_figs")
 ))
 lsp_viz_cache <- here("chapters/figs/lsp_viz_cache")
 
 find_lsp_viz <- function(stem, ext) {
   paths <- file.path(lsp_viz_dirs, paste0(stem, ".", ext))
   hit <- paths[file.exists(paths)]
-  if (length(hit) == 0) NA_character_ else hit[[1]]
+  if (length(hit) == 0) return(NA_character_)
+  mt <- file.info(hit)$mtime
+  if (all(is.na(mt))) return(hit[[1]])
+  hit[[which.max(mt)]]
 }
 
 ensure_lsp_viz_png <- function(stem) {
@@ -849,7 +853,10 @@ ensure_lsp_viz_png <- function(stem) {
 
   dir.create(lsp_viz_cache, recursive = TRUE, showWarnings = FALSE)
   out <- file.path(lsp_viz_cache, paste0(stem, ".png"))
-  if (file.exists(out) && file.mtime(out) >= file.mtime(pdf)) return(out)
+  if (file.exists(out) && !is.na(file.mtime(out)) &&
+      !is.na(file.mtime(pdf)) && file.mtime(out) >= file.mtime(pdf)) {
+    return(out)
+  }
 
   converted <- FALSE
   if (requireNamespace("magick", quietly = TRUE)) {
@@ -876,12 +883,15 @@ ensure_lsp_viz_png <- function(stem) {
 
 include_lsp_viz <- function(stem, out.width = "100%") {
   png <- ensure_lsp_viz_png(stem)
-  if (is.na(png)) {
+  if (is.na(png) || !file.exists(png)) {
     return(knitr::asis_output(paste0(
       "*LSP figure `", stem,
-      ".png` is not available for this render. Please re-render after figures are included.*"
+      ".png` is not available for this render. Expected under e.g. ",
+      "`/home/shares/ohi/OHI_GOC/goal_prep/sp/lsp/v2025/viz/`. ",
+      "Re-export from sp_visualization.qmd and confirm the PNG exists.*"
     )))
   }
+  message("LSP viz `", stem, "`: using ", normalizePath(png, winslash = "/", mustWork = FALSE))
   knitr::include_graphics(normalizePath(png, winslash = "/", mustWork = TRUE))
 }
 ```
@@ -890,9 +900,9 @@ include_lsp_viz <- function(stem, out.width = "100%") {
 
 The overall SP current status score for each region and year is the arithmetic mean of that region's CCE, LSP, and ICO scores.
 
-**Reporting years for overall SP and CCE:** **2019-2025**. We hold overall scores at 2025 until the Ama tu Playa beach adoption inventory is current for 2026. The program website list has not shown updated adoption counts for many months into 2026, so a 2026 Ama score (or a silent copy of 2025 into 2026) would not yet be representative. Extending overall CCE or SP into 2026 with only cultural places would also break comparability from year to year, because CCE would no longer average both layers the way it does through 2025. Non natural cultural places plots below still show **2019-2026** as a subcomponent trajectory for discussion, not as the years used in the composite scores.
+**Reporting years for overall SP:** **2019-2025**. We will not update overall scores past 2025 until all data sources have been updated through 2026.
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Figure 1. Regional Sense of Place current status scores over time for each of the nine OHI Gulf of California regions. For every region and year, Sense of Place is the equal-weight average of three subgoals: Coastal Community Engagement (CCE), Lasting Special Places (LSP), and Iconic Species (ICO). A score of 100 represents the reference condition we treat as a full, ideal status; lower values mean weaker estimated condition. Years shown are 2019 through 2025, which is the window used for overall SP until beach-adoption inventory data can support a full 2026 composite."}
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Figure 1. Regional Sense of Place current status scores over time for each of the nine OHI Gulf of California regions. For every region and year, Sense of Place is the equal-weight average of three subgoals: Coastal Community Engagement (CCE), Lasting Special Places (LSP), and Iconic Species (ICO). A score of 100 represents the reference condition we treat as an ideal status; lower values represent lower estimated condition. Years shown are 2019 through 2025."}
 sp_plotly_lines(
   sp_cs,
   "current_status",
@@ -964,14 +974,14 @@ where:
 - $\text{adopted beaches}_{r}$ is the number of inventory beaches in that region that are already adopted
 - $\text{total inventory beaches}_{r}$ is the number of inventory beaches in that region
 
-For 2019-2024, $Ama_{r,t} = 0$ because the campaign begins with the 2025-2030 strategy. Region 2 has **no beaches in the program inventory** after the spatial join to OHI regions and the inland 10 km buffer. That is **not** treated as a perfect score of 100 (absence from the inventory is not the same as plastic free). It is stored as `NA` with reason `"no beaches in program inventory"`.
+For 2019-2024, $Ama_{r,t} = 0$ because the campaign begins with the 2025-2030 strategy. Region 2 has no beaches in the program inventory identified by SEMARNAT as in need. It is treated as `NA` with reason `"no beaches in program inventory"`.
 
 **Data sources**
 
 - SEMARNAT Ama tu Playa beach inventory and adoption status from the national beach cleanup and conservation strategy catalog; adoption percent by OHI region
 - Platform: [adoptaunaplaya.com](https://www.adoptaunaplaya.com/playas/)
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Figure 4. Beach adoptions layer of CCE: the share of SEMARNAT Ama tu Playa inventory beaches in each region that have already been formally adopted. Adoption means an organization has committed to keep that beach or coastal stretch clean under the 2025-2030 national beach strategy; we score stewardship through adoption share, not kilos of trash collected. For 2019-2024 the campaign has not started in our scoring rules, so adoptions are recorded as 0. Region 2 has no beaches in the program inventory after the spatial join and is shown carefully so absence is not mistaken for a perfect score."}
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Figure 4. Beach adoptions layer of CCE: the share of SEMARNAT Ama tu Playa inventory beaches in each region that have already been formally adopted. Adoption means an organization has committed to keep that beach or coastal stretch clean under the 2025-2030 national beach strategy; we score stewardship through adoption share, not kilos of trash collected. For 2019-2024, the campaign had not started yet, so adoptions are recorded as 0. The Western Midriff Islands OHI region has no beaches in the program inventory."}
 sp_plotly_lines(
   ama_cs %>% filter(!is.na(current_status) | rgn_id == "Region_2"),
   "current_status",
@@ -1004,7 +1014,7 @@ We start from INEGI DENUE sector 71 (*servicios de esparcimiento culturales y de
 - Historic sites and related heritage establishments
 - Botanical gardens and similar nature-culture venues
 - Public parks and recreation spaces with cultural connection
-- Marinas and related coastal recreation establishments that support place-based coastal use
+- Coastal recreation establishments that support place-based coastal use
 
 **Examples excluded**
 
@@ -1012,14 +1022,14 @@ We start from INEGI DENUE sector 71 (*servicios de esparcimiento culturales y de
 - Cockfighting venues (for example GALLERA)
 - Selected administrative businesses identified by name that do not represent community cultural engagement with the coast
 
-The intent is to count places where people gather around coastal culture, heritage, and recreation, not every establishment that happens to fall under the broad DENUE recreation sector.
+The intent is to count places where people gather around coastal culture, heritage, and recreation, not every establishment that happens to fall under the broad DENUE culture and recreation sector.
 :::
 
 **How the layer was built**
 
 1. Start with INEGI DENUE sector 71 for **2019-2026**.
 2. Restrict to the six GoC states and keep only establishments inside the inland 10 km coastal buffer.
-3. Curate to cultural economic units with a meaningful coastal connection (see dropdown above for what is included and excluded).
+3. Limit to cultural economic units with a meaningful coastal connection (see list above for what is included and excluded).
 4. Estimate employees from DENUE employment size classes, aggregate by region and year, and divide by coastal locality population within the same 10 km buffer.
 5. Convert the per capita rate to a 0 to 100 status using the **75th quantile** of employees per capita across all regions and years as the reference:
 
@@ -1036,14 +1046,14 @@ where:
 
 **Yes, both the establishments and the population are coastal.** Establishments are restricted to the inland 10 km coastal buffer, and population is from localities intersecting that same buffer (not whole municipalities inland of the Gulf).
 
-**Years:** The full cultural places series is **2019-2026** (updated DENUE prep for the inland 10 km coastal buffer). We show 2026 here on purpose so the group can see recent direction of change for this subcomponent. **2026 is not yet included in overall CCE or SP**, because Ama tu Playa adoption inventory is not yet a reliable 2026 observation (see the note under overall scores).
+**Years:** The full cultural places series is **2019-2026** (updated DENUE prep for the inland 10 km coastal buffer). We show 2026 here on purpose, so the group can see recent direction of change for this subcomponent. **2026 is not yet included in overall CCE or SP**, because Ama tu Playa adoption inventory is not yet a reliable 2026 observation (see the note under overall scores). Note that we are able to include 2026 because we use the release of the economic unit inventory released yearly, as a snapshot to represent the annual economic units and number of employees.
 
 **What stands out in 2025 and 2026 for non-natural cultural places.** Two regions show interesting increases that matter for interpreting the CCE cultural layer (and the series through 2026, even though 2026 is not yet included in overall CCE or SP).
 
-- **Western Upper Gulf (San Felipe area):** community cultural capacity grew. DENUE records shifted from about one small art studio (roughly 0-5 employees) toward **three places**, including a *casa de cultura* and a children's cultural and sports center, with estimated cultural jobs rising from about **3 to about 40**.
-- **Western Central Gulf (Mulegé area):** the count of places stayed similar (about four to five museums and cultural centers, including the *Casa de la Cultura* and the *Museo Comunitario de Mulegé*), but **estimated employment grew** from about **30 to about 50** staff. More staff is a signal of more activity at existing community cultural places, not only of new sites opening.
+- **Western Upper Gulf (San Felipe area):** community cultural capacity grew. DENUE records shifted from only one small art studio (roughly 0-5 employees) toward **three places**, including a *casa de cultura* and a children's cultural and sports center, with estimated cultural jobs rising from about **3 to about 20**.
+- **Western Central Gulf (Mulegé area):** the count of places stayed similar (about four to five museums and cultural centers, including the *Casa de la Cultura* and the *Museo Comunitario de Mulegé*), but estimated employment grew from about **30 to about 50** staff. More staff is a signal of more activity at existing community cultural places, not only of new sites opening.
 
-Both cases suggest that recent score movement can reflect real growth in coastal cultural infrastructure and jobs, not only year-to-year noise in DENUE.
+Both cases suggest that recent score movement can reflect real growth in coastal cultural infrastructure and jobs.
 
 
 **Data sources**
@@ -1192,9 +1202,9 @@ where:
 
 **Assessment year:** 2025 snapshot.
 
-The map below shows the **overall LSP current status for 2025** by OHI marine region (static export from LSP prep visualization on Mazu). Colors run from lower scores (warmer colors) to higher scores (cooler colors) on a fixed 0 to 100 scale. White regions have no combined score.
+The map below shows the **overall LSP current status for 2025** by OHI marine region (static export from LSP prep visualization on Mazu). Colors run from lower scores (warmer colors) to higher scores (cooler colors) on a fixed 0 to 100 scale. White regions have no combined score, and are NA.
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="90%", fig.align="center", fig.cap="Figure 8. Overall Lasting Special Places (LSP) current status by OHI marine region for the 2025 assessment snapshot. LSP is the mean condition of expert-identified special places once each place has been scored from management and legal protections. Colors run from lower scores (warmer) to higher scores (cooler) on a fixed 0-100 scale. White means that region has no combined LSP score for this year."}
+```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="90%", fig.align="center", fig.cap="Figure 8. Overall Lasting Special Places (LSP) current status by OHI marine region for the 2025 assessment snapshot. LSP is the mean condition of expert-identified special places once each place has been scored from management and legal protections. Colors run from lower scores (warmer) to higher scores (cooler) on a fixed 0 to 100 scale. White means that region has no combined LSP score for this year."}
 include_lsp_viz("lsp_overall_2025")
 ```
 
@@ -1220,7 +1230,7 @@ A multi-panel of all category scores is also at the end of this section.
 
 ### Special Protected Areas
 
-These are CONANP and Ramsar areas that experts indicated as special because they are very important ecologically, culturally, or aesthetically. They are **not** the full set of every park boundary in the Gulf. Experts selected places that matter as lasting special places for communities and nature, rather than areas that may exist on paper mainly from political design processes without that place-based meaning.
+These are CONANP and Ramsar areas that experts indicated as special because they are very important ecologically, culturally, or aesthetically. They are **not** the full set of every protected area boundary in the Gulf. Experts selected places that matter as lasting special places for communities and nature, rather than areas that may exist on paper mainly from political design processes without that place-based meaning.
 
 **What is SIMEC i-efectividad?** CONANP reports management effectiveness through **SIMEC** (*Sistema de Información, Monitoreo y Evaluación para la Conservación*). The **i-efectividad** score summarizes how well a natural protected area is managed toward its conservation goals. It is not simply an “is the special place located within a protected area?” indicator. Effective management depends on suitable design, governance, staffing and budgets, day-to-day processes, and whether outcomes match site objectives. CONANP’s reporting sits in the broader international tradition of protected-area management effectiveness evaluation (for example frameworks used by the IUCN World Commission on Protected Areas). Details of the current method are in CONANP’s [2025 technical document for i-efectividad](https://simec.conanp.gob.mx/pdf_evaluacion/Documento_Tecnico_iefectividad_2025.pdf). We use reported i-efectividad values as the preferred condition when an expert-listed site has them, because higher management effectiveness is a stronger claim that the place will remain protected for future generations.
 
@@ -1238,7 +1248,7 @@ The method map fills each expert-listed special protected area by its overall co
 include_lsp_viz("process_special_protected_areas")
 ```
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="75%", fig.align="center", fig.cap="Figure 10. Regional scores for the special protected areas category. Within each OHI region we average the condition scores of the expert-listed special parks and Ramsar sites that fall in that region after the SIMEC and Ramsar plan rules in Figure 9. Scores sit on a 0-100 scale. White or missing means no scored special protected area contributes in that region for this assessment."}
+```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="75%", fig.align="center", fig.cap="Figure 10. Regional scores for the special protected areas category. Within each OHI region we average the condition scores of the expert-listed special protected areas and Ramsar sites that fall in that region after the SIMEC i-efectividad and Ramsar plan rules in Figure 9. Scores sit on a 0 to 100 scale. White or missing means no scored special protected area contributes in that region for this assessment."}
 include_lsp_viz("lsp_special_protected_areas")
 ```
 
@@ -1251,31 +1261,45 @@ include_lsp_viz("lsp_special_protected_areas")
 
 ### Priority Dive Sites
 
-These are dive spots identified in Arcos-Aguilar et al. 2021 and the GCMP that would benefit most from protection.
+These are dive spots from the Arcos-Aguilar et al. (2021) dive-site inventory and the CBMC GCMP prioritization of diving sites that would benefit most from formal protected-area management.
 
-**Why protected dive sites score higher.** Priority dive places are lasting special places because people travel specifically to experience them. Protection helps keep the wildlife, reefs, and underwater features that make the trip meaningful, supports dive-based livelihoods when sites stay high quality, and reduces cumulative damage from use and extractive pressure. Managed parks and no-take cores increase the chance that the site remains the place communities and visitors valued. Outside parks there is still national dive-tourism law (NOM-012-TUR-2016), but that residual duty of care is intentionally weaker than well managed protection, because it is not the same as active park management for a special place.
+**How Arcos-Aguilar et al. (2021) assembled and characterized dive sites.** [Arcos-Aguilar et al. (2021)](https://doi.org/10.1016/j.marpol.2021.104410) built the most comprehensive national inventory of recreational dive sites in Mexico to document the economic importance of diving tourism and its dependence on healthy marine habitats. Their method:
+
+1. **Web inventory of sites.** From January to March 2018 they searched Google in English and Spanish (`Diving` / `Dive sites` / `Buceo` / `Sitios de buceo` + Mexico, then each coastal state). They retained results from tourism and diving-operator websites, dive magazines, peer-reviewed papers, and gray literature.
+2. **Popularity proxy.** Each time a place reappeared in search results was tallied as a “frequency of appearance,” used later as a simple popularity signal (more web mentions ≈ more widely advertised/known).
+3. **Operators and economics.** They also assembled and field-checked active diving operators and surveyed a subset about clients, prices, and costs, showing that national diving revenues are on the same order of magnitude as Mexico’s artisanal and industrial fisheries together.
+4. **Protection status overlay.** Site coordinates were overlaid on CONANP marine protected-area polygons and no-take sub-zones. Of the inventory, roughly half the sites sat inside some form of natural protected area, a small minority fell inside no-take zones, and a large share (**about 42%**) still lacked any protection designation.
+
+The paper’s policy message is that many tourism-visible dive places remain outside strong protection even though diving depends on intact reefs and wildlife, and that higher encounter quality (especially in no-take settings) is linked to the experience visitors pay for.
+
+**What “priority dive sites” mean in this Index.** We do **not** score every pin from the full national inventory. Prep restricts to the **CBMC GCMP prioritization of diving sites** table that sits with the Arcos/GCMP data products: a curated subset of sites with coordinates and priority fields that flags diving locations of particular conservation and tourism importance, then keeps only points that fall in OHI Gulf of California marine regions or the inland 10 km coastal buffer. That priority subset is what we call **priority dive sites** here.
+
+**Why we use that subset as lasting special places.** Arcos-Aguilar et al. showed that a large share of marketed dive sites still lie outside protected areas, while wildlife encounters that define the dive experience are more likely in managed or no-take waters. We therefore treat the priority list as places that **have been isolated as sites that would benefit from lying within a protected area**. For Sense of Place, the **ideal reference condition** is that **all priority dive sites** sit inside managed protected areas or equivalent protections (so communities and visitors can still experience the place that made the trip meaningful). Scoring follows that ideal: inside CONANP/Ramsar areas we use SIMEC i-efectividad (and Ramsar plan rules when they apply); outside, only a weaker minimum under national tourism law remains, so unprotected priority sites pull the score down relative to a fully protected network.
+
+**Why protected dive sites score higher (Scoring rules).** Priority dive places are lasting special places because people travel specifically to experience them. Protection helps keep the wildlife, reefs, and underwater features that make the trip meaningful, supports dive-based livelihoods when sites stay high quality, and reduces cumulative damage from use and extractive pressure. Managed protected areas and no-take areas increase the chance that the site remains the place communities and visitors valued. Outside of protected areas, there is still the national dive-tourism law (NOM-012-TUR-2016), but that residual duty of care is intentionally weaker than well-managed protection, because it is not the same as active protected area management for a special place. Therefore:
 
 1. If the dive site falls in a CONANP and/or Ramsar protected area, use SIMEC and Ramsar plan condition for that area.
 2. If it falls in both, take the maximum of the two condition scores.
-3. If it is outside protected areas, use a non-zero floor from NOM-012-TUR-2016 §6.11 (legal dive tourism rules that apply inside and outside protected natural areas). In prep, that floor is taken as the minimum observed protected-area condition among dive sites that do have a park score (currently **58**).
+3. If it is outside protected areas, use a non-zero floor from NOM-012-TUR-2016 §6.11 (legal dive tourism rules that apply inside and outside protected natural areas). We determined the score by using the minimum observed SIMEC i-efectividad condition among dive sites that do have a protected-area score (currently **58**).
 
-Gulf-wide dive sites by overall condition, then Espíritu Santo zoom (inside PA vs outside with tourism-rule floor), then regional scores.
+Gulf-wide dive sites by overall condition, then Espíritu Santo zoom (inside protected area vs outside with tourism-rule floor), then regional scores.
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="85%", fig.align="center", fig.cap="Figure 11. Method map of priority dive sites colored by the overall condition we use in scoring. Dive locations come from published priority analyses (Arcos-Aguilar et al. 2021 and GCMP layers). If a site sits inside a CONANP or Ramsar protected area, its condition is the SIMEC and/or Ramsar management score for that area (the higher of the two when both apply). If a site sits outside protected areas, it still receives a non-zero legal floor from Mexico's dive-tourism standard NOM-012-TUR-2016 section 6.11, which sets operating rules for dive tourism both inside and outside natural protected areas. In prep we set that floor to the minimum park condition observed among dive sites that do have a protected-area score (currently 58)."}
+```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="85%", fig.align="center", fig.cap="Figure 11. Method map of priority dive sites colored by the overall condition we use in scoring. Dive locations come from published priority analyses (Arcos-Aguilar et al. 2021 and GCMP layers). If a site sits inside a CONANP or Ramsar protected area, its condition is the SIMEC i-efectividad and/or Ramsar management-plan score for that area (the higher of the two when both apply). If a site sits outside protected areas, it still receives a non-zero baseline condition under Mexico's dive-tourism standard NOM-012-TUR-2016 section 6.11, which sets operating rules for dive tourism both inside and outside natural protected areas. In prep, we set that baseline to the minimum SIMEC i-efectividad condition observed among dive sites that do have a protected-area score (currently 58)."}
 include_lsp_viz("process_priority_dive_sites_condition")
 ```
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="85%", fig.align="center", fig.cap="Figure 12. Zoomed method map around Parque Nacional Espiritu Santo to show the inside-versus-outside protected area logic for dive sites more clearly. Sites inside the park inherit the park management condition. Nearby priority sites outside the boundary use the NOM-012-TUR legal floor (currently 58) rather than dropping to zero. This illustrates that unprotected dive tourism is not treated as no protection, but also not as fully equivalent to a well managed park."}
+```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="85%", fig.align="center", fig.cap="Figure 12. Zoomed method map around Parque Nacional Espíritu Santo to show the inside-versus-outside protected area logic for dive sites more clearly. Sites inside a protected area inherit the SIMEC i-efectividad management condition. Nearby priority sites outside the boundary use the NOM-012-TUR statute-based minimum condition (currently 58) rather than dropping to zero. This illustrates that dive tourism outside a protected area is not treated as no protection, but also not as fully equivalent to being located within a well-managed protected area."}
 include_lsp_viz("process_priority_dive_sites")
 ```
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="75%", fig.align="center", fig.cap="Figure 13. Regional priority dive site scores. Each region averages condition across its priority dive sites after the protected-area and legal-floor rules in Figures 11 and 12. Higher scores mean the set of iconic dive places in that region is, on average, better covered by managed parks or at least by the national dive-tourism legal baseline."}
+```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="75%", fig.align="center", fig.cap="Figure 13. Regional priority dive site scores. Each region averages condition across its priority dive sites after the protected-area and statute-based rules in Figures 11 and 12. Higher scores mean the set of priority dive places in that region is, on average, better covered by managed protected areas (SIMEC i-efectividad) or at least by the national dive-tourism legal baseline."}
 include_lsp_viz("lsp_priority_dive_sites")
 ```
 
 **Data sources**
 
-- Arcos-Aguilar et al. 2021 and CBMC GCMP dive site layers and priority table
+- Arcos-Aguilar, R., F. Favoretto, J.A. Kumagai, V. Jiménez-Esquivel, A.L. Martínez-Cruz, and O. Aburto-Oropeza. 2021. Diving tourism in Mexico – Economic and conservation importance. *Marine Policy* 126: 104410. [https://doi.org/10.1016/j.marpol.2021.104410](https://doi.org/10.1016/j.marpol.2021.104410)
+- CBMC GCMP dive site layers and prioritization of diving sites table (coordinates and priority fields used in prep)
 - Combined protected areas (WDPA, CONANP, HEM) as above
 - CONANP SIMEC i-efectividad and Ramsar management plan presence
 - [NOM-012-TUR-2016](https://dof.gob.mx/nota_to_doc.php%3Fcodnota%3D5450981) §6.11 (dive tourism rules inside and outside protected natural areas)
@@ -1294,11 +1318,11 @@ These are historically important fishing coordinates indicated by experts.
 
 Method map: **ZRP** vs **TURF** vs **In PA** vs **Other**. Then regional fishing scores.
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="85%", fig.align="center", fig.cap="Figure 14. Method map of iconic fishing places labeled by the protection pathway that sets their score. Coordinates come from Expert Working Group inventory of historically important fishing places. A ZRP (zona de refugio pesquero, or fishing refuge zone) is a designated Mexican marine or coastal area where fishing is partly or fully restricted to protect marine life, allow depleted stocks to recover, and support sustainable use by local fishers; sites inside a ZRP score 100. A TURF (territorial use right in fisheries) is a cooperative fishing territory where fishing rights are allocated to a defined community; sites confirmed as TURF also score 100 (based on Aceves-Bueno et al. 2023 review, since nationwide TURF polygons are not easily downloaded for batch processing). Other sites inside relevant protected areas use SIMEC or Ramsar plan scores. Remaining sites fall in the Other class under this hierarchy."}
+```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="85%", fig.align="center", fig.cap="Figure 14. Method map of iconic fishing places labeled by the protection pathway that sets their score. Coordinates come from the Expert Working Group inventory of historically important fishing places. A ZRP (zona de refugio pesquero, or fishing refuge zone) is a designated Mexican marine or coastal area where fishing is partly or fully restricted to protect marine life, allow depleted stocks to recover, and support sustainable use by local fishers; sites inside a ZRP score 100. A TURF (territorial use right in fisheries) is a cooperative fishing territory where fishing rights are allocated to a defined community; sites confirmed as TURF also score 100 (based on Aceves-Bueno et al. 2023 review, since nationwide TURF polygons are not easily downloaded for batch processing). Other sites inside relevant protected areas use SIMEC i-efectividad or Ramsar plan scores. Remaining sites fall in the Other class under this hierarchy."}
 include_lsp_viz("process_iconic_fishing_gulf")
 ```
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="75%", fig.align="center", fig.cap="Figure 15. Regional iconic fishing scores after applying the ZRP, TURF, and protected-area rules. Higher regional scores mean expert-listed fishing places in that region sit, on average, inside stronger fishery or park protections."}
+```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="75%", fig.align="center", fig.cap="Figure 15. Regional iconic fishing scores after applying the ZRP, TURF, and protected-area rules. Higher regional scores mean expert-listed fishing places in that region sit, on average, inside stronger fishery or protected area protections."}
 include_lsp_viz("lsp_iconic_fishing_spots")
 ```
 
@@ -1321,11 +1345,11 @@ These are places where remains make the surrounding natural area culturally and 
 
 Method map: scored sites with **INAH** / **In PA** / **Legal only** rules. Then regional archaeology scores.
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="85%", fig.align="center", fig.cap="Figure 16. Method map of archaeological and related cultural sites scored for Lasting Special Places. These are places where material remains make the surrounding coast culturally and spiritually special, such as shell middens. INAH is Mexico's Instituto Nacional de Antropologia e Historia (National Institute of Anthropology and History; see https://www.inah.gob.mx/zonas-arqueologicas and https://monumentoshistoricos.inah.gob.mx/). Created in 1939, INAH oversees conservation, research, and public access for archaeological zones, monuments, and related heritage nationwide. If an Expert Working Group site falls within about 10 km of an official INAH inventory point, we treat it as under that heritage-management system and score 100. If not, but the site is near or inside a natural protected area with a management effectiveness score, we use that park score. Otherwise we assign a lower legal floor of 30, reflecting partial cover under the Federal Law on Archaeological, Artistic, and Historic Monuments and Zones even when a site is not formally managed as an open INAH zone."}
+```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="85%", fig.align="center", fig.cap="Figure 16. Method map of archaeological and related cultural sites scored for Lasting Special Places. These are places where material remains make the surrounding coast culturally and spiritually special, such as shell middens. INAH is Mexico's Instituto Nacional de Antropología e Historia (National Institute of Anthropology and History; see https://www.inah.gob.mx/zonas-arqueologicas and https://monumentoshistoricos.inah.gob.mx/). Created in 1939, INAH oversees conservation, research, and public access for archaeological zones, monuments, and related heritage nationwide. If an Expert Working Group site falls within about 10 km of an official INAH inventory point, we treat it as under that heritage-management system and score 100. If not, but the site is near or inside a natural protected area with a management effectiveness score, we use that SIMEC i-efectividad score. Otherwise we assign a lower statute-based minimum of 30, reflecting partial cover under the Federal Law on Archaeological, Artistic, and Historic Monuments and Zones even when a site is not formally managed as an open INAH zone."}
 include_lsp_viz("process_archaeological_buffers")
 ```
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="75%", fig.align="center", fig.cap="Figure 17. Regional archaeological site scores after the INAH, protected-area, and legal-floor hierarchy. Higher scores mean expert-listed heritage places in that region are more often matched to formal INAH inventory or to managed park protection rather than the residual legal floor alone."}
+```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="75%", fig.align="center", fig.cap="Figure 17. Regional archaeological site scores after the INAH, protected-area, and statute-based hierarchy. Higher scores mean expert-listed heritage places in that region are more often matched to formal INAH inventory or to managed protected area protection (SIMEC i-efectividad) rather than the residual statute-based minimum alone."}
 include_lsp_viz("lsp_archaeological_sites")
 ```
 
@@ -1342,20 +1366,20 @@ include_lsp_viz("lsp_archaeological_sites")
 These include seagrasses, mangroves, coquina reefs, and coral reefs (coral limited to expert-named Region 4 reefs).
 
 1. Prefer SIMEC and Ramsar plan scores when the habitat polygon touches a managed protected area after a 100 m buffer.
-2. Else use a legal floor by habitat type (about 70 for mangrove, seagrass, and coral; 30 for coquina when there is no dedicated coquina statute).
-3. Take the better of the park score and the legal floor so strong legal cover cannot score below what the law already implies.
+2. Else use a statute-based minimum by habitat type (about 70 for mangrove, seagrass, and coral; 30 for coquina when there is no dedicated coquina statute). These scores are chosen to reflect how well the codified regulations are protecting the special habitat, comparatively. We will require expert input on this.
+3. Take the better of the protected area score (SIMEC i-efectividad or Ramsar plan rules) and that statute-based minimum.
 
-Type means by region, coquina PA-touch example, then regional special-habitats scores.
+Type means by region, coquina example, then regional special-habitats scores.
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="85%", fig.align="center", fig.cap="Figure 18. Special habitats method map summarizing condition inputs by habitat type (mangrove, seagrass, coral, and coquina). Coral is limited to expert-named reefs in the region where those reefs matter for this assessment. Habitat extents come from mapped layers (for example TNC geoportal habitat layers and mangrove land cover). Colors and means in this map help show how different habitat types contribute before we roll them up to a single regional special-habitats score."}
 include_lsp_viz("process_special_habitats_type_means")
 ```
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="85%", fig.align="center", fig.cap="Figure 19. Special habitats method map focused on whether habitats touch a managed protected area. We expand park boundaries slightly (about 100 m) so habitats along a park edge can inherit park management scores from SIMEC or Ramsar plan rules. If no park applies, we use a legal floor by habitat type (about 70 for mangrove, seagrass, and coral under strong habitat and biodiversity laws; about 30 for coquina when there is no dedicated coquina statute). Final site condition is the better of the park score and the legal floor so strong law does not score below what existing statute already implies."}
+```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="85%", fig.align="center", fig.cap="Figure 19. Special habitats method map focused on whether habitats touch a managed protected area. We expand protected area boundaries slightly (about 100 m) so habitats along a protected area edge can inherit management scores from SIMEC i-efectividad or Ramsar plan rules. If no protected area applies, we use a statute-based minimum by habitat type (about 70 for mangrove, seagrass, and coral under strong habitat and biodiversity laws; about 30 for coquina when there is no dedicated coquina statute). Final site condition is the better of the SIMEC i-efectividad (or Ramsar plan) score and that statute-based minimum, so strong law does not score below what existing statute already implies."}
 include_lsp_viz("process_special_habitats_pa_touch")
 ```
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="75%", fig.align="center", fig.cap="Figure 20. Regional special habitats scores after protected-area touch and legal-floor rules. Higher values mean the mangroves, seagrasses, corals, and coquina features in that region are, on average, under stronger managed or legal protection."}
+```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="75%", fig.align="center", fig.cap="Figure 20. Regional special habitats scores after averaging across habitat types in each region. Higher values mean the mangroves, seagrasses, corals, and coquina features in that region are, on average, under stronger management (including SIMEC i-efectividad when a habitat touches a protected area) or stronger statute-based protection."}
 include_lsp_viz("lsp_special_habitats")
 ```
 
@@ -1374,11 +1398,11 @@ These are expert-identified marine places of importance that did not fit cleanly
 
 Method map (inside vs outside PA), then regional scores for this category.
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="85%", fig.align="center", fig.cap="Figure 21. Method map for all other special places: Expert Working Group marine locations that did not fit cleanly into parks, dive, fishing, archaeology, or habitat categories. Places that overlap a protected area take SIMEC i-efectividad or Ramsar plan condition when available. Places outside those managed boundaries use expert-reviewed codified legal protection scores compiled for this assessment (documented in the shared Google workbook). The map distinguishes sites inside versus outside protected areas so reviewers can see which scoring path applies where."}
+```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="85%", fig.align="center", fig.cap="Figure 21. Method map for all other special places: Expert Working Group marine locations that did not fit cleanly into special protected areas, dive, fishing, archaeology, or habitat categories. Places that overlap a protected area take SIMEC i-efectividad or Ramsar plan condition when available. Places outside those managed boundaries use expert-reviewed codified legal protection scores compiled for this assessment (documented in the shared Google workbook). The map distinguishes sites inside versus outside protected areas so reviewers can see which scoring path applies where."}
 include_lsp_viz("process_all_other_special_places")
 ```
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="75%", fig.align="center", fig.cap="Figure 22. Regional scores for the all-other-special-places category after park and codified-legal rules. This is the residual expert-place category that still contributes to Lasting Special Places when a location is important but does not belong in the other five buckets."}
+```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="75%", fig.align="center", fig.cap="Figure 22. Regional scores for the all-other-special-places category using the SIMEC i-efectividad and codified-legal rules. This is the residual expert category that still contributes to Lasting Special Places when a location is important but does not fall directly into any of the other five LSP types."}
 include_lsp_viz("lsp_all_other_special_places")
 ```
 
@@ -1508,11 +1532,11 @@ sp_plotly_lines(
 
 # Topics for discussion {#topics-for-discussion}
 
-Please discuss these items with the group at EWG 3.2. We are especially interested in your feedback on the **Lasting Special Places methods** (categories, protections, floors, and data sources) in the LSP section above.
+We plan to discuss these items with the group at EWG 3.2, though we encourage feedback prior to or after the meeting as well. We are especially interested in your feedback on the **Lasting Special Places methods** (categories, protections, floors, and data sources) in the LSP section above. Additionally, if you have any opinions on these topics:
 
-1. **Equal weights for CCE, LSP, and ICO.** Confirm whether equal weights are the final intended policy choice, or whether any subgoal should be weighted differently.
+1. **Equal weights for CCE, LSP, and ICO.** Confirm whether equal weights are the final choice, or whether any subgoal should be weighted differently.
 
-2. **Dive site unprotected floor (currently 58) and coquina legal floor (currently 30).** Confirm whether these floors remain the intended defaults, or whether EWG 3.2 prefers another approach.
+2. **Dive site statute-based minimum outside protected areas (currently 58) and coquina statute-based minimum (currently 30).** Confirm whether these defaults remain the intended values, or whether the group prefers another approach.
 
 3. **Iconic species list.** Version 2 list edits are done for now. If anyone feels strongly about big changes, please tell me (Sophia); feedback can be incorporated after EWG 3.2. Review:
 
@@ -1527,3 +1551,5 @@ Please discuss these items with the group at EWG 3.2. We are especially interest
 # Related Goalkeeper page
 
 For earlier Goalkeeper process notes, see the [Sense of Place Goalkeeper page](https://ohi-goc.github.io/OHI_GOC/chapters/sp.html).
+
+

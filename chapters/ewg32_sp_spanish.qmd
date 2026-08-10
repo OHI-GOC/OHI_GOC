@@ -892,9 +892,9 @@ include_lsp_viz <- function(stem, out.width = "100%") {
 
 El puntaje de estado actual general de SP para cada región y año es el promedio aritmético de los puntajes de CCE, LSP e ICO de esa región.
 
-**Años de reporte para SP y CCE generales:** **2019-2025**. Mantenemos los puntajes generales en 2025 hasta que el inventario de adopciones de playa de Ama tu Playa esté actualizado para 2026. El listado del sitio del programa no ha mostrado conteos de adopción actualizados durante muchos meses de 2026, así que un puntaje Ama 2026 (o una copia silenciosa de 2025 a 2026) aún no sería representativo. Extender CCE o SP general a 2026 solo con lugares culturales también rompería la comparabilidad entre años, porque CCE ya no promediaría ambas capas como lo hace hasta 2025. Los gráficos de lugares culturales no naturales más abajo aún muestran **2019-2026** como trayectoria de un subcomponente para discusión, no como los años usados en los puntajes compuestos.
+**Años de reporte para SP general:** **2019-2025**. No actualizaremos los puntajes generales más allá de 2025 hasta que todas las fuentes de datos se hayan actualizado hasta 2026.
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Figura 1. Estado actual de Sentido de Pertenencia por región a lo largo del tiempo para las nueve regiones OHI del Golfo de California. En cada región y año, el puntaje es la media aritmética con pesos iguales de tres submetas: Participación de la Comunidad Costera (CCE), Lugares Especiales Duraderos (LSP) y Especies Icónicas (ICO). Un 100 representa la condición de referencia ideal; valores menores indican menor condición estimada. Se muestran 2019-2025, la ventana del SP global hasta que el inventario de adopciones de playa permita un compuesto confiable de 2026."}
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Figura 1. Estado actual de Sentido de Pertenencia por región a lo largo del tiempo para las nueve regiones OHI del Golfo de California. En cada región y año, el puntaje es la media aritmética con pesos iguales de tres submetas: Participación de la Comunidad Costera (CCE), Lugares Especiales Duraderos (LSP) y Especies Icónicas (ICO). Un 100 representa la condición de referencia ideal; valores menores indican menor condición estimada. Se muestran los años 2019 a 2025."}
 sp_plotly_lines(
   sp_cs,
   "current_status",
@@ -966,14 +966,14 @@ donde:
 - $\text{playas adoptadas}_{r}$ es el número de playas del inventario en esa región que ya están adoptadas
 - $\text{playas del inventario}_{r}$ es el número de playas del inventario en esa región
 
-Para 2019-2024, $Ama_{r,t} = 0$ porque la campaña inicia con la estrategia 2025-2030. La Región 2 **no tiene playas en el inventario del programa** tras el cruce espacial con regiones OHI y el buffer de 10 km tierra adentro. Eso **no** se trata como un 100 perfecto (ausencia del inventario no es lo mismo que estar libre de plásticos). Se guarda como `NA` con la razón `"no beaches in program inventory"`.
+Para 2019-2024, $Ama_{r,t} = 0$ porque la campaña inicia con la estrategia 2025-2030. La Región 2 no tiene playas en el inventario del programa identificadas por SEMARNAT como en necesidad. Se trata como `NA` con la razón `"no beaches in program inventory"`.
 
 **Fuentes de datos**
 
 - Inventario SEMARNAT Ama tu Playa y estatus de adopción del catálogo de la estrategia nacional de limpieza y conservación de playas; porcentaje de adopción por región OHI
 - Plataforma: [adoptaunaplaya.com](https://www.adoptaunaplaya.com/playas/)
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Figura 4. Capa de adopciones de playas de CCE: porcentaje de playas del inventario SEMARNAT Ama tu Playa en cada región que ya están formalmente adoptadas. Adoptar significa que una organización se compromete a mantener limpia esa playa o tramo costero bajo la estrategia nacional 2025-2030; puntuamos esa mayordomía por la fracción adoptada, no por kilogramos de basura. En 2019-2024 la campaña no ha iniciado en nuestras reglas, así que la adopción se registra como 0. La Región 2 no tiene playas en el inventario tras el cruce espacial y se muestra con cuidado para no confundir ausencia con un 100 perfecto."}
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Figura 4. Capa de adopciones de playas de CCE: porcentaje de playas del inventario SEMARNAT Ama tu Playa en cada región que ya están formalmente adoptadas. Adoptar significa que una organización se compromete a mantener limpia esa playa o tramo costero bajo la estrategia nacional 2025-2030; puntuamos esa mayordomía por la fracción adoptada, no por kilogramos de basura. En 2019-2024 la campaña aún no había iniciado, así que la adopción se registra como 0. La región OHI de las Islas Midriff occidentales no tiene playas en el inventario del programa."}
 sp_plotly_lines(
   ama_cs %>% filter(!is.na(current_status) | rgn_id == "Region_2"),
   "current_status",
@@ -1006,7 +1006,7 @@ Partimos del sector 71 del DENUE de INEGI (*servicios de esparcimiento culturale
 - Sitios históricos y establecimientos de patrimonio relacionados
 - Jardines botánicos y sitios similares de naturaleza-cultura
 - Parques públicos y espacios de recreación con vínculo cultural
-- Marinas y establecimientos recreativos costeros que apoyan el uso del lugar costero
+- Establecimientos de recreación costera que apoyan el uso costero vinculado al lugar
 
 **Ejemplos excluidos**
 
@@ -1014,14 +1014,14 @@ Partimos del sector 71 del DENUE de INEGI (*servicios de esparcimiento culturale
 - Galleras (por ejemplo GALLERA)
 - Algunos giros administrativos identificados por nombre que no representan compromiso cultural comunitario con la costa
 
-La intención es contar lugares donde la gente se reúne en torno a la cultura, el patrimonio y la recreación costera, no todo establecimiento que caiga bajo el amplio sector recreativo del DENUE.
+La intención es contar lugares donde la gente se reúne en torno a la cultura, el patrimonio y la recreación costera, no todo establecimiento que caiga bajo el amplio sector cultural y recreativo del DENUE.
 :::
 
 **Cómo se construyó la capa**
 
 1. Partir del sector 71 del DENUE de INEGI para **2019-2026**.
 2. Restringir a los seis estados del Golfo y conservar solo establecimientos dentro del buffer costero de 10 km tierra adentro.
-3. Curar a unidades económicas culturales con conexión costera significativa (vea el menú de arriba para inclusiones y exclusiones).
+3. Limitar a unidades económicas culturales con conexión costera significativa (vea la lista de arriba para inclusiones y exclusiones).
 4. Estimar empleados a partir de las clases de tamaño del DENUE, agregar por región y año, y dividir por la población de localidades costeras en el mismo buffer de 10 km.
 5. Convertir la tasa per cápita a un estado 0-100 usando el **cuantil 75** de empleados per cápita en todas las regiones y años como referencia:
 
@@ -1038,14 +1038,14 @@ donde:
 
 **Sí: tanto los establecimientos como la población son costeros.** Los establecimientos se restringen al buffer costero de 10 km, y la población es de localidades que intersectan ese mismo buffer (no de municipios completos tierra adentro del Golfo).
 
-**Años:** la serie completa de lugares culturales es **2019-2026** (prep DENUE actualizado para el buffer de 10 km). Mostramos 2026 a propósito para que el grupo vea la dirección reciente de este subcomponente. **2026 aún no se incluye en CCE o SP general**, porque el inventario de adopciones Ama tu Playa aún no es una observación confiable de 2026 (vea la nota bajo puntajes generales).
+**Años:** la serie completa de lugares culturales es **2019-2026** (prep DENUE actualizado para el buffer de 10 km). Mostramos 2026 a propósito para que el grupo vea la dirección reciente de este subcomponente. **2026 aún no se incluye en CCE o SP general**, porque el inventario de adopciones Ama tu Playa aún no es una observación confiable de 2026 (vea la nota bajo puntajes generales). Nótese que podemos incluir 2026 porque usamos la publicación anual del inventario de unidades económicas como una fotografía del año de las unidades y del número de empleados.
 
 **Qué destacan 2025 y 2026 en lugares culturales no naturales.** Dos regiones muestran aumentos interesantes para interpretar la capa cultural de CCE (y la serie hasta 2026, aunque 2026 aún no se incluye en CCE o SP global).
 
-- **Golfo Superior occidental (zona de San Felipe):** creció la capacidad cultural comunitaria. Los registros DENUE pasaron de aproximadamente un pequeño estudio de arte (cerca de 0-5 empleados) a **tres lugares**, incluyendo una *casa de cultura* y un centro cultural y deportivo infantil, con empleos culturales estimados que suben de unos **3 a unos 40**.
-- **Golfo Central occidental (zona de Mulegé):** el número de lugares se mantuvo similar (unos cuatro a cinco museos y centros culturales, incluyendo la *Casa de la Cultura* y el *Museo Comunitario de Mulegé*), pero el **empleo estimado creció** de unos **30 a unos 50** trabajadores. Más personal es una señal de más actividad en lugares culturales existentes, no solo de sitios nuevos.
+- **Golfo Superior occidental (zona de San Felipe):** creció la capacidad cultural comunitaria. Los registros DENUE pasaron de solo un pequeño estudio de arte (cerca de 0-5 empleados) a **tres lugares**, incluyendo una *casa de cultura* y un centro cultural y deportivo infantil, con empleos culturales estimados que suben de unos **3 a unos 20**.
+- **Golfo Central occidental (zona de Mulegé):** el número de lugares se mantuvo similar (unos cuatro a cinco museos y centros culturales, incluyendo la *Casa de la Cultura* y el *Museo Comunitario de Mulegé*), pero el empleo estimado creció de unos **30 a unos 50** trabajadores. Más personal es una señal de más actividad en lugares culturales existentes, no solo de sitios nuevos.
 
-Ambos casos sugieren que el movimiento reciente de puntajes puede reflejar crecimiento real en infraestructura y empleo cultural costero, no solo ruido año a año en DENUE.
+Ambos casos sugieren que el movimiento reciente de puntajes puede reflejar crecimiento real en infraestructura y empleo cultural costero.
 
 
 **Fuentes de datos**
@@ -1194,9 +1194,9 @@ donde:
 
 **Año de evaluación:** corte de 2025.
 
-El mapa siguiente muestra el **estado actual general del LSP para 2025** por región marina OHI. Los colores van de puntajes más bajos (colores cálidos) a más altos (colores fríos) en una escala fija de 0 a 100. Las regiones en blanco no tienen puntaje combinado.
+El mapa siguiente muestra el **estado actual general del LSP para 2025** por región marina OHI (exportación estática de la visualización de prep de LSP en Mazu). Los colores van de puntajes más bajos (colores cálidos) a más altos (colores fríos) en una escala fija de 0 a 100. Las regiones en blanco no tienen puntaje combinado y son NA.
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="90%", fig.align="center", fig.cap="Figura 8. Estado actual global de Lugares Especiales Duraderos (LSP) por región marina OHI en la foto de 2025. LSP es la media de la condición de lugares especiales identificados por expertos, una vez puntuados según protecciones de gestión y legales. Los colores van de puntajes bajos (tonos más cálidos) a altos (más fríos) en escala fija 0-100. El blanco indica que no hay puntaje LSP combinado para esa región."}
+```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="90%", fig.align="center", fig.cap="Figura 8. Estado actual general de Lugares Especiales Duraderos (LSP) por región marina OHI en el corte de evaluación de 2025. LSP es la media de la condición de lugares especiales identificados por expertos, una vez puntuados según protecciones de gestión y legales. Los colores van de puntajes más bajos (tonos más cálidos) a más altos (más fríos) en una escala fija de 0 a 100. El blanco indica que esa región no tiene un puntaje LSP combinado para este año."}
 include_lsp_viz("lsp_overall_2025")
 ```
 
@@ -1222,7 +1222,7 @@ Al final de esta sección también hay un multipanel con los puntajes de todas l
 
 ### Áreas naturales especiales
 
-Son áreas CONANP y Ramsar que las personas expertas señalaron como especiales porque son muy importantes ecológica, cultural o estéticamente. **No** son el conjunto completo de todos los límites de parque del Golfo. Se eligieron lugares que importan como lugares especiales duraderos para las comunidades y la naturaleza, más que áreas que puedan existir en el papel sobre todo por procesos de designación política sin ese sentido de lugar.
+Son áreas CONANP y Ramsar que las personas expertas señalaron como especiales porque son muy importantes ecológica, cultural o estéticamente. **No** son el conjunto completo de todos los límites de área protegida del Golfo. Se eligieron lugares que importan como lugares especiales duraderos para las comunidades y la naturaleza, más que áreas que puedan existir en el papel sobre todo por procesos de designación política sin ese sentido de lugar.
 
 **Qué es SIMEC i-efectividad?** CONANP reporta la efectividad de manejo mediante **SIMEC** (*Sistema de Información, Monitoreo y Evaluación para la Conservación*). El puntaje de **i-efectividad** resume qué tan bien se maneja un área natural protegida hacia sus objetivos de conservación. No es simplemente un indicador de “¿el lugar especial está dentro de un área protegida?”. El manejo efectivo depende de un diseño adecuado, gobernanza, personal y presupuestos, procesos cotidianos y de si los resultados coinciden con los objetivos del sitio. El reporte de CONANP se sitúa en la tradición internacional de evaluación de efectividad de manejo de áreas protegidas (por ejemplo marcos de la Comisión Mundial de Áreas Protegidas de la UICN). Los detalles del método actual están en el [documento técnico 2025 de i-efectividad](https://simec.conanp.gob.mx/pdf_evaluacion/Documento_Tecnico_iefectividad_2025.pdf) de CONANP. Usamos los valores de i-efectividad reportados como condición preferida cuando un sitio listado por expertos los tiene, porque una mayor efectividad de manejo es una afirmación más fuerte de que el lugar seguirá protegido para las generaciones futuras.
 
@@ -1236,11 +1236,11 @@ Los sitios **Ramsar** son humedales de importancia internacional bajo la Convenc
 
 El mapa de método rellena cada área natural especial listada por expertos según su condición general. Los contornos grises muestran la red más amplia de áreas protegidas como contexto.
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="85%", fig.align="center", fig.cap="Figura 9. Mapa de método de áreas naturales especiales dentro de LSP. Los expertos listaron áreas naturales protegidas de CONANP y sitios Ramsar que consideran ecológicamente especiales. Cada polígono relleno se colorea por el puntaje de condición que asignamos. Preferimos i-efectividad de SIMEC de CONANP cuando existe: SIMEC es el Sistema de Información, Monitoreo y Evaluación para la Conservación, e i-efectividad mide qué tan efectiva es la gestión del área para cumplir sus objetivos de conservación, no solo si existe un límite de parque en el mapa. Para sitios Ramsar sin puntaje SIMEC paralelo usamos la presencia de plan de manejo (plan existe; plan en proceso = 60; o sin plan). Los contornos grises muestran la red más amplia de áreas protegidas del Golfo como contexto espacial."}
+```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="85%", fig.align="center", fig.cap="Figura 9. Mapa de método de áreas naturales especiales dentro de Lugares Especiales Duraderos. Los expertos listaron áreas naturales protegidas de CONANP y sitios Ramsar de humedales que consideran ecológicamente especiales. Cada polígono relleno se colorea por el puntaje de condición que asignamos a ese sitio. Preferimos la i-efectividad de SIMEC de CONANP cuando existe: SIMEC es el Sistema de Información, Monitoreo y Evaluación para la Conservación, e i-efectividad es su puntaje de efectividad de manejo. En términos sencillos, pregunta qué tan bien se maneja un área protegida para cumplir sus objetivos de conservación, no solo si el lugar especial está dentro de un área protegida. Para sitios Ramsar sin un puntaje SIMEC paralelo usamos la presencia de plan de manejo (plan existe, plan en proceso con puntaje 60, o sin plan). Los contornos grises muestran la red más amplia de áreas protegidas del Golfo como contexto espacial, incluidas áreas protegidas que el Grupo de Expertos no listó como especiales."}
 include_lsp_viz("process_special_protected_areas")
 ```
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="75%", fig.align="center", fig.cap="Figura 10. Puntajes regionales de la categoría de áreas naturales especiales. En cada región OHI promediamos las condiciones de los parques y sitios Ramsar listados por expertos que caen en esa región, tras las reglas SIMEC y de plan Ramsar de la Figura 9. Escala 0-100."}
+```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="75%", fig.align="center", fig.cap="Figura 10. Puntajes regionales de la categoría de áreas naturales especiales. En cada región OHI promediamos las condiciones de las áreas naturales protegidas especiales y sitios Ramsar listados por expertos que caen en esa región, tras las reglas de i-efectividad de SIMEC y de plan Ramsar de la Figura 9. Los puntajes están en una escala de 0 a 100. El blanco o un valor faltante indica que ninguna área natural especial con puntaje contribuye en esa región para esta evaluación."}
 include_lsp_viz("lsp_special_protected_areas")
 ```
 
@@ -1253,31 +1253,45 @@ include_lsp_viz("lsp_special_protected_areas")
 
 ### Sitios prioritarios de buceo
 
-Son sitios de buceo identificados en Arcos-Aguilar et al. 2021 y el GCMP que más se beneficiarían de protección.
+Son sitios de buceo del inventario de Arcos-Aguilar et al. (2021) y de la priorización de sitios de buceo del GCMP del CBMC que más se beneficiarían de un manejo formal de área protegida.
 
-**Por qué los sitios de buceo protegidos puntúan más alto.** Los lugares prioritarios de buceo son lugares especiales duraderos porque la gente viaja específicamente a experimentarlos. La protección ayuda a conservar la vida silvestre, los arrecifes y los rasgos submarinos que dan sentido al viaje, sostiene medios de vida basados en el buceo cuando los sitios se mantienen de alta calidad y reduce el daño acumulado por uso y presión extractiva. Los parques manejados y los núcleos de no pesca aumentan la probabilidad de que el sitio siga siendo el lugar que valoraron comunidades y visitantes. Fuera de los parques sigue existiendo la norma nacional de turismo de buceo (NOM-012-TUR-2016), pero ese deber residual de cuidado es intencionalmente más débil que la protección bien manejada, porque no es lo mismo que el manejo activo de un parque para un lugar especial.
+**Cómo Arcos-Aguilar et al. (2021) ensamblaron y caracterizaron los sitios de buceo.** [Arcos-Aguilar et al. (2021)](https://doi.org/10.1016/j.marpol.2021.104410) construyeron el inventario nacional más completo de sitios recreativos de buceo en México para documentar la importancia económica del turismo de buceo y su dependencia de hábitats marinos sanos. Su método:
+
+1. **Inventario web de sitios.** De enero a marzo de 2018 buscaron en Google en inglés y en español (`Diving` / `Dive sites` / `Buceo` / `Sitios de buceo` + México, y luego cada estado costero). Retuvieron resultados de sitios de operadoras y turismo, revistas de buceo, literatura científica y literatura gris.
+2. **Proxys de popularidad.** Cada vez que un lugar reaparecía en los resultados se contaba como “frecuencia de aparición”, un indicador simple de qué tan publicitado o conocido es el sitio.
+3. **Operadoras y economía.** También armaron y verificaron en campo operadoras activas y encuestaron a un subconjunto sobre clientes, precios y costos, mostrando que los ingresos nacionales del buceo son del mismo orden de magnitud que las pesquerías artesanales e industriales de México juntas.
+4. **Traslapo de estatus de protección.** Las coordenadas se superpusieron con polígonos de áreas naturales protegidas de CONANP y subzonas de no pesca. En el inventario, cerca de la mitad de los sitios caía en alguna forma de área natural protegida, una minoría en zonas de no pesca, y una gran parte (**cerca del 42%**) aún carecía de designación de protección.
+
+El mensaje de política del artículo es que muchos lugares de buceo visibles para el turismo siguen fuera de una protección fuerte, aun cuando el buceo depende de arrecifes y vida silvestre intactos, y que una mayor calidad de encuentros (sobre todo en no pesca) se asocia a la experiencia por la que pagan las y los visitantes.
+
+**Qué significa “sitios prioritarios de buceo” en este Índice.** **No** puntuamos cada pin del inventario nacional completo. La prep se limita a la tabla de **priorización de sitios de buceo del GCMP del CBMC** asociada a los productos de datos Arcos/GCMP: un subconjunto curado de sitios con coordenadas y campos de prioridad que señala ubicaciones de particular importancia de conservación y turismo; luego se conservan solo los puntos que caen en regiones marinas OHI del Golfo de California o en el buffer costero de 10 km tierra adentro. Ese subconjunto prioritario es lo que aquí llamamos **sitios prioritarios de buceo**.
+
+**Por qué usamos ese subconjunto como lugares especiales duraderos.** Arcos-Aguilar et al. mostraron que una gran parte de los sitios de buceo comercializados aún queda fuera de áreas protegidas, mientras que los encuentros de vida silvestre que definen la experiencia de buceo son más probables en aguas manejadas o de no pesca. Por eso tratamos la lista prioritaria como lugares **aislados como sitios que se beneficiarían de quedar dentro de un área protegida**. Para Sentido de Pertenencia, la **condición de referencia ideal** es que **todos los sitios prioritarios de buceo** queden dentro de áreas protegidas manejadas o protecciones equivalentes (para que comunidades y visitantes puedan seguir experimentando el lugar que dio sentido al viaje). El puntaje sigue esa ideal: dentro de áreas CONANP/Ramsar usamos la condición de i-efectividad de SIMEC (y plan Ramsar cuando aplica); fuera, solo queda un mínimo más débil de la norma nacional de turismo, de modo que los sitios prioritarios sin protección bajan el puntaje relativo a una red plenamente protegida.
+
+**Por qué los sitios de buceo protegidos puntúan más alto (reglas de puntuación).** Los lugares prioritarios de buceo son lugares especiales duraderos porque la gente viaja específicamente a experimentarlos. La protección ayuda a conservar la vida silvestre, los arrecifes y los rasgos submarinos que dan sentido al viaje, sostiene medios de vida basados en el buceo cuando los sitios se mantienen de alta calidad y reduce el daño acumulado por uso y presión extractiva. Las áreas protegidas manejadas y las zonas de no pesca aumentan la probabilidad de que el sitio siga siendo el lugar que valoraron comunidades y visitantes. Fuera de las áreas protegidas sigue existiendo la norma nacional de turismo de buceo (NOM-012-TUR-2016), pero ese deber residual de cuidado es intencionalmente más débil que la protección bien manejada, porque no es lo mismo que el manejo activo de un área protegida para un lugar especial. Por lo tanto:
 
 1. Si el sitio de buceo cae en un área protegida CONANP y/o Ramsar, usar la condición SIMEC y de plan Ramsar de esa área.
 2. Si cae en ambas, tomar el máximo de los dos puntajes de condición.
-3. Si está fuera de áreas protegidas, usar un piso no nulo de la NOM-012-TUR-2016 §6.11 (reglas de turismo de buceo que aplican dentro y fuera de áreas naturales protegidas). En prep, ese piso se toma como la condición mínima de parque observada entre sitios de buceo que sí tienen puntaje de área protegida (actualmente **58**).
+3. Si está fuera de áreas protegidas, usar un piso no nulo de la NOM-012-TUR-2016 §6.11 (reglas de turismo de buceo que aplican dentro y fuera de áreas naturales protegidas). Determinamos el puntaje usando la condición mínima de i-efectividad de SIMEC observada entre sitios de buceo que sí tienen puntaje de área protegida (actualmente **58**).
 
-Sitios de buceo a escala del Golfo por condición general, luego zoom a Espíritu Santo (dentro vs fuera de ANP con piso de norma turística), y después puntajes regionales.
+Sitios de buceo a escala del Golfo por condición general, luego zoom a Espíritu Santo (dentro de área protegida vs fuera con piso de norma turística), y después puntajes regionales.
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="85%", fig.align="center", fig.cap="Figura 11. Mapa de método de sitios prioritarios de buceo coloreados por la condición usada al puntuar. Las ubicaciones vienen de análisis de prioridad publicados (Arcos-Aguilar et al. 2021 y capas GCMP). Si el sitio cae en un área CONANP o Ramsar, la condición es el puntaje SIMEC y/o de plan Ramsar (el máximo si aplican ambos). Si está fuera de áreas protegidas, recibe un piso legal no nulo de la norma de turismo de buceo NOM-012-TUR-2016 sección 6.11, que regula el buceo recreativo dentro y fuera de ANP. En prep, ese piso es el mínimo de condición de parque observado entre sitios de buceo que sí tienen puntaje de área protegida (hoy 58)."}
+```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="85%", fig.align="center", fig.cap="Figura 11. Mapa de método de sitios prioritarios de buceo coloreados por la condición general que usamos al puntuar. Las ubicaciones vienen de análisis de prioridad publicados (Arcos-Aguilar et al. 2021 y capas GCMP). Si un sitio cae dentro de un área protegida CONANP o Ramsar, su condición es el puntaje de i-efectividad de SIMEC y/o de plan de manejo Ramsar de esa área (el mayor de los dos cuando ambos aplican). Si un sitio queda fuera de áreas protegidas, aún recibe una condición mínima no nula bajo la norma de turismo de buceo NOM-012-TUR-2016 sección 6.11, que establece reglas de operación del turismo de buceo dentro y fuera de áreas naturales protegidas. En prep fijamos esa línea base en la mínima i-efectividad de SIMEC observada entre sitios de buceo que sí tienen un puntaje de área protegida (actualmente 58)."}
 include_lsp_viz("process_priority_dive_sites_condition")
 ```
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="85%", fig.align="center", fig.cap="Figura 12. Zoom del método alrededor del Parque Nacional Espíritu Santo para ver con claridad la lógica dentro versus fuera de ANP en sitios de buceo. Sitios dentro del parque heredan la condición de gestión del parque. Sitios prioritarios cercanos fuera del límite usan el piso legal NOM-012-TUR (hoy 58) en vez de caer a cero."}
+```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="85%", fig.align="center", fig.cap="Figura 12. Mapa de método con zoom alrededor del Parque Nacional Espíritu Santo para mostrar con más claridad la lógica dentro versus fuera de un área protegida en sitios de buceo. Los sitios dentro de un área protegida heredan la condición de manejo de i-efectividad de SIMEC. Los sitios prioritarios cercanos fuera del límite usan la condición mínima basada en la NOM-012-TUR (actualmente 58) en vez de caer a cero. Esto ilustra que el turismo de buceo fuera de un área protegida no se trata como nula protección, pero tampoco como plenamente equivalente a estar dentro de un área protegida bien manejada."}
 include_lsp_viz("process_priority_dive_sites")
 ```
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="75%", fig.align="center", fig.cap="Figura 13. Puntajes regionales de sitios prioritarios de buceo tras las reglas de área protegida y piso legal de las Figuras 11 y 12. Puntajes más altos significan que, en promedio, los lugares de buceo icónicos de esa región están mejor cubiertos por parques gestionados o al menos por la base legal nacional de turismo de buceo."}
+```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="75%", fig.align="center", fig.cap="Figura 13. Puntajes regionales de sitios prioritarios de buceo. En cada región promediamos la condición de sus sitios prioritarios de buceo tras las reglas de área protegida y de línea base normativa de las Figuras 11 y 12. Puntajes más altos significan que el conjunto de lugares prioritarios de buceo de esa región está, en promedio, mejor cubierto por áreas protegidas manejadas (i-efectividad de SIMEC) o al menos por la línea base legal nacional de turismo de buceo."}
 include_lsp_viz("lsp_priority_dive_sites")
 ```
 
 **Fuentes de datos**
 
-- Arcos-Aguilar et al. 2021 y capas y tabla de prioridad de sitios de buceo CBMC GCMP
+- Arcos-Aguilar, R., F. Favoretto, J.A. Kumagai, V. Jiménez-Esquivel, A.L. Martínez-Cruz y O. Aburto-Oropeza. 2021. Diving tourism in Mexico – Economic and conservation importance. *Marine Policy* 126: 104410. [https://doi.org/10.1016/j.marpol.2021.104410](https://doi.org/10.1016/j.marpol.2021.104410)
+- Capas de sitios de buceo y tabla de priorización de sitios de buceo del GCMP del CBMC (coordenadas y campos de prioridad usados en la prep)
 - Áreas protegidas combinadas (WDPA, CONANP, HEM) como arriba
 - SIMEC i-efectividad de CONANP y presencia de plan de manejo Ramsar
 - [NOM-012-TUR-2016](https://dof.gob.mx/nota_to_doc.php%3Fcodnota%3D5450981) §6.11 (reglas de turismo de buceo dentro y fuera de áreas naturales protegidas)
@@ -1296,11 +1310,11 @@ Son coordenadas de pesca históricamente importantes indicadas por personas expe
 
 Mapa de método: **ZRP** vs **TURF** vs **En ANP** vs **Otro**. Luego puntajes regionales de pesca.
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="85%", fig.align="center", fig.cap="Figura 14. Mapa de método de lugares pesqueros icónicos etiquetados por la vía de protección que define su puntaje. Las coordenadas vienen del inventario del Grupo de Expertos de lugares pesqueros históricamente importantes. Una ZRP (zona de refugio pesquero) es un área marina o costera designada en México donde la pesca se restringe parcial o totalmente para proteger la vida marina, permitir la recuperación de stocks y apoyar el uso sostenible por comunidades locales; sitios dentro de una ZRP puntúan 100. Un TURF (territorio de uso pesquero de derechos territoriales) es un territorio de pesca cooperativa con derechos asignados a una comunidad definida; sitios confirmados como TURF también puntúan 100 (revisión de Aceves-Bueno et al. 2023, porque no hay polígonos nacionales TURF fáciles de descargar en lote). Otros sitios dentro de áreas protegidas relevantes usan puntajes SIMEC o de plan Ramsar."}
+```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="85%", fig.align="center", fig.cap="Figura 14. Mapa de método de lugares pesqueros icónicos etiquetados por la vía de protección que define su puntaje. Las coordenadas vienen del inventario del Grupo de Expertos de lugares pesqueros históricamente importantes. Una ZRP (zona de refugio pesquero) es un área marina o costera designada en México donde la pesca se restringe parcial o totalmente para proteger la vida marina, permitir la recuperación de stocks y apoyar el uso sostenible por comunidades locales; sitios dentro de una ZRP puntúan 100. Un TURF (territorio de uso pesquero de derechos territoriales) es un territorio de pesca cooperativa con derechos asignados a una comunidad definida; sitios confirmados como TURF también puntúan 100 (revisión de Aceves-Bueno et al. 2023, porque no hay polígonos nacionales TURF fáciles de descargar en lote). Otros sitios dentro de áreas protegidas relevantes usan puntajes de i-efectividad de SIMEC o de plan Ramsar."}
 include_lsp_viz("process_iconic_fishing_gulf")
 ```
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="75%", fig.align="center", fig.cap="Figura 15. Puntajes regionales de pesca icónica tras aplicar reglas ZRP, TURF y de áreas protegidas. Puntajes más altos indican que los lugares pesqueros listados por expertos en esa región, en promedio, caen bajo protecciones pesqueras o de parque más fuertes."}
+```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="75%", fig.align="center", fig.cap="Figura 15. Puntajes regionales de pesca icónica tras aplicar las reglas ZRP, TURF y de áreas protegidas. Puntajes regionales más altos indican que los lugares pesqueros listados por expertos en esa región caen, en promedio, bajo protecciones pesqueras o de áreas protegidas más fuertes."}
 include_lsp_viz("lsp_iconic_fishing_spots")
 ```
 
@@ -1323,11 +1337,11 @@ Son lugares donde restos hacen especial en lo cultural y espiritual el entorno n
 
 Mapa de método: sitios puntuados con reglas **INAH** / **En ANP** / **Solo legal**. Luego puntajes regionales de arqueología.
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="85%", fig.align="center", fig.cap="Figura 16. Mapa de método de sitios arqueológicos y culturales afines puntuados en LSP. Son lugares donde restos materiales dan valor cultural y espiritual a la costa (por ejemplo concheros). El INAH es el Instituto Nacional de Antropología e Historia de México (ver https://www.inah.gob.mx/zonas-arqueologicas y https://monumentoshistoricos.inah.gob.mx/). Creado en 1939, el INAH custodia la conservación, investigación y uso público de zonas arqueológicas, monumentos y patrimonio afín en todo el país. Si un sitio del Grupo de Expertos cae a unos 10 km de un punto oficial del inventario INAH, lo tratamos bajo ese sistema de gestión del patrimonio y puntuamos 100. Si no, pero está cerca o dentro de un área natural protegida con puntaje de efectividad de gestión, usamos ese puntaje del parque. Si no, asignamos un piso legal de 30 por la cobertura parcial de la Ley Federal sobre Monumentos y Zonas Arqueológicos, Artísticos e Históricos aunque el sitio no sea una zona INAH formalmente abierta al público."}
+```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="85%", fig.align="center", fig.cap="Figura 16. Mapa de método de sitios arqueológicos y culturales afines puntuados para Lugares Especiales Duraderos. Son lugares donde restos materiales dan valor cultural y espiritual a la costa (por ejemplo concheros). El INAH es el Instituto Nacional de Antropología e Historia de México (ver https://www.inah.gob.mx/zonas-arqueologicas y https://monumentoshistoricos.inah.gob.mx/). Creado en 1939, el INAH custodia la conservación, investigación y acceso público de zonas arqueológicas, monumentos y patrimonio afín en todo el país. Si un sitio del Grupo de Expertos cae a unos 10 km de un punto oficial del inventario INAH, lo tratamos bajo ese sistema de gestión del patrimonio y puntuamos 100. Si no, pero el sitio está cerca o dentro de un área natural protegida con un puntaje de efectividad de manejo, usamos esa i-efectividad de SIMEC. Si no, asignamos un mínimo normativo de 30, que refleja la cobertura parcial de la Ley Federal sobre Monumentos y Zonas Arqueológicos, Artísticos e Históricos aun cuando el sitio no se gestione formalmente como zona abierta del INAH."}
 include_lsp_viz("process_archaeological_buffers")
 ```
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="75%", fig.align="center", fig.cap="Figura 17. Puntajes regionales de sitios arqueológicos tras la jerarquía INAH, área protegida y piso legal. Puntajes más altos significan que los lugares de patrimonio listados por expertos en esa región coinciden más a menudo con inventario formal del INAH o con protección de parque gestionado, y no solo con el piso legal residual."}
+```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="75%", fig.align="center", fig.cap="Figura 17. Puntajes regionales de sitios arqueológicos tras la jerarquía INAH, de área protegida y de mínimo normativo. Puntajes más altos significan que los lugares de patrimonio listados por expertos en esa región coinciden con mayor frecuencia con el inventario formal del INAH o con protección de manejo en un área protegida (i-efectividad de SIMEC), y no solo con el mínimo normativo residual."}
 include_lsp_viz("lsp_archaeological_sites")
 ```
 
@@ -1344,20 +1358,20 @@ include_lsp_viz("lsp_archaeological_sites")
 Incluyen pastos marinos, manglares, arrecifes de coquina y arrecifes de coral (el coral se limita a los arrecifes de la Región 4 nombrados por expertos).
 
 1. Preferir puntajes SIMEC y de plan Ramsar cuando el polígono de hábitat toca un área protegida manejada tras un buffer de 100 m.
-2. Si no, usar un piso legal por tipo de hábitat (cerca de 70 para mangle, pastos y coral; 30 para coquina cuando no hay estatuto dedicado de coquina).
-3. Tomar el mejor entre el puntaje del parque y el piso legal para que una cobertura legal fuerte no quede por debajo de lo que ya implica la ley.
+2. Si no, usar un mínimo normativo por tipo de hábitat (cerca de 70 para mangle, pastos y coral; 30 para coquina cuando no hay estatuto dedicado de coquina). Estos puntajes se eligen para reflejar, de forma comparativa, qué tan bien las regulaciones codificadas protegen el hábitat especial. Requeriremos la opinión de los expertos al respecto.
+3. Tomar el mejor entre el puntaje del área protegida (i-efectividad de SIMEC o reglas de plan Ramsar) y ese mínimo normativo.
 
-Medias por tipo y región, ejemplo de contacto de coquina con ANP, luego puntajes regionales de hábitats especiales.
+Medias por tipo y región, ejemplo de coquina, luego puntajes regionales de hábitats especiales.
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="85%", fig.align="center", fig.cap="Figura 18. Mapa de método de hábitats especiales que resume entradas de condición por tipo (mangle, pastos marinos, coral y coquina). El coral se limita a arrecifes nombrados por expertos en la región relevante. Las extensiones vienen de capas espaciales (por ejemplo geoportal TNC y cobertura de mangle). Este mapa ayuda a ver cómo cada tipo de hábitat aporta antes de agregar a un solo puntaje regional."}
+```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="85%", fig.align="center", fig.cap="Figura 18. Mapa de método de hábitats especiales que resume entradas de condición por tipo de hábitat (mangle, pastos marinos, coral y coquina). El coral se limita a los arrecifes nombrados por expertos en la región donde esos arrecifes importan para esta evaluación. Las extensiones de hábitat provienen de capas cartográficas (por ejemplo capas del geoportal TNC y cobertura de manglar). Los colores y medias de este mapa ayudan a ver cómo aportan distintos tipos de hábitat antes de agregar a un solo puntaje regional de hábitats especiales."}
 include_lsp_viz("process_special_habitats_type_means")
 ```
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="85%", fig.align="center", fig.cap="Figura 19. Mapa de método de hábitats especiales centrado en el contacto con áreas protegidas gestionadas. Ampliamos límites de parque unos 100 m para que hábitats en el borde puedan heredar puntajes SIMEC o de plan Ramsar. Si no aplica un parque, usamos un piso legal por tipo (cerca de 70 para mangle, pastos y coral bajo leyes fuertes de hábitat y biodiversidad; cerca de 30 para coquina cuando no hay estatuto dedicado). La condición final es el máximo entre el puntaje del parque y el piso legal."}
+```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="85%", fig.align="center", fig.cap="Figura 19. Mapa de método de hábitats especiales centrado en si los hábitats tocan un área protegida manejada. Ampliamos ligeramente los límites del área protegida (unos 100 m) para que hábitats en el borde puedan heredar puntajes de manejo de i-efectividad de SIMEC o de plan Ramsar. Si no hay un área protegida, usamos un mínimo normativo por tipo de hábitat (cerca de 70 para mangle, pastos marinos y coral bajo leyes fuertes de hábitat y biodiversidad; cerca de 30 para coquina cuando no hay un estatuto dedicado). La condición final del sitio es la mejor entre el puntaje de i-efectividad de SIMEC (o plan Ramsar) y ese mínimo normativo, de modo que una ley fuerte no quede por debajo de lo que ya implica el estatuto vigente."}
 include_lsp_viz("process_special_habitats_pa_touch")
 ```
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="75%", fig.align="center", fig.cap="Figura 20. Puntajes regionales de hábitats especiales tras las reglas de contacto con ANP y piso legal. Valores más altos significan que mangles, pastos, corales y coquina de esa región están, en promedio, bajo protección gestionada o legal más fuerte."}
+```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="75%", fig.align="center", fig.cap="Figura 20. Puntajes regionales de hábitats especiales tras promediar entre tipos de hábitat en cada región. Valores más altos significan que los mangles, pastos marinos, corales y coquina de esa región están, en promedio, bajo un manejo más fuerte (incluida la i-efectividad de SIMEC cuando un hábitat toca un área protegida) o bajo una protección normativa más fuerte."}
 include_lsp_viz("lsp_special_habitats")
 ```
 
@@ -1376,11 +1390,11 @@ Son lugares marinos de importancia identificados por expertos que no encajaron d
 
 Mapa de método (dentro vs fuera de ANP), luego puntajes regionales de esta categoría.
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="85%", fig.align="center", fig.cap="Figura 21. Mapa de método de todos los demás lugares especiales: ubicaciones marinas del Grupo de Expertos que no encajaron en parques, buceo, pesca, arqueología ni hábitats. Lugares que se traslapan con un área protegida toman condición SIMEC i-efectividad o de plan Ramsar cuando hay datos. Fuera de esos límites se usan puntajes legales codificados revisados por expertos (documento compartido). El mapa distingue dentro versus fuera de ANP para ver qué vía de puntaje aplica."}
+```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="85%", fig.align="center", fig.cap="Figura 21. Mapa de método de todos los demás lugares especiales: ubicaciones marinas del Grupo de Expertos que no encajan de forma limpia en áreas naturales especiales, buceo, pesca, arqueología o hábitats. Los lugares que se traslapan con un área protegida toman la condición de i-efectividad de SIMEC o de plan Ramsar cuando hay datos. Los lugares fuera de esos límites manejados usan puntajes de protección legal codificados y revisados por expertos para esta evaluación (documentados en el libro compartido de Google). El mapa distingue sitios dentro versus fuera de áreas protegidas para que se vea qué vía de puntuación aplica en cada caso."}
 include_lsp_viz("process_all_other_special_places")
 ```
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="75%", fig.align="center", fig.cap="Figura 22. Puntajes regionales de la categoría de otros lugares especiales tras reglas de parque y legales codificadas. Es la categoría residual de lugares expertos que aún aportan a LSP cuando un sitio importa pero no cabe en las otras cinco categorías."}
+```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="75%", fig.align="center", fig.cap="Figura 22. Puntajes regionales de la categoría de todos los demás lugares especiales usando las reglas de i-efectividad de SIMEC y de protección legal codificada. Es la categoría residual de lugares de expertos que aún aporta a Lugares Especiales Duraderos cuando una ubicación es importante, pero no cae directamente en ninguno de los otros cinco tipos de LSP."}
 include_lsp_viz("lsp_all_other_special_places")
 ```
 
@@ -1392,7 +1406,7 @@ include_lsp_viz("lsp_all_other_special_places")
 
 Puntajes regionales de las seis categorías LSP juntos (mismas exportaciones de prep).
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="100%", fig.align="center", fig.cap="Figura 23. Puntajes regionales de las seis categorías de Lugares Especiales Duraderos lado a lado, con las mismas exportaciones de prep y la misma escala 0-100. Los paneles cubren áreas naturales especiales, sitios prioritarios de buceo, lugares pesqueros icónicos, sitios arqueológicos, hábitats especiales y demás lugares especiales. Sirve para comparar tipos de lugar, no solo la media LSP global de la Figura 8."}
+```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width="100%", fig.align="center", fig.cap="Figura 23. Puntajes regionales de las seis categorías de Lugares Especiales Duraderos lado a lado, con las mismas exportaciones de prep y la misma escala de 0 a 100. Los paneles cubren áreas naturales especiales, sitios prioritarios de buceo, lugares pesqueros icónicos, sitios arqueológicos, hábitats especiales y todos los demás lugares especiales. Use esta figura para comparar cómo se desempeñan las regiones entre tipos de lugar, y no solo la media global de LSP de la Figura 8."}
 include_lsp_viz("lsp_categories_panel")
 ```
 
@@ -1510,11 +1524,11 @@ sp_plotly_lines(
 
 # Temas para discusión {#topics-for-discussion}
 
-Por favor discuta estos puntos con el grupo en el EWG 3.2. Nos interesa en particular su retroalimentación sobre los **métodos de Lugares Especiales Duraderos** (categorías, protecciones, pisos y fuentes de datos) en la sección LSP de arriba.
+Planeamos discutir estos puntos con el grupo en el EWG 3.2, aunque también alentamos retroalimentación antes o después de la reunión. Nos interesa en particular su retroalimentación sobre los **métodos de Lugares Especiales Duraderos** (categorías, protecciones, pisos y fuentes de datos) en la sección LSP de arriba. Además, si tiene opiniones sobre estos temas:
 
-1. **Pesos iguales para CCE, LSP e ICO.** Confirmar si los pesos iguales son la política final deseada, o si alguna submeta debería ponderarse distinto.
+1. **Pesos iguales para CCE, LSP e ICO.** Confirmar si los pesos iguales son la elección final, o si alguna submeta debería ponderarse distinto.
 
-2. **Piso de sitios de buceo fuera de áreas protegidas (actualmente 58) y piso legal de coquina (actualmente 30).** Confirmar si estos pisos siguen siendo los valores por defecto deseados, o si el EWG 3.2 prefiere otro enfoque.
+2. **Mínimo normativo de sitios de buceo fuera de áreas protegidas (actualmente 58) y mínimo normativo de coquina (actualmente 30).** Confirmar si estos valores por defecto siguen siendo los deseados, o si el grupo prefiere otro enfoque.
 
 3. **Lista de especies icónicas.** Las ediciones de la versión 2 están hechas por ahora. Si alguien tiene cambios fuertes, avíseme (Sophia); se pueden incorporar comentarios después del EWG 3.2. Revisar:
 
