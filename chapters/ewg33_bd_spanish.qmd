@@ -1,0 +1,30 @@
+---
+title: ""
+format: html
+---
+
+# ![](figs/biodiversity.svg){width=8% height=8%} Biodiversidad EWG 3.3 {#ewg33-bd}
+
+<div class="button-container">
+  <a href="ewg33_bd.html" class="custom-button">
+    <i class="fas fa-globe"></i> in English
+  </a>
+</div>
+
+## Propósito y panorama general de la meta
+
+La meta de BD busca cuantificar el estatus actual de biomas clave como proxies de la diversidad de especies, su abundancia y la función ecosistémica. En este marco, el término bioma se usa de forma amplia para incluir hábitats biogénicos, donde organismos vivos sostienen procesos ecológicos fundacionales (por ejemplo, manglares y arrecifes coralinos), y hábitats geofísicos, donde las comunidades ecológicas son sostenidas por rasgos no vivos (por ejemplo, arrecifes rocosos y océano pelágico abierto).
+
+En la realidad, estos tipos de bioma están altamente interconectados y mezclados, con organismos vivos y recursos no vivos moviéndose entre límites ecosistémicos. En la práctica, tratar estos biomas como tipologías distintas ayuda a evaluar su estatus de manera más eficiente mediante indicadores ecológicos fijos.
+
+Los 8 tipos de bioma evaluados hasta ahora son bosques de manglar (MAN), humedales costeros y matorral no manglar (WET), praderas de pastos marinos (SEA), arrecifes coralinos (CRL), arrecifes rocosos (ROK), hábitats submareales de fondo blando (SOF), bancos de rodolitos (RHO) y hábitats pelágicos someros de océano abierto (OCE).
+
+Otros tipos de bioma importantes que no se evaluaron por limitaciones de tiempo y datos incluyen intermareal rocoso (INT), hábitats intermareales arenosos de fondo blando (SAN), ambientes bento pelágicos de mar profundo (SEA), montes submarinos (SMT) e islas (ISL).
+
+## Resumen ejecutivo
+
+El resumen ejecutivo de la meta de Biodiversidad (BD) está disponible para revisión de expertas y expertos en el documento siguiente. Estos materiales resumen el modelo de la meta, decisiones clave y resultados preliminares para discusión con el grupo de trabajo EWG 3.3.
+
+- **Inglés:** [BD Executive Summary (Sep 2026)](https://docs.google.com/document/d/19N-MjE9iucG71N6NUDzUimqSB1tA-4XCVWj9SNXyy6w/edit?tab=t.0)
+- **Español:** [BD Resumen Ejecutivo (Sep 2026)](https://docs.google.com/document/d/1zERminsNjyKGoNBz7TqWHqsOSnNl3bKdDzHeIr4VIaQ/edit?tab=t.0)
+- **Diapositivas:** próximamente

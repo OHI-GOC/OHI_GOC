@@ -1,0 +1,238 @@
+---
+title: "OHI Gulf of California Acronym Cheat Sheet"
+format:
+  docx:
+    toc: true
+    toc-depth: 2
+    number-sections: false
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+# OHI Gulf of California Acronym Cheat Sheet {#ohi-acronyms}
+
+Combined reference of acronyms and short labels from **EWG 3.1** (Tourism & Recreation, Food Provisioning, Livelihoods & Economies) and **EWG 3.2** (Sense of Place, Access Opportunities, Habitat Services). Sections are organized **by OHI goal** so Word navigation bookmarks follow goal blocks. Expansions are in English, with the original Spanish name where that is the official form.
+
+**Related pages**
+
+| Goal | Website |
+|------|---------|
+| Tourism & Recreation (TR) | [ewg31_tr](https://ohi-goc.github.io/OHI_GOC/chapters/ewg31_tr.html) |
+| Food Provisioning (FP) | [ewg31_fp](https://ohi-goc.github.io/OHI_GOC/chapters/ewg31_fp.html) |
+| Livelihoods & Economies (LE) | [ewg31_le](https://ohi-goc.github.io/OHI_GOC/chapters/ewg31_le.html) |
+| Sense of Place (SP) | [ewg32_sp](https://ohi-goc.github.io/OHI_GOC/chapters/ewg32_sp.html) |
+| Access Opportunities (AO) | [ewg32_ao](https://ohi-goc.github.io/OHI_GOC/chapters/ewg32_ao.html) |
+| Habitat Services (HS) | [ewg32_hs](https://ohi-goc.github.io/OHI_GOC/chapters/ewg32_hs.html) |
+
+---
+
+# Shared project terms {#shared}
+
+Cross-cutting labels that appear across goals and EWG meetings.
+
+| Acronym | Stands for | Notes |
+|---------|------------|-------|
+| **OHI** | Ocean Health Index | Global framework adapted for the Gulf of California |
+| **EWG** | Expert Working Group | Expert review meetings for OHI Gulf of California goals (e.g. EWG 3.1, EWG 3.2) |
+| **GoC / GOC** | Gulf of California | Also written as Golfo de California |
+| **NCEAS** | National Center for Ecological Analysis and Synthesis | Institutional home for OHI GoC coordination |
+| **INEGI** | Instituto Nacional de Estadística y Geografía | Mexico’s national statistics and geography institute |
+| **SEMARNAT** | Secretaría de Medio Ambiente y Recursos Naturales | Mexico’s federal Ministry of Environment and Natural Resources |
+| **CONANP** | Comisión Nacional de Áreas Naturales Protegidas | National Commission of Natural Protected Areas |
+| **ANP** | Área(s) Natural(es) Protegida(s) | Natural Protected Area(s) managed primarily under CONANP |
+| **PA** | Protected area | Generic shorthand for managed natural protected areas / related managed boundaries |
+
+---
+
+# Tourism & Recreation (TR) {#tr}
+
+OHI goal measuring quantity, quality, and sustainability of coastal/marine visitor experiences. Primary materials: **EWG 3.1**.
+
+| Acronym | Stands for | Notes |
+|---------|------------|-------|
+| **TR** | Tourism & Recreation | Goal abbreviation |
+| **SECTUR** | Secretaría de Turismo | Mexico's federal Ministry of Tourism |
+| **DataTur** | DataTur (SECTUR hotel monitoring system) | SECTUR portal/reports on hotel occupancy and tourist arrivals by tourist center |
+| **SESNSP** | Secretariado Ejecutivo del Sistema Nacional de Seguridad Pública | Executive Secretariat of the National Public Security System; source of municipal crime incidence statistics |
+| **DENUE** | Directorio Estadístico Nacional de Unidades Económicas | INEGI directory of economic units (also used in LE and SP cultural places) |
+| **FEE** | Foundation for Environmental Education | International organization that administers the Blue Flag program |
+| **Blue Flag** | Blue Flag beach certification (Bandera Azul) | FEE eco-label for beaches meeting environmental management and quality criteria |
+| **Distintivo S** | Distintivo S (SECTUR sustainability distinction) | SECTUR sustainability certification for tourism establishments |
+| **Green Key** | Green Key | International eco-label for tourism establishments (used alongside Distintivo S and Green Globe) |
+| **Green Globe** | Green Globe | International sustainability certification for travel and tourism businesses |
+| **Playas Limpias** | Playas Limpias (federal clean beaches program) | Federal program for regularly managed public beaches; used when defining highly visited beach shoreline |
+| **NOSSA** | Noroeste Sociedad Civil para la Sustentabilidad Ambiental | Civil society coalition that publishes the *Cuidar lo que importa* series on federal environmental / ANP budgets and fee returns |
+| **PPEF** | Proyecto de Presupuesto de Egresos de la Federación | Proposed Federal Expenditure Budget; NOSSA *Cuidar lo que importa* PPEF reports (e.g. PPEF 2025, PPEF 2026) are a source for TR CONANP budget figures and SHCP fee-return percentages (*cobro de derechos*) |
+| **SHCP** | Secretaría de Hacienda y Crédito Público | Mexico's Ministry of Finance; returns a share of protected-area entrance fees (*cobro de derechos*) to CONANP |
+
+## CONANP federal budget program codes (TR investment) {#tr-conanp-codes}
+
+| Code | Program focus | Notes |
+|------|---------------|-------|
+| **v003** | ANP management | CONANP federal budget program for protected area management |
+| **s046** | Sustainable conservation | CONANP federal budget program for sustainable conservation |
+| **v005** | Protection and restoration | CONANP federal budget program for ecosystem protection and species-at-risk restoration |
+
+---
+
+# Food Provisioning (FP) {#fp}
+
+OHI goal that measures the amount of seafood sustainably produced by wild-catch fisheries and mariculture in the Gulf of California. Primary materials: **EWG 3.1**.
+
+| Acronym | Stands for | Notes |
+|---------|------------|-------|
+| **FP** | Food Provisioning | Goal abbreviation (*Provisión de Alimentos*) |
+
+## FP terms {#fp-terms}
+
+| Term / abbreviation | Meaning | Notes |
+|---------------------|---------|-------|
+| **MSY** | Maximum Sustainable Yield | A theoretical point beyond which fishing is no longer sustainable |
+| **B/BMSY** | Biomass today versus Biomass at MSY | Stock biomass status relative to the biomass expected at MSY |
+| **nei** | “Not elsewhere indicated” | Fishes or organisms that are unclassified (catch not assigned to a finer taxon) |
+
+---
+
+# Livelihoods & Economies (LE) {#le}
+
+OHI goal measuring marine-related jobs and revenue. Primary materials: **EWG 3.1**.
+
+| Acronym | Stands for | Notes |
+|---------|------------|-------|
+| **LE** | Livelihoods & Economies | Goal abbreviation |
+| **LIV** | Livelihoods | LE subgoal: quantity and quality of marine-related jobs |
+| **ECO** | Economies | LE subgoal: revenue from marine-related sectors |
+| **CE** | Censos Económicos | INEGI Economic Censuses (establishment-level employment, benefits, and revenue) |
+| **IMSS** | Instituto Mexicano del Seguro Social | Mexican Social Security Institute (employer contributions captured in CE variable J300A) |
+| **ISSSTE** | Instituto de Seguridad y Servicios Sociales de los Trabajadores del Estado | Social security institute for public-sector workers (also covered under J300A-type contributions) |
+| **ENOE** | Encuesta Nacional de Ocupación y Empleo | National Survey of Occupation and Employment (considered but not used as the LE primary source) |
+| **ILMM** | Indicadores Laborales para los Municipios de México | Labor indicators for Mexican municipalities (considered but not used as the LE primary source) |
+| **SBC** | Salario Base de Cotización | Base Contribution Salary used to calculate Mexican social security contributions |
+| **MXN** | Mexican peso | Currency; LE values are often shown in constant 2023 MXN |
+| **UE** | Unidades Económicas | Count of economic units (establishments); exploratory only |
+
+## INEGI Economic Census (CE) variable codes {#le-ce-codes}
+
+These codes appear mainly in LE materials (and in TR job-quality sustainability where CE tourism employment is used).
+
+| Code | Stands for / meaning | Notes |
+|------|----------------------|-------|
+| **J300A** | Employer contributions to social security | Mandatory employer payments to social security institutions (e.g. IMSS, ISSSTE) for paid workers |
+| **J400A** | Other social benefits | Voluntary/in-kind benefits beyond mandatory social security (e.g. private health, food, education, childcare) |
+| **H000A** | Total personnel employed | Total workers (paid and unpaid) under the economic unit's control |
+| **H010A** | Total paid personnel | Contractually paid workers only; noted for expert discussion, not used in current LE scores |
+| **H020A** | Unpaid workers | Owners, family members, and other unpaid workers; context only |
+| **M000A** | Revenue from goods and services | Operating revenue used for ECO scoring (excludes financial/extraordinary income) |
+| **A800A** | Total revenue including financial and extraordinary income | Broader revenue measure available in CE but not used in LE scoring |
+
+---
+
+# Sense of Place (SP) {#sp}
+
+OHI goal on heritage, shared memory, and identity connected to marine and coastal places and species (*Sentido de Pertenencia*). Primary materials: **EWG 3.2**.
+
+| Acronym | Stands for | Notes |
+|---------|------------|-------|
+| **SP** | Sense of Place (*Sentido de Pertenencia*) | Goal abbreviation |
+| **CCE** | Coastal Community Engagement | SP subgoal: beach adoptions (Ama tu Playa) and non-natural cultural places scaled to coastal population |
+| **LSP** | Lasting Special Places | SP subgoal: condition of expert-identified special places after management and legal protection scoring |
+| **ICO** | Iconic Species | SP subgoal: mean risk status of culturally iconic species occurring in each region |
+| **Ama tu Playa** | Ama tu Playa beach adoption program | Part of Mexico’s 2025–2030 national beach cleanup and conservation strategy (SEMARNAT and partners); CCE adoption layer |
+| **DENUE** | Directorio Estadístico Nacional de Unidades Económicas | Used for non-natural cultural places (sector 71) in CCE |
+| **SIMEC** | Sistema de Información, Monitoreo y Evaluación para la Conservación | CONANP system for conservation monitoring and evaluation |
+| **i-efectividad** | Management-effectiveness score (*i-efectividad*) | SIMEC score of how well an ANP is managed toward its conservation goals (preferred LSP condition when available) |
+| **Ramsar** | Ramsar Convention wetlands of international importance | When SIMEC is unavailable, management-plan presence is used for condition |
+| **WDPA** | World Database on Protected Areas | Global protected-area polygons (combined with CONANP and HEM layers in prep) |
+| **INAH** | Instituto Nacional de Antropología e Historia | National Institute of Anthropology and History; strongest heritage pathway in archaeological LSP scoring |
+| **INPI** | Instituto Nacional de los Pueblos Indígenas | National Institute of Indigenous Peoples; *planes de justicia* context (acknowledgment, not currently scored) |
+| **NOM** | Norma Oficial Mexicana | Official Mexican Standard (technical regulation) |
+| **NOM-012-TUR-2016** | Tourism standard for recreational diving | Statute-based minimum for priority dive sites outside managed PAs |
+| **NOM-059** | NOM-059-SEMARNAT (species at risk) | Preferred source in the ICO risk-weight hierarchy when a listing exists |
+| **NOM-022-SEMARNAT-2003** | Coastal wetland (mangrove) related standard | Cited among statutes supporting habitat legal floors in special-habitats LSP scoring |
+| **LGEEPA** | Ley General del Equilibrio Ecológico y la Protección al Ambiente | Cited among habitat legal references |
+| **LFRA** | Ley Federal de Responsabilidad Ambiental | Federal Environmental Liability Law; habitat legal references |
+| **ZRP** | *Zona de refugio pesquero* (fishing refuge zone) | Iconic fishing places inside a mapped ZRP score 100 in LSP |
+| **TURF** | Territorial Use Rights in Fisheries | Cooperative/community fishing territory; confirmed TURF fishing places score 100 in LSP |
+| **IUCN** | International Union for Conservation of Nature | IUCN Red List is a secondary source in the ICO risk-weight hierarchy |
+| **CITES** | Convention on International Trade in Endangered Species of Wild Fauna and Flora | Appendix listings used in ICO (and coral trade context in habitat legal references) |
+| **TNC** | The Nature Conservancy | Geoportal habitat and fishing-refuge layers used in LSP prep |
+| **CBMC** | Center for Marine Biodiversity and Conservation | Dive prioritization data products with GCMP |
+| **GCMP** | Gulf of California Marine Program | Dive-site layers and prioritization table used for priority dive sites in LSP |
+| **HEM** | HEM spatial products (partner compilation) | ANP compilation and mangrove land-cover layers combined with WDPA and CONANP |
+| **CEDO** | CEDO Intercultural | Source context for Gulf species occurrence data used in ICO |
+
+## NOM-059-SEMARNAT risk categories (ICO) {#sp-nom059}
+
+Mexican risk listing used first in the ICO risk-weight hierarchy when a species is listed. Weights are those used in the current SP prep (higher weight = better status for the mean).
+
+| Abbreviation / category | Meaning (English) | Official Spanish (NOM-059 context) | ICO weight |
+|-------------------------|-------------------|------------------------------------|------------|
+| **Not listed** | Species not listed under NOM-059 risk categories | No listado en categorías de riesgo | 1.00 |
+| **Pr** | Special protection | Protección especial | 0.75 |
+| **A** | Threatened | Amenazada | 0.50 |
+| **P** | Endangered | En peligro de extinción | 0.25 |
+| **E** | Probably extinct in the wild | Probablemente extinta en el medio silvestre | 0.00 |
+
+## IUCN Red List codes (ICO) {#sp-iucn}
+
+| Code | Stands for | Notes | ICO weight |
+|------|------------|-------|------------|
+| **LC** (and former LR/lc) | Least Concern | Does not qualify as threatened or near threatened | 1.00 |
+| **NT** (and former LR/nt) | Near Threatened | Likely to qualify for a threatened category in the near future | 0.75 |
+| **VU** | Vulnerable | High risk of endangerment in the wild | 0.50 |
+| **EN** | Endangered | High risk of extinction in the wild | 0.25 |
+| **CR** | Critically Endangered | Very high risk of extinction in the wild | 0.12 |
+| **EX** | Extinct | Highest extinction risk category | 0.00 |
+| **DD** | Data Deficient | Inadequate information to assess extinction risk | Not assigned a weight in the current prep (treated as missing for weighting) |
+
+## CITES Appendix listing (ICO) {#sp-cites}
+
+CITES Appendix categories used when NOM-059 and IUCN do not supply a usable weight.
+
+| Appendix | Meaning | ICO weight |
+|----------|---------|------------|
+| **Not listed** | Species not listed under a CITES Appendix | 1.00 |
+| **III** | Species protected in at least one country that has asked other CITES Parties for assistance in controlling trade | 0.75 |
+| **II** | Species not necessarily threatened with extinction now, but that may become so unless trade is closely controlled | 0.50 |
+| **I** | Species threatened with extinction; international trade is generally prohibited except in exceptional circumstances | 0.25 |
+
+---
+
+# Access Opportunities (AO) {#ao}
+
+OHI goal on conditions that allow coastal communities, including small-scale fishing communities and pueblos originarios, to access marine resources for sustainable, equitable use. Renamed from **Artisanal Opportunities**; acronym remains **AO**. Primary materials: **EWG 3.2**.
+
+| Acronym | Stands for | Notes |
+|---------|------------|-------|
+| **AO** | Access Opportunities | Goal abbreviation (former Artisanal Opportunities) |
+
+---
+
+# Habitat Services (HS) {#hs}
+
+OHI goal combining Coastal Protection and Carbon Storage into one goal (expert recommendation): capacity of coastal habitats to protect shorelines from flooding and erosion and to sequester/store atmospheric carbon. Primary materials: **EWG 3.2**.
+
+| Acronym | Stands for | Notes |
+|---------|------------|-------|
+| **HS** | Habitat Services | Combined goal abbreviation |
+| **CP** | Coastal Protection | Former/legacy goal name for shoreline protection capacity of coastal habitats (now under HS) |
+| **CS** | Carbon Storage | Former/legacy goal name for carbon sequestration/storage capacity of coastal habitats (now under HS) |
+
+---
+
+# Quick goal index {#goal-index}
+
+| Goal | Section bookmark id |
+|------|---------------------|
+| Shared project terms | `#shared` |
+| Tourism & Recreation (TR) | `#tr` |
+| Food Provisioning (FP) | `#fp` |
+| Livelihoods & Economies (LE) | `#le` |
+| Sense of Place (SP) | `#sp` |
+| — NOM-059 categories | `#sp-nom059` |
+| — IUCN Red List codes | `#sp-iucn` |
+| — CITES Appendices | `#sp-cites` |
+| Access Opportunities (AO) | `#ao` |
+| Habitat Services (HS) | `#hs` |

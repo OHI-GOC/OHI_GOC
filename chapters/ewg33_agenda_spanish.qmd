@@ -1,0 +1,55 @@
+---
+title: ""
+format: html
+---
+
+# Grupo de Trabajo de Expertos 3.3: Agenda y Recursos de la Reunión
+
+<div class="button-container">
+  <a href="ewg33_agenda.html" class="custom-button">
+    <i class="fas fa-globe"></i> in English
+  </a>
+</div>
+
+**Jueves, 10 de septiembre de 2026 | 9:00 AM a 1:00 PM (PST)**
+
+Bienvenidas y bienvenidos al EWG 3.3. Durante esta reunión revisaremos resultados actuales del Índice de Salud Oceánica del Golfo de California para las metas de **Biodiversidad**, **Aguas Limpias** y **Productos Naturales**. Nuestros objetivos son explicar claramente el modelo de cada meta, señalar puntuaciones regionales que no tengan sentido y recoger sus comentarios sobre decisiones metodológicas clave.
+
+---
+
+::: {.callout-tip}
+# Enlaces clave
+
+| Recurso | Enlace |
+|----------|------|
+| **Liga de Zoom** | [Entrar a Zoom](https://us06web.zoom.us/j/3255055973) |
+| **Hoja de agenda de la reunión** | [OHI GOC EWG 3.3 (Sept 10) - Agenda](https://docs.google.com/spreadsheets/d/1kE4QZN7Ltw7aEtxZpzX1mVT72S8tSQY4UJu3O-kdbZw/edit?gid=0#gid=0) |
+| **Hoja informativa de introducción a OHI** | [Inglés](https://docs.google.com/document/d/17Kiwk6Qelq_ph81plGCgIMDlZGAlS1b_0N9AvHZqE9Y/edit?tab=t.0) ·  [Español](https://docs.google.com/document/d/1GhLuecC2LLVxrOca8TqnjuOCXb5NHgfxX0oCVBeyH7s/edit?tab=t.0)|
+| **Biodiversidad (BD)** | [Inglés](https://docs.google.com/document/d/19N-MjE9iucG71N6NUDzUimqSB1tA-4XCVWj9SNXyy6w/edit?tab=t.0) · [Español](https://docs.google.com/document/d/1zERminsNjyKGoNBz7TqWHqsOSnNl3bKdDzHeIr4VIaQ/edit?tab=t.0) |
+| **Aguas Limpias (CW)** | [Inglés](https://docs.google.com/document/d/1QaEn1ucoh_ToqsrguQGfGqRSK3VjT9GBk6vqlfVxBtg/edit?tab=t.0) · [Español](https://docs.google.com/document/d/1wq48kxZkAXhOMZS6kEPYYA-u9jZ2erKhexnGE0nDSTM/edit?tab=t.0) |
+| **Productos Naturales (NP)** | [Inglés](https://docs.google.com/document/d/1QaEn1ucoh_ToqsrguQGfGqRSK3VjT9GBk6vqlfVxBtg/edit?tab=t.0) · [Español](https://docs.google.com/document/d/1ymx6DLhzzLjXM-Ha9JMlPA39NenC9NNrYVTKLZ_Vfpc/edit?tab=t.0) |
+:::
+
+---
+
+## Horario de la reunión del 10 de septiembre
+
+| Hora | Punto de la agenda |
+|------|-------------|
+| 9:00 a 9:10 AM | Inicio. Panorama general del proyecto, objetivos de la reunión y recursos. |
+| ~9:10 a 10:25 AM | **Discusión de meta: Biodiversidad (BD)** (~75 min presentación y discusión) |
+| 10:25 a 10:35 AM | Descanso (tiempo buffer) |
+| 10:35 a 11:40 AM | **Discusión de meta: Aguas Limpias (CW)** (65 min presentación y discusión) |
+| 11:40 a 11:50 AM | Descanso (tiempo buffer) |
+| 11:50 AM a 12:50 PM | **Discusión de meta: Productos Naturales (NP)** (60 min presentación y discusión) |
+| 12:50 a 1:00 PM | Cierre y próximos pasos (tiempo buffer) |
+
+---
+
+## Recursos del sitio web para las metas de EWG 3.3
+
+| Meta | Página del sitio web |
+|------|--------------|
+| Biodiversidad | [Ver página de BD](ewg33_bd_spanish.html) |
+| Aguas Limpias | [Ver página de CW](ewg33_cw_spanish.html) |
+| Productos Naturales | [Ver página de NP](ewg33_np_spanish.html) |

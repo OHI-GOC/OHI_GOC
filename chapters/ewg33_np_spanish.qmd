@@ -1,0 +1,30 @@
+---
+title: ""
+format: html
+---
+
+# ![](figs/natural-products.svg){width=8% height=8%} Productos Naturales EWG 3.3 {#ewg33-np}
+
+<div class="button-container">
+  <a href="ewg33_np.html" class="custom-button">
+    <i class="fas fa-globe"></i> in English
+  </a>
+</div>
+
+## Propósito y panorama general de la meta
+
+La meta de Productos Naturales (NP) busca medir la cantidad, los beneficios y la sostenibilidad de recursos marinos cosechados legalmente en el Golfo de California para fines culturales o comerciales que no son para alimentación o consumo humano directo. Los productos naturales incluyen bienes derivados de organismos vivos, desde perlas y conchas hasta fertilizantes y biofármacos, que pueden venderse como productos de mercado secundario.
+
+Los puntajes actuales de NP se calcularon como la media del estatus actual de seis sectores que producen bienes de productos naturales en el Golfo de California y para los cuales se obtuvo información adecuada: peces usados para harina y aceite de pescado (FOFM), especies del comercio de acuario (AQRM), producción de concha (SHEL), residuos de pescado y camarón (RESD), venta legal de aletas de tiburón (FINS) y producción costera de sal (SALT).
+
+También se intentó evaluar otros sectores, pero no se puntuaron por limitaciones de datos: producción de perlas (PERL), producción de carnada (BAIT), producción de algas (ALGA) y producción biofarmacéutica (PHRM).
+
+En este contexto, estatus actual se refiere al nivel de producción sostenible de cada sector relativo a un punto de referencia ideal.
+
+## Resumen ejecutivo
+
+El resumen ejecutivo de la meta de Productos Naturales (NP) está disponible para revisión de expertas y expertos en el documento siguiente. Estos materiales resumen el modelo de la meta, decisiones clave y resultados preliminares para discusión con el grupo de trabajo EWG 3.3.
+
+- **Inglés:** [NP Executive Summary (Sep 2026)](https://docs.google.com/document/d/1QaEn1ucoh_ToqsrguQGfGqRSK3VjT9GBk6vqlfVxBtg/edit?tab=t.0)
+- **Español:** [NP Resumen Ejecutivo (Sep 2026)](https://docs.google.com/document/d/1ymx6DLhzzLjXM-Ha9JMlPA39NenC9NNrYVTKLZ_Vfpc/edit?tab=t.0)
+- **Diapositivas:** próximamente

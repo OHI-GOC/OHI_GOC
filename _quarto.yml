@@ -36,7 +36,7 @@ website:
             text: "Food Provisioning"
           - href: chapters/ewg31_le.qmd
             text: "Livelihoods & Economies"
-      - section: "👥 EWG 3.2"
+      - section: "EWG 3.2"
         contents:
           - href: chapters/ewg32_agenda.qmd
             text: "Agenda & Meeting Resources"
@@ -46,6 +46,16 @@ website:
             text: "Access Opportunities"
           - href: chapters/ewg32_hs.qmd
             text: "Habitat Services"
+      - section: "👥 EWG 3.3"
+        contents:
+          - href: chapters/ewg33_agenda.qmd
+            text: "Agenda & Meeting Resources"
+          - href: chapters/ewg33_bd.qmd
+            text: "Biodiversity"
+          - href: chapters/ewg33_cw.qmd
+            text: "Clean Waters"
+          - href: chapters/ewg33_np.qmd
+            text: "Natural Products"
       - href: chapters/ewg2.qmd
         text: "EWG 2"
       - section: Goalkeeper Resources

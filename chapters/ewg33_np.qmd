@@ -1,0 +1,26 @@
+---
+title: ""
+format: html
+---
+
+# ![](figs/natural-products.svg){width=8% height=8%} Natural Products EWG 3.3 {#ewg33-np}
+
+<div class="button-container">
+  <a href="ewg33_np_spanish.html" class="custom-button">
+    <i class="fas fa-globe"></i> en español
+  </a>
+</div>
+
+## Goal purpose and overview
+
+The Natural Products (NP) goal is intended to measure the amount, benefits, and sustainability of legally-harvested marine resources that are produced in the GOC for cultural or commercial purposes that are not for food / human consumption. Natural products include essentially any goods derived from living organisms, from pearls and seashells to fertilizers and bio-pharmaceuticals, that can be sold as “secondary market products”.
+
+Here, we calculated NP scores as the mean “current status” score of six sectors producing natural-product goods in the GOC for which we were able to obtain adequate data: fish used for fish oil and fish meal (FOFM), aquarium trade species (AQRM), sea shell production (SHEL), fish and shrimp residues (RESD), the legal sale of shark fins (FINS), and coastal salt production (SALT). We also attempted to evaluate the current status of pearl production (PERL), bait production (BAIT), algae production (ALGA), and bio-pharmaceutical production (PHRM) in the region – however, we were not able to obtain enough data (or no data at all) to reliably estimate their total production. Here, current status refers to the sustainable production level of a sector relative to some “reference point” or ideal state.
+
+## Executive summary
+
+The Natural Products (NP) goal executive summary is available for expert review in the document below. These materials summarize the goal model, key decisions, and early results for discussion with the EWG 3.3 expert working group.
+
+- **English:** [NP Executive Summary (Sep 2026)](https://docs.google.com/document/d/1QaEn1ucoh_ToqsrguQGfGqRSK3VjT9GBk6vqlfVxBtg/edit?tab=t.0)
+- **Spanish:** [NP Resumen Ejecutivo (Sep 2026)](https://docs.google.com/document/d/1ymx6DLhzzLjXM-Ha9JMlPA39NenC9NNrYVTKLZ_Vfpc/edit?tab=t.0)
+- **Slides:** forthcoming

@@ -1,0 +1,1705 @@
+---
+title: "Clean Waters EWG 3.3"
+format:
+  docx:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    fig-width: 7
+    fig-height: 4.5
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+
+# Clean Waters EWG 3.3 {#ewg33-cw}
+
+**Interactive website:** [Clean Waters](https://ohi-goc.github.io/OHI_GOC/chapters/cw.html)
+
+## Early Look: Clean Waters (CW)
+
+We plan to review our current estimates of CW scores at the Expert Working Group meeting 3.3. This document is meant to give you an overview of the goal model, the thinking behind each piece, and an early look at the outputs before we meet. If you have minor methodological concerns, please flag them and bring them to the meeting. If you have major methodological concerns, please share them with me ahead of time (my email is smanos@nceas.ucsb.edu). If you cannot make it to the meeting but would like to discuss, I am happy to meet 1:1 before or after.
+
+Please be advised that this document is intended for internal use only and informational purposes. It should not be interpreted as the final word or of peer review quality.
+
+Thank you for your continued engagement with this work. We look forward to discussing these scores with you!
+
+## About the CW Goal
+
+The Clean Waters (CW) goal measures the degree to which local waters are unpolluted by anthropogenic sources. People value marine waters that are free of pollution and debris for aesthetic and health reasons. Contamination of waters comes from various sources, such as oil spills, chemicals, nutrient loading (eutrophication), disease pathogens (e.g., fecal coliform, viruses, and parasites from sewage outflow), and floating trash. People are sensitive to these pollutants, especially in areas they access for recreation, and place a high "existence value" on simply knowing that clean waters exist. We have included four components of pollution in our Clean Waters goal: eutrophication (nutrients), chemicals, pathogens, and marine debris. The status of these components is typically the inverse of their intensity: high contamination yields a low status score, and the goal scores highest when contamination is near zero.
+
+Calculating CW scores currently includes:
+
+1. **Eutrophication (EUT)**
+2. **Pathogens (PAT)**
+3. **Chemicals (CHM)**
+   - Pesticides (PEST)
+   - Pharmaceuticals (PHRM)
+   - Hazardous waste sites (HAZW)
+   - Untreated wastewater discharge point sites (WWPS)
+   - Vessel hydrocarbon estimation (VESS)
+   - Microplastics (MCRO): explored under Chemicals, not scored
+4. **Marine Debris (MAR)**
+   - Plastic pollution / large trash: explored descriptively, not scored
+   - Risk of ghost gear (RIGG): used for Marine Debris (MAR) status
+
+A score of **100** means the region is at the reference point for that indicator.
+
+**CORE DEFINITION**
+
+- **_Focus:_** How free coastal waters are from pollution caused by people that affects health, recreation, seafood, and ecological condition
+- **_Not about:_** The economic cost of pollution alone, or jobs and revenue from marine industries (covered under Livelihoods and Economies)
+- **_Emphasis:_** Multiple contamination pathways that people experience along the Gulf coast
+
+### Goal model
+
+At the goal level, we combine the four components with a simple **arithmetic mean**:
+
+**CW = average(Eutrophication, Pathogens, Chemicals, Marine Debris)**
+
+$$
+\text{CW score} = \frac{\text{Eutrophication} + \text{Pathogens} + \text{Chemicals} + \text{Marine Debris}}{4}
+$$
+
+In plain words: add the four component scores and divide by 4 (a simple average).
+
+We did consider a geometric mean, which would let a single bad component drag the whole goal down. In practice, that made Clean Waters look unrealistically terrible where one pathway hit the ceiling because of a reference point artifact, especially ghost gear risk for Region 8 in 2017. We felt the arithmetic average was more representative of overall clean waters condition across the four pathways.
+
+At the Chemicals level, we also use a simple **arithmetic mean** across the five subcomponents (equal weights for now).
+
+| Component | What it measures |
+|-----------|------------------|
+| **Eutrophication** | Excess nitrogen reaching the coast from wastewater, agriculture, livestock, and shrimp aquaculture |
+| **Pathogens** | Enterococcus levels at monitored beaches (*Playas Limpias*) |
+| **Chemicals** | Average of pesticides, pharmaceuticals, hazardous waste sites, untreated wastewater outfalls, and vessel hydrocarbon risk. Microplastics explored under Chemicals, not scored |
+| **Marine Debris** | Risk of abandoned fishing gear ("ghost gear"). Plastic pollution / beach litter explored descriptively, not scored yet |
+
+Scores are calculated for each of the nine OHI Gulf of California regions. A score of 100 represents the ideal clean waters state.
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(fig.width = 7, fig.height = 4.5, dpi = 150)
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(tidyverse)
+library(ggplot2)
+library(grid)
+library(here)
+library(scales)
+library(sf)
+
+rgn_labels <- c(
+  "Region_1" = "Western Upper Gulf",
+  "Region_2" = "Western Midriff Islands",
+  "Region_3" = "Western Central Gulf",
+  "Region_4" = "Western Southern Gulf",
+  "Region_5" = "Eastern Upper Gulf",
+  "Region_6" = "Eastern Midriff Islands",
+  "Region_7" = "Southern Sonora Coast",
+  "Region_8" = "Sinaloa Coast",
+  "Region_9" = "Southeastern Gulf"
+)
+
+rgn_colors <- c(
+  "Region_1" = "#C03729",
+  "Region_2" = "#E68C7C",
+  "Region_3" = "#FC8F24",
+  "Region_4" = "#dcaa38",
+  "Region_5" = "#cbd2a0",
+  "Region_6" = "#98a25a",
+  "Region_7" = "#747428",
+  "Region_8" = "#627391",
+  "Region_9" = "#8d61a9"
+)
+
+region_levels <- paste0("Region_", 1:9)
+rgn_label_colors <- setNames(unname(rgn_colors[region_levels]), unname(rgn_labels[region_levels]))
+
+add_rgn_labels <- function(df) {
+  df %>%
+    mutate(
+      rgn_id = factor(as.character(rgn_id), levels = region_levels),
+      rgn_label = factor(
+        rgn_labels[as.character(rgn_id)],
+        levels = unname(rgn_labels[region_levels])
+      )
+    )
+}
+
+gg_theme_pdf <- function() {
+  theme_minimal() +
+    theme(
+      plot.title = element_text(face = "bold", size = 11),
+      legend.position = "right",
+      legend.title = element_text(size = 9),
+      legend.text = element_text(size = 8)
+    )
+}
+
+cw_plotly_lines <- function(df, y_var, title, y_range = c(0, 105),
+                            connect_gaps = TRUE) {
+  df <- df %>%
+    mutate(year = as.numeric(year)) %>%
+    arrange(rgn_label, year)
+
+  y_col <- rlang::sym(y_var)
+  year_breaks <- sort(unique(df$year[!is.na(df$year)]))
+  # Drop NA years from drawn geometry so the line bridges gaps (e.g. pathogens 2019–2021)
+  df_drawn <- if (isTRUE(connect_gaps)) {
+    df %>% dplyr::filter(!is.na(!!y_col))
+  } else {
+    df
+  }
+
+  p <- ggplot(df_drawn, aes(x = year, y = !!y_col, color = rgn_label, group = rgn_label)) +
+    geom_line(linewidth = 0.7) +
+    geom_point(size = 1.5) +
+    geom_hline(yintercept = 100, linetype = "dashed", color = "black", linewidth = 0.4) +
+    scale_color_manual(values = rgn_label_colors, name = "Region") +
+    scale_x_continuous(
+      breaks = year_breaks,
+      labels = as.integer(year_breaks),
+      limits = range(year_breaks)
+    ) +
+    labs(
+      title = title,
+      x = "Año // Year",
+      y = "Puntaje // Percent (out of 100)"
+    ) +
+    gg_theme_pdf()
+
+  if (!is.null(y_range)) {
+    p <- p + coord_cartesian(ylim = y_range)
+  }
+
+  p
+}
+
+cw_plotly_goc <- function(df, y_var, title, y_range = c(0, 105),
+                          connect_gaps = TRUE) {
+  df <- df %>%
+    mutate(year = as.numeric(year)) %>%
+    arrange(year)
+
+  y_col <- rlang::sym(y_var)
+  year_breaks <- sort(unique(df$year[!is.na(df$year)]))
+  df_drawn <- if (isTRUE(connect_gaps)) {
+    df %>% dplyr::filter(!is.na(!!y_col))
+  } else {
+    df
+  }
+
+  p <- ggplot(df_drawn, aes(x = year, y = !!y_col)) +
+    geom_line(linewidth = 0.9, color = "#333333") +
+    geom_point(size = 2, color = "#333333") +
+    geom_hline(yintercept = 100, linetype = "dashed", color = "black", linewidth = 0.4) +
+    scale_x_continuous(
+      breaks = year_breaks,
+      labels = as.integer(year_breaks),
+      limits = range(year_breaks)
+    ) +
+    labs(
+      title = title,
+      x = "Año // Year",
+      y = "Puntaje // Percent (out of 100)"
+    ) +
+    gg_theme_pdf() +
+    theme(legend.position = "none")
+
+  if (!is.null(y_range)) {
+    p <- p + coord_cartesian(ylim = y_range)
+  }
+
+  p
+}
+
+# Prefer Mazu paths; fall back to a local cw_mazu copy when available
+pick_existing <- function(...) {
+  paths <- unlist(list(...), use.names = FALSE)
+  hit <- paths[file.exists(paths)]
+  if (length(hit) == 0) NA_character_ else hit[[1]]
+}
+
+gg_theme_map <- function() {
+  theme_void(base_size = 11) +
+    theme(
+      panel.background = element_rect(fill = "white", color = NA),
+      plot.background = element_rect(fill = "white", color = NA),
+      plot.title = element_text(face = "bold", size = 11, hjust = 0.5),
+      plot.subtitle = element_text(size = 8, hjust = 0.5),
+      legend.position = "bottom",
+      legend.direction = "horizontal",
+      legend.justification = "center",
+      legend.box = "vertical",
+      legend.title = element_text(size = 9),
+      legend.text = element_text(size = 7.5),
+      legend.key.height = unit(0.3, "cm"),
+      legend.key.width = unit(0.7, "cm"),
+      # Extra side/bottom margin so Word does not clip the legend
+      legend.margin = margin(4, 10, 4, 10),
+      legend.box.margin = margin(6, 10, 8, 10),
+      plot.margin = margin(10, 18, 18, 18)
+    )
+}
+
+# TR / Access / LSP-style ramp: 0 = dark red, 100 = blue
+cw_score_palette <- c(
+  "#8a0032", "#A50026", "#A50026", "#D73027", "#F46D43",
+  "#FDAE61", "#FEE090", "#FEE090", "#ABD9E9", "#4575B4", "#313695"
+)
+cw_na_fill <- "white"
+
+normalize_rgn_id <- function(x) {
+  x %>%
+    as.character() %>%
+    stringr::str_squish() %>%
+    stringr::str_replace_all(" ", "_")
+}
+
+cw_map_choropleth <- function(regions_sf, scores_df, title, subtitle = NULL,
+                              states_sf = NULL, label_scores = FALSE) {
+  if (is.null(regions_sf) || is.null(scores_df) || nrow(scores_df) == 0) {
+    return(ggplot() + theme_void() + labs(title = paste(title, "(map data unavailable)")))
+  }
+
+  latest <- scores_df %>%
+    filter(!is.na(final_score)) %>%
+    mutate(rgn_id = normalize_rgn_id(rgn_id)) %>%
+    group_by(rgn_id) %>%
+    filter(year == max(year, na.rm = TRUE)) %>%
+    ungroup() %>%
+    dplyr::select(rgn_id, year, score = final_score) %>%
+    mutate(score = ifelse(is.nan(score), NA_real_, score))
+
+  yr <- unique(latest$year)
+  if (is.null(subtitle) && length(yr) > 0) {
+    subtitle <- paste0("Snapshot year: ", paste(yr, collapse = ", "))
+  }
+
+  dat <- regions_sf %>%
+    mutate(rgn_id = normalize_rgn_id(rgn_id)) %>%
+    left_join(latest, by = "rgn_id") %>%
+    mutate(rgn_label = unname(rgn_labels[rgn_id]))
+
+  p <- ggplot()
+
+  if (!is.null(states_sf)) {
+    p <- p +
+      geom_sf(
+        data = states_sf,
+        fill = "#d6cac0",
+        color = "grey10",
+        linewidth = 0.1
+      )
+  }
+
+  p <- p +
+    geom_sf(
+      data = dat,
+      aes(fill = score),
+      color = "black",
+      linewidth = 0.2
+    ) +
+    scale_fill_gradientn(
+      colours = cw_score_palette,
+      limits = c(0, 100),
+      na.value = cw_na_fill,
+      name = "Score",
+      breaks = seq(0, 100, by = 25)
+    ) +
+    labs(title = title, subtitle = subtitle) +
+    coord_sf(expand = FALSE) +
+    gg_theme_map()
+
+  if (isTRUE(label_scores)) {
+    p <- p +
+      geom_sf_text(
+        data = dat %>%
+          mutate(label = ifelse(is.na(score), "NA", as.character(round(score)))),
+        aes(label = label),
+        size = 2.8,
+        color = "grey10",
+        fun.geometry = function(g) sf::st_point_on_surface(sf::st_make_valid(g))
+      )
+  }
+
+  p
+}
+
+# Inland-only ring: marine+10km buffer minus marine polygons (light grey wash)
+inland_buffer_ring <- function(buffer_sf, marine_sf) {
+  if (is.null(buffer_sf) || is.null(marine_sf)) return(NULL)
+  tryCatch({
+    buf <- sf::st_make_valid(sf::st_union(sf::st_geometry(buffer_sf)))
+    mar <- sf::st_make_valid(sf::st_union(sf::st_geometry(marine_sf)))
+    inland <- sf::st_make_valid(sf::st_difference(buf, mar))
+    if (length(inland) == 0 || all(sf::st_is_empty(inland))) return(NULL)
+    sf::st_as_sf(data.frame(id = 1L), geometry = inland)
+  }, error = function(e) NULL)
+}
+
+cw_map_points_on_regions <- function(regions_sf, points_sf, title, subtitle = NULL,
+                                     size = 2.1, states_sf = NULL,
+                                     buffer_sf = NULL, inland_sf = NULL) {
+  if (is.null(regions_sf) || is.null(points_sf)) {
+    return(ggplot() + theme_void() + labs(title = paste(title, "(map data unavailable)")))
+  }
+
+  # Colored marine regions; inland 10 km is a separate light-grey wash
+  regs <- regions_sf %>%
+    mutate(rgn_id = normalize_rgn_id(rgn_id)) %>%
+    add_rgn_labels()
+
+  if (is.null(inland_sf) && !is.null(buffer_sf)) {
+    inland_sf <- inland_buffer_ring(buffer_sf, regions_sf)
+  }
+
+  pts <- points_sf %>%
+    mutate(rgn_id = normalize_rgn_id(rgn_id)) %>%
+    mutate(
+      rgn_label = factor(
+        rgn_labels[as.character(rgn_id)],
+        levels = unname(rgn_labels[region_levels])
+      )
+    )
+
+  p <- ggplot()
+  if (!is.null(states_sf)) {
+    p <- p +
+      geom_sf(data = states_sf, fill = "#d6cac0", color = "grey40", linewidth = 0.12)
+  }
+
+  # See-through inland 10 km buffer only (no heavy outline)
+  if (!is.null(inland_sf) && nrow(inland_sf) > 0) {
+    p <- p +
+      geom_sf(
+        data = inland_sf,
+        fill = "grey65",
+        alpha = 0.22,
+        color = NA,
+        linewidth = 0
+      )
+  }
+
+  # Marine regions: soft grey borders so black-outlined points stay readable
+  p <- p +
+    geom_sf(
+      data = regs,
+      aes(fill = rgn_label),
+      alpha = 0.4,
+      color = "grey55",
+      linewidth = 0.25,
+      show.legend = FALSE
+    )
+
+  # Points: larger + thicker black outline for contrast
+  p +
+    geom_sf(
+      data = pts,
+      aes(fill = rgn_label),
+      shape = 21,
+      color = "black",
+      stroke = 0.6,
+      size = size,
+      alpha = 0.95
+    ) +
+    scale_fill_manual(values = rgn_label_colors, name = "Region") +
+    labs(title = title, subtitle = subtitle) +
+    coord_sf(expand = FALSE, clip = "off") +
+    gg_theme_map() +
+    guides(
+      fill = guide_legend(
+        ncol = 2,
+        byrow = TRUE,
+        title.position = "top",
+        override.aes = list(shape = 21, color = "black", stroke = 0.55, size = 2.8, alpha = 1)
+      )
+    )
+}
+
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+# Status tables live on Mazu under goal_prep/cw
+cw_root <- "/home/shares/ohi/OHI_GOC/goal_prep/cw/v2025"
+
+eutro_cs <- read_csv(
+  file.path(cw_root, "eutrophication/output/eutrophication_cs.csv"),
+  show_col_types = FALSE
+) %>%
+  dplyr::select(rgn_id, final_score = current_status) %>%
+  group_by(rgn_id) %>%
+  mutate(year = 2017) %>%
+  complete(year = 2017:2025) %>%
+  fill(final_score, .direction = "down") %>%
+  ungroup()
+
+# Updated pathogens series (2018-2025; 2020 left missing for the COVID pause)
+path_cs <- read_csv(
+  file.path(cw_root, "pathogens/output/pathogen_cs_2018_2025.csv"),
+  show_col_types = FALSE
+) %>%
+  dplyr::select(rgn_id, year, final_score = current_status) %>%
+  mutate(
+    year = as.numeric(year),
+    final_score = suppressWarnings(as.numeric(final_score))
+  ) %>%
+  group_by(rgn_id) %>%
+  tidyr::complete(year = 2018:2025) %>%
+  # Explicit COVID pause: keep the year on the axis, but no score / no point
+  mutate(final_score = ifelse(year == 2020, NA_real_, final_score)) %>%
+  ungroup()
+
+chem_cs <- read_csv(
+  file.path(cw_root, "chemicals/chemical_cs.csv"),
+  show_col_types = FALSE
+) %>%
+  dplyr::select(rgn_id, year, final_score = chemical_cs,
+                PEST, PHRM, WWPS, HAZW, VESS) %>%
+  group_by(rgn_id) %>%
+  complete(year = 2017:2025) %>%
+  fill(final_score, PEST, PHRM, WWPS, HAZW, VESS, .direction = "down") %>%
+  ungroup()
+
+pest_cs <- read_csv(
+  file.path(cw_root, "chemicals/pesticides/output/cw_chemical_pesticide_current_status.csv"),
+  show_col_types = FALSE
+) %>%
+  dplyr::select(rgn_id, year, final_score = current_status_final)
+
+phrm_cs <- read_csv(
+  file.path(cw_root, "chemicals/pharmaceuticals/current_status_pharmaceuticals.csv"),
+  show_col_types = FALSE
+) %>%
+  dplyr::select(rgn_id, year, final_score = current_status_final)
+
+hazw_cs <- read_csv(
+  file.path(cw_root, "chemicals/hazardous_waste/output/current_status_hazardous_waste.csv"),
+  show_col_types = FALSE
+) %>%
+  dplyr::select(rgn_id, year = anio, final_score)
+
+wwps_cs <- read_csv(
+  file.path(cw_root, "chemicals/agua_sin_tratamiento/output/untreated_ww_current_status.csv"),
+  show_col_types = FALSE
+) %>%
+  dplyr::select(rgn_id, year = census_year, final_score = current_status_final)
+
+vess_cs <- chem_cs %>%
+  dplyr::select(rgn_id, year, final_score = VESS) %>%
+  filter(!is.na(final_score))
+
+pla_cs <- read_csv(
+  file.path(cw_root, "marine_debris/ghost_gear_risk.csv"),
+  show_col_types = FALSE
+) %>%
+  mutate(final_score = (1 - pressure) * 100) %>%
+  dplyr::select(rgn_id, year, final_score)
+
+# Precomputed overall CW (arithmetic mean of EUT, PAT, CHM, MAR)
+cw_status_raw <- read_csv(
+  file.path(cw_root, "cw_current_status_arithmetic.csv"),
+  show_col_types = FALSE
+)
+
+cw_score_col <- intersect(c("CW", "final_score", "current_status", "cw"), names(cw_status_raw))[1]
+if (is.na(cw_score_col)) {
+  stop(
+    "cw_current_status_arithmetic.csv needs a score column named CW, final_score, or current_status. ",
+    "Found: ", paste(names(cw_status_raw), collapse = ", ")
+  )
+}
+
+cw_status <- cw_status_raw %>%
+  mutate(final_score = .data[[cw_score_col]]) %>%
+  dplyr::select(rgn_id, year, final_score)
+
+cw_goc <- cw_status %>%
+  group_by(year) %>%
+  summarize(final_score = mean(final_score, na.rm = TRUE), .groups = "drop")
+
+chem_goc <- chem_cs %>%
+  group_by(year) %>%
+  summarize(final_score = mean(final_score, na.rm = TRUE), .groups = "drop")
+
+path_goc <- path_cs %>%
+  group_by(year) %>%
+  summarize(
+    final_score = if (all(is.na(final_score))) {
+      NA_real_
+    } else {
+      mean(final_score, na.rm = TRUE)
+    },
+    .groups = "drop"
+  )
+
+pla_goc <- pla_cs %>%
+  group_by(year) %>%
+  summarize(final_score = mean(final_score, na.rm = TRUE), .groups = "drop")
+
+# Plots
+cw_score_plotly <- cw_plotly_lines(
+  add_rgn_labels(cw_status),
+  y_var = "final_score",
+  title = "Clean Waters overall (arithmetic mean of EUT, PAT, CHM, MAR)"
+)
+
+cw_overall_goc_plotly <- cw_plotly_goc(
+  cw_goc,
+  y_var = "final_score",
+  title = "Gulf wide average Clean Waters current status"
+)
+
+eut_plotly <- cw_plotly_lines(
+  add_rgn_labels(eutro_cs),
+  y_var = "final_score",
+  title = "CW Eutrophication"
+)
+
+pat_plotly <- cw_plotly_lines(
+  add_rgn_labels(path_cs),
+  y_var = "final_score",
+  title = "CW Pathogens (2018-2025)"
+)
+
+pat_goc_plotly <- cw_plotly_goc(
+  path_goc,
+  y_var = "final_score",
+  title = "Gulf wide average Pathogens current status"
+)
+
+chem_plotly <- cw_plotly_lines(
+  add_rgn_labels(chem_cs),
+  y_var = "final_score",
+  title = "CW Chemicals"
+)
+
+chem_goc_plotly <- cw_plotly_goc(
+  chem_goc,
+  y_var = "final_score",
+  title = "Gulf wide average Chemicals current status"
+)
+
+pest_plotly <- cw_plotly_lines(
+  add_rgn_labels(pest_cs),
+  y_var = "final_score",
+  title = "CW Chemicals: Pesticides"
+)
+
+phrm_plotly <- cw_plotly_lines(
+  add_rgn_labels(phrm_cs),
+  y_var = "final_score",
+  title = "CW Chemicals: Pharmaceuticals"
+)
+
+hazw_plotly <- cw_plotly_lines(
+  add_rgn_labels(hazw_cs),
+  y_var = "final_score",
+  title = "CW Chemicals: Hazardous waste sites"
+)
+
+wwps_plotly <- cw_plotly_lines(
+  add_rgn_labels(wwps_cs),
+  y_var = "final_score",
+  title = "CW Chemicals: Untreated wastewater points"
+)
+
+vess_plotly <- cw_plotly_lines(
+  add_rgn_labels(vess_cs),
+  y_var = "final_score",
+  title = "CW Chemicals: Vessel hydrocarbons"
+)
+
+pla_plotly <- cw_plotly_lines(
+  add_rgn_labels(pla_cs),
+  y_var = "final_score",
+  title = "CW Marine Debris: Ghost gear risk"
+)
+
+pla_goc_plotly <- cw_plotly_goc(
+  pla_goc,
+  y_var = "final_score",
+  title = "Gulf wide average Marine Debris (ghost gear) current status"
+)
+
+# --- Spatial layers for static maps (Mazu first, local cw_mazu fallback) ---
+local_cw <- here::here("cw_mazu/v2025")
+if (!dir.exists(local_cw)) local_cw <- here::here("../cw_mazu/v2025")
+if (!dir.exists(local_cw)) local_cw <- "/Users/manos/Documents/Cursor/CW_pesticides/cw_mazu/v2025"
+
+spatial_dir <- "/home/shares/ohi/OHI_GOC/spatial/OHI_regions"
+
+rgn_path <- pick_existing(
+  file.path(spatial_dir, "goc_ohi_rgns.shp"),
+  file.path(spatial_dir, "marine_and_inland10.gpkg")
+)
+# Marine + 10 km inland buffer used to assign nearshore / inland sites to regions
+buffer_path <- pick_existing(
+  file.path(spatial_dir, "marine_and_inland10.gpkg")
+)
+# Marine + 50 km inland buffer (hazardous waste sites use a 50 km coastal buffer)
+buffer50_path <- pick_existing(
+  file.path(spatial_dir, "marine_and_inland50.gpkg")
+)
+ws_path <- pick_existing(
+  file.path(spatial_dir, "watersheds_goc.gpkg"),
+  here::here("/home/shares/ohi/OHI_GOC/spatial/OHI_regions", "watersheds_goc.gpkg"),
+  "/home/shares/ohi/stressors_2021/_dataprep/nutrients/watersheds_pourpoints/watersheds_all_4326.shp"
+)
+pp_path <- pick_existing(
+  file.path(spatial_dir, "pourpoints_goc.gpkg"),
+  here::here("/home/shares/ohi/OHI_GOC/spatial/OHI_regions", "pourpoints_goc.gpkg"),
+  "/home/shares/ohi/stressors_2021/_dataprep/nutrients/watersheds_pourpoints/pourpoints_mol.shp",
+  file.path(cw_root, "chemicals/pesticides/int/total_agriculture_pesticides_kg_pourpoints_rgnid_allyears.gpkg"),
+  file.path(local_cw, "chemicals/pesticides/int/total_agriculture_pesticides_kg_pourpoints_rgnid_allyears.gpkg")
+)
+# Full national pourpoint layer (used to recover any GoC outlets missing from pourpoints_goc)
+pp_full_path <- pick_existing(
+  "/home/shares/ohi/stressors_2021/_dataprep/nutrients/watersheds_pourpoints/pourpoints_mol.shp"
+)
+states_path <- pick_existing(
+  file.path(spatial_dir, "states.shp"),
+  file.path(spatial_dir, "goc_states.shp"),
+  "/home/shares/ohi/OHI_GOC/spatial/ohi_regions/states.shp",
+  here::here("spatial/ohi_regions/states.shp"),
+  here::here("spatial/OHI_regions/states.shp")
+)
+pest_pp_path <- pick_existing(
+  file.path(cw_root, "chemicals/pesticides/int/total_agriculture_pesticides_kg_pourpoints_rgnid_allyears.gpkg"),
+  file.path(local_cw, "chemicals/pesticides/int/total_agriculture_pesticides_kg_pourpoints_rgnid_allyears.gpkg")
+)
+playas_path <- pick_existing(
+  file.path(cw_root, "pathogens/int/playas_limpias_rgnid_2018_2025.gpkg"),
+  file.path(cw_root, "pathogens/int/playas_limpias_rgnid.gpkg"),
+  file.path(local_cw, "pathogens/int/playas_limpias_rgnid.gpkg")
+)
+hazw_path <- pick_existing(
+  file.path(cw_root, "chemicals/hazardous_waste/int/all_hazardous_sites_50km.gpkg"),
+  file.path(local_cw, "chemicals/hazardous_waste/int/all_hazardous_sites_50km.gpkg")
+)
+wwtp_pp_path <- pick_existing(
+  file.path(cw_root, "chemicals/pharmaceuticals/humans_int/pourpoints_effluent_wwtp_liters_final.gpkg"),
+  file.path(local_cw, "chemicals/pharmaceuticals/humans_int/pourpoints_effluent_wwtp_liters_final.gpkg")
+)
+
+safe_read_sf <- function(path) {
+  if (is.na(path) || !file.exists(path)) return(NULL)
+  tryCatch(sf::st_read(path, quiet = TRUE), error = function(e) NULL)
+}
+
+prep_rgn_polygons <- function(x, marine_only = FALSE) {
+  if (is.null(x)) return(NULL)
+  if (!"rgn_id" %in% names(x)) {
+    id_alt <- intersect(c("rgn", "region_id", "REGION_ID", "id"), names(x))
+    if (length(id_alt) > 0) {
+      names(x)[names(x) == id_alt[[1]]] <- "rgn_id"
+    }
+  }
+  if (!"rgn_id" %in% names(x)) return(NULL)
+  if (isTRUE(marine_only) && "location" %in% names(x)) {
+    x <- x %>% dplyr::filter(tolower(as.character(location)) == "marine")
+  }
+  x %>%
+    mutate(rgn_id = normalize_rgn_id(rgn_id)) %>%
+    group_by(rgn_id) %>%
+    summarise(.groups = "drop")
+}
+
+regions_sf <- prep_rgn_polygons(safe_read_sf(rgn_path), marine_only = TRUE)
+# Fallback if marine filter emptied the layer
+if (is.null(regions_sf) || nrow(regions_sf) == 0) {
+  regions_sf <- prep_rgn_polygons(safe_read_sf(rgn_path), marine_only = FALSE)
+}
+
+rgn_buffer_sf <- prep_rgn_polygons(safe_read_sf(buffer_path), marine_only = FALSE)
+if (is.null(rgn_buffer_sf)) rgn_buffer_sf <- regions_sf
+rgn_buffer50_sf <- prep_rgn_polygons(safe_read_sf(buffer50_path), marine_only = FALSE)
+
+states_sf <- safe_read_sf(states_path)
+watersheds_sf <- safe_read_sf(ws_path)
+pourpoints_base_sf <- safe_read_sf(pp_path)
+pourpoints_full_sf <- safe_read_sf(pp_full_path)
+if (is.null(watersheds_sf)) {
+  message("Watershed polygons not found at: ", paste(ws_path, collapse = " | "))
+} else {
+  message("Loaded watersheds: ", nrow(watersheds_sf), " features from ", ws_path)
+}
+if (!is.null(pourpoints_base_sf)) {
+  message("Loaded pourpoints_goc/base: ", nrow(pourpoints_base_sf), " from ", pp_path)
+}
+
+# Prefer the fuller national pourpoint layer as the starting set when available;
+# GoC-side filtering below removes Pacific outlets.
+if (!is.null(pourpoints_full_sf)) {
+  message("Loaded full pourpoints: ", nrow(pourpoints_full_sf), " from ", pp_full_path)
+  if (is.null(pourpoints_base_sf) || nrow(pourpoints_full_sf) >= nrow(pourpoints_base_sf)) {
+    pourpoints_base_sf <- pourpoints_full_sf
+  }
+}
+pest_pp_sf <- safe_read_sf(pest_pp_path)
+playas_sf <- safe_read_sf(playas_path)
+hazw_sf <- safe_read_sf(hazw_path)
+wwtp_pp_sf <- safe_read_sf(wwtp_pp_path)
+
+# Align CRS to regions when possible
+align_to_regions <- function(x) {
+  if (is.null(x) || is.null(regions_sf)) return(x)
+  tryCatch(st_transform(x, st_crs(regions_sf)), error = function(e) x)
+}
+states_sf <- align_to_regions(states_sf)
+rgn_buffer_sf <- align_to_regions(rgn_buffer_sf)
+rgn_buffer50_sf <- align_to_regions(rgn_buffer50_sf)
+watersheds_sf <- align_to_regions(watersheds_sf)
+pourpoints_base_sf <- align_to_regions(pourpoints_base_sf)
+pest_pp_sf <- align_to_regions(pest_pp_sf)
+playas_sf <- align_to_regions(playas_sf)
+hazw_sf <- align_to_regions(hazw_sf)
+wwtp_pp_sf <- align_to_regions(wwtp_pp_sf)
+
+# Assign every point to an OHI region without dropping any features.
+# Prefer marine+inland buffer polygons; fall back to nearest region if no overlap.
+assign_points_to_regions <- function(pts, poly_sf, label = "points") {
+  if (is.null(pts) || nrow(pts) == 0) return(pts)
+  n0 <- nrow(pts)
+
+  if (is.null(poly_sf) || nrow(poly_sf) == 0) {
+    message(label, ": no region polygons for assignment; keeping ", n0, " points")
+    return(pts)
+  }
+
+  pts <- tryCatch(sf::st_make_valid(pts), error = function(e) pts)
+  poly <- poly_sf %>%
+    mutate(rgn_id = normalize_rgn_id(rgn_id)) %>%
+    dplyr::select(rgn_id)
+
+  hits <- tryCatch(
+    sf::st_intersects(pts, poly),
+    error = function(e) vector("list", n0)
+  )
+  rgn_vec <- vapply(seq_len(n0), function(i) {
+    ix <- hits[[i]]
+    if (is.null(ix) || length(ix) == 0) {
+      NA_character_
+    } else {
+      as.character(poly$rgn_id[[ix[[1]]]])
+    }
+  }, character(1))
+
+  miss <- which(is.na(rgn_vec) | rgn_vec == "")
+  if (length(miss) > 0) {
+    near_ix <- tryCatch(
+      sf::st_nearest_feature(pts[miss, ], poly),
+      error = function(e) integer(0)
+    )
+    if (length(near_ix) == length(miss)) {
+      rgn_vec[miss] <- as.character(poly$rgn_id[near_ix])
+      message(label, ": assigned ", length(miss), " points by nearest region (no overlap)")
+    }
+  }
+
+  pts$rgn_id <- normalize_rgn_id(rgn_vec)
+  tab <- sort(table(as.character(pts$rgn_id), useNA = "ifany"), decreasing = TRUE)
+  message(
+    label, ": kept ", nrow(pts), " of ", n0, " points. By region: ",
+    paste(names(tab), tab, sep = "=", collapse = ", ")
+  )
+  pts
+}
+
+# GoC-side pourpoint filter (same idea as pesticide prep on Mazu):
+# 1) keep points inside marine + 50 km inland (needed for Region_5 / Colorado delta)
+# 2) for western Baja dual-coast regions, also require marine + 10 km so Pacific
+#    outlets are dropped. BCS is Region_4; Regions 1–3 have the same Pacific-backside issue.
+filter_pourpoints_goc_side <- function(
+    pts,
+    buffer50,
+    buffer10,
+    tight_10km_regions = c("Region_1", "Region_2", "Region_3", "Region_4")
+) {
+  if (is.null(pts) || nrow(pts) == 0) return(pts)
+  n0 <- nrow(pts)
+
+  if (is.null(buffer50) || nrow(buffer50) == 0) {
+    message("GoC pourpoint filter: no 50 km buffer available; leaving ", n0, " points unchanged")
+    return(pts)
+  }
+
+  pts <- tryCatch(sf::st_make_valid(pts), error = function(e) pts)
+  buf50 <- tryCatch(sf::st_make_valid(buffer50), error = function(e) buffer50)
+
+  pts50 <- tryCatch(
+    sf::st_filter(pts, buf50),
+    error = function(e) {
+      tryCatch(
+        suppressWarnings(sf::st_intersection(pts, sf::st_union(sf::st_geometry(buf50)))),
+        error = function(e2) pts
+      )
+    }
+  )
+  if (is.null(pts50) || nrow(pts50) == 0) {
+    message("GoC pourpoint filter: none of ", n0, " points fall in the 50 km buffer")
+    return(pts50)
+  }
+
+  pts50 <- assign_points_to_regions(pts50, buf50, label = "GoC 50 km pour points")
+
+  if (!is.null(buffer10) && nrow(buffer10) > 0) {
+    buf10 <- tryCatch(sf::st_make_valid(buffer10), error = function(e) buffer10)
+    in10 <- tryCatch(
+      lengths(sf::st_intersects(pts50, sf::st_union(sf::st_geometry(buf10)))) > 0,
+      error = function(e) rep(TRUE, nrow(pts50))
+    )
+    rgn_chr <- normalize_rgn_id(pts50$rgn_id)
+    drop_pacific <- rgn_chr %in% tight_10km_regions & !in10
+    message(
+      "GoC pourpoint filter: dropped ", sum(drop_pacific, na.rm = TRUE),
+      " western-Baja Pacific-side points outside 10 km (",
+      paste(tight_10km_regions, collapse = ", "),
+      "); kept ", sum(!drop_pacific, na.rm = TRUE), " of ", n0
+    )
+    pts50 <- pts50[!drop_pacific, ]
+  } else {
+    message(
+      "GoC pourpoint filter: kept ", nrow(pts50),
+      " of ", n0, " points inside 50 km (no 10 km layer for Baja trim)"
+    )
+  }
+
+  pts50
+}
+
+# Apply GoC-side filter once buffers are aligned
+pourpoints_base_sf <- filter_pourpoints_goc_side(
+  pourpoints_base_sf,
+  buffer50 = rgn_buffer50_sf,
+  buffer10 = rgn_buffer_sf
+)
+
+# Light-grey inland-only buffers (buffer minus marine)
+inland10_sf <- inland_buffer_ring(rgn_buffer_sf, regions_sf)
+inland50_sf <- inland_buffer_ring(rgn_buffer50_sf, regions_sf)
+if (is.null(inland50_sf)) inland50_sf <- inland10_sf
+
+# Watershed + pourpoint overview: full inland watersheds (not clipped to 10 km)
+ws_pourpoint_map <- {
+  if (is.null(regions_sf)) {
+    ggplot() + theme_void() + labs(title = "Watersheds and pour points (map data unavailable)")
+  } else {
+    regs <- regions_sf %>% add_rgn_labels()
+    p <- ggplot()
+
+    # Full GoC watershed polygons first (these extend inland across surrounding states)
+    ws_plot <- NULL
+    if (!is.null(watersheds_sf) && nrow(watersheds_sf) > 0) {
+      ws_plot <- tryCatch(st_make_valid(watersheds_sf), error = function(e) watersheds_sf)
+      p <- p +
+        geom_sf(
+          data = ws_plot,
+          fill = "#d9d2c5",
+          alpha = 0.55,
+          color = "grey35",
+          linewidth = 0.22
+        )
+    }
+
+    # Optional states underlay on top of watersheds only as outlines (if available)
+    if (!is.null(states_sf)) {
+      p <- p +
+        geom_sf(
+          data = states_sf,
+          fill = NA,
+          color = "grey20",
+          linewidth = 0.35
+        )
+    }
+
+    if (!is.null(inland10_sf) && nrow(inland10_sf) > 0) {
+      p <- p +
+        geom_sf(
+          data = inland10_sf,
+          fill = "grey65",
+          alpha = 0.18,
+          color = NA,
+          linewidth = 0
+        )
+    }
+
+    p <- p +
+      geom_sf(
+        data = regs,
+        aes(fill = rgn_label),
+        alpha = 0.45,
+        color = "grey55",
+        linewidth = 0.25
+      )
+
+    # Pour points already GoC-filtered (50 km, with western Baja tightened to 10 km)
+    point_fill_scale <- rgn_label_colors
+    pts <- if (!is.null(pourpoints_base_sf)) pourpoints_base_sf else pest_pp_sf
+    if (!is.null(pts)) {
+      if (!"rgn_id" %in% names(pts) || all(is.na(pts$rgn_id))) {
+        assign_poly <- if (!is.null(rgn_buffer50_sf)) rgn_buffer50_sf else rgn_buffer_sf
+        pts <- assign_points_to_regions(pts, assign_poly, label = "overview pour points")
+      }
+      pts <- pts %>%
+        mutate(
+          rgn_id = normalize_rgn_id(rgn_id),
+          rgn_label = factor(
+            dplyr::coalesce(
+              unname(rgn_labels[as.character(rgn_id)]),
+              "Unassigned"
+            ),
+            levels = c(unname(rgn_labels[region_levels]), "Unassigned")
+          )
+        )
+      message(
+        "Overview map pour points: ", nrow(pts),
+        " | Region_1: ", sum(as.character(pts$rgn_id) == "Region_1", na.rm = TRUE)
+      )
+
+      point_fill_scale <- c(rgn_label_colors, "Unassigned" = "white")
+      p <- p +
+        geom_sf(
+          data = pts,
+          aes(fill = rgn_label),
+          shape = 21,
+          color = "black",
+          stroke = 0.45,
+          size = 1.6,
+          alpha = 0.95,
+          show.legend = FALSE
+        )
+    }
+
+    # Expand view to include full watershed extent, not only marine polygons
+    map_xlim <- NULL
+    map_ylim <- NULL
+    if (!is.null(ws_plot) && nrow(ws_plot) > 0) {
+      bb <- tryCatch({
+        bb_ws <- sf::st_bbox(ws_plot)
+        bb_rg <- sf::st_bbox(regs)
+        c(
+          xmin = min(bb_ws["xmin"], bb_rg["xmin"], na.rm = TRUE),
+          xmax = max(bb_ws["xmax"], bb_rg["xmax"], na.rm = TRUE),
+          ymin = min(bb_ws["ymin"], bb_rg["ymin"], na.rm = TRUE),
+          ymax = max(bb_ws["ymax"], bb_rg["ymax"], na.rm = TRUE)
+        )
+      }, error = function(e) NULL)
+      if (!is.null(bb) && all(is.finite(bb))) {
+        pad_x <- 0.15 * (bb["xmax"] - bb["xmin"])
+        pad_y <- 0.08 * (bb["ymax"] - bb["ymin"])
+        map_xlim <- c(bb["xmin"] - pad_x, bb["xmax"] + pad_x)
+        map_ylim <- c(bb["ymin"] - pad_y, bb["ymax"] + pad_y)
+      }
+    }
+
+    p +
+      scale_fill_manual(
+        values = point_fill_scale,
+        name = "Region",
+        breaks = unname(rgn_labels[region_levels]),
+        na.value = "white"
+      ) +
+      labs(
+        title = "GoC watersheds, pour points, and OHI regions",
+        subtitle = "Tan = watersheds; colored = marine OHI regions; pour points = GoC-side only (50 km; western Baja 10 km)"
+      ) +
+      {
+        if (!is.null(map_xlim) && !is.null(map_ylim)) {
+          coord_sf(xlim = map_xlim, ylim = map_ylim, expand = FALSE, clip = "off")
+        } else {
+          coord_sf(expand = FALSE, clip = "off")
+        }
+      } +
+      gg_theme_map() +
+      guides(
+        fill = guide_legend(
+          ncol = 2,
+          byrow = TRUE,
+          title.position = "top"
+        )
+      )
+  }
+}
+
+# Component choropleths (latest year; LSP / TR style: red = 0, blue = 100)
+cw_map <- cw_map_choropleth(
+  regions_sf, cw_status, "Overall Clean Waters status by region",
+  states_sf = states_sf
+)
+eut_map <- cw_map_choropleth(
+  regions_sf, eutro_cs, "Eutrophication (EUT) current status",
+  subtitle = "Single nitrogen snapshot (Romero-Gil et al.); red = 0, blue = 100",
+  states_sf = states_sf,
+  label_scores = TRUE
+)
+pat_map <- cw_map_choropleth(
+  regions_sf, path_cs, "Pathogens status by region",
+  states_sf = states_sf
+)
+chem_map <- cw_map_choropleth(
+  regions_sf, chem_cs, "Chemicals status by region",
+  states_sf = states_sf
+)
+pest_map <- cw_map_choropleth(
+  regions_sf, pest_cs, "Pesticides status by region",
+  states_sf = states_sf
+)
+phrm_map <- cw_map_choropleth(
+  regions_sf, phrm_cs, "Pharmaceuticals status by region",
+  states_sf = states_sf
+)
+hazw_map <- cw_map_choropleth(
+  regions_sf, hazw_cs, "Hazardous waste status by region",
+  states_sf = states_sf
+)
+wwps_map <- cw_map_choropleth(
+  regions_sf, wwps_cs, "Untreated wastewater status by region",
+  states_sf = states_sf
+)
+vess_map <- cw_map_choropleth(
+  regions_sf, vess_cs, "Vessel hydrocarbons status by region",
+  states_sf = states_sf
+)
+mar_map <- cw_map_choropleth(
+  regions_sf, pla_cs, "Marine Debris status by region (ghost gear)",
+  states_sf = states_sf
+)
+
+# Point maps for key spatial datasets
+pat_sites_map <- cw_map_points_on_regions(
+  regions_sf,
+  playas_sf,
+  title = "Playas Limpias sampling sites",
+  subtitle = "Light grey = 10 km inland buffer; points are Enterococcus sites",
+  size = 2.2,
+  states_sf = states_sf,
+  buffer_sf = rgn_buffer_sf,
+  inland_sf = inland10_sf
+)
+
+pest_pp_map <- {
+  if (is.null(regions_sf) || is.null(pest_pp_sf)) {
+    ggplot() + theme_void() + labs(title = "Pesticide pour points (map data unavailable)")
+  } else {
+    yr_col <- intersect(c("year", "ano", "Year"), names(pest_pp_sf))[1]
+    kg_col <- intersect(c("total_pesticide_kg", "pesticide_kg", "total_kg"), names(pest_pp_sf))[1]
+    pts <- pest_pp_sf
+    if (!is.na(yr_col)) {
+      max_yr <- max(as.numeric(pts[[yr_col]]), na.rm = TRUE)
+      pts <- pts[as.numeric(pts[[yr_col]]) == max_yr, ]
+    }
+    regs <- regions_sf %>% add_rgn_labels()
+    p <- ggplot()
+    if (!is.null(states_sf)) {
+      p <- p +
+        geom_sf(data = states_sf, fill = "#d6cac0", color = "grey40", linewidth = 0.12)
+    }
+    if (!is.null(inland10_sf) && nrow(inland10_sf) > 0) {
+      p <- p +
+        geom_sf(
+          data = inland10_sf,
+          fill = "grey65",
+          alpha = 0.22,
+          color = NA,
+          linewidth = 0
+        )
+    }
+    p <- p +
+      geom_sf(
+        data = regs,
+        aes(fill = rgn_label),
+        alpha = 0.4,
+        color = "grey55",
+        linewidth = 0.25,
+        show.legend = FALSE
+      )
+    if (!is.na(kg_col)) {
+      pts$.kg <- as.numeric(pts[[kg_col]])
+      p <- p +
+        geom_sf(
+          data = pts,
+          aes(size = .kg),
+          shape = 21,
+          fill = "#6B4C9A",
+          color = "black",
+          stroke = 0.55,
+          alpha = 0.9
+        ) +
+        scale_size_continuous(name = "kg", range = c(1.6, 5.5))
+    } else {
+      p <- p +
+        geom_sf(
+          data = pts,
+          shape = 21,
+          fill = "#6B4C9A",
+          color = "black",
+          stroke = 0.55,
+          size = 2.0,
+          alpha = 0.9
+        )
+    }
+    p +
+      scale_fill_manual(values = rgn_label_colors, guide = "none") +
+      labs(
+        title = "Agricultural pesticide pour points",
+        subtitle = "Light grey = 10 km inland buffer; black-outlined points = pour points"
+      ) +
+      coord_sf(expand = FALSE, clip = "off") +
+      gg_theme_map()
+  }
+}
+
+hazw_sites_map <- cw_map_points_on_regions(
+  regions_sf,
+  hazw_sf,
+  title = "Hazardous waste sites (50 km coastal buffer)",
+  subtitle = "Light grey = 50 km inland buffer; black-outlined points = HAZW sites",
+  size = 2.0,
+  states_sf = states_sf,
+  buffer_sf = rgn_buffer50_sf,
+  inland_sf = inland50_sf
+)
+
+phrm_pp_map <- cw_map_points_on_regions(
+  regions_sf,
+  wwtp_pp_sf,
+  title = "Wastewater pour points (pharmaceuticals)",
+  subtitle = "Light grey = 10 km inland buffer; black-outlined points = pour points",
+  size = 2.0,
+  states_sf = states_sf,
+  buffer_sf = rgn_buffer_sf,
+  inland_sf = inland10_sf
+)
+```
+
+## How the pieces fit together
+
+For many pressures that start on land, the story is similar: activity happens inland, we estimate how much pressure can move toward the sea, we assign that intensity to the OHI region where it is most likely to affect the Gulf coast, and then we turn higher intensity into a lower status score. The ideal is usually **zero contamination pressure**. For several chemical indicators, the low end of the scale is based on the highest pressures we observe across Gulf regions and years (often using the mean of the top five observations, so one extreme outlier does not set the whole scale by itself). Those scores are relative rankings within this assessment. They are not the same thing as a legal compliance certificate.
+
+Pathogens are a bit different, because Mexico already has a clear beach suitability threshold we can lean on.
+
+The map below shows the Gulf of California OHI regions together with watershed boundaries and coastal pour points. This is the spatial scaffolding used for several land based Clean Waters pressures (especially chemicals).
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.width=7.2, fig.height=8.2}
+ws_pourpoint_map
+```
+
+## Overall Clean Waters status
+
+The overall Clean Waters score summarizes how close each OHI Gulf of California region is to unpolluted coastal waters across eutrophication, pathogens, chemicals, and marine debris (ghost gear risk for now). Higher CW scores signal that a region is closer to cleaner coastal waters across the pathways we can currently measure. Lower scores highlight where one or more pathways still show elevated contamination. Look at the component charts, not only the overall line, to see which pathway is driving the result.
+
+One thing to keep in mind: Region 8 in 2017 looks very low for ghost gear risk (Marine Debris), because that year hit the ceiling of the ghost gear reference point. Under a geometric mean, that one pathway would have dragged the whole Clean Waters score toward 0. That is a big part of why we are using an arithmetic average for now: it still reflects Marine Debris, but it does not let a reference point artifact erase everything else.
+
+$$
+\text{CW score} = \frac{\text{Eutrophication} + \text{Pathogens} + \text{Chemicals} + \text{Marine Debris}}{4}
+$$
+
+In plain words: add the four component scores and divide by 4 (a simple average).
+
+Not every component has the same years of data. Eutrophication is currently a single snapshot carried forward across years. Pathogens span 2018 to 2025, with 2020 left blank because monitoring paused. Chemicals and marine debris have longer series. Gap fills (for example treating some missing chemical pathways as 100) can inflate scores in places where "no data" should not be read as "pristine."
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+cw_score_plotly
+```
+
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+cw_overall_goc_plotly
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.width=6.2, fig.height=6.8}
+cw_map
+```
+
+## Eutrophication (EUT)
+
+We aimed to assess eutrophication in the Gulf of California (GoC) as part of the Clean Waters goal, which captured the degree to which local waters were unpolluted by human made causes, including impacts on ecological health, human health, and food quality. We initially explored using chlorophyll a (chl-a) as a eutrophication risk indicator. We isolated nearshore (5, 10, and 15 km) and offshore regions and plotted annual mean chl-a values for each.
+
+We found that nearshore chl-a was approximately twice the offshore values, but that the two tracked each other closely over time. We ran a linear regression and found a weak increasing trend in nearshore chl-a relative to the offshore signal, but determined that this trend was driven primarily by the first four to five years of the time series. We ran this analysis across all OHI regions and found the same general pattern in each case.
+
+Based on these results, we concluded that chl-a was not a reliable eutrophication indicator for this assessment, as it likely reflected Gulf wide oceanographic dynamics rather than localized nutrient pollution. We therefore decided to use nitrogen inputs as our measure of eutrophication pressure. We used Total Nitrogen (TN) anthropogenic discharge estimates by municipality and source from Romero-Gil et al. 2026, applying the following assumptions: mean values for wastewater, a leaching coefficient of 10% for agriculture, an export coefficient of 40% for livestock, and 100% nitrogen discharge reaching the sea for shrimp farming. We digitized these values from Table 6 of the paper's Supplementary Material. We considered several reference point options, including Mexico's legal permissible TN limit in marine waters (mg/L), a global minimum TN value across regions, and a target of zero anthropogenic TN inputs.
+
+We ultimately decided against these options due to data limitations, namely, the Juan Antonio Romero-Gil (JARG) paper represented a single snapshot in time with no temporal variation, and instead chose the maximum observed TN value (normalized by coastal length) across municipalities as our reference point, keeping scores comparative across regions. To calculate current status scores, we summed the TN inputs across all sources for each municipality, divided each municipality's total by its coastal length to obtain tons per kilometer, identified the maximum value across all municipalities as the reference point, divided each municipality's value by that maximum, and then averaged the rescaled values weighted by coastal length to produce a regional score:
+
+$$
+\text{pressure} = \frac{\text{(nitrogen per km of coast)} - \text{ideal}}{\text{maximum} - \text{ideal}}
+$$
+
+$$
+\text{EUT score} = (1 - \text{coastline-weighted average pressure}) \times 100
+$$
+
+**Reference points:** ideal = 0 nitrogen; maximum = the highest nitrogen per km of coast among municipalities. Municipalities with more coastline count more when we average up to the OHI region. We handled two gap filling cases.
+
+For Concordia, a municipality with no coastline of its own due to being located slightly inland, we attributed its nitrogen discharge to the neighboring municipality of Mazatlán, as the majority of its nitrogen was expected to flow through a watershed with a pourpoint in Mazatlán. For Region 2, where JARG reported no nitrogen discharge, we assigned a current status score of 100. For Region 9, which was not included in JARG's study area, we used Region 8's value as a rough estimate.
+
+We noted that Region 1 produced a notably low score (approximately 25), which we attributed to Mexicali being the sole municipality in that region, one characterized by intense cattle rearing relative to a short coastline length.
+
+Because this eutrophication layer is a single snapshot (no multi-year series), we show regional scores as a choropleth rather than a time series.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.width=7.5, fig.height=7.5}
+eut_map
+```
+
+## Pathogens (PAT)
+
+We assessed the Pathogens subcomponent of the Clean Waters goal using Enterococcus spp. as a fecal indicator bacteria (FIB), measured as the Most Probable Number (Número Más Probable, NMP) per 100 mL, drawn from CONAGUA's Playas Limpias monitoring program at highly visited beaches across the Gulf of California for the years 2018-2025. We digitized the raw data manually from the Playas Limpias website into a CSV file.
+
+Current monitoring (2022-2025) is combined with historical digitized tables (2018, 2019, and 2021). There is no 2020 Playas Limpias sampling in this set (COVID pause), so that year is left missing rather than gap filled. We set our reference points based on Mexico's legal beach suitability standard, which classifies beaches as suitable ("Apta") at 0-200 NMP/100 mL and unsuitable ("No Apta") above 200 NMP/100 mL.
+
+We therefore set the ideal at 0 NMP/100 mL and the maximum at 200 NMP/100 mL. We also explored 104 NMP/100 mL as an alternative upper threshold, based on the California Blue Water Task Force standard from the California State Water Resources Control Board for "high" Enterococcus spp. levels, but ultimately retained the 200 NMP/100 mL threshold in order to apply Mexican rather than US regulations.
+
+We also noted that the most severe exceedance observed, which was Guaymas in winter 2025, at approximately 608 NMP/100 mL, would have exceeded the 104 threshold regardless. For spatial assignment, we converted all sampling site coordinates from degrees minutes seconds (DMS) format to decimal degrees, then intersected the resulting point locations with the marine regions plus a 10 km inland buffer layer to assign each site a GoC region ID (rgn_id). For clarification, the Playas Limpias dataset was organized across three nested spatial levels below the OHI region: a sitio de muestro was the finest level, representing an individual sampling point within a beach; a playa was a named beach that could contain one or more sitios; and a destino was a coastal tourism destination (such as San Felipe or Mazatlán) that could encompass one or more playas (Figure 1).
+
+![Figure 1. Visual depiction of the sitio → playa → destino hierarchy within Enterococcus spp. sampling and seasonal monitoring for the Playas Limpias Program.](figs/pathogen_sitio_playa_destino.png)
+
+
+We aggregated Enterococcus spp. measurements from individual sampling sites up to the regional level following a hierarchical order of operations. First, we took the arithmetic mean of all MPN measurements within the same site (sitio de muestro), season, and year, since some sites were sampled more than once per season.
+
+Second, we averaged across sites within each playa for each season and year. Third, we averaged across playas within each destino for each season and year. Fourth, we calculated a status score for each destino, season, and year as:
+
+$$
+\text{seasonal status} = \left(1 - \frac{\text{current NMP} - \text{ideal}}{\text{maximum} - \text{ideal}}\right) \times 100
+$$
+
+**Reference points:** ideal = 0 NMP/100 mL; maximum = 200 NMP/100 mL (Mexico *Apta* / *No Apta* threshold). So 0 NMP → score 100; 200 NMP → score 0.
+
+Fifth, we combined the seasonal status scores for each destino and year with a **geometric mean**, so that a single poorly performing season meaningfully dragged down the annual score. In plain words, a geometric mean is an average that is pulled down more strongly by low values than a normal average is. For example, with three seasons:
+
+$$
+\text{annual destination score} = (\text{winter} \times \text{spring} \times \text{summer})^{1/3}
+$$
+
+If any season has a status of 0, the yearly destination score becomes 0.
+
+Sixth, we combined destinations into each OHI region with a **coastline-length weighted average** (destinations with more sampled coastline count more):
+
+$$
+\text{region score} = \text{weighted average of destination scores (by sampled coastline length)}
+$$
+
+Weights were derived by using the Natural Earth 10m global coastline shapefile, creating 1 km buffers around each sampling site, and intersecting those buffers with the coastline to obtain the length of coast actually sampled per destino per year, in meters (using Mexico ITRF2008 / LCC).
+
+Destinos with more sampled coastline therefore contributed more to the regional score. Note that we aggregated NMP values upward through these three levels using arithmetic means before calculating any status scores, because we wanted the status score to reflect a single representative Enterococcus spp. concentration for the destino as a whole in a given season, rather than allowing the transformation to interact with averaging across spatially nested units.
+
+Once we had one aggregated MPN value per destino, season, and year, we then converted to a status score, so that the geometric mean taken across seasons would appropriately penalize destinos with at least one poorly performing season. For gap filling, we expanded the dataset to include all region-year combinations from 2018 to 2025 and filled missing values upward where appropriate, except for 2020, which is left blank because monitoring paused. Region 3 (Mulegé) monitoring starts in 2023; earlier years for that region may be gap filled from 2023 and should be treated as estimates rather than direct samples.
+
+As stated earlier, when aggregating destino -level status scores up to the OHI region level, we used a coastline length weighted mean rather than a simple arithmetic mean, so that destinos with more sampled coastline contributed proportionally more to the regional score than those with fewer or shorter sampling sites. To assess whether this choice meaningfully changed our results, we compared the weighted and unweighted regional scores across all years. In most regions, the two approaches produced identical or near-identical scores, with differences of 0.0 to at most 2.1 points across all years.
+
+The one exception was Region 7, where the weighted mean diverged substantially from the unweighted mean in 2025, producing a score of 48.6 compared to 61.3 (a difference of 12.7 points). This was driven by Guaymas, which had a long sampled coastline and an extreme exceedance event in Winter 2025 at Playa El Veneno/Playa Miramar and Playa San Francisco ( destino mean NMP of ~608 NMP per 100 mL), meaning it received a disproportionately large weight and pulled the regional score down more than a simple average would have. Given that the weighted mean better reflects the actual spatial extent of contamination, we retained it as our approach for all regions and years.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+pat_plotly
+```
+
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+pat_goc_plotly
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.width=6.2, fig.height=6.8}
+pat_map
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.width=6.4, fig.height=7.4}
+pat_sites_map
+```
+
+## Chemicals (CHM)
+
+Chemicals are not one pathway. Agriculture, aquaculture, wastewater, contaminated sites, and vessels all matter, and they do not move through the environment in the same way. We built five subcomponents and combine them with an arithmetic mean (equal weights for now):
+
+$$
+\text{Chemicals score} = \text{average of (Pesticides, Pharmaceuticals, Hazardous waste, Untreated wastewater, Vessel hydrocarbons)}
+$$
+
+In plain words: add the five subcomponent scores and divide by 5 (equal weights).
+
+Some region and year combinations have little or no applicable data for a subcomponent and are treated as 100 in the combined Chemicals score (for example Region 1 pesticides and hazardous waste, and Region 2 untreated wastewater). Please flag places where "no data" should not be read as "clean."
+
+Helpful context papers for the broader chemical pollution picture in the Gulf include Páez-Osuna et al. (2017) on the environmental status and pollution of the Gulf of California, and work such as Betancourt-Lozano and colleagues on agrochemical loading in Sinaloa coastal systems.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+chem_plotly
+```
+
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+chem_goc_plotly
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.width=6.2, fig.height=6.8}
+chem_map
+```
+
+### Pesticides
+
+To estimate the potential pesticide pressure on Gulf of California (GoC) waters, we used two primary data sources: land use and vegetation (USV) shapefiles from CONABIO across seven survey years (1985, 2001, 2005, 2009, 2013, 2016, and 2021), and national pesticide application rates (kg/ha) for Mexico from FAOSTAT, available through 2023. First, we read in each of the seven USV shapefiles, standardized column names, and stripped accent characters from the description field to avoid encoding mismatches. We then filtered rows to retain only active cropland classifications, excluding categories representing secondary vegetation on formerly agricultural land (such as shrubby or herbaceous secondary vegetation on rainfed or irrigated agriculture) as well as mixed agriculture and grassland types (for example, rainfed agriculture with grassland, shifting agriculture within secondary forest).
+
+The categories we retained included rainfed, irrigated, moisture or floodplain, and occasional irrigated agriculture across annual, semi-permanent, and permanent subtypes. The cropland classes we retained (Y) and excluded (N) are summarized below:
+
+| Spanish description (USV) | English | Keep |
+
+|---------------------------|---------|------|
+
+| AGRICULTURA DE TEMPORAL (and annual / semi-permanent / permanent variants) | Rainfed agriculture | Y |
+
+| AGRICULTURA DE RIEGO (and annual / semi-permanent / permanent / eventual variants) | Irrigated agriculture | Y |
+
+| AGRICULTURA DE HUMEDAD (and variants) | Moisture / floodplain agriculture | Y |
+
+| AGRICULTURA DE TEMPORAL CON EROSIÓN / CON MATORRAL SUBINERME | Rainfed with erosion or non-spiky shrubland | Y |
+
+| AGRICULTURA DE RIEGO CON EROSIÓN | Irrigated with erosion | Y |
+
+| VEGETACIÓN SECUNDARIA ... DE AGRICULTURA ... | Secondary vegetation on former cropland | N |
+
+| AGRICULTURA DE TEMPORAL CON HERBAZAL / mixed grassland types | Rainfed agriculture with grassland / mixed | N |
+
+| ... CON AGRICULTURA NOMADA | Shifting agriculture within secondary forest | N |
+
+
+
+
+
+To isolate cropland in the GoC, we reprojected each layer to match the GoC OHI regions coordinate reference system and clipped to the GoC coastal states using a spatial intersection, using full state boundaries rather than a coastal buffer to ensure that watersheds extending inland were fully captured. We combined all years into a single spatial object and saved agriculture and aquaculture subsets separately. To estimate pesticide loads, we intersected the filtered agriculture polygons with GoC watersheds reprojected to meters and calculated polygon area in hectares.
+
+We summed total agricultural area by watershed and year, then joined the FAOSTAT national pesticide application rate for Mexico (kg/ha) by year. We applied a single national rate uniformly across all watersheds and crop types, as sub-national or crop-specific rates were not available. We estimated total pesticide load per watershed per year as: pesticide load (kg) = agricultural area (ha) x application rate (kg/ha) We then summarized the potential pesticide load by watershed and joined to OHI regions through pour points representing where each watershed drains to the coast, summing across all watersheds draining to each region.
+
+Because the most recent USV survey year was 2021, we held agricultural area constant at 2021 values for subsequent scenario years and applied the corresponding FAO application rates, as follows:
+
+| USV year | FAO year | Scenario year |
+
+|----------|----------|---------------|
+
+| 2021 | 2023 | 2025 |
+
+| 2021 | 2023 | 2024 |
+
+| 2021 | 2023 | 2023 |
+
+| 2021 | 2022 | 2022 |
+
+| 2021 | 2021 | 2021 |
+
+| 2021 | 2020 | 2020 |
+
+
+
+We calculated current status for each region and year as:
+
+$$
+\text{Pesticides score} = \left(1 - \frac{\text{current load} - \text{ideal}}{\text{maximum} - \text{ideal}}\right) \times 100
+$$
+
+**Reference points:** ideal = 0 kg (no pesticide load); maximum = average of the five highest pesticide loads (kg per km of coastline) across all regions and years. Higher loads → lower scores.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+pest_plotly
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.width=6.2, fig.height=6.8}
+pest_map
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.width=6.4, fig.height=7.4}
+pest_pp_map
+```
+
+### Pharmaceuticals
+
+We estimated pharmaceutical contamination risk to the Gulf of California (GoC) by quantifying the total mass of pharmaceutical compounds (in mg) potentially entering the GoC from three sources: human wastewater, antimicrobials from livestock, and antimicrobials for shrimp farming. We then aggregated these estimates by region and year, standardized by coastline length, and calculated a current status score for each region. 
+
+**Human wastewater.** We obtained wastewater treatment plant (WWTP) operational data from Mexico's CONAGUA SINA database (SINAV 3.0) for each year from 2017 to 2023.
+
+For each WWTP-year combination, we filtered to the six GoC coastal states (Baja California, Baja California Sur, Jalisco, Nayarit, Sinaloa, and Sonora), fixed character encoding, and flagged plants operating over capacity. We spatially intersected WWTPs with GoC watershed polygons after reprojecting both layers to a common CRS (Mexico ITRF2008/LCC), then estimated annual effluent volume per WWTP by multiplying each plant's reported flow rate (caudal, in L/s) by 31,536,000 seconds/year. Note that this assumed continuous operation, meaning the estimate is an upper bound.
+
+We then summed total estimated effluent (L/yr) by watershed and year, joined these to GoC pourpoints, and filtered to those within a 50 km inland buffer, with an additional filter to exclude Pacific-side pourpoints for Regions 4, 5, and 9 using a 10 km inland buffer. We then intersected pourpoints with OHI region polygons and aggregated total L/yr by region and year. To convert effluent volume to a pharmaceutical mass estimate, we multiplied total L/yr by the mean pharmaceutical concentration derived from literature values and converted from ng to mg.
+
+Specifically, we obtained these values from the literature review and documented ranges of pharmaceutical ng/L from wastewater effluent within Supplemental Table 2 within Vázquez-Tapia et al. 2020, adding information regarding Acetaminophen, Carbamazepine, Diclofenac, and Naproxen concentrations from Garduño-Jiménez et al. 2023.
+
+We then only considered contaminants of interest that also cause environmental risks, which were 17 β - estradiol (E2), Acetaminophen, Caffeine, Carbamazepine, Diclofenac, Ibuprofen, and Naproxen (Figure 1 of Hernández-Tenorio et al. 2024). Subsequently, once we had estimates of mg for each OHI region, we identified anomalies in the 2020 SINA records.
+
+These were unusual spikes and drops in estimated effluent for Regions 8 and 9, affecting 258 WWTPs. For each WWTP, we compared 2020 caudal values to the plant-level median across non-2020 years and flagged those with a ratio greater than 3x or less than 0.33x, or where the treatment process had changed. We set flagged 2020 values to NA and linearly interpolated within each region.
+
+
+
+**Livestock antimicrobials.** We estimated livestock-derived pharmaceutical loads using a dasymetric mapping approach. For each species-year combination, we loaded the species-specific GLW4 raster (FAO livestock density), cropped and resampled it to 1 km resolution using nearest neighbor, and computed a weight raster (GLW cell density divided by municipal GLW total) as a spatial proxy for where animals were located. We then obtained municipal-level slaughter volumes (in tonnes) from SIAP (DGSIAP, Mexican Government) for the years 2006-2024, rasterized these values onto municipality polygons, and multiplied by the weight raster to distribute slaughter tonnage across 1 km cells.
+
+Because we had a raster for every year and livestock "species", as SIAP calls the livestock groups, we stacked those rasters across years for each livestock group (cattle/bovino, poultry/ave, goats/caprino, sheep/ovino, and swine/porcino) and summed them cell-wise to obtain total tonnes slaughtered per 1 km cell per year. We then converted tonnes to kg and multiplied by 101 mg/kg (the North America antimicrobial use intensity value from Acosta et al. 2025) to estimate mg of antimicrobials per cell.
+
+To obtain regional values, we then summarized by watershed, assigned to pourpoints and OHI regions, and interpolated values for 2023 due to missing public data from SIAP. This produced regional, annual values of the mg of antimicrobials that could potentially discharge into the GoC. We noted that cattle (bovino) slaughter volumes in Regions 1 and 2 showed a sharp decline in 2024 relative to prior years, which was confirmed to be present in the raw SIAP source data and was isolated to Baja California.
+
+We interpreted this as a plausible real-world change (potentially due to drought, reduced slaughterhouse capacity, or increased live cattle exports to the US) rather than a data artifact, and retained the observed 2024 values. 
+
+**Shrimp farming antimicrobials.** We estimated pharmaceutical loads from shrimp farming using aquaculture land use polygons from INEGI's USV surveys (2005-2021). For each survey year, we reprojected the polygons to match watershed CRS, intersected them with GoC watersheds, computed aquaculture area in hectares per watershed using polygon area calculations, and summed by basin and year.
+
+We estimated shrimp production from area using the slope from González-Rivas et al. 2023 (1.5 tonnes/ha, based on an R² = 0.874 linear relationship from 1993-2021 remote sensing data for Sinaloa and Sonora). We then joined production estimates to GoC pourpoints, filtered to those within the 50 km inland buffer (excluding Pacific-side peninsula pourpoints for Region 4 not within the 10 km buffer), and aggregated aquaculture area and shrimp production by OHI region and year.
+
+We converted short tons to kg and multiplied by 20.64 mg/kg (the North/Central America aquaculture antimicrobial use value from WOAH 2025, Table 5) to obtain mg of antimicrobials per region per year. 
+
+**Aggregation of pharmaceuticals (mg) across sources.** We aggregated the three sources at the region-year level. Prior to aggregation, we applied multipliers to account for the proportion of pharmaceuticals that actually reach the GoC.
+
+This is because without those multipliers, the estimates represent different stages of pharmaceutical use and release, but we want to estimate the fraction of pharmaceuticals expected to reach the GoC. For livestock, available estimates from Acosta et al. (2025) represent antimicrobial application values rather than measured environmental concentrations.
+
+Therefore, we applied an excretion fraction to estimate the proportion of administered pharmaceuticals released in manure, followed by a runoff/leaching fraction to estimate the proportion transported to surface waters. Approximately 30-90% of veterinary pharmaceuticals may be excreted as the original compound or metabolite based on OECD guidance; therefore, we used the midpoint value of 60%. Published estimates of antibiotic losses from manure through runoff and leaching range from approximately 0.2% to < 5%; we applied the conservative upper-bound estimate of 5% to represent potential transport to surface waters.
+
+For shrimp aquaculture, we accounted for the fraction of pharmaceuticals absorbed by shrimp and subsequently excreted, as well as the fraction that remains unabsorbed and is released directly into surrounding water. Based on Uno et al. 2010, the oral bioavailability of oxytetracycline (OTC) in Penaeus vannamei shrimp was 43.6-48.2% (at doses of 50 and 10 mg/kg, respectively).
+
+This means roughly 44-48% is absorbed by the shrimp, leaving approximately 52-56% unabsorbed and directly released into the water. So essentially, if ~52-56% passes through unabsorbed and directly into the surrounding water, and ~44-48% absorbed but is largely excreted back into water, nearly 100% of applied OTC can be assumed to reach the ocean, just via two pathways. However, we did find that Kemper et al. 2008, Välitalo et al. 2017, and Giedraitiene et al. 2011 noted that roughly ~40-90% of antibiotics applied are released to the sea bottom by fish excretion or urine.
+
+Therefore, to account for potential metabolic degradation, we applied a release fraction of 75%. For human wastewater, we assumed that treated wastewater effluent containing pharmaceutical residues is discharged directly to coastal waters without additional attenuation. This assumption is also supported by the persistence of pharmaceutical chemicals; it is assumed that at some point, these chemicals will reach the pour point of the watershed and enter the GoC, regardless of where they started and how long it took for them to arrive.
+
+Therefore, we applied a "multiplier" of 1.0 to WWTP-derived pharmaceutical estimates. After applying these multipliers, all three sources were combined to estimate total pharmaceutical loading (mg) by region and year. 
+
+**Coastline standardization.** To allow comparison across regions of different sizes, we standardized total estimated pharmaceutical mg by each region's mainland coastline length.
+
+We obtained the 1:10m scale coastline shapefile from Natural Earth (v4.1.0), clipped it to the GoC, and removed island coastlines by erasing a 1,500 m buffer around the Islas del Golfo de California polygon. We intersected the remaining coastline segments with OHI region boundaries, summed lengths using length calculations (converted from m to km), and divided each region's total pharmaceutical mg by its coastline length. 
+
+**Current status calculation.** We calculated current status for the pharmaceuticals subcomponent as:
+
+$$
+\text{Pharmaceuticals score} = \left(1 - \frac{\text{current load} - \text{ideal}}{\text{maximum} - \text{ideal}}\right) \times 100
+$$
+
+**Reference points:** current load is pharmaceutical mass per km of coastline; ideal = 0 (no discharge); maximum = average of the five highest mg-per-km values across all regions and years. Any region above the maximum is capped at a score of 0 (not a negative score).
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+phrm_plotly
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.width=6.2, fig.height=6.8}
+phrm_map
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.width=6.4, fig.height=7.4}
+phrm_pp_map
+```
+
+### Hazardous waste sites
+
+For the hazardous waste sites subcomponent, we estimated the current status of hazardous waste contamination by assessing both the density of hazardous waste sites and the remediation status of identified sites within each region and year. We used hazardous waste site inventories from SEMARNAT and ASEA, including records of contaminated sites and remediated sites, and combined these datasets to evaluate whether sites were contaminated, undergoing remediation, or remediated. To account for the spatial influence of hazardous waste sites on coastal waters, we limited the analysis to sites located within the 50 km inland buffer of each OHI region.
+
+We calculated cumulative hazardous waste site density by region and year by dividing the cumulative number of identified sites by the area of each region, because even a remediated site is not pristine anymore. We then rescaled site density values so that regions with no hazardous waste sites received the highest score, while regions with the greatest site density received lower scores:
+
+$$
+\text{site density score} = \left(1 - \frac{\text{current density} - \text{ideal}}{\text{maximum} - \text{ideal}}\right) \times 100
+$$
+
+**Reference points for density:** ideal = 0 sites; maximum = average of the five highest cumulative site densities across all regions and years.
+
+We also calculated a second score representing the remediation status of hazardous waste sites, which is a very actionable part of this subcomponent. We assigned remediation status values based on whether sites were remediated (1), had an approved remediation plan or were actively being remediated (0.5), or had no current remediation plan (0). We calculated the cumulative average remediation status of all sites within each region over time, such that earlier contaminated sites continued contributing to the score until remediation occurred. This score represented progress toward the desired condition where all identified hazardous waste sites are remediated. Finally, we averaged the two scores:
+
+$$
+\text{Hazardous waste score} = \frac{\text{site density score} + \text{remediation score}}{2}
+$$
+
+A score of 100 means no hazardous waste pressure and full remediation; lower scores mean denser sites and/or incomplete remediation.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+hazw_plotly
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.width=6.2, fig.height=6.8}
+hazw_map
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.width=6.4, fig.height=7.4}
+hazw_sites_map
+```
+
+### Untreated wastewater discharge points
+
+For the untreated wastewater discharge points subcomponent, we estimated the current status of untreated wastewater entering coastal environments by calculating the density of municipal wastewater discharge points within each region and year. We used wastewater discharge data from Mexico's National Census of Municipal Governments (CNGMD; 2013, 2015, 2017, 2019, 2021, 2023), which reports municipal untreated wastewater discharge points and their receiving environments. The dataset includes a variety of receptor types, representing locations where untreated wastewater may enter the environment.
+
+Because this indicator aims to capture untreated wastewater reaching environments connected to the Gulf of California, we limited the analysis to discharge points with receptor types of beach, ocean, estuary/marsh, river/stream, canal/drain, and ground/ravine. These receptor categories represent potential pathways through which untreated wastewater can reach coastal waters, either directly or indirectly. We standardized the wastewater discharge datasets across census years, harmonized municipality identifiers, and joined discharge points to OHI regions.
+
+Because the CNGMD data identifies discharge points by municipality rather than standardized geographic coordinates, we attributed discharge points to their corresponding municipality and region. For each region and year, we calculated untreated wastewater discharge point density by dividing the total number of qualifying discharge points by the area of the region (km²). This produced a measure of wastewater pressure that accounts for differences in region size.
+
+We then converted discharge point density into a 0-100 current status score by rescaling values relative to an ideal reference condition of zero untreated wastewater discharge points per km²:
+
+$$
+\text{Untreated wastewater score} = \left(1 - \frac{\text{current density} - \text{ideal}}{\text{maximum} - \text{ideal}}\right) \times 100
+$$
+
+**Reference points:** ideal = 0 untreated discharge points per km²; maximum = the highest observed density across all regions and years. A score of 100 means no untreated discharge points; lower scores mean denser untreated outfalls.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+wwps_plotly
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.width=6.2, fig.height=6.8}
+wwps_map
+```
+
+### Vessel hydrocarbon pollution
+
+For the vessel hydrocarbon pollution subcomponent, we estimated potential vessel hydrocarbon pollution pressure using vessel activity as a proxy. Direct measurements of hydrocarbon releases from vessels were not available; therefore, we used fishing vessel effort (hours of activity) as an indicator of the relative likelihood of pollution events related to vessels. Vessel activities can contribute to chronic pollution pressure through potential oil spills, fuel and waste oil discharges, chemical releases, and other operational losses.
+
+Because pollution risk depends on multiple vessel characteristics and operational practices that were not available in the dataset, we did not apply additional weighting based on vessel size or type. Instead, we assumed that higher vessel activity represents greater potential exposure to vessel-derived hydrocarbon pollution. We calculated the mean vessel effort (hours) within each OHI region across available years (2007-2025).
+
+This produced a relative measure of vessel activity intensity for each region and year, where higher values indicate greater potential pressure from vessel activities. We converted vessel effort into a 0-100 current status score by rescaling values relative to an ideal reference condition of zero vessel effort. The maximum pressure value was defined as the average of the five highest observed vessel effort values across all regions and years.
+
+We calculated current status as:
+
+$$
+\text{pressure} = \frac{\text{current vessel effort} - \text{ideal}}{\text{maximum} - \text{ideal}}
+$$
+
+$$
+\text{Vessel hydrocarbons score} = (1 - \text{pressure}) \times 100
+$$
+
+**Reference points:** ideal = 0 vessel effort; maximum = average of the five highest vessel effort values across all regions and years. A score of 100 means little or no vessel-related hydrocarbon risk; lower scores mean more vessel activity.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+vess_plotly
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.width=6.2, fig.height=6.8}
+vess_map
+```
+
+### Microplastics
+
+We also explored microplastics as a contaminant pathway under Chemicals, rather than as the Marine Debris status layer. Large, visible trash and fishing gear debris are a different problem from particles that are already small enough to move through water, sediment, and food webs, so we kept microplastics with the chemical / particulate contamination discussion.
+
+Key references informing the microplastics exploration include Alvarez-Zeferino et al. (2020), Schröder et al. (2021), Sandgaard et al. (2023), Fulfer et al. (2023), Law et al. (2014), Barrows et al. (2018), Caro-Martínez et al. (2025), and Vázquez-Morillas et al. (2024), among others.
+
+We used the NOAA NCEI global marine microplastics database (1972-2018), which aggregates data from multiple research cruises and field studies into a publicly available repository. We examined three sampling types available for the Gulf of California: sediment cores, surface water neuston net trawls, and grab samples. For sediment, the most spatially comprehensive GoC data came from Alvarez-Zeferino et al. (2020), the first national assessment of microplastics on Mexican beaches, which reported concentrations across 14 sites in the Gulf of California.
+
+However, we determined these data were insufficient for calculating status scores for several reasons. First, the sediment cores were taken at only 0.05 m depth, and evidence from the literature suggests that microplastic concentrations in bottom sediments can be substantially higher than at the surface due to vertical migration and burial, meaning the Alvarez-Zeferino data likely underestimate true sediment loads. Second, the authors noted that five of the fourteen GoC sample sites coincided with Hurricane Bud, introducing uncertainty about whether elevated concentrations reflected baseline conditions or storm driven redistribution of plastics.
+
+Third, converting the reported particle counts to particles/kg, which is necessary for comparison with other studies to determine a reference point, required assumptions about sand density (we used 1,442-2,082 kg/m³ for loose and wet-packed sand, respectively), which introduced additional uncertainty. Using those conversions, we found that median concentrations in the GoC fell between 0.68 and 0.98 particles/kg, consistent with relatively rural beaches by the standards of Schröder et al. (2021), while maximum values reached 10-15 particles/kg, which were lower than urban estuarine systems such as Narragansett Bay (396-13,000 particles/kg; Fulfer et al. 2023), though potentially reaching "high" concentration thresholds defined by Sandgaard et al. (2023) depending on assumed particle weight. The ambiguity in interpreting these values, compounded by only having a single year of data (2018), a small sample size, and a lack of standardized reporting units across the literature made it impossible to construct a reliable, regionally consistent pressure layer from sediment data alone.
+
+For surface water, neuston net trawl data from Law et al. (2014) within the NCEI database showed a mean concentration of 0.004 particles/m³ across GoC sampling locations, comparable to Eurasian Arctic neuston net values (0.004 particles/m³) and the lower end of the global ocean surface range (0.002-62.5 particles/m³; mean 2.76). Grab samples from Barrows et al. (2018), collected at 0.45 m depth, showed a mean of 0.006 particles/m³ and a maximum of 0.017 particles/m³, which was well below the 1.7-2.0 particles/m³ recorded near Mazatlán in a separate 2021 manta trawl study. This discrepancy highlighted a key limitation: the NCEI data did not capture nearshore or urban areas where concentrations are likely higher, and microplastics are known to occur in surface waters in patches rather than homogeneous distributions, making trawl-based means incomplete indicators of true exposure in local coastal zones. Furthermore, the NCEI surface water data extended only to 2018, providing no coverage of more recent years and limiting our ability to characterize trends over the OHI assessment period.
+
+Taken together, the available microplastics data for the Gulf of California suffered from insufficient spatial coverage, methodological inconsistency across studies, a lack of standardized reporting units, and only had a single temporal snapshot for the most spatially comprehensive dataset. In addition, there were known gaps in nearshore and urban sampling where pollution is likely concentrated. Broader reviews of microplastic research in Mexico (Caro-Martínez et al. 2025; Vázquez-Morillas et al. 2024) confirmed that there are data limitations, including inconsistent sampling protocols, varied reporting units, and an absence of a national monitoring database. Therefore, we did not include microplastics in the Chemicals arithmetic mean for this draft.
+
+## Marine Debris (MAR)
+
+Bottles, bags, foam, fragments, and other large trash on beaches and in nearshore waters are often identified long before microplastics are noticed. The Marine Debris component is meant to capture the prevalence of trash pollution in the coastal waters of the Gulf.
+
+According to SEMARNAT's Inventario Nacional de Fuentes de Contaminación Plástica (INFCP, 2023), plastics often make up a large share of beach litter in Mexico, and common items include bottle caps, disposable plates and cups, bags, bottles, and cigarette butts. INFCP is useful for framing the plastics problem: generation is high, a large fraction of plastic waste is poorly managed, coastal disposal sites are often uncontrolled, and plastics have been documented across Pacific, Gulf of California, Caribbean, and Gulf of Mexico coasts. Large debris therefore affects recreation, wildlife entanglement and ingestion, and coastal aesthetics, and large plastics later break down into smaller particles.
+
+We therefore explored whether large plastics and other visible trash could support a Marine Debris subcomponent with current status by OHI region or by coastal state over time, alongside the risk of ghost gear.
+
+### Plastic pollution
+
+SEMARNAT's 2023 INFCP includes discussion of plastic pollution and its presence in marine life, water, sediments, currents, tides, and beaches. Where the inventory and related waste management information describe recycling control or formal handling within facilities, that material functions more as a resilience measure for curbing the influx of plastics to beaches than as a measure of current coastal trash condition. If plastics are well managed on land, beach and nearshore trash should hopefully decline over time, but those indicators still do not tell us how much trash tourists leave behind, or how much debris is already on the coast.
+
+We also reviewed two documents that looked promising as inputs for a large plastics story in the Gulf. SEMARNAT's Catálogo de residuos plásticos (Catálogo de identificación de residuos plásticos) is a national identification catalog for plastic resins and recovered materials, aimed at helping classify recyclable plastics for trade, customs, and recycling routes. It is useful for knowing what kinds of plastics are in the waste and recycling system, but it is not a monitoring survey of trash on Gulf beaches or in Gulf waters. It does not give counts, densities, or loads by OHI region, by coastal state, or by year for the Gulf of California. The Manual de Buenas Prácticas de Producción Acuícola de Camarón para la Inocuidad Alimentaria (SENASICA / CIAD Mazatlán) is a food safety and farm management manual for shrimp aquaculture. It discusses keeping facilities free of garbage, using covered bins, and preventing trash and other contaminants from entering the production system. That is relevant as a source control best practice for aquaculture landscapes around the Gulf, especially in states such as Sinaloa and Sonora where shrimp farming is important. It is not, however, a time series of marine litter observations, and it does not map trash loads onto OHI regions or report how much large plastic left farms and reached the coast in each year.
+
+We also looked at municipal urban solid waste information from INEGI's National Census of Municipal Governments and Territorial Demarcations of Mexico City (CNGMD), including the 2025 census (information for 2024) and the longer biannual series. CNGMD reports on urban solid residues at the municipality and territorial demarcation level: availability of collection service, average daily mass collected, population with access to collection, collection systems and operators, treatment, final disposal, studies of generation and composition, programs, and citizen participation. Where municipalities lack formal collection, the census also records practices such as open dumping, burning, burying, or discarding into ravines or waterways.
+
+Even so, we treat CNGMD solid waste as management and resilience information rather than as Marine Debris current status. The census tells us how municipalities collect, treat, and dispose of trash; it does not tell us how much trash is already on beaches or in nearshore water, how much tourists leave behind, or how much fishing gear and other marine origin debris is accumulating. Higher collection coverage can mean better source control, but it can also simply reflect larger urban waste throughput, and neither reading is the same as observed coastal condition. In OHI terms, CNGMD is closer to a pressure source or resilience layer: if waste is well managed on land, plastics travelling to the coast should decline over time, but that is an inference about future or avoided inputs, not a direct measure of the waters people experience today. For that reason we discuss CNGMD here and would welcome it later as context or as an exploratory resilience map for Gulf coastal municipalities, but we do not use it to score Marine Debris status in this draft.
+
+We also considered the broader family of large debris data sources that people often hope can support a status score: beach cleanup tallies, citizen science litter surveys, other municipal solid waste and recycling statistics, and occasional remote sensing of very large floating objects. In the Gulf of California, those sources are still too uneven for a Tier 1 OHI status layer. Cleanup events are useful for communication and for local management, but effort, methods, and sites change over time. Municipal waste statistics describe generation and management on land, not how much trash reaches each OHI marine region. Remote sensing can help with very large objects in some settings, but it does not yet give a reliable, Gulf wide, multi year record of ordinary beach and nearshore trash at the scale of our nine regions.
+
+Therefore, we cannot produce a defensible current status score for large plastics or other visible trash by OHI region over time, or a clean state by state beach litter time series that we could simply reassign to OHI regions. The catalog, the shrimp manual, and CNGMD help describe the problem and the land based management context, but they do not replace a standardized, repeated monitoring product of coastal and marine trash. For that reason, plastic pollution and municipal solid waste remain descriptive in this draft, and Marine Debris status is calculated from ghost gear risk alone.
+
+### Ghost gear risk
+
+Abandoned, lost, and discarded fishing gear (ALDFG) from marine fishing vessels is a stressor of coastal and marine ecosystems (Gilman et al. 2021). It can cause mortality to mammals, sea turtles, and sharks that become caught in abandoned gear, and it can also damage habitats and pose safety risks at sea.
+
+We estimated the risk of ghost gear in the GoC using VMS fishing data (Juan Carlos Villaseñor Derbez's distribution of Mexico's SISMEP data) paired with gear specific abandonment, loss, and discard risk from Gilman et al. (2021). The VMS data provide the geolocation and timestamp of fishing vessels larger than 10.5 m with engines greater than 80 hp, which Mexican law requires to carry transponders. Responders pinged approximately every hour after leaving port.
+
+We then assigned ghost fishing risk scores to each vessel based on leakage rates for various gear types (Gilman et al. 2021, Table 2). The VMS data provide general information about gear type and target taxa, which we used to align Gilman categories with the VMS records.
+
+For each VMS ping, we assigned a ghost gear risk based on our assessment of the vessel's gear type, the associated ALDFG leakage rate, and the number of fishing hours. We excluded pings with speeds greater than 6 knots to retain only active fishing positions and exclude transit, and we capped the time contribution of each ping at 3 hours. Each ping's contribution to ghost gear pressure was calculated as:
+
+$$
+\text{ghost\_gear\_risk}_{\text{ping}} = \text{Leakage\_risk}_{\text{gear}} \times \text{fishing\_hours}_{\text{ping}}
+$$
+
+For each year from 2007 to 2025, we rasterized the data by summing the ghost gear risk values across all pings into 1 km grid cells, then used that raster to determine the average ghost gear risk for each OHI marine region. To rescale pressure to a 0 to 1 scale, we used the mean of the top five regional means across all regions and years as a reference point, capping values at 1:
+
+$$
+\text{pressure} = \frac{\text{current ghost gear risk} - \text{ideal}}{\text{maximum} - \text{ideal}}
+$$
+
+$$
+\text{Marine Debris score} = (1 - \text{pressure}) \times 100
+$$
+
+where ideal = 0 and maximum is the mean of the top five regional ghost gear risk means across all regions and years.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+pla_plotly
+```
+
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+pla_goc_plotly
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.width=6.2, fig.height=6.8}
+mar_map
+```
+
+## Questions we especially welcome at EWG 3.3
+
+1. Are you comfortable with an arithmetic average for overall Clean Waters, or would you rather weight some pathways more (for example pathogens and chemicals)?
+2. Should Chemicals keep equal weights, or should some pathways count more?
+3. For indicators that use "highest observed Gulf pressures" as the low end of the scale, would you rather move toward absolute ecological or legal thresholds where they exist?
+4. Where we currently treat missing chemical data as a perfect score, should those region and year combinations instead be left blank or marked as uncertain?
+5. Is Region 1 eutrophication (short coastline, large livestock area) believable?
+6. For pathogens (now 2018 to 2025, with 2020 blank), are you comfortable with ideal = 0 and maximum = 200 NMP/100 mL, and with coastline weighted regional means?
+7. Which missing pathway matters most to add next: large plastics / beach litter monitoring, sedimentation / water clarity, harmful algal blooms, or better aquaculture chemical inventories?
+8. Does the ghost gear reference point for Region 8 in 2017 look like a data or scaling artifact to you, and should we revise that reference before interpreting Marine Debris trends?
+9. Are you comfortable keeping microplastics under Chemicals (not scored yet), and large plastics as a descriptive Marine Debris subsection until better monitoring exists?
+## Things we considered, but decided against (for now)
+
+This section is the "we looked into it" list. These ideas were not ignored. We set them aside because of data, scale, or logic problems, and we still welcome pushback.
+
+### Eutrophication and nutrients
+
+- **Chlorophyll a as the eutrophication status indicator.** Explored in depth with nearshore versus offshore corrections. We decided not to use it for status because the apparent coastal pollution signal was largely driven by early years, and the spatial grain was too coarse for the places that matter most.
+- **Turning annual nitrogen tons into mg/L with NOM-001 limits.** Abandoned because coastal mixing is not a simple bathtub, so dividing by a guessed water volume would understate concentrations and overstate our confidence.
+- **Harmful algal blooms as the main nutrient indicator.** HAEDAT is incomplete relative to satellite products; many Gulf red tides are not clearly eutrophication driven; splitting "eutrophication species" from natural blooms felt too fuzzy. Mel's read was that HAB pressure may be near zero on a Gulf wide trend basis for the period we looked at.
+- **Secchi depth / water clarity products.** Downloaded and explored (including Copernicus marine color products), but not brought into the Tier 1 status score.
+- **TRIX and dissolved oxygen / hypoxia products.** Discussed with experts; not included in the current status stack.
+
+### Chemicals measured in the environment
+
+- **RENAMECA in situ water quality as a regional time series.** Broad geographic coverage, but almost no consistent recent multi year sampling at the same sites. We concluded it was not useful for our current status purposes, unless someone has a creative workaround we missed.
+- **Compiling older in situ chemical folders (PCBs, POPs, metals, nutrients).** Too few sites, taxa, and years for a stable regional indicator. Heavy metals might be possible later with careful standardization (including sediment fine fraction), but not ready now.
+- **RETC industrial emissions as a quantitative chemicals score.** Useful for hotspot storytelling, but self reported, hard to verify, and coordinates often point to offices rather than emission locations.
+- **Microplastics as a scored Chemicals subcomponent.** Explored with global and Mexican datasets. Not enough comparable Gulf time series, and methods differ across matrices. Documented under Chemicals and set aside for now.
+
+### Aquaculture chemicals
+
+- **Lyle-Fritch et al. (2006) lime, antibiotic, and related application rates as time varying kilogram loads.** Mel and I decided this would not make sense as a year by year status input, because the rates are from one survey period and would not truly vary with year. Shrimp contributions in pharmaceuticals instead use production and antimicrobial use rates that can scale with mapped aquaculture.
+- **Remote sensing shrimp pond maps instead of INEGI / CONABIO aquaculture polygons.** We preferred the land use series that is updated and Gulf wide through time, even though culture type is not always specified.
+
+### Pharmaceuticals and wastewater treatment detail
+
+- **Process weighted pharmaceutical removal by treatment level (primary / secondary / tertiary).** Considered; the saved pharmaceuticals score uses effluent volume times literature concentrations instead. Process fields were still useful for spotting 2020 anomalies.
+- **A Mexico specific time series of pharmaceutical consumption per person.** Hard to find in a usable form; deferred.
+
+### Pathogens
+
+- **Using 104 NMP/100 mL as the upper threshold.** Explored against California guidance; we stuck with Mexico's 200 threshold.
+- **Raising the ideal above 0.** Considered; kept 0.
+- **Geometric mean of raw MPN before converting to status.** Rejected, because that downweights high pollution.
+
+### Marine debris
+
+- **Large plastics / beach litter as a scored Marine Debris subcomponent.** Reviewed SEMARNAT's plastic residue identification catalog, shrimp aquaculture best-practice guidance, national plastic-source inventories, and cleanup-style tallies. Useful for describing the problem, but not a standardized OHI-region or state-by-year monitoring product for the Gulf. Kept descriptive for now.
+- **CNGMD urban solid residues (collection, treatment, final disposal) as Marine Debris current status.** Strong municipal management product, and better than sparse DENUE trash-collection counts, but it measures land-based waste systems rather than trash already on beaches or in nearshore water. Treat as resilience / source-control context, not as the scored MAR status layer.
+- **Beach litter counts or cleanup tallies as current status.** Discussed more as management / resilience information than as the core status metric.
+- **Microplastics as a scored Marine Debris subcomponent.** Moved the exploration under Chemicals; still not scored.
+
+### Cross cutting ideas from experts
+
+- **Sedimentation as a fifth Clean Waters component.** Raised repeatedly in goalkeeper and expert conversations. Not in the current scored stack.
+- **Noise and light pollution as Clean Waters contaminants.** Raised in expert settings; not framed as CW contaminants in this draft.
+- **Consequence based weights for Chemicals, and a geometric mean across chemical subcomponents.** Discussed; arithmetic equal mean for now.
+- **Geometric mean as the overall Clean Waters rule.** We considered it so that one very bad pathway could not be averaged away. In practice, ghost gear risk in Region 8 in 2017 hit the ceiling of its reference point and would have dragged the whole goal score toward 0 under a geometric mean. That looked more like a reference point artifact than a true Gulf wide collapse in clean waters, so we are using an arithmetic average for now because it felt more representative.
+
+---
+
+*End of English draft for Expert Working Group 3.3. Charts will appear when this Quarto file is rendered on a machine with access to the Clean Waters status tables.*

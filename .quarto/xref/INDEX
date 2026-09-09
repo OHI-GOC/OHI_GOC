@@ -241,5 +241,38 @@
   },
   "chapters/ewg32_sp_spanish_docx.qmd": {
     "ewg32_sp_spanish_docx.docx": "1f1c517c"
+  },
+  "chapters/ewg32_acronyms_docx.qmd": {
+    "ewg32_acronyms_docx.docx": "24cd0ed6"
+  },
+  "chapters/ewg33_cw.qmd": {
+    "ewg33_cw.html": "f168ec1f"
+  },
+  "chapters/ewg33_cw_docx.qmd": {
+    "ewg33_cw_docx.docx": "58f1256b"
+  },
+  "chapters/ewg33_cw_docx_spanish.qmd": {
+    "ewg33_cw_docx_spanish.docx": "b0e4bd45"
+  },
+  "chapters/ewg33_agenda.qmd": {
+    "ewg33_agenda.html": "3c5e3934"
+  },
+  "chapters/ewg33_bd.qmd": {
+    "ewg33_bd.html": "d01f9d46"
+  },
+  "chapters/ewg33_agenda_spanish.qmd": {
+    "ewg33_agenda_spanish.html": "db1f579e"
+  },
+  "chapters/ewg33_np.qmd": {
+    "ewg33_np.html": "96f48377"
+  },
+  "chapters/ewg33_bd_spanish.qmd": {
+    "ewg33_bd_spanish.html": "d2037841"
+  },
+  "chapters/ewg33_np_spanish.qmd": {
+    "ewg33_np_spanish.html": "4ec090b2"
+  },
+  "chapters/ewg33_cw_spanish.qmd": {
+    "ewg33_cw_spanish.html": "570ca13c"
   }
 }

@@ -1,0 +1,55 @@
+---
+title: ""
+format: html
+---
+
+# Expert Working Group 3.3: Agenda & Meeting Resources
+
+<div class="button-container">
+  <a href="ewg33_agenda_spanish.html" class="custom-button">
+    <i class="fa fa-globe"></i> en español
+  </a>
+</div>
+
+**Thursday, September 10, 2026 | 9:00 AM to 1:00 PM (PST)**
+
+Welcome to EWG 3.3. During this meeting, we will review current results for the Gulf of California Ocean Health Index goals **Biodiversity**, **Clean Waters**, and **Natural Products**. Our objectives are to clearly explain each goal model, flag regional scores that do not make sense, and gather your feedback on key methodological decisions.
+
+---
+
+::: {.callout-tip}
+# Key links
+
+| Resource | Link |
+|----------|------|
+| **Zoom meeting link** | [Join Zoom](https://us06web.zoom.us/j/3255055973) |
+| **Meeting agenda sheet** | [OHI GOC EWG 3.3 (Sept 10) - Agenda](https://docs.google.com/spreadsheets/d/1kE4QZN7Ltw7aEtxZpzX1mVT72S8tSQY4UJu3O-kdbZw/edit?gid=0#gid=0) |
+| **OHI Introduction Info Sheet** | [English](https://docs.google.com/document/d/17Kiwk6Qelq_ph81plGCgIMDlZGAlS1b_0N9AvHZqE9Y/edit?tab=t.0) ·  [Español](https://docs.google.com/document/d/1GhLuecC2LLVxrOca8TqnjuOCXb5NHgfxX0oCVBeyH7s/edit?tab=t.0) |
+| **Biodiversity (BD)** | [English](https://docs.google.com/document/d/19N-MjE9iucG71N6NUDzUimqSB1tA-4XCVWj9SNXyy6w/edit?tab=t.0) · [Español](https://docs.google.com/document/d/1zERminsNjyKGoNBz7TqWHqsOSnNl3bKdDzHeIr4VIaQ/edit?tab=t.0) |
+| **Clean Waters (CW)** | [English](https://docs.google.com/document/d/1QaEn1ucoh_ToqsrguQGfGqRSK3VjT9GBk6vqlfVxBtg/edit?tab=t.0) · [Español](https://docs.google.com/document/d/1wq48kxZkAXhOMZS6kEPYYA-u9jZ2erKhexnGE0nDSTM/edit?tab=t.0) |
+| **Natural Products (NP)** | [English](https://docs.google.com/document/d/1QaEn1ucoh_ToqsrguQGfGqRSK3VjT9GBk6vqlfVxBtg/edit?tab=t.0) · [Español](https://docs.google.com/document/d/1ymx6DLhzzLjXM-Ha9JMlPA39NenC9NNrYVTKLZ_Vfpc/edit?tab=t.0) |
+:::
+
+---
+
+## September 10 meeting schedule
+
+| Time | Agenda item |
+|------|-------------|
+| 9:00 to 9:10 AM | Getting started. Big picture overview of project, meeting objectives, and resources. |
+| ~9:10 to 10:25 AM | **Goal Discussion: Biodiversity (BD)** (~75 min presentation and discussion) |
+| 10:25 to 10:35 AM | Break (buffer time) |
+| 10:35 to 11:40 AM | **Goal Discussion: Clean Waters (CW)** (65 min presentation and discussion) |
+| 11:40 to 11:50 AM | Break (buffer time) |
+| 11:50 AM to 12:50 PM | **Goal Discussion: Natural Products (NP)** (60 min presentation and discussion) |
+| 12:50 to 1:00 PM | Wrap up and next steps (buffer time) |
+
+---
+
+## Website resources for EWG 3.3 goals
+
+| Goal | Website page |
+|------|--------------|
+| Biodiversity | [View BD page](ewg33_bd.html) |
+| Clean Waters | [View CW page](ewg33_cw.html) |
+| Natural Products | [View NP page](ewg33_np.html) |

@@ -1,0 +1,26 @@
+---
+title: ""
+format: html
+---
+
+# ![](figs/biodiversity.svg){width=8% height=8%} Biodiversity EWG 3.3 {#ewg33-bd}
+
+<div class="button-container">
+  <a href="ewg33_bd_spanish.html" class="custom-button">
+    <i class="fas fa-globe"></i> en español
+  </a>
+</div>
+
+## Goal purpose and overview
+
+The BD goal is intended to quantify the “current status” of key biomes as proxies for species diversity, abundance, and ecosystem function. Here, we use the term “biome” broadly to refer to either biogenic habitats, where living organisms support foundational ecological processes (e.g., mangrove forests and coral reefs) and geophysical habitats, where ecological communities are supported by non-living features (e.g. rocky reefs and the pelagic open ocean). In reality, these biome types are highly interconnected and intermixed, with living organisms and non-living resources that move across ecosystem boundaries. In practice, however, it has been useful to treat these biomes as distinct typologies so that we can efficiently evaluate their current status using fixed ecological indicators. To evaluate current status, we have employed a suite of biological proxies, data sets, and mixed-method approaches described in the following section.
+
+The 8 biome types that we have evaluated so far are mangrove forests (MAN), [non-mangrove] coastal wetlands and scrubland (WET), seagrass meadows (SEA), coral reefs (CRL), rocky reefs (ROK), subtidal soft-bottom habitats (SOF), rhodolith beds (RHO), and shallow pelagic open-ocean habitats (OCE). Other important biome types that we did not evaluate due to time and / or data constraints include rocky intertidal (INT) and sandy intertidal soft-bottom habitats (SAN), deep-sea bentho-pelagic environments (SEA), seamounts (SMT), and islands (ISL).
+
+## Executive summary
+
+The Biodiversity (BD) goal executive summary is available for expert review in the document below. These materials summarize the goal model, key decisions, and early results for discussion with the EWG 3.3 expert working group.
+
+- **English:** [BD Executive Summary (Sep 2026)](https://docs.google.com/document/d/19N-MjE9iucG71N6NUDzUimqSB1tA-4XCVWj9SNXyy6w/edit?tab=t.0)
+- **Spanish:** [BD Resumen Ejecutivo (Sep 2026)](https://docs.google.com/document/d/1zERminsNjyKGoNBz7TqWHqsOSnNl3bKdDzHeIr4VIaQ/edit?tab=t.0)
+- **Slides:** forthcoming
