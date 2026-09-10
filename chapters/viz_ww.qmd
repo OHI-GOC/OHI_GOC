@@ -1,0 +1,785 @@
+---
+title: "Untreated wastewater discharge points"
+format:
+  html:
+    embed-resources: true
+execute:
+  echo: true
+  warning: false
+  message: false
+editor_options: 
+  chunk_output_type: console
+---
+
+Counts of **qualifying untreated municipal wastewater discharge points** (CNGMD receptors: river/stream, ground/ravine, canal/drain, ocean, beach, estuary/marsh), as used in CW WWPS scoring.
+
+- **Region map:** number of points per OHI region (latest census year)
+- **Municipality table:** number of points per municipality (same year; no local municipio polygons for a map)
+
+```{r}
+library(tidyverse)
+library(sf)
+library(here)
+library(scales)
+library(grid)
+
+pick_existing <- function(...) {
+  paths <- unlist(list(...), use.names = FALSE)
+  hit <- paths[file.exists(paths)]
+  if (length(hit) == 0) NA_character_ else hit[[1]]
+}
+
+normalize_rgn_id <- function(x) {
+  x %>% as.character() %>% str_squish() %>% str_replace_all(" ", "_")
+}
+
+rgn_labels <- c(
+  "Region_1" = "Western Upper Gulf",
+  "Region_2" = "Western Midriff Islands",
+  "Region_3" = "Western Central Gulf",
+  "Region_4" = "Western Southern Gulf",
+  "Region_5" = "Eastern Upper Gulf",
+  "Region_6" = "Eastern Midriff Islands",
+  "Region_7" = "Southern Sonora Coast",
+  "Region_8" = "Sinaloa Coast",
+  "Region_9" = "Southeastern Gulf"
+)
+
+# red = most points, blue = least (same CW ramp as pressure maps)
+count_palette <- rev(c(
+  "#8a0032", "#A50026", "#A50026", "#D73027", "#F46D43",
+  "#FDAE61", "#FEE090", "#FEE090", "#ABD9E9", "#4575B4", "#313695"
+))
+
+cw_root <- "/home/shares/ohi/OHI_GOC/goal_prep/cw/v2025"
+local_ww <- here::here("cw_mazu/v2025/chemicals/agua_sin_tratamiento")
+
+density_path <- pick_existing(
+  file.path(cw_root, "agua_sin_tratamiento/output/density_goc_discharge_points_per_km2.csv"),
+  file.path(cw_root, "chemicals/agua_sin_tratamiento/output/density_goc_discharge_points_per_km2.csv"),
+  file.path(local_ww, "output/density_goc_discharge_points_per_km2.csv")
+)
+
+all_years_path <- pick_existing(
+  file.path(cw_root, "agua_sin_tratamiento/int/goc_aguaresd_all_years.csv"),
+  file.path(cw_root, "chemicals/agua_sin_tratamiento/int/goc_aguaresd_all_years.csv"),
+  file.path(local_ww, "int/goc_aguaresd_all_years.csv")
+)
+
+rgn_path <- pick_existing(
+  "/home/shares/ohi/OHI_GOC/spatial/OHI_regions/goc_ohi_rgns.shp",
+  "/home/shares/ohi/OHI_GOC/spatial/ohi_regions/goc_ohi_rgns.shp",
+  here::here("spatial/ohi_regions/goc_ohi_rgns.shp")
+)
+
+stopifnot(!is.na(density_path), !is.na(all_years_path), !is.na(rgn_path))
+
+regions <- st_read(rgn_path, quiet = TRUE) %>%
+  mutate(rgn_id = normalize_rgn_id(rgn_id))
+if ("location" %in% names(regions)) {
+  regions <- regions %>% filter(location == "marine" | is.na(location))
+}
+
+# same receptor filter as script2_current_status.qmd
+qualifying_receptors <- c(1L, 4L, 5L, 6L, 7L, 8L)
+
+density <- read_csv(density_path, show_col_types = FALSE) %>%
+  mutate(
+    rgn_id = normalize_rgn_id(rgn_id),
+    year = as.integer(census_year),
+    n_points = as.integer(n_goc_discharge_points)
+  )
+
+# fill Region_2 (and any missing region-year) with 0 for map completeness
+all_rgn <- names(rgn_labels)
+all_years <- sort(unique(density$year))
+density_full <- tidyr::expand_grid(rgn_id = all_rgn, year = all_years) %>%
+  left_join(density %>% select(rgn_id, year, n_points, sites_per_km2), by = c("rgn_id", "year")) %>%
+  mutate(n_points = replace_na(n_points, 0L))
+
+latest_year <- max(density_full$year, na.rm = TRUE)
+latest_rgn <- density_full %>% filter(year == latest_year)
+
+map_dat <- regions %>%
+  left_join(latest_rgn, by = "rgn_id") %>%
+  mutate(rgn_label = unname(rgn_labels[rgn_id]))
+
+cat("Density:", density_path, "\n")
+cat("All years:", all_years_path, "\n")
+cat("Regions:", rgn_path, "\n")
+cat("Latest census year:", latest_year, "\n")
+```
+
+## Region map (point counts)
+
+```{r}
+#| fig-width: 7
+#| fig-height: 7.5
+p_rgn <- ggplot() +
+  geom_sf(data = map_dat, aes(fill = n_points), color = "black", linewidth = 0.25) +
+  scale_fill_gradientn(
+    colours = count_palette,
+    limits = c(0, max(latest_rgn$n_points, na.rm = TRUE)),
+    breaks = pretty(c(0, max(latest_rgn$n_points, na.rm = TRUE)), n = 5),
+    na.value = "grey90",
+    name = "Discharge points into the GoC",
+    guide = guide_colorbar(
+      title.position = "top",
+      barwidth = unit(8, "cm"),
+      barheight = unit(0.45, "cm")
+    )
+  ) +
+  labs(
+    title = "Untreated wastewater discharge points",
+    subtitle = paste0(
+      "Count by OHI region | census year: ", latest_year
+    )
+  ) +
+  theme_void(base_size = 12) +
+  theme(
+    plot.title = element_text(face = "bold", hjust = 0.5),
+    plot.subtitle = element_text(hjust = 0.5),
+    legend.position = "bottom",
+    legend.title = element_text(hjust = 0.5),
+    legend.text = element_text(size = 8)
+  )
+
+p_rgn
+```
+
+```{r}
+k <- latest_rgn %>%
+  mutate(rgn_label = unname(rgn_labels[rgn_id])) %>%
+  arrange(desc(n_points)) %>%
+  select(rgn_id, rgn_label, year, n_points) %>%
+  knitr::kable()
+
+k
+```
+
+## Counts over time by region
+
+```{r}
+#| fig-width: 8
+#| fig-height: 5
+ggplot(density_full, aes(x = year, y = n_points, color = rgn_id, group = rgn_id)) +
+  geom_line(linewidth = 0.8) +
+  geom_point(size = 2) +
+  scale_x_continuous(breaks = all_years) +
+  scale_color_manual(
+    values = setNames(
+      scales::hue_pal()(length(all_rgn)),
+      all_rgn
+    ),
+    labels = rgn_labels,
+    name = NULL
+  ) +
+  labs(
+    title = "Untreated wastewater discharge points by region",
+    x = "Census year",
+    y = "Number of qualifying discharge points"
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(legend.position = "bottom")
+```
+
+## Municipality counts (latest year)
+
+Same qualifying receptors; each census row is one discharge point. Municipality polygons for a choropleth live on Mazu (`mex_admin2_joined_w_municipio_codigos.shp`); this table uses the cleaned CNGMD extract.
+
+```{r}
+mun_latest <- read_csv(all_years_path, show_col_types = FALSE) %>%
+  filter(
+    census_year == latest_year,
+    res_trec_std %in% qualifying_receptors
+  ) %>%
+  mutate(rgn_id = normalize_rgn_id(rgn_id)) %>%
+  count(
+    rgn_id,
+    entidad,
+    descrip_ent,
+    mnpio,
+    descrip_mun,
+    name = "n_points"
+  ) %>%
+  mutate(rgn_label = unname(rgn_labels[rgn_id])) %>%
+  arrange(desc(n_points))
+
+mun_latest %>%
+  select(rgn_id, rgn_label, descrip_ent, descrip_mun, mnpio, n_points) %>%
+  knitr::kable()
+```
+
+
+
+
+Simple reference choropleth: **all OHI GoC regions in the same turquoise**, with surrounding Mexican states for context.
+
+```{r}
+library(tidyverse)
+library(sf)
+library(here)
+
+pick_existing <- function(...) {
+  paths <- unlist(list(...), use.names = FALSE)
+  hit <- paths[file.exists(paths)]
+  if (length(hit) == 0) NA_character_ else hit[[1]]
+}
+
+normalize_rgn_id <- function(x) {
+  x %>% as.character() %>% str_squish() %>% str_replace_all(" ", "_")
+}
+
+gulf_turquoise <- "#2BBBAD"
+state_fill <- "#d6cac0"
+
+rgn_path <- pick_existing(
+  "/home/shares/ohi/OHI_GOC/spatial/OHI_regions/goc_ohi_rgns.shp",
+  "/home/shares/ohi/OHI_GOC/spatial/ohi_regions/goc_ohi_rgns.shp",
+  here::here("spatial/ohi_regions/goc_ohi_rgns.shp")
+)
+
+states_path <- pick_existing(
+  "/home/shares/ohi/OHI_GOC/spatial/ohi_regions/states.shp",
+  "/home/shares/ohi/OHI_GOC/spatial/OHI_regions/states.shp",
+  "/home/shares/ohi/OHI_GOC/spatial/ohi_regions/goc_states.shp",
+  here::here("spatial/ohi_regions/states.shp"),
+  here::here("spatial/ohi_regions/goc_states.shp")
+)
+
+stopifnot(!is.na(rgn_path))
+if (is.na(states_path)) {
+  warning("States shapefile not found; map will show regions only.")
+}
+
+regions <- st_read(rgn_path, quiet = TRUE) %>%
+  mutate(rgn_id = normalize_rgn_id(rgn_id))
+if ("location" %in% names(regions)) {
+  regions <- regions %>% filter(location == "marine" | is.na(location))
+}
+
+states <- if (!is.na(states_path)) {
+  st_read(states_path, quiet = TRUE)
+} else {
+  NULL
+}
+
+# match CRS so layers overlay cleanly
+if (!is.null(states) && st_crs(states) != st_crs(regions)) {
+  states <- st_transform(states, st_crs(regions))
+}
+
+cat("Regions:", rgn_path, "\n")
+cat("States:", states_path, "\n")
+```
+
+```{r}
+#| fig-width: 7
+#| fig-height: 7.5
+p <- ggplot()
+
+if (!is.null(states)) {
+  p <- p +
+    geom_sf(
+      data = states,
+      fill = state_fill,
+      color = "grey40",
+      linewidth = 0.12
+    )
+}
+
+p <- p +
+  geom_sf(
+    data = regions,
+    fill = gulf_turquoise,
+    color = "black",
+    linewidth = 0.25
+  ) +
+  labs(
+    title = "OHI Gulf of California regions",
+    subtitle = "All regions shown in the same turquoise; surrounding states in tan"
+  ) +
+  coord_sf(expand = FALSE) +
+  theme_void(base_size = 12) +
+  theme(
+    plot.title = element_text(face = "bold", hjust = 0.5),
+    plot.subtitle = element_text(hjust = 0.5)
+  )
+
+p
+```
+
+
+
+
+Static map of **FAO GLW4 2020 livestock density** (heads/km²) cropped to the Gulf of California.
+
+Change `species` below to plot any of: `Bovino`, `Ave`, `Caprino`, `Porcino`, `Ovino`.
+
+```{r}
+library(tidyverse)
+library(sf)
+library(terra)
+library(here)
+library(scales)
+library(grid)
+
+# ---- choose livestock group ----
+species <- "Bovino"   # Ave | Bovino | Caprino | Porcino | Ovino
+
+pick_existing <- function(...) {
+  paths <- unlist(list(...), use.names = FALSE)
+  hit <- paths[file.exists(paths)]
+  if (length(hit) == 0) NA_character_ else hit[[1]]
+}
+
+species_glw_map <- tribble(
+  ~nomespecie, ~glw_file, ~label,
+  "Bovino",  "GLW4-2020.D-DA.CTL.tif", "Cattle (Bovino)",
+  "Ave",     "GLW4-2020.D-DA.CHK.tif", "Poultry (Ave)",
+  "Caprino", "GLW4-2020.D-DA.GTS.tif", "Goats (Caprino)",
+  "Porcino", "GLW4-2020.D-DA.PGS.tif", "Swine (Porcino)",
+  "Ovino",   "GLW4-2020.D-DA.SHP.tif", "Sheep (Ovino)"
+)
+
+stopifnot(species %in% species_glw_map$nomespecie)
+sp_meta <- species_glw_map %>% filter(nomespecie == species)
+
+glw_dir <- pick_existing(
+  "/home/shares/ohi/OHI_GOC/_raw_data/FAO_livestock_density/d2026",
+  here::here("_raw_data/FAO_livestock_density/d2026")
+)
+
+glw_path <- if (!is.na(glw_dir)) {
+  file.path(glw_dir, sp_meta$glw_file)
+} else {
+  NA_character_
+}
+
+rgn_path <- pick_existing(
+  "/home/shares/ohi/OHI_GOC/spatial/OHI_regions/goc_ohi_rgns.shp",
+  "/home/shares/ohi/OHI_GOC/spatial/ohi_regions/goc_ohi_rgns.shp",
+  here::here("spatial/ohi_regions/goc_ohi_rgns.shp")
+)
+
+inland_path <- pick_existing(
+  "/home/shares/ohi/OHI_GOC/spatial/inland_50km_buffer/inland_50km_goc.shp",
+  here::here("spatial/inland_50km_buffer/inland_50km_goc.shp")
+)
+
+states_path <- pick_existing(
+  "/home/shares/ohi/OHI_GOC/spatial/ohi_regions/states.shp",
+  "/home/shares/ohi/OHI_GOC/spatial/OHI_regions/states.shp",
+  here::here("spatial/ohi_regions/states.shp"),
+  here::here("spatial/ohi_regions/goc_states.shp")
+)
+
+stopifnot(
+  !is.na(glw_path), file.exists(glw_path),
+  !is.na(rgn_path)
+)
+
+regions <- st_read(rgn_path, quiet = TRUE)
+if ("location" %in% names(regions)) {
+  regions <- regions %>% filter(location == "marine" | is.na(location))
+}
+
+inland <- if (!is.na(inland_path)) st_read(inland_path, quiet = TRUE) else NULL
+states <- if (!is.na(states_path)) st_read(states_path, quiet = TRUE) else NULL
+
+# GoC mask: inland 50 km + marine regions when available; else region bbox
+goc_mask <- if (!is.null(inland)) {
+  bind_rows(
+    st_transform(regions, st_crs(inland)),
+    inland
+  ) %>%
+    st_make_valid() %>%
+    st_union() %>%
+    st_sf(geometry = .)
+} else {
+  regions %>%
+    st_make_valid() %>%
+    st_union() %>%
+    st_sf(geometry = .)
+}
+
+cat("Species:", species, "-", sp_meta$label, "\n")
+cat("Raster:", glw_path, "\n")
+cat("Regions:", rgn_path, "\n")
+cat("Inland 50 km:", inland_path, "\n")
+cat("States:", states_path, "\n")
+```
+
+```{r}
+# crop global GLW4 to GoC (same general approach as script3_livestock.qmd)
+glw_raw <- terra::rast(glw_path)
+
+mask_wgs84 <- st_transform(goc_mask, terra::crs(glw_raw))
+glw_cropped <- terra::crop(glw_raw, vect(mask_wgs84))
+glw_goc <- terra::mask(glw_cropped, vect(mask_wgs84))
+
+# optional: also try a processed SIAP tonnes raster for the same species if present
+siap_dir <- pick_existing(
+  "/home/shares/ohi/OHI_GOC/goal_prep/cw/v2025/pharmaceuticals/livestock_int",
+  "/home/shares/ohi/OHI_GOC/goal_prep/cw/v2025/chemicals/pharmaceuticals/livestock_int",
+  here::here("cw_mazu/v2025/chemicals/pharmaceuticals/livestock_int")
+)
+
+# keep overlay layers in raster CRS
+regions_r <- st_transform(regions, terra::crs(glw_goc))
+states_r <- if (!is.null(states)) st_transform(states, terra::crs(glw_goc)) else NULL
+
+# ggplot-friendly table (drop empty cells)
+glw_df <- as.data.frame(glw_goc, xy = TRUE, na.rm = TRUE)
+names(glw_df)[3] <- "density"
+# drop zeros so sparse land reads cleaner (optional)
+# glw_df <- glw_df %>% filter(density > 0)
+
+cat("Cells with data:", nrow(glw_df), "\n")
+cat("Density range (heads/km2):",
+    paste(round(range(glw_df$density, na.rm = TRUE), 2), collapse = " - "), "\n")
+```
+
+## FAO GLW4 density (heads/km²)
+
+```{r}
+#| fig-width: 7.5
+#| fig-height: 8
+p_glw <- ggplot()
+
+if (!is.null(states_r)) {
+  p_glw <- p_glw +
+    geom_sf(
+      data = states_r,
+      fill = "#d6cac0",
+      color = "grey40",
+      linewidth = 0.12
+    )
+}
+
+p_glw <- p_glw +
+  geom_raster(
+    data = glw_df,
+    aes(x = x, y = y, fill = density),
+    interpolate = FALSE
+  ) +
+  geom_sf(
+    data = regions_r,
+    fill = NA,
+    color = "grey15",
+    linewidth = 0.35
+  ) +
+  scale_fill_viridis_c(
+    option = "D",
+    trans = "sqrt",
+    labels = label_comma(),
+    name = "heads/km²",
+    guide = guide_colorbar(
+      title.position = "top",
+      barwidth = unit(8, "cm"),
+      barheight = unit(0.45, "cm")
+    )
+  ) +
+  coord_sf(
+    xlim = range(glw_df$x),
+    ylim = range(glw_df$y),
+    expand = FALSE,
+    crs = terra::crs(glw_goc)
+  ) +
+  labs(
+    title = paste0("FAO GLW4 livestock density: ", sp_meta$label),
+    subtitle = "2020 | cropped to GoC (marine regions + 50 km inland)"
+  ) +
+  theme_void(base_size = 12) +
+  theme(
+    plot.title = element_text(face = "bold", hjust = 0.5),
+    plot.subtitle = element_text(hjust = 0.5),
+    legend.position = "bottom",
+    legend.title = element_text(hjust = 0.5)
+  )
+
+p_glw
+```
+
+## Optional: SIAP dasymetric tonnes (if already written on Mazu)
+
+Looks for `siap_tons_1km_{Species}_{year}.tif` from `script3_livestock.qmd`. Uses the latest year found for the selected species.
+
+```{r}
+#| fig-width: 7.5
+#| fig-height: 8
+siap_files <- if (!is.na(siap_dir) && dir.exists(siap_dir)) {
+  list.files(
+    siap_dir,
+    pattern = paste0("^siap_tons_1km_", species, "_[0-9]{4}\\.tif$"),
+    full.names = TRUE
+  )
+} else {
+  character(0)
+}
+
+if (length(siap_files) == 0) {
+  cat("No SIAP tonnes rasters found for", species, "in", siap_dir, "\n")
+  cat("Skip this section, or run script3_livestock.qmd first.\n")
+} else {
+  siap_years <- as.integer(str_extract(basename(siap_files), "[0-9]{4}"))
+  latest_siap <- siap_files[which.max(siap_years)]
+  latest_yr <- max(siap_years, na.rm = TRUE)
+
+  siap_r <- terra::rast(latest_siap)
+  siap_df <- as.data.frame(siap_r, xy = TRUE, na.rm = TRUE)
+  names(siap_df)[3] <- "tonnes"
+  siap_df <- siap_df %>% filter(tonnes > 0)
+
+  regions_s <- st_transform(regions, terra::crs(siap_r))
+  states_s <- if (!is.null(states)) st_transform(states, terra::crs(siap_r)) else NULL
+
+  p_siap <- ggplot()
+  if (!is.null(states_s)) {
+    p_siap <- p_siap +
+      geom_sf(data = states_s, fill = "#d6cac0", color = "grey40", linewidth = 0.12)
+  }
+  p_siap <- p_siap +
+    geom_raster(data = siap_df, aes(x = x, y = y, fill = tonnes), interpolate = FALSE) +
+    geom_sf(data = regions_s, fill = NA, color = "grey15", linewidth = 0.35) +
+    scale_fill_viridis_c(
+      option = "C",
+      trans = "log10",
+      labels = label_comma(),
+      name = "tonnes",
+      guide = guide_colorbar(
+        title.position = "top",
+        barwidth = unit(8, "cm"),
+        barheight = unit(0.45, "cm")
+      )
+    ) +
+    coord_sf(
+      xlim = range(siap_df$x),
+      ylim = range(siap_df$y),
+      expand = FALSE,
+      crs = terra::crs(siap_r)
+    ) +
+    labs(
+      title = paste0("SIAP slaughter tonnes (dasymetric): ", sp_meta$label),
+      subtitle = paste0("Year ", latest_yr, " | ", basename(latest_siap))
+    ) +
+    theme_void(base_size = 12) +
+    theme(
+      plot.title = element_text(face = "bold", hjust = 0.5),
+      plot.subtitle = element_text(hjust = 0.5),
+      legend.position = "bottom",
+      legend.title = element_text(hjust = 0.5)
+    )
+
+  p_siap
+}
+```
+
+---
+title: "FAO livestock density rasters (GoC)"
+format:
+  html:
+    embed-resources: true
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+Static maps of **FAO GLW4 2020 livestock density** (heads/km²) cropped to the Gulf of California, one plot each for **Ave**, **Caprino**, **Porcino**, and **Ovino**.
+
+```{r}
+library(tidyverse)
+library(sf)
+library(terra)
+library(here)
+library(scales)
+library(grid)
+
+pick_existing <- function(...) {
+  paths <- unlist(list(...), use.names = FALSE)
+  hit <- paths[file.exists(paths)]
+  if (length(hit) == 0) NA_character_ else hit[[1]]
+}
+
+species_to_plot <- c("Ave", "Caprino", "Porcino", "Ovino")
+
+species_glw_map <- tribble(
+  ~nomespecie, ~glw_file, ~label,
+  "Ave",     "GLW4-2020.D-DA.CHK.tif", "Poultry (Ave)",
+  "Caprino", "GLW4-2020.D-DA.GTS.tif", "Goats (Caprino)",
+  "Porcino", "GLW4-2020.D-DA.PGS.tif", "Swine (Porcino)",
+  "Ovino",   "GLW4-2020.D-DA.SHP.tif", "Sheep (Ovino)",
+  "Bovino",  "GLW4-2020.D-DA.CTL.tif", "Cattle (Bovino)"
+) %>%
+  filter(nomespecie %in% species_to_plot) %>%
+  mutate(nomespecie = factor(nomespecie, levels = species_to_plot)) %>%
+  arrange(nomespecie)
+
+glw_dir <- pick_existing(
+  "/home/shares/ohi/OHI_GOC/_raw_data/FAO_livestock_density/d2026",
+  here::here("_raw_data/FAO_livestock_density/d2026")
+)
+
+rgn_path <- pick_existing(
+  "/home/shares/ohi/OHI_GOC/spatial/OHI_regions/goc_ohi_rgns.shp",
+  "/home/shares/ohi/OHI_GOC/spatial/ohi_regions/goc_ohi_rgns.shp",
+  here::here("spatial/ohi_regions/goc_ohi_rgns.shp")
+)
+
+inland_path <- pick_existing(
+  "/home/shares/ohi/OHI_GOC/spatial/inland_50km_buffer/inland_50km_goc.shp",
+  here::here("spatial/inland_50km_buffer/inland_50km_goc.shp")
+)
+
+states_path <- pick_existing(
+  "/home/shares/ohi/OHI_GOC/spatial/ohi_regions/states.shp",
+  "/home/shares/ohi/OHI_GOC/spatial/OHI_regions/states.shp",
+  here::here("spatial/ohi_regions/states.shp"),
+  here::here("spatial/ohi_regions/goc_states.shp")
+)
+
+stopifnot(!is.na(glw_dir), !is.na(rgn_path))
+
+regions <- st_read(rgn_path, quiet = TRUE)
+if ("location" %in% names(regions)) {
+  regions <- regions %>% filter(location == "marine" | is.na(location))
+}
+
+inland <- if (!is.na(inland_path)) st_read(inland_path, quiet = TRUE) else NULL
+states <- if (!is.na(states_path)) st_read(states_path, quiet = TRUE) else NULL
+
+goc_mask <- if (!is.null(inland)) {
+  bind_rows(
+    st_transform(regions, st_crs(inland)),
+    inland
+  ) %>%
+    st_make_valid() %>%
+    st_union() %>%
+    st_sf(geometry = .)
+} else {
+  regions %>%
+    st_make_valid() %>%
+    st_union() %>%
+    st_sf(geometry = .)
+}
+
+cat("GLW dir:", glw_dir, "\n")
+cat("Regions:", rgn_path, "\n")
+cat("Inland 50 km:", inland_path, "\n")
+cat("States:", states_path, "\n")
+```
+
+```{r}
+crop_glw_goc <- function(glw_path, goc_mask) {
+  glw_raw <- terra::rast(glw_path)
+  mask_wgs84 <- st_transform(goc_mask, terra::crs(glw_raw))
+  glw_cropped <- terra::crop(glw_raw, vect(mask_wgs84))
+  terra::mask(glw_cropped, vect(mask_wgs84))
+}
+
+plot_glw <- function(glw_goc, label, regions, states = NULL) {
+  regions_r <- st_transform(regions, terra::crs(glw_goc))
+  states_r <- if (!is.null(states)) st_transform(states, terra::crs(glw_goc)) else NULL
+
+  glw_df <- as.data.frame(glw_goc, xy = TRUE, na.rm = TRUE)
+  names(glw_df)[3] <- "density"
+
+  p <- ggplot()
+  if (!is.null(states_r)) {
+    p <- p +
+      geom_sf(
+        data = states_r,
+        fill = "#d6cac0",
+        color = "grey40",
+        linewidth = 0.12
+      )
+  }
+
+  p +
+    geom_raster(
+      data = glw_df,
+      aes(x = x, y = y, fill = density),
+      interpolate = FALSE
+    ) +
+    geom_sf(
+      data = regions_r,
+      fill = NA,
+      color = "grey15",
+      linewidth = 0.35
+    ) +
+    scale_fill_viridis_c(
+      option = "D",
+      trans = "sqrt",
+      labels = label_comma(),
+      name = "heads/km²",
+      guide = guide_colorbar(
+        title.position = "top",
+        barwidth = unit(8, "cm"),
+        barheight = unit(0.45, "cm")
+      )
+    ) +
+    coord_sf(
+      xlim = range(glw_df$x),
+      ylim = range(glw_df$y),
+      expand = FALSE,
+      crs = terra::crs(glw_goc)
+    ) +
+    labs(
+      title = paste0("FAO GLW4 livestock density: ", label),
+      subtitle = "2020 | cropped to GoC (marine regions + 50 km inland)"
+    ) +
+    theme_void(base_size = 12) +
+    theme(
+      plot.title = element_text(face = "bold", hjust = 0.5),
+      plot.subtitle = element_text(hjust = 0.5),
+      legend.position = "bottom",
+      legend.title = element_text(hjust = 0.5)
+    )
+}
+
+glw_plots <- purrr::pmap(
+  list(species_glw_map$glw_file, species_glw_map$label, as.character(species_glw_map$nomespecie)),
+  function(glw_file, label, nomespecie) {
+    glw_path <- file.path(glw_dir, glw_file)
+    stopifnot(file.exists(glw_path))
+    message("Preparing ", nomespecie, ": ", glw_path)
+    glw_goc <- crop_glw_goc(glw_path, goc_mask)
+    plot_glw(glw_goc, label, regions, states)
+  }
+)
+names(glw_plots) <- as.character(species_glw_map$nomespecie)
+```
+
+## Ave
+
+```{r}
+#| fig-width: 7.5
+#| fig-height: 8
+glw_plots[["Ave"]]
+```
+
+## Caprino
+
+```{r}
+#| fig-width: 7.5
+#| fig-height: 8
+glw_plots[["Caprino"]]
+```
+
+## Porcino
+
+```{r}
+#| fig-width: 7.5
+#| fig-height: 8
+glw_plots[["Porcino"]]
+```
+
+## Ovino
+
+```{r}
+#| fig-width: 7.5
+#| fig-height: 8
+glw_plots[["Ovino"]]
+```
+

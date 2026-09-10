@@ -274,5 +274,11 @@
   },
   "chapters/ewg33_cw_spanish.qmd": {
     "ewg33_cw_spanish.html": "570ca13c"
+  },
+  "chapters/viz_ww.qmd": {
+    "viz_ww.html": "7e3eafb4"
+  },
+  "chapters/viz_draft_cw.qmd": {
+    "viz_draft_cw.html": "9d5cec60"
   }
 }

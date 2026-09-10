@@ -1,0 +1,237 @@
+---
+title: "Pharmaceutical sources (mg) choropleths"
+format:
+  html:
+    embed-resources: true
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+Choropleths of **mg load by OHI region** for each pharmaceuticals source, **before** aggregation into current status:
+
+1. Human wastewater (WWTP)
+2. Livestock antimicrobials
+3. Shrimp farming antimicrobials
+
+```{r}
+library(tidyverse)
+library(sf)
+library(here)
+library(scales)
+library(grid)
+
+pick_existing <- function(...) {
+  paths <- unlist(list(...), use.names = FALSE)
+  hit <- paths[file.exists(paths)]
+  if (length(hit) == 0) NA_character_ else hit[[1]]
+}
+
+normalize_rgn_id <- function(x) {
+  x %>% as.character() %>% str_squish() %>% str_replace_all(" ", "_")
+}
+
+rgn_labels <- c(
+  "Region_1" = "Western Upper Gulf",
+  "Region_2" = "Western Midriff Islands",
+  "Region_3" = "Western Central Gulf",
+  "Region_4" = "Western Southern Gulf",
+  "Region_5" = "Eastern Upper Gulf",
+  "Region_6" = "Eastern Midriff Islands",
+  "Region_7" = "Southern Sonora Coast",
+  "Region_8" = "Sinaloa Coast",
+  "Region_9" = "Southeastern Gulf"
+)
+
+cw_root <- "/home/shares/ohi/OHI_GOC/goal_prep/cw/v2025"
+local_pharm <- here::here("cw_mazu/v2025/chemicals/pharmaceuticals")
+
+# Paths follow script4 on Mazu: .../v2025/pharmaceuticals/...
+# Local copy often lives under chemicals/pharmaceuticals/
+wwtp_path <- pick_existing(
+  file.path(cw_root, "pharmaceuticals/humans_output/wwtp_mg_rgnid_pharma.csv"),
+  file.path(cw_root, "chemicals/pharmaceuticals/humans_output/wwtp_mg_rgnid_pharma.csv"),
+  file.path(local_pharm, "humans_output/wwtp_mg_rgnid_pharma.csv")
+)
+
+livestock_path <- pick_existing(
+  file.path(cw_root, "pharmaceuticals/livestock_output/watershed_antimicrobials_livestock.csv"),
+  file.path(cw_root, "chemicals/pharmaceuticals/livestock_output/watershed_antimicrobials_livestock.csv"),
+  file.path(local_pharm, "livestock_output/watershed_antimicrobials_livestock.csv")
+)
+
+shrimp_path <- pick_existing(
+  file.path(cw_root, "pharmaceuticals/shrimp_output/shrimp_mg_pharmaceuticals_rgnid.csv"),
+  file.path(cw_root, "chemicals/pharmaceuticals/shrimp_output/shrimp_mg_pharmaceuticals_rgnid.csv"),
+  file.path(local_pharm, "shrimp_output/shrimp_mg_pharmaceuticals_rgnid.csv")
+)
+
+rgn_path <- pick_existing(
+  "/home/shares/ohi/OHI_GOC/spatial/OHI_regions/goc_ohi_rgns.shp",
+  "/home/shares/ohi/OHI_GOC/spatial/ohi_regions/goc_ohi_rgns.shp",
+  here::here("spatial/ohi_regions/goc_ohi_rgns.shp")
+)
+
+stopifnot(!is.na(wwtp_path), !is.na(livestock_path), !is.na(shrimp_path), !is.na(rgn_path))
+
+regions <- st_read(rgn_path, quiet = TRUE) %>%
+  mutate(rgn_id = normalize_rgn_id(rgn_id))
+if ("location" %in% names(regions)) {
+  regions <- regions %>% filter(location == "marine" | is.na(location))
+}
+
+read_source_mg <- function(path, mg_col, source_name) {
+  read_csv(path, show_col_types = FALSE) %>%
+    mutate(
+      rgn_id = normalize_rgn_id(rgn_id),
+      year = as.numeric(year),
+      mg = as.numeric(.data[[mg_col]]),
+      source = source_name
+    ) %>%
+    select(rgn_id, year, mg, source)
+}
+
+wwtp <- read_source_mg(wwtp_path, "total_pharma_mg", "Human wastewater (WWTP)")
+livestock <- read_source_mg(livestock_path, "mg_antimicrobials", "Livestock antimicrobials")
+shrimp <- read_source_mg(shrimp_path, "mg_antimicrobials", "Shrimp farming antimicrobials")
+
+# Reverse of CW score palette: blue = least mg, red = most mg
+mg_palette <- rev(c(
+  "#8a0032", "#A50026", "#A50026", "#D73027", "#F46D43",
+  "#FDAE61", "#FEE090", "#FEE090", "#ABD9E9", "#4575B4", "#313695"
+))
+
+latest_map <- function(df, title) {
+  y <- max(df$year[!is.na(df$mg)], na.rm = TRUE)
+  latest <- df %>%
+    filter(year == y, !is.na(mg)) %>%
+    select(rgn_id, year, mg)
+  map_dat <- regions %>%
+    left_join(latest, by = "rgn_id") %>%
+    mutate(rgn_label = unname(rgn_labels[rgn_id]))
+
+  mg_pos <- latest$mg[latest$mg > 0 & is.finite(latest$mg)]
+  if (length(mg_pos) == 0) {
+    fill_limits <- c(1, 10)
+    fill_breaks <- c(1, 10)
+  } else {
+    fill_limits <- range(mg_pos, na.rm = TRUE)
+    # evenly spaced breaks in log10 space; keep few labels so they do not collide
+    log_rng <- log10(fill_limits)
+    fill_breaks <- unique(10^pretty(log_rng, n = 4))
+    fill_breaks <- fill_breaks[
+      fill_breaks >= fill_limits[1] * 0.999 & fill_breaks <= fill_limits[2] * 1.001
+    ]
+    if (length(fill_breaks) < 2) fill_breaks <- fill_limits
+  }
+
+  p <- ggplot() +
+    geom_sf(data = map_dat, aes(fill = mg), color = "black", linewidth = 0.25) +
+    scale_fill_gradientn(
+      colours = mg_palette,
+      trans = "log10",
+      limits = fill_limits,
+      breaks = fill_breaks,
+      labels = label_scientific(digits = 1),
+      na.value = "grey90",
+      name = "mg\n(red = highest)",
+      guide = guide_colorbar(
+        title.position = "top",
+        barwidth = unit(8, "cm"),
+        barheight = unit(0.45, "cm"),
+        nbin = 100
+      )
+    ) +
+    labs(
+      title = title,
+      subtitle = paste0("mg load by region | single year: ", y, " | red = most, blue = least")
+    ) +
+    theme_void(base_size = 12) +
+    theme(
+      plot.title = element_text(face = "bold", hjust = 0.5),
+      plot.subtitle = element_text(hjust = 0.5),
+      legend.position = "bottom",
+      legend.title = element_text(hjust = 0.5),
+      legend.text = element_text(size = 8)
+    )
+
+  list(year = y, data = latest, plot = p)
+}
+
+cat("CW root:", cw_root, "\n")
+cat("WWTP:", wwtp_path, "\n")
+cat("Livestock:", livestock_path, "\n")
+cat("Shrimp:", shrimp_path, "\n")
+cat("Regions:", rgn_path, "\n")
+```
+
+## Human wastewater (mg)
+
+```{r}
+#| fig-width: 7
+#| fig-height: 7.5
+wwtp_map <- latest_map(wwtp, "Human wastewater pharmaceuticals (mg)")
+wwtp_map$plot
+```
+
+```{r}
+wwtp_map$data %>%
+  mutate(rgn_label = unname(rgn_labels[rgn_id])) %>%
+  arrange(desc(mg)) %>%
+  mutate(mg = comma(mg, accuracy = 1)) %>%
+  select(rgn_id, rgn_label, year, mg) %>%
+  knitr::kable()
+```
+
+## Livestock antimicrobials (mg)
+
+```{r}
+#| fig-width: 7
+#| fig-height: 7.5
+livestock_map <- latest_map(livestock, "Livestock antimicrobials (mg)")
+livestock_map$plot
+```
+
+```{r}
+livestock_map$data %>%
+  mutate(rgn_label = unname(rgn_labels[rgn_id])) %>%
+  arrange(desc(mg)) %>%
+  mutate(mg = comma(mg, accuracy = 1)) %>%
+  select(rgn_id, rgn_label, year, mg) %>%
+  knitr::kable()
+```
+
+## Shrimp farming antimicrobials (mg)
+
+```{r}
+#| fig-width: 7
+#| fig-height: 7.5
+shrimp_map <- latest_map(shrimp, "Shrimp farming antimicrobials (mg)")
+shrimp_map$plot
+```
+
+```{r}
+shrimp_map$data %>%
+  mutate(rgn_label = unname(rgn_labels[rgn_id])) %>%
+  arrange(desc(mg)) %>%
+  mutate(mg = comma(mg, accuracy = 1)) %>%
+  select(rgn_id, rgn_label, year, mg) %>%
+  knitr::kable()
+```
+
+## Side-by-side latest mg (all sources)
+
+Uses each source's own latest year (they do not all end in the same year).
+
+```{r}
+bind_rows(
+  wwtp_map$data %>% mutate(source = "Human wastewater"),
+  livestock_map$data %>% mutate(source = "Livestock"),
+  shrimp_map$data %>% mutate(source = "Shrimp")
+) %>%
+  mutate(rgn_label = unname(rgn_labels[rgn_id])) %>%
+  select(source, rgn_id, rgn_label, year, mg) %>%
+  pivot_wider(names_from = source, values_from = c(year, mg)) %>%
+  knitr::kable()
+```
