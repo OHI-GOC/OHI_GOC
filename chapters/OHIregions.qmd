@@ -70,7 +70,8 @@ mapview(
   zcol = "region_label",
   layer.name = "GoC OHI regions", 
   col.regions = rgn_colors,
-  label = unname(rgn_labels[ohi_nolines_git$rgn_id])
+  label = unname(rgn_labels[ohi_nolines_git$rgn_id]),
+  map.types = c("OpenStreetMap", "CartoDB.Positron", "Esri.WorldImagery")
 )
 ```
 

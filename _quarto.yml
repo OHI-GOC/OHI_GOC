@@ -24,64 +24,10 @@ website:
     contents:
       - href: index.qmd
         text: "🏠 Home"
+      - href: chapters/overall_update.qmd
+        text: "Overall Update"
       - href: chapters/OHIregions.qmd
         text: "🌎️ Map of OHI Regions"
-      - section: "EWG 3.1"
-        contents:
-          - href: chapters/ewg31_agenda.qmd
-            text: "Agenda & Meeting Resources"
-          - href: chapters/ewg31_tr.qmd
-            text: "Tourism & Recreation"
-          - href: chapters/ewg31_fp.qmd
-            text: "Food Provisioning"
-          - href: chapters/ewg31_le.qmd
-            text: "Livelihoods & Economies"
-      - section: "EWG 3.2"
-        contents:
-          - href: chapters/ewg32_agenda.qmd
-            text: "Agenda & Meeting Resources"
-          - href: chapters/ewg32_sp.qmd
-            text: "Sense of Place"
-          - href: chapters/ewg32_ao.qmd
-            text: "Access Opportunities"
-          - href: chapters/ewg32_hs.qmd
-            text: "Habitat Services"
-      - section: "👥 EWG 3.3"
-        contents:
-          - href: chapters/ewg33_agenda.qmd
-            text: "Agenda & Meeting Resources"
-          - href: chapters/ewg33_bd.qmd
-            text: "Biodiversity"
-          - href: chapters/ewg33_cw.qmd
-            text: "Clean Waters"
-          - href: chapters/ewg33_np.qmd
-            text: "Natural Products"
-      - href: chapters/ewg2.qmd
-        text: "EWG 2"
-      - section: Goalkeeper Resources
-        contents:
-          - href: chapters/ao.qmd
-            text: Access opportunities
-          - href: chapters/bd.qmd
-            text: Biodiversity
-          - href: chapters/cp_cs.qmd
-            text: Habitat services (CP & CS)
-          - href: chapters/cw.qmd
-            text: Clean waters
-          - href: chapters/fp.qmd
-            text: Food provisioning
-          - href: chapters/le.qmd
-            text: Livelihoods and economies
-          - href: chapters/np.qmd
-            text: Natural products
-          - href: chapters/sp.qmd
-            text: Sense of place/pertenencia
-          - href: chapters/tr.qmd
-            text: Tourism and recreation
-          - href: chapters/ss.qmd
-            text: Safety and security
-          - href: chapters/ol.qmd
-            text: Research and ocean literacy
 
 format:
   html:
