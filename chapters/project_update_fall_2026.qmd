@@ -4,6 +4,12 @@ format: html
 toc: true
 ---
 
+<div class="button-container">
+  <a href="project_update_fall_2026_spanish.html" class="custom-button">
+    Haz clic aquí para ver la versión en español
+  </a>
+</div>
+
 We are excited to share where the Gulf of California Ocean Health Index currently stands. Expert Working Groups 1, 2, and 3 (including 3.1 to 3.3) are now complete, and the plots below show each goal’s Current Status by OHI region. Current Status is current condition divided by the reference point (current / reference). If you would like, you can hover your mouse over each plot to compare regions and years. A score of 100 means that current condition equals the reference point.
 
 This is a snapshot of work in progress. Scores, methods, and write-ups will continue to be updated as we finish pressures (including Safety & Security), finalize the goals, and complete the resilience layers. Specific data sources and reference points for each goal are described in detail in that goal’s executive summary.
@@ -129,6 +135,11 @@ goal_plotly <- function(
     add_goal_line = TRUE,
     goal_line_name = "Meta // Goal (100/100)"
 ) {
+  # score plots: round to the nearest whole number so hover does not show 5 decimals
+  if (identical(y, "current_status")) {
+    df <- df %>% mutate(current_status = round(as.numeric(current_status)))
+  }
+
   df <- df %>%
     arrange(rgn_label, year)
 
@@ -140,6 +151,10 @@ goal_plotly <- function(
   yaxis_list <- list(title = y_title)
   if (!is.null(y_range)) {
     yaxis_list$range <- y_range
+  }
+  if (identical(y, "current_status")) {
+    yaxis_list$hoverformat <- ".0f"
+    yaxis_list$tickformat <- ".0f"
   }
 
   p <- plot_ly(
@@ -418,6 +433,8 @@ Methods, reference points, and indicator details are in the executive summary:
 
 - **EWG 3.1 page:** [Tourism & Recreation](ewg31_tr.html) · **meeting notes:** [July 16](https://docs.google.com/document/d/1wUw9c7JtcpR4tIUv2m4Dog6MhVmzD53d4jmzi078G4Q/edit?tab=t.x02j1n7qhxzr)
 - **Goalkeeper page:** [Tourism and Recreation](tr.html)
+- **English:** [TR Executive Summary](https://docs.google.com/document/d/1y8W_z3GJL1SY4x7m_QrXP7D1vvfl53ghAgC0hB6VbD0/edit?tab=t.0)
+- **Spanish:** [TR Resumen ejecutivo](https://docs.google.com/document/d/1RhY1pTaZVDXHtm4OTRL5f6lf5fKj8fOLhRi1rCGCN7k/edit?tab=t.0)
 :::
 
 ::: {.callout-warning collapse="true"}
@@ -482,6 +499,8 @@ Methods, reference points, and indicator details are in the executive summary:
 
 - **EWG 3.1 page:** [Food Provisioning](ewg31_fp.html) · **meeting notes:** [July 16](https://docs.google.com/document/d/1wUw9c7JtcpR4tIUv2m4Dog6MhVmzD53d4jmzi078G4Q/edit?tab=t.x02j1n7qhxzr)
 - **Goalkeeper page:** [Food Provisioning](fp.html)
+- **English:** [FP Executive Summary](https://docs.google.com/document/d/1sYug__6lxXjE_Vg3zW0etdAqZKKU3eJZtiX4bzd7UZA/edit?tab=t.0)
+- **Spanish:** [FP Resumen Ejecutivo](https://docs.google.com/document/d/1uvmC99z4ZNi7pv5NdgYGATG8WRFpqUipA0c1H4NqPiw/edit?tab=t.0)
 :::
 
 ::: {.callout-warning collapse="true"}
@@ -653,6 +672,8 @@ Methods, reference points, and indicator details are in the executive summary:
 
 - **EWG 3.1 page:** [Livelihoods & Economies](ewg31_le.html) · **meeting notes:** [July 16](https://docs.google.com/document/d/1wUw9c7JtcpR4tIUv2m4Dog6MhVmzD53d4jmzi078G4Q/edit?tab=t.x02j1n7qhxzr)
 - **Goalkeeper page:** [Livelihoods and economies](le.html)
+- **English:** [LE Executive Summary](https://docs.google.com/document/d/1EQd0xKKkfeEm_wsYa8bZMxTqH7OWtk3-BQ-UHAg1LXA/edit?tab=t.0#heading=h.6qdq66n7hr47)
+- **Spanish:** [LE Resumen ejecutivo](https://docs.google.com/document/d/1bCfCDMTlREiOwrVbwFCV9vXM56OKT5OTxfHDjMfdFdo/edit?tab=t.0)
 - **Informal-jobs multiplier notes:** [OHI_GOC_issues #125](https://github.com/OHI-GOC/OHI_GOC_issues/issues/125#issue-5262710620)
 :::
 
@@ -661,7 +682,7 @@ Methods, reference points, and indicator details are in the executive summary:
 
 **Upcoming Adjustments (from EWG 3.1)**
 
-- **Done (in the September scores):** include informal marine-related workers in **both LIV quantity and LIV quality**. We applied a yearly state–sector ENOE multiplier (`jobs_multiplier = 1 / (1 − pct_informal)`) to coastal Economic Census jobs. ECO remains formal CE revenue only. Prep notes: [issue #125](https://github.com/OHI-GOC/OHI_GOC_issues/issues/125#issue-5262710620).
+- **Done (in the September scores):** include informal marine-related workers in **both LIV quantity and LIV quality**. We applied a yearly state–sector ENOE multiplier (`jobs_multiplier = 1 / (1 − pct_informal)`) to coastal Economic Census jobs. ECO remains formal CE revenue only.
 - For exploratory purposes, aggregate CONAPESCA fishing and mariculture totals to check against Economic Census revenue estimates.
 - Clearly explain the within-region reference point methodology in the report / paper, so that readers do not misinterpret scores for smaller regions doing well (relative to themselves) against larger regions with high absolute revenue.
 :::
@@ -829,6 +850,8 @@ Methods, reference points, and indicator details are in the executive summary:
 
 - **EWG 3.2 page:** [Sense of Place](ewg32_sp.html) · **meeting notes:** [August 13](https://docs.google.com/document/d/1rYZgT173UREE8NKX5vzmIbGkF7QgI9xe6yqEaWEVZ78/edit?tab=t.x02j1n7qhxzr)
 - **Goalkeeper page:** [Sense of Place](sp.html)
+- **English:** [SP Executive Summary](https://docs.google.com/document/d/1qxuYHPqFbGprBSflfiq00w3IlXs-9VjmsxYXM4O3sgY/edit?tab=t.0)
+- **Spanish:** [SP Resumen ejecutivo](https://docs.google.com/document/d/1Bs14irzJuaMGkqVljkC5fpJot0FZvwz0l0jlmNeV_fc/edit?tab=t.0)
 - **ICO list for expert review:** [(SP) ICO: List for Expert Review](https://docs.google.com/document/d/1-2u1wcy33Y7Cs2Jjp-95I1iBRZGge2bRyJ27xTHxcFk/edit?tab=t.0)
 - **LSP lists for expert review:** [(SP) LSP: Lists for Expert Review](https://docs.google.com/spreadsheets/d/1_jcxQsKVLgwz8NknmBaHDtPjdfwAgZ10U6jOsryK4CU/edit?gid=0#gid=0)
 - **CCE rework notes:** [CCE Finalizing Methods](https://docs.google.com/document/d/14wO4t6Gs27_Z8Xq6VmLu7JjjdGz42ww-DEyymMLTd5w/edit?tab=t.m357mmezi3zk) · [continued](https://docs.google.com/document/d/1cJsDE7SMNl0QX1EO_gZbvTtedfiKj45F6ekhJNSQk6M/edit?tab=t.0#heading=h.u6cg98vcgkx)
@@ -839,8 +862,8 @@ Methods, reference points, and indicator details are in the executive summary:
 
 **Upcoming Adjustments (from EWG 3.2)**
 
-- Finalize the ICO list. Please add input here: [(SP) ICO: List for Expert Review](https://docs.google.com/document/d/1-2u1wcy33Y7Cs2Jjp-95I1iBRZGge2bRyJ27xTHxcFk/edit?tab=t.0).
-- Finalize the LSP list. Please add input here: [(SP) LSP: Lists for Expert Review](https://docs.google.com/spreadsheets/d/1_jcxQsKVLgwz8NknmBaHDtPjdfwAgZ10U6jOsryK4CU/edit?gid=0#gid=0). Prioritize reviewing the “Iconic Fishing Sites,” which the group noted had a lack of sites along the Sinaloa Coast.
+- Update the ICO scores to reflect changes made by the experts after they reviewed the list: [(SP) ICO: List for Expert Review](https://docs.google.com/document/d/1-2u1wcy33Y7Cs2Jjp-95I1iBRZGge2bRyJ27xTHxcFk/edit?tab=t.0).
+- Update the LSP scores to reflect changes made by the experts after they reviewed the lists: [(SP) LSP: Lists for Expert Review](https://docs.google.com/spreadsheets/d/1_jcxQsKVLgwz8NknmBaHDtPjdfwAgZ10U6jOsryK4CU/edit?gid=0#gid=0).
 - Restructure CCE around civic, educational, and social engagement. Additional details: [(SP) CCE Finalizing Methods](https://docs.google.com/document/d/14wO4t6Gs27_Z8Xq6VmLu7JjjdGz42ww-DEyymMLTd5w/edit?tab=t.m357mmezi3zk). Until CCE is ready, keep overall SP as the average of ICO and LSP.
 :::
 
@@ -892,6 +915,8 @@ Methods, reference points, and indicator details are in the executive summary:
 
 - **EWG 3.2 page:** [Access Opportunities](ewg32_ao.html) · **meeting notes:** [August 13](https://docs.google.com/document/d/1rYZgT173UREE8NKX5vzmIbGkF7QgI9xe6yqEaWEVZ78/edit?tab=t.x02j1n7qhxzr)
 - **Goalkeeper page:** [Access Opportunities](ao.html)
+- **English:** [AO Executive Summary](https://docs.google.com/document/d/1RyoGspGrQRQ4deif7Ybm3k3e39EG2X9dBnpket8ITtk/edit?tab=t.0)
+- **Spanish:** [AO Resumen Ejecutivo](https://docs.google.com/document/d/146yfYH7c9UaSo3PGg5DI2u7YRK1iDVxIQeUxPckOO0Y/edit?tab=t.0)
 - **Realized access methods (not in this version):** [Coastal Access: La Paz](coastal_access_lapaz.html)
 :::
 
@@ -959,6 +984,8 @@ Methods, reference points, and indicator details are in the executive summary:
 
 - **EWG 3.2 page:** [Habitat Services](ewg32_hs.html) · **meeting notes:** [August 13](https://docs.google.com/document/d/1rYZgT173UREE8NKX5vzmIbGkF7QgI9xe6yqEaWEVZ78/edit?tab=t.x02j1n7qhxzr)
 - **Goalkeeper page:** [Habitat services (CP & CS)](cp_cs.html)
+- **English:** [HS Executive Summary](https://docs.google.com/document/d/1mro2xQ3Q1TRTs5apmPCkJcBdkZCdjq8U3asCaNsrY9k/edit?tab=t.0)
+- **Spanish:** [HS Resumen Ejecutivo](https://docs.google.com/document/d/1xJIrO15HS-U_P684PrhH_FTo9zjJgJBQiAhvTrkYHXs/edit?tab=t.0)
 - **Literature review:** [coastal protection, pollution filtration, and carbon sequestration per habitat type](https://docs.google.com/spreadsheets/d/1Ixzfv8tgNf3qusaNDyN2oZ3v26a3oy3MIwzZBWOUTFc/edit?gid=58049273#gid=58049273)
 :::
 
@@ -1031,6 +1058,8 @@ Methods, reference points, and indicator details are in the executive summary:
 
 - **EWG 3.3 page:** [Biodiversity](ewg33_bd.html) · **meeting notes:** [September 10](https://docs.google.com/document/d/1rJ6moJnO-VB-g-CTf5nA0qMnw0HESsdVaIAp-XHY594/edit?tab=t.x02j1n7qhxzr)
 - **Goalkeeper page:** [Biodiversity](bd.html)
+- **English:** [BD Executive Summary](https://docs.google.com/document/d/19N-MjE9iucG71N6NUDzUimqSB1tA-4XCVWj9SNXyy6w/edit?tab=t.0)
+- **Spanish:** [BD Resumen Ejecutivo](https://docs.google.com/document/d/1zERminsNjyKGoNBz7TqWHqsOSnNl3bKdDzHeIr4VIaQ/edit?tab=t.0)
 :::
 
 ::: {.callout-warning collapse="true"}
@@ -1201,6 +1230,8 @@ Methods, reference points, and indicator details are in the executive summary:
 
 - **EWG 3.3 page:** [Clean Waters](ewg33_cw.html) · **meeting notes:** [September 10](https://docs.google.com/document/d/1rJ6moJnO-VB-g-CTf5nA0qMnw0HESsdVaIAp-XHY594/edit?tab=t.x02j1n7qhxzr)
 - **Goalkeeper page:** [Clean waters](cw.html)
+- **English:** [CW Executive Summary](https://docs.google.com/document/d/1VRxaDW9YbCoammwVcZut07vNqpNpUcT8fo_kM2V47is/edit?tab=t.0)
+- **Spanish:** [CW Resumen Ejecutivo](https://docs.google.com/document/d/1wq48kxZkAXhOMZS6kEPYYA-u9jZ2erKhexnGE0nDSTM/edit?tab=t.0)
 :::
 
 ::: {.callout-warning collapse="true"}
@@ -1265,6 +1296,8 @@ Methods, reference points, and indicator details are in the executive summary:
 
 - **EWG 3.3 page:** [Natural Products](ewg33_np.html) · **meeting notes:** [September 10](https://docs.google.com/document/d/1rJ6moJnO-VB-g-CTf5nA0qMnw0HESsdVaIAp-XHY594/edit?tab=t.x02j1n7qhxzr)
 - **Goalkeeper page:** [Natural products](np.html)
+- **English:** [NP Executive Summary](https://docs.google.com/document/d/1QaEn1ucoh_ToqsrguQGfGqRSK3VjT9GBk6vqlfVxBtg/edit?tab=t.0)
+- **Spanish:** [NP Resumen Ejecutivo](https://docs.google.com/document/d/1ymx6DLhzzLjXM-Ha9JMlPA39NenC9NNrYVTKLZ_Vfpc/edit?tab=t.0)
 :::
 
 ::: {.callout-warning collapse="true"}

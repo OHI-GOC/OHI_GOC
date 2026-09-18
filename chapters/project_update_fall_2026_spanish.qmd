@@ -1,0 +1,1314 @@
+---
+title: "Actualización del proyecto (otoño 2026)"
+format: html
+toc: true
+---
+
+<div class="button-container">
+  <a href="project_update_fall_2026.html" class="custom-button">
+    Click here for the version in English
+  </a>
+</div>
+
+Nos da mucho gusto compartir en dónde se encuentra hoy el Índice de Salud Oceánica del Golfo de California. Los Grupos de Trabajo de Expertos 1, 2 y 3 (incluyendo 3.1 a 3.3) ya concluyeron, y las gráficas de abajo muestran el Estatus actual de cada meta por región OHI. El Estatus actual es la condición presente dividida entre el punto de referencia (presente / punto de referencia). Si quiere, puede pasar el cursor sobre cada gráfica para comparar regiones y años. Una puntuación de 100 significa que la condición presente es igual al punto de referencia.
+
+Esta es una instantánea de un trabajo en curso. Las puntuaciones, los métodos y los textos se seguirán actualizando conforme terminemos las presiones (incluida Seguridad y Protección), finalicemos las metas y completemos las capas de resiliencia. Las fuentes de datos y los puntos de referencia de cada meta se describen con detalle en el resumen ejecutivo de esa meta.
+
+| Fecha | Evaluación OHI | Artículo |
+|------|----------------|-------|
+| 30 de septiembre | Terminar las presiones (incluida Seguridad y Protección) y finalizar las metas | Finalizar las metas / trabajar en el artículo |
+| 30 de octubre | Terminar la resiliencia | Trabajar en el artículo |
+| 13 de noviembre | Enviar el borrador del OHI al equipo central y a las personas coautoras | Trabajar en el artículo |
+| 4 de diciembre | Fecha límite para que todas las personas coautoras den comentarios | Trabajar en el artículo |
+| 1 de enero | Enviar el artículo del OHI | Finalizar el artículo |
+
+---
+
+**Estas son las metas que revisamos en cada reunión del Grupo de Trabajo de Expertos:**
+
+- **16 de julio (EWG 3.1):** Turismo y Recreación, Provisión de Alimentos, y Medios de Vida y Economías
+- **13 de agosto (EWG 3.2):** Sentido de Pertenencia, Oportunidades de Acceso y Servicios de Hábitat
+- **10 de septiembre (EWG 3.3):** Biodiversidad, Aguas Limpias y Productos Naturales
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+library(tidyverse)
+library(plotly)
+library(here)
+
+rgn_labels <- c(
+  "Region_1" = "Alto Golfo occidental",
+  "Region_2" = "Islas del Medio (oeste)",
+  "Region_3" = "Golfo central occidental",
+  "Region_4" = "Golfo sur occidental",
+  "Region_5" = "Alto Golfo oriental",
+  "Region_6" = "Islas del Medio (este)",
+  "Region_7" = "Costa sur de Sonora",
+  "Region_8" = "Costa de Sinaloa",
+  "Region_9" = "Entrada del Golfo"
+)
+
+rgn_colors <- c(
+  "Region_1" = "#C03729",
+  "Region_2" = "#E68C7C",
+  "Region_3" = "#FC8F24",
+  "Region_4" = "#dcaa38",
+  "Region_5" = "#cbd2a0",
+  "Region_6" = "#98a25a",
+  "Region_7" = "#747428",
+  "Region_8" = "#627391",
+  "Region_9" = "#8d61a9"
+)
+
+region_levels <- paste0("Region_", 1:9)
+
+# plotly colors by the legend name ("western upper gulf"), so remap colors from Region_1 keys to those names
+rgn_label_colors <- setNames(
+  unname(rgn_colors[region_levels]),
+  unname(rgn_labels[region_levels])
+)
+
+# turn whatever region column we got into Region_1 ... Region_9, then add a legend name
+add_rgn_labels <- function(df) {
+  df %>%
+    mutate(
+      rgn_id = as.character(rgn_id),
+      # some files write "Region 1" instead of "Region_1"
+      rgn_id = stringr::str_replace_all(rgn_id, " ", "_"),
+      # some files just use 1, 2, 3 instead of Region_1, Region_2, Region_3
+      rgn_id = ifelse(
+        stringr::str_detect(rgn_id, "^[0-9]+$"),
+        paste0("Region_", rgn_id),
+        rgn_id
+      ),
+      # factor so plots always show regions in 1-9 order
+      rgn_id = factor(rgn_id, levels = region_levels),
+      # as.character() looks up by name ("Region_1"), not by the factor's number (1)
+      rgn_label = factor(
+        rgn_labels[as.character(rgn_id)],
+        levels = unname(rgn_labels[region_levels])
+      )
+    )
+}
+
+# make ferrer's overall csvs (and similar files) match the columns goal_plotly expects
+prep_cs <- function(df) {
+
+  # ferrer files: OHI_region_no; our plots: rgn_id
+  if ("OHI_region_no" %in% names(df) && !"rgn_id" %in% names(df)) {
+    df <- df %>% dplyr::rename(rgn_id = OHI_region_no)
+  }
+
+  # ferrer files: FP_score, AO_score, etc.; our plots: current_status
+  acronym_score <- names(df)[stringr::str_detect(names(df), "_[Ss]core$")]
+  acronym_score <- setdiff(acronym_score, "current_status")
+
+  if (!"current_status" %in% names(df) && length(acronym_score) >= 1) {
+    df <- df %>% dplyr::rename(current_status = dplyr::all_of(acronym_score[[1]]))
+  }
+
+  # some files just call the score column "score"
+  if (!"current_status" %in% names(df) && "score" %in% names(df)) {
+    df <- df %>% mutate(current_status = score)
+  }
+
+  df %>%
+    mutate(
+      rgn_id = as.character(rgn_id),
+      # ferrer files: region_1; our plots: Region_1
+      rgn_id = stringr::str_replace(rgn_id, "^region_", "Region_"),
+      year = as.numeric(year),
+      current_status = as.numeric(current_status)
+    ) %>%
+    add_rgn_labels()
+}
+
+goal_plotly <- function(
+    df,
+    title,
+    y = "current_status",
+    y_title = "Puntuación (sobre 100)",
+    y_range = c(0, 105),
+    add_goal_line = TRUE,
+    goal_line_name = "Meta (100/100)"
+) {
+  # score plots: round to the nearest whole number so hover does not show 5 decimals
+  if (identical(y, "current_status")) {
+    df <- df %>% mutate(current_status = round(as.numeric(current_status)))
+  }
+
+  df <- df %>%
+    arrange(rgn_label, year)
+
+  year_breaks <- sort(unique(df$year[!is.na(df$year)]))
+
+  # drop missing y values so plotly does not plot a gap marker; connectgaps still draws the line
+  df_drawn <- df %>% filter(!is.na(.data[[y]]))
+
+  yaxis_list <- list(title = y_title)
+  if (!is.null(y_range)) {
+    yaxis_list$range <- y_range
+  }
+  if (identical(y, "current_status")) {
+    yaxis_list$hoverformat <- ".0f"
+    yaxis_list$tickformat <- ".0f"
+  }
+
+  p <- plot_ly(
+    df_drawn,
+    x = ~year,
+    y = as.formula(paste0("~`", y, "`")),
+    color = ~rgn_label,
+    colors = rgn_label_colors,
+    type = "scatter",
+    mode = "lines+markers",
+    # if a year is missing (e.g. pathogens 2020), still connect the years on either side
+    connectgaps = TRUE
+  ) %>%
+    layout(
+      title = title,
+      xaxis = list(
+        title = "Año",
+        # force integer year ticks (2019, 2020, ...) instead of 2019.5
+        tickmode = "array",
+        tickvals = year_breaks,
+        ticktext = as.character(as.integer(year_breaks)),
+        range = range(year_breaks)
+      ),
+      yaxis = yaxis_list,
+      legend = list(title = list(text = "Región"))
+    )
+
+  if (isTRUE(add_goal_line)) {
+    p <- p %>%
+      add_lines(
+        x = range(year_breaks),
+        y = c(100, 100),
+        line = list(color = "black", width = 2, dash = "dash"),
+        name = goal_line_name,
+        # inherit = false so this reference line is not treated as another region
+        inherit = FALSE
+      )
+  }
+
+  p
+}
+```
+
+# ![](figs/tourism-and-recreation.svg){width=8% height=8%} Turismo y Recreación {#tr}
+
+La puntuación general de TR es el promedio de Cantidad, Calidad y Sostenibilidad. Una puntuación de 100 refleja que los tres componentes llegaron a sus puntos de referencia. Abra las puntuaciones de componentes abajo para ver qué está subiendo o bajando a una región.
+
+Los cruceros se muestran por separado y **no están incluidos** en esta puntuación general.
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+tr_overall <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/TR_Scores_1.0_df_091126.csv"),
+  show_col_types = FALSE
+) %>%
+  prep_cs()
+goal_plotly(tr_overall, "Turismo y Recreación: Estatus actual")
+```
+
+*Figura 1. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
+
+::: {.callout-tip collapse="true"}
+# 📊 Puntuaciones de componentes
+
+Este es el componente de Cantidad, que evalúa si el turismo internacional y nacional está alcanzando las metas de Plan México para 2030.
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+# same family of quantity files as ewg31_tr.qmd; this is the later 2019-2026 model
+tr_quantity <- read_csv(
+  "/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_quantity/tr_quantity_current_status_2019_2026_OGmodel.csv",
+  show_col_types = FALSE
+) %>%
+  mutate(
+    year = as.numeric(year),
+    current_status = as.numeric(ifelse(score > 100, 100, score))
+  ) %>%
+  filter(year >= 2019, year <= 2025) %>%
+  add_rgn_labels()
+goal_plotly(tr_quantity, "Turismo y Recreación: Cantidad")
+```
+
+*Figura 2. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; julio de 2026).*
+
+Este es el componente de Calidad, que evalúa si las visitas son seguras y están bien apoyadas por servicios de alimentos, cultura y recreación, en relación con las mejores condiciones observadas en el Golfo.
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+# crime file is the same as ewg31_tr.qmd; activities file is the later august update
+tr_quality_crime <- read_csv(
+  "/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_quality/tr_qual_crime_score_030626.csv",
+  show_col_types = FALSE
+) %>%
+  dplyr::select(rgn_id, year = ano, score = current_status)
+
+tr_quality_activities <- read_csv(
+  "/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_quality/final_activity_avg_score_082826.csv",
+  show_col_types = FALSE
+) %>%
+  dplyr::select(rgn_id, year, score = final_score)
+
+tr_quality <- bind_rows(
+  tr_quality_activities %>% mutate(quality_type = "activities"),
+  tr_quality_crime %>% mutate(quality_type = "crime")
+) %>%
+  filter(year %in% 2019:2025) %>%
+  pivot_wider(names_from = quality_type, values_from = score) %>%
+  mutate(
+    year = as.numeric(year),
+    current_status = rowMeans(cbind(activities, crime), na.rm = TRUE)
+  ) %>%
+  add_rgn_labels()
+goal_plotly(tr_quality, "Turismo y Recreación: Calidad")
+```
+
+*Figura 3. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; julio de 2026).*
+
+Este es el componente de Sostenibilidad, que evalúa si el turismo está apoyado por hoteles y playas certificados, empleos de calidad e inversión pública en o por encima de los niveles históricos recientes. Las puntuaciones de septiembre incluyen la lista actualizada de certificaciones hoteleras (Distintivo S, Green Key, Green Globe, Earthcheck, Preferred by Nature y Calidad Ambiental Turística / PNAA).
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+# later sustainability file (ewg31_tr.qmd used the july version; this includes the new certifications)
+tr_sust <- read_csv(
+  "/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_sustainability/cs_sust_all_indicators_083126.csv",
+  show_col_types = FALSE
+) %>%
+  mutate(
+    year = as.numeric(year),
+    current_status = as.numeric(final_score)
+  ) %>%
+  filter(year >= 2019, year <= 2025) %>%
+  add_rgn_labels()
+goal_plotly(tr_sust, "Turismo y Recreación: Sostenibilidad")
+```
+
+*Figura 4. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
+:::
+
+::: {.callout-caution collapse="true"}
+# 🚢 Cruceros (no puntuados)
+
+La actividad de cruceros **debería estar en Turismo y Recreación**, pero **no se puntúa** en la puntuación general de TR de septiembre: se sigue destacando, pero se deja como **NA**. Esto es porque la dirección del punto de referencia no es obvia. México no ha dicho si el turismo de cruceros debería aumentar o disminuir, y aunque las líneas de crucero apoyan la economía turística local, muchas personas locales quieren que disminuya. Una escala portuaria de 7 a 10 horas también es un lapso distinto al de una visita turística típica con pernocta, y las personas pasajeras no se separan entre visitantes nacionales e internacionales, así que no encaja bien en el componente de Cantidad.
+
+Dicho eso, como las personas expertas lo señalaron como importante de explorar, investigamos usar el promedio de 2016-2019 como máximo. Por lo tanto, si en un año y región dados hubiera más pasajeros que esa media, la puntuación de estatus actual bajaría. Sin embargo, encontramos y leímos opiniones mixtas sobre los cruceros, y quedó claro que debería haber un grupo de trabajo futuro para definir cómo se ve la sostenibilidad de los cruceros del Golfo antes de incorporar esto al Índice.
+
+Aun así, conviene enfatizarlo como un posible problema o área de necesidad, sobre todo en el Golfo sur occidental, que tiene una tasa alta de aumento de pasajeros por puerto después de COVID. Además, el turismo de cruceros intensificado también se ha vinculado con efectos biológicos en el hábitat del tiburón ballena ([Mongabay, mayo de 2025](https://news.mongabay.com/2025/05/cruise-ships-and-intensified-tourism-in-mexico-threaten-whale-shark-habitat/)).
+
+Las gráficas de abajo muestran los datos para discusión. **No** están en la puntuación general de estatus actual de TR.
+
+Pasajeros de crucero por año, por región OHI (estadísticas portuarias de SECTUR, solo puertos del GoC):
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+tr_cruise_detail <- read_csv(
+  "/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_sustainability/cruise_pressure_scores_detail_2016_2025.csv",
+  show_col_types = FALSE
+) %>%
+  mutate(
+    year = as.numeric(year),
+    passengers = as.numeric(passengers)
+  ) %>%
+  add_rgn_labels()
+goal_plotly(
+  tr_cruise_detail,
+  "Turismo y Recreación: Pasajeros de crucero",
+  y = "passengers",
+  y_title = "Pasajeros de crucero por año",
+  y_range = NULL,
+  add_goal_line = FALSE
+)
+```
+
+*Figura 5. Gráfica interactiva de pasajeros de crucero por año, por región OHI. Estos datos se muestran para discusión y no forman parte de la puntuación de Turismo y Recreación de septiembre de 2026.*
+
+Pasajeros de crucero por residente costero (la misma población de municipios costeros que en Calidad de TR):
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+tr_cruise_detail <- read_csv(
+  "/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_sustainability/cruise_pressure_scores_detail_2016_2025.csv",
+  show_col_types = FALSE
+) %>%
+  mutate(
+    year = as.numeric(year),
+    passengers = as.numeric(passengers),
+    rgn_id = as.character(rgn_id)
+  )
+
+tr_cruise_pop_path <- "/home/shares/ohi/OHI_GOC/spatial/population_municipal/interpolated_population_per_rgn_coastalmunicipios_2000_2025.csv"
+if (file.exists(tr_cruise_pop_path)) {
+  tr_cruise_pop <- read_csv(tr_cruise_pop_path, show_col_types = FALSE) %>%
+    mutate(
+      rgn_id = as.character(rgn_id),
+      rgn_id = ifelse(stringr::str_detect(rgn_id, "^[0-9]+$"), paste0("Region_", rgn_id), rgn_id),
+      year = as.numeric(year_interpolated),
+      coastal_pop = as.numeric(population_interpolated)
+    ) %>%
+    dplyr::select(rgn_id, year, coastal_pop)
+
+  tr_cruise_percap <- tr_cruise_detail %>%
+    left_join(tr_cruise_pop, by = c("rgn_id", "year")) %>%
+    mutate(passengers_per_resident = passengers / coastal_pop) %>%
+    add_rgn_labels()
+
+  goal_plotly(
+    tr_cruise_percap,
+    "Turismo y Recreación: Pasajeros de crucero por residente costero",
+    y = "passengers_per_resident",
+    y_title = "Pasajeros por residente costero",
+    y_range = NULL,
+    add_goal_line = FALSE
+  )
+} else {
+  knitr::asis_output("*No se pudo graficar pasajeros por residente costero porque no se encontró el archivo interpolado de población costera.*")
+}
+```
+
+*Figura 6. Gráfica interactiva de pasajeros de crucero por residente costero, por región OHI. Estos datos se muestran para discusión y no forman parte de la puntuación de Turismo y Recreación de septiembre de 2026.*
+
+Puntuación exploratoria: pasajeros por residente costero al año, comparados con la media de 2016-2019 (donde más pasajeros que esa línea base = puntuación más baja). Una puntuación de 100 significa que la densidad de pasajeros está en o por debajo de la media de 2016-2019.
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+tr_cruise_score <- read_csv(
+  "/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_sustainability/tr_sust_cruise_pressure_current_status_all_regions_2019_2025.csv",
+  show_col_types = FALSE
+) %>%
+  mutate(
+    year = as.numeric(year),
+    current_status = as.numeric(score)
+  ) %>%
+  add_rgn_labels()
+goal_plotly(
+  tr_cruise_score,
+  "Turismo y Recreación: Densidad de pasajeros de crucero",
+  y_title = "Puntuación (0 a 100; más alta = menos presión)",
+  goal_line_name = "En o por debajo de la media 2016-2019 (100)"
+)
+```
+
+*Figura 7. Gráfica interactiva de una puntuación exploratoria de presión de cruceros (media invertida de 2016 a 2019). Estas puntuaciones no forman parte de la puntuación general de Turismo y Recreación. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
+:::
+
+::: {.callout-note collapse="true"}
+# 📚 Fuentes de datos y métodos
+
+Esta meta usa varias fuentes de datos en Cantidad, Calidad y Sostenibilidad:
+
+- **Cantidad:** reportes de monitoreo hotelero de SECTUR DataTur para llegadas nacionales e internacionales. Donde falta un municipio en DataTur, llenamos el hueco con modelos de personas empleadas en hoteles de INEGI DENUE.
+- **Calidad:** estadísticas municipales de delito de SESNSP, población municipal de INEGI (delitos por persona) y negocios de alimentos, cultura y recreación de INEGI DENUE a menos de 50 km de la costa.
+- **Sostenibilidad:** certificaciones hoteleras (Distintivo S, Green Key, Green Globe, Earthcheck, Preferred by Nature y Calidad Ambiental Turística / PNAA: [Certificados Expedidos 2025](https://www.gob.mx/cms/uploads/attachment/file/1056480/Certificados_Expedidos_2025.pdf)); playas Bandera Azul de FEE con lineamientos de costa y playa de INEGI; inversión pública de CONANP más devoluciones de derechos de SHCP / NOSSA; y Censos Económicos de INEGI para la calidad del empleo turístico.
+- **Cruceros (se muestran, no se puntúan):** estadísticas portuarias de cruceros de SECTUR (pasajeros y arribos), unidas a las regiones OHI, con población municipal costera de INEGI para las gráficas por persona.
+
+Los métodos, los puntos de referencia y el detalle de los indicadores están en el resumen ejecutivo:
+
+- **Español:** [TR Resumen ejecutivo](https://docs.google.com/document/d/1RhY1pTaZVDXHtm4OTRL5f6lf5fKj8fOLhRi1rCGCN7k/edit?tab=t.0)
+- **Inglés:** [TR Executive Summary](https://docs.google.com/document/d/1y8W_z3GJL1SY4x7m_QrXP7D1vvfl53ghAgC0hB6VbD0/edit?tab=t.0)
+:::
+
+::: {.callout-important collapse="true"}
+# 🔗 Recursos de la meta
+
+- **Página del EWG 3.1:** [Turismo y Recreación](ewg31_tr_spanish.html) · **notas de la reunión:** [16 de julio](https://docs.google.com/document/d/1wUw9c7JtcpR4tIUv2m4Dog6MhVmzD53d4jmzi078G4Q/edit?tab=t.x02j1n7qhxzr)
+- **Página Goalkeeper:** [Turismo y Recreación](tr_spanish.html)
+- **Español:** [TR Resumen ejecutivo](https://docs.google.com/document/d/1RhY1pTaZVDXHtm4OTRL5f6lf5fKj8fOLhRi1rCGCN7k/edit?tab=t.0)
+- **Inglés:** [TR Executive Summary](https://docs.google.com/document/d/1y8W_z3GJL1SY4x7m_QrXP7D1vvfl53ghAgC0hB6VbD0/edit?tab=t.0)
+:::
+
+::: {.callout-warning collapse="true"}
+# ⏭️ Próximos pasos
+
+**Ajustes próximos (del EWG 3.1)**
+
+- **Hecho:** incorporar Earthcheck, Preferred by Nature y Calidad Ambiental Turística / PNAA ([Certificados Expedidos 2025](https://www.gob.mx/cms/uploads/attachment/file/1056480/Certificados_Expedidos_2025.pdf)) al componente de certificación hotelera. Las puntuaciones de septiembre usan esta lista actualizada.
+- **En curso:** Explorar integrar un indicador dentro del componente “Inversión en el potencial de manejo turístico” de la Sostenibilidad de TR que refleje el número de personas empleadas por hectárea de áreas protegidas del GOC.
+  -  Lo integraremos de una de dos formas en el futuro:
+    1. **SIMEC i-efectividad C2 y C3.** Incluir las puntuaciones de *i-efectividad* de SIMEC (Sistema de Información, Monitoreo y Evaluación para la Conservación) de CONANP para **C2 Administrativo y financiero** y **C3 Usos y beneficios** en este subcomponente, junto con los presupuestos federales de CONANP (V003 y V005) y el *cobro de derechos* devuelto. Los presupuestos de CONANP seguirían mostrando el cambio a lo largo de los años. SIMEC mostraría diferencias entre regiones (los reportes disponibles son de 2021 a 2022, así que esas puntuaciones se mantendrían constantes hasta que SIMEC se actualice).
+       - **C2 Administrativo y financiero** cubre presupuesto (suficiencia, seguridad del financiamiento y manejo presupuestal), personal (suficiencia de personal, capacitación y seguridad del personal), equipamiento, mantenimiento del equipo, infraestructura de manejo y cobro de derechos.
+       - **C3 Usos y beneficios** cubre beneficios económicos, producción sustentable, uso / aprovechamiento sustentable (ANP terrestres y marino-costeras) e infraestructura para visitantes.
+    2. **Personas empleadas en áreas protegidas.** Usar el número de personas empleadas en cada área protegida a lo largo del tiempo, comparado con la densidad ideal global de personal de Appleton et al. (2022), *Protected area personnel and ranger numbers are insufficient to deliver global expectations* ([Nature Sustainability](https://doi.org/10.1038/s41893-022-00970-0); vea la Fig. 5, densidades globales de personal en áreas protegidas terrestres).
+        - Estamos esperando respuesta de CONANP a través de una solicitud a la [Plataforma Nacional de Transparencia](https://www.plataformadetransparencia.org.mx/) para obtener los datos anuales de personal específicos de cada área protegida. CONANP debe responder a más tardar el 23 de septiembre de 2026.
+- **Hecho:** Si el tiempo lo permite, investigar agregar datos de cruceros (pasajeros por año y arribos a puerto) al componente de Cantidad de TR. La dificultad principal es el punto de referencia, porque con los datos no se puede saber si las personas pasajeras son internacionales o nacionales, y una escala portuaria de 7 a 10 horas no equivale a la estancia típica de una persona turista.
+  - Por ahora, decidimos dejar los datos de cruceros por separado (vea el recuadro de arriba). En el futuro, un grupo de trabajo debería definir métricas de sostenibilidad de cruceros (tamaño de embarcación, vigilancia, puertos por región). Hasta entonces, dejaremos los cruceros como NA en la puntuación de TR.
+:::
+
+# ![](figs/food-provision.svg){width=8% height=8%} Provisión de Alimentos {#fp}
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+fp_cs <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/FP_Scores_1.0_df_Sep112026.csv"),
+  show_col_types = FALSE
+) %>%
+  prep_cs()
+goal_plotly(fp_cs, "Provisión de Alimentos: Estatus actual")
+```
+
+*Figura 8. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
+
+::: {.callout-tip collapse="true"}
+# 📊 Puntuaciones de componentes
+
+Esta meta tiene dos componentes. Agregaremos una gráfica de cada uno aquí en cuanto esos archivos estén listos.
+
+- **Captura silvestre (FIS):** desembarques de CONAPESCA (versión limpia de Mex-Fisheries), con estatus de stock de RAM, luego Carta Nacional Pesquera, luego CMSY.
+- **Maricultura (MAR):** producción acuícola de CONAPESCA, con Monterey Bay Aquarium Seafood Watch como coeficiente de sostenibilidad.
+:::
+
+::: {.callout-note collapse="true"}
+# 📚 Fuentes de datos y métodos
+
+Provisión de Alimentos mide los mariscos producidos de forma sostenible por pesquerías de captura y por maricultura.
+
+- **Captura silvestre (FIS):** desembarques de CONAPESCA, usando la versión limpia de Mex-Fisheries de la University of Miami. El estatus de stock viene primero de la base de evaluaciones de stock RAM, luego de la Carta Nacional Pesquera de México y luego de CMSY cuando no hay una mejor opción. También usamos captura por unidad de esfuerzo de personas permisionarias de CONAPESCA.
+- **Maricultura (MAR):** producción acuícola de CONAPESCA (camarón, bivalvos y peces), con puntuaciones de Monterey Bay Aquarium Seafood Watch como coeficiente de sostenibilidad. La meta de producción sigue el Programa Nacional de Pesca y Acuacultura (20% de crecimiento en cinco años).
+- Los registros pesqueros se asignan a regiones OHI usando claves geoespaciales de Cavieses-Nuñez, Morzaria-Luna y colegas (2025).
+
+Los métodos, los puntos de referencia y el detalle de los indicadores están en el resumen ejecutivo:
+
+- **Español:** [FP Resumen Ejecutivo](https://docs.google.com/document/d/1uvmC99z4ZNi7pv5NdgYGATG8WRFpqUipA0c1H4NqPiw/edit?tab=t.0)
+- **Inglés:** [FP Executive Summary](https://docs.google.com/document/d/1sYug__6lxXjE_Vg3zW0etdAqZKKU3eJZtiX4bzd7UZA/edit?tab=t.0)
+:::
+
+::: {.callout-important collapse="true"}
+# 🔗 Recursos de la meta
+
+- **Página del EWG 3.1:** [Provisión de Alimentos](ewg31_fp_spanish.html) · **notas de la reunión:** [16 de julio](https://docs.google.com/document/d/1wUw9c7JtcpR4tIUv2m4Dog6MhVmzD53d4jmzi078G4Q/edit?tab=t.x02j1n7qhxzr)
+- **Página Goalkeeper:** [Provisión de Alimentos](fp_spanish.html)
+- **Español:** [FP Resumen Ejecutivo](https://docs.google.com/document/d/1uvmC99z4ZNi7pv5NdgYGATG8WRFpqUipA0c1H4NqPiw/edit?tab=t.0)
+- **Inglés:** [FP Executive Summary](https://docs.google.com/document/d/1sYug__6lxXjE_Vg3zW0etdAqZKKU3eJZtiX4bzd7UZA/edit?tab=t.0)
+:::
+
+::: {.callout-warning collapse="true"}
+# ⏭️ Próximos pasos
+
+**Ajustes próximos (del EWG 3.1)**
+
+- Quitar las subpuntuaciones de CPUE, que, en la mayoría de los casos, inflan las puntuaciones de FIS y de FP.
+- Modificar las subpuntuaciones de FIS con un escalar de sostenibilidad según se necesite y si es posible.
+- Dejar claro a quienes revisan, leen y usan el índice que estos números comprimen, y por lo tanto pierden, contexto regional importante a favor de indicadores que se pueden comparar entre regiones; las puntuaciones pueden ser más altas de lo esperado por la falta de contexto regional, así como por el subreporte intencional y no intencional de datos pesqueros a nivel estatal y federal; y estos métodos no permiten una evaluación holística de la sostenibilidad de los mariscos a nivel de la comunidad ecológica. Las métricas de composición de la comunidad se pueden, y probablemente se deban, integrar en versiones futuras del índice.
+
+:::
+
+# ![](figs/livelihoods-and-economies.svg){width=8% height=8%} Medios de Vida y Economías {#le}
+
+Las puntuaciones de septiembre incluyen una actualización de **cantidad y calidad de LIV**: ambas se ajustan por informalidad con un multiplicador estatal y sectorial de ENOE. Economías (ECO) sigue siendo solo ingresos formales relacionados con el mar. Abra las puntuaciones de componentes abajo para ver empleos, calidad del empleo e ingresos por separado.
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+le_cs <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/LE_Scores_1.0_df_091126.csv"),
+  show_col_types = FALSE
+) %>%
+  prep_cs()
+goal_plotly(le_cs, "Medios de Vida y Economías: Estatus actual")
+```
+
+*Figura 9. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
+
+::: {.callout-tip collapse="true"}
+# 📊 Puntuaciones de componentes
+
+Estas gráficas de LIV usan los archivos ajustados por informalidad hechos después del EWG 3.1. ECO no ha cambiado desde el [EWG 3.1](ewg31_le_spanish.html). La Región 2 no se puntúa por falta de datos de empleos relacionados con el mar del lado del Golfo.
+
+Este es el componente de cantidad de Medios de Vida (número de empleos relacionados con el mar por residente costero), ahora incluyendo trabajo informal. Una puntuación de 100 significa que los empleos por residente están en o por encima del valor de 2018 de esa región.
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+le_jobs_raw <- read_csv(
+  "/home/shares/ohi/OHI_GOC/goal_prep/le/liv/liv_current_status_2019ref_informality.csv",
+  show_col_types = FALSE
+)
+
+if ("year" %in% names(le_jobs_raw)) {
+  le_jobs <- le_jobs_raw %>% mutate(year = as.numeric(year))
+} else if ("ce_ano_censal" %in% names(le_jobs_raw)) {
+  le_jobs <- le_jobs_raw %>% mutate(year = as.numeric(ce_ano_censal))
+} else {
+  le_jobs <- le_jobs_raw %>% mutate(year = as.numeric(ano_censal))
+}
+
+if ("current_status" %in% names(le_jobs)) {
+  le_jobs <- le_jobs %>% mutate(current_status = as.numeric(current_status))
+} else if ("score" %in% names(le_jobs)) {
+  le_jobs <- le_jobs %>% mutate(current_status = as.numeric(score))
+} else if ("liv_current_status" %in% names(le_jobs)) {
+  le_jobs <- le_jobs %>% mutate(current_status = as.numeric(liv_current_status))
+} else if ("final_score" %in% names(le_jobs)) {
+  le_jobs <- le_jobs %>% mutate(current_status = as.numeric(final_score))
+} else {
+  stop(
+    "Could not find a score column in liv_current_status_2019ref_informality.csv. ",
+    "Columns are: ", paste(names(le_jobs_raw), collapse = ", ")
+  )
+}
+
+le_jobs <- le_jobs %>%
+  mutate(
+    rgn_id = as.character(rgn_id),
+    current_status = ifelse(rgn_id %in% c("Region_2", "2"), NA_real_, current_status)
+  ) %>%
+  add_rgn_labels()
+goal_plotly(le_jobs, "Medios de Vida y Economías: Número de empleos")
+```
+
+*Figura 10. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
+
+Este es el componente de calidad de Medios de Vida (seguridad social del empleador y otras prestaciones por empleo), también ajustado por trabajo informal.
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+# ewg31_le.qmd reads ce_qual_current_status.csv and uses ano_censal + current_status;
+# this is the later informality-adjusted version of that file
+le_qual_raw <- read_csv(
+  "/home/shares/ohi/OHI_GOC/goal_prep/le/liv/ce_qual_current_status_informality.csv",
+  show_col_types = FALSE
+)
+
+if ("year" %in% names(le_qual_raw)) {
+  le_qual <- le_qual_raw %>% mutate(year = as.numeric(year))
+} else if ("ano_censal" %in% names(le_qual_raw)) {
+  le_qual <- le_qual_raw %>% mutate(year = as.numeric(ano_censal))
+} else {
+  le_qual <- le_qual_raw %>% mutate(year = as.numeric(ce_ano_censal))
+}
+
+if ("current_status" %in% names(le_qual)) {
+  le_qual <- le_qual %>% mutate(current_status = as.numeric(current_status))
+} else if ("score" %in% names(le_qual)) {
+  le_qual <- le_qual %>% mutate(current_status = as.numeric(score))
+} else if ("qual_current_status" %in% names(le_qual)) {
+  le_qual <- le_qual %>% mutate(current_status = as.numeric(qual_current_status))
+} else if ("final_score" %in% names(le_qual)) {
+  le_qual <- le_qual %>% mutate(current_status = as.numeric(final_score))
+} else {
+  stop(
+    "Could not find a score column in ce_qual_current_status_informality.csv. ",
+    "Columns are: ", paste(names(le_qual_raw), collapse = ", ")
+  )
+}
+
+le_qual <- le_qual %>%
+  mutate(
+    rgn_id = as.character(rgn_id),
+    current_status = ifelse(rgn_id %in% c("Region_2", "2"), NA_real_, current_status)
+  ) %>%
+  add_rgn_labels()
+goal_plotly(le_qual, "Medios de Vida y Economías: Calidad de los empleos")
+```
+
+*Figura 11. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
+
+Este es el componente de Economías (ingresos formales relacionados con el mar). Aquí no se agrega el trabajo informal, porque no quisimos sobrestimar los ingresos.
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+# same eco file and columns as ewg31_le.qmd (ano_censal + current_status)
+le_eco <- read_csv(
+  "/home/shares/ohi/OHI_GOC/goal_prep/le/eco/ce_rev_current_status_2019ref.csv",
+  show_col_types = FALSE
+) %>%
+  mutate(
+    year = as.numeric(ano_censal),
+    current_status = as.numeric(current_status),
+    rgn_id = as.character(rgn_id),
+    current_status = ifelse(rgn_id %in% c("Region_2", "2"), NA_real_, current_status)
+  ) %>%
+  add_rgn_labels()
+goal_plotly(le_eco, "Medios de Vida y Economías: Ingresos relacionados con el mar")
+```
+
+*Figura 12. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
+:::
+
+::: {.callout-note collapse="true"}
+# 📚 Fuentes de datos y métodos
+
+Medios de Vida y Economías mide empleos e ingresos de industrias relacionadas con el mar. Medios de Vida (LIV) captura la cantidad y la calidad de los empleos relacionados con el mar. Economías (ECO) captura los ingresos de sectores relacionados con el mar.
+
+- **Empleos e ingresos:** Censos Económicos de INEGI (2003, 2008, 2013, 2018, 2023) de negocios relacionados con el mar. Se usa la población de INEGI para hablar de empleos por residente costero, y para ajustar regiones que abarcan tanto el Golfo como la costa del Pacífico. La Región 2 no se reporta porque los datos censales municipales no bastan para aislar la actividad del lado del Golfo.
+- **Trabajo informal (agregado después del EWG 3.1):** ENOE de INEGI, usado para construir un multiplicador anual estatal y sectorial para que la cantidad y la calidad de LIV incluyan a personas trabajadoras informales relacionadas con el mar. El informe de empleo informal de la CEPAL informó la metodología de nuestro multiplicador; sin embargo, los valores del informe en sí eran demasiado gruesos para los sectores marinos, así que no lo usamos solo. **ECO incluye únicamente los ingresos formales del censo.**
+
+Los métodos, los puntos de referencia y el detalle de los indicadores están en el resumen ejecutivo:
+
+- **Español:** [LE Resumen ejecutivo](https://docs.google.com/document/d/1bCfCDMTlREiOwrVbwFCV9vXM56OKT5OTxfHDjMfdFdo/edit?tab=t.0)
+- **Inglés:** [LE Executive Summary](https://docs.google.com/document/d/1EQd0xKKkfeEm_wsYa8bZMxTqH7OWtk3-BQ-UHAg1LXA/edit?tab=t.0#heading=h.6qdq66n7hr47)
+:::
+
+::: {.callout-important collapse="true"}
+# 🔗 Recursos de la meta
+
+- **Página del EWG 3.1:** [Medios de Vida y Economías](ewg31_le_spanish.html) · **notas de la reunión:** [16 de julio](https://docs.google.com/document/d/1wUw9c7JtcpR4tIUv2m4Dog6MhVmzD53d4jmzi078G4Q/edit?tab=t.x02j1n7qhxzr)
+- **Página Goalkeeper:** [Medios de vida y economías](le_spanish.html)
+- **Español:** [LE Resumen ejecutivo](https://docs.google.com/document/d/1bCfCDMTlREiOwrVbwFCV9vXM56OKT5OTxfHDjMfdFdo/edit?tab=t.0)
+- **Inglés:** [LE Executive Summary](https://docs.google.com/document/d/1EQd0xKKkfeEm_wsYa8bZMxTqH7OWtk3-BQ-UHAg1LXA/edit?tab=t.0#heading=h.6qdq66n7hr47)
+- **Notas del multiplicador de empleos informales:** [OHI_GOC_issues #125](https://github.com/OHI-GOC/OHI_GOC_issues/issues/125#issue-5262710620)
+:::
+
+::: {.callout-warning collapse="true"}
+# ⏭️ Próximos pasos
+
+**Ajustes próximos (del EWG 3.1)**
+
+- **Hecho (en las puntuaciones de septiembre):** incluir a personas trabajadoras informales relacionadas con el mar en **la cantidad y la calidad de LIV**. Aplicamos un multiplicador anual estatal y sectorial de ENOE (`jobs_multiplier = 1 / (1 − pct_informal)`) a los empleos costeros de los Censos Económicos. ECO sigue siendo solo ingresos formales del CE.
+- Con fines exploratorios, agregar los totales de pesca y maricultura de CONAPESCA para contrastarlos con las estimaciones de ingresos de los Censos Económicos.
+- Explicar con claridad, en el informe / artículo, la metodología del punto de referencia dentro de cada región, para que quienes leen no malinterpreten puntuaciones de regiones más pequeñas que van bien (relativas a sí mismas) frente a regiones más grandes con ingresos absolutos altos.
+:::
+
+# ![](figs/sense-of-place.svg){width=8% height=8%} Sentido de Pertenencia {#sp}
+
+Sentido de Pertenencia era, originalmente, el promedio de Participación de la Comunidad Costera (CCE), Lugares Especiales Duraderos (LSP) y Especies Icónicas (ICO). Después del EWG 3.2 estamos reelaborando CCE, así que las puntuaciones de septiembre de 2026 de abajo son el promedio de **ICO y LSP solamente**. Abra las puntuaciones de componentes para ver ICO, LSP, las puntuaciones de CCE previas al EWG y las puntuaciones generales previas al EWG (CCE + LSP + ICO).
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+sp_cs <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/SP_Scores_1.0_df_091126.csv"),
+  show_col_types = FALSE
+) %>%
+  prep_cs()
+goal_plotly(sp_cs, "Sentido de Pertenencia: Estatus actual")
+```
+
+*Figura 13. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
+
+::: {.callout-tip collapse="true"}
+# 📊 Puntuaciones de componentes
+
+Estas puntuaciones de ICO y LSP son las mismas que se usan en la [página del EWG 3.2](ewg32_sp_spanish.html). Son los dos componentes promediados en la puntuación general de septiembre de 2026 de arriba.
+
+Este es el componente de Especies Icónicas (ICO), que evalúa el estatus medio de riesgo de conservación de especies culturalmente icónicas en cada región (NOM-059, UICN y CITES). Una puntuación de 100 significa que esas especies no están listadas como en riesgo.
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+# same ico file as ewg32_sp.qmd
+sp_ico <- read_csv(
+  "/home/shares/ohi/OHI_GOC/goal_prep/sp/ico/output/ico_mean_risk_status_per_region_041326.csv",
+  show_col_types = FALSE
+) %>%
+  mutate(
+    year = as.numeric(year),
+    current_status = as.numeric(current_status)
+  ) %>%
+  filter(year >= 2019, year <= 2025) %>%
+  add_rgn_labels()
+goal_plotly(sp_ico, "Sentido de Pertenencia: Especies icónicas")
+```
+
+*Figura 14. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; agosto de 2026).*
+
+Este es el componente de Lugares Especiales Duraderos (LSP), que evalúa la condición de protección de lugares especiales identificados por personas expertas (áreas protegidas, sitios de buceo, sitios de pesca, arqueología, hábitats y otros lugares). LSP es una **instantánea de 2025** (no una serie de tiempo). Los colores se ven más cálidos en puntuaciones más bajas y más fríos en puntuaciones más altas, en una escala de 0 a 100. 
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| out.width: "90%"
+#| fig-align: center
+
+# copy the mazu png into chapters/figs so the website html can actually serve it
+# (include_graphics on /home/shares/... leaves an absolute path that github pages cannot load)
+lsp_src_candidates <- c(
+  "/home/shares/ohi/OHI_GOC/goal_prep/sp/lsp/v2025/viz/lsp_overall_2025.png",
+  here::here("goal_prep/sp/lsp/v2025/viz/lsp_overall_2025.png"),
+  here::here("../goal_prep/sp/lsp/v2025/viz/lsp_overall_2025.png"),
+  here::here("images/sp_lsp_figs/lsp_overall_2025.png"),
+  here::here("../images/sp_lsp_figs/lsp_overall_2025.png"),
+  here::here("chapters/figs/lsp_overall_2025.png"),
+  "figs/lsp_overall_2025.png"
+)
+lsp_src <- lsp_src_candidates[file.exists(lsp_src_candidates)][1]
+
+lsp_dest_dir <- if (dir.exists("figs")) {
+  "figs"
+} else {
+  here::here("chapters/figs")
+}
+dir.create(lsp_dest_dir, recursive = TRUE, showWarnings = FALSE)
+lsp_local <- file.path(lsp_dest_dir, "lsp_overall_2025.png")
+
+if (!is.na(lsp_src) && !identical(normalizePath(lsp_src, mustWork = FALSE), normalizePath(lsp_local, mustWork = FALSE))) {
+  file.copy(lsp_src, lsp_local, overwrite = TRUE)
+}
+
+if (file.exists(lsp_local)) {
+  knitr::include_graphics(lsp_local)
+} else {
+  knitr::asis_output(paste0(
+    "*El mapa coroplético de LSP (`lsp_overall_2025.png`) no se copió a `chapters/figs/`. ",
+    "Fuente esperada: `/home/shares/ohi/OHI_GOC/goal_prep/sp/lsp/v2025/viz/lsp_overall_2025.png`.*"
+  ))
+}
+```
+
+*Figura 15. Mapa coroplético del estatus actual de este componente por región OHI (instantánea de 2025). Las puntuaciones que se muestran no están finalizadas (versión 1.0; agosto de 2026).*
+
+Este es el componente de Participación de la Comunidad Costera (CCE) **tal como se puntuó antes del EWG 3.2**: el promedio de adopciones de playa de Ama tu Playa y de lugares culturales no naturales (INEGI DENUE). Después de la reunión decidimos que esos indicadores eran demasiado limitados, así que CCE se está reelaborando en torno a la participación cívica, educativa y social, y **no** está incluido en la puntuación general de septiembre de 2026.
+
+Notas sobre la reelaboración de CCE:
+
+- [(SP) CCE Finalizing Methods](https://docs.google.com/document/d/14wO4t6Gs27_Z8Xq6VmLu7JjjdGz42ww-DEyymMLTd5w/edit?tab=t.m357mmezi3zk)
+- [(SP) CCE Finalizing Methods, continuación](https://docs.google.com/document/d/1cJsDE7SMNl0QX1EO_gZbvTtedfiKj45F6ekhJNSQk6M/edit?tab=t.0#heading=h.u6cg98vcgkx)
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+# same cce file as ewg32_sp.qmd
+sp_cce <- read_csv(
+  "/home/shares/ohi/OHI_GOC/goal_prep/sp/cce/v2026/output/cce_current_status.csv",
+  show_col_types = FALSE
+) %>%
+  mutate(
+    year = as.numeric(year),
+    current_status = as.numeric(current_status)
+  ) %>%
+  filter(year >= 2019, year <= 2025) %>%
+  add_rgn_labels()
+goal_plotly(sp_cce, "Sentido de Pertenencia: Participación de la comunidad costera")
+```
+
+*Figura 16. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; agosto de 2026).*
+
+Para comparar, esta es la puntuación general de SP usada en la página del EWG 3.2: el promedio de CCE, LSP e ICO.
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+# same pre-ewg overall file as ewg32_sp.qmd
+sp_pre_ewg <- read_csv(
+  "/home/shares/ohi/OHI_GOC/goal_prep/sp/sp_current_status.csv",
+  show_col_types = FALSE
+) %>%
+  mutate(
+    year = as.numeric(year),
+    current_status = as.numeric(current_status)
+  ) %>%
+  filter(year >= 2019, year <= 2025) %>%
+  add_rgn_labels()
+goal_plotly(sp_pre_ewg, "Sentido de Pertenencia: CCE, LSP e ICO")
+```
+
+*Figura 17. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; agosto de 2026).*
+:::
+
+::: {.callout-note collapse="true"}
+# 📚 Fuentes de datos y métodos
+
+Sentido de Pertenencia mide qué tan bien estamos cuidando de forma sostenible los lugares y especies marinos y costeros que aportan herencia, memoria compartida e identidad a las comunidades del Golfo.
+
+La **puntuación general de septiembre de 2026 usa 2 componentes** (ICO y LSP). CCE se está reelaborando y por ahora se deja fuera.
+
+- **ICO:** lista de especies icónicas del Grupo de Trabajo de Expertos; ocurrencia de Morzaria-Luna et al. (2027); estatus de riesgo de NOM-059, Lista Roja de la UICN y CITES.
+- **LSP:** lugares especiales identificados por personas expertas (áreas protegidas, sitios de buceo, sitios de pesca, arqueología, hábitats y otros lugares). La condición viene de i-efectividad de SIMEC de CONANP, planes de manejo Ramsar y polígonos de áreas protegidas (WDPA, CONANP, HEM). Los sitios de buceo prioritarios vienen de Arcos-Aguilar et al. (2021) y de capas del GCMP de CBMC. Los sitios arqueológicos vienen del INAH.
+- **CCE (se muestra para el EWG 3.2, no en la general de septiembre de 2026):** adopciones de playa de Ama tu Playa de SEMARNAT (adoptaunaplaya.com) y establecimientos culturales del sector 71 de INEGI DENUE a menos de 10 km de la costa. Notas de la reelaboración: [CCE Finalizing Methods](https://docs.google.com/document/d/14wO4t6Gs27_Z8Xq6VmLu7JjjdGz42ww-DEyymMLTd5w/edit?tab=t.m357mmezi3zk) y [continuación](https://docs.google.com/document/d/1cJsDE7SMNl0QX1EO_gZbvTtedfiKj45F6ekhJNSQk6M/edit?tab=t.0#heading=h.u6cg98vcgkx).
+
+Los métodos, los puntos de referencia y el detalle de los indicadores están en el resumen ejecutivo:
+
+- **Español:** [SP Resumen ejecutivo](https://docs.google.com/document/d/1Bs14irzJuaMGkqVljkC5fpJot0FZvwz0l0jlmNeV_fc/edit?tab=t.0)
+- **Inglés:** [SP Executive Summary](https://docs.google.com/document/d/1qxuYHPqFbGprBSflfiq00w3IlXs-9VjmsxYXM4O3sgY/edit?tab=t.0)
+:::
+
+::: {.callout-important collapse="true"}
+# 🔗 Recursos de la meta
+
+- **Página del EWG 3.2:** [Sentido de Pertenencia](ewg32_sp_spanish.html) · **notas de la reunión:** [13 de agosto](https://docs.google.com/document/d/1rYZgT173UREE8NKX5vzmIbGkF7QgI9xe6yqEaWEVZ78/edit?tab=t.x02j1n7qhxzr)
+- **Página Goalkeeper:** [Sentido de Pertenencia](sp_spanish.html)
+- **Español:** [SP Resumen ejecutivo](https://docs.google.com/document/d/1Bs14irzJuaMGkqVljkC5fpJot0FZvwz0l0jlmNeV_fc/edit?tab=t.0)
+- **Inglés:** [SP Executive Summary](https://docs.google.com/document/d/1qxuYHPqFbGprBSflfiq00w3IlXs-9VjmsxYXM4O3sgY/edit?tab=t.0)
+- **Lista de ICO para revisión de personas expertas:** [(SP) ICO: List for Expert Review](https://docs.google.com/document/d/1-2u1wcy33Y7Cs2Jjp-95I1iBRZGge2bRyJ27xTHxcFk/edit?tab=t.0)
+- **Listas de LSP para revisión de personas expertas:** [(SP) LSP: Lists for Expert Review](https://docs.google.com/spreadsheets/d/1_jcxQsKVLgwz8NknmBaHDtPjdfwAgZ10U6jOsryK4CU/edit?gid=0#gid=0)
+- **Notas de la reelaboración de CCE:** [CCE Finalizing Methods](https://docs.google.com/document/d/14wO4t6Gs27_Z8Xq6VmLu7JjjdGz42ww-DEyymMLTd5w/edit?tab=t.m357mmezi3zk) · [continuación](https://docs.google.com/document/d/1cJsDE7SMNl0QX1EO_gZbvTtedfiKj45F6ekhJNSQk6M/edit?tab=t.0#heading=h.u6cg98vcgkx)
+:::
+
+::: {.callout-warning collapse="true"}
+# ⏭️ Próximos pasos
+
+**Ajustes próximos (del EWG 3.2)**
+
+- Actualizar las puntuaciones de ICO para reflejar los cambios que hicieron las personas expertas después de revisar la lista: [(SP) ICO: List for Expert Review](https://docs.google.com/document/d/1-2u1wcy33Y7Cs2Jjp-95I1iBRZGge2bRyJ27xTHxcFk/edit?tab=t.0).
+- Actualizar las puntuaciones de LSP para reflejar los cambios que hicieron las personas expertas después de revisar las listas: [(SP) LSP: Lists for Expert Review](https://docs.google.com/spreadsheets/d/1_jcxQsKVLgwz8NknmBaHDtPjdfwAgZ10U6jOsryK4CU/edit?gid=0#gid=0).
+- Reestructurar CCE en torno a la participación cívica, educativa y social. Más detalle: [(SP) CCE Finalizing Methods](https://docs.google.com/document/d/14wO4t6Gs27_Z8Xq6VmLu7JjjdGz42ww-DEyymMLTd5w/edit?tab=t.m357mmezi3zk). Hasta que CCE esté lista, mantener SP general como el promedio de ICO y LSP.
+:::
+
+# ![](figs/artisanal-fishing-opportunities.svg){width=8% height=8%} Oportunidades de Acceso {#ao}
+
+**Después del EWG 3.2 planeamos dejar Acceso Costero Local (LCA) como NA.** Sí desarrollamos métodos para estimar el acceso realizado (quién puede llegar de verdad a la playa), pero no tuvimos tiempo de integrarlos en esta primera versión del Índice. Esos métodos se describen en la página [Acceso costero: La Paz](coastal_access_lapaz_spanish.html). Por ahora, el componente LCA es NA para que el acceso costero verdadero no quede mal representado. Puede leer más en el [resumen ejecutivo](https://docs.google.com/document/d/146yfYH7c9UaSo3PGg5DI2u7YRK1iDVxIQeUxPckOO0Y/edit?tab=t.0).
+
+La gráfica de abajo es la puntuación general de Oportunidades de Acceso, con LCA fuera.
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+ao_cs <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/AO_Scores_1.0_df_Sep112026.csv"),
+  show_col_types = FALSE
+) %>%
+  prep_cs()
+goal_plotly(ao_cs, "Oportunidades de Acceso: Estatus actual")
+```
+
+*Figura 18. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
+
+::: {.callout-tip collapse="true"}
+# 📊 Puntuaciones de componentes
+
+Esta meta tiene dos componentes. Agregaremos una gráfica de cada uno aquí en cuanto esos archivos estén listos.
+
+- **Pesca artesanal (AFO):** la porción artesanal de los desembarques de CONAPESCA, con estatus de stock de RAM, luego Carta Nacional Pesquera, luego CMSY.
+- **Acceso costero local (LCA): NA para esta primera versión.** Después del EWG 3.2 planeamos dejar LCA como NA. Se desarrollaron métodos de acceso realizado (vea [Acceso costero: La Paz](coastal_access_lapaz_spanish.html)), pero aún no están en el Índice, así que no queremos que el acceso legal por sí solo sustituya al acceso costero verdadero.
+:::
+
+::: {.callout-note collapse="true"}
+# 📚 Fuentes de datos y métodos
+
+Oportunidades de Acceso (antes Oportunidades Artesanales) mide si las personas de las comunidades costeras, incluidas las comunidades pesqueras de pequeña escala y los *pueblos originarios*, tienen acceso a recursos marinos que les permitan prosperar.
+
+- **Pesca artesanal (AFO):** desembarques de CONAPESCA (versión limpia de Mex-Fisheries), conservando la porción artesanal de la captura. El estatus de stock usa la misma jerarquía que Provisión de Alimentos: evaluaciones RAM, luego Carta Nacional Pesquera, luego CMSY. Los registros se asignan a regiones OHI con las claves geoespaciales de Cavieses-Nuñez y Morzaria-Luna.
+- **Acceso costero local (LCA):** **NA por ahora.** Revisamos la protección legal bajo ZOFEMAT (la zona federal marítimo terrestre de México), oficinas municipales de ZOFEMAT, inventarios locales de playas y la capacidad nacional de vigilancia de PROFEPA. También desarrollamos métodos de acceso realizado, descritos en la página [Acceso costero: La Paz](coastal_access_lapaz_spanish.html), pero no tuvimos tiempo de integrarlos en esta primera versión del Índice. Después del EWG 3.2 planeamos dejar LCA como NA para que el acceso costero verdadero no quede mal representado. Lea más en el [resumen ejecutivo](https://docs.google.com/document/d/146yfYH7c9UaSo3PGg5DI2u7YRK1iDVxIQeUxPckOO0Y/edit?tab=t.0).
+
+Los métodos, los puntos de referencia y el detalle de los indicadores están en el resumen ejecutivo:
+
+- **Español:** [AO Resumen Ejecutivo](https://docs.google.com/document/d/146yfYH7c9UaSo3PGg5DI2u7YRK1iDVxIQeUxPckOO0Y/edit?tab=t.0)
+- **Inglés:** [AO Executive Summary](https://docs.google.com/document/d/1RyoGspGrQRQ4deif7Ybm3k3e39EG2X9dBnpket8ITtk/edit?tab=t.0)
+:::
+
+::: {.callout-important collapse="true"}
+# 🔗 Recursos de la meta
+
+- **Página del EWG 3.2:** [Oportunidades de Acceso](ewg32_ao_spanish.html) · **notas de la reunión:** [13 de agosto](https://docs.google.com/document/d/1rYZgT173UREE8NKX5vzmIbGkF7QgI9xe6yqEaWEVZ78/edit?tab=t.x02j1n7qhxzr)
+- **Página Goalkeeper:** [Oportunidades de Acceso](ao_spanish.html)
+- **Español:** [AO Resumen Ejecutivo](https://docs.google.com/document/d/146yfYH7c9UaSo3PGg5DI2u7YRK1iDVxIQeUxPckOO0Y/edit?tab=t.0)
+- **Inglés:** [AO Executive Summary](https://docs.google.com/document/d/1RyoGspGrQRQ4deif7Ybm3k3e39EG2X9dBnpket8ITtk/edit?tab=t.0)
+- **Métodos de acceso realizado (no en esta versión):** [Acceso costero: La Paz](coastal_access_lapaz_spanish.html)
+:::
+
+::: {.callout-warning collapse="true"}
+# ⏭️ Próximos pasos
+
+**Ajustes próximos (del EWG 3.2)**
+
+- **Quitar las puntuaciones de Acceso Costero Local (LCA) de las puntuaciones finales de AO** por datos incompletos de acceso costero. > COMPLETADO
+- Localizar información de evaluación de stock de medusa (*agua mala*) e integrarla al cálculo de AFO. *Agua mala* se pesca de forma intensa en ciertas regiones del Golfo, como Sonora, y una evaluación de stock ayudaría a calcular la puntuación de AFO con más precisión.
+  - **Localizado:** gracias a Jaqueline por enviar el informe de IMIPAS (2024): *La pesquería de medusa bola de cañón (Stomolophus spp.) en Sonora, 2023.* Se agregará para completar las puntuaciones de evaluación de stock de AO.
+- **Nota general: dar más contexto a las puntuaciones de AFO,** por ejemplo qué stocks están impulsando las puntuaciones en qué regiones.
+- **LCA es NA.** Después del EWG 3.2 planeamos dejar Acceso Costero Local como NA. Se desarrollaron métodos de acceso realizado ([Acceso costero: La Paz](coastal_access_lapaz_spanish.html)), pero no están en esta primera versión del Índice, así que no queremos que la puntuación malrepresente el acceso costero verdadero.
+
+:::
+
+# ![](figs/coastal-protection.svg){width=8% height=8%} Servicios de Hábitat {#hs}
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+hs_cs <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/HS_Scores_1.0_df_Sep112026.csv"),
+  show_col_types = FALSE
+) %>%
+  prep_cs()
+goal_plotly(hs_cs, "Servicios de Hábitat: Estatus actual")
+```
+
+*Figura 19. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
+
+::: {.callout-tip collapse="true"}
+# 📊 Puntuaciones de componentes
+
+Servicios de Hábitat es el promedio de tres puntuaciones de servicio, construidas a partir de cinco hábitats. Agregaremos gráficas de cada servicio aquí en cuanto esos archivos estén listos.
+
+- **Protección costera (PRO)**
+- **Control de contaminación y filtración (FIL)**
+- **Secuestro de carbono (SEQ)**
+
+Los cinco hábitats detrás de esas puntuaciones son manglares, marismas, dunas costeras y matorral, praderas de pastos marinos y arrecifes de coral.
+:::
+
+::: {.callout-note collapse="true"}
+# 📚 Fuentes de datos y métodos
+
+Servicios de Hábitat (HS) combina Protección Costera y Almacenamiento de Carbono. Mide qué tan bien los hábitats costeros protegen a las personas y a la propiedad de inundaciones y erosión, y qué tan bien almacenan carbono.
+
+Puntuamos cinco hábitats: manglares, marismas, dunas costeras y matorral, pastos marinos y arrecifes de coral.
+
+- **Manglares:** extensión actual de Morzaria-Luna et al. (PRONATURA, INEGI, CONABIO). El cambio a lo largo del tiempo viene de Global Mangrove Watch.
+- **Marisma y dunas:** capas de vegetación de CONABIO, contrastadas con mapas de humedales de Morzaria-Luna, Munguia-Vega y colegas.
+- **Pastos marinos:** extensión actual de Morzaria-Luna et al. Condición de estudios publicados de praderas (López-Calderón, Ramírez-Zúñiga, Riosmena-Rodriguez).
+- **Arrecifes de coral:** extensión de dataMares, el Allen Coral Atlas y Morzaria-Luna et al. Condición de monitoreo de arrecifes en la literatura, incluida información nueva de Nayarit del Dr. Cupul.
+
+Los métodos, los puntos de referencia y el detalle de los indicadores están en el resumen ejecutivo:
+
+- **Español:** [HS Resumen Ejecutivo](https://docs.google.com/document/d/1xJIrO15HS-U_P684PrhH_FTo9zjJgJBQiAhvTrkYHXs/edit?tab=t.0)
+- **Inglés:** [HS Executive Summary](https://docs.google.com/document/d/1mro2xQ3Q1TRTs5apmPCkJcBdkZCdjq8U3asCaNsrY9k/edit?tab=t.0)
+:::
+
+::: {.callout-important collapse="true"}
+# 🔗 Recursos de la meta
+
+- **Página del EWG 3.2:** [Servicios de Hábitat](ewg32_hs_spanish.html) · **notas de la reunión:** [13 de agosto](https://docs.google.com/document/d/1rYZgT173UREE8NKX5vzmIbGkF7QgI9xe6yqEaWEVZ78/edit?tab=t.x02j1n7qhxzr)
+- **Página Goalkeeper:** [Servicios de hábitat (CP y CS)](cp_cs_spanish.html)
+- **Español:** [HS Resumen Ejecutivo](https://docs.google.com/document/d/1xJIrO15HS-U_P684PrhH_FTo9zjJgJBQiAhvTrkYHXs/edit?tab=t.0)
+- **Inglés:** [HS Executive Summary](https://docs.google.com/document/d/1mro2xQ3Q1TRTs5apmPCkJcBdkZCdjq8U3asCaNsrY9k/edit?tab=t.0)
+- **Revisión de literatura:** [protección costera, filtración de contaminación y secuestro de carbono por tipo de hábitat](https://docs.google.com/spreadsheets/d/1Ixzfv8tgNf3qusaNDyN2oZ3v26a3oy3MIwzZBWOUTFc/edit?gid=58049273#gid=58049273)
+:::
+
+::: {.callout-warning collapse="true"}
+# ⏭️ Próximos pasos
+
+**Ajustes próximos (del EWG 3.2)**
+
+- **Hecho:** Revisar y ajustar nuestro trabajo sobre “marisma” y “duna costera y matorral” para reflejar “humedales costeros” de forma más amplia. Gracias a Rick, Hem y Jorge por su orientación en esto.
+- Integrar información nueva sobre la condición de los arrecifes de coral en Nayarit (Región 9, Entrada del Golfo).
+  - **Hecho:** gracias al Dr. Cupul por su ayuda en esto.
+  - Integrar los datos de [condición] de arrecifes de coral del Dr. Reyes del GOC sur. ¡Ya se consiguió el informe!
+- También quisimos compartir nuestra revisión de literatura sobre protección costera, filtración de contaminación y secuestro de carbono por tipo de hábitat [aquí](https://docs.google.com/spreadsheets/d/1Ixzfv8tgNf3qusaNDyN2oZ3v26a3oy3MIwzZBWOUTFc/edit?gid=58049273#gid=58049273).
+
+:::
+
+# ![](figs/biodiversity.svg){width=8% height=8%} Biodiversidad {#bd}
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+bd_cs <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/BD_Scores_1.0_df_Sep112026.csv"),
+  show_col_types = FALSE
+) %>%
+  prep_cs()
+goal_plotly(bd_cs, "Biodiversidad: Estatus actual")
+```
+
+*Figura 20. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
+
+::: {.callout-tip collapse="true"}
+# 📊 Puntuaciones de componentes
+
+Biodiversidad evalúa actualmente **8 biomas**. Agregaremos una gráfica de cada uno aquí en cuanto esos archivos estén listos.
+
+- **Bosques de manglar (MAN)**
+- **Humedales costeros y matorral (WET)**
+- **Praderas de pastos marinos (SEA)**
+- **Arrecifes de coral (CRL)**
+- **Arrecifes rocosos (ROK)**
+- **Fondos blandos submareales (SOF)**
+- **Bancos de rodolitos (RHO)**
+- **Océano pelágico somero (OCE)**
+:::
+
+::: {.callout-note collapse="true"}
+# 📚 Fuentes de datos y métodos
+
+Biodiversidad mide el estatus actual de biomas clave como proxies de la diversidad de especies, la abundancia y la función del ecosistema. Actualmente evaluamos **8 biomas**. Cada uno tiene sus propios datos.
+
+- **Manglares:** Morzaria-Luna et al. (PRONATURA, INEGI, CONABIO) y Global Mangrove Watch.
+- **Humedales costeros y matorral:** capas de vegetación de CONABIO, contrastadas con mapas de humedales de Morzaria-Luna y Munguia-Vega.
+- **Pastos marinos:** Morzaria-Luna et al., más estudios publicados de praderas.
+- **Arrecifes de coral:** dataMares, Allen Coral Atlas, Morzaria-Luna et al. y censos de arrecifes.
+- **Arrecifes rocosos:** capa de arrecife rocoso de Morzaria-Luna e Índice Normalizado de Estatus de Arrecife de Favoretto et al. (2024).
+- **Fondos blandos:** presión de arrastre de VMS de Juan Carlos Villaseñor (datos SISMEP de México).
+- **Rodolitos:** capa de rodolitos de Morzaria-Luna, con la misma presión de arrastre de VMS (escalada hacia arriba porque un arrastre puede dañar un banco durante años).
+- **Océano abierto:** desembarques de CONAPESCA de grupos pescados, más censos publicados de tiburones, cetáceos, pinnípedos, tortugas marinas y aves marinas.
+
+Los métodos, los puntos de referencia y el detalle de los indicadores están en el resumen ejecutivo:
+
+- **Español:** [BD Resumen Ejecutivo](https://docs.google.com/document/d/1zERminsNjyKGoNBz7TqWHqsOSnNl3bKdDzHeIr4VIaQ/edit?tab=t.0)
+- **Inglés:** [BD Executive Summary](https://docs.google.com/document/d/19N-MjE9iucG71N6NUDzUimqSB1tA-4XCVWj9SNXyy6w/edit?tab=t.0)
+:::
+
+::: {.callout-important collapse="true"}
+# 🔗 Recursos de la meta
+
+- **Página del EWG 3.3:** [Biodiversidad](ewg33_bd_spanish.html) · **notas de la reunión:** [10 de septiembre](https://docs.google.com/document/d/1rJ6moJnO-VB-g-CTf5nA0qMnw0HESsdVaIAp-XHY594/edit?tab=t.x02j1n7qhxzr)
+- **Página Goalkeeper:** [Biodiversidad](bd_spanish.html)
+- **Español:** [BD Resumen Ejecutivo](https://docs.google.com/document/d/1zERminsNjyKGoNBz7TqWHqsOSnNl3bKdDzHeIr4VIaQ/edit?tab=t.0)
+- **Inglés:** [BD Executive Summary](https://docs.google.com/document/d/19N-MjE9iucG71N6NUDzUimqSB1tA-4XCVWj9SNXyy6w/edit?tab=t.0)
+:::
+
+::: {.callout-warning collapse="true"}
+# ⏭️ Próximos pasos
+
+**Ajustes próximos (del EWG 3.3)**
+
+- **Hábitats bénticos de fondo blando (SOF):** separar este tipo de bioma en dos tipos distintos: bentos de fondo blando de plataforma costera (< 100 m) y bentos de fondo blando profundo (> 100 m), ambos podrían estar expuestos al arrastre pero a tasas distintas. Actualmente, la baja frecuencia de arrastre en mar profundo está diluyendo la alta frecuencia de arrastre en el bentos costero.
+- **Bancos de rodolitos (RHO):** filtrar / enmascarar bancos de rodolitos > 100 m, porque casi con certeza no son bancos reales de rodolitos (pueden ser cantos clasificados mal como rodolitos por ROV).
+- **Arrecifes rocosos (ROK):** procurar incluir datos de arrecife rocoso en el Alto Golfo y en el Golfo sur como alternativa al relleno de huecos regionales, y dar seguimiento con personas expertas en las semanas siguientes (por ejemplo, datos de COBI, [PANGAS](https://www.sciencedirect.com/science/article/pii/S2352340924004396?via%3Dihub) y/o revisión de literatura).
+- **Océano abierto (OCE):** si el tiempo lo permite, ampliar la revisión de literatura de océano abierto para incluir más datos de fuentes independientes de la pesca (por ejemplo, Lista Roja de la UICN y/o el [informe “Health of the Gulf of California”](https://nextgensd.com/wp-content/uploads/2025/01/Health-of-the-Gulf-final-assesment.pdf)).
+- Integrar los datos de arrecifes de coral de Héctor del Golfo sur. ¡Ya se consiguió el informe!
+
+:::
+
+# ![](figs/clean-waters.svg){width=8% height=8%} Aguas Limpias {#cw}
+
+La puntuación general de CW es el promedio de Eutrofización, Patógenos, Químicos y Residuos marinos. Una puntuación de 100 es el estado ideal de aguas limpias, y un cero representa que esa región y año es el más contaminado comparado con todas las demás regiones y años del Golfo. Abra las puntuaciones de componentes abajo para ver qué está subiendo o bajando a una región.
+
+**En la próxima semana o dos:** actualizaremos Eutrofización para que varíe entre años, al volver a correr los mismos métodos de José Antonio Romero Gil et al. (2026). La gráfica de abajo sigue siendo la instantánea de un solo año, mantenida constante a lo largo del tiempo.
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+cw_overall <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/CW_Scores_1.0_df_091126.csv"),
+  show_col_types = FALSE
+) %>%
+  prep_cs()
+goal_plotly(cw_overall, "Aguas Limpias: Estatus actual")
+```
+
+*Figura 21. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
+
+::: {.callout-tip collapse="true"}
+# 📊 Puntuaciones de componentes
+
+Este es el componente de Eutrofización, que evalúa el exceso de nitrógeno que llega a la costa desde aguas residuales, agricultura, ganadería y acuacultura de camarón; una puntuación de 100 significa cero contaminación por nitrógeno. **Esta serie es actualmente el año único de valores de Romero-Gil et al. (2026) repetido a lo largo de los años.** En la próxima semana o dos volveremos a correr esos mismos métodos para que las puntuaciones varíen en el tiempo.
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+# same eutrophication file as ewg33_cw.qmd
+cw_eut <- read_csv(
+  "/home/shares/ohi/OHI_GOC/goal_prep/cw/v2025/eutrophication/output/eutrophication_cs.csv",
+  show_col_types = FALSE
+) %>%
+  dplyr::select(rgn_id, current_status) %>%
+  group_by(rgn_id) %>%
+  mutate(year = 2017) %>%
+  complete(year = 2017:2025) %>%
+  fill(current_status, .direction = "down") %>%
+  ungroup() %>%
+  mutate(
+    rgn_id = as.character(rgn_id),
+    rgn_id = ifelse(grepl("^Region_", rgn_id), rgn_id, paste0("Region_", rgn_id)),
+    year = as.numeric(year),
+    current_status = as.numeric(current_status)
+  ) %>%
+  add_rgn_labels()
+goal_plotly(cw_eut, "Aguas Limpias: Eutrofización")
+```
+
+*Figura 22. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
+
+Este es el componente de Patógenos, que evalúa *Enterococcus* en playas de Playas Limpias; una puntuación de 100 significa que las aguas cumplen el estándar mexicano de aptitud de playas de 200 NMP/100 mL.
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+# same pathogens file as ewg33_cw.qmd
+cw_pat <- read_csv(
+  "/home/shares/ohi/OHI_GOC/goal_prep/cw/v2025/pathogens/output/pathogen_cs_2018_2025.csv",
+  show_col_types = FALSE
+) %>%
+  dplyr::select(rgn_id, year, current_status) %>%
+  mutate(
+    rgn_id = as.character(rgn_id),
+    rgn_id = ifelse(grepl("^Region_", rgn_id), rgn_id, paste0("Region_", rgn_id)),
+    year = as.numeric(year),
+    current_status = suppressWarnings(as.numeric(current_status))
+  ) %>%
+  filter(year != 2020) %>%
+  add_rgn_labels()
+goal_plotly(cw_pat, "Aguas Limpias: Patógenos")
+```
+
+*Figura 23. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
+
+Este es el componente de Químicos, que evalúa el riesgo de plaguicidas, productos farmacéuticos, residuos peligrosos, aguas residuales sin tratamiento e hidrocarburos de embarcaciones; una puntuación de 100 significa ninguna presión química relativa a los niveles más altos observados en el Golfo.
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+# same chemicals file as ewg33_cw.qmd (score column is chemical_cs)
+cw_chm <- read_csv(
+  "/home/shares/ohi/OHI_GOC/goal_prep/cw/v2025/chemicals/chemical_cs.csv",
+  show_col_types = FALSE
+) %>%
+  dplyr::select(rgn_id, year, chemical_cs) %>%
+  group_by(rgn_id) %>%
+  complete(year = 2017:2025) %>%
+  fill(chemical_cs, .direction = "down") %>%
+  ungroup() %>%
+  mutate(
+    rgn_id = as.character(rgn_id),
+    rgn_id = ifelse(grepl("^Region_", rgn_id), rgn_id, paste0("Region_", rgn_id)),
+    year = as.numeric(year),
+    current_status = as.numeric(chemical_cs)
+  ) %>%
+  add_rgn_labels()
+goal_plotly(cw_chm, "Aguas Limpias: Químicos")
+```
+
+*Figura 24. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
+
+Este es el componente de Residuos marinos, que evalúa el riesgo de artes de pesca abandonadas (artes fantasma); una puntuación de 100 significa ninguna presión de artes fantasma.
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+# same marine debris file as ewg33_cw.qmd (score is 1 minus pressure, times 100)
+cw_mar <- read_csv(
+  "/home/shares/ohi/OHI_GOC/goal_prep/cw/v2025/marine_debris/ghost_gear_risk.csv",
+  show_col_types = FALSE
+) %>%
+  mutate(
+    rgn_id = as.character(rgn_id),
+    rgn_id = ifelse(grepl("^Region_", rgn_id), rgn_id, paste0("Region_", rgn_id)),
+    year = as.numeric(year),
+    current_status = (1 - as.numeric(pressure)) * 100
+  ) %>%
+  add_rgn_labels()
+goal_plotly(cw_mar, "Aguas Limpias: Residuos marinos")
+```
+
+*Figura 25. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
+:::
+
+::: {.callout-note collapse="true"}
+# 📚 Fuentes de datos y métodos
+
+Esta meta usa **4 componentes**. Químicos es, a su vez, el promedio de cinco capas:
+
+- **Eutrofización:** estimaciones de descarga municipal de nitrógeno de Romero-Gil et al. 2026 (aguas residuales, agricultura, ganadería y acuacultura de camarón). **La gráfica de septiembre de 2026 es una instantánea de un solo año, mantenida constante a lo largo del tiempo.** En la próxima semana o dos actualizaremos este componente para que **varíe entre años**, al correr los mismos métodos de Romero-Gil et al. 2026 para varios años.
+- **Patógenos:** monitoreo de *Enterococcus* de Playas Limpias de CONAGUA (2018-2025; no hay muestreo de 2020).
+- **Químicos** (promedio con peso igual de cinco subcomponentes; los microplásticos aún no se incluyen):
+  - **Plaguicidas:** polígonos de uso de suelo agrícola USV de CONABIO y tasas nacionales de aplicación de plaguicidas de FAOSTAT (kg/ha).
+  - **Productos farmacéuticos:** efluente de plantas de tratamiento de aguas residuales de CONAGUA SINA; densidad ganadera de FAO (GLW4) con toneladas de sacrificio de SIAP y tasas publicadas de uso de antimicrobianos; superficie de acuacultura de camarón USV de INEGI.
+  - **Residuos peligrosos:** inventarios de SEMARNAT y ASEA de sitios contaminados y remediados a menos de 50 km de la costa.
+  - **Aguas residuales sin tratamiento:** puntos de descarga municipal sin tratamiento del CNGMD de INEGI (Censo Nacional de Gobiernos Municipales y Demarcaciones Territoriales).
+  - **Hidrocarburos de embarcaciones:** esfuerzo de embarcaciones pesqueras de VMS (horas) como proxy del riesgo de hidrocarburos.
+- **Residuos marinos:** datos de pesca de VMS de Juan Carlos Villaseñor (SISMEP de México), emparejados con tasas de Gilman et al. (2021) de artes abandonadas, perdidas o descartadas.
+
+Los métodos, los puntos de referencia y el detalle de los indicadores están en el resumen ejecutivo:
+
+- **Español:** [CW Resumen Ejecutivo](https://docs.google.com/document/d/1wq48kxZkAXhOMZS6kEPYYA-u9jZ2erKhexnGE0nDSTM/edit?tab=t.0)
+- **Inglés:** [CW Executive Summary](https://docs.google.com/document/d/1VRxaDW9YbCoammwVcZut07vNqpNpUcT8fo_kM2V47is/edit?tab=t.0)
+:::
+
+::: {.callout-important collapse="true"}
+# 🔗 Recursos de la meta
+
+- **Página del EWG 3.3:** [Aguas Limpias](ewg33_cw_spanish.html) · **notas de la reunión:** [10 de septiembre](https://docs.google.com/document/d/1rJ6moJnO-VB-g-CTf5nA0qMnw0HESsdVaIAp-XHY594/edit?tab=t.x02j1n7qhxzr)
+- **Página Goalkeeper:** [Aguas Limpias](cw_spanish.html)
+- **Español:** [CW Resumen Ejecutivo](https://docs.google.com/document/d/1wq48kxZkAXhOMZS6kEPYYA-u9jZ2erKhexnGE0nDSTM/edit?tab=t.0)
+- **Inglés:** [CW Executive Summary](https://docs.google.com/document/d/1VRxaDW9YbCoammwVcZut07vNqpNpUcT8fo_kM2V47is/edit?tab=t.0)
+:::
+
+::: {.callout-warning collapse="true"}
+# ⏭️ Próximos pasos
+
+**Ajustes próximos (del EWG 3.3)**
+
+- **Eutrofización: actualizar este componente para que las puntuaciones **varíen en el tiempo**. Volveremos a correr los mismos métodos de José Antonio Romero Gil et al. (2026) para varios años (la gráfica actual es una sola instantánea de nitrógeno, mantenida constante). Esto nos permite calcular puntuaciones para la Entrada del Golfo (Nayarit y Jalisco), que originalmente no se evaluó en el artículo.
+- Ajustar las tasas de aplicación de plaguicidas, si es posible. Trabajar con Miguel para evaluar si hay mejores opciones, y documentar nuestras limitaciones si no encontramos otras.
+  - **Por ahora (Opción 1):** mantener el método actual. Las tasas nacionales de kg/ha de FAOSTAT más el uso de suelo de CONABIO nos dan cambio anual. Esto no es específico por cultivo ni por región. Podemos ver el tipo de cultivo en una versión posterior del Índice.
+  - **Actualización futura (Opción 2):** mantener FAOSTAT como la tasa anual de kg/ha, pero aplicar un multiplicador relativo por clase agrícola de CONABIO agrupada como riego, temporal y humedad. La media ponderada por área de esos multiplicadores debería quedarse cerca de 1, para no inflar FAOSTAT. El jitomate y el maíz en tierra de riego seguirían teniendo la misma tasa, así que esto es más débil que un método específico por cultivo, pero no necesita el cruce de cultivos de SIAP e INIFAP.
+  - **No para esta ronda (Opciones 3 a 5):** métodos específicos por cultivo usando [hectáreas cosechadas de SIAP](https://nube.agricultura.gob.mx/cierre_agricola/) y [Agendas Técnicas de INIFAP](https://vun.inifap.gob.mx/BibliotecaWeb/_Content) captarían mejor que el jitomate es más intensivo en plaguicidas que el maíz. También traen más problemas a lo largo del tiempo (las dosis de INIFAP suelen ser por aplicación, no un total estacional; las Agendas son solo de 2015, 2017 y 2026; los cultivos sin coincidencia se quedarían en FAOSTAT × 1). Eso es un cambio más grande, así que no lo estamos haciendo ahora.
+:::
+
+# ![](figs/natural-products.svg){width=8% height=8%} Productos Naturales {#np}
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+np_cs <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/NP_Scores_1.0_df_Sep112026.csv"),
+  show_col_types = FALSE
+) %>%
+  prep_cs()
+goal_plotly(np_cs, "Productos Naturales: Estatus actual")
+```
+
+*Figura 26. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
+
+::: {.callout-tip collapse="true"}
+# 📊 Puntuaciones de componentes
+
+Productos Naturales actualmente puntúa seis grupos de productos. Agregaremos una gráfica de cada uno aquí en cuanto esos archivos estén listos.
+
+- **Aceite y harina de pescado (FOFM)**
+- **Especies del comercio de acuario (AQRM)**
+- **Conchas marinas (SHEL)**
+- **Residuos de pescado y camarón (RESD)**
+- **Aletas de tiburón legales (FINS)**
+- **Sal costera (SALT)**
+
+La producción de perla, carnada, algas y biofarmacéuticos no tuvo datos suficientes para puntuar.
+:::
+
+::: {.callout-note collapse="true"}
+# 📚 Fuentes de datos y métodos
+
+Productos Naturales mide la cantidad, los beneficios y la sostenibilidad de recursos marinos cosechados de forma legal en el Golfo de California para fines culturales o comerciales que no se usan como alimento.
+
+- **CONAPESCA** (versión limpia de Mex-Fisheries de la University of Miami): aceite y harina de pescado, especies de acuario, conchas, residuos de pescado y camarón, y aletas de tiburón legales. El estatus de stock usa la misma jerarquía de RAM, Carta Nacional Pesquera y CMSY que Provisión de Alimentos.
+- **El Anuario Estadístico de la Minería Mexicana:** sal costera.
+
+Los métodos, los puntos de referencia y el detalle de los indicadores están en el resumen ejecutivo:
+
+- **Español:** [NP Resumen Ejecutivo](https://docs.google.com/document/d/1ymx6DLhzzLjXM-Ha9JMlPA39NenC9NNrYVTKLZ_Vfpc/edit?tab=t.0)
+- **Inglés:** [NP Executive Summary](https://docs.google.com/document/d/1QaEn1ucoh_ToqsrguQGfGqRSK3VjT9GBk6vqlfVxBtg/edit?tab=t.0)
+:::
+
+::: {.callout-important collapse="true"}
+# 🔗 Recursos de la meta
+
+- **Página del EWG 3.3:** [Productos Naturales](ewg33_np_spanish.html) · **notas de la reunión:** [10 de septiembre](https://docs.google.com/document/d/1rJ6moJnO-VB-g-CTf5nA0qMnw0HESsdVaIAp-XHY594/edit?tab=t.x02j1n7qhxzr)
+- **Página Goalkeeper:** [Productos naturales](np_spanish.html)
+- **Español:** [NP Resumen Ejecutivo](https://docs.google.com/document/d/1ymx6DLhzzLjXM-Ha9JMlPA39NenC9NNrYVTKLZ_Vfpc/edit?tab=t.0)
+- **Inglés:** [NP Executive Summary](https://docs.google.com/document/d/1QaEn1ucoh_ToqsrguQGfGqRSK3VjT9GBk6vqlfVxBtg/edit?tab=t.0)
+:::
+
+::: {.callout-warning collapse="true"}
+# ⏭️ Próximos pasos
+
+**Ajustes próximos (del EWG 3.3)**
+
+- **Quitar las puntuaciones de residuos de concha (SHEL) y de aleta de tiburón (FIN) de la puntuación final de NP.**
+- **Imponer dos puntos de referencia separados para la subpuntuación de residuos de camarón y de peces demersales (RESD).** El camarón y los peces demersales tienen distintas cantidades de carne comestible, así que usar un punto de referencia específico para camarón y otro específico para pescado.
+- Agregar datos de yeso al sector de sal y llamarlo **“Minerales costeros” (MINE)** en lugar de solo SALT.
+- **Implementar un umbral de “producción mínima”** para todos los sectores y no incluir la puntuación de un sector si su producción mínima es menor a cierta cantidad (por ejemplo, el primer cuartil de la producción anual promedio).
+- Una vez listo, **enviar las puntuaciones revisadas de NP al grupo Goalkeeper** y decidir si tiene sentido incluirlas en el cálculo final del índice.
+
+:::
