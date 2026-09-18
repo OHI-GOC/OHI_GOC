@@ -1,0 +1,1281 @@
+---
+title: "Project Update (Fall 2026)"
+format: html
+toc: true
+---
+
+We are excited to share where the Gulf of California Ocean Health Index currently stands. Expert Working Groups 1, 2, and 3 (including 3.1 to 3.3) are now complete, and the plots below show each goal’s Current Status by OHI region. Current Status is current condition divided by the reference point (current / reference). If you would like, you can hover your mouse over each plot to compare regions and years. A score of 100 means that current condition equals the reference point.
+
+This is a snapshot of work in progress. Scores, methods, and write-ups will continue to be updated as we finish pressures (including Safety & Security), finalize the goals, and complete the resilience layers. Specific data sources and reference points for each goal are described in detail in that goal’s executive summary.
+
+| Date | OHI assessment | Paper |
+|------|----------------|-------|
+| September 30 | Finish pressures (including Safety & Security) and finalize goals | Finalize goals / work on paper |
+| October 30 | Finish resilience | Work on paper |
+| November 13 | Send OHI draft to the core team and co-authors | Work on paper |
+| December 4 | Deadline for all co-authors to provide feedback | Work on paper |
+| January 1 | Submit OHI paper | Finalize paper |
+
+---
+
+**Here is which goals we talked through at each Expert Working Group meeting:**
+
+- **July 16 (EWG 3.1):** Tourism & Recreation, Food Provisioning, and Livelihoods & Economies
+- **August 13 (EWG 3.2):** Sense of Place, Access Opportunities, and Habitat Services
+- **September 10 (EWG 3.3):** Biodiversity, Clean Waters, and Natural Products
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+library(tidyverse)
+library(plotly)
+library(here)
+
+rgn_labels <- c(
+  "Region_1" = "Western Upper Gulf",
+  "Region_2" = "Western Midriff Islands",
+  "Region_3" = "Western Central Gulf",
+  "Region_4" = "Western Southern Gulf",
+  "Region_5" = "Eastern Upper Gulf",
+  "Region_6" = "Eastern Midriff Islands",
+  "Region_7" = "Southern Sonora Coast",
+  "Region_8" = "Sinaloa Coast",
+  "Region_9" = "Southeastern Gulf"
+)
+
+rgn_colors <- c(
+  "Region_1" = "#C03729",
+  "Region_2" = "#E68C7C",
+  "Region_3" = "#FC8F24",
+  "Region_4" = "#dcaa38",
+  "Region_5" = "#cbd2a0",
+  "Region_6" = "#98a25a",
+  "Region_7" = "#747428",
+  "Region_8" = "#627391",
+  "Region_9" = "#8d61a9"
+)
+
+region_levels <- paste0("Region_", 1:9)
+
+# plotly colors by the legend name ("western upper gulf"), so remap colors from Region_1 keys to those names
+rgn_label_colors <- setNames(
+  unname(rgn_colors[region_levels]),
+  unname(rgn_labels[region_levels])
+)
+
+# turn whatever region column we got into Region_1 ... Region_9, then add a legend name
+add_rgn_labels <- function(df) {
+  df %>%
+    mutate(
+      rgn_id = as.character(rgn_id),
+      # some files write "Region 1" instead of "Region_1"
+      rgn_id = stringr::str_replace_all(rgn_id, " ", "_"),
+      # some files just use 1, 2, 3 instead of Region_1, Region_2, Region_3
+      rgn_id = ifelse(
+        stringr::str_detect(rgn_id, "^[0-9]+$"),
+        paste0("Region_", rgn_id),
+        rgn_id
+      ),
+      # factor so plots always show regions in 1-9 order
+      rgn_id = factor(rgn_id, levels = region_levels),
+      # as.character() looks up by name ("Region_1"), not by the factor's number (1)
+      rgn_label = factor(
+        rgn_labels[as.character(rgn_id)],
+        levels = unname(rgn_labels[region_levels])
+      )
+    )
+}
+
+# make ferrer's overall csvs (and similar files) match the columns goal_plotly expects
+prep_cs <- function(df) {
+
+  # ferrer files: OHI_region_no; our plots: rgn_id
+  if ("OHI_region_no" %in% names(df) && !"rgn_id" %in% names(df)) {
+    df <- df %>% dplyr::rename(rgn_id = OHI_region_no)
+  }
+
+  # ferrer files: FP_score, AO_score, etc.; our plots: current_status
+  acronym_score <- names(df)[stringr::str_detect(names(df), "_[Ss]core$")]
+  acronym_score <- setdiff(acronym_score, "current_status")
+
+  if (!"current_status" %in% names(df) && length(acronym_score) >= 1) {
+    df <- df %>% dplyr::rename(current_status = dplyr::all_of(acronym_score[[1]]))
+  }
+
+  # some files just call the score column "score"
+  if (!"current_status" %in% names(df) && "score" %in% names(df)) {
+    df <- df %>% mutate(current_status = score)
+  }
+
+  df %>%
+    mutate(
+      rgn_id = as.character(rgn_id),
+      # ferrer files: region_1; our plots: Region_1
+      rgn_id = stringr::str_replace(rgn_id, "^region_", "Region_"),
+      year = as.numeric(year),
+      current_status = as.numeric(current_status)
+    ) %>%
+    add_rgn_labels()
+}
+
+goal_plotly <- function(
+    df,
+    title,
+    y = "current_status",
+    y_title = "Puntaje // Percent (out of 100)",
+    y_range = c(0, 105),
+    add_goal_line = TRUE,
+    goal_line_name = "Meta // Goal (100/100)"
+) {
+  df <- df %>%
+    arrange(rgn_label, year)
+
+  year_breaks <- sort(unique(df$year[!is.na(df$year)]))
+
+  # drop missing y values so plotly does not plot a gap marker; connectgaps still draws the line
+  df_drawn <- df %>% filter(!is.na(.data[[y]]))
+
+  yaxis_list <- list(title = y_title)
+  if (!is.null(y_range)) {
+    yaxis_list$range <- y_range
+  }
+
+  p <- plot_ly(
+    df_drawn,
+    x = ~year,
+    y = as.formula(paste0("~`", y, "`")),
+    color = ~rgn_label,
+    colors = rgn_label_colors,
+    type = "scatter",
+    mode = "lines+markers",
+    # if a year is missing (e.g. pathogens 2020), still connect the years on either side
+    connectgaps = TRUE
+  ) %>%
+    layout(
+      title = title,
+      xaxis = list(
+        title = "Año // Year",
+        # force integer year ticks (2019, 2020, ...) instead of 2019.5
+        tickmode = "array",
+        tickvals = year_breaks,
+        ticktext = as.character(as.integer(year_breaks)),
+        range = range(year_breaks)
+      ),
+      yaxis = yaxis_list,
+      legend = list(title = list(text = "Region"))
+    )
+
+  if (isTRUE(add_goal_line)) {
+    p <- p %>%
+      add_lines(
+        x = range(year_breaks),
+        y = c(100, 100),
+        line = list(color = "black", width = 2, dash = "dash"),
+        name = goal_line_name,
+        # inherit = false so this reference line is not treated as another region
+        inherit = FALSE
+      )
+  }
+
+  p
+}
+```
+
+# ![](figs/tourism-and-recreation.svg){width=8% height=8%} Tourism & Recreation {#tr}
+
+The overall TR score is the average of Quantity, Quality, and Sustainability. A score of 100 reflects that all three components have reached their reference points. Open the component scores below to see what is pulling a region up or down.
+
+Cruise ships are shown separately and are **not included** in this overall score.
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+tr_overall <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/TR_Scores_1.0_df_091126.csv"),
+  show_col_types = FALSE
+) %>%
+  prep_cs()
+goal_plotly(tr_overall, "Tourism & Recreation: Current Status")
+```
+
+*Figure 1. Interactive graph depicting this goal’s current status over time per OHI region. The scores shown here are not finalized (version 1.0; September, 2026).*
+
+::: {.callout-tip collapse="true"}
+# 📊 Component scores
+
+This is the Quantity component, which evaluates whether international and domestic tourism is reaching the targets set by Plan México for 2030.
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+# same family of quantity files as ewg31_tr.qmd; this is the later 2019-2026 model
+tr_quantity <- read_csv(
+  "/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_quantity/tr_quantity_current_status_2019_2026_OGmodel.csv",
+  show_col_types = FALSE
+) %>%
+  mutate(
+    year = as.numeric(year),
+    current_status = as.numeric(ifelse(score > 100, 100, score))
+  ) %>%
+  filter(year >= 2019, year <= 2025) %>%
+  add_rgn_labels()
+goal_plotly(tr_quantity, "Tourism & Recreation: Quantity")
+```
+
+*Figure 2. Interactive graph depicting this goal’s current status over time per OHI region. The scores shown here are not finalized (version 1.0; July, 2026).*
+
+This is the Quality component, which evaluates whether visits are safe and well supported by dining, cultural, and recreation services, relative to the best conditions observed in the Gulf.
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+# crime file is the same as ewg31_tr.qmd; activities file is the later august update
+tr_quality_crime <- read_csv(
+  "/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_quality/tr_qual_crime_score_030626.csv",
+  show_col_types = FALSE
+) %>%
+  dplyr::select(rgn_id, year = ano, score = current_status)
+
+tr_quality_activities <- read_csv(
+  "/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_quality/final_activity_avg_score_082826.csv",
+  show_col_types = FALSE
+) %>%
+  dplyr::select(rgn_id, year, score = final_score)
+
+tr_quality <- bind_rows(
+  tr_quality_activities %>% mutate(quality_type = "activities"),
+  tr_quality_crime %>% mutate(quality_type = "crime")
+) %>%
+  filter(year %in% 2019:2025) %>%
+  pivot_wider(names_from = quality_type, values_from = score) %>%
+  mutate(
+    year = as.numeric(year),
+    current_status = rowMeans(cbind(activities, crime), na.rm = TRUE)
+  ) %>%
+  add_rgn_labels()
+goal_plotly(tr_quality, "Tourism & Recreation: Quality")
+```
+
+*Figure 3. Interactive graph depicting this goal’s current status over time per OHI region. The scores shown here are not finalized (version 1.0; July, 2026).*
+
+This is the Sustainability component, which evaluates whether tourism is supported by certified hotels and beaches, quality jobs, and public investment at or above recent historical levels. The September scores include the updated hotel-certification list (Distintivo S, Green Key, Green Globe, Earthcheck, Preferred by Nature, and Calidad Ambiental Turística / PNAA).
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+# later sustainability file (ewg31_tr.qmd used the july version; this includes the new certifications)
+tr_sust <- read_csv(
+  "/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_sustainability/cs_sust_all_indicators_083126.csv",
+  show_col_types = FALSE
+) %>%
+  mutate(
+    year = as.numeric(year),
+    current_status = as.numeric(final_score)
+  ) %>%
+  filter(year >= 2019, year <= 2025) %>%
+  add_rgn_labels()
+goal_plotly(tr_sust, "Tourism & Recreation: Sustainability")
+```
+
+*Figure 4. Interactive graph depicting this goal’s current status over time per OHI region. The scores shown here are not finalized (version 1.0; September, 2026).*
+:::
+
+::: {.callout-caution collapse="true"}
+# 🚢 Cruise ships (not scored)
+
+Cruise activity **should be in Tourism & Recreation**, but it is **not scored** in the September overall TR score and will still be highlighted, but left as **NA**.  This is because the directionality of the reference point is not obvious. México has not said cruise tourism should increase or decrease, and while cruise lines support local tourism economy,many locals want it to decrease. A 7- to 10-hour port stop is also a different timeframe from a typical overnight tourist visit, and passengers are not split by domestic versus international visitors, so it does not fit well into the Quantity component.
+
+That said, as it was highlighted by experts as important to explore, we investigated using the average 2016–2019 baseline as the maximum.  Therefore, if in a given year and region there were more passengers than that mean, the current status score would lower.  However, we encountered and read mixed opinions regarding cruises, and it became clear that there should be a future working group to define what sustainability looks like for Gulf cruises before we incorporate this into the Index.
+
+It should still be emphasized as a potential problem/area of need, especially in the Western Southern Gulf, which a high rate of increase of passengers per port post-COVID. Additionally, intensified cruise tourism has also been linked to biological effects on whale shark habitat ([Mongabay, May 2025](https://news.mongabay.com/2025/05/cruise-ships-and-intensified-tourism-in-mexico-threaten-whale-shark-habitat/)).
+
+The plots below show the data for discussion. They are **not** in the overall TR current status score.
+
+Annual cruise passengers by OHI region (SECTUR port statistics, GoC ports only):
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+tr_cruise_detail <- read_csv(
+  "/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_sustainability/cruise_pressure_scores_detail_2016_2025.csv",
+  show_col_types = FALSE
+) %>%
+  mutate(
+    year = as.numeric(year),
+    passengers = as.numeric(passengers)
+  ) %>%
+  add_rgn_labels()
+goal_plotly(
+  tr_cruise_detail,
+  "Tourism & Recreation: Cruise Passengers",
+  y = "passengers",
+  y_title = "Annual cruise passengers",
+  y_range = NULL,
+  add_goal_line = FALSE
+)
+```
+
+*Figure 5. Interactive graph depicting annual cruise passengers per OHI region. These data are shown for discussion and are not included in the September 2026 Tourism & Recreation score.*
+
+Cruise passengers per coastal resident (same coastal-municipal population as TR Quality):
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+tr_cruise_detail <- read_csv(
+  "/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_sustainability/cruise_pressure_scores_detail_2016_2025.csv",
+  show_col_types = FALSE
+) %>%
+  mutate(
+    year = as.numeric(year),
+    passengers = as.numeric(passengers),
+    rgn_id = as.character(rgn_id)
+  )
+
+tr_cruise_pop_path <- "/home/shares/ohi/OHI_GOC/spatial/population_municipal/interpolated_population_per_rgn_coastalmunicipios_2000_2025.csv"
+if (file.exists(tr_cruise_pop_path)) {
+  tr_cruise_pop <- read_csv(tr_cruise_pop_path, show_col_types = FALSE) %>%
+    mutate(
+      rgn_id = as.character(rgn_id),
+      rgn_id = ifelse(stringr::str_detect(rgn_id, "^[0-9]+$"), paste0("Region_", rgn_id), rgn_id),
+      year = as.numeric(year_interpolated),
+      coastal_pop = as.numeric(population_interpolated)
+    ) %>%
+    dplyr::select(rgn_id, year, coastal_pop)
+
+  tr_cruise_percap <- tr_cruise_detail %>%
+    left_join(tr_cruise_pop, by = c("rgn_id", "year")) %>%
+    mutate(passengers_per_resident = passengers / coastal_pop) %>%
+    add_rgn_labels()
+
+  goal_plotly(
+    tr_cruise_percap,
+    "Tourism & Recreation: Cruise Passengers per Coastal Resident",
+    y = "passengers_per_resident",
+    y_title = "Passengers per coastal resident",
+    y_range = NULL,
+    add_goal_line = FALSE
+  )
+} else {
+  knitr::asis_output("*Passengers per coastal resident could not be plotted because the interpolated coastal-population file was not found.*")
+}
+```
+
+*Figure 6. Interactive graph depicting cruise passengers per coastal resident per OHI region. These data are shown for discussion and are not included in the September 2026 Tourism & Recreation score.*
+
+Exploratory score: annual passengers per coastal resident compared with the 2016–2019 mean (where more passengers than that baseline = lower score). A score of 100 means passenger density is at or below the 2016–2019 mean.
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+tr_cruise_score <- read_csv(
+  "/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_sustainability/tr_sust_cruise_pressure_current_status_all_regions_2019_2025.csv",
+  show_col_types = FALSE
+) %>%
+  mutate(
+    year = as.numeric(year),
+    current_status = as.numeric(score)
+  ) %>%
+  add_rgn_labels()
+goal_plotly(
+  tr_cruise_score,
+  "Tourism & Recreation: Cruise Passenger Density",
+  y_title = "Score (0–100; higher = less pressure)",
+  goal_line_name = "At or below 2016–2019 mean (100)"
+)
+```
+
+*Figure 7. Interactive graph depicting an exploratory cruise-pressure score (inverted 2016 to 2019 mean). These scores are not included in the overall Tourism & Recreation score. The scores shown here are not finalized (version 1.0; September, 2026).*
+:::
+
+::: {.callout-note collapse="true"}
+# 📚 Data Sources & Methods
+
+This goal uses several data sources across Quantity, Quality, and Sustainability:
+
+- **Quantity:** SECTUR DataTur hotel monitoring reports for domestic and international arrivals. Where a municipality is missing from DataTur, we fill the gap with INEGI DENUE hotel employee models.
+- **Quality:** SESNSP municipal crime statistics, INEGI municipal population (crime per person), and INEGI DENUE dining, cultural, and recreation businesses within 50 km of the coast.
+- **Sustainability:** hotel certifications (Distintivo S, Green Key, Green Globe, Earthcheck, Preferred by Nature, and Calidad Ambiental Turística / PNAA: [Certificados Expedidos 2025](https://www.gob.mx/cms/uploads/attachment/file/1056480/Certificados_Expedidos_2025.pdf)); FEE Blue Flag beaches with INEGI coastline and beach linework; CONANP public investment plus SHCP / NOSSA fee returns; and INEGI Censos Económicos for tourism job quality.
+- **Cruise ships (shown, not scored):** SECTUR cruise port statistics (passengers and arribos), joined to OHI regions, with INEGI coastal municipal population for the per person plots.
+
+Methods, reference points, and indicator details are in the executive summary:
+
+- **English:** [TR Executive Summary](https://docs.google.com/document/d/1y8W_z3GJL1SY4x7m_QrXP7D1vvfl53ghAgC0hB6VbD0/edit?tab=t.0)
+- **Spanish:** [TR Resumen ejecutivo](https://docs.google.com/document/d/1RhY1pTaZVDXHtm4OTRL5f6lf5fKj8fOLhRi1rCGCN7k/edit?tab=t.0)
+:::
+
+::: {.callout-important collapse="true"}
+# 🔗 Goal Resources
+
+- **EWG 3.1 page:** [Tourism & Recreation](ewg31_tr.html) · **meeting notes:** [July 16](https://docs.google.com/document/d/1wUw9c7JtcpR4tIUv2m4Dog6MhVmzD53d4jmzi078G4Q/edit?tab=t.x02j1n7qhxzr)
+- **Goalkeeper page:** [Tourism and Recreation](tr.html)
+:::
+
+::: {.callout-warning collapse="true"}
+# ⏭️ Next Steps
+
+**Upcoming Adjustments (from EWG 3.1)**
+
+- **Done:** incorporate Earthcheck, Preferred by Nature, and Calidad Ambiental Turística / PNAA ([Certificados Expedidos 2025](https://www.gob.mx/cms/uploads/attachment/file/1056480/Certificados_Expedidos_2025.pdf)) into the hotel certification component. The September scores use this updated list.
+- **In progress:** Explore integrating an indicator within the “Investment in potential tourism management” component of TR Sustainability that reflects the number of employees per hectare of GOC protected areas.
+  -  We will integrate this in one of two ways in the future:
+    1. **SIMEC i-efectividad C2 and C3.** Include CONANP’s SIMEC (Sistema de Información, Monitoreo y Evaluación para la Conservación) *i-efectividad* scores for **C2 Administrativo y financiero** and **C3 Usos y beneficios** into this subcomponent, together with federal CONANP budgets (V003 and V005) and returned *cobro de derechos*. The CONANP budgets would still show change over years. SIMEC would show differences across regions (the available reports are about 2021 to 2022, so those scores would be held constant until SIMEC is updated).
+       - **C2 Administrativo y financiero** covers presupuesto (sufficiency, security of funding, and budget management), personal (staff sufficiency, training, and staff security), equipamiento, mantenimiento del equipo, infraestructura de manejo, and cobro de derechos.
+       - **C3 Usos y beneficios** covers beneficios económicos, producción sustentable, uso / aprovechamiento sustentable (terrestre and marine-coastal ANPs), and infraestructura para visitantes.
+    2. **Employees in protected areas.** Use the number of employees in each protected area over time, compared with the global ideal personnel density from Appleton et al. (2022), *Protected area personnel and ranger numbers are insufficient to deliver global expectations* ([Nature Sustainability](https://doi.org/10.1038/s41893-022-00970-0); see Fig. 5, global terrestrial protected area personnel densities).  
+        - We are waiting to hear back from CONANP through a [Plataforma Nacional de Transparencia](https://www.plataformadetransparencia.org.mx/) request to obtain the annual employee data specific to each protected area. CONANP must respond by September 23, 2026.
+- **Done:** If time allows – investigate adding cruise ship data (annual passengers and port stops) into the TR Quantity component. The main difficulty is the reference point, since we cannot tell from the data whether passengers are international or domestic, and a 7- to 10-hour port stop does not equate to a typical tourist's length of stay.
+  - For now, we decided to keep the cruise data separate (see the dropdown above). In the future a working group should define cruise sustainability metrics (vessel size, enforcement, ports per region). Until then, we will leave cruises as NA in the TR score.
+:::
+
+# ![](figs/food-provision.svg){width=8% height=8%} Food Provisioning {#fp}
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+fp_cs <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/FP_Scores_1.0_df_Sep112026.csv"),
+  show_col_types = FALSE
+) %>%
+  prep_cs()
+goal_plotly(fp_cs, "Food Provisioning: Current Status")
+```
+
+*Figure 8. Interactive graph depicting this goal’s current status over time per OHI region. The scores shown here are not finalized (version 1.0; September, 2026).*
+
+::: {.callout-tip collapse="true"}
+# 📊 Component scores
+
+This goal has two components. We will add a plot for each one here as soon as those files are ready.
+
+- **Wild catch (FIS):** CONAPESCA landings (Mex-Fisheries clean version), with stock status from RAM, then Carta Nacional Pesquera, then CMSY.
+- **Mariculture (MAR):** CONAPESCA aquaculture production, with Monterey Bay Aquarium Seafood Watch as a sustainability coefficient.
+:::
+
+::: {.callout-note collapse="true"}
+# 📚 Data Sources & Methods
+
+Food Provisioning measures seafood that is sustainably produced by wild catch fisheries and mariculture.
+
+- **Wild catch (FIS):** CONAPESCA landings, using the cleaned Mex-Fisheries version from the University of Miami. Stock status comes first from the RAM stock assessment database, then from Mexico’s Carta Nacional Pesquera, then from CMSY when we have no better option. We also use catch per unit effort from CONAPESCA permit holders.
+- **Mariculture (MAR):** CONAPESCA aquaculture production (shrimp, bivalves, and finfish), with Monterey Bay Aquarium Seafood Watch scores as a sustainability coefficient. The production target follows the Programa Nacional de Pesca y Acuacultura (20% growth over five years).
+- Fishing records are assigned to OHI regions using geospatial keys from Cavieses-Nuñez, Morzaria-Luna, and colleagues (2025).
+
+Methods, reference points, and indicator details are in the executive summary:
+
+- **English:** [FP Executive Summary](https://docs.google.com/document/d/1sYug__6lxXjE_Vg3zW0etdAqZKKU3eJZtiX4bzd7UZA/edit?tab=t.0)
+- **Spanish:** [FP Resumen Ejecutivo](https://docs.google.com/document/d/1uvmC99z4ZNi7pv5NdgYGATG8WRFpqUipA0c1H4NqPiw/edit?tab=t.0)
+:::
+
+::: {.callout-important collapse="true"}
+# 🔗 Goal Resources
+
+- **EWG 3.1 page:** [Food Provisioning](ewg31_fp.html) · **meeting notes:** [July 16](https://docs.google.com/document/d/1wUw9c7JtcpR4tIUv2m4Dog6MhVmzD53d4jmzi078G4Q/edit?tab=t.x02j1n7qhxzr)
+- **Goalkeeper page:** [Food Provisioning](fp.html)
+:::
+
+::: {.callout-warning collapse="true"}
+# ⏭️ Next Steps
+
+**Upcoming Adjustments (from EWG 3.1)**
+
+- Drop CPUE sub-scores, which — for the most part — inflate the FIS and FP scores.
+- Modify the FIS sub-scores with a sustainability scalar as needed and if possible.
+- Clarify to reviewers, readers, and index users that these numbers compress and therefore miss important regional context in favor of indicators that can be compared across regions; scores may be higher than expected due to lack of regional context as well as intentional and unintentional misreporting of fisheries data at the state and federal level; and these methods do not allow for a holistic evaluation of seafood sustainability at the ecological community level. Community-composition metrics can and likely should be integrated into future versions of the index.
+
+:::
+
+# ![](figs/livelihoods-and-economies.svg){width=8% height=8%} Livelihoods & Economies {#le}
+
+The September scores include an update to **LIV quantity and quality**: both are adjusted for informality with a state and sector ENOE multiplier. Economies (ECO) is still formal marine-related revenue only. Open the component scores below to see jobs, job quality, and revenue separately.
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+le_cs <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/LE_Scores_1.0_df_091126.csv"),
+  show_col_types = FALSE
+) %>%
+  prep_cs()
+goal_plotly(le_cs, "Livelihoods & Economies: Current Status")
+```
+
+*Figure 9. Interactive graph depicting this goal’s current status over time per OHI region. The scores shown here are not finalized (version 1.0; September, 2026).*
+
+::: {.callout-tip collapse="true"}
+# 📊 Component scores
+
+These LIV plots use the informality-adjusted files made after EWG 3.1. ECO has not changed since [EWG 3.1](ewg31_le.html). Region 2 is not scored due to a lack of data on Gulf-side marine related jobs.
+
+This is the Livelihoods quantity component (number of marine-related jobs per coastal resident), now including informal workers. A score of 100 means jobs per resident are at or above that region’s 2018 value.
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+le_jobs_raw <- read_csv(
+  "/home/shares/ohi/OHI_GOC/goal_prep/le/liv/liv_current_status_2019ref_informality.csv",
+  show_col_types = FALSE
+)
+
+if ("year" %in% names(le_jobs_raw)) {
+  le_jobs <- le_jobs_raw %>% mutate(year = as.numeric(year))
+} else if ("ce_ano_censal" %in% names(le_jobs_raw)) {
+  le_jobs <- le_jobs_raw %>% mutate(year = as.numeric(ce_ano_censal))
+} else {
+  le_jobs <- le_jobs_raw %>% mutate(year = as.numeric(ano_censal))
+}
+
+if ("current_status" %in% names(le_jobs)) {
+  le_jobs <- le_jobs %>% mutate(current_status = as.numeric(current_status))
+} else if ("score" %in% names(le_jobs)) {
+  le_jobs <- le_jobs %>% mutate(current_status = as.numeric(score))
+} else if ("liv_current_status" %in% names(le_jobs)) {
+  le_jobs <- le_jobs %>% mutate(current_status = as.numeric(liv_current_status))
+} else if ("final_score" %in% names(le_jobs)) {
+  le_jobs <- le_jobs %>% mutate(current_status = as.numeric(final_score))
+} else {
+  stop(
+    "Could not find a score column in liv_current_status_2019ref_informality.csv. ",
+    "Columns are: ", paste(names(le_jobs_raw), collapse = ", ")
+  )
+}
+
+le_jobs <- le_jobs %>%
+  mutate(
+    rgn_id = as.character(rgn_id),
+    current_status = ifelse(rgn_id %in% c("Region_2", "2"), NA_real_, current_status)
+  ) %>%
+  add_rgn_labels()
+goal_plotly(le_jobs, "Livelihoods & Economies: Number of Jobs")
+```
+
+*Figure 10. Interactive graph depicting this goal’s current status over time per OHI region. The scores shown here are not finalized (version 1.0; September, 2026).*
+
+This is the Livelihoods quality component (employer social security and other benefits per job), also adjusted for informal workers.
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+# ewg31_le.qmd reads ce_qual_current_status.csv and uses ano_censal + current_status;
+# this is the later informality-adjusted version of that file
+le_qual_raw <- read_csv(
+  "/home/shares/ohi/OHI_GOC/goal_prep/le/liv/ce_qual_current_status_informality.csv",
+  show_col_types = FALSE
+)
+
+if ("year" %in% names(le_qual_raw)) {
+  le_qual <- le_qual_raw %>% mutate(year = as.numeric(year))
+} else if ("ano_censal" %in% names(le_qual_raw)) {
+  le_qual <- le_qual_raw %>% mutate(year = as.numeric(ano_censal))
+} else {
+  le_qual <- le_qual_raw %>% mutate(year = as.numeric(ce_ano_censal))
+}
+
+if ("current_status" %in% names(le_qual)) {
+  le_qual <- le_qual %>% mutate(current_status = as.numeric(current_status))
+} else if ("score" %in% names(le_qual)) {
+  le_qual <- le_qual %>% mutate(current_status = as.numeric(score))
+} else if ("qual_current_status" %in% names(le_qual)) {
+  le_qual <- le_qual %>% mutate(current_status = as.numeric(qual_current_status))
+} else if ("final_score" %in% names(le_qual)) {
+  le_qual <- le_qual %>% mutate(current_status = as.numeric(final_score))
+} else {
+  stop(
+    "Could not find a score column in ce_qual_current_status_informality.csv. ",
+    "Columns are: ", paste(names(le_qual_raw), collapse = ", ")
+  )
+}
+
+le_qual <- le_qual %>%
+  mutate(
+    rgn_id = as.character(rgn_id),
+    current_status = ifelse(rgn_id %in% c("Region_2", "2"), NA_real_, current_status)
+  ) %>%
+  add_rgn_labels()
+goal_plotly(le_qual, "Livelihoods & Economies: Quality of Jobs")
+```
+
+*Figure 11. Interactive graph depicting this goal’s current status over time per OHI region. The scores shown here are not finalized (version 1.0; September, 2026).*
+
+This is the Economies component (formal marine-related revenue). Informal work is not added here, as we did not want to overstate revenue.
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+# same eco file and columns as ewg31_le.qmd (ano_censal + current_status)
+le_eco <- read_csv(
+  "/home/shares/ohi/OHI_GOC/goal_prep/le/eco/ce_rev_current_status_2019ref.csv",
+  show_col_types = FALSE
+) %>%
+  mutate(
+    year = as.numeric(ano_censal),
+    current_status = as.numeric(current_status),
+    rgn_id = as.character(rgn_id),
+    current_status = ifelse(rgn_id %in% c("Region_2", "2"), NA_real_, current_status)
+  ) %>%
+  add_rgn_labels()
+goal_plotly(le_eco, "Livelihoods & Economies: Marine-Related Revenue")
+```
+
+*Figure 12. Interactive graph depicting this goal’s current status over time per OHI region. The scores shown here are not finalized (version 1.0; September, 2026).*
+:::
+
+::: {.callout-note collapse="true"}
+# 📚 Data Sources & Methods
+
+Livelihoods & Economies measures jobs and revenue from marine-related industries. Livelihoods (LIV) captures the quantity and quality of marine-related jobs. Economies (ECO) captures revenue from marine-related sectors.
+
+- **Jobs and revenue:** INEGI Censos Económicos (2003, 2008, 2013, 2018, 2023) for marine-related businesses. INEGI population is used so we can talk about jobs per coastal resident, and to adjust regions that span both the Gulf and Pacific coasts. Region 2 is not reported because municipal census data are not enough to isolate Gulf-side activity.
+- **Informal work (added after EWG 3.1):** INEGI ENOE, used to build a yearly state and sector multiplier so LIV quantity and LIV quality include informal marine-related workers. CEPAL’s informal-employment report informed the methodology of our multiplier, however the values from the report itself was too coarse for marine sectors, so we did not use it alone. **ECO includes the formal census revenue only.**
+
+Methods, reference points, and indicator details are in the executive summary:
+
+- **English:** [LE Executive Summary](https://docs.google.com/document/d/1EQd0xKKkfeEm_wsYa8bZMxTqH7OWtk3-BQ-UHAg1LXA/edit?tab=t.0#heading=h.6qdq66n7hr47)
+- **Spanish:** [LE Resumen ejecutivo](https://docs.google.com/document/d/1bCfCDMTlREiOwrVbwFCV9vXM56OKT5OTxfHDjMfdFdo/edit?tab=t.0)
+:::
+
+::: {.callout-important collapse="true"}
+# 🔗 Goal Resources
+
+- **EWG 3.1 page:** [Livelihoods & Economies](ewg31_le.html) · **meeting notes:** [July 16](https://docs.google.com/document/d/1wUw9c7JtcpR4tIUv2m4Dog6MhVmzD53d4jmzi078G4Q/edit?tab=t.x02j1n7qhxzr)
+- **Goalkeeper page:** [Livelihoods and economies](le.html)
+- **Informal-jobs multiplier notes:** [OHI_GOC_issues #125](https://github.com/OHI-GOC/OHI_GOC_issues/issues/125#issue-5262710620)
+:::
+
+::: {.callout-warning collapse="true"}
+# ⏭️ Next Steps
+
+**Upcoming Adjustments (from EWG 3.1)**
+
+- **Done (in the September scores):** include informal marine-related workers in **both LIV quantity and LIV quality**. We applied a yearly state–sector ENOE multiplier (`jobs_multiplier = 1 / (1 − pct_informal)`) to coastal Economic Census jobs. ECO remains formal CE revenue only. Prep notes: [issue #125](https://github.com/OHI-GOC/OHI_GOC_issues/issues/125#issue-5262710620).
+- For exploratory purposes, aggregate CONAPESCA fishing and mariculture totals to check against Economic Census revenue estimates.
+- Clearly explain the within-region reference point methodology in the report / paper, so that readers do not misinterpret scores for smaller regions doing well (relative to themselves) against larger regions with high absolute revenue.
+:::
+
+# ![](figs/sense-of-place.svg){width=8% height=8%} Sense of Place {#sp}
+
+Sense of Place, aka *Sentido de Pertenencia*, was originally the average of Coastal Community Engagement (CCE), Lasting Special Places (LSP), and Iconic Species (ICO). After EWG 3.2 we are reworking CCE, so the September 2026 scores below are the average of **ICO and LSP only**. Open the component scores to see ICO, LSP, the pre-EWG CCE scores, and the pre-EWG overall scores (CCE + LSP + ICO).
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+sp_cs <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/SP_Scores_1.0_df_091126.csv"),
+  show_col_types = FALSE
+) %>%
+  prep_cs()
+goal_plotly(sp_cs, "Sense of Place: Current Status")
+```
+
+*Figure 13. Interactive graph depicting this goal’s current status over time per OHI region. The scores shown here are not finalized (version 1.0; September, 2026).*
+
+::: {.callout-tip collapse="true"}
+# 📊 Component scores
+
+These ICO and LSP scores are the same ones used on the [EWG 3.2 page](ewg32_sp.html). They are the two components averaged in the September 2026 overall score above.
+
+This is the Iconic Species (ICO) component, which evaluates the mean conservation-risk status of culturally iconic species in each region (NOM-059, IUCN, and CITES). A score of 100 means those species are not listed as at risk.
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+# same ico file as ewg32_sp.qmd
+sp_ico <- read_csv(
+  "/home/shares/ohi/OHI_GOC/goal_prep/sp/ico/output/ico_mean_risk_status_per_region_041326.csv",
+  show_col_types = FALSE
+) %>%
+  mutate(
+    year = as.numeric(year),
+    current_status = as.numeric(current_status)
+  ) %>%
+  filter(year >= 2019, year <= 2025) %>%
+  add_rgn_labels()
+goal_plotly(sp_ico, "Sense of Place: Iconic Species")
+```
+
+*Figure 14. Interactive graph depicting this goal’s current status over time per OHI region. The scores shown here are not finalized (version 1.0; August, 2026).*
+
+This is the Lasting Special Places (LSP) component, which evaluates the protection condition of expert-identified special places (protected areas, dive sites, fishing spots, archaeology, habitats, and other places). LSP is a **2025 snapshot** (not a time series).  The colors appear warmer for from lower scores to cooler for higher scores,on a 0–100 scale. 
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| out.width: "90%"
+#| fig-align: center
+
+# copy the mazu png into chapters/figs so the website html can actually serve it
+# (include_graphics on /home/shares/... leaves an absolute path that github pages cannot load)
+lsp_src_candidates <- c(
+  "/home/shares/ohi/OHI_GOC/goal_prep/sp/lsp/v2025/viz/lsp_overall_2025.png",
+  here::here("goal_prep/sp/lsp/v2025/viz/lsp_overall_2025.png"),
+  here::here("../goal_prep/sp/lsp/v2025/viz/lsp_overall_2025.png"),
+  here::here("images/sp_lsp_figs/lsp_overall_2025.png"),
+  here::here("../images/sp_lsp_figs/lsp_overall_2025.png"),
+  here::here("chapters/figs/lsp_overall_2025.png"),
+  "figs/lsp_overall_2025.png"
+)
+lsp_src <- lsp_src_candidates[file.exists(lsp_src_candidates)][1]
+
+lsp_dest_dir <- if (dir.exists("figs")) {
+  "figs"
+} else {
+  here::here("chapters/figs")
+}
+dir.create(lsp_dest_dir, recursive = TRUE, showWarnings = FALSE)
+lsp_local <- file.path(lsp_dest_dir, "lsp_overall_2025.png")
+
+if (!is.na(lsp_src) && !identical(normalizePath(lsp_src, mustWork = FALSE), normalizePath(lsp_local, mustWork = FALSE))) {
+  file.copy(lsp_src, lsp_local, overwrite = TRUE)
+}
+
+if (file.exists(lsp_local)) {
+  knitr::include_graphics(lsp_local)
+} else {
+  knitr::asis_output(paste0(
+    "*LSP choropleth (`lsp_overall_2025.png`) was not copied into `chapters/figs/`. ",
+    "Expected source: `/home/shares/ohi/OHI_GOC/goal_prep/sp/lsp/v2025/viz/lsp_overall_2025.png`.*"
+  ))
+}
+```
+
+*Figure 15. Choropleth map depicting this component’s current status by OHI region (2025 snapshot). The scores shown here are not finalized (version 1.0; August, 2026).*
+
+This is the Coastal Community Engagement (CCE) component **as scored before EWG 3.2**: the average of Ama tu Playa beach adoptions and non-natural cultural places (INEGI DENUE). After the meeting we decided those indicators were too limited, so CCE is being reworked around civic, educational, and social engagement and is **not** included in the September 2026 overall score.
+
+Notes on the CCE rework:
+
+- [(SP) CCE Finalizing Methods](https://docs.google.com/document/d/14wO4t6Gs27_Z8Xq6VmLu7JjjdGz42ww-DEyymMLTd5w/edit?tab=t.m357mmezi3zk)
+- [(SP) CCE Finalizing Methods — continued](https://docs.google.com/document/d/1cJsDE7SMNl0QX1EO_gZbvTtedfiKj45F6ekhJNSQk6M/edit?tab=t.0#heading=h.u6cg98vcgkx)
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+# same cce file as ewg32_sp.qmd
+sp_cce <- read_csv(
+  "/home/shares/ohi/OHI_GOC/goal_prep/sp/cce/v2026/output/cce_current_status.csv",
+  show_col_types = FALSE
+) %>%
+  mutate(
+    year = as.numeric(year),
+    current_status = as.numeric(current_status)
+  ) %>%
+  filter(year >= 2019, year <= 2025) %>%
+  add_rgn_labels()
+goal_plotly(sp_cce, "Sense of Place: Coastal Community Engagement")
+```
+
+*Figure 16. Interactive graph depicting this goal’s current status over time per OHI region. The scores shown here are not finalized (version 1.0; August, 2026).*
+
+For comparison, this is the overall SP score used on the EWG 3.2 page: the average of CCE, LSP, and ICO.
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+# same pre-ewg overall file as ewg32_sp.qmd
+sp_pre_ewg <- read_csv(
+  "/home/shares/ohi/OHI_GOC/goal_prep/sp/sp_current_status.csv",
+  show_col_types = FALSE
+) %>%
+  mutate(
+    year = as.numeric(year),
+    current_status = as.numeric(current_status)
+  ) %>%
+  filter(year >= 2019, year <= 2025) %>%
+  add_rgn_labels()
+goal_plotly(sp_pre_ewg, "Sense of Place: CCE, LSP, and ICO")
+```
+
+*Figure 17. Interactive graph depicting this goal’s current status over time per OHI region. The scores shown here are not finalized (version 1.0; August, 2026).*
+:::
+
+::: {.callout-note collapse="true"}
+# 📚 Data Sources & Methods
+
+Sense of Place measures how well we are sustainably caring for the marine and coastal places and species that provide heritage, shared memory, and identity for Gulf communities.
+
+The **September 2026 overall score uses 2 components** (ICO and LSP). CCE is being reworked and is held out for now.
+
+- **ICO:** Expert Working Group iconic species list; occurrence from Morzaria-Luna et al. (2027); risk status from NOM-059, IUCN Red List, and CITES.
+- **LSP:** Expert-identified special places (protected areas, dive sites, fishing spots, archaeology, habitats, and other places). Condition comes from CONANP SIMEC i-efectividad, Ramsar management plans, and protected area polygons (WDPA, CONANP, HEM). Priority dive sites come from Arcos-Aguilar et al. (2021) and CBMC GCMP layers. Archaeology sites come from INAH.
+- **CCE (shown for EWG 3.2, not in the September 2026 overall):** SEMARNAT Ama tu Playa beach adoptions (adoptaunaplaya.com) and INEGI DENUE sector 71 cultural establishments within 10 km of the coast. Rework notes: [CCE Finalizing Methods](https://docs.google.com/document/d/14wO4t6Gs27_Z8Xq6VmLu7JjjdGz42ww-DEyymMLTd5w/edit?tab=t.m357mmezi3zk) and [continued](https://docs.google.com/document/d/1cJsDE7SMNl0QX1EO_gZbvTtedfiKj45F6ekhJNSQk6M/edit?tab=t.0#heading=h.u6cg98vcgkx).
+
+Methods, reference points, and indicator details are in the executive summary:
+
+- **English:** [SP Executive Summary](https://docs.google.com/document/d/1qxuYHPqFbGprBSflfiq00w3IlXs-9VjmsxYXM4O3sgY/edit?tab=t.0)
+- **Spanish:** [SP Resumen ejecutivo](https://docs.google.com/document/d/1Bs14irzJuaMGkqVljkC5fpJot0FZvwz0l0jlmNeV_fc/edit?tab=t.0)
+:::
+
+::: {.callout-important collapse="true"}
+# 🔗 Goal Resources
+
+- **EWG 3.2 page:** [Sense of Place](ewg32_sp.html) · **meeting notes:** [August 13](https://docs.google.com/document/d/1rYZgT173UREE8NKX5vzmIbGkF7QgI9xe6yqEaWEVZ78/edit?tab=t.x02j1n7qhxzr)
+- **Goalkeeper page:** [Sense of Place](sp.html)
+- **ICO list for expert review:** [(SP) ICO: List for Expert Review](https://docs.google.com/document/d/1-2u1wcy33Y7Cs2Jjp-95I1iBRZGge2bRyJ27xTHxcFk/edit?tab=t.0)
+- **LSP lists for expert review:** [(SP) LSP: Lists for Expert Review](https://docs.google.com/spreadsheets/d/1_jcxQsKVLgwz8NknmBaHDtPjdfwAgZ10U6jOsryK4CU/edit?gid=0#gid=0)
+- **CCE rework notes:** [CCE Finalizing Methods](https://docs.google.com/document/d/14wO4t6Gs27_Z8Xq6VmLu7JjjdGz42ww-DEyymMLTd5w/edit?tab=t.m357mmezi3zk) · [continued](https://docs.google.com/document/d/1cJsDE7SMNl0QX1EO_gZbvTtedfiKj45F6ekhJNSQk6M/edit?tab=t.0#heading=h.u6cg98vcgkx)
+:::
+
+::: {.callout-warning collapse="true"}
+# ⏭️ Next Steps
+
+**Upcoming Adjustments (from EWG 3.2)**
+
+- Finalize the ICO list. Please add input here: [(SP) ICO: List for Expert Review](https://docs.google.com/document/d/1-2u1wcy33Y7Cs2Jjp-95I1iBRZGge2bRyJ27xTHxcFk/edit?tab=t.0).
+- Finalize the LSP list. Please add input here: [(SP) LSP: Lists for Expert Review](https://docs.google.com/spreadsheets/d/1_jcxQsKVLgwz8NknmBaHDtPjdfwAgZ10U6jOsryK4CU/edit?gid=0#gid=0). Prioritize reviewing the “Iconic Fishing Sites,” which the group noted had a lack of sites along the Sinaloa Coast.
+- Restructure CCE around civic, educational, and social engagement. Additional details: [(SP) CCE Finalizing Methods](https://docs.google.com/document/d/14wO4t6Gs27_Z8Xq6VmLu7JjjdGz42ww-DEyymMLTd5w/edit?tab=t.m357mmezi3zk). Until CCE is ready, keep overall SP as the average of ICO and LSP.
+:::
+
+# ![](figs/artisanal-fishing-opportunities.svg){width=8% height=8%} Access Opportunities {#ao}
+
+**After EWG 3.2 we plan to leave Local Coastal Access (LCA) as NA.** We did develop methods to estimate realized access (who can actually reach the beach), but we did not have time to fold them into this first version of the Index. Those methods are described on the [Coastal Access: La Paz](coastal_access_lapaz.html) page. For now, the LCA component is NA so that true coastal access is not misrepresented. You can read more in the [executive summary](https://docs.google.com/document/d/1RyoGspGrQRQ4deif7Ybm3k3e39EG2X9dBnpket8ITtk/edit?tab=t.0).
+
+The plot below is the overall Access Opportunities score with LCA held out.
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+ao_cs <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/AO_Scores_1.0_df_Sep112026.csv"),
+  show_col_types = FALSE
+) %>%
+  prep_cs()
+goal_plotly(ao_cs, "Access Opportunities: Current Status")
+```
+
+*Figure 18. Interactive graph depicting this goal’s current status over time per OHI region. The scores shown here are not finalized (version 1.0; September, 2026).*
+
+::: {.callout-tip collapse="true"}
+# 📊 Component scores
+
+This goal has two components. We will add a plot for each one here as soon as those files are ready.
+
+- **Artisanal fishing (AFO):** the artisanal share of CONAPESCA landings, with stock status from RAM, then Carta Nacional Pesquera, then CMSY.
+- **Local coastal access (LCA): NA for this first version.** After EWG 3.2 we plan to leave LCA as NA. Methods for realized access were developed (see [Coastal Access: La Paz](coastal_access_lapaz.html)), but they are not in the Index yet, so we do not want legal access alone to stand in for true coastal access.
+:::
+
+::: {.callout-note collapse="true"}
+# 📚 Data Sources & Methods
+
+Access Opportunities (formerly Artisanal Opportunities) measures whether members of coastal communities, including small-scale fishing communities and *pueblos originarios*, have access to marine resources that allow them to thrive.
+
+- **Artisanal fishing (AFO):** CONAPESCA landings (Mex-Fisheries clean version), keeping the artisanal share of catch. Stock status uses the same hierarchy as Food Provisioning: RAM assessments, then Carta Nacional Pesquera, then CMSY. Records are assigned to OHI regions with the Cavieses-Nuñez and Morzaria-Luna geospatial keys.
+- **Local coastal access (LCA):** **NA for now.** We looked at legal protection under ZOFEMAT (Mexico’s federal maritime terrestrial zone), municipal ZOFEMAT offices, local beach inventories, and national PROFEPA enforcement capacity. We also developed methods for realized access, described on the [Coastal Access: La Paz](coastal_access_lapaz.html) page, but we did not have time to integrate them into this first version of the Index. After EWG 3.2 we plan to leave LCA as NA so that true coastal access is not misrepresented. Read more in the [executive summary](https://docs.google.com/document/d/1RyoGspGrQRQ4deif7Ybm3k3e39EG2X9dBnpket8ITtk/edit?tab=t.0).
+
+Methods, reference points, and indicator details are in the executive summary:
+
+- **English:** [AO Executive Summary](https://docs.google.com/document/d/1RyoGspGrQRQ4deif7Ybm3k3e39EG2X9dBnpket8ITtk/edit?tab=t.0)
+- **Spanish:** [AO Resumen Ejecutivo](https://docs.google.com/document/d/146yfYH7c9UaSo3PGg5DI2u7YRK1iDVxIQeUxPckOO0Y/edit?tab=t.0)
+:::
+
+::: {.callout-important collapse="true"}
+# 🔗 Goal Resources
+
+- **EWG 3.2 page:** [Access Opportunities](ewg32_ao.html) · **meeting notes:** [August 13](https://docs.google.com/document/d/1rYZgT173UREE8NKX5vzmIbGkF7QgI9xe6yqEaWEVZ78/edit?tab=t.x02j1n7qhxzr)
+- **Goalkeeper page:** [Access Opportunities](ao.html)
+- **Realized access methods (not in this version):** [Coastal Access: La Paz](coastal_access_lapaz.html)
+:::
+
+::: {.callout-warning collapse="true"}
+# ⏭️ Next Steps
+
+**Upcoming Adjustments (from EWG 3.2)**
+
+- **Drop Local Coastal Access (LCA) scores from the final AO scores** due to incomplete coastal access data. > COMPLETED
+- Locate stock assessment information for jellyfish (*agua mala*) and integrate it into the AFO calculation. *Agua mala* are heavily fished in certain Gulf regions like Sonora, and a stock assessment would help calculate the AFO score more accurately.
+  - **Located:** thanks Jaqueline for sending the IMIPAS report (2024): *La pesquería de medusa bola de cañón (Stomolophus spp.) en Sonora, 2023.*  This will be added to round out the AO stock assessment scores.
+- **General note: provide additional context for AFO scores,** such as which stocks are driving the scores in which regions.
+- **LCA is NA.** After EWG 3.2 we plan to leave Local Coastal Access as NA. Realized access methods were developed ([Coastal Access: La Paz](coastal_access_lapaz.html)), but they are not in this first version of the Index, so we do not want the score to misrepresent true coastal access.
+
+:::
+
+# ![](figs/coastal-protection.svg){width=8% height=8%} Habitat Services {#hs}
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+hs_cs <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/HS_Scores_1.0_df_Sep112026.csv"),
+  show_col_types = FALSE
+) %>%
+  prep_cs()
+goal_plotly(hs_cs, "Habitat Services: Current Status")
+```
+
+*Figure 19. Interactive graph depicting this goal’s current status over time per OHI region. The scores shown here are not finalized (version 1.0; September, 2026).*
+
+::: {.callout-tip collapse="true"}
+# 📊 Component scores
+
+Habitat Services is the average of three service scores, built from five habitats. We will add plots for each service here as soon as those files are ready.
+
+- **Coastal protection (PRO)**
+- **Pollution control and filtration (FIL)**
+- **Carbon sequestration (SEQ)**
+
+The five habitats behind those scores are mangroves, salt marshes, coastal dunes and scrubland, seagrass meadows, and coral reefs.
+:::
+
+::: {.callout-note collapse="true"}
+# 📚 Data Sources & Methods
+
+Habitat Services (HS) combines Coastal Protection and Carbon Storage. It measures how well coastal habitats protect people and property from flooding and erosion, and how well they store carbon.
+
+We scored five habitats: mangroves, salt marshes, coastal dunes and scrubland, seagrass, and coral reefs.
+
+- **Mangroves:** current extent from Morzaria-Luna et al. (PRONATURA, INEGI, CONABIO). Change over time from Global Mangrove Watch.
+- **Salt marsh and dunes:** CONABIO vegetation layers, checked against wetland maps from Morzaria-Luna, Munguia-Vega, and colleagues.
+- **Seagrass:** current extent from Morzaria-Luna et al. Condition from published meadow studies (López-Calderón, Ramírez-Zúñiga, Riosmena-Rodriguez).
+- **Coral reefs:** extent from dataMares, the Allen Coral Atlas, and Morzaria-Luna et al. Condition from reef monitoring in the literature, including new Nayarit information from Dr. Cupul.
+
+Methods, reference points, and indicator details are in the executive summary:
+
+- **English:** [HS Executive Summary](https://docs.google.com/document/d/1mro2xQ3Q1TRTs5apmPCkJcBdkZCdjq8U3asCaNsrY9k/edit?tab=t.0)
+- **Spanish:** [HS Resumen Ejecutivo](https://docs.google.com/document/d/1xJIrO15HS-U_P684PrhH_FTo9zjJgJBQiAhvTrkYHXs/edit?tab=t.0)
+:::
+
+::: {.callout-important collapse="true"}
+# 🔗 Goal Resources
+
+- **EWG 3.2 page:** [Habitat Services](ewg32_hs.html) · **meeting notes:** [August 13](https://docs.google.com/document/d/1rYZgT173UREE8NKX5vzmIbGkF7QgI9xe6yqEaWEVZ78/edit?tab=t.x02j1n7qhxzr)
+- **Goalkeeper page:** [Habitat services (CP & CS)](cp_cs.html)
+- **Literature review:** [coastal protection, pollution filtration, and carbon sequestration per habitat type](https://docs.google.com/spreadsheets/d/1Ixzfv8tgNf3qusaNDyN2oZ3v26a3oy3MIwzZBWOUTFc/edit?gid=58049273#gid=58049273)
+:::
+
+::: {.callout-warning collapse="true"}
+# ⏭️ Next Steps
+
+**Upcoming Adjustments (from EWG 3.2)**
+
+- **Done:** Revisit and revise our work on “salt marsh” and “coastal dune & scrubland” to reflect “coastal wetlands” more broadly. Thanks Rick, Hem, and Jorge for your guidance on this.
+- Integrate new information about the condition of coral reefs in Nayarit (Region 9, Southeastern Gulf).
+  - **Done:** thanks Dr. Cupul for your help on this.
+  - Integrate Dr. Reyes’ coral reef [condition] data from the southern GOC. Report acquired!
+- We also wanted to share our literature review on coastal protection, pollution filtration, and carbon sequestration per habitat type [here](https://docs.google.com/spreadsheets/d/1Ixzfv8tgNf3qusaNDyN2oZ3v26a3oy3MIwzZBWOUTFc/edit?gid=58049273#gid=58049273).
+
+:::
+
+# ![](figs/biodiversity.svg){width=8% height=8%} Biodiversity {#bd}
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+bd_cs <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/BD_Scores_1.0_df_Sep112026.csv"),
+  show_col_types = FALSE
+) %>%
+  prep_cs()
+goal_plotly(bd_cs, "Biodiversity: Current Status")
+```
+
+*Figure 20. Interactive graph depicting this goal’s current status over time per OHI region. The scores shown here are not finalized (version 1.0; September, 2026).*
+
+::: {.callout-tip collapse="true"}
+# 📊 Component scores
+
+Biodiversity currently evaluates **8 biomes**. We will add a plot for each one here as soon as those files are ready.
+
+- **Mangrove forests (MAN)**
+- **Coastal wetlands and scrubland (WET)**
+- **Seagrass meadows (SEA)**
+- **Coral reefs (CRL)**
+- **Rocky reefs (ROK)**
+- **Subtidal soft bottom (SOF)**
+- **Rhodolith beds (RHO)**
+- **Shallow pelagic open ocean (OCE)**
+:::
+
+::: {.callout-note collapse="true"}
+# 📚 Data Sources & Methods
+
+Biodiversity measures the current status of key biomes as proxies for species diversity, abundance, and ecosystem function. We currently evaluate **8 biomes**. Each one has its own data.
+
+- **Mangroves:** Morzaria-Luna et al. (PRONATURA, INEGI, CONABIO) and Global Mangrove Watch.
+- **Coastal wetlands and scrub:** CONABIO vegetation layers, checked with Morzaria-Luna and Munguia-Vega wetland maps.
+- **Seagrass:** Morzaria-Luna et al., plus published meadow studies.
+- **Coral reefs:** dataMares, Allen Coral Atlas, Morzaria-Luna et al., and reef surveys.
+- **Rocky reefs:** Morzaria-Luna rocky reef layer and Favoretto et al. (2024) Normalized Reef Status Index.
+- **Soft bottom:** VMS trawling pressure from Juan Carlos Villaseñor (Mexico’s SISMEP data).
+- **Rhodoliths:** Morzaria-Luna rhodolith layer, with the same VMS trawling pressure (scaled up because one trawl can hurt a bed for years).
+- **Open ocean:** CONAPESCA landings for fished groups, plus published surveys for sharks, cetaceans, pinnipeds, sea turtles, and seabirds.
+
+Methods, reference points, and indicator details are in the executive summary:
+
+- **English:** [BD Executive Summary](https://docs.google.com/document/d/19N-MjE9iucG71N6NUDzUimqSB1tA-4XCVWj9SNXyy6w/edit?tab=t.0)
+- **Spanish:** [BD Resumen Ejecutivo](https://docs.google.com/document/d/1zERminsNjyKGoNBz7TqWHqsOSnNl3bKdDzHeIr4VIaQ/edit?tab=t.0)
+:::
+
+::: {.callout-important collapse="true"}
+# 🔗 Goal Resources
+
+- **EWG 3.3 page:** [Biodiversity](ewg33_bd.html) · **meeting notes:** [September 10](https://docs.google.com/document/d/1rJ6moJnO-VB-g-CTf5nA0qMnw0HESsdVaIAp-XHY594/edit?tab=t.x02j1n7qhxzr)
+- **Goalkeeper page:** [Biodiversity](bd.html)
+:::
+
+::: {.callout-warning collapse="true"}
+# ⏭️ Next Steps
+
+**Upcoming Adjustments (from EWG 3.3)**
+
+- **Soft-bottom benthic habitats (SOF):** separate this biome type into two distinct biome types: coastal shelf soft-bottom benthos (< 100 m) and deep soft-bottom benthos (> 100 m), both of which could be exposed to trawling but at different rates. Currently, the low trawl frequency in the deep sea is drowning out the high trawl frequency in the coastal benthos.
+- **Rhodolith beds (RHO):** filter out / mask rhodolith beds > 100 m, as these are almost certainly not real rhodolith beds (they may be cobbles misclassified as rhodoliths by ROVs).
+- **Rocky reefs (ROK):** push to include rocky-reef data in the upper and lower Gulf as an alternative to regional gap filling, and follow up with experts in the weeks ahead (for example, data from COBI, [PANGAS](https://www.sciencedirect.com/science/article/pii/S2352340924004396?via%3Dihub), and/or literature review).
+- **Open ocean (OCE):** as time allows, expand the open-ocean literature review to include more data from fisheries-independent sources (for example, IUCN Red List and/or the [“Health of the Gulf of California” report](https://nextgensd.com/wp-content/uploads/2025/01/Health-of-the-Gulf-final-assesment.pdf)).
+- Integrate Hector’s coral reef data from the southern Gulf. Report acquired!
+
+:::
+
+# ![](figs/clean-waters.svg){width=8% height=8%} Clean Waters {#cw}
+
+The overall CW score is the average of Eutrophication, Pathogens, Chemicals, and Marine Debris. A score of 100 is the ideal clean-waters state, and a zero represents that the region and year is the most polluted compared to all other Gulf regions and years. Open the component scores below to see what is pulling a region up or down.
+
+**Coming in the next week or two:** we will update Eutrophication so that it varies across years, by rerunning the same methods from José Antonio Romero Gil et al. (2026). The plot below is still the current single-year snapshot held constant over time.
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+cw_overall <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/CW_Scores_1.0_df_091126.csv"),
+  show_col_types = FALSE
+) %>%
+  prep_cs()
+goal_plotly(cw_overall, "Clean Waters: Current Status")
+```
+
+*Figure 21. Interactive graph depicting this goal’s current status over time per OHI region. The scores shown here are not finalized (version 1.0; September, 2026).*
+
+::: {.callout-tip collapse="true"}
+# 📊 Component scores
+
+This is the Eutrophication component, which evaluates excess nitrogen reaching the coast from wastewater, agriculture, livestock, and shrimp aquaculture, with a score of 100 meaning zero nitrogen pollution. **This series is currently the single year of values from Romero-Gil et al. (2026) repeated across years.** Within the next week or two we will rerun those same methods so the scores vary over time.
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+# same eutrophication file as ewg33_cw.qmd
+cw_eut <- read_csv(
+  "/home/shares/ohi/OHI_GOC/goal_prep/cw/v2025/eutrophication/output/eutrophication_cs.csv",
+  show_col_types = FALSE
+) %>%
+  dplyr::select(rgn_id, current_status) %>%
+  group_by(rgn_id) %>%
+  mutate(year = 2017) %>%
+  complete(year = 2017:2025) %>%
+  fill(current_status, .direction = "down") %>%
+  ungroup() %>%
+  mutate(
+    rgn_id = as.character(rgn_id),
+    rgn_id = ifelse(grepl("^Region_", rgn_id), rgn_id, paste0("Region_", rgn_id)),
+    year = as.numeric(year),
+    current_status = as.numeric(current_status)
+  ) %>%
+  add_rgn_labels()
+goal_plotly(cw_eut, "Clean Waters: Eutrophication")
+```
+
+*Figure 22. Interactive graph depicting this goal’s current status over time per OHI region. The scores shown here are not finalized (version 1.0; September, 2026).*
+
+This is the Pathogens component, which evaluates *Enterococcus* at Playas Limpias beaches, with a score of 100 meaning waters meet Mexico’s beach suitability standard of 200 MPN/100mL.
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+# same pathogens file as ewg33_cw.qmd
+cw_pat <- read_csv(
+  "/home/shares/ohi/OHI_GOC/goal_prep/cw/v2025/pathogens/output/pathogen_cs_2018_2025.csv",
+  show_col_types = FALSE
+) %>%
+  dplyr::select(rgn_id, year, current_status) %>%
+  mutate(
+    rgn_id = as.character(rgn_id),
+    rgn_id = ifelse(grepl("^Region_", rgn_id), rgn_id, paste0("Region_", rgn_id)),
+    year = as.numeric(year),
+    current_status = suppressWarnings(as.numeric(current_status))
+  ) %>%
+  filter(year != 2020) %>%
+  add_rgn_labels()
+goal_plotly(cw_pat, "Clean Waters: Pathogens")
+```
+
+*Figure 23. Interactive graph depicting this goal’s current status over time per OHI region. The scores shown here are not finalized (version 1.0; September, 2026).*
+
+This is the Chemicals component, which evaluates pesticide, pharmaceutical, hazardous-waste, untreated-wastewater, and vessel-hydrocarbon risk, with a score of 100 meaning no chemical pressure relative to the highest levels observed in the Gulf.
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+# same chemicals file as ewg33_cw.qmd (score column is chemical_cs)
+cw_chm <- read_csv(
+  "/home/shares/ohi/OHI_GOC/goal_prep/cw/v2025/chemicals/chemical_cs.csv",
+  show_col_types = FALSE
+) %>%
+  dplyr::select(rgn_id, year, chemical_cs) %>%
+  group_by(rgn_id) %>%
+  complete(year = 2017:2025) %>%
+  fill(chemical_cs, .direction = "down") %>%
+  ungroup() %>%
+  mutate(
+    rgn_id = as.character(rgn_id),
+    rgn_id = ifelse(grepl("^Region_", rgn_id), rgn_id, paste0("Region_", rgn_id)),
+    year = as.numeric(year),
+    current_status = as.numeric(chemical_cs)
+  ) %>%
+  add_rgn_labels()
+goal_plotly(cw_chm, "Clean Waters: Chemicals")
+```
+
+*Figure 24. Interactive graph depicting this goal’s current status over time per OHI region. The scores shown here are not finalized (version 1.0; September, 2026).*
+
+This is the Marine Debris component, which evaluates the risk of abandoned fishing gear (ghost gear), with a score of 100 meaning no ghost-gear pressure.
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+# same marine debris file as ewg33_cw.qmd (score is 1 minus pressure, times 100)
+cw_mar <- read_csv(
+  "/home/shares/ohi/OHI_GOC/goal_prep/cw/v2025/marine_debris/ghost_gear_risk.csv",
+  show_col_types = FALSE
+) %>%
+  mutate(
+    rgn_id = as.character(rgn_id),
+    rgn_id = ifelse(grepl("^Region_", rgn_id), rgn_id, paste0("Region_", rgn_id)),
+    year = as.numeric(year),
+    current_status = (1 - as.numeric(pressure)) * 100
+  ) %>%
+  add_rgn_labels()
+goal_plotly(cw_mar, "Clean Waters: Marine Debris")
+```
+
+*Figure 25. Interactive graph depicting this goal’s current status over time per OHI region. The scores shown here are not finalized (version 1.0; September, 2026).*
+:::
+
+::: {.callout-note collapse="true"}
+# 📚 Data Sources & Methods
+
+This goal uses **4 components**. Chemicals is itself the average of five layers:
+
+- **Eutrophication:** municipal nitrogen discharge estimates from Romero-Gil et al. 2026 (wastewater, agriculture, livestock, and shrimp aquaculture). **The September 2026 plot is a single-year snapshot held constant over time.** Within the next week or two we will update this component so that it **varies across years**, by running the same Romero-Gil et al. 2026 methods for multiple years.
+- **Pathogens:** CONAGUA Playas Limpias *Enterococcus* monitoring (2018–2025; no 2020 sampling).
+- **Chemicals** (equal-weight average of five subcomponents; microplastics are not yet included):
+  - **Pesticides:** CONABIO USV agricultural land-use polygons and FAOSTAT national pesticide application rates (kg/ha).
+  - **Pharmaceuticals:** CONAGUA SINA wastewater-treatment plant effluent; FAO livestock density (GLW4) with SIAP slaughter tonnes and published antimicrobial-use rates; INEGI USV shrimp-aquaculture area.
+  - **Hazardous waste:** SEMARNAT and ASEA inventories of contaminated and remediated sites within 50 km of the coast.
+  - **Untreated wastewater:** INEGI CNGMD (Censo Nacional de Gobiernos Municipales y Demarcaciones Territoriales) untreated municipal discharge points.
+  - **Vessel hydrocarbons:** VMS fishing-vessel effort (hours) as a proxy for hydrocarbon risk.
+- **Marine debris:** VMS fishing data from Juan Carlos Villaseñor (Mexico’s SISMEP), paired with Gilman et al. (2021) rates for abandoned, lost, or discarded gear.
+
+Methods, reference points, and indicator details are in the executive summary:
+
+- **English:** [CW Executive Summary](https://docs.google.com/document/d/1VRxaDW9YbCoammwVcZut07vNqpNpUcT8fo_kM2V47is/edit?tab=t.0)
+- **Spanish:** [CW Resumen Ejecutivo](https://docs.google.com/document/d/1wq48kxZkAXhOMZS6kEPYYA-u9jZ2erKhexnGE0nDSTM/edit?tab=t.0)
+:::
+
+::: {.callout-important collapse="true"}
+# 🔗 Goal Resources
+
+- **EWG 3.3 page:** [Clean Waters](ewg33_cw.html) · **meeting notes:** [September 10](https://docs.google.com/document/d/1rJ6moJnO-VB-g-CTf5nA0qMnw0HESsdVaIAp-XHY594/edit?tab=t.x02j1n7qhxzr)
+- **Goalkeeper page:** [Clean waters](cw.html)
+:::
+
+::: {.callout-warning collapse="true"}
+# ⏭️ Next Steps
+
+**Upcoming Adjustments (from EWG 3.3)**
+
+- **Eutrophication: update this component so scores **vary across time**. We will rerun the same methods from José Antonio Romero Gil et al. (2026) for multiple years (the current plot is one nitrogen snapshot held constant). This allows us to calculate scores for the Southeastern Gulf (Nayarit and Jalisco), which was not originally evalutated within the paper.
+- Adjust pesticide application rates, if possible. Work with Miguel to evaluate any better options, and document our limitations if we cannot find other options.
+  - **For now (Option 1):** keep the current method. FAOSTAT national kg/ha rates plus CONABIO land use give us annual change. This is not crop-specific or regionally specific. We can look at crop type in a later version of the Index.
+  - **Future update (Option 2):** keep FAOSTAT as the annual kg/ha rate, but apply a relative multiplier by CONABIO agriculture class grouped as riego (irrigated), temporal (rainfed), and humedad (moisture / floodplain). The area-weighted mean of those multipliers should stay near 1, so we do not inflate FAOSTAT. Tomato and maize on irrigated land would still get the same rate, so this is weaker than a crop-specific method, but it does not need SIAP and INIFAP crop matching.
+  - **Not for this round (Options 3 to 5):** crop-specific methods using [SIAP harvested hectares](https://nube.agricultura.gob.mx/cierre_agricola/) and [INIFAP Agendas Técnicas](https://vun.inifap.gob.mx/BibliotecaWeb/_Content) would better capture that tomatoes are more pesticide-intense than maize. They also bring more problems over time (INIFAP doses are often per spray, not a seasonal total; Agendas are only 2015, 2017, and 2026; unmatched crops would stay at FAOSTAT × 1). Those are a bigger change, so we are not doing them now.  
+:::
+
+# ![](figs/natural-products.svg){width=8% height=8%} Natural Products {#np}
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+np_cs <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/NP_Scores_1.0_df_Sep112026.csv"),
+  show_col_types = FALSE
+) %>%
+  prep_cs()
+goal_plotly(np_cs, "Natural Products: Current Status")
+```
+
+*Figure 26. Interactive graph depicting this goal’s current status over time per OHI region. The scores shown here are not finalized (version 1.0; September, 2026).*
+
+::: {.callout-tip collapse="true"}
+# 📊 Component scores
+
+Natural Products currently scores six product groups. We will add a plot for each one here as soon as those files are ready.
+
+- **Fish oil and fish meal (FOFM)**
+- **Aquarium trade species (AQRM)**
+- **Sea shells (SHEL)**
+- **Fish and shrimp residues (RESD)**
+- **Legal shark fins (FINS)**
+- **Coastal salt (SALT)**
+
+Pearl, bait, algae, and bio-pharmaceutical production did not have enough data to score.
+:::
+
+::: {.callout-note collapse="true"}
+# 📚 Data Sources & Methods
+
+Natural Products measures the amount, benefits, and sustainability of legally harvested marine resources produced in the Gulf of California for cultural or commercial purposes that are not used for food.
+
+- **CONAPESCA** (Mex-Fisheries clean version from the University of Miami): fish oil and fish meal, aquarium species, shells, fish and shrimp residues, and legal shark fins. Stock status uses the same RAM, Carta Nacional Pesquera, and CMSY hierarchy as Food Provisioning.
+- **El Anuario Estadístico de la Minería Mexicana:** coastal salt.
+
+Methods, reference points, and indicator details are in the executive summary:
+
+- **English:** [NP Executive Summary](https://docs.google.com/document/d/1QaEn1ucoh_ToqsrguQGfGqRSK3VjT9GBk6vqlfVxBtg/edit?tab=t.0)
+- **Spanish:** [NP Resumen Ejecutivo](https://docs.google.com/document/d/1ymx6DLhzzLjXM-Ha9JMlPA39NenC9NNrYVTKLZ_Vfpc/edit?tab=t.0)
+:::
+
+::: {.callout-important collapse="true"}
+# 🔗 Goal Resources
+
+- **EWG 3.3 page:** [Natural Products](ewg33_np.html) · **meeting notes:** [September 10](https://docs.google.com/document/d/1rJ6moJnO-VB-g-CTf5nA0qMnw0HESsdVaIAp-XHY594/edit?tab=t.x02j1n7qhxzr)
+- **Goalkeeper page:** [Natural products](np.html)
+:::
+
+::: {.callout-warning collapse="true"}
+# ⏭️ Next Steps
+
+**Upcoming Adjustments (from EWG 3.3)**
+
+- **Drop shell residues (SHEL) and shark fin (FIN) scores from the final NP score.**
+- **Impose two separate reference points for the shrimp and demersal fish residues sub-score (RESD).** Shrimp and demersal fish have different amounts of edible meat, so use one reference point specific to shrimp and one specific to fish.
+- Add gypsum data to the salt sector and call it **“Coastal Minerals” (MINE)** as opposed to just SALT.
+- **Implement a “minimum production” threshold** for all sectors and do not include a sector's score if its minimum production is less than a certain amount (for example, the first quartile of average annual production). 
+- Once complete, **send the revised NP scores to the goalkeeper group** and decide whether or not it makes sense to include them in the final index calculation.
+
+:::

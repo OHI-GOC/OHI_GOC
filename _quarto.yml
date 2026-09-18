@@ -1,6 +1,15 @@
 project: 
   type: website
   output-dir: docs
+  render:
+    - "*.qmd"
+    - "chapters/*.qmd"
+    - "!tr_current_status.qmd"
+    - "!chapters/*docx*.qmd"
+    - "!chapters/*_pdf.qmd"
+    - "!chapters/viz_*.qmd"
+    - "!chapters/*.rmarkdown"
+    - "!*.rmarkdown"
  
 website: 
   title: "OHI Gulf of California: Information Hub"
@@ -23,11 +32,11 @@ website:
     collapse-level: 1
     contents:
       - href: index.qmd
-        text: "🏠 Home"
-      - href: chapters/overall_update.qmd
-        text: "Overall Update"
+        text: "🏡 OHI GOC Project Home"
       - href: chapters/OHIregions.qmd
-        text: "🌎️ Map of OHI Regions"
+        text: "🌎 OHI GOC Regions (Map)"
+      - href: chapters/project_update_fall_2026.qmd
+        text: "📣 Project Update (Fall 2026)"
 
 format:
   html:
