@@ -24,7 +24,7 @@ website:
     right: "Source repository: [GitHub](https://github.com/OHI-GOC)"
 
   sidebar:
-    logo: chapters/figs/gulf-of-california-map.jpg
+    logo: chapters/figs/updated-gulf-of-california-map.png
     pinned: true
     align: center
     style: docked

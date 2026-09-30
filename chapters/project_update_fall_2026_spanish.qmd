@@ -6,13 +6,13 @@ toc: true
 
 <div class="button-container">
   <a href="project_update_fall_2026.html" class="custom-button">
-    Click here for the version in English
+    <i class="fas fa-globe"></i> in English
   </a>
 </div>
 
 Nos da mucho gusto compartir en dónde se encuentra hoy el Índice de Salud Oceánica del Golfo de California. Los Grupos de Trabajo de Expertos 1, 2 y 3 (incluyendo 3.1 a 3.3) ya concluyeron, y las gráficas de abajo muestran el Estatus actual de cada meta por región OHI. El Estatus actual es la condición presente dividida entre el punto de referencia (presente / punto de referencia). Si quiere, puede pasar el cursor sobre cada gráfica para comparar regiones y años. Una puntuación de 100 significa que la condición presente es igual al punto de referencia.
 
-Esta es una instantánea de un trabajo en curso. Las puntuaciones, los métodos y los textos se seguirán actualizando conforme terminemos las presiones (incluida Seguridad y Protección), finalicemos las metas y completemos las capas de resiliencia. Las fuentes de datos y los puntos de referencia de cada meta se describen con detalle en el resumen ejecutivo de esa meta.
+Esta es una instantánea de un trabajo en curso. Las puntuaciones, los métodos y los textos se seguirán actualizando conforme terminemos las presiones (incluida Seguridad y Protección), finalicemos las metas y completemos las capas de resiliencia. **Cada una de estas puntuaciones de meta se finalizará a finales de octubre.** Las fuentes de datos y los puntos de referencia de cada meta se describen con detalle en el resumen ejecutivo de esa meta.
 
 | Fecha | Evaluación OHI | Artículo |
 |------|----------------|-------|
@@ -124,6 +124,38 @@ prep_cs <- function(df) {
       current_status = as.numeric(current_status)
     ) %>%
     add_rgn_labels()
+}
+
+# las figuras estáticas de componentes viven en images/component_figs/ (mismo patrón que LSP)
+# se copian a chapters/figs para que github pages las pueda servir
+include_component_fig <- function(filename) {
+  candidates <- c(
+    here::here("images/component_figs", filename),
+    here::here("../images/component_figs", filename),
+    here::here("chapters/figs", filename),
+    file.path("figs", filename)
+  )
+  src <- candidates[file.exists(candidates)][1]
+
+  dest_dir <- if (dir.exists("figs")) {
+    "figs"
+  } else {
+    here::here("chapters/figs")
+  }
+  dir.create(dest_dir, recursive = TRUE, showWarnings = FALSE)
+  dest <- file.path(dest_dir, filename)
+
+  if (!is.na(src) && !identical(normalizePath(src, mustWork = FALSE), normalizePath(dest, mustWork = FALSE))) {
+    file.copy(src, dest, overwrite = TRUE)
+  }
+
+  if (file.exists(dest)) {
+    knitr::include_graphics(dest)
+  } else {
+    knitr::asis_output(paste0(
+      "*No se encontró la figura `", filename, "` en `images/component_figs/`.*"
+    ))
+  }
 }
 
 goal_plotly <- function(
@@ -473,10 +505,53 @@ goal_plotly(fp_cs, "Provisión de Alimentos: Estatus actual")
 ::: {.callout-tip collapse="true"}
 # 📊 Puntuaciones de componentes
 
-Esta meta tiene dos componentes. Agregaremos una gráfica de cada uno aquí en cuanto esos archivos estén listos.
+Esta meta tiene dos componentes. Abra las gráficas de abajo para ver la captura silvestre y la maricultura por separado.
 
-- **Captura silvestre (FIS):** desembarques de CONAPESCA (versión limpia de Mex-Fisheries), con estatus de stock de RAM, luego Carta Nacional Pesquera, luego CMSY.
-- **Maricultura (MAR):** producción acuícola de CONAPESCA, con Monterey Bay Aquarium Seafood Watch como coeficiente de sostenibilidad.
+Este es el componente de captura silvestre (FIS), que evalúa el estatus de stock a partir de desembarques de CONAPESCA (versión limpia de Mex-Fisheries), usando RAM, luego Carta Nacional Pesquera, luego CMSY. Una puntuación de 100 significa que los stocks están en su estatus de referencia.
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+fp_fis <- read_csv(
+  "/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/copy_FIS_StockStatus_SubScores_df_Jun052026.csv",
+  show_col_types = FALSE
+) %>%
+  mutate(
+    rgn_id = as.character(OHI_region_est),
+    rgn_id = stringr::str_replace_all(rgn_id, " ", "_"),
+    rgn_id = stringr::str_replace(rgn_id, "^region_", "Region_"),
+    year = as.numeric(year),
+    current_status = as.numeric(StockStatus_SubScore)
+  ) %>%
+  filter(rgn_id %in% paste0("Region_", 1:9), year >= 2019, year <= 2025) %>%
+  add_rgn_labels()
+goal_plotly(fp_fis, "Provisión de Alimentos: Captura silvestre")
+```
+
+*Figura 9. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; junio de 2026).*
+
+Este es el componente de maricultura (MAR), que evalúa la producción acuícola de CONAPESCA (camarón, bivalvos y peces), con Monterey Bay Aquarium Seafood Watch como coeficiente de sostenibilidad.
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+fp_mar <- read_csv(
+  "/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/copy_MAR_Scores_1.0_df_Jul152026.csv",
+  show_col_types = FALSE
+) %>%
+  mutate(
+    rgn_id = as.character(OHI_region_est),
+    year = as.numeric(year),
+    current_status = as.numeric(total_score)
+  ) %>%
+  filter(rgn_id %in% paste0("Region_", 1:9)) %>%
+  add_rgn_labels()
+goal_plotly(fp_mar, "Provisión de Alimentos: Maricultura")
+```
+
+*Figura 10. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; julio de 2026).*
 :::
 
 ::: {.callout-note collapse="true"}
@@ -530,7 +605,7 @@ le_cs <- read_csv(
 goal_plotly(le_cs, "Medios de Vida y Economías: Estatus actual")
 ```
 
-*Figura 9. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
+*Figura 11. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
 
 ::: {.callout-tip collapse="true"}
 # 📊 Puntuaciones de componentes
@@ -580,7 +655,7 @@ le_jobs <- le_jobs %>%
 goal_plotly(le_jobs, "Medios de Vida y Economías: Número de empleos")
 ```
 
-*Figura 10. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
+*Figura 12. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
 
 Este es el componente de calidad de Medios de Vida (seguridad social del empleador y otras prestaciones por empleo), también ajustado por trabajo informal.
 
@@ -627,7 +702,7 @@ le_qual <- le_qual %>%
 goal_plotly(le_qual, "Medios de Vida y Economías: Calidad de los empleos")
 ```
 
-*Figura 11. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
+*Figura 13. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
 
 Este es el componente de Economías (ingresos formales relacionados con el mar). Aquí no se agrega el trabajo informal, porque no quisimos sobrestimar los ingresos.
 
@@ -650,7 +725,7 @@ le_eco <- read_csv(
 goal_plotly(le_eco, "Medios de Vida y Economías: Ingresos relacionados con el mar")
 ```
 
-*Figura 12. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
+*Figura 14. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
 :::
 
 ::: {.callout-note collapse="true"}
@@ -703,7 +778,7 @@ sp_cs <- read_csv(
 goal_plotly(sp_cs, "Sentido de Pertenencia: Estatus actual")
 ```
 
-*Figura 13. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
+*Figura 15. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
 
 ::: {.callout-tip collapse="true"}
 # 📊 Puntuaciones de componentes
@@ -730,7 +805,7 @@ sp_ico <- read_csv(
 goal_plotly(sp_ico, "Sentido de Pertenencia: Especies icónicas")
 ```
 
-*Figura 14. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; agosto de 2026).*
+*Figura 16. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; agosto de 2026).*
 
 Este es el componente de Lugares Especiales Duraderos (LSP), que evalúa la condición de protección de lugares especiales identificados por personas expertas (áreas protegidas, sitios de buceo, sitios de pesca, arqueología, hábitats y otros lugares). LSP es una **instantánea de 2025** (no una serie de tiempo). Los colores se ven más cálidos en puntuaciones más bajas y más fríos en puntuaciones más altas, en una escala de 0 a 100. 
 
@@ -776,7 +851,7 @@ if (file.exists(lsp_local)) {
 }
 ```
 
-*Figura 15. Mapa coroplético del estatus actual de este componente por región OHI (instantánea de 2025). Las puntuaciones que se muestran no están finalizadas (versión 1.0; agosto de 2026).*
+*Figura 17. Mapa coroplético del estatus actual de este componente por región OHI (instantánea de 2025). Las puntuaciones que se muestran no están finalizadas (versión 1.0; agosto de 2026).*
 
 Este es el componente de Participación de la Comunidad Costera (CCE) **tal como se puntuó antes del EWG 3.2**: el promedio de adopciones de playa de Ama tu Playa y de lugares culturales no naturales (INEGI DENUE). Después de la reunión decidimos que esos indicadores eran demasiado limitados, así que CCE se está reelaborando en torno a la participación cívica, educativa y social, y **no** está incluido en la puntuación general de septiembre de 2026.
 
@@ -803,7 +878,7 @@ sp_cce <- read_csv(
 goal_plotly(sp_cce, "Sentido de Pertenencia: Participación de la comunidad costera")
 ```
 
-*Figura 16. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; agosto de 2026).*
+*Figura 18. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; agosto de 2026).*
 
 Para comparar, esta es la puntuación general de SP usada en la página del EWG 3.2: el promedio de CCE, LSP e ICO.
 
@@ -825,7 +900,7 @@ sp_pre_ewg <- read_csv(
 goal_plotly(sp_pre_ewg, "Sentido de Pertenencia: CCE, LSP e ICO")
 ```
 
-*Figura 17. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; agosto de 2026).*
+*Figura 19. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; agosto de 2026).*
 :::
 
 ::: {.callout-note collapse="true"}
@@ -885,15 +960,38 @@ ao_cs <- read_csv(
 goal_plotly(ao_cs, "Oportunidades de Acceso: Estatus actual")
 ```
 
-*Figura 18. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
+*Figura 20. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
 
 ::: {.callout-tip collapse="true"}
 # 📊 Puntuaciones de componentes
 
-Esta meta tiene dos componentes. Agregaremos una gráfica de cada uno aquí en cuanto esos archivos estén listos.
+Esta meta tiene dos componentes: pesca artesanal (AFO) y acceso costero local (LCA).
 
-- **Pesca artesanal (AFO):** la porción artesanal de los desembarques de CONAPESCA, con estatus de stock de RAM, luego Carta Nacional Pesquera, luego CMSY.
-- **Acceso costero local (LCA): NA para esta primera versión.** Después del EWG 3.2 planeamos dejar LCA como NA. Se desarrollaron métodos de acceso realizado (vea [Acceso costero: La Paz](coastal_access_lapaz_spanish.html)), pero aún no están en el Índice, así que no queremos que el acceso legal por sí solo sustituya al acceso costero verdadero.
+Este es el componente de pesca artesanal (AFO): la porción artesanal de los desembarques de CONAPESCA, con estatus de stock de RAM, luego Carta Nacional Pesquera, luego CMSY.
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| out.width: "90%"
+#| fig-align: center
+include_component_fig("AFO_Scores_1.0_plot_Aug052026.png")
+```
+
+*Figura 21. Estatus actual de pesca artesanal (AFO) por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; agosto de 2026).*
+
+Este es el componente de acceso costero local (LCA). **LCA es NA para esta primera versión.** Para calcular las subpuntuaciones de LCA trabajamos en estimar la protección legal, el manejo y el acceso realizado a las playas costeras locales. Pudimos estimar la protección legal y el manejo de las playas locales, pero no pudimos estimar de forma confiable el acceso realizado. Al final, decidimos excluir las puntuaciones de LCA del cálculo final de AO dejándolas como NA porque sentimos que, sin alguna estimación del acceso realizado, resultaban engañosas. El diagrama de abajo muestra esas tres piezas. Se desarrollaron y probaron métodos de acceso realizado para La Paz (vea [Acceso costero: La Paz](coastal_access_lapaz_spanish.html)), pero ese proceso mostró que el esfuerzo estaba fuera del alcance de este proyecto. Buenos resultados también requieren revisión de personas expertas locales, que no teníamos, y eso llevó a problemas como playas mal etiquetadas que no pudimos corregir con facilidad. En varias localidades hay esfuerzos en curso para mapear playas locales, pero esos mapas aún no están disponibles. Nuestra esperanza es que, con el tiempo, sirvan de base para las puntuaciones de esta métrica.
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| out.width: "55%"
+#| fig-align: center
+include_component_fig("AO_LCA_realized_access.png")
+```
+
+*Figura 22. Diagrama conceptual de Acceso Costero Local (protección legal, manejo y vigilancia, y acceso realizado). LCA se deja como NA en esta versión del Índice.*
 :::
 
 ::: {.callout-note collapse="true"}
@@ -947,12 +1045,14 @@ hs_cs <- read_csv(
 goal_plotly(hs_cs, "Servicios de Hábitat: Estatus actual")
 ```
 
-*Figura 19. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
+*Figura 23. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
 
 ::: {.callout-tip collapse="true"}
 # 📊 Puntuaciones de componentes
 
-Servicios de Hábitat es el promedio de tres puntuaciones de servicio, construidas a partir de cinco hábitats. Agregaremos gráficas de cada servicio aquí en cuanto esos archivos estén listos.
+**Estas figuras de componentes todavía están en progreso.** Las integraremos en este sitio web en cuanto estén listas.
+
+Servicios de Hábitat es el promedio de tres puntuaciones de servicio, construidas a partir de cinco hábitats. Las gráficas de componentes de cada servicio estarán disponibles pronto.
 
 - **Protección costera (PRO)**
 - **Control de contaminación y filtración (FIL)**
@@ -1016,12 +1116,14 @@ bd_cs <- read_csv(
 goal_plotly(bd_cs, "Biodiversidad: Estatus actual")
 ```
 
-*Figura 20. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
+*Figura 24. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
 
 ::: {.callout-tip collapse="true"}
 # 📊 Puntuaciones de componentes
 
-Biodiversidad evalúa actualmente **8 biomas**. Agregaremos una gráfica de cada uno aquí en cuanto esos archivos estén listos.
+**Estas figuras de componentes todavía están en progreso.** Las integraremos en este sitio web en cuanto estén listas.
+
+Biodiversidad evalúa actualmente **8 biomas**. Las gráficas de componentes de cada bioma estarán disponibles pronto.
 
 - **Bosques de manglar (MAN)**
 - **Humedales costeros y matorral (WET)**
@@ -1079,33 +1181,75 @@ Los métodos, los puntos de referencia y el detalle de los indicadores están en
 
 La puntuación general de CW es el promedio de Eutrofización, Patógenos, Químicos y Residuos marinos. Una puntuación de 100 es el estado ideal de aguas limpias, y un cero representa que esa región y año es el más contaminado comparado con todas las demás regiones y años del Golfo. Abra las puntuaciones de componentes abajo para ver qué está subiendo o bajando a una región.
 
-**En la próxima semana o dos:** actualizaremos Eutrofización para que varíe entre años, al volver a correr los mismos métodos de José Antonio Romero Gil et al. (2026). La gráfica de abajo sigue siendo la instantánea de un solo año, mantenida constante a lo largo del tiempo.
+**Actualizado el 29 de septiembre de 2026 (versión 1.1):** Eutrofización ahora varía entre años. Reprodujimos los métodos de Romero-Gil et al. (2026) para estimar las entradas de nitrógeno total (TN) desde fuentes antropogénicas (aguas residuales, agricultura, ganadería y acuacultura de camarón) con los datos a los que tuvimos acceso, de modo que cada región tiene puntuaciones que cambian en el tiempo. Esto también nos permite puntuar el Sureste del Golfo (Nayarit y el norte de Jalisco), que no formaba parte del análisis original del GoC. La gráfica de abajo usa las puntuaciones generales actualizadas. La instantánea anterior de eutrofización de un solo año sigue mostrándose en Puntuaciones de componentes para comparación.
 
 ```{r}
 #| echo: false
 #| warning: false
 #| message: false
 cw_overall <- read_csv(
-  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/CW_Scores_1.0_df_091126.csv"),
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/CW_Scores_1.1_df_092926.csv"),
   show_col_types = FALSE
 ) %>%
   prep_cs()
 goal_plotly(cw_overall, "Aguas Limpias: Estatus actual")
 ```
 
-*Figura 21. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
+*Figura 25. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.1; septiembre de 2026).*
 
-::: {.callout-tip collapse="true"}
-# 📊 Puntuaciones de componentes
-
-Este es el componente de Eutrofización, que evalúa el exceso de nitrógeno que llega a la costa desde aguas residuales, agricultura, ganadería y acuacultura de camarón; una puntuación de 100 significa cero contaminación por nitrógeno. **Esta serie es actualmente el año único de valores de Romero-Gil et al. (2026) repetido a lo largo de los años.** En la próxima semana o dos volveremos a correr esos mismos métodos para que las puntuaciones varíen en el tiempo.
+Puntuaciones generales anteriores de CW (versión 1.0), antes de la actualización temporal de eutrofización. Se conservan para comparar con la Figura 25.
 
 ```{r}
 #| echo: false
 #| warning: false
 #| message: false
-# same eutrophication file as ewg33_cw.qmd
+cw_overall_v10 <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/CW_Scores_1.0_df_091126.csv"),
+  show_col_types = FALSE
+) %>%
+  prep_cs()
+goal_plotly(cw_overall_v10, "Aguas Limpias: Estatus actual (versión anterior)")
+```
+
+*Figura 26. Puntuaciones generales anteriores de CW con la instantánea de eutrofización de un solo año. Se conservan para comparar con la versión 1.1. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
+
+::: {.callout-tip collapse="true"}
+# 📊 Puntuaciones de componentes
+
+Este es el componente de Eutrofización (o Carga de nutrientes / Nutrientes en exceso / Entradas de nutrientes; es posible que lo renombremos para que coincida mejor con lo que medimos). Evalúa el nitrógeno total (TN) antropogénico que llega a la costa desde aguas residuales, agricultura, ganadería y acuacultura de camarón.
+
+**Cómo reproducimos Romero-Gil et al. (2026) a lo largo del tiempo:** Conservamos sus ecuaciones y coeficientes de la Tabla suplementaria 6, y adaptamos los pasos al asignar cargas municipales a las cuencas del GoC. La agricultura se ubicó con cropland USV de CONABIO; la ganadería con rasters de densidad FAO GLW4; y las granjas de camarón con área de estanques USV. Eso nos permite asignar TN a cada cuenca costera y luego usar pourpoints asociados a cada cuenca para identificar dónde el TN probablemente fluiría hacia el GoC. Para comparar entre regiones, dividimos el TN de cada región y año entre la costa (km) de la región OHI correspondiente.
+
+**Puntuación (Opción B, elegida por goalkeepers y participantes del EWG):** Comparamos cada observación con el promedio de los cinco valores más altos de TN estandarizado por costa entre todas las regiones y años. El ideal es cero nitrógeno. Luego reescalamos linealmente la presión de modo que una observación en la referencia de la media de los 5 más altos recibe una presión de 0.5 y un estatus de 50, y el estatus va de 50 a 100. La Opción A habría puesto la presión en 1 y el estatus en 0 en esa misma referencia, que es como se puntúa Químicos. Los expertos prefirieron la Opción B porque la carga de nutrientes no es tan automáticamente dañina como la contaminación química, el Golfo no muestra una señal clara y generalizada de eutrofización (por ejemplo, la chl-a cercana a la costa ha seguido a las concentraciones de mar adentro a lo largo del tiempo), y un reescalado lineal conserva las mismas tendencias y rankings regionales. Un TN/km alto cerca del máximo histórico recibe una puntuación más baja, y un TN/km bajo recibe una más alta. **Estas puntuaciones ahora varían entre años**, e incluyen Nayarit y el norte de Jalisco en la región del Sureste del Golfo.
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
 cw_eut <- read_csv(
+  "/home/shares/ohi/OHI_GOC/goal_prep/cw/v2025/eutrophication/jarg_analysis_update/output/nutrient_status_ALT.csv",
+  show_col_types = FALSE
+) %>%
+  mutate(
+    rgn_id = as.character(rgn_id),
+    rgn_id = ifelse(grepl("^Region_", rgn_id), rgn_id, paste0("Region_", rgn_id)),
+    year = as.numeric(year),
+    current_status = as.numeric(status)
+  ) %>%
+  add_rgn_labels()
+goal_plotly(cw_eut, "Aguas Limpias: Eutrofización")
+```
+
+*Figura 27. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.1; septiembre de 2026).*
+
+Puntuaciones anteriores de eutrofización (versión 1.0), antes de reproducir los métodos para que varíen en el tiempo. La Región 9 no se puntuó en ese análisis original.
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+# earlier eutrophication file used for EWG 3.3 / version 1.0
+cw_eut_v10 <- read_csv(
   "/home/shares/ohi/OHI_GOC/goal_prep/cw/v2025/eutrophication/output/eutrophication_cs.csv",
   show_col_types = FALSE
 ) %>%
@@ -1122,10 +1266,10 @@ cw_eut <- read_csv(
     current_status = as.numeric(current_status)
   ) %>%
   add_rgn_labels()
-goal_plotly(cw_eut, "Aguas Limpias: Eutrofización")
+goal_plotly(cw_eut_v10, "Aguas Limpias: Eutrofización (antes de reproducir los métodos)")
 ```
 
-*Figura 22. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
+*Figura 28. Puntuaciones anteriores de eutrofización antes de reproducir los métodos de Romero-Gil a lo largo del tiempo. Se conservan para comparar con la versión 1.1. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
 
 Este es el componente de Patógenos, que evalúa *Enterococcus* en playas de Playas Limpias; una puntuación de 100 significa que las aguas cumplen el estándar mexicano de aptitud de playas de 200 NMP/100 mL.
 
@@ -1150,7 +1294,7 @@ cw_pat <- read_csv(
 goal_plotly(cw_pat, "Aguas Limpias: Patógenos")
 ```
 
-*Figura 23. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
+*Figura 29. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
 
 Este es el componente de Químicos, que evalúa el riesgo de plaguicidas, productos farmacéuticos, residuos peligrosos, aguas residuales sin tratamiento e hidrocarburos de embarcaciones; una puntuación de 100 significa ninguna presión química relativa a los niveles más altos observados en el Golfo.
 
@@ -1178,7 +1322,7 @@ cw_chm <- read_csv(
 goal_plotly(cw_chm, "Aguas Limpias: Químicos")
 ```
 
-*Figura 24. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
+*Figura 30. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
 
 Este es el componente de Residuos marinos, que evalúa el riesgo de artes de pesca abandonadas (artes fantasma); una puntuación de 100 significa ninguna presión de artes fantasma.
 
@@ -1201,7 +1345,7 @@ cw_mar <- read_csv(
 goal_plotly(cw_mar, "Aguas Limpias: Residuos marinos")
 ```
 
-*Figura 25. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
+*Figura 31. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
 :::
 
 ::: {.callout-note collapse="true"}
@@ -1209,7 +1353,8 @@ goal_plotly(cw_mar, "Aguas Limpias: Residuos marinos")
 
 Esta meta usa **4 componentes**. Químicos es, a su vez, el promedio de cinco capas:
 
-- **Eutrofización:** estimaciones de descarga municipal de nitrógeno de Romero-Gil et al. 2026 (aguas residuales, agricultura, ganadería y acuacultura de camarón). **La gráfica de septiembre de 2026 es una instantánea de un solo año, mantenida constante a lo largo del tiempo.** En la próxima semana o dos actualizaremos este componente para que **varíe entre años**, al correr los mismos métodos de Romero-Gil et al. 2026 para varios años.
+- **Eutrofización / carga de nutrientes (versión 1.1 actualizada):** TN antropogénico (aguas residuales, agricultura, ganadería, acuacultura de camarón), reproduciendo Romero-Gil et al. 2026 con ecuaciones y coeficientes de la Tabla suplementaria 6. Las cargas se asignan a cuencas del GoC (cropland USV de CONABIO; ganadería FAO GLW4; área de estanques de camarón USV), se dirigen a la costa con pourpoints de cuenca, y se estandarizan como toneladas de N por año por km de costa de la región OHI. El estatus compara cada observación con la media de los cinco valores más altos de TN/km entre regiones y años. **La puntuación usa la Opción B (elección de expertos):** en la referencia de la media de los 5 más altos, la presión se reescala a 0.5 y el estatus a 50, de modo que el estatus va de 50 a 100 (la Opción A habría usado presión = 1 y estatus = 0 en esa referencia, como Químicos). Justificación: los nutrientes pueden absorberse sin causar siempre daño, a diferencia de los químicos; el Golfo no tiene una señal clara y generalizada de eutrofización (la chl-a cercana a la costa sigue a la de mar adentro); y un reescalado lineal conserva tendencias y rankings. Es posible que renombremos este componente (p. ej. Carga de nutrientes / Nutrientes en exceso / Entradas de nutrientes) porque modelamos entradas potenciales de TN, no la eutrofización en sí.
+- **Eutrofización (versión 1.0 anterior, mostrada para comparación):** instantánea de un solo año de Romero-Gil et al. 2026 mantenida constante en el tiempo, antes de reproducir los métodos.
 - **Patógenos:** monitoreo de *Enterococcus* de Playas Limpias de CONAGUA (2018-2025; no hay muestreo de 2020).
 - **Químicos** (promedio con peso igual de cinco subcomponentes; los microplásticos aún no se incluyen):
   - **Plaguicidas:** polígonos de uso de suelo agrícola USV de CONABIO y tasas nacionales de aplicación de plaguicidas de FAOSTAT (kg/ha).
@@ -1239,11 +1384,10 @@ Los métodos, los puntos de referencia y el detalle de los indicadores están en
 
 **Ajustes próximos (del EWG 3.3)**
 
-- **Eutrofización: actualizar este componente para que las puntuaciones **varíen en el tiempo**. Volveremos a correr los mismos métodos de José Antonio Romero Gil et al. (2026) para varios años (la gráfica actual es una sola instantánea de nitrógeno, mantenida constante). Esto nos permite calcular puntuaciones para la Entrada del Golfo (Nayarit y Jalisco), que originalmente no se evaluó en el artículo.
-- Ajustar las tasas de aplicación de plaguicidas, si es posible. Trabajar con Miguel para evaluar si hay mejores opciones, y documentar nuestras limitaciones si no encontramos otras.
-  - **Por ahora (Opción 1):** mantener el método actual. Las tasas nacionales de kg/ha de FAOSTAT más el uso de suelo de CONABIO nos dan cambio anual. Esto no es específico por cultivo ni por región. Podemos ver el tipo de cultivo en una versión posterior del Índice.
-  - **Actualización futura (Opción 2):** mantener FAOSTAT como la tasa anual de kg/ha, pero aplicar un multiplicador relativo por clase agrícola de CONABIO agrupada como riego, temporal y humedad. La media ponderada por área de esos multiplicadores debería quedarse cerca de 1, para no inflar FAOSTAT. El jitomate y el maíz en tierra de riego seguirían teniendo la misma tasa, así que esto es más débil que un método específico por cultivo, pero no necesita el cruce de cultivos de SIAP e INIFAP.
-  - **No para esta ronda (Opciones 3 a 5):** métodos específicos por cultivo usando [hectáreas cosechadas de SIAP](https://nube.agricultura.gob.mx/cierre_agricola/) y [Agendas Técnicas de INIFAP](https://vun.inifap.gob.mx/BibliotecaWeb/_Content) captarían mejor que el jitomate es más intensivo en plaguicidas que el maíz. También traen más problemas a lo largo del tiempo (las dosis de INIFAP suelen ser por aplicación, no un total estacional; las Agendas son solo de 2015, 2017 y 2026; los cultivos sin coincidencia se quedarían en FAOSTAT × 1). Eso es un cambio más grande, así que no lo estamos haciendo ahora.
+- **Hecho (en las puntuaciones del 29 de septiembre de 2026):** actualizar Eutrofización para que las puntuaciones varíen en el tiempo al reproducir los métodos de TN de Romero-Gil et al. (2026), incluyendo Nayarit y el norte de Jalisco en el Sureste del Golfo. Los goalkeepers y los participantes del EWG eligieron la **Opción B** (estatus reescalado de modo que la referencia de la media de los 5 TN/km más altos puntúa 50, no 0).
+- **Tasas de aplicación de plaguicidas (decidido con Miguel Betancourt Lozano, septiembre de 2026):** para esta primera evaluación mantenemos el método actual (tasas nacionales de kg/ha de FAOSTAT más el uso de suelo agrícola de CONABIO). Eso da cambio anual, pero no es específico por cultivo ni por región.
+  - **Por qué no lo hacemos específico por cultivo en esta ronda:** el SIAP da hectáreas por cultivo a escala municipal, mientras que necesitamos presión a escala de cuenca. CONABIO ubica la tierra agrícola en las cuencas, pero no identifica qué cultivos hay en cada píxel, así que de todos modos necesitaríamos un método para distribuir la composición municipal de cultivos (o tipos de cultivo) entre las áreas agrícolas y las cuencas. Las Agendas Técnicas del INIFAP son recomendaciones, no uso observado; a menudo reportan dosis por aplicación y no un total estacional; y no cubren todos los cultivos del SIAP. Cualquier tasa específica por cultivo también tendría que calibrarse contra los totales nacionales de FAOSTAT para que la suma del Golfo sea consistente con los datos nacionales de uso de plaguicidas.
+  - **Recomendación para una iteración futura (propuesta de Miguel, que acordamos documentar):** agrupar cultivos por tipo (cítricos, hortalizas, granos, etc.) usando [hectáreas cosechadas del SIAP](https://nube.agricultura.gob.mx/cierre_agricola/), y estimar tasas típicas de aplicación a partir de las etiquetas oficiales de productos autorizados por COFEPRIS y SENASICA (dosis y frecuencias por cultivo y plaga). Eso es más objetivo que las guías agronómicas del INIFAP. Validar la tabla resultante con agrónomos bajo un esquema de best professional judgement, y luego calibrar los totales contra FAOSTAT. Agrupar por tipo de cultivo pierde detalle a nivel de cultivo individual, pero las grandes diferencias de dosis y frecuencia entre tipos deberían capturar buena parte del contraste entre zonas y temporadas. Aun así, seguiría siendo necesario asignar espacialmente la composición municipal del SIAP sobre el cropland de CONABIO y las cuencas. Es demasiado trabajo para esta fase, así que queda documentado como mejora futura.
 :::
 
 # ![](figs/natural-products.svg){width=8% height=8%} Productos Naturales {#np}
@@ -1260,19 +1404,67 @@ np_cs <- read_csv(
 goal_plotly(np_cs, "Productos Naturales: Estatus actual")
 ```
 
-*Figura 26. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
+*Figura 32. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
 
 ::: {.callout-tip collapse="true"}
 # 📊 Puntuaciones de componentes
 
-Productos Naturales actualmente puntúa seis grupos de productos. Agregaremos una gráfica de cada uno aquí en cuanto esos archivos estén listos.
+Productos Naturales actualmente puntúa seis grupos de productos. Ya hay gráficas para FOFM, AQRM, RESD y SALT. Conchas marinas (SHEL) y aletas de tiburón legales (FINS) siguen listadas abajo; los próximos pasos pueden quitarlas de la puntuación final de NP.
 
-- **Aceite y harina de pescado (FOFM)**
-- **Especies del comercio de acuario (AQRM)**
-- **Conchas marinas (SHEL)**
-- **Residuos de pescado y camarón (RESD)**
-- **Aletas de tiburón legales (FINS)**
-- **Sal costera (SALT)**
+Este es el componente de aceite y harina de pescado (FOFM).
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| out.width: "90%"
+#| fig-align: center
+include_component_fig("FOFM_SubScores_plot_Sep052026.png")
+```
+
+*Figura 33. Estatus actual de aceite y harina de pescado (FOFM) por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
+
+Este es el componente de especies del comercio de acuario (AQRM).
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| out.width: "90%"
+#| fig-align: center
+include_component_fig("AQRM_SubScores_plot_Sep052026.png")
+```
+
+*Figura 34. Estatus actual del comercio de acuario (AQRM) por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
+
+Este es el componente de residuos de pescado y camarón (RESD).
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| out.width: "90%"
+#| fig-align: center
+include_component_fig("RESD_SubScores_plot_Sep062026.png")
+```
+
+*Figura 35. Estatus actual de residuos de pescado y camarón (RESD) por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
+
+Este es el componente de sal costera (SALT).
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| out.width: "90%"
+#| fig-align: center
+include_component_fig("SALT_SubScores_plot_Sep062026.png")
+```
+
+*Figura 36. Estatus actual de sal costera (SALT) por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
+
+- **Conchas marinas (SHEL):** aún no hay gráfica de componente; los próximos pasos pueden quitar esto de la puntuación final de NP.
+- **Aletas de tiburón legales (FINS):** aún no hay gráfica de componente; los próximos pasos pueden quitar esto de la puntuación final de NP.
 
 La producción de perla, carnada, algas y biofarmacéuticos no tuvo datos suficientes para puntuar.
 :::
