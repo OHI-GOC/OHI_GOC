@@ -158,6 +158,15 @@ include_component_fig <- function(filename) {
   }
 }
 
+# first existing csv path (mazu first, then local copies)
+read_first_csv <- function(paths) {
+  hit <- paths[file.exists(paths)][1]
+  if (is.na(hit)) {
+    stop("None of these CSV paths were found:\n", paste(" -", paths, collapse = "\n"))
+  }
+  read_csv(hit, show_col_types = FALSE)
+}
+
 goal_plotly <- function(
     df,
     title,
@@ -1050,13 +1059,70 @@ goal_plotly(hs_cs, "Habitat Services: Current Status")
 ::: {.callout-tip collapse="true"}
 # 📊 Component scores
 
-**These component figures are still in progress.** We will integrate them onto this website as soon as they are ready.
+Habitat Services is the average of three service scores, built from five habitats: **Coastal protection (PRO)**, **Pollution control and filtration (FIL)**, and **Carbon sequestration (SEQ)**. The maps and table below are a **2025 snapshot**.
 
-Habitat Services is the average of three service scores, built from five habitats. Component plots for each service are coming soon.
+This is the Coastal protection (PRO) component.
 
-- **Coastal protection (PRO)**
-- **Pollution control and filtration (FIL)**
-- **Carbon sequestration (SEQ)**
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| out.width: "90%"
+#| fig-align: center
+include_component_fig("PRO_Scores.2025_map_Sep302026.png")
+```
+
+*Figure 24. Coastal protection (PRO) current status by OHI region (2025 snapshot). The scores shown here are not finalized (version 1.0; September, 2026).*
+
+This is the Pollution control and filtration (FIL) component.
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| out.width: "90%"
+#| fig-align: center
+include_component_fig("FIL_Scores.2025_map_Sep302026.png")
+```
+
+*Figure 25. Pollution control and filtration (FIL) current status by OHI region (2025 snapshot). The scores shown here are not finalized (version 1.0; September, 2026).*
+
+This is the Carbon sequestration (SEQ) component.
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| out.width: "90%"
+#| fig-align: center
+include_component_fig("SEQ_Scores.2025_map_Sep302026.png")
+```
+
+*Figure 26. Carbon sequestration (SEQ) current status by OHI region (2025 snapshot). The scores shown here are not finalized (version 1.0; September, 2026).*
+
+2025 Habitat Services scores by region (protection, filtration, sequestration, and overall HS):
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+hs_comp_tbl <- read_first_csv(c(
+  "/home/shares/ohi/OHI_GOC/goal_prep/hs/website_viz/HS_and_SubScores.2025_table_Sep302026.csv",
+  "/home/shares/ohi/OHI_GOC/goal_prep/hs/website_viz/HS_and_SubScores.2025_table_Sep3026.csv",
+  here::here("final_cs_scores/HS_and_SubScores.2025_table_Sep302026.csv"),
+  here::here("../final_cs_scores/HS_and_SubScores.2025_table_Sep302026.csv")
+)) %>%
+  dplyr::select(
+    `Region Name`,
+    Protection = `Protection Score`,
+    Filtration = `Filtration Score`,
+    Sequestration = `Sequestration Score`,
+    `HS Score`
+  ) %>%
+  mutate(across(where(is.numeric), ~ round(as.numeric(.x))))
+
+knitr::kable(hs_comp_tbl, align = "lrrrr")
+```
 
 The five habitats behind those scores are mangroves, salt marshes, coastal dunes and scrubland, seagrass meadows, and coral reefs.
 :::
@@ -1116,14 +1182,12 @@ bd_cs <- read_csv(
 goal_plotly(bd_cs, "Biodiversity: Current Status")
 ```
 
-*Figure 24. Interactive graph depicting this goal’s current status over time per OHI region. The scores shown here are not finalized (version 1.0; September, 2026).*
+*Figure 27. Interactive graph depicting this goal’s current status over time per OHI region. The scores shown here are not finalized (version 1.0; September, 2026).*
 
 ::: {.callout-tip collapse="true"}
 # 📊 Component scores
 
-**These component figures are still in progress.** We will integrate them onto this website as soon as they are ready.
-
-Biodiversity currently evaluates **8 biomes**. Component plots for each biome are coming soon.
+Biodiversity currently evaluates **8 biomes**. The map and table below are a **2025 snapshot**.
 
 - **Mangrove forests (MAN)**
 - **Coastal wetlands and scrubland (WET)**
@@ -1133,6 +1197,47 @@ Biodiversity currently evaluates **8 biomes**. Component plots for each biome ar
 - **Subtidal soft bottom (SOF)**
 - **Rhodolith beds (RHO)**
 - **Shallow pelagic open ocean (OCE)**
+
+Joined biome scores by OHI region (2025):
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| out.width: "90%"
+#| fig-align: center
+include_component_fig("BiomesJoined.2025_map_Oct022026.png")
+```
+
+*Figure 28. Biodiversity biome scores by OHI region (2025 snapshot). The scores shown here are not finalized (version 1.0; October, 2026).*
+
+2025 Biodiversity and biome scores by region:
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+bd_comp_tbl <- read_first_csv(c(
+  "/home/shares/ohi/OHI_GOC/goal_prep/bd/website_viz/BD_and_BiomeScores.2025_table_Oct022026.csv",
+  here::here("final_cs_scores/BD_and_BiomeScores.2025_table_Oct022026.csv"),
+  here::here("../final_cs_scores/BD_and_BiomeScores.2025_table_Oct022026.csv")
+)) %>%
+  dplyr::select(
+    `Region Name`,
+    MAN = `MANG Score`,
+    WET = `WETL Score`,
+    SEA = `SEAG Score`,
+    CRL = `CORL Score`,
+    ROK = `ROKR Score`,
+    SOF = `SOFT Score`,
+    RHO = `RHOD Score`,
+    OCE = `OCEA Score`,
+    `BD Score`
+  ) %>%
+  mutate(across(where(is.numeric), ~ round(as.numeric(.x))))
+
+knitr::kable(bd_comp_tbl, align = "lrrrrrrrrr")
+```
 :::
 
 ::: {.callout-note collapse="true"}
@@ -1195,7 +1300,7 @@ cw_overall <- read_csv(
 goal_plotly(cw_overall, "Clean Waters: Current Status")
 ```
 
-*Figure 25. Interactive graph depicting this goal’s current status over time per OHI region. The scores shown here are not finalized (version 1.1; September, 2026).*
+*Figure 29. Interactive graph depicting this goal’s current status over time per OHI region. The scores shown here are not finalized (version 1.1; September, 2026).*
 
 Earlier overall CW scores (version 1.0), before the time-varying eutrophication update. Kept for comparison with Figure 25.
 
@@ -1211,7 +1316,7 @@ cw_overall_v10 <- read_csv(
 goal_plotly(cw_overall_v10, "Clean Waters: Current Status (earlier version)")
 ```
 
-*Figure 26. Earlier overall CW scores held with the single-year eutrophication snapshot. Kept for comparison with version 1.1. The scores shown here are not finalized (version 1.0; September, 2026).*
+*Figure 30. Earlier overall CW scores held with the single-year eutrophication snapshot. Kept for comparison with version 1.1. The scores shown here are not finalized (version 1.0; September, 2026).*
 
 ::: {.callout-tip collapse="true"}
 # 📊 Component scores
@@ -1240,7 +1345,7 @@ cw_eut <- read_csv(
 goal_plotly(cw_eut, "Clean Waters: Eutrophication")
 ```
 
-*Figure 27. Interactive graph depicting this goal’s current status over time per OHI region. The scores shown here are not finalized (version 1.1; September, 2026).*
+*Figure 31. Interactive graph depicting this goal’s current status over time per OHI region. The scores shown here are not finalized (version 1.1; September, 2026).*
 
 Earlier eutrophication scores (version 1.0), before reproducing the methods so scores vary over time. Region 9 was not scored in that original analysis.
 
@@ -1269,7 +1374,7 @@ cw_eut_v10 <- read_csv(
 goal_plotly(cw_eut_v10, "Clean Waters: Eutrophication (before reproducing the methods)")
 ```
 
-*Figure 28. Earlier eutrophication scores before reproducing the Romero-Gil methods over time. Kept for comparison with version 1.1. The scores shown here are not finalized (version 1.0; September, 2026).*
+*Figure 32. Earlier eutrophication scores before reproducing the Romero-Gil methods over time. Kept for comparison with version 1.1. The scores shown here are not finalized (version 1.0; September, 2026).*
 
 This is the Pathogens component, which evaluates *Enterococcus* at Playas Limpias beaches, with a score of 100 meaning waters meet Mexico’s beach suitability standard of 200 MPN/100mL.
 
@@ -1294,7 +1399,7 @@ cw_pat <- read_csv(
 goal_plotly(cw_pat, "Clean Waters: Pathogens")
 ```
 
-*Figure 29. Interactive graph depicting this goal’s current status over time per OHI region. The scores shown here are not finalized (version 1.0; September, 2026).*
+*Figure 33. Interactive graph depicting this goal’s current status over time per OHI region. The scores shown here are not finalized (version 1.0; September, 2026).*
 
 This is the Chemicals component, which evaluates pesticide, pharmaceutical, hazardous-waste, untreated-wastewater, and vessel-hydrocarbon risk, with a score of 100 meaning no chemical pressure relative to the highest levels observed in the Gulf.
 
@@ -1322,7 +1427,7 @@ cw_chm <- read_csv(
 goal_plotly(cw_chm, "Clean Waters: Chemicals")
 ```
 
-*Figure 30. Interactive graph depicting this goal’s current status over time per OHI region. The scores shown here are not finalized (version 1.0; September, 2026).*
+*Figure 34. Interactive graph depicting this goal’s current status over time per OHI region. The scores shown here are not finalized (version 1.0; September, 2026).*
 
 This is the Marine Debris component, which evaluates the risk of abandoned fishing gear (ghost gear), with a score of 100 meaning no ghost-gear pressure.
 
@@ -1345,7 +1450,7 @@ cw_mar <- read_csv(
 goal_plotly(cw_mar, "Clean Waters: Marine Debris")
 ```
 
-*Figure 31. Interactive graph depicting this goal’s current status over time per OHI region. The scores shown here are not finalized (version 1.0; September, 2026).*
+*Figure 35. Interactive graph depicting this goal’s current status over time per OHI region. The scores shown here are not finalized (version 1.0; September, 2026).*
 :::
 
 ::: {.callout-note collapse="true"}
@@ -1404,7 +1509,7 @@ np_cs <- read_csv(
 goal_plotly(np_cs, "Natural Products: Current Status")
 ```
 
-*Figure 32. Interactive graph depicting this goal’s current status over time per OHI region. The scores shown here are not finalized (version 1.0; September, 2026).*
+*Figure 36. Interactive graph depicting this goal’s current status over time per OHI region. The scores shown here are not finalized (version 1.0; September, 2026).*
 
 ::: {.callout-tip collapse="true"}
 # 📊 Component scores
@@ -1422,7 +1527,7 @@ This is the Fish oil and fish meal (FOFM) component.
 include_component_fig("FOFM_SubScores_plot_Sep052026.png")
 ```
 
-*Figure 33. Fish oil and fish meal (FOFM) current status by OHI region. The scores shown here are not finalized (version 1.0; September, 2026).*
+*Figure 37. Fish oil and fish meal (FOFM) current status by OHI region. The scores shown here are not finalized (version 1.0; September, 2026).*
 
 This is the Aquarium trade species (AQRM) component.
 
@@ -1435,7 +1540,7 @@ This is the Aquarium trade species (AQRM) component.
 include_component_fig("AQRM_SubScores_plot_Sep052026.png")
 ```
 
-*Figure 34. Aquarium trade (AQRM) current status by OHI region. The scores shown here are not finalized (version 1.0; September, 2026).*
+*Figure 38. Aquarium trade (AQRM) current status by OHI region. The scores shown here are not finalized (version 1.0; September, 2026).*
 
 This is the Fish and shrimp residues (RESD) component.
 
@@ -1448,7 +1553,7 @@ This is the Fish and shrimp residues (RESD) component.
 include_component_fig("RESD_SubScores_plot_Sep062026.png")
 ```
 
-*Figure 35. Fish and shrimp residues (RESD) current status by OHI region. The scores shown here are not finalized (version 1.0; September, 2026).*
+*Figure 39. Fish and shrimp residues (RESD) current status by OHI region. The scores shown here are not finalized (version 1.0; September, 2026).*
 
 This is the Coastal salt (SALT) component.
 
@@ -1461,7 +1566,7 @@ This is the Coastal salt (SALT) component.
 include_component_fig("SALT_SubScores_plot_Sep062026.png")
 ```
 
-*Figure 36. Coastal salt (SALT) current status by OHI region. The scores shown here are not finalized (version 1.0; September, 2026).*
+*Figure 40. Coastal salt (SALT) current status by OHI region. The scores shown here are not finalized (version 1.0; September, 2026).*
 
 - **Sea shells (SHEL):** lacking data for the EWG to feel confident in including these scores; next steps may drop this from the final NP score.
 - **Legal shark fins (FINS):** this component will be dropped from the final NP score.

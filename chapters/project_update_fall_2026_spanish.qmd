@@ -158,6 +158,15 @@ include_component_fig <- function(filename) {
   }
 }
 
+# first existing csv path (mazu first, then local copies)
+read_first_csv <- function(paths) {
+  hit <- paths[file.exists(paths)][1]
+  if (is.na(hit)) {
+    stop("No se encontró ninguno de estos CSV:\n", paste(" -", paths, collapse = "\n"))
+  }
+  read_csv(hit, show_col_types = FALSE)
+}
+
 goal_plotly <- function(
     df,
     title,
@@ -1050,13 +1059,85 @@ goal_plotly(hs_cs, "Servicios de Hábitat: Estatus actual")
 ::: {.callout-tip collapse="true"}
 # 📊 Puntuaciones de componentes
 
-**Estas figuras de componentes todavía están en progreso.** Las integraremos en este sitio web en cuanto estén listas.
+Servicios de Hábitat es el promedio de tres puntuaciones de servicio, construidas a partir de cinco hábitats: **Protección costera (PRO)**, **Control de contaminación y filtración (FIL)** y **Secuestro de carbono (SEQ)**. Los mapas y la tabla de abajo son una **instantánea de 2025**.
 
-Servicios de Hábitat es el promedio de tres puntuaciones de servicio, construidas a partir de cinco hábitats. Las gráficas de componentes de cada servicio estarán disponibles pronto.
+Este es el componente de Protección costera (PRO).
 
-- **Protección costera (PRO)**
-- **Control de contaminación y filtración (FIL)**
-- **Secuestro de carbono (SEQ)**
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| out.width: "90%"
+#| fig-align: center
+include_component_fig("PRO_Scores.2025_map_Sep302026.png")
+```
+
+*Figura 24. Estatus actual de protección costera (PRO) por región OHI (instantánea de 2025). Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
+
+Este es el componente de Control de contaminación y filtración (FIL).
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| out.width: "90%"
+#| fig-align: center
+include_component_fig("FIL_Scores.2025_map_Sep302026.png")
+```
+
+*Figura 25. Estatus actual de control de contaminación y filtración (FIL) por región OHI (instantánea de 2025). Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
+
+Este es el componente de Secuestro de carbono (SEQ).
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| out.width: "90%"
+#| fig-align: center
+include_component_fig("SEQ_Scores.2025_map_Sep302026.png")
+```
+
+*Figura 26. Estatus actual de secuestro de carbono (SEQ) por región OHI (instantánea de 2025). Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
+
+Puntuaciones de Servicios de Hábitat 2025 por región (protección, filtración, secuestro y HS general):
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+hs_comp_tbl <- read_first_csv(c(
+  "/home/shares/ohi/OHI_GOC/goal_prep/hs/website_viz/HS_and_SubScores.2025_table_Sep302026.csv",
+  "/home/shares/ohi/OHI_GOC/goal_prep/hs/website_viz/HS_and_SubScores.2025_table_Sep3026.csv",
+  here::here("final_cs_scores/HS_and_SubScores.2025_table_Sep302026.csv"),
+  here::here("../final_cs_scores/HS_and_SubScores.2025_table_Sep302026.csv")
+)) %>%
+  dplyr::select(
+    Región = `Region Name`,
+    Protección = `Protection Score`,
+    Filtración = `Filtration Score`,
+    Secuestro = `Sequestration Score`,
+    `Puntuación HS` = `HS Score`
+  ) %>%
+  mutate(
+    Región = dplyr::recode(
+      Región,
+      "Western Upper Gulf" = "Alto Golfo occidental",
+      "Western Midriff Islands" = "Islas del Medio (oeste)",
+      "Western Central Gulf" = "Golfo central occidental",
+      "Western Southern Gulf" = "Golfo sur occidental",
+      "Eastern Upper Gulf" = "Alto Golfo oriental",
+      "Eastern Midriff Islands" = "Islas del Medio (este)",
+      "Southern Sonora Coast" = "Costa sur de Sonora",
+      "Sinaloa Coast" = "Costa de Sinaloa",
+      "Southeastern Gulf" = "Entrada del Golfo",
+      .default = Región
+    ),
+    across(where(is.numeric), ~ round(as.numeric(.x)))
+  )
+
+knitr::kable(hs_comp_tbl, align = "lrrrr")
+```
 
 Los cinco hábitats detrás de esas puntuaciones son manglares, marismas, dunas costeras y matorral, praderas de pastos marinos y arrecifes de coral.
 :::
@@ -1116,14 +1197,12 @@ bd_cs <- read_csv(
 goal_plotly(bd_cs, "Biodiversidad: Estatus actual")
 ```
 
-*Figura 24. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
+*Figura 27. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
 
 ::: {.callout-tip collapse="true"}
 # 📊 Puntuaciones de componentes
 
-**Estas figuras de componentes todavía están en progreso.** Las integraremos en este sitio web en cuanto estén listas.
-
-Biodiversidad evalúa actualmente **8 biomas**. Las gráficas de componentes de cada bioma estarán disponibles pronto.
+Biodiversidad evalúa actualmente **8 biomas**. El mapa y la tabla de abajo son una **instantánea de 2025**.
 
 - **Bosques de manglar (MAN)**
 - **Humedales costeros y matorral (WET)**
@@ -1133,6 +1212,62 @@ Biodiversidad evalúa actualmente **8 biomas**. Las gráficas de componentes de 
 - **Fondos blandos submareales (SOF)**
 - **Bancos de rodolitos (RHO)**
 - **Océano pelágico somero (OCE)**
+
+Puntuaciones unidas de biomas por región OHI (2025):
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| out.width: "90%"
+#| fig-align: center
+include_component_fig("BiomesJoined.2025_map_Oct022026.png")
+```
+
+*Figura 28. Puntuaciones de biomas de Biodiversidad por región OHI (instantánea de 2025). Las puntuaciones que se muestran no están finalizadas (versión 1.0; octubre de 2026).*
+
+Puntuaciones de Biodiversidad y biomas 2025 por región:
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+bd_comp_tbl <- read_first_csv(c(
+  "/home/shares/ohi/OHI_GOC/goal_prep/bd/website_viz/BD_and_BiomeScores.2025_table_Oct022026.csv",
+  here::here("final_cs_scores/BD_and_BiomeScores.2025_table_Oct022026.csv"),
+  here::here("../final_cs_scores/BD_and_BiomeScores.2025_table_Oct022026.csv")
+)) %>%
+  dplyr::select(
+    Región = `Region Name`,
+    MAN = `MANG Score`,
+    WET = `WETL Score`,
+    SEA = `SEAG Score`,
+    CRL = `CORL Score`,
+    ROK = `ROKR Score`,
+    SOF = `SOFT Score`,
+    RHO = `RHOD Score`,
+    OCE = `OCEA Score`,
+    `Puntuación BD` = `BD Score`
+  ) %>%
+  mutate(
+    Región = dplyr::recode(
+      Región,
+      "Western Upper Gulf" = "Alto Golfo occidental",
+      "Western Midriff Islands" = "Islas del Medio (oeste)",
+      "Western Central Gulf" = "Golfo central occidental",
+      "Western Southern Gulf" = "Golfo sur occidental",
+      "Eastern Upper Gulf" = "Alto Golfo oriental",
+      "Eastern Midriff Islands" = "Islas del Medio (este)",
+      "Southern Sonora Coast" = "Costa sur de Sonora",
+      "Sinaloa Coast" = "Costa de Sinaloa",
+      "Southeastern Gulf" = "Entrada del Golfo",
+      .default = Región
+    ),
+    across(where(is.numeric), ~ round(as.numeric(.x)))
+  )
+
+knitr::kable(bd_comp_tbl, align = "lrrrrrrrrr")
+```
 :::
 
 ::: {.callout-note collapse="true"}
@@ -1195,7 +1330,7 @@ cw_overall <- read_csv(
 goal_plotly(cw_overall, "Aguas Limpias: Estatus actual")
 ```
 
-*Figura 25. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.1; septiembre de 2026).*
+*Figura 29. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.1; septiembre de 2026).*
 
 Puntuaciones generales anteriores de CW (versión 1.0), antes de la actualización temporal de eutrofización. Se conservan para comparar con la Figura 25.
 
@@ -1211,7 +1346,7 @@ cw_overall_v10 <- read_csv(
 goal_plotly(cw_overall_v10, "Aguas Limpias: Estatus actual (versión anterior)")
 ```
 
-*Figura 26. Puntuaciones generales anteriores de CW con la instantánea de eutrofización de un solo año. Se conservan para comparar con la versión 1.1. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
+*Figura 30. Puntuaciones generales anteriores de CW con la instantánea de eutrofización de un solo año. Se conservan para comparar con la versión 1.1. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
 
 ::: {.callout-tip collapse="true"}
 # 📊 Puntuaciones de componentes
@@ -1240,7 +1375,7 @@ cw_eut <- read_csv(
 goal_plotly(cw_eut, "Aguas Limpias: Eutrofización")
 ```
 
-*Figura 27. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.1; septiembre de 2026).*
+*Figura 31. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.1; septiembre de 2026).*
 
 Puntuaciones anteriores de eutrofización (versión 1.0), antes de reproducir los métodos para que varíen en el tiempo. La Región 9 no se puntuó en ese análisis original.
 
@@ -1269,7 +1404,7 @@ cw_eut_v10 <- read_csv(
 goal_plotly(cw_eut_v10, "Aguas Limpias: Eutrofización (antes de reproducir los métodos)")
 ```
 
-*Figura 28. Puntuaciones anteriores de eutrofización antes de reproducir los métodos de Romero-Gil a lo largo del tiempo. Se conservan para comparar con la versión 1.1. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
+*Figura 32. Puntuaciones anteriores de eutrofización antes de reproducir los métodos de Romero-Gil a lo largo del tiempo. Se conservan para comparar con la versión 1.1. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
 
 Este es el componente de Patógenos, que evalúa *Enterococcus* en playas de Playas Limpias; una puntuación de 100 significa que las aguas cumplen el estándar mexicano de aptitud de playas de 200 NMP/100 mL.
 
@@ -1294,7 +1429,7 @@ cw_pat <- read_csv(
 goal_plotly(cw_pat, "Aguas Limpias: Patógenos")
 ```
 
-*Figura 29. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
+*Figura 33. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
 
 Este es el componente de Químicos, que evalúa el riesgo de plaguicidas, productos farmacéuticos, residuos peligrosos, aguas residuales sin tratamiento e hidrocarburos de embarcaciones; una puntuación de 100 significa ninguna presión química relativa a los niveles más altos observados en el Golfo.
 
@@ -1322,7 +1457,7 @@ cw_chm <- read_csv(
 goal_plotly(cw_chm, "Aguas Limpias: Químicos")
 ```
 
-*Figura 30. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
+*Figura 34. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
 
 Este es el componente de Residuos marinos, que evalúa el riesgo de artes de pesca abandonadas (artes fantasma); una puntuación de 100 significa ninguna presión de artes fantasma.
 
@@ -1345,7 +1480,7 @@ cw_mar <- read_csv(
 goal_plotly(cw_mar, "Aguas Limpias: Residuos marinos")
 ```
 
-*Figura 31. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
+*Figura 35. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
 :::
 
 ::: {.callout-note collapse="true"}
@@ -1404,7 +1539,7 @@ np_cs <- read_csv(
 goal_plotly(np_cs, "Productos Naturales: Estatus actual")
 ```
 
-*Figura 32. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
+*Figura 36. Gráfica interactiva del estatus actual de esta meta a lo largo del tiempo, por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
 
 ::: {.callout-tip collapse="true"}
 # 📊 Puntuaciones de componentes
@@ -1422,7 +1557,7 @@ Este es el componente de aceite y harina de pescado (FOFM).
 include_component_fig("FOFM_SubScores_plot_Sep052026.png")
 ```
 
-*Figura 33. Estatus actual de aceite y harina de pescado (FOFM) por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
+*Figura 37. Estatus actual de aceite y harina de pescado (FOFM) por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
 
 Este es el componente de especies del comercio de acuario (AQRM).
 
@@ -1435,7 +1570,7 @@ Este es el componente de especies del comercio de acuario (AQRM).
 include_component_fig("AQRM_SubScores_plot_Sep052026.png")
 ```
 
-*Figura 34. Estatus actual del comercio de acuario (AQRM) por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
+*Figura 38. Estatus actual del comercio de acuario (AQRM) por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
 
 Este es el componente de residuos de pescado y camarón (RESD).
 
@@ -1448,7 +1583,7 @@ Este es el componente de residuos de pescado y camarón (RESD).
 include_component_fig("RESD_SubScores_plot_Sep062026.png")
 ```
 
-*Figura 35. Estatus actual de residuos de pescado y camarón (RESD) por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
+*Figura 39. Estatus actual de residuos de pescado y camarón (RESD) por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
 
 Este es el componente de sal costera (SALT).
 
@@ -1461,7 +1596,7 @@ Este es el componente de sal costera (SALT).
 include_component_fig("SALT_SubScores_plot_Sep062026.png")
 ```
 
-*Figura 36. Estatus actual de sal costera (SALT) por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
+*Figura 40. Estatus actual de sal costera (SALT) por región OHI. Las puntuaciones que se muestran no están finalizadas (versión 1.0; septiembre de 2026).*
 
 - **Conchas marinas (SHEL):** aún no hay gráfica de componente; los próximos pasos pueden quitar esto de la puntuación final de NP.
 - **Aletas de tiburón legales (FINS):** aún no hay gráfica de componente; los próximos pasos pueden quitar esto de la puntuación final de NP.
