@@ -230,7 +230,7 @@ cs_quantity_int_clean <- read_csv(
   dplyr::select(rgn_id, year, final_score)
 
 cs_quality_clean <- read_csv(
-  here::here("/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_quality", "cs_quality_all_indicators_032326.csv"),
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_quality", "cs_quality_all_indicators_083126.csv"),
   show_col_types = FALSE
 )
 

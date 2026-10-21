@@ -250,7 +250,7 @@ Los cruceros se muestran por separado y **no están incluidos** en esta puntuaci
 #| warning: false
 #| message: false
 tr_overall <- read_csv(
-  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/TR_Scores_1.0_df_091126.csv"),
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/v1.0/TR_Scores_1.0_df_091126.csv"),
   show_col_types = FALSE
 ) %>%
   prep_cs()
@@ -502,7 +502,7 @@ Los métodos, los puntos de referencia y el detalle de los indicadores están en
 #| warning: false
 #| message: false
 fp_cs <- read_csv(
-  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/FP_Scores_1.0_df_Sep112026.csv"),
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/v1.0/FP_Scores_1.0_df_Sep112026.csv"),
   show_col_types = FALSE
 ) %>%
   prep_cs()
@@ -523,7 +523,7 @@ Este es el componente de captura silvestre (FIS), que evalúa el estatus de stoc
 #| warning: false
 #| message: false
 fp_fis <- read_csv(
-  "/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/copy_FIS_StockStatus_SubScores_df_Jun052026.csv",
+  "/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/v1.0/copy_FIS_StockStatus_SubScores_df_Jun052026.csv",
   show_col_types = FALSE
 ) %>%
   mutate(
@@ -547,7 +547,7 @@ Este es el componente de maricultura (MAR), que evalúa la producción acuícola
 #| warning: false
 #| message: false
 fp_mar <- read_csv(
-  "/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/copy_MAR_Scores_1.0_df_Jul152026.csv",
+  "/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/v1.0/copy_MAR_Scores_1.0_df_Jul152026.csv",
   show_col_types = FALSE
 ) %>%
   mutate(
@@ -607,7 +607,7 @@ Las puntuaciones de septiembre incluyen una actualización de **cantidad y calid
 #| warning: false
 #| message: false
 le_cs <- read_csv(
-  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/LE_Scores_1.0_df_091126.csv"),
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/v1.0/LE_Scores_1.0_df_091126.csv"),
   show_col_types = FALSE
 ) %>%
   prep_cs()
@@ -780,7 +780,7 @@ Sentido de Pertenencia era, originalmente, el promedio de Participación de la C
 #| warning: false
 #| message: false
 sp_cs <- read_csv(
-  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/SP_Scores_1.0_df_091126.csv"),
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/v1.0/SP_Scores_1.0_df_091126.csv"),
   show_col_types = FALSE
 ) %>%
   prep_cs()
@@ -962,7 +962,7 @@ La gráfica de abajo es la puntuación general de Oportunidades de Acceso, con L
 #| warning: false
 #| message: false
 ao_cs <- read_csv(
-  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/AO_Scores_1.0_df_Sep112026.csv"),
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/v1.0/AO_Scores_1.0_df_Sep112026.csv"),
   show_col_types = FALSE
 ) %>%
   prep_cs()
@@ -1047,7 +1047,7 @@ Los métodos, los puntos de referencia y el detalle de los indicadores están en
 #| warning: false
 #| message: false
 hs_cs <- read_csv(
-  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/HS_Scores_1.0_df_Sep112026.csv"),
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/v1.0/HS_Scores_1.0_df_Sep112026.csv"),
   show_col_types = FALSE
 ) %>%
   prep_cs()
@@ -1190,7 +1190,7 @@ Los métodos, los puntos de referencia y el detalle de los indicadores están en
 #| warning: false
 #| message: false
 bd_cs <- read_csv(
-  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/BD_Scores_1.0_df_Sep112026.csv"),
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/v1.0/BD_Scores_1.0_df_Sep112026.csv"),
   show_col_types = FALSE
 ) %>%
   prep_cs()
@@ -1323,7 +1323,7 @@ La puntuación general de CW es el promedio de Eutrofización, Patógenos, Quím
 #| warning: false
 #| message: false
 cw_overall <- read_csv(
-  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/CW_Scores_1.1_df_092926.csv"),
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/v1.1/CW_Scores_1.1_df_Oct2026.csv"),
   show_col_types = FALSE
 ) %>%
   prep_cs()
@@ -1339,7 +1339,7 @@ Puntuaciones generales anteriores de CW (versión 1.0), antes de la actualizaci�
 #| warning: false
 #| message: false
 cw_overall_v10 <- read_csv(
-  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/CW_Scores_1.0_df_091126.csv"),
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/v1.0/CW_Scores_1.0_df_091126.csv"),
   show_col_types = FALSE
 ) %>%
   prep_cs()
@@ -1532,7 +1532,7 @@ Los métodos, los puntos de referencia y el detalle de los indicadores están en
 #| warning: false
 #| message: false
 np_cs <- read_csv(
-  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/NP_Scores_1.0_df_Sep112026.csv"),
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/v1.0/NP_Scores_1.0_df_Sep112026.csv"),
   show_col_types = FALSE
 ) %>%
   prep_cs()

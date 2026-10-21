@@ -250,7 +250,7 @@ Cruise ships are shown separately and are **not included** in this overall score
 #| warning: false
 #| message: false
 tr_overall <- read_csv(
-  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/TR_Scores_1.0_df_091126.csv"),
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/v1.0/TR_Scores_1.0_df_091126.csv"),
   show_col_types = FALSE
 ) %>%
   prep_cs()
@@ -502,7 +502,7 @@ Methods, reference points, and indicator details are in the executive summary:
 #| warning: false
 #| message: false
 fp_cs <- read_csv(
-  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/FP_Scores_1.0_df_Sep112026.csv"),
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/v1.0/FP_Scores_1.0_df_Sep112026.csv"),
   show_col_types = FALSE
 ) %>%
   prep_cs()
@@ -523,7 +523,7 @@ This is the wild catch fisheries (FIS) component, which evaluates stock status f
 #| warning: false
 #| message: false
 fp_fis <- read_csv(
-  "/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/copy_FIS_StockStatus_SubScores_df_Jun052026.csv",
+  "/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/v1.0/copy_FIS_StockStatus_SubScores_df_Jun052026.csv",
   show_col_types = FALSE
 ) %>%
   mutate(
@@ -547,7 +547,7 @@ This is the Mariculture (MAR) component, which evaluates CONAPESCA aquaculture p
 #| warning: false
 #| message: false
 fp_mar <- read_csv(
-  "/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/copy_MAR_Scores_1.0_df_Jul152026.csv",
+  "/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/v1.0/copy_MAR_Scores_1.0_df_Jul152026.csv",
   show_col_types = FALSE
 ) %>%
   mutate(
@@ -607,7 +607,7 @@ The September scores include an update to **LIV quantity and quality**: both are
 #| warning: false
 #| message: false
 le_cs <- read_csv(
-  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/LE_Scores_1.0_df_091126.csv"),
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/v1.0/LE_Scores_1.0_df_091126.csv"),
   show_col_types = FALSE
 ) %>%
   prep_cs()
@@ -780,7 +780,7 @@ Sense of Place, aka *Sentido de Pertenencia*, was originally the average of Coas
 #| warning: false
 #| message: false
 sp_cs <- read_csv(
-  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/SP_Scores_1.0_df_091126.csv"),
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/v1.0/SP_Scores_1.0_df_091126.csv"),
   show_col_types = FALSE
 ) %>%
   prep_cs()
@@ -962,7 +962,7 @@ The plot below is the overall Access Opportunities score with LCA held out.
 #| warning: false
 #| message: false
 ao_cs <- read_csv(
-  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/AO_Scores_1.0_df_Sep112026.csv"),
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/v1.0/AO_Scores_1.0_df_Sep112026.csv"),
   show_col_types = FALSE
 ) %>%
   prep_cs()
@@ -1047,7 +1047,7 @@ Methods, reference points, and indicator details are in the executive summary:
 #| warning: false
 #| message: false
 hs_cs <- read_csv(
-  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/HS_Scores_1.0_df_Sep112026.csv"),
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/v1.0/HS_Scores_1.0_df_Sep112026.csv"),
   show_col_types = FALSE
 ) %>%
   prep_cs()
@@ -1175,7 +1175,7 @@ Methods, reference points, and indicator details are in the executive summary:
 #| warning: false
 #| message: false
 bd_cs <- read_csv(
-  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/BD_Scores_1.0_df_Sep112026.csv"),
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/v1.0/BD_Scores_1.0_df_Sep112026.csv"),
   show_col_types = FALSE
 ) %>%
   prep_cs()
@@ -1293,7 +1293,7 @@ The overall CW score is the average of Eutrophication, Pathogens, Chemicals, and
 #| warning: false
 #| message: false
 cw_overall <- read_csv(
-  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/CW_Scores_1.1_df_092926.csv"),
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/v1.1/CW_Scores_1.1_df_Oct2026.csv"),
   show_col_types = FALSE
 ) %>%
   prep_cs()
@@ -1309,7 +1309,7 @@ Earlier overall CW scores (version 1.0), before the time-varying eutrophication 
 #| warning: false
 #| message: false
 cw_overall_v10 <- read_csv(
-  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/CW_Scores_1.0_df_091126.csv"),
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/v1.0/CW_Scores_1.0_df_091126.csv"),
   show_col_types = FALSE
 ) %>%
   prep_cs()
@@ -1502,7 +1502,7 @@ Methods, reference points, and indicator details are in the executive summary:
 #| warning: false
 #| message: false
 np_cs <- read_csv(
-  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/NP_Scores_1.0_df_Sep112026.csv"),
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/final_cs_scores/v1.0/NP_Scores_1.0_df_Sep112026.csv"),
   show_col_types = FALSE
 ) %>%
   prep_cs()

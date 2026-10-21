@@ -35,8 +35,8 @@ website:
         text: "🏡 OHI GOC Project Home"
       - href: chapters/OHIregions.qmd
         text: "🌎 OHI GOC Regions (Map)"
-      - href: chapters/project_update_fall_2026.qmd
-        text: "📣 Project Update (Fall 2026)"
+      - href: chapters/project_update_october_2026.qmd
+        text: "📣 Project Update (Oct. 2026)"
 
 format:
   html:

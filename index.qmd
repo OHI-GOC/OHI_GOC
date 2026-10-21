@@ -22,7 +22,7 @@ This website is the **Information Hub** for the [Ocean Health Index](https://oce
 
 A two-page summary of the project is available [here](https://drive.google.com/file/d/1Oyxpk6r32l_L48jniwDTfmvNVvbnZZUE/view?usp=sharing) y [en español](https://drive.google.com/file/d/1HayGmDUfaRnn1rY4QwEr_tml5QrLrFsU/view?usp=sharing).
 
-Fall 2026 scores and next steps are on the [Project Update (Fall 2026)](chapters/project_update_fall_2026.qmd) page.
+Updated Fall 2026 scores are on the [Project Update (Oct. 2026)](chapters/project_update_october_2026.qmd) page.
 
 ---
 

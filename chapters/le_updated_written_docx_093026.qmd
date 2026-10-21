@@ -1,0 +1,851 @@
+---
+title: "Assessing marine livelihoods and economies in the Gulf of California with a regional Ocean Health Index"
+format:
+  docx:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    fig-width: 7
+    fig-height: 4.5
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(fig.width = 7, fig.height = 4.5, dpi = 150)
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(tidyverse)
+library(ggplot2)
+library(here)
+library(sf)
+library(priceR)
+library(scales)
+
+# ---------------------------------------------------------------------------
+# Labels, colors, and constants
+# ---------------------------------------------------------------------------
+rgn_labels <- c(
+  "Region_1" = "Western Upper Gulf",
+  "Region_2" = "Western Midriff Islands",
+  "Region_3" = "Western Central Gulf",
+  "Region_4" = "Western Southern Gulf",
+  "Region_5" = "Eastern Upper Gulf",
+  "Region_6" = "Eastern Midriff Islands",
+  "Region_7" = "Southern Sonora Coast",
+  "Region_8" = "Sinaloa Coast",
+  "Region_9" = "Southeastern Gulf"
+)
+
+rgn_colors <- c(
+  "Region_1" = "#C03729",
+  "Region_2" = "#E68C7C",
+  "Region_3" = "#FC8F24",
+  "Region_4" = "#dcaa38",
+  "Region_5" = "#cbd2a0",
+  "Region_6" = "#98a25a",
+  "Region_7" = "#747428",
+  "Region_8" = "#627391",
+  "Region_9" = "#8d61a9"
+)
+
+region_levels <- paste0("Region_", 1:9)
+rgn_label_colors <- setNames(unname(rgn_colors[region_levels]), unname(rgn_labels[region_levels]))
+census_years <- c(2003, 2008, 2013, 2018, 2023)
+
+# Informality-adjusted LIV and final LE files (2018 reference), plus unchanged ECO
+le_dir <- "/home/shares/ohi/OHI_GOC/goal_prep/le"
+path_jobs_inf  <- file.path(le_dir, "liv", "ce_jobs_current_status_2019ref_informality.csv")
+path_qual_inf  <- file.path(le_dir, "liv", "ce_qual_current_status_informality.csv")
+path_final_inf <- file.path(le_dir, "final_le_current_status_2019ref_informality.csv")
+path_eco       <- file.path(le_dir, "eco", "ce_rev_current_status_2019ref.csv")
+
+# ---------------------------------------------------------------------------
+# Helpers: label handling and plot themes
+# ---------------------------------------------------------------------------
+normalize_rgn_id <- function(x) {
+  x <- as.character(x)
+  ifelse(grepl("^Region_", x), x, paste0("Region_", x))
+}
+
+add_rgn_labels <- function(df) {
+  df %>%
+    mutate(
+      rgn_id = factor(normalize_rgn_id(rgn_id), levels = region_levels),
+      rgn_label = factor(
+        rgn_labels[as.character(rgn_id)],
+        levels = unname(rgn_labels[region_levels])
+      )
+    )
+}
+
+gg_theme_pdf <- function() {
+  theme_minimal() +
+    theme(
+      plot.title = element_text(face = "bold", size = 11),
+      legend.position = "right",
+      legend.title = element_text(size = 9),
+      legend.text = element_text(size = 8)
+    )
+}
+
+le_plotly_lines <- function(df, y_var, title, y_range = NULL) {
+  df <- df %>%
+    mutate(year = as.numeric(year)) %>%
+    arrange(rgn_label, year)
+
+  y_col <- rlang::sym(y_var)
+
+  p <- ggplot(df, aes(x = year, y = !!y_col, color = rgn_label, group = rgn_label)) +
+    geom_line(linewidth = 0.7) +
+    geom_point(size = 1.5) +
+    geom_hline(yintercept = 100, linetype = "dashed", color = "black", linewidth = 0.4) +
+    scale_color_manual(values = rgn_label_colors, name = "Region") +
+    scale_x_continuous(breaks = census_years) +
+    labs(
+      title = title,
+      x = "Census year",
+      y = "Score (out of 100)"
+    ) +
+    gg_theme_pdf()
+
+  if (!is.null(y_range)) {
+    p <- p + coord_cartesian(ylim = y_range)
+  }
+
+  p
+}
+
+le_plotly_goc <- function(df, y_var, title, y_range = NULL) {
+  df <- df %>%
+    mutate(year = as.numeric(year)) %>%
+    arrange(year)
+
+  y_col <- rlang::sym(y_var)
+
+  p <- ggplot(df, aes(x = year, y = !!y_col)) +
+    geom_line(linewidth = 0.8, color = "#333333") +
+    geom_point(size = 1.8, color = "#333333") +
+    geom_hline(yintercept = 100, linetype = "dashed", color = "black", linewidth = 0.4) +
+    scale_x_continuous(breaks = census_years) +
+    labs(
+      title = title,
+      x = "Census year",
+      y = "Score (out of 100)"
+    ) +
+    gg_theme_pdf()
+
+  if (!is.null(y_range)) {
+    p <- p + coord_cartesian(ylim = y_range)
+  }
+
+  p
+}
+
+le_plotly_raw <- function(df, y_var, title, y_axis_title = "Value", y_range = NULL) {
+  df <- df %>%
+    mutate(year = as.numeric(year)) %>%
+    arrange(rgn_label, year)
+
+  y_col <- rlang::sym(y_var)
+
+  p <- ggplot(df, aes(x = year, y = !!y_col, color = rgn_label, group = rgn_label)) +
+    geom_line(linewidth = 0.7) +
+    geom_point(size = 1.5) +
+    scale_color_manual(values = rgn_label_colors, name = "Region") +
+    scale_x_continuous(breaks = census_years) +
+    scale_y_continuous(labels = label_comma()) +
+    labs(
+      title = title,
+      x = "Census year",
+      y = y_axis_title
+    ) +
+    gg_theme_pdf()
+
+  if (!is.null(y_range)) {
+    p <- p + coord_cartesian(ylim = y_range)
+  }
+
+  p
+}
+
+# ---------------------------------------------------------------------------
+# Helpers: tolerant readers (column names differ slightly among score files)
+# ---------------------------------------------------------------------------
+pick_first_col <- function(df, candidates, what, file_label) {
+  hit <- candidates[candidates %in% names(df)][1]
+  if (is.na(hit)) {
+    stop(
+      "Could not find ", what, " column in ", file_label, ". Columns are: ",
+      paste(names(df), collapse = ", ")
+    )
+  }
+  hit
+}
+
+read_component_scores <- function(path, file_label) {
+  raw <- read_csv(path, show_col_types = FALSE)
+  year_col <- pick_first_col(raw, c("year", "ano_censal", "ce_ano_censal"), "year", file_label)
+  score_col <- pick_first_col(
+    raw,
+    c("current_status", "score", "liv_current_status", "qual_current_status", "final_score"),
+    "score",
+    file_label
+  )
+
+  raw %>%
+    transmute(
+      rgn_id = normalize_rgn_id(rgn_id),
+      year = as.numeric(.data[[year_col]]),
+      score = as.numeric(.data[[score_col]])
+    ) %>%
+    mutate(score = ifelse(rgn_id == "Region_2", NA_real_, score))
+}
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+# ---------------------------------------------------------------------------
+# Informality-adjusted LIV components, unchanged ECO, and final LE scores
+# ---------------------------------------------------------------------------
+cs_jobs_clean <- read_component_scores(path_jobs_inf, "ce_jobs_current_status_2019ref_informality.csv")
+cs_qual_clean <- read_component_scores(path_qual_inf, "ce_qual_current_status_informality.csv")
+cs_eco_clean  <- read_component_scores(path_eco, "ce_rev_current_status_2019ref.csv")
+
+# LIV = mean(Jobs, Quality); Region 2 is NA
+cs_liv_clean <- full_join(
+  cs_jobs_clean %>% rename(job_score = score),
+  cs_qual_clean %>% rename(qual_score = score),
+  by = c("rgn_id", "year")
+) %>%
+  mutate(
+    score = (job_score + qual_score) / 2,
+    score = ifelse(rgn_id == "Region_2", NA_real_, score)
+  ) %>%
+  dplyr::select(rgn_id, year, score)
+
+# Final LE file (informality-adjusted LIV; ECO unchanged)
+le_final_raw <- read_csv(path_final_inf, show_col_types = FALSE)
+le_year_col <- pick_first_col(le_final_raw, c("year", "ano_censal", "ce_ano_censal"), "year", "final_le_current_status_2019ref_informality.csv")
+le_score_col <- pick_first_col(
+  le_final_raw,
+  c("final_le_current_status_rgn", "le_current_status", "current_status", "score"),
+  "LE score",
+  "final_le_current_status_2019ref_informality.csv"
+)
+
+le_scores <- le_final_raw %>%
+  transmute(
+    rgn_id = normalize_rgn_id(rgn_id),
+    year = as.numeric(.data[[le_year_col]]),
+    le_current_status = as.numeric(.data[[le_score_col]])
+  ) %>%
+  mutate(le_current_status = ifelse(rgn_id == "Region_2", NA_real_, le_current_status))
+
+# Gulf-wide LE: unweighted mean of the eight scored regions at each census year
+le_goc <- le_scores %>%
+  group_by(year) %>%
+  summarize(le_goc_current_status = mean(le_current_status, na.rm = TRUE), .groups = "drop")
+
+# ---------------------------------------------------------------------------
+# Plots of scored components
+# ---------------------------------------------------------------------------
+le_score_plot <- le_plotly_lines(
+  add_rgn_labels(le_scores),
+  y_var = "le_current_status",
+  title = "Livelihoods & Economies current status (informality-adjusted LIV)"
+)
+
+le_goc_plot <- le_plotly_goc(
+  le_goc,
+  y_var = "le_goc_current_status",
+  title = "Overall LE current status for the Gulf of California",
+  y_range = c(0, 110)
+)
+
+liv_plot <- le_plotly_lines(
+  add_rgn_labels(cs_liv_clean),
+  y_var = "score",
+  title = "LE:LIV (informality-adjusted jobs and quality merged)"
+)
+
+jobs_plot <- le_plotly_lines(
+  add_rgn_labels(cs_jobs_clean),
+  y_var = "score",
+  title = "LE:LIV: Number of jobs (informality-adjusted; 2018 reference)"
+)
+
+quality_plot <- le_plotly_lines(
+  add_rgn_labels(cs_qual_clean),
+  y_var = "score",
+  title = "LE:LIV: Quality of jobs (informality-adjusted denominator; Gulf-wide Q90)"
+)
+
+eco_plot <- le_plotly_lines(
+  add_rgn_labels(cs_eco_clean),
+  y_var = "score",
+  title = "LE:ECO (formal revenue; 2018 reference)"
+)
+
+# ---------------------------------------------------------------------------
+# Raw revenue (before scoring) and raw formal jobs (before informality multiplier)
+# ---------------------------------------------------------------------------
+rev_raw_path_sf <- file.path(le_dir, "eco", "v2025", "rev_by_rgn_SS_sf.shp")
+rev_raw_path_csv <- file.path(le_dir, "eco", "ce_rev_current_status.csv")
+
+raw_rev_df <- tryCatch({
+  st_read(rev_raw_path_sf, quiet = TRUE) %>%
+    st_drop_geometry() %>%
+    mutate(
+      rgn_id = normalize_rgn_id(rgn_id),
+      year = as.numeric(ano_censal)
+    ) %>%
+    dplyr::select(rgn_id, year, total_rev)
+}, error = function(e) {
+  read_csv(rev_raw_path_csv, show_col_types = FALSE) %>%
+    mutate(
+      rgn_id = normalize_rgn_id(rgn_id),
+      year = as.numeric(ano_censal)
+    ) %>%
+    dplyr::select(rgn_id, year, total_rev)
+})
+
+raw_rev_plot <- le_plotly_raw(
+  add_rgn_labels(raw_rev_df),
+  y_var = "total_rev",
+  title = "Marine-related revenue by region (constant 2023 MXN, before scoring)",
+  y_axis_title = "Revenue (constant 2023 MXN)"
+)
+
+coastal_sectors <- c(
+  "coastal_recreation",
+  "travel_planners",
+  "accommodations_food_drink",
+  "environmental_research_consulting"
+)
+
+coastal_adj <- read_csv(
+  file.path(le_dir, "coastal_adjustment_multiplier_2020.csv"),
+  show_col_types = FALSE
+)
+
+raw_jobs_df <- read_csv(
+  file.path(le_dir, "ce_int", "ce_cleaned_totals_per_yr_municipio_activity.csv"),
+  show_col_types = FALSE
+) %>%
+  filter(!(municipio == "MEXICALI" & ano_censal == "2023")) %>%
+  group_by(ano_censal, rgn_id, general_sector, specific_sector) %>%
+  summarize(jobs_per_act = sum(h000a, na.rm = TRUE), .groups = "drop") %>%
+  full_join(coastal_adj, by = "rgn_id") %>%
+  mutate(
+    coastal_pop_adjustment = ifelse(rgn_id == "Region_1" & ano_censal == "2023", 1, coastal_pop_adjustment),
+    first_adj_coastal_jobs_per_act = ifelse(
+      rgn_id %in% c("Region_3", "Region_4"),
+      jobs_per_act * coastal_pop_adjustment,
+      jobs_per_act
+    ),
+    coastal_jobs_per_act = ifelse(
+      specific_sector %in% coastal_sectors,
+      jobs_per_act * coastal_pop_adjustment,
+      first_adj_coastal_jobs_per_act
+    )
+  ) %>%
+  group_by(ano_censal, rgn_id) %>%
+  summarize(total_jobs = round(sum(coastal_jobs_per_act, na.rm = TRUE)), .groups = "drop") %>%
+  mutate(year = as.numeric(ano_censal))
+
+raw_jobs_plot <- le_plotly_raw(
+  add_rgn_labels(raw_jobs_df),
+  y_var = "total_jobs",
+  title = "Marine-related jobs by region (Economic Census counts, before informality multiplier)",
+  y_axis_title = "Number of jobs"
+)
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+# ---------------------------------------------------------------------------
+# Gulf-wide marine sector trends (Economic Census, coastal-adjusted)
+# ---------------------------------------------------------------------------
+sector_labels <- c(
+  "fishing" = "Fishing",
+  "mariculture" = "Mariculture",
+  "seafood_processing_trade" = "Seafood processing & trade",
+  "port_dock_construction_management" = "Port & dock construction",
+  "boat_building" = "Boat building",
+  "tidal_energy" = "Tidal energy",
+  "oil_gas_maritime_transport" = "Oil & gas maritime transport",
+  "cargo_goods_maritime_transport" = "Cargo maritime transport",
+  "marine_tourist_transport" = "Marine tourist transport",
+  "coastal_recreation" = "Coastal recreation",
+  "travel_planners" = "Travel planners",
+  "accommodations_food_drink" = "Accommodations & food/drink",
+  "environmental_research_consulting" = "Environmental research"
+)
+
+sector_levels <- unname(sector_labels)
+
+sector_colors <- c(
+  "Fishing"                        = "#0091FF",
+  "Mariculture"                    = "#FF9E1B",
+  "Seafood processing & trade"     = "#00C781",
+  "Port & dock construction"       = "#B98B4E",
+  "Boat building"                  = "#FF4FA0",
+  "Tidal energy"                   = "#5FD4E3",
+  "Oil & gas maritime transport"   = "#E8590C",
+  "Cargo maritime transport"       = "#FFD500",
+  "Marine tourist transport"       = "#7C6FF0",
+  "Coastal recreation"             = "#9ED60B",
+  "Travel planners"                = "#C061E8",
+  "Accommodations & food/drink"    = "#FF2255",
+  "Environmental research"         = "#A8A8A8"
+)
+
+quiet_inflation_factor_2023 <- function(year) {
+  result <- NA_real_
+  suppressMessages(
+    suppressWarnings({
+      capture.output(
+        result <- as.numeric(
+          adjust_for_inflation(
+            price = 1,
+            from_date = year,
+            country = "Mexico",
+            to_date = 2023
+          )
+        ),
+        type = "output"
+      )
+    })
+  )
+  result
+}
+
+inflation_factors <- tibble(
+  year = census_years,
+  infl_factor = vapply(census_years, quiet_inflation_factor_2023, numeric(1))
+)
+
+apply_coastal_sector_metrics <- function(df) {
+  df %>%
+    full_join(coastal_adj, by = "rgn_id") %>%
+    mutate(
+      coastal_pop_adjustment = ifelse(
+        rgn_id == "Region_1" & ano_censal == "2023",
+        1,
+        coastal_pop_adjustment
+      ),
+      coastal_jobs = ifelse(
+        rgn_id %in% c("Region_3", "Region_4"),
+        jobs * coastal_pop_adjustment,
+        jobs
+      ),
+      coastal_jobs = ifelse(
+        specific_sector %in% coastal_sectors,
+        jobs * coastal_pop_adjustment,
+        coastal_jobs
+      ),
+      coastal_benefits = ifelse(
+        rgn_id %in% c("Region_3", "Region_4"),
+        benefits_real_2023 * coastal_pop_adjustment,
+        benefits_real_2023
+      ),
+      coastal_benefits = ifelse(
+        specific_sector %in% coastal_sectors,
+        benefits_real_2023 * coastal_pop_adjustment,
+        coastal_benefits
+      ),
+      coastal_revenue = ifelse(
+        rgn_id %in% c("Region_3", "Region_4"),
+        revenue_real_2023 * coastal_pop_adjustment,
+        revenue_real_2023
+      ),
+      coastal_revenue = ifelse(
+        specific_sector %in% coastal_sectors,
+        revenue_real_2023 * coastal_pop_adjustment,
+        coastal_revenue
+      )
+    ) %>%
+    dplyr::select(-coastal_pop_adjustment)
+}
+
+ce_sector_raw <- read_csv(
+  file.path(le_dir, "ce_int", "ce_cleaned_totals_per_yr_municipio_activity.csv"),
+  show_col_types = FALSE
+) %>%
+  filter(!(municipio == "MEXICALI" & ano_censal == "2023")) %>%
+  mutate(
+    year = as.numeric(ano_censal),
+    benefits_mxn = (coalesce(j300a, 0) + coalesce(j400a, 0)) * 1e6,
+    revenue_mxn = coalesce(m000a, 0) * 1e6,
+    jobs = coalesce(h000a, 0)
+  ) %>%
+  left_join(inflation_factors, by = "year") %>%
+  mutate(
+    benefits_real_2023 = benefits_mxn * infl_factor,
+    revenue_real_2023 = revenue_mxn * infl_factor
+  )
+
+ce_sector_coastal <- ce_sector_raw %>%
+  apply_coastal_sector_metrics() %>%
+  mutate(
+    sector_label = factor(
+      sector_labels[specific_sector],
+      levels = sector_levels
+    )
+  ) %>%
+  filter(!is.na(sector_label), year %in% census_years)
+
+sector_goc <- ce_sector_coastal %>%
+  group_by(year, specific_sector, sector_label) %>%
+  summarize(
+    total_jobs = sum(coastal_jobs, na.rm = TRUE),
+    total_benefits = sum(coastal_benefits, na.rm = TRUE),
+    total_revenue = sum(coastal_revenue, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  mutate(
+    quality_per_job = ifelse(total_jobs > 0, total_benefits / total_jobs, NA_real_)
+  )
+
+gg_sector_theme <- function(show_legend = FALSE) {
+  gg_theme_pdf() +
+    theme(
+      plot.title = element_text(face = "bold", size = 12),
+      plot.subtitle = element_text(size = 9, color = "grey30"),
+      legend.position = if (show_legend) "right" else "none",
+      panel.grid.minor = element_blank()
+    )
+}
+
+add_sector_scales <- function(p) {
+  p +
+    scale_color_manual(
+      values = sector_colors,
+      name = "Sector",
+      breaks = sector_levels,
+      drop = FALSE
+    ) +
+    guides(
+      color = guide_legend(override.aes = list(linewidth = 1.6))
+    )
+}
+
+make_sector_panel <- function(df, y_var, title, y_lab) {
+  y_col <- rlang::sym(y_var)
+  p <- ggplot(
+    df,
+    aes(
+      x = year,
+      y = !!y_col,
+      color = sector_label,
+      group = sector_label
+    )
+  ) +
+    geom_line(linewidth = 0.95, lineend = "round") +
+    geom_point(size = 2) +
+    scale_x_continuous(breaks = census_years) +
+    scale_y_continuous(labels = label_comma()) +
+    labs(
+      title = title,
+      subtitle = "Gulf-wide totals; coastal adjustments applied; no informality multiplier.",
+      x = "Census year",
+      y = y_lab
+    ) +
+    gg_sector_theme(show_legend = TRUE)
+
+  add_sector_scales(p)
+}
+
+gg_sector_jobs <- make_sector_panel(
+  sector_goc,
+  "total_jobs",
+  "Gulf-wide marine sector trends: Total jobs",
+  "Coastal-adjusted jobs (Economic Census)"
+)
+
+gg_sector_quality <- make_sector_panel(
+  sector_goc,
+  "quality_per_job",
+  "Gulf-wide marine sector trends: Job quality",
+  "Social benefits per job (constant 2023 MXN)"
+)
+
+gg_sector_revenue <- make_sector_panel(
+  sector_goc,
+  "total_revenue",
+  "Gulf-wide marine sector trends: Total revenue",
+  "Coastal-adjusted revenue (constant 2023 MXN)"
+)
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+# ---------------------------------------------------------------------------
+# Summary statistics used in the Results text
+# ---------------------------------------------------------------------------
+fmt1 <- function(x) ifelse(is.finite(x), sprintf("%.1f", x), "NA")
+
+le_latest_year <- max(le_scores$year[!is.na(le_scores$le_current_status)], na.rm = TRUE)
+le_ref_year <- 2018
+
+le_goc_latest <- le_goc %>% filter(year == le_latest_year) %>% pull(le_goc_current_status)
+le_goc_first <- le_goc %>% filter(year == min(year)) %>% pull(le_goc_current_status)
+le_goc_first_year <- min(le_goc$year)
+le_goc_ref <- le_goc %>% filter(year == le_ref_year) %>% pull(le_goc_current_status)
+
+le_rgn_latest <- le_scores %>%
+  filter(year == le_latest_year, !is.na(le_current_status)) %>%
+  mutate(rgn_name = rgn_labels[rgn_id]) %>%
+  arrange(desc(le_current_status))
+
+le_top_name <- le_rgn_latest$rgn_name[1]
+le_top_score <- le_rgn_latest$le_current_status[1]
+le_bot_name <- le_rgn_latest$rgn_name[nrow(le_rgn_latest)]
+le_bot_score <- le_rgn_latest$le_current_status[nrow(le_rgn_latest)]
+
+mean_latest <- function(df) {
+  df %>%
+    filter(year == le_latest_year) %>%
+    summarize(m = mean(score, na.rm = TRUE)) %>%
+    pull(m)
+}
+
+jobs_mean_latest <- mean_latest(cs_jobs_clean)
+qual_mean_latest <- mean_latest(cs_qual_clean)
+liv_mean_latest <- mean_latest(cs_liv_clean)
+eco_mean_latest <- mean_latest(cs_eco_clean)
+```
+
+# Abstract {.unnumbered}
+
+Marine-related employment and revenue underpin coastal well-being in the Gulf of California, yet standard economic statistics capture only part of the people who earn a living from the sea. We applied a regional Ocean Health Index (OHI) framework to score the Livelihoods and Economies (LE) goal for nine marine regions of the Gulf of California using Mexico's Economic Censuses (*Censos Económicos*) for data-collection years 2003, 2008, 2013, 2018, and 2023. LE is the mean of two subgoals: Livelihoods (LIV), the mean of the quantity of marine-related jobs per coastal resident and the quality of those jobs (employer social-security contributions and other benefits per job), and Economies (ECO), marine-related operating revenue. The central methodological update presented here is an explicit correction for informality. Because the Economic Census enumerates registered establishments and therefore undercounts informal marine livelihoods, we inflated census job counts by a state-by-sector multiplier derived from the national labor force survey (*Encuesta Nacional de Ocupación y Empleo*, ENOE), defined as 1/(1 − *p*), where *p* is the share of informal workers. The multiplier enters the job-quantity score and the denominator of the job-quality score, but benefits are not inflated and ECO revenue is not multiplied. Jobs and revenue are scored against each region's 2018 value, and job quality against a Gulf-wide 90th-quantile benchmark. LE is not reported for the Western Midriff Islands (Region 2) because municipal census data cannot isolate Gulf-side activity. We present the multiplier as a sensitivity-style, upper-bound estimate of informal employment rather than a precise count, and we discuss its implications for interpreting livelihood scores in small-scale, fisheries-dependent coastal economies.
+
+# Introduction
+
+As decision-makers shift toward more comprehensive approaches to managing coastal and marine ecosystems, management goals increasingly focus on overall ocean health rather than single sectors or stressors. The Ocean Health Index (OHI) was developed to measure how well marine systems sustainably deliver a portfolio of benefits that people need and desire, including food provision, livelihoods, clean waters, biodiversity, and tourism and recreation (Halpern et al. 2012). Regional applications of the Index adapt goal models and reference points to locally available data and policy priorities while retaining a comparable 0–100 scoring structure (Halpern et al. 2014).
+
+Within the OHI framework, the Livelihoods and Economies (LE) goal captures the economic dimension of the relationship between people and the ocean: the number and quality of marine-related jobs and the revenue that marine-related sectors generate. In the Gulf of California, these sectors range from industrial and small-scale fishing, mariculture, and seafood processing to ports, maritime transport, boat building, marine tourism, and environmental consulting. Together they support coastal communities whose economies are tightly linked to marine resources, and whose fortunes may diverge across the Gulf's nine OHI regions.
+
+Measuring marine livelihoods in Mexico presents a well-known data challenge. The Economic Census, conducted by the National Institute of Statistics and Geography (INEGI) every five years, offers a complete enumeration of registered economic units at municipal and sector resolution and measures employment, benefits, and revenue in a common reporting framework. However, a large share of marine-related work in Mexico, particularly small-scale fishing, seafood trade, and tourism services, is carried out informally. Informal workers and unregistered units are poorly captured in establishment-based censuses (International Labour Organization 2018). An assessment that relies on census counts alone would therefore systematically understate marine employment, and it could misrepresent changes in job quality if formal and informal work are treated as a single homogeneous group.
+
+Here we present a regional LE assessment for the Gulf of California OHI that corrects explicitly for informality. We address three questions: (1) How can marine-related livelihoods and economies be operationalized with Mexican national census data at the scale of OHI regions? (2) How does an ENOE-based informality multiplier change the construction of the job-quantity and job-quality indicators, and what does it assume? (3) How do LE, LIV, and ECO scores vary across regions and census years once informality is incorporated? We structure the paper as a Methods–Results–Discussion narrative suitable for peer review, and we retain the supporting component and sector figures from the technical assessment.
+
+# Methods
+
+## Study region and temporal coverage
+
+We scored LE for the nine marine regions of the Gulf of California OHI assessment: Western Upper Gulf, Western Midriff Islands, Western Central Gulf, Western Southern Gulf, Eastern Upper Gulf, Eastern Midriff Islands, Southern Sonora Coast, Sinaloa Coast, and Southeastern Gulf. Municipalities were assigned to regions using a curated lookup table. Scores are calculated at each Economic Census data-collection year. The census waves released in 2004, 2009, 2014, 2019, and 2024 were aligned to data-collection years 2003, 2008, 2013, 2018, and 2023, respectively. Because data are available only at census intervals, regional trajectories connect five points, and steep changes between points reflect multi-year shifts rather than annual volatility. A score of 100 denotes the reference condition for each indicator.
+
+## Data sources
+
+The assessment draws on INEGI's Economic Census microdata for the six states bordering the Gulf of California (Baja California Sur, Baja California, Sonora, Sinaloa, Nayarit, and Jalisco), harmonized across waves into a single long-format dataset. Variables used in scoring are summarized in Table 1. Values reported in millions of pesos (J300A, J400A, M000A) were converted to pesos and deflated to constant 2023 Mexican pesos (MXN) using national price indices before scoring. Municipal population from INEGI, interpolated to census years, provides the coastal population denominator for job intensity. The informality correction relies on the ENOE, also produced by INEGI, from which state-by-sector shares of informal workers were derived. A regional report on informal employment by the Economic Commission for Latin America and the Caribbean (CEPAL) informed the design of the multiplier. Its values were too coarse for marine sectors to be used on their own.
+
+**Table 1.** INEGI Economic Census variables used in the LE assessment.
+
+| Variable | Definition | Use in LE |
+|----------|------------|-----------|
+| H000A | Total personnel employed (paid and unpaid) | LIV job quantity (numerator, before the informality multiplier); denominator of benefits per job |
+| J300A | Employer contributions to social security for paid workers | LIV job quality (numerator) |
+| J400A | Other social benefits (private health, food, education, and childcare) | LIV job quality (numerator, summed with J300A) |
+| M000A | Operating revenue from the supply of goods and services | ECO (revenue) |
+
+Total paid personnel (H010A), unpaid personnel (H020A), total revenue including financial and extraordinary income (A800A), and economic unit counts are available in the cleaned census file but are not used in scoring.
+
+## Marine-related sectors and spatial adjustments
+
+Marine-related activities were identified with a curated classification table that maps INEGI activity codes to general and specific marine sectors, developed with the Goalkeeper Group and validated against the official census activity catalog. Included sectors are fishing, mariculture, seafood processing and trade, port and dock construction and management, boat building, tidal energy, oil and gas maritime transport, cargo maritime transport, marine tourist transport, coastal recreation, travel planners, accommodations and food and drink, and environmental research and consulting. Sectors that are not wholly dependent on a healthy ocean, such as ports and maritime transport, were retained because omitting them would understate real economic activity and limit the ability of the assessment to identify governance gaps. Sport fishing could not be isolated in the census and is captured indirectly through coastal recreation, marine tourist transport, and fishing.
+
+Several regions span both the Gulf and Pacific coasts, and several sectors are not exclusively marine. We therefore applied a coastal population adjustment, defined as the share of 2020 municipal population within 50 km of the Gulf coastline relative to total regional population. The adjustment was applied to all sectors in Regions 3 and 4 and, in every region, to coastal recreation, travel planners, accommodations and food and drink, and environmental research and consulting. Explicitly marine sectors in the remaining regions were not adjusted. Two administrative changes in Baja California required special handling. San Felipe, created as its own municipality in 2021, was assigned to Region 1, and for the 2023 data-collection year Mexicali was excluded from Region 1, which was represented by San Felipe alone with a coastal adjustment of 1. The 2020 incorporation of San Quintín and the subsequent division of Ensenada made regional comparisons unreliable for Region 2 (see below).
+
+Scores are computed on region-by-year aggregates across all marine sectors combined, rather than separately by sector. Confidentiality suppression in the 2019 and 2024 census waves left many region-sector-year combinations incomplete, and weighted sector aggregation would have required additional assumptions that could cause scores to reflect data structure rather than real economic change. A consequence is that a region can score 100 even if individual sectors decline, provided other sectors compensate. Sector-level trends are reported separately as exploratory summaries.
+
+## Goal model
+
+Following the OHI convention, LE is the equal-weighted mean of two subgoals:
+
+$$
+\text{LE}_{r,t} = \begin{cases} \text{NA} & r = \text{Region 2} \\ \dfrac{\text{LIV}_{r,t} + \text{ECO}_{r,t}}{2} & \text{otherwise} \end{cases}
+$$
+
+LIV is the mean of job quantity (Jobs) and job quality (Qual):
+
+$$
+\text{LIV}_{r,t} = \begin{cases} \text{NA} & r = \text{Region 2} \\ \dfrac{\text{Jobs}_{r,t} + \text{Qual}_{r,t}}{2} & \text{otherwise} \end{cases}
+$$
+
+The ideal state for LIV is stable or increasing numbers of marine-related jobs of the same or higher quality over time. The ideal state for ECO is maintained or increasing revenue from marine-related sectors. All component scores are capped at 100. For Region 2, intermediate processing steps may produce a quality-only LIV value, but neither LIV nor LE is reported for this region in the final scores and figures. The Gulf-wide LE trajectory is the unweighted mean of the eight regions with reported scores.
+
+## Informality adjustment
+
+**Rationale.** The Economic Census enumerates establishments that are registered and observable to the census enumerators. Informal marine livelihoods, including unregistered fishing and seafood trade operations, own-account workers, and casual labor in coastal services, are only partially captured. Because employment in the census therefore represents a lower bound on true marine employment, treating census jobs as the full workforce would depress job-quantity estimates and would overstate benefits per worker, because formal employers contribute to social security while informal workers by definition receive few such benefits.
+
+**Multiplier.** For each state *s*, marine sector *k*, and data-collection year *t*, we used the ENOE to estimate the share of workers in informal employment, $p_{s,k,t}$, and defined an informality jobs multiplier as
+
+$$
+m_{s,k,t} = \frac{1}{1 - p_{s,k,t}}
+$$
+
+This quantity is the factor by which the number of formal workers must be scaled to obtain the total number of workers if informal workers make up a share $p_{s,k,t}$ of the total. For example, if 40% of workers in a state-sector are informal, the multiplier is approximately 1.67. The multiplier was applied to Economic Census job counts by state and sector after the coastal population adjustment:
+
+$$
+J^{\ast}_{r,t} = \sum_{k} m_{s(r),k,t} \cdot J^{\text{coastal}}_{r,k,t}
+$$
+
+where $J^{\text{coastal}}_{r,k,t}$ is the coastal-adjusted census job count (H000A) in region *r* and sector *k*, and $s(r)$ is the state to which the relevant municipalities belong.
+
+**Scope of the multiplier.** The multiplier is applied to the job-quantity indicator and to the job-quality indicator in an asymmetric way, and it is not applied to ECO. Table 2 summarizes where the informality adjustment enters the model.
+
+**Table 2.** Treatment of informality in each LE indicator.
+
+| Indicator | Inflated by informality multiplier? | Rationale |
+|-----------|-------------------------------------|-----------|
+| Jobs (quantity) | Yes: job counts, by state × sector | Census undercounts informal workers |
+| Quality (benefits per job) | Denominator (jobs) only; benefits (J300A + J400A) are not inflated | Informal workers add to headcount but not to recorded employer-provided benefits |
+| ECO (revenue) | No | Informal revenue cannot be credibly inferred from a headcount multiplier, and scaling would risk overstating revenue |
+
+**Interpretation and caveat.** The ENOE is a household survey with its own sampling error, and it is not designed to produce estimates for narrow marine sectors at the state level. Informality shares for small sectors are therefore uncertain, and their application assumes that the share of informal workers in the survey's sector definition is representative of marine-related workers in that sector. Moreover, the multiplier does not distinguish full-time from part-time or seasonal informal work. We therefore interpret the informality-adjusted job counts as a sensitivity or upper-bound-style estimate of marine employment, not as an exact count of true employment. The central purpose is to ensure that the scoring framework does not systematically overlook informal livelihoods and that job quality reflects the full workforce.
+
+## Livelihoods: job quantity
+
+Job quantity is expressed as informality-adjusted marine-related jobs per coastal resident, compared with the region's own 2018 value, which is the 2018 data-collection year from the 2019 Economic Census release:
+
+$$
+\text{Jobs}_{r,t} = \min\left(100,\ \frac{J^{\ast}_{r,t} / P^{\text{coastal}}_{r,t}}{\left(J^{\ast} / P^{\text{coastal}}\right)_{r,2018}} \times 100\right)
+$$
+
+where $P^{\text{coastal}}_{r,t}$ is interpolated coastal population. The 2018 reference is derived from the same informality-adjusted series so that scores compare like with like. Because both numerator and reference are adjusted, the multiplier affects the score primarily through changes over time in state-sector informality and in sector composition, whereas absolute job counts are higher throughout.
+
+## Livelihoods: job quality
+
+Job quality is the sum of employer social-security contributions (J300A) and other social benefits (J400A) per job, in constant 2023 MXN. Employer contributions to social security are mandatory for registered paid workers, are calculated on the base contribution salary, and therefore reflect both wage levels and the degree of formalization. Other social benefits (private medical top-ups, food, insurance premiums, education, and childcare) are voluntary and more variable across units. We use benefits per job rather than total remuneration because sector aggregates are sensitive to high-earning outliers that do not reflect typical working conditions. Benefits are divided by informality-adjusted jobs, but the benefits themselves are not inflated:
+
+$$
+\text{Qual}_{r,t} = \min\left(100,\ \frac{(J300A_{r,t} + J400A_{r,t}) / J^{\ast}_{r,t}}{Q_{90}} \times 100\right)
+$$
+
+where $Q_{90}$ is the Gulf-wide 90th quantile of benefits per job pooled across regions and census years. By construction, adding informal workers to the denominator without adding benefits lowers average benefits per job relative to a formal-only calculation. The informality-adjusted quality score thus describes the quality of the whole marine workforce, formal and informal, rather than only the registered portion. As a limitation, the quality indicator continues to divide by total personnel (H000A-based) rather than by paid personnel (H010A) alone, which would be a more precise denominator for benefits that accrue to paid workers.
+
+## Economies: marine-related revenue
+
+ECO measures marine-related operating revenue (M000A), deflated to constant 2023 MXN and adjusted with the same coastal population multipliers, relative to the region's 2018 value:
+
+$$
+\text{ECO}_{r,t} = \min\left(100,\ \frac{M000A_{r,t}}{M000A_{r,2018}} \times 100\right)
+$$
+
+M000A excludes financial income and extraordinary gains, which would add volatility between census waves. ECO is not multiplied for informality. Revenue of informal operations is not observed, and scaling census revenue by a headcount-based factor would imply productivity assumptions that the data cannot support. ECO therefore represents formal marine-related revenue only, and combining it with informality-adjusted LIV means that LE reflects an upper-bound view of employment alongside a conservative view of revenue.
+
+## Reference points
+
+Reference points are within-region. Jobs per coastal resident and revenue are each compared with the region's own 2018 value, so that a high score reflects maintenance or growth relative to that region's recent baseline rather than a comparison of absolute economic size across regions. This choice allows small regions to be scored on their own trajectories but means that scores are not comparable measures of absolute economic output. Job quality uses a Gulf-wide benchmark (Q90) so that benefits per job are evaluated against the best-performing region-years in the Gulf. An alternative reference based on the 2003–2013 historical average was evaluated during technical review, but informality-adjusted scores were produced only for the 2018 reference. For clarity, we therefore present a single set of figures based on the 2018 reference.
+
+## Region 2 data limitation
+
+LE is not reported for Region 2 (Western Midriff Islands). The municipality of San Quintín was incorporated on 12 February 2020 and was previously part of Ensenada. Both historical Ensenada and current San Quintín span the Pacific and Gulf of California coasts, and most of their population lives on the Pacific side. Because the Economic Census is reported at the municipal level, available data are insufficient to estimate Gulf-side marine jobs, job quality, or revenue reliably. In processing, LIV may temporarily contain a quality-only value for Region 2, but Region 2 is set to NA for Jobs, Quality, LIV, ECO, and LE in all reported scores and figures.
+
+# Results
+
+## Overall Livelihoods and Economies status
+
+Across the eight scored regions, LE current status varies in space and over the census series (Figure 1). Under the informality-adjusted LIV, the Gulf-wide mean of regional LE scores was approximately `r fmt1(le_goc_latest)` out of 100 in `r le_latest_year`, compared with approximately `r fmt1(le_goc_ref)` in the reference year `r le_ref_year` and `r fmt1(le_goc_first)` in `r le_goc_first_year` (Figure 2). In `r le_latest_year`, regional LE scores ranged from `r fmt1(le_bot_score)` (`r le_bot_name`) to `r fmt1(le_top_score)` (`r le_top_name`). Because jobs and revenue are scored relative to each region's own 2018 value, scores below 100 after 2018 indicate a decline in jobs per coastal resident or in revenue relative to 2018 and not the absolute scale of the regional economy. Scores before 2018 are likewise capped at 100 when those years exceeded the 2018 reference. Regional trajectories are not uniform, and Gulf-wide averages can mask pronounced subregional contrasts.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Figure 1. Regional Livelihoods and Economies (LE) current-status scores (0–100) for the Gulf of California OHI regions across Economic Census years (2003, 2008, 2013, 2018, and 2023), using informality-adjusted Livelihoods (LIV) and a 2018 reference for jobs and revenue. Region 2 is not scored. The dashed line marks the reference condition (100)."}
+le_score_plot
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Figure 2. Gulf-wide mean of regional LE current-status scores by census year, averaged across the eight regions with reported scores (Region 2 excluded). The dashed line marks the reference condition (100)."}
+le_goc_plot
+```
+
+## Livelihoods subgoal
+
+LIV combines informality-adjusted job quantity and job quality. The Gulf-wide mean LIV score in `r le_latest_year` was approximately `r fmt1(liv_mean_latest)` (Figure 3), reflecting a mean job-quantity score of approximately `r fmt1(jobs_mean_latest)` (Figure 4) and a mean job-quality score of approximately `r fmt1(qual_mean_latest)` (Figure 6). Comparing the two components shows whether job quantity and job quality move in the same direction within a region. Because the informality multiplier raises the denominator of the quality indicator without adding benefits, quality scores describe benefits per worker across the combined formal and informal workforce.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Figure 3. Livelihoods (LIV) current status by region and census year, calculated as the mean of the informality-adjusted job-quantity and job-quality scores. Region 2 is not scored."}
+liv_plot
+```
+
+### Number of jobs
+
+Job-quantity scores indicate marine-related jobs per coastal resident, including an informality adjustment, relative to each region's 2018 value (Figure 4). A score of 100 means that jobs per resident meet or exceed that region's 2018 value. Lower scores mean that marine employment intensity declined relative to coastal population. The Economic Census counts before the informality multiplier (Figure 5) illustrate the absolute scale of formally registered employment against which the multiplier operates. These raw counts should not be read as total employment, and Region 2 values in Figure 5 are not interpretable.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Figure 4. Job-quantity component of LIV: informality-adjusted marine-related jobs per coastal resident relative to each region's 2018 value. Region 2 is not scored."}
+jobs_plot
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Figure 5. Marine-related jobs by region from the Economic Census (H000A, coastal-adjusted) before application of the informality multiplier. Region 2 values should not be interpreted because municipal census data cannot isolate Gulf-side employment."}
+raw_jobs_plot
+```
+
+### Quality of jobs
+
+Job-quality scores compare benefits per job, defined as employer social-security contributions plus other social benefits divided by informality-adjusted jobs, with the Gulf-wide 90th quantile (Figure 6). Higher scores indicate that employers provide more benefits per worker, approaching the best-performing region-years in the Gulf. Because the informal workforce is included in the denominator but contributes no recorded benefits, regions and sectors with a larger informal share exhibit lower benefits per job than a formal-only calculation would suggest. Interpretation of year-to-year changes requires caution. Increases in benefits per job may reflect real wage growth, increased formalization, or shifts in sector mix, and Mexico's 2021 outsourcing reform may have altered both contributions and recorded headcounts around the 2023 data-collection year.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Figure 6. Job-quality component of LIV: employer social-security contributions and other social benefits per informality-adjusted job (constant 2023 MXN) relative to the Gulf-wide 90th quantile. Region 2 is not scored."}
+quality_plot
+```
+
+## Economies subgoal
+
+ECO scores indicate formal marine-related revenue relative to each region's 2018 value (Figure 7). The Gulf-wide mean ECO score in `r le_latest_year` was approximately `r fmt1(eco_mean_latest)`. Absolute revenue by region, in constant 2023 pesos, illustrates the economic scale underlying these relative scores (Figure 8). Revenue is not adjusted for informality, so ECO is unchanged from earlier versions of the assessment.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Figure 7. Economies (ECO) current status by region and census year: formal marine-related operating revenue (M000A) relative to each region's 2018 value. ECO is not adjusted for informality. Region 2 is not scored."}
+eco_plot
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Figure 8. Marine-related operating revenue (M000A) by region in constant 2023 MXN, coastal-adjusted, before conversion to current-status scores. Region 2 values should not be interpreted."}
+raw_rev_plot
+```
+
+## Gulf-wide marine sector trends
+
+Sector-level summaries describe how individual marine sectors contribute to total jobs, job quality, and revenue across the Gulf (Figures 9–11). These exploratory figures are derived from the cleaned Economic Census activity file with the same coastal adjustments as the scored indicators, but without the ENOE informality multiplier. They therefore describe formal, registered activity by sector and are not the informality-adjusted job counts used in the LIV score. Jobs, social benefits per job (constant 2023 MXN), and revenue (constant 2023 MXN) are summed across all OHI regions, including Region 2, for context only.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.height=5, fig.width=7, fig.cap="Figure 9. Gulf-wide marine sector trends: total Economic Census jobs by sector (coastal-adjusted, summed across all OHI regions), before the informality multiplier."}
+gg_sector_jobs
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.height=5, fig.width=7, fig.cap="Figure 10. Gulf-wide marine sector trends: job quality, measured as employer social-security contributions and other benefits per job (constant 2023 MXN), by sector, before the informality multiplier."}
+gg_sector_quality
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.height=5, fig.width=7, fig.cap="Figure 11. Gulf-wide marine sector trends: total operating revenue by sector (constant 2023 MXN, coastal-adjusted, summed across all OHI regions)."}
+gg_sector_revenue
+```
+
+# Discussion
+
+This regional LE assessment shows how the economic benefits that Gulf of California coastal communities derive from the ocean can be scored from national census data while explicitly acknowledging that census data do not observe all marine work. The two-subgoal structure separates the people-centered dimension of the goal, the number and quality of jobs, from the aggregate economic dimension, revenue. This separation allows the two to diverge. A region can maintain revenue while jobs per resident decline, or the reverse, and the equal-weighted mean makes that tension visible.
+
+**Informality as the key methodological update.** The most consequential change in this version of the assessment is the ENOE-based informality multiplier. Establishment censuses are the best available source for municipal-by-sector marine employment, but they provide only a partial view of livelihoods in a region where small-scale fishing, seafood trade, and tourism services are often informal. Inflating census jobs by 1/(1 − *p*) at the state-by-sector level allows employment estimates to reflect informal workers without requiring a bespoke survey of marine workers. Applying the multiplier to the job-count numerator and to the job-quality denominator, but not to benefits, reflects the asymmetry of what is observed: informal workers add to headcount, but their employers do not appear in recorded social-security and benefit contributions. The result is a quality score that describes the whole marine workforce. Leaving revenue unadjusted keeps ECO conservative. Informal revenue is not observed, and scaling it with a headcount multiplier would imply productivity assumptions that we cannot validate.
+
+**Interpreting the adjusted scores.** Because jobs are scored against the same region's 2018 value, and because the 2018 value is itself informality-adjusted, the multiplier does not mechanically raise scores. Its influence on job-quantity scores arises when informality shares or sector composition change between census years, and its influence on job quality arises through the larger denominator. Users should therefore treat the multiplier as a way to improve the representativeness of the workforce being scored, not as a device to inflate scores. Because reference points are within-region, scores also cannot be used to rank regions by absolute economic size. A small region can score well relative to itself while a large region with higher absolute revenue scores lower.
+
+**Limitations of the multiplier.** The informality adjustment is a sensitivity-style, upper-bound estimate of marine employment and not an exact count. The ENOE is a household survey that was not designed to produce stable estimates for narrow marine sectors at the state level, and informality shares for small sectors are uncertain. The multiplier is also assumed to be representative of marine-related workers within each sector definition and does not distinguish full-time, part-time, or seasonal informal work. The multiplier was also derived at the state level, whereas OHI regions can cover parts of several municipalities, so intra-state variation is not represented. Further validation against independent sources, such as fisheries permit records, community surveys, or CONAPESCA production totals, would help to bound the plausible range of informal marine employment. We encourage readers to interpret job-quantity and job-quality scores with this uncertainty in mind.
+
+**Data and reference-point limitations.** Several additional limitations apply. First, census data are available only at five-year intervals, so the series cannot resolve short-term shocks. Second, confidentiality suppression and administrative boundary changes limit region-sector-year resolution and make Region 2 unscorable. As a result, LE is not reported for the Western Midriff Islands, and the Gulf-wide mean covers eight regions. Third, the quality indicator continues to use total personnel as the denominator rather than paid personnel only. Fourth, we aggregate across sectors, so a region can attain a high score if growth in some sectors offsets declines in others, and the sector figures should be consulted alongside the scores. Finally, we did not include a sustainability multiplier that would weight sectors by the quality of their management. Such a refinement would acknowledge that not all marine jobs and revenue are equally compatible with a healthy ocean and is a priority for future work.
+
+**Next steps.** Priority refinements include validating informality shares against independent marine-sector data, evaluating H010A as the denominator for job quality, assessing whether an informality-adjusted historical reference alters conclusions, developing sector-specific reference points where census suppression allows, and aggregating CONAPESCA fishing and mariculture records for comparison with census revenue. Future work should also stress-test alternative reference points and weights with Gulf experts so that subjective decisions, which are central to any health index, remain aligned with regional values (Halpern et al. 2014).
+
+Despite these constraints, the informality-adjusted LE framework provides a transparent, repeatable scorecard for marine livelihoods and economies in the Gulf of California. It makes explicit what census data can and cannot observe, extends the assessment to informal workers, and identifies the data investments most needed to strengthen management-relevant assessment of the human dimension of ocean health.
+
+# Data and code availability {.unnumbered}
+
+Informality-adjusted current-status outputs and intermediate tables are stored in the OHI Gulf of California goal-preparation directory for Livelihoods and Economies (`goal_prep/le/`), including `liv/ce_jobs_current_status_2019ref_informality.csv`, `liv/ce_qual_current_status_informality.csv`, `final_le_current_status_2019ref_informality.csv`, and `eco/ce_rev_current_status_2019ref.csv`. Processing scripts for the census cleaning, coastal adjustment, informality multiplier, and LE merge are maintained in the project LE workflow. Documentation of the informal-jobs multiplier is tracked in the project issue repository (OHI_GOC_issues, issue 125). Economic Census and ENOE source data are publicly available from INEGI. Interactive visualizations of related scores are available through the OHI Gulf of California project website.
+
+# Acknowledgments {.unnumbered}
+
+We thank Expert Working Group participants and the Goalkeeper Group for guidance on indicator design, reference points, and the treatment of informal work, and the institutions that provide the underlying data, including INEGI. This manuscript presents methods and results for the Livelihoods and Economies goal within the regional Ocean Health Index for the Gulf of California. Scores should be interpreted as versioned scientific products that are subject to revision as data, methods, and reference points are refined.
+
+# References {.unnumbered}
+
+Halpern BS, Longo C, Hardy D, McLeod KL, Samhouri JF, Katona SK, et al. (2012) An index to assess the health and benefits of the global ocean. Nature 488: 615–620.
+
+Halpern BS, Longo C, Scarborough C, Hardy D, Best BD, Doney SC, et al. (2014) Assessing the health of the U.S. West Coast with a regional-scale application of the Ocean Health Index. PLoS ONE 9(6): e98995.
+
+Instituto Nacional de Estadística y Geografía (INEGI). Censos Económicos 2004, 2009, 2014, 2019, and 2024. Aguascalientes, Mexico: INEGI.
+
+Instituto Nacional de Estadística y Geografía (INEGI). Encuesta Nacional de Ocupación y Empleo (ENOE). Aguascalientes, Mexico: INEGI.
+
+International Labour Organization (2018) Women and men in the informal economy: A statistical picture, third edition. Geneva: International Labour Office.

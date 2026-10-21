@@ -1,0 +1,880 @@
+---
+title: "Assessing coastal tourism and recreation in the Gulf of California with a regional Ocean Health Index"
+format:
+  docx:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    fig-width: 7
+    fig-height: 4.5
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(fig.width = 7, fig.height = 4.5, dpi = 150)
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(tidyverse)
+library(ggplot2)
+library(here)
+library(scales)
+
+rgn_labels <- c(
+  "Region_1" = "Western Upper Gulf",
+  "Region_2" = "Western Midriff Islands",
+  "Region_3" = "Western Central Gulf",
+  "Region_4" = "Western Southern Gulf",
+  "Region_5" = "Eastern Upper Gulf",
+  "Region_6" = "Eastern Midriff Islands",
+  "Region_7" = "Southern Sonora Coast",
+  "Region_8" = "Sinaloa Coast",
+  "Region_9" = "Southeastern Gulf"
+)
+
+rgn_colors <- c(
+  "Region_1" = "#C03729",
+  "Region_2" = "#E68C7C",
+  "Region_3" = "#FC8F24",
+  "Region_4" = "#dcaa38",
+  "Region_5" = "#cbd2a0",
+  "Region_6" = "#98a25a",
+  "Region_7" = "#747428",
+  "Region_8" = "#627391",
+  "Region_9" = "#8d61a9"
+)
+
+state_colors <- c(
+  "sinaloa" = "#627391",
+  "sonora" = "#98a25a",
+  "baja_california_sur" = "#dcaa38",
+  "baja_california" = "#E68C7C",
+  "jalisco" = "#8d61a9"
+)
+
+state_labels <- c(
+  "sinaloa" = "Sinaloa",
+  "sonora" = "Sonora",
+  "baja_california_sur" = "Baja California Sur",
+  "baja_california" = "Baja California",
+  "jalisco" = "Jalisco"
+)
+
+region_levels <- paste0("Region_", 1:9)
+rgn_label_colors <- setNames(unname(rgn_colors[region_levels]), unname(rgn_labels[region_levels]))
+state_levels <- names(state_colors)
+state_label_colors <- setNames(
+  unname(state_colors[state_levels]),
+  unname(state_labels[state_levels])
+)
+component_levels <- c("Quantity", "Quality", "Sustainability", "Overall TR")
+
+add_rgn_labels <- function(df) {
+  df %>%
+    mutate(
+      rgn_id = factor(as.character(rgn_id), levels = region_levels),
+      rgn_label = factor(
+        rgn_labels[as.character(rgn_id)],
+        levels = unname(rgn_labels[region_levels])
+      )
+    )
+}
+
+add_state_labels <- function(df) {
+  df %>%
+    mutate(
+      estado = factor(as.character(estado), levels = state_levels),
+      state_label = factor(
+        state_labels[as.character(estado)],
+        levels = unname(state_labels[state_levels])
+      )
+    )
+}
+
+gg_theme_pdf <- function() {
+  theme_minimal() +
+    theme(
+      plot.title = element_text(face = "bold", size = 11),
+      legend.position = "right",
+      legend.title = element_text(size = 9),
+      legend.text = element_text(size = 8)
+    )
+}
+
+tr_plotly_lines <- function(df, y_var, title, y_range = NULL) {
+  df <- df %>%
+    mutate(year = as.numeric(year)) %>%
+    arrange(rgn_label, year)
+
+  y_col <- rlang::sym(y_var)
+
+  p <- ggplot(df, aes(x = year, y = !!y_col, color = rgn_label, group = rgn_label)) +
+    geom_line(linewidth = 0.7) +
+    geom_point(size = 1.5) +
+    geom_hline(yintercept = 100, linetype = "dashed", color = "black", linewidth = 0.4) +
+    scale_color_manual(values = rgn_label_colors, name = "Region") +
+    labs(
+      title = title,
+      x = "Año // Year",
+      y = "Puntaje // Percent (out of 100)"
+    ) +
+    gg_theme_pdf()
+
+  if (!is.null(y_range)) {
+    p <- p + coord_cartesian(ylim = y_range)
+  }
+
+  p
+}
+
+tr_plotly_goc <- function(df, y_var, title, y_range = NULL) {
+  df <- df %>%
+    mutate(year = as.numeric(year)) %>%
+    arrange(year)
+
+  y_col <- rlang::sym(y_var)
+
+  p <- ggplot(df, aes(x = year, y = !!y_col)) +
+    geom_line(linewidth = 0.9, color = "#333333") +
+    geom_point(size = 2, color = "#333333") +
+    geom_hline(yintercept = 100, linetype = "dashed", color = "black", linewidth = 0.4) +
+    labs(
+      title = title,
+      x = "Año // Year",
+      y = "Puntaje // Percent (out of 100)"
+    ) +
+    gg_theme_pdf() +
+    theme(legend.position = "none")
+
+  if (!is.null(y_range)) {
+    p <- p + coord_cartesian(ylim = y_range)
+  }
+
+  p
+}
+
+tr_arrivals_lines <- function(df, title) {
+  df <- df %>%
+    mutate(year = as.numeric(year)) %>%
+    arrange(state_label, year)
+
+  ggplot(df, aes(x = year, y = total_arrivals, color = state_label, group = state_label)) +
+    geom_line(linewidth = 0.7) +
+    geom_point(size = 1.5) +
+    scale_color_manual(values = state_label_colors, name = "State") +
+    scale_y_continuous(labels = scales::comma) +
+    labs(
+      title = title,
+      x = "Año // Year",
+      y = "Arrivals"
+    ) +
+    gg_theme_pdf()
+}
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+cs_quantity_clean <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_quantity", "tr_quantity_current_status_2019_2026_OGmodel.csv"),
+  show_col_types = FALSE
+) %>%
+  rename(final_score = score) %>%
+  mutate(final_score = ifelse(final_score > 100, 100, final_score)) %>%
+  filter(year %in% 2019:2025) %>%
+  dplyr::select(rgn_id, year, final_score)
+
+cs_quantity_dom_clean <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_quantity/int_dom_quantity_current_status_2019_2026_OGmodel.csv"),
+  show_col_types = FALSE
+) %>%
+  filter(arrival_type %in% "dom", year %in% 2019:2025) %>%
+  mutate(final_score = ifelse(current_status > 100, 100, current_status)) %>%
+  dplyr::select(rgn_id, year, final_score)
+
+cs_quantity_int_clean <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_quantity/int_dom_quantity_current_status_2019_2026_OGmodel.csv"),
+  show_col_types = FALSE
+) %>%
+  filter(arrival_type %in% "int", year %in% 2019:2025) %>%
+  mutate(final_score = ifelse(current_status > 100, 100, current_status)) %>%
+  dplyr::select(rgn_id, year, final_score)
+
+cs_quality_crime_clean <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_quality/tr_qual_crime_score_030626.csv"),
+  show_col_types = FALSE
+) %>%
+  mutate(final_score = ifelse(current_status > 100, 100, current_status)) %>%
+  filter(ano %in% 2019:2025) %>%
+  dplyr::select(rgn_id, year = ano, final_score)
+
+cs_quality_activities_clean <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_quality/final_activity_avg_score_082826.csv"),
+  show_col_types = FALSE
+) %>%
+  filter(year %in% 2019:2025) %>%
+  dplyr::select(rgn_id, year, final_score)
+
+cs_quality_clean <- bind_rows(
+  cs_quality_activities_clean %>% mutate(quality_type = "activities"),
+  cs_quality_crime_clean %>% mutate(quality_type = "crime")
+) %>%
+  pivot_wider(names_from = quality_type, values_from = final_score) %>%
+  mutate(final_score = rowMeans(cbind(activities, crime), na.rm = TRUE)) %>%
+  dplyr::select(rgn_id, year, final_score)
+
+cs_quality_activities_fooddrink_clean <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_quality/tr_quality_food_bev_current_status_quantile_082826.csv"),
+  show_col_types = FALSE
+) %>%
+  filter(data_year %in% 2019:2025) %>%
+  dplyr::select(rgn_id, year = data_year, final_score = score)
+
+cs_quality_activities_culturegulf_clean <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_quality/tr_quality_culture_current_status_quantile_082826.csv"),
+  show_col_types = FALSE
+) %>%
+  filter(data_year %in% 2019:2025) %>%
+  dplyr::select(rgn_id, year = data_year, final_score = score)
+
+cs_quality_activities_other_clean <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_quality/tr_quality_other_rec_current_status_quantile_082826.csv"),
+  show_col_types = FALSE
+) %>%
+  filter(data_year %in% 2019:2025) %>%
+  dplyr::select(rgn_id, year = data_year, final_score = score)
+
+cs_sust_clean <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_sustainability", "cs_sust_all_indicators_092926.csv"),
+  show_col_types = FALSE
+) %>%
+  filter(year %in% 2019:2025)
+
+cs_sust_cert_hotels_clean <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_sustainability/sust_cert_current_status_final_2019_2025_100over_082726.csv"),
+  show_col_types = FALSE
+) %>%
+  filter(cert_year %in% 2019:2025) %>%
+  dplyr::select(rgn_id, year = cert_year, final_score = current_status)
+
+cs_sust_cert_blueflag_clean <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_sustainability","cropped_blue_flag_current_status_final_by_yr_033026.csv"),
+  show_col_types = FALSE
+) %>%
+  filter(year %in% 2019:2025) %>%
+  dplyr::select(rgn_id, year, final_score = current_status)
+
+cs_sust_cert_clean <- bind_rows(
+  cs_sust_cert_hotels_clean %>% mutate(sust_type = "hotels"),
+  cs_sust_cert_blueflag_clean %>% mutate(sust_type = "blue_flag")
+) %>%
+  group_by(rgn_id, year) %>%
+  summarize(final_score = mean(final_score, na.rm = TRUE), .groups = "drop")
+
+cs_sust_jobqual_clean <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_sustainability/tr_job_quality_sustainability_current_status_merged_interpolated_033026.csv"),
+  show_col_types = FALSE
+) %>%
+  filter(ano_censal %in% 2019:2025) %>%
+  dplyr::select(rgn_id, year = ano_censal, final_score = score_interpolated)
+
+cs_sust_jobqual_salary_clean <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/sust_int/tr_job_quality","cs_maintainedsalary_totalpctpaidworkers_prop_eq_cs.csv"),
+  show_col_types = FALSE
+) %>%
+  dplyr::select(rgn_id, year = ano_censal, final_score = maintained_salary_cs)
+
+cs_sust_jobqual_formal_clean <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/sust_int/tr_job_quality","cs_maintainedsalary_totalpctpaidworkers_prop_eq_cs.csv"),
+  show_col_types = FALSE
+) %>%
+  dplyr::select(rgn_id, year = ano_censal, final_score = total_pct_paid_workers_cs)
+
+cs_sust_jobqual_gender_clean <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/sust_int/tr_job_quality","cs_maintainedsalary_totalpctpaidworkers_prop_eq_cs.csv"),
+  show_col_types = FALSE
+) %>%
+  dplyr::select(rgn_id, year = ano_censal, final_score = prop_eq_cs)
+
+cs_sust_invest_clean <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_sustainability/investment_tourism_management_final_092826.csv"),
+  show_col_types = FALSE
+) %>%
+  mutate(year = as.numeric(year)) %>%
+  filter(year %in% 2019:2025) %>%
+  dplyr::select(rgn_id, year, final_score = score) %>%
+  distinct(rgn_id, year, .keep_all = TRUE) %>%
+  arrange(rgn_id, year)
+
+cs_sust_invest_budget_parts <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_sustainability/invest_mgmt_budget_parts_v003_v005_fees_2019_2025.csv"),
+  show_col_types = FALSE
+) %>%
+  mutate(year = as.numeric(year)) %>%
+  filter(year %in% 2019:2025)
+
+cs_sust_invest_v003_anp_management_clean <- cs_sust_invest_budget_parts %>%
+  filter(programas %in% "v003_anp_management") %>%
+  crossing(rgn_id = region_levels) %>%
+  dplyr::select(rgn_id, year, final_score = current_status) %>%
+  arrange(rgn_id, year)
+
+cs_sust_invest_v005_protection_restoration_clean <- cs_sust_invest_budget_parts %>%
+  filter(programas %in% "v005_protection_restoration") %>%
+  crossing(rgn_id = region_levels) %>%
+  dplyr::select(rgn_id, year, final_score = current_status) %>%
+  arrange(rgn_id, year)
+
+cs_sust_invest_return_cobros_from_shcp_clean <- cs_sust_invest_budget_parts %>%
+  filter(programas %in% "return_cobros_from_shcp") %>%
+  crossing(rgn_id = region_levels) %>%
+  dplyr::select(rgn_id, year, final_score = current_status) %>%
+  arrange(rgn_id, year)
+
+cs_sust_invest_simec_clean <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_sustainability/invest_mgmt_detail_budget_simec_2019_2025.csv"),
+  show_col_types = FALSE
+) %>%
+  mutate(year = as.numeric(year)) %>%
+  filter(year %in% 2019:2025) %>%
+  dplyr::select(rgn_id, year, final_score = score_simec) %>%
+  distinct(rgn_id, year, .keep_all = TRUE) %>%
+  arrange(rgn_id, year)
+
+cs_sust_invest_simec_c2_clean <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_sustainability/invest_mgmt_detail_budget_simec_2019_2025.csv"),
+  show_col_types = FALSE
+) %>%
+  mutate(year = as.numeric(year)) %>%
+  filter(year %in% 2019:2025) %>%
+  dplyr::select(rgn_id, year, final_score = score_c2) %>%
+  distinct(rgn_id, year, .keep_all = TRUE) %>%
+  arrange(rgn_id, year)
+
+cs_sust_invest_simec_c3_clean <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_sustainability/invest_mgmt_detail_budget_simec_2019_2025.csv"),
+  show_col_types = FALSE
+) %>%
+  mutate(year = as.numeric(year)) %>%
+  filter(year %in% 2019:2025) %>%
+  dplyr::select(rgn_id, year, final_score = score_c3) %>%
+  distinct(rgn_id, year, .keep_all = TRUE) %>%
+  arrange(rgn_id, year)
+
+cs_sust_personnel_all_clean <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_sustainability/tr_sust_anp_personnel_density_all_current_status_2018_2025.csv"),
+  show_col_types = FALSE
+) %>%
+  mutate(year = as.numeric(year)) %>%
+  filter(year %in% 2019:2025) %>%
+  dplyr::select(anp, year, final_score = score)
+
+cs_sust_personnel_ranger_clean <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output_sustainability/tr_sust_anp_personnel_density_ranger_current_status_2018_2025.csv"),
+  show_col_types = FALSE
+) %>%
+  mutate(year = as.numeric(year)) %>%
+  filter(year %in% 2019:2025) %>%
+  dplyr::select(anp, year, final_score = score)
+
+all_cs_indicators <- read_csv(
+  here::here("/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/output", "tr_current_status_final_092926.csv"),
+  show_col_types = FALSE
+) %>%
+  filter(year %in% 2019:2025)
+
+tr_score_plotly <- tr_plotly_lines(
+  add_rgn_labels(all_cs_indicators),
+  y_var = "tr_current_status",
+  title = "CURRENT STATUS: Tourism & Recreation"
+)
+
+tr_goc_df <- all_cs_indicators %>%
+  group_by(year) %>%
+  summarize(
+    tr_goc_current_status = mean(tr_current_status, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+tr_overall_goc_plotly <- tr_plotly_goc(
+  tr_goc_df,
+  y_var = "tr_goc_current_status",
+  title = "Overall TR current status for the Gulf of California",
+  y_range = c(0, 110)
+)
+
+tr_arrivals_paths <- c(
+  here::here(
+    "/home/shares/ohi/OHI_GOC/goal_prep/tr/v2025/gapfilled_int",
+    "arrivals_filled_by_DENUE_accommodation_employees_2019_2026_OGmodel_UPDATED.csv"
+  ),
+  here::here(
+    "..",
+    "TR",
+    "arrivals_filled_by_DENUE_accommodation_employees_2019_2026_OGmodel_UPDATED.csv"
+  )
+)
+tr_arrivals_path <- tr_arrivals_paths[file.exists(tr_arrivals_paths)][1]
+
+arrivals_by_state <- read_csv(tr_arrivals_path, show_col_types = FALSE) %>%
+  mutate(year = as.numeric(data_year)) %>%
+  filter(year %in% 2019:2025) %>%
+  group_by(estado, year) %>%
+  summarize(
+    total_arrivals = sum(arrivals_merged_no_neg, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+arrivals_plotly <- tr_arrivals_lines(
+  add_state_labels(arrivals_by_state),
+  title = "Total tourist arrivals by state (merged SECTUR and DENUE gap-filled)"
+)
+
+quantity_plotly <- tr_plotly_lines(
+  add_rgn_labels(cs_quantity_clean),
+  y_var = "final_score",
+  title = "TR Quantity"
+)
+
+quantity_dom_plotly <- tr_plotly_lines(
+  add_rgn_labels(cs_quantity_dom_clean),
+  y_var = "final_score",
+  title = "TR Quantity: Domestic Arrivals"
+)
+
+quantity_int_plotly <- tr_plotly_lines(
+  add_rgn_labels(cs_quantity_int_clean),
+  y_var = "final_score",
+  title = "TR Quantity: International Arrivals"
+)
+
+quality_plotly <- tr_plotly_lines(
+  add_rgn_labels(cs_quality_clean),
+  y_var = "final_score",
+  title = "TR Quality"
+)
+
+quality_crime_plotly <- tr_plotly_lines(
+  add_rgn_labels(cs_quality_crime_clean),
+  y_var = "final_score",
+  title = "TR Quality: Safety of tourists"
+)
+
+quality_activities_plotly <- tr_plotly_lines(
+  add_rgn_labels(cs_quality_activities_clean),
+  y_var = "final_score",
+  title = "TR Quality: Availability of activities"
+)
+
+quality_activities_fooddrink_plotly <- tr_plotly_lines(
+  add_rgn_labels(cs_quality_activities_fooddrink_clean),
+  y_var = "final_score",
+  title = "TR Quality: Food & Beverage Activities"
+)
+
+quality_activities_culturegulf_plotly <- tr_plotly_lines(
+  add_rgn_labels(cs_quality_activities_culturegulf_clean),
+  y_var = "final_score",
+  title = "TR Quality: Culture & Gulf Activities"
+)
+
+quality_activities_other_plotly <- tr_plotly_lines(
+  add_rgn_labels(cs_quality_activities_other_clean),
+  y_var = "final_score",
+  title = "TR Quality: Other Recreation Activities"
+)
+
+sustainability_plotly <- tr_plotly_lines(
+  add_rgn_labels(cs_sust_clean),
+  y_var = "final_score",
+  title = "TR Sustainability"
+)
+
+sust_cert_plotly <- tr_plotly_lines(
+  add_rgn_labels(cs_sust_cert_clean),
+  y_var = "final_score",
+  title = "TR Sustainability: Certifications (All)"
+)
+
+sust_cert_hotels_plotly <- tr_plotly_lines(
+  add_rgn_labels(cs_sust_cert_hotels_clean),
+  y_var = "final_score",
+  title = "TR Sustainability: Hotel Certifications"
+)
+
+sust_cert_blueflag_plotly <- tr_plotly_lines(
+  add_rgn_labels(cs_sust_cert_blueflag_clean),
+  y_var = "final_score",
+  title = "TR Sustainability: Blue Flag Certifications"
+)
+
+sust_jobqual_plotly <- tr_plotly_lines(
+  add_rgn_labels(cs_sust_jobqual_clean),
+  y_var = "final_score",
+  title = "TR Sustainability: Job Quality"
+)
+
+sust_jobqual_salary_plotly <- tr_plotly_lines(
+  add_rgn_labels(cs_sust_jobqual_salary_clean),
+  y_var = "final_score",
+  title = "TR Sustainability: Job Quality (Maintained Salary)"
+)
+
+sust_jobqual_formal_plotly <- tr_plotly_lines(
+  add_rgn_labels(cs_sust_jobqual_formal_clean),
+  y_var = "final_score",
+  title = "TR Sustainability: Job Quality (Formal/Paid Workers)"
+)
+
+sust_jobqual_gender_plotly <- tr_plotly_lines(
+  add_rgn_labels(cs_sust_jobqual_gender_clean),
+  y_var = "final_score",
+  title = "TR Sustainability: Job Quality (Gender Pay Equity)"
+)
+
+sust_invest_plotly <- tr_plotly_lines(
+  add_rgn_labels(cs_sust_invest_clean),
+  y_var = "final_score",
+  title = "TR Sustainability: Tourism Management Investment (Budget + SIMEC)"
+)
+
+sust_invest_v003_anp_management_plotly <- tr_plotly_lines(
+  add_rgn_labels(cs_sust_invest_v003_anp_management_clean),
+  y_var = "final_score",
+  title = "TR Sustainability: Investment - ANP Management (v003)"
+)
+
+sust_invest_v005_protection_restoration_plotly <- tr_plotly_lines(
+  add_rgn_labels(cs_sust_invest_v005_protection_restoration_clean),
+  y_var = "final_score",
+  title = "TR Sustainability: Investment - Protection & Restoration (v005)"
+)
+
+sust_invest_return_cobros_from_shcp_plotly <- tr_plotly_lines(
+  add_rgn_labels(cs_sust_invest_return_cobros_from_shcp_clean),
+  y_var = "final_score",
+  title = "TR Sustainability: Investment - Returned Fees from SHCP"
+)
+
+sust_invest_simec_plotly <- tr_plotly_lines(
+  add_rgn_labels(cs_sust_invest_simec_clean),
+  y_var = "final_score",
+  title = "TR Sustainability: Investment - SIMEC i-efectividad (mean C2, C3)"
+)
+
+sust_invest_simec_c2_plotly <- tr_plotly_lines(
+  add_rgn_labels(cs_sust_invest_simec_c2_clean),
+  y_var = "final_score",
+  title = "TR Sustainability: Investment - SIMEC C2 Administrativo y financiero"
+)
+
+sust_invest_simec_c3_plotly <- tr_plotly_lines(
+  add_rgn_labels(cs_sust_invest_simec_c3_clean),
+  y_var = "final_score",
+  title = "TR Sustainability: Investment - SIMEC C3 Usos y beneficios"
+)
+
+tr_anp_lines <- function(df, title) {
+  df <- df %>%
+    mutate(year = as.numeric(year)) %>%
+    arrange(anp, year)
+
+  ggplot(df, aes(x = year, y = final_score, color = anp, group = anp)) +
+    geom_line(linewidth = 0.7) +
+    geom_point(size = 1.5) +
+    geom_hline(yintercept = 100, linetype = "dashed", color = "black", linewidth = 0.4) +
+    labs(
+      title = title,
+      x = "Año // Year",
+      y = "Puntaje // Percent (out of 100)",
+      color = "ANP"
+    ) +
+    gg_theme_pdf() +
+    theme(legend.text = element_text(size = 7))
+}
+
+sust_personnel_all_plotly <- tr_anp_lines(
+  cs_sust_personnel_all_clean,
+  title = "TR Sustainability (exploratory): ANP personnel density vs effective management"
+)
+
+sust_personnel_ranger_plotly <- tr_anp_lines(
+  cs_sust_personnel_ranger_clean,
+  title = "TR Sustainability (exploratory): ANP ranger (operativo) density"
+)
+```
+
+# Assessing coastal tourism and recreation in the Gulf of California with a regional Ocean Health Index
+
+## Abstract
+
+Management of coastal tourism increasingly requires quantitative assessments of whether visitation is growing toward policy targets while remaining safe, well-supported by services, and grounded in sustainable practices. We applied a regional Ocean Health Index (OHI) framework to score Tourism and Recreation (TR) across nine marine regions of the Gulf of California for 2019–2025. The TR goal is the equal-weighted average of three components: Quantity (domestic and international hotel arrivals relative to Plan México 2030 growth targets), Quality (tourist safety and availability of recreation services per visitor), and Sustainability (hotel and Blue Flag certifications, tourism job quality, and protected-area management investment combining CONANP budgets, returned fees, and SIMEC *i-efectividad*). A score of 100 represents the reference condition for each indicator. We find substantial spatial and temporal heterogeneity: regions differ in how closely arrivals track national growth targets, in safety and service density relative to visitation, and in uptake of certifications and management capacity. Two exploratory indicators—cruise passenger pressure and protected-area personnel density—were developed for discussion but are not included in scored TR. The assessment illustrates how a goal-driven OHI framing can synthesize disparate tourism, crime, employment, and conservation datasets into a transparent regional scorecard for the Gulf of California.
+
+## Introduction
+
+As decision-makers shift toward more comprehensive approaches to managing coastal and marine ecosystems, management goals increasingly focus on overall ocean health rather than single sectors or stressors. The Ocean Health Index (OHI) was developed to measure how well marine systems sustainably deliver a portfolio of benefits that people need and desire, including food provision, livelihoods, clean waters, biodiversity, and tourism and recreation (Halpern et al. 2012). Regional applications of the Index adapt goal models and reference points to locally available data and policy priorities while retaining a comparable 0–100 scoring structure (Halpern et al. 2014).
+
+Coastal tourism and recreation are among the most visible ways people experience the ocean. In the Gulf of California, visitation supports appreciation of marine wildlife and culture and underpins coastal economies, yet unmanaged growth can degrade the very amenities that attract visitors. Distinguishing the personal and cultural value of coastal experiences from tourism revenue (treated under Livelihoods and Economies in OHI) is therefore central to scoring Tourism and Recreation (TR) as a goal in its own right.
+
+Mexico’s Plan México 2030 articulates national ambitions for tourism growth—including increases in domestic and international arrivals and in sustainability-certified service providers—providing explicit policy reference points for a regional assessment. At the same time, visitor experience depends on safety, the density of recreation-related services, certified beach and hotel practices, the quality of tourism employment, and public investment in protected areas that sustain nature-based tourism. These dimensions are rarely integrated in a single, repeatable score.
+
+Here we present a regional TR assessment for the Gulf of California OHI. We address three questions: (1) How can Quantity, Quality, and Sustainability of coastal tourism be operationalized with Mexican national and regional datasets? (2) How do TR scores vary across nine OHI regions and over 2019–2025? (3) What data and reference-point decisions remain for future refinement, including cruise tourism and protected-area staffing? We structure the paper as a Methods–Results–Discussion narrative suitable for peer review, while retaining the full set of component and sub-indicator figures used in the technical assessment.
+
+## Methods
+
+### Study region
+
+We calculated TR current-status scores for nine OHI marine regions of the Gulf of California (Western and Eastern Upper Gulf, Midriff Islands, Central and Southern Gulf on the Baja and mainland sides, Southern Sonora Coast, Sinaloa Coast, and Southeastern Gulf), plus a simple Gulf-wide mean of regional scores. Scores cover calendar years 2019–2025. Where underlying data extend beyond 2025 (e.g., incomplete 2026 SECTUR totals), we restrict reported scores to complete years. A score of 100 denotes the indicator-specific reference point.
+
+### Goal model
+
+Following the OHI philosophy that people are part of the social–ecological system, TR measures the quantity, quality, and sustainability of experiences people have when visiting coastal and marine areas—not tourism revenue. The overall score for region $r$ and year $t$ is:
+
+$$
+\text{TR}_{r,t} = \frac{Q_{r,t} + Ql_{r,t} + S_{r,t}}{3}
+$$
+
+where $Q$, $Ql$, and $S$ are Quantity, Quality, and Sustainability, each scaled from 0 to 100. Component scores are capped at 100 where noted below so that exceeding a target does not inflate other dimensions.
+
+| Component | Definition |
+|-----------|------------|
+| Quantity | Progress toward Plan México 2030 domestic and international arrival targets |
+| Quality | Average of tourist safety and recreation-service availability relative to visitation |
+| Sustainability | Average of certifications (hotels and Blue Flag beaches), tourism job quality, and tourism-management investment |
+
+Cruise passenger pressure and ANP personnel density are explored separately and excluded from scored TR.
+
+### Quantity
+
+Quantity compares regional hotel tourist arrivals to Plan México 2030 growth targets applied to a 2024 baseline. Domestic arrivals use a 9.8% increase above 2024; international arrivals use a 30% increase. Quantity is the average of the two capped scores:
+
+$$
+\text{Quantity}_{r,t} = \frac{1}{2}\left(\min\left(100,\ \frac{A^{\text{dom}}_{r,t}}{A^{\text{dom}}_{r,2024} \times 1.098} \times 100\right) + \min\left(100,\ \frac{A^{\text{int}}_{r,t}}{A^{\text{int}}_{r,2024} \times 1.30} \times 100\right)\right)
+$$
+
+Primary data are SECTUR DataTur hotel monitoring reports (*llegadas de turistas residentes* and *no residentes*). Municipalities missing from DataTur are gap-filled using DENUE accommodation-employee regression models fit on 2019–2024 and predicted through 2019–2025, with domestic/international splits from average state-level proportions. Arrivals are aggregated to OHI regions. San Ignacio and other sparsely reported centers remain more uncertain.
+
+### Quality
+
+Quality is the average of safety and activities:
+
+$$
+\text{Quality}_{r,t} = \frac{\text{Safety}_{r,t} + \text{Activities}_{r,t}}{2}
+$$
+
+**Safety.** We compiled SESNSP municipal crime counts for subtypes that plausibly alter safety, cleanliness, aesthetics, or atmosphere in spaces tourists visit. Crimes against persons receive weight 2; crimes against property receive weight 1. Weighted counts are divided by interpolated coastal municipal population. Mexicali is excluded because its crime profile reflects border dynamics rather than Gulf coastal tourism. Safety scores scale the region-year rate so that zero crimes score 100 and the maximum observed rate scores 0:
+
+$$
+\text{Safety}_{r,t} = \min\left(100,\ \left(1 - \frac{C_{r,t}}{C_{\max}}\right) \times 100\right)
+$$
+
+**Activities.** INEGI DENUE establishments within 50 km of the coast are classified into food and beverage, culture and Gulf-related recreation, and other recreation. Employee counts from size-class midpoints are divided by gap-filled tourist arrivals (including covid-scaled 2020 fills where used). Each category is scored against the Gulf-wide 90th quantile of employees per arrival, then combined with weights 2/5, 2/5, and 1/5. Regions 2, 3, and 6 are set to NA for activities because sparse coverage makes the ratio unreliable; where activities are missing, Quality reduces to available sub-indicators under `na.rm` averaging.
+
+### Sustainability
+
+Sustainability averages three sub-components:
+
+$$
+\text{Sustainability}_{r,t} = \frac{\text{Cert}_{r,t} + \text{JobQual}_{r,t} + \text{Invest}_{r,t}}{3}
+$$
+
+**Certifications.** Hotel score is the percentage of large DENUE hotels (100+ employees within 50 km) holding at least one of Distintivo S, Green Key, Green Globe, EarthCheck, Preferred by Nature, or Calidad Ambiental Turística / PNAA. Blue Flag score is certified highly visited beach length divided by total highly visited beach length, where the denominator is beach/cliff segments near localities or large hotels (and related managed beaches), not the entire shoreline. Certifications = mean(Hotels, Blue Flag).
+
+**Job quality.** Using INEGI *Censos Económicos* marine tourism units (census years 2003–2023), we average (i) compensation per paid worker relative to the 2003–2018 regional mean (constant 2023 pesos), (ii) formalization rate relative to a 90% ideal, and (iii) gender equity in formalization (female/male formalization ratio, capped at 100 when ≥ 1). Census scores are linearly interpolated to annual values for 2019–2025.
+
+**Tourism management investment.** A national budget layer averages CONANP program v003 (ANP management) and v005 (protection and restoration) relative to 2012–2018 means in constant 2026 pesos, plus the percentage of cobro de derechos returned from SHCP. Program s046 is excluded. A regional SIMEC layer averages *i-efectividad* components C2 (administrativo y financiero) and C3 (usos y beneficios) across GoC ANPs; analysis years 2019–2022 use the 2020 SIMEC report and 2023–2025 use the 2023 report. Investment is the mean of budget and SIMEC when SIMEC is available, otherwise budget alone.
+
+### Exploratory indicators (not scored)
+
+**Cruise passenger pressure.** SECTUR cruise port passengers for GoC ports are compared to the 2016–2019 regional mean (passengers or passengers per coastal resident). Scores at or below baseline equal 100; higher pressure lowers the score. Cruise is excluded from TR because reference direction is policy-ambiguous, port calls are short, and passengers are not split domestic/international.
+
+**ANP personnel density.** CONANP SAI personnel counts joined to ANP areas are scored against Appleton et al. (2022) reference densities (1 person / 13.33 km² for all staff; 1 ranger / 25.90 km² for operativo staff). Scores remain ANP-level and outside the TR average pending fuller GoC coverage and region assignment.
+
+## Results
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+tr_latest_year <- max(all_cs_indicators$year, na.rm = TRUE)
+tr_goc_latest <- all_cs_indicators %>%
+  filter(year == tr_latest_year) %>%
+  summarize(m = mean(tr_current_status, na.rm = TRUE)) %>%
+  pull(m)
+tr_rgn_latest <- all_cs_indicators %>%
+  filter(year == tr_latest_year) %>%
+  add_rgn_labels() %>%
+  arrange(desc(tr_current_status))
+```
+
+### Overall Tourism and Recreation status
+
+Across the nine Gulf of California regions, TR current status varies substantially in space and through the 2019–`r tr_latest_year` period (Figure 1). The Gulf-wide mean of regional TR scores in `r tr_latest_year` was approximately `r sprintf("%.1f", tr_goc_latest)` out of 100 (Figure 2), indicating that, on average, regions remain below the combined reference condition for quantity, quality, and sustainability of coastal recreation. Regional trajectories are not uniform: some coasts show relatively stable or improving scores while others remain lower or more variable, underscoring that Gulf-wide averages can mask subregional contrasts.
+
+Figure 1 shows regional TR time series; Figure 2 shows the unweighted mean across regions. Together they provide the top-level scorecard against which Quantity, Quality, and Sustainability can be diagnosed.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Figure 1. Regional Tourism and Recreation (TR) current-status scores (0–100) for nine OHI Gulf of California regions, 2019–2025. The dashed line marks the reference condition (100)."}
+tr_score_plotly
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Figure 2. Gulf-wide mean of regional TR current-status scores by year. Equal weight is given to each of the nine OHI regions."}
+tr_overall_goc_plotly
+```
+
+### Quantity
+
+Quantity scores reflect progress toward Plan México 2030 arrival targets rather than absolute visitation volume (Figure 3). Because targets are anchored to each region’s 2024 baseline, scores near 100 indicate that domestic and/or international arrivals have reached the prescribed growth relative to that baseline; lower scores indicate that arrivals remain below target. Domestic and international sub-scores often diverge within the same region (Figures 5 and 6), so Quantity averages can conceal asymmetric performance between national and foreign markets.
+
+Absolute merged arrivals by state (SECTUR plus DENUE gap-fills) provide context for the scale of visitation underlying these scores (Figure 4). States with large resort destinations dominate raw counts, while gap-filled municipalities contribute where DataTur coverage is incomplete.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Figure 3. Quantity component current status by OHI region and year (average of domestic and international arrival scores relative to Plan México 2030 targets)."}
+quantity_plotly
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Figure 4. Total tourist arrivals by state after merging SECTUR DataTur reporting with DENUE accommodation-employee gap-fills."}
+arrivals_plotly
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Figure 5. Domestic Quantity sub-scores by region and year. Domestic targets assume a 9.8% increase above 2024 arrivals."}
+quantity_dom_plotly
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Figure 6. International Quantity sub-scores by region and year. International targets assume a 30% increase above 2024 arrivals."}
+quantity_int_plotly
+```
+
+### Quality
+
+Quality combines tourist safety with the density of recreation-related employment per arrival (Figure 7). Safety scores (Figure 8) map the inverse of weighted crimes per coastal inhabitant, so higher values indicate lower crime rates relative to the worst observed Gulf region-year. Midriff Island regions remain data-limited in SESNSP records.
+
+Activity availability (Figure 9) summarizes food and beverage, culture and Gulf-related, and other recreation services relative to the Gulf-wide 90th quantile of employees per arrival (Figures 10–12). Regions with high visitation but thin service employment score lower even when raw establishment counts are large. Regions 2, 3, and 6 lack reliable activity scores and therefore contribute primarily through safety where available.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Figure 7. Quality component current status by region and year (average of safety and activities)."}
+quality_plotly
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Figure 8. Safety of tourists: inverse weighted crime index by region and year."}
+quality_crime_plotly
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Figure 9. Availability of activities: weighted mean of food and beverage, culture and Gulf-related, and other recreation scores."}
+quality_activities_plotly
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Figure 10. Food and beverage activity scores relative to the Gulf-wide 90th quantile of employees per tourist arrival."}
+quality_activities_fooddrink_plotly
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Figure 11. Culture and Gulf-related activity scores relative to the Gulf-wide 90th quantile of employees per tourist arrival."}
+quality_activities_culturegulf_plotly
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Figure 12. Other recreation activity scores relative to the Gulf-wide 90th quantile of employees per tourist arrival."}
+quality_activities_other_plotly
+```
+
+### Sustainability
+
+Sustainability scores integrate certifications, job quality, and tourism-management investment (Figure 13). Combined certifications (Figure 14) average large-hotel sustainability certification rates and Blue Flag coverage of highly visited beaches (Figures 17 and 18). Job quality (Figure 15) tracks interpolated census-based compensation, formalization, and gender equity in formalization (Figures 19–21). Investment (Figure 16) combines national CONANP budget and fee-return performance with regional SIMEC C2/C3 management effectiveness (Figures 22–27).
+
+Because budget and fee indicators are largely national, year-to-year investment change is shared across regions, while SIMEC introduces spatial differentiation and discrete updates when the 2023 report replaces the 2020 report for later analysis years.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Figure 13. Sustainability component current status by region and year."}
+sustainability_plotly
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Figure 14. Sustainability certifications sub-component (mean of hotel sustainability certifications and Blue Flag)."}
+sust_cert_plotly
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Figure 15. Tourism job quality sub-component by region and year."}
+sust_jobqual_plotly
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Figure 16. Tourism-management investment sub-component (CONANP budget/fees combined with SIMEC i-efectividad)."}
+sust_invest_plotly
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Figure 17. Share of large coastal hotels (100+ employees within 50 km) holding at least one sustainability certification."}
+sust_cert_hotels_plotly
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Figure 18. Blue Flag coverage of highly visited beach length by region and year."}
+sust_cert_blueflag_plotly
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Figure 19. Job quality detail: maintained salary relative to the 2003–2018 regional historical mean."}
+sust_jobqual_salary_plotly
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Figure 20. Job quality detail: formalization relative to a 90% ideal."}
+sust_jobqual_formal_plotly
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Figure 21. Job quality detail: gender equity in formalization rates."}
+sust_jobqual_gender_plotly
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Figure 22. CONANP program v003 (ANP management) relative to the 2012–2018 mean in constant 2026 pesos."}
+sust_invest_v003_anp_management_plotly
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Figure 23. CONANP program v005 (protection and restoration) relative to the 2012–2018 mean in constant 2026 pesos."}
+sust_invest_v005_protection_restoration_plotly
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Figure 24. Percentage of cobro de derechos returned from SHCP."}
+sust_invest_return_cobros_from_shcp_plotly
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Figure 25. Regional SIMEC i-efectividad score (mean of C2 and C3) by analysis year."}
+sust_invest_simec_plotly
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Figure 26. SIMEC C2 Administrativo y financiero by region and year."}
+sust_invest_simec_c2_plotly
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Figure 27. SIMEC C3 Usos y beneficios by region and year."}
+sust_invest_simec_c3_plotly
+```
+
+### Exploratory indicators
+
+Cruise passenger pressure and ANP personnel density were calculated to support discussion of tourism sustainability pressures and protected-area capacity but are omitted from scored TR (Figures 28 and 29 for personnel density). Cruise reference direction remains unsettled, and personnel data still lack complete GoC geographic coverage for a stable regional merge.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Figure 28. Exploratory ANP personnel-density scores relative to the Appleton et al. (2022) all-personnel reference (1 person per 13.33 km²). Not included in scored TR."}
+sust_personnel_all_plotly
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Figure 29. Exploratory ANP ranger (operativo) density scores relative to the Appleton et al. (2022) ranger reference (1 ranger per 25.90 km²). Not included in scored TR."}
+sust_personnel_ranger_plotly
+```
+
+## Discussion
+
+This regional TR assessment demonstrates that tourism-related ocean benefits in the Gulf of California can be scored as the joint outcome of visitation relative to policy targets, visitor experience conditions, and the institutional and employment foundations of sustainable tourism. The three-component structure forces attention to tradeoffs that single metrics obscure: regions may approach arrival targets while lagging in safety, services per visitor, certifications, or management investment—or the reverse.
+
+**Policy-linked reference points.** Anchoring Quantity to Plan México 2030 growth rates ties OHI scores to stated national ambitions while preserving regional baselines. That choice makes Quantity interpretable for managers tracking progress toward 2030, but it also means that high-visitation destinations start from larger absolute baselines and that post-2024 growth is required to approach 100. Separate domestic and international targets reveal market-specific gaps that a single arrivals total would hide.
+
+**Experience quality and data sparsity.** Safety and activity availability operationalize “quality” without reducing it to satisfaction surveys. The crime-weighting scheme is transparent and revisable with stakeholders, and Mexicali’s exclusion acknowledges that not all municipal crime is tourism-relevant. Activity scores highlight service thinning relative to arrivals—an important sustainability concern when visitation grows faster than recreation infrastructure. Setting Midriff and related regions to NA for activities is preferable to fabricating precision where DENUE–arrival ratios are unstable.
+
+**Sustainability as enabling conditions.** Expanding hotel certifications beyond Distintivo S, Green Key, and Green Globe to include EarthCheck, Preferred by Nature, and PNAA better reflects the contemporary certification landscape for large coastal hotels. Measuring Blue Flag against highly visited shoreline, rather than all beach length, focuses the indicator on places tourists actually use. Combining CONANP budgets and fee returns with SIMEC C2/C3 links fiscal effort to assessed management effectiveness and introduces regional texture into an otherwise national investment signal.
+
+**Limitations and next steps.** Gap-filled arrivals, interpolated census job quality, and SIMEC’s infrequent update cycle all inject uncertainty. Cruise tourism remains outside the Index until reference direction and sustainability metrics (vessel size, monitoring, regional port intensity) are defined with stakeholders. ANP personnel density is a promising complement to SIMEC but requires complete personnel coverage for Baja California and Baja California Sur before region-level scoring. Future work should also stress-test alternative reference points and weights with Gulf experts so that subjective decisions—central to any health index—are explicitly aligned with regional values (Halpern et al. 2014).
+
+Despite these constraints, the TR framework provides a transparent, repeatable scorecard for Gulf of California coastal tourism: it shows where arrivals, visitor experience, and sustainability conditions move together or diverge, and it identifies the data investments most needed to strengthen management-relevant ocean health assessment.
+
+## Data and code availability
+
+Current-status outputs and intermediate tables are stored under the OHI Gulf of California goal-preparation directories for Tourism and Recreation (`goal_prep/tr/v2025/`). Processing scripts for Quantity, Quality, Sustainability, and the TR merge are maintained in the project TR workflow. Interactive visualization of related scores is available via the OHI Gulf of California project website.
+
+## Acknowledgments
+
+We thank Expert Working Group participants and agency data providers (including SECTUR, INEGI, SESNSP, CONANP, FEE Blue Flag Mexico, and certification program registries) for data access and feedback on indicator design. This manuscript presents methods and results for the Tourism and Recreation goal within the regional Ocean Health Index for the Gulf of California; scores should be interpreted as versioned scientific products subject to revision as data and reference points are refined.
+
+## References
+
+Halpern BS, Longo C, Hardy D, McLeod KL, Samhouri JF, Katona SK, et al. (2012) An index to assess the health and benefits of the global ocean. Nature 488: 615–620.
+
+Halpern BS, Longo C, Scarborough C, Hardy D, Best BD, Doney SC, et al. (2014) Assessing the health of the U.S. West Coast with a regional-scale application of the Ocean Health Index. PLoS ONE 9(6): e98995.
+
+Appleton MR, Courtiol A, Emmett L, Scott DM, Garnett T, et al. (2022) Protected area personnel and ranger numbers are insufficient to deliver global expectations. Nature Sustainability 5: 1100–1110.
