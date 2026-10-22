@@ -117,7 +117,7 @@
     "href": "chapters/project_update_october_2026_spanish.html#puntuaciones-de-las-metas-en-todo-el-golfo",
     "title": "Actualización del proyecto (octubre 2026)",
     "section": "Puntuaciones de las metas en todo el Golfo",
-    "text": "Puntuaciones de las metas en todo el Golfo\nLa gráfica de abajo muestra el patrón general de cada meta en todas las regiones OHI. Para cada año, es el promedio de las puntuaciones de estatus actual regionales. Cada meta tiene un color fijo que coincide con su ícono (distinto de la paleta que representa a cada región OHI).\n\n\n\n\n\n\n\n\nEn todas las secciones siguientes del sitio mostramos las puntuaciones de cada meta por región a lo largo del tiempo, para representar el cambio en el tiempo por región. Esas gráficas muestran mejor los patrones regionales importantes que el promedio de todo el Golfo de arriba."
+    "text": "Puntuaciones de las metas en todo el Golfo\nLa gráfica de abajo muestra el patrón general de cada meta en todas las regiones OHI. Para cada año, es el promedio de las puntuaciones de estatus actual regionales. Cada meta tiene un color que coincide con su ícono (distinto de la paleta que representa a cada región OHI).\n\n\n\n\n\n\n\n\nEn todas las secciones siguientes del sitio mostramos las puntuaciones de cada meta por región a lo largo del tiempo, para representar el cambio en el tiempo por región. Esas gráficas muestran mejor los patrones regionales importantes que el promedio de todo el Golfo de arriba."
   },
   {
     "objectID": "chapters/project_update_fall_2026_spanish.html",
@@ -1488,7 +1488,7 @@
     "href": "chapters/project_update_october_2026.html#gulf-wide-goal-scores",
     "title": "Project Update (October 2026)",
     "section": "Gulf-Wide Goal Scores",
-    "text": "Gulf-Wide Goal Scores\nThe plot below shows the general pattern for each goal across all OHI regions. For each year, it is the mean of regional current status scores. Each goal has a fixed color matching its icon (distinct from the palette used to represent each OHI Region).\n\n\n\n\n\n\n\n\nIn all subsequent sections of the website, we have each region’s goal scores over time to represent change over time per region. Those plots display important regional patterns better than in the above Gulf-wide average.",
+    "text": "Gulf-Wide Goal Scores\nThe plot below shows the general pattern for each goal across all OHI regions. For each year, it is the mean of regional current status scores. Each goal is represented by the color matching its icon (distinct from the palette used to represent each OHI Region).\n\n\n\n\n\n\n\n\nIn all subsequent sections of the website, we have each region’s goal scores over time to represent change over time per region. Those plots display important regional patterns better than in the above Gulf-wide average.",
     "crumbs": [
       "📣 Project Update (Oct. 2026)"
     ]

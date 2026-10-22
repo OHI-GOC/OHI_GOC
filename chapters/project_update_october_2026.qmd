@@ -238,7 +238,7 @@ goal_plotly <- function(
 
 ## Gulf-Wide Goal Scores
 
-The plot below shows the **general pattern for each goal across all OHI regions.**  For each year, it is the mean of regional current status scores. Each goal has a fixed color matching its icon (distinct from the palette used to represent each OHI Region). 
+The plot below shows the **general pattern for each goal across all OHI regions.**  For each year, it is the mean of regional current status scores. Each goal is represented by the color matching its icon (distinct from the palette used to represent each OHI Region). 
 
 ![ ](../images/all_goal_icons.png){fig-alt="All Ocean Health Index Gulf of California goals.  From left to right: Livelihoods & Economies, Habitat Services, Natural Products, Access Opportunities, Tourism & Recreation, Sense of Place, Biodiversity, and Clean Waters." width="100%"}
 

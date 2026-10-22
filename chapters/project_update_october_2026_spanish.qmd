@@ -238,7 +238,7 @@ goal_plotly <- function(
 
 ## Puntuaciones de las metas en todo el Golfo
 
-La gráfica de abajo muestra el **patrón general de cada meta en todas las regiones OHI.**  Para cada año, es el promedio de las puntuaciones de estatus actual regionales. Cada meta tiene un color fijo que coincide con su ícono (distinto de la paleta que representa a cada región OHI). 
+La gráfica de abajo muestra el **patrón general de cada meta en todas las regiones OHI.**  Para cada año, es el promedio de las puntuaciones de estatus actual regionales. Cada meta tiene un color que coincide con su ícono (distinto de la paleta que representa a cada región OHI). 
 
 ![ ](../images/all_goal_icons.png){fig-alt="Todas las metas del Índice de Salud Oceánica del Golfo de California. De izquierda a derecha: Medios de Vida y Economías, Servicios de Hábitat, Productos Naturales, Oportunidades de Acceso, Turismo y Recreación, Sentido de Pertenencia, Biodiversidad y Aguas Limpias." width="100%"}
 
